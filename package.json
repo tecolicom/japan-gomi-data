@@ -1,0 +1,17 @@
+{
+  "name": "japan-gomi-data",
+  "version": "0.1.0",
+  "description": "日本の自治体ごみ収集カレンダー オープンデータ (収集日程 + 種別定義)",
+  "license": "CC-BY-4.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.5.0"
+  }
+}
