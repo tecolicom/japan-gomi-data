@@ -1,0 +1,14 @@
+# 全国共通のごみ種別語彙(正典)。各自治体 taxonomy.yaml はこの部分集合を宣言する。
+# 新種別を足すときはここへ1回追加する(app 側は生成物なので手編集不要)。
+categories:
+  burnable:     { label: 可燃ごみ,     short: 可燃,   color: '#D9534F' }
+  kitchen:      { label: 生ごみ,       short: 生,     color: '#E8913A' }
+  non_burnable: { label: 不燃ごみ,     short: 不燃,   color: '#6E6E6E' }
+  plastic:      { label: プラスチック, short: プラ,   color: '#4A90E2' }
+  pet_bottle:   { label: ペットボトル, short: ペット, color: '#5CB85C' }
+  beverage_can: { label: 飲料缶,       short: 缶,     color: '#5B9BB0' }
+  glass_bottle: { label: びん,         short: びん,   color: '#7A8A4A' }
+  paper_cloth:  { label: 紙・布,       short: 紙布,   color: '#A87FBA' }
+  hazardous:    { label: 有害ごみ,     short: 有害,   color: '#735272' }
+  oversized:    { label: 粗大ごみ,     short: 粗大,   color: '#8B6F47' }
+  metal:        { label: 金属ごみ,     short: 金属,   color: '#5C7C8A' }

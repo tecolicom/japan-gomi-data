@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tecolicom/japan-gomi-data/main/schema/meta.schema.json",
+  "title": "自治体 meta",
+  "type": "object",
+  "required": ["handle", "name_ja"],
+  "additionalProperties": false,
+  "properties": {
+    "handle": { "type": "string", "minLength": 1 },
+    "name_ja": { "type": "string", "minLength": 1 },
+    "region_ja": { "type": "string" },
+    "code": { "type": "string" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index_url": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}
