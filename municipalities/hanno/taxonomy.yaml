@@ -1,0 +1,11 @@
+# 飯能市で使う種別 (生ごみ・金属の区分は無い)。ラベルは全国語彙の既定を使う。
+categories:
+  - burnable
+  - plastic
+  - pet_bottle
+  - beverage_can
+  - glass_bottle
+  - paper_cloth
+  - non_burnable
+  - hazardous
+  - oversized
