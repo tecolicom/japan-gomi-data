@@ -1,0 +1,12 @@
+# 市街地3コースは kitchen(生ごみ) を分別、農村2コースは缶・びんを同日収集。
+# ラベルは全国語彙の既定を使う(局所上書きなし)。
+categories:
+  - burnable
+  - kitchen
+  - plastic
+  - pet_bottle
+  - paper_cloth
+  - beverage_can
+  - glass_bottle
+  - non_burnable
+  - oversized
