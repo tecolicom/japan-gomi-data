@@ -1,5 +1,5 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
-import { join, basename } from 'node:path';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -23,7 +23,6 @@ const vocab = new Set(Object.keys(loadYaml(join(ROOT, 'schema/categories.yaml'))
 
 const errors = [];
 const fail = (f, msg) => errors.push(`${f}: ${msg}`);
-const iso = (v) => (v instanceof Date ? v.toISOString().slice(0, 10) : v);
 
 const muniDir = join(ROOT, 'municipalities');
 const handles = existsSync(muniDir)
@@ -39,7 +38,7 @@ for (const handle of handles) {
   else {
     const meta = loadYaml(metaPath);
     if (!metaV(meta)) fail(`${handle}/meta.yaml`, ajv.errorsText(metaV.errors));
-    if (meta.handle !== handle) fail(`${handle}/meta.yaml`, `handle "${meta.handle}" がディレクトリ名と不一致`);
+    else if (meta.handle !== handle) fail(`${handle}/meta.yaml`, `handle "${meta.handle}" がディレクトリ名と不一致`);
   }
 
   // taxonomy
@@ -49,9 +48,11 @@ for (const handle of handles) {
   else {
     const tax = loadYaml(taxPath);
     if (!taxonomyV(tax)) fail(`${handle}/taxonomy.yaml`, ajv.errorsText(taxonomyV.errors));
-    for (const c of tax.categories ?? []) {
-      if (!vocab.has(c)) fail(`${handle}/taxonomy.yaml`, `未知の種別 "${c}"(schema/categories.yaml に無い)`);
-      taxCats.add(c);
+    else {
+      for (const c of tax.categories ?? []) {
+        if (!vocab.has(c)) fail(`${handle}/taxonomy.yaml`, `未知の種別 "${c}"(schema/categories.yaml に無い)`);
+        taxCats.add(c);
+      }
     }
   }
 
