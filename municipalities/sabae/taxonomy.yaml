@@ -1,0 +1,10 @@
+# 鯖江市。福井県オープンデータCSVの細区分を語彙へ畳んだ(廃食用油は該当語彙なしで除外)。
+categories:
+  - burnable
+  - non_burnable
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - plastic
+  - paper_cloth
+  - hazardous

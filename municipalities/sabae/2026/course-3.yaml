@@ -1,0 +1,84 @@
+# 鯖江市 コース3（可燃 毎週火・金／資源 木）2026年度
+# Source: 福井県オープンデータ CSV（https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv）。PDF抽出ではなく構造化CSVを機械変換。
+# 読み(yomi)は元CSVの読み列より。資源系は同一資源日に一括収集(元CSVで全種別同日)。
+metadata:
+  city: sabae
+  course: "3"
+  course_name_ja: 可燃火・金・資源木
+  areas:
+    - { name: "旭町1丁目", yomi: "あさひまち1" }
+    - { name: "旭町2丁目", yomi: "あさひまち2" }
+    - { name: "石田上町", yomi: "いしだかみちょう" }
+    - { name: "石田下町", yomi: "いしだしもちょう" }
+    - { name: "石田中町", yomi: "いしだなかちょう" }
+    - { name: "上鯖江1丁目", yomi: "かみさばえ1" }
+    - { name: "上鯖江2丁目", yomi: "かみさばえ2" }
+    - { name: "北野町1丁目", yomi: "きたのちょう1" }
+    - { name: "北野町2丁目", yomi: "きたのちょう2" }
+    - { name: "桜町1丁目", yomi: "さくらまち1" }
+    - { name: "三六町1丁目", yomi: "さんろくちょう1" }
+    - { name: "三六町2丁目", yomi: "さんろくちょう2" }
+    - { name: "神明町1丁目", yomi: "しんめいちょう1" }
+    - { name: "神明町2丁目", yomi: "しんめいちょう2" }
+    - { name: "神明町3丁目", yomi: "しんめいちょう3" }
+    - { name: "神明町4丁目", yomi: "しんめいちょう4" }
+    - { name: "神明町5丁目", yomi: "しんめいちょう5" }
+    - { name: "西山町", yomi: "にしやまちょう" }
+    - { name: "日の出町", yomi: "ひのでちょう" }
+    - { name: "深江町", yomi: "ふかえちょう" }
+    - { name: "舟津町1丁目", yomi: "ふなつちょう1" }
+    - { name: "舟津町2丁目", yomi: "ふなつちょう2" }
+    - { name: "舟津町3丁目", yomi: "ふなつちょう3" }
+    - { name: "舟津町4丁目", yomi: "ふなつちょう4" }
+    - { name: "舟津町5丁目", yomi: "ふなつちょう5" }
+    - { name: "本町1丁目", yomi: "ほんまち1" }
+    - { name: "本町2丁目", yomi: "ほんまち2" }
+    - { name: "水落町1丁目", yomi: "みずおちちょう1" }
+    - { name: "水落町2丁目", yomi: "みずおちちょう2" }
+    - { name: "水落町3丁目", yomi: "みずおちちょう3" }
+    - { name: "水落町4丁目", yomi: "みずおちちょう4" }
+    - { name: "みどり町内会", yomi: "みどりちょうないかい" }
+    - { name: "宮前1丁目", yomi: "みやまえ1" }
+    - { name: "宮前2丁目", yomi: "みやまえ2" }
+    - { name: "屋形町", yomi: "やかたちょう" }
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
+    extracted_at: 2026-07-13
+    extracted_by: claude-opus-4-8
+    verified_by: "Claude (福井県オープンデータCSVの機械変換、人間による目視レビューは未実施)"
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - TH
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - TH
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - TH
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+  - category: paper_cloth
+    pattern: weekly
+    days:
+      - TH
+  - category: hazardous
+    pattern: weekly
+    days:
+      - TH

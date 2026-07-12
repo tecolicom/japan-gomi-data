@@ -1,0 +1,105 @@
+# 鯖江市 コース1（可燃 毎週月・木／資源 火）2026年度
+# Source: 福井県オープンデータ CSV（https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv）。PDF抽出ではなく構造化CSVを機械変換。
+# 読み(yomi)は元CSVの読み列より。資源系は同一資源日に一括収集(元CSVで全種別同日)。
+metadata:
+  city: sabae
+  course: "1"
+  course_name_ja: 可燃月・木・資源火
+  areas:
+    - { name: "あおい町", yomi: "あおいちょう" }
+    - { name: "朝霞町内会", yomi: "あさかちょうないかい" }
+    - { name: "旭町3丁目", yomi: "あさひまち3" }
+    - { name: "旭町4丁目", yomi: "あさひまち4" }
+    - { name: "あすなろ町内会", yomi: "あすなろちょうないかい" }
+    - { name: "あずま町内会", yomi: "あずまちょうないかい" }
+    - { name: "磯部町", yomi: "いそべちょう" }
+    - { name: "大倉町", yomi: "おおくらちょう" }
+    - { name: "大野町", yomi: "おおのちょう" }
+    - { name: "落井町", yomi: "おちいちょう" }
+    - { name: "乙坂今北町", yomi: "おっさかこんぼくちょう" }
+    - { name: "上戸口町", yomi: "かみとのくちちょう" }
+    - { name: "川去町", yomi: "かわさりちょう" }
+    - { name: "川島町", yomi: "かわしまちょう" }
+    - { name: "熊田町", yomi: "くまだちょう" }
+    - { name: "小泉町", yomi: "こいずみちょう" }
+    - { name: "五郎丸町", yomi: "ごろうまるちょう" }
+    - { name: "定次団地", yomi: "さだつぎだんち" }
+    - { name: "定次町", yomi: "さだつぎちょう" }
+    - { name: "四方谷町", yomi: "しほうだにちょう" }
+    - { name: "下新庄町", yomi: "しもしんじょうちょう" }
+    - { name: "新町", yomi: "しんまち" }
+    - { name: "新横江1丁目", yomi: "しんよこえ1" }
+    - { name: "新横江2丁目", yomi: "しんよこえ2" }
+    - { name: "持明寺町", yomi: "じみょうじちょう" }
+    - { name: "西和町内会", yomi: "せいわちょうないかい" }
+    - { name: "大正寺町", yomi: "たいしょうじちょう" }
+    - { name: "田村町", yomi: "たむらちょう" }
+    - { name: "戸口町", yomi: "とのくちちょう" }
+    - { name: "南井町", yomi: "なおいちょう" }
+    - { name: "中戸口町", yomi: "なかとのくちちょう" }
+    - { name: "西大井町", yomi: "にしおおいちょう" }
+    - { name: "二丁掛町", yomi: "にちょうがけちょう" }
+    - { name: "東鯖江1丁目", yomi: "ひがしさばえ1" }
+    - { name: "東鯖江2丁目", yomi: "ひがしさばえ2" }
+    - { name: "東鯖江3丁目", yomi: "ひがしさばえ3" }
+    - { name: "東鯖江4丁目", yomi: "ひがしさばえ4" }
+    - { name: "日野町内会", yomi: "ひのちょうないかい" }
+    - { name: "平井町", yomi: "ひらいちょう" }
+    - { name: "冬島町", yomi: "ふじまちょう" }
+    - { name: "別所町", yomi: "べっしょちょう" }
+    - { name: "本町3丁目", yomi: "ほんまち3" }
+    - { name: "本町4丁目", yomi: "ほんまち4" }
+    - { name: "松成町", yomi: "まつなりちょう" }
+    - { name: "柳町1丁目", yomi: "やなぎ1" }
+    - { name: "柳町2丁目", yomi: "やなぎ2" }
+    - { name: "柳町3丁目", yomi: "やなぎ3" }
+    - { name: "柳町4丁目", yomi: "やなぎ4" }
+    - { name: "柳町団地", yomi: "やなぎまちだんち" }
+    - { name: "横江町1丁目", yomi: "よこえちょう1" }
+    - { name: "横江町2丁目", yomi: "よこえちょう2" }
+    - { name: "横越町", yomi: "よこごしちょう" }
+    - { name: "吉谷町", yomi: "よしたにちょう" }
+    - { name: "吉谷町青葉台", yomi: "よしたにちょうあおばだい" }
+    - { name: "吉田町", yomi: "よしだちょう" }
+    - { name: "若葉町内会", yomi: "わかばちょうないかい" }
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
+    extracted_at: 2026-07-13
+    extracted_by: claude-opus-4-8
+    verified_by: "Claude (福井県オープンデータCSVの機械変換、人間による目視レビューは未実施)"
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - TU
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - TU
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - TU
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU
+  - category: paper_cloth
+    pattern: weekly
+    days:
+      - TU
+  - category: hazardous
+    pattern: weekly
+    days:
+      - TU

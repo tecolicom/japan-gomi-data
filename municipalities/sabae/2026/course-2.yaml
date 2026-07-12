@@ -1,0 +1,90 @@
+# 鯖江市 コース2（可燃 毎週月・木／資源 金）2026年度
+# Source: 福井県オープンデータ CSV（https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv）。PDF抽出ではなく構造化CSVを機械変換。
+# 読み(yomi)は元CSVの読み列より。資源系は同一資源日に一括収集(元CSVで全種別同日)。
+metadata:
+  city: sabae
+  course: "2"
+  course_name_ja: 可燃月・木・資源金
+  areas:
+    - { name: "有定町1丁目", yomi: "ありさだちょう1" }
+    - { name: "有定町2丁目", yomi: "ありさだちょう2" }
+    - { name: "有定町3丁目", yomi: "ありさだちょう3" }
+    - { name: "石生谷町", yomi: "いしょうだにちょう" }
+    - { name: "漆原町", yomi: "うるしはらちょう" }
+    - { name: "上氏家町", yomi: "かみうずえちょう" }
+    - { name: "神中町1丁目", yomi: "かみなかちょう1" }
+    - { name: "神中町2丁目", yomi: "かみなかちょう2" }
+    - { name: "神中町3丁目", yomi: "かみなかちょう3" }
+    - { name: "上野田町", yomi: "かみのだちょう" }
+    - { name: "下司町", yomi: "げしちょう" }
+    - { name: "小黒町1丁目", yomi: "こぐろまち1" }
+    - { name: "小黒町2丁目", yomi: "こぐろまち2" }
+    - { name: "小黒町3丁目", yomi: "こぐろまち3" }
+    - { name: "幸町1丁目", yomi: "さいわいちょう1" }
+    - { name: "幸町2丁目", yomi: "さいわいちょう2" }
+    - { name: "桜町2丁目", yomi: "さくらまち2" }
+    - { name: "桜町3丁目", yomi: "さくらまち3" }
+    - { name: "下氏家町", yomi: "しもうずえちょう" }
+    - { name: "下野田町", yomi: "しものだちょう" }
+    - { name: "住吉町1丁目", yomi: "すみよしちょう1" }
+    - { name: "住吉町2丁目", yomi: "すみよしちょう2" }
+    - { name: "住吉町3丁目", yomi: "すみよしちょう3" }
+    - { name: "青武台町内会", yomi: "せいぶだいちょうないかい" }
+    - { name: "田所町", yomi: "たどころちょう" }
+    - { name: "長泉寺町1丁目", yomi: "ちょうせんじちょう1" }
+    - { name: "長泉寺町2丁目", yomi: "ちょうせんじちょう2" }
+    - { name: "つつじヶ丘町", yomi: "つつじがおかちょう" }
+    - { name: "当田町", yomi: "とうでちょう" }
+    - { name: "鳥羽1丁目", yomi: "とば1" }
+    - { name: "鳥羽2丁目", yomi: "とば2" }
+    - { name: "鳥羽3丁目", yomi: "とば3" }
+    - { name: "鳥井町", yomi: "とりいちょう" }
+    - { name: "東鳥羽", yomi: "ひがしとば" }
+    - { name: "東米岡1丁目", yomi: "ひがしよねおか1" }
+    - { name: "丸山町", yomi: "まるやまちょう" }
+    - { name: "御幸町1丁目", yomi: "みゆきちょう1" }
+    - { name: "御幸町2丁目", yomi: "みゆきちょう2" }
+    - { name: "御幸町3丁目", yomi: "みゆきちょう3" }
+    - { name: "御幸町4丁目", yomi: "みゆきちょう4" }
+    - { name: "和田町", yomi: "わだちょう" }
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
+    extracted_at: 2026-07-13
+    extracted_by: claude-opus-4-8
+    verified_by: "Claude (福井県オープンデータCSVの機械変換、人間による目視レビューは未実施)"
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - FR
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - FR
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - FR
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+  - category: paper_cloth
+    pattern: weekly
+    days:
+      - FR
+  - category: hazardous
+    pattern: weekly
+    days:
+      - FR
