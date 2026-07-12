@@ -7,13 +7,13 @@ metadata:
   city: kamifurano-town
   course: "noson-nishi"
   course_name_ja: 農村西コース
-  area_names:
-    - 草分
-    - 里仁
-    - 江幌
-    - 静修
-    - 江花
-    - 島津
+  areas:
+    - { name: "草分", yomi: "くさわけ" }
+    - { name: "里仁", yomi: "りじん" }
+    - { name: "江幌", yomi: "えほろ" }
+    - { name: "静修", yomi: "せいしゅう" }
+    - { name: "江花", yomi: "えばな" }
+    - { name: "島津", yomi: "しまづ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -7,11 +7,11 @@
 metadata:
   city: hidaka
   course: "18"
-  area_names:
-    - 台
-    - 栗坪
-    - 栗原
-    - 元宿
+  areas:
+    - { name: "台", yomi: "だい" }
+    - { name: "栗坪", yomi: "くりつぼ" }
+    - { name: "栗原", yomi: "くりはら" }
+    - { name: "元宿", yomi: "もとじゅく" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

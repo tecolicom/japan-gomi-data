@@ -8,21 +8,21 @@ metadata:
   city: hanno
   course: B-2
   course_name_ja: 中央北
-  area_names:
-    - 山手町
-    - 本町
-    - 八幡町
-    - 新町
-    - 東町
-    - 飯能
-    - 原町
-    - 久下
-    - 中山(JR八高線西)
-    - 久須美
-    - 小瀬戸
-    - 小岩井
-    - 永田
-    - 永田台
+  areas:
+    - { name: "山手町", yomi: "やまてちょう" }
+    - { name: "本町", yomi: "ほんちょう" }
+    - { name: "八幡町", yomi: "はちまんちょう" }
+    - { name: "新町", yomi: "しんまち" }
+    - { name: "東町", yomi: "あずまちょう" }
+    - { name: "飯能", yomi: "はんのう" }
+    - { name: "原町", yomi: "はらまち" }
+    - { name: "久下", yomi: "くげ" }
+    - { name: "中山(JR八高線西)", yomi: "なかやま" }
+    - { name: "久須美", yomi: "くすみ" }
+    - { name: "小瀬戸", yomi: "こせど" }
+    - { name: "小岩井", yomi: "こいわい" }
+    - { name: "永田", yomi: "ながた" }
+    - { name: "永田台", yomi: "ながただい" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

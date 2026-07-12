@@ -8,20 +8,20 @@ metadata:
   city: hanno
   course: B-1
   course_name_ja: 東吾野・吾野
-  area_names:
-    - 白子
-    - 平戸
-    - 虎秀
-    - 井上
-    - 長沢
-    - 坂石町分
-    - 坂石
-    - 吾野
-    - 上長沢
-    - 高山
-    - 北川
-    - 坂元
-    - 南川
+  areas:
+    - { name: "白子", yomi: "しらこ" }
+    - { name: "平戸", yomi: "ひらっと" }
+    - { name: "虎秀", yomi: "こしゅう" }
+    - { name: "井上", yomi: "いのうえ" }
+    - { name: "長沢", yomi: "ながさわ" }
+    - { name: "坂石町分", yomi: "さかいしまちぶん" }
+    - { name: "坂石", yomi: "さかいし" }
+    - { name: "吾野", yomi: "あがの" }
+    - { name: "上長沢", yomi: "かみながさわ" }
+    - { name: "高山", yomi: "たかやま" }
+    - { name: "北川", yomi: "きたがわ" }
+    - { name: "坂元", yomi: "さかもと" }
+    - { name: "南川", yomi: "みなみかわ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

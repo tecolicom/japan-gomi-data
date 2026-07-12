@@ -7,15 +7,15 @@
 metadata:
   city: hidaka
   course: "17"
-  area_names:
-    - 横手
-    - 久保（高麗）
-    - 高麗本郷
-    - 日向
-    - 清流
-    - 上高岡
-    - 下高岡
-    - 梅原
+  areas:
+    - { name: "横手", yomi: "よこて" }
+    - { name: "久保（高麗）", yomi: "くぼこま" }
+    - { name: "高麗本郷", yomi: "こまほんごう" }
+    - { name: "日向", yomi: "ひなた" }
+    - { name: "清流", yomi: "せいりゅう" }
+    - { name: "上高岡", yomi: "かみたかおか" }
+    - { name: "下高岡", yomi: "しもたかおか" }
+    - { name: "梅原", yomi: "うめはら" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

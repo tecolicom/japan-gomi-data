@@ -6,12 +6,12 @@
 metadata:
   city: hidaka
   course: "3"
-  area_names:
-    - 谷津
-    - 下大谷沢
-    - 高富
-    - 田木
-    - 大谷沢
+  areas:
+    - { name: "谷津", yomi: "やつ" }
+    - { name: "下大谷沢", yomi: "しもおおやざわ" }
+    - { name: "高富", yomi: "たかとみ" }
+    - { name: "田木", yomi: "たぎ" }
+    - { name: "大谷沢", yomi: "おおやざわ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

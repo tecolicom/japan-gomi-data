@@ -6,9 +6,9 @@
 metadata:
   city: hidaka
   course: "8"
-  area_names:
-    - 上鹿山
-    - 県営鹿山団地
+  areas:
+    - { name: "上鹿山", yomi: "かみかやま" }
+    - { name: "県営鹿山団地", yomi: "けんえいかやまだんち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

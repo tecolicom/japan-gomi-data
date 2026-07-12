@@ -7,15 +7,15 @@ metadata:
   city: kamifurano-town
   course: "ao"
   course_name_ja: 青コース
-  area_names:
-    - 錦町
-    - 中町
-    - 栄町
-    - 泉町
-    - 扇町
-    - 西町
-    - 光町
-    - 北町
+  areas:
+    - { name: "錦町", yomi: "にしきまち" }
+    - { name: "中町", yomi: "なかまち" }
+    - { name: "栄町", yomi: "さかえまち" }
+    - { name: "泉町", yomi: "いずみまち" }
+    - { name: "扇町", yomi: "おうぎまち" }
+    - { name: "西町", yomi: "にしまち" }
+    - { name: "光町", yomi: "ひかりまち" }
+    - { name: "北町", yomi: "きたまち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

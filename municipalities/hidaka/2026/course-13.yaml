@@ -7,17 +7,17 @@
 metadata:
   city: hidaka
   course: "13"
-  area_names:
-    - 新堀
-    - 四本木
-    - 野々宮
-    - 猿田
-    - 鹿山下
-    - 中鹿山
-    - 下鹿山
-    - 太平洋セメント社宅
-    - 市営住宅
-    - ガーデンパーク
+  areas:
+    - { name: "新堀", yomi: "にいほり" }
+    - { name: "四本木", yomi: "しもとぎ" }
+    - { name: "野々宮", yomi: "ののみや" }
+    - { name: "猿田", yomi: "さるだ" }
+    - { name: "鹿山下", yomi: "かやましも" }
+    - { name: "中鹿山", yomi: "なかかやま" }
+    - { name: "下鹿山", yomi: "しもかやま" }
+    - { name: "太平洋セメント社宅", yomi: "たいへいようせめんとしゃたく" }
+    - { name: "市営住宅", yomi: "しえいじゅうたく" }
+    - { name: "ガーデンパーク", yomi: "があでんぱあく" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

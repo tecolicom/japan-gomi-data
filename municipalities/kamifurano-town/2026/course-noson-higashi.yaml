@@ -7,13 +7,13 @@ metadata:
   city: kamifurano-town
   course: "noson-higashi"
   course_name_ja: 農村東コース
-  area_names:
-    - 清富
-    - 日新
-    - 日の出
-    - 旭野
-    - 富原
-    - 東中（東中市街地を除く）
+  areas:
+    - { name: "清富", yomi: "きよとみ" }
+    - { name: "日新", yomi: "にっしん" }
+    - { name: "日の出", yomi: "ひので" }
+    - { name: "旭野", yomi: "あさひの" }
+    - { name: "富原", yomi: "とみはら" }
+    - { name: "東中（東中市街地を除く）", yomi: "ひがしなか" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

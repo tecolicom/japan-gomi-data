@@ -6,11 +6,11 @@
 metadata:
   city: hidaka
   course: "6"
-  area_names:
-    - こま川団地1
-    - こま川団地2
-    - こま川団地3
-    - 高根台
+  areas:
+    - { name: "こま川団地1", yomi: "こまがわだんち1" }
+    - { name: "こま川団地2", yomi: "こまがわだんち2" }
+    - { name: "こま川団地3", yomi: "こまがわだんち3" }
+    - { name: "高根台", yomi: "たかねだい" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

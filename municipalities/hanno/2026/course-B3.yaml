@@ -8,22 +8,22 @@ metadata:
   city: hanno
   course: B-3
   course_name_ja: 精明コース
-  area_names:
-    - 下加治
-    - 小久保
-    - 宮沢
-    - 平松
-    - 川崎
-    - 下川崎
-    - 新光
-    - 芦苅場
-    - 双柳(国道299号旧道北)
-    - 青木
-    - 中居
-    - 栄町
-    - 緑町
-    - 中山(JR八高線東)
-    - 岩沢(国道299号旧道北)
+  areas:
+    - { name: "下加治", yomi: "しもかじ" }
+    - { name: "小久保", yomi: "こくぼ" }
+    - { name: "宮沢", yomi: "みやざわ" }
+    - { name: "平松", yomi: "ひらまつ" }
+    - { name: "川崎", yomi: "かわさき" }
+    - { name: "下川崎", yomi: "しもかわさき" }
+    - { name: "新光", yomi: "しんこう" }
+    - { name: "芦苅場", yomi: "あしかりば" }
+    - { name: "双柳(国道299号旧道北)", yomi: "なみやなぎ" }
+    - { name: "青木", yomi: "あおき" }
+    - { name: "中居", yomi: "なかい" }
+    - { name: "栄町", yomi: "さかえちょう" }
+    - { name: "緑町", yomi: "みどりちょう" }
+    - { name: "中山(JR八高線東)", yomi: "なかやま" }
+    - { name: "岩沢(国道299号旧道北)", yomi: "いわさわ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

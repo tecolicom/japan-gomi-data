@@ -7,8 +7,8 @@
 metadata:
   city: hidaka
   course: "19"
-  area_names:
-    - こま武蔵台（1〜3丁目）
+  areas:
+    - { name: "こま武蔵台（1〜3丁目）", yomi: "こまむさしだい1" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

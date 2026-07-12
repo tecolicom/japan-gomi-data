@@ -8,18 +8,18 @@ metadata:
   city: hanno
   course: A-1
   course_name_ja: 原市場・名栗
-  area_names:
-    - 原市場
-    - 下赤工
-    - 上赤工
-    - 赤沢
-    - 唐竹
-    - 中藤下郷
-    - 中藤中郷
-    - 中藤上郷
-    - 南
-    - 下名栗
-    - 上名栗
+  areas:
+    - { name: "原市場", yomi: "はらいちば" }
+    - { name: "下赤工", yomi: "しもあかだくみ" }
+    - { name: "上赤工", yomi: "かみあかだくみ" }
+    - { name: "赤沢", yomi: "あかざわ" }
+    - { name: "唐竹", yomi: "からたけ" }
+    - { name: "中藤下郷", yomi: "なかとうしもごう" }
+    - { name: "中藤中郷", yomi: "なかとうなかごう" }
+    - { name: "中藤上郷", yomi: "なかとうかみごう" }
+    - { name: "南", yomi: "みなみ" }
+    - { name: "下名栗", yomi: "しもなぐり" }
+    - { name: "上名栗", yomi: "かみなぐり" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

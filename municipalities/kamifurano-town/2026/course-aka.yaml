@@ -7,16 +7,16 @@ metadata:
   city: kamifurano-town
   course: "aka"
   course_name_ja: 赤コース
-  area_names:
-    - 緑町
-    - 旭町
-    - 新町
-    - 東町
-    - 向町
-    - 丘町
-    - 桜町
-    - 南町3丁目
-    - 東中市街地
+  areas:
+    - { name: "緑町", yomi: "みどりまち" }
+    - { name: "旭町", yomi: "あさひまち" }
+    - { name: "新町", yomi: "しんまち" }
+    - { name: "東町", yomi: "ひがしまち" }
+    - { name: "向町", yomi: "むかいまち" }
+    - { name: "丘町", yomi: "おかまち" }
+    - { name: "桜町", yomi: "さくらまち" }
+    - { name: "南町3丁目", yomi: "みなみまち3" }
+    - { name: "東中市街地", yomi: "ひがしなかしがいち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

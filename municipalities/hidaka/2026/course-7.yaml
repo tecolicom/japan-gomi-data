@@ -6,13 +6,13 @@
 metadata:
   city: hidaka
   course: "7"
-  area_names:
-    - 高麗川
-    - 平沢上組
-    - 馬金
-    - 平沢中組
-    - 山根
-    - 川端
+  areas:
+    - { name: "高麗川", yomi: "こまがわ" }
+    - { name: "平沢上組", yomi: "ひらさわかみぐみ" }
+    - { name: "馬金", yomi: "うまがね" }
+    - { name: "平沢中組", yomi: "ひらさわなかぐみ" }
+    - { name: "山根", yomi: "やまね" }
+    - { name: "川端", yomi: "かわばた" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

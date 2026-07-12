@@ -7,11 +7,11 @@
 metadata:
   city: hidaka
   course: "9"
-  area_names:
-    - 東急こまがわ1
-    - 東急こまがわ2
-    - 東急こまがわ3
-    - 東急こまがわ4
+  areas:
+    - { name: "東急こまがわ1", yomi: "とうきゅうこまがわ1" }
+    - { name: "東急こまがわ2", yomi: "とうきゅうこまがわ2" }
+    - { name: "東急こまがわ3", yomi: "とうきゅうこまがわ3" }
+    - { name: "東急こまがわ4", yomi: "とうきゅうこまがわ4" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

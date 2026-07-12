@@ -7,11 +7,11 @@
 metadata:
   city: hidaka
   course: "16"
-  area_names:
-    - 高萩１・２・３
-    - 宮前
-    - むさし野団地
-    - 相原
+  areas:
+    - { name: "高萩１・２・３", yomi: "たかはぎ123" }
+    - { name: "宮前", yomi: "みやまえ" }
+    - { name: "むさし野団地", yomi: "むさしのだんち" }
+    - { name: "相原", yomi: "あいはら" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

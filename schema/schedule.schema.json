@@ -14,7 +14,18 @@
         "city": { "type": "string", "minLength": 1 },
         "course": { "type": "string", "minLength": 1 },
         "course_name_ja": { "type": "string" },
-        "area_names": { "type": "array", "items": { "type": "string" } },
+        "areas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "yomi"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "yomi": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
         "year": { "type": "integer" },
         "fiscal_year_ja": { "type": "string" },
         "source": {

@@ -7,8 +7,8 @@
 metadata:
   city: hidaka
   course: "12"
-  area_names:
-    - 日高団地
+  areas:
+    - { name: "日高団地", yomi: "ひだかだんち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

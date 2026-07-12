@@ -6,13 +6,13 @@
 metadata:
   city: hidaka
   course: "1"
-  area_names:
-    - 高萩北
-    - 旭ケ丘1
-    - 旭ケ丘2
-    - 駒寺
-    - 栄新田
-    - 森高
+  areas:
+    - { name: "高萩北", yomi: "たかはぎきた" }
+    - { name: "旭ケ丘1", yomi: "あさひがおか1" }
+    - { name: "旭ケ丘2", yomi: "あさひがおか2" }
+    - { name: "駒寺", yomi: "こまでら" }
+    - { name: "栄新田", yomi: "さかえしんでん" }
+    - { name: "森高", yomi: "もりたか" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

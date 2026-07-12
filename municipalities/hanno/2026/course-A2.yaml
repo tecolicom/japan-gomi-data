@@ -8,21 +8,21 @@ metadata:
   city: hanno
   course: A-2
   course_name_ja: 中央南
-  area_names:
-    - 柳町
-    - 仲町
-    - 稲荷町
-    - 南町
-    - 大河原
-    - 茜台
-    - 美杉台
-    - 岩渕
-    - 下畑
-    - 上畑
-    - 苅生
-    - 下直竹
-    - 上直竹下分
-    - 上直竹上分
+  areas:
+    - { name: "柳町", yomi: "やなぎちょう" }
+    - { name: "仲町", yomi: "なかまち" }
+    - { name: "稲荷町", yomi: "いなりちょう" }
+    - { name: "南町", yomi: "みなみまち" }
+    - { name: "大河原", yomi: "おおかわら" }
+    - { name: "茜台", yomi: "あかねだい" }
+    - { name: "美杉台", yomi: "みすぎだい" }
+    - { name: "岩渕", yomi: "いわぶち" }
+    - { name: "下畑", yomi: "しもはた" }
+    - { name: "上畑", yomi: "かみはた" }
+    - { name: "苅生", yomi: "かろう" }
+    - { name: "下直竹", yomi: "しもなおたけ" }
+    - { name: "上直竹下分", yomi: "かみなおたけしもぶん" }
+    - { name: "上直竹上分", yomi: "かみなおたけかみぶん" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

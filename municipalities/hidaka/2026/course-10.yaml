@@ -7,14 +7,14 @@
 metadata:
   city: hidaka
   course: "10"
-  area_names:
-    - 宮ケ谷戸
-    - 芝ケ谷戸
-    - 久保(高麗川)
-    - 田波目
-    - 新宿(高麗川)
-    - 旭ケ丘(高麗川)
-    - 鹿山上
+  areas:
+    - { name: "宮ケ谷戸", yomi: "みやがやと" }
+    - { name: "芝ケ谷戸", yomi: "しばがやと" }
+    - { name: "久保(高麗川)", yomi: "くぼこまがわ" }
+    - { name: "田波目", yomi: "たばめ" }
+    - { name: "新宿(高麗川)", yomi: "しんじゅくこまがわ" }
+    - { name: "旭ケ丘(高麗川)", yomi: "あさひがおかこまがわ" }
+    - { name: "鹿山上", yomi: "かやまかみ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

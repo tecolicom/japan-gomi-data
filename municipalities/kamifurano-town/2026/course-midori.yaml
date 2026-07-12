@@ -7,12 +7,12 @@ metadata:
   city: kamifurano-town
   course: "midori"
   course_name_ja: 緑コース
-  area_names:
-    - 富町
-    - 大町
-    - 本町
-    - 宮町
-    - 南町（南町3丁目を除く）
+  areas:
+    - { name: "富町", yomi: "とみまち" }
+    - { name: "大町", yomi: "おおまち" }
+    - { name: "本町", yomi: "もとまち" }
+    - { name: "宮町", yomi: "みやまち" }
+    - { name: "南町（南町3丁目を除く）", yomi: "みなみまち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

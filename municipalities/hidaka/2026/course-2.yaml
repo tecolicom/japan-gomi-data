@@ -8,12 +8,12 @@
 metadata:
   city: hidaka
   course: "2"
-  area_names:
-    - 馬引沢
-    - 中沢
-    - 向郷
-    - 女影上組
-    - 女影北口
+  areas:
+    - { name: "馬引沢", yomi: "うまひきざわ" }
+    - { name: "中沢", yomi: "なかざわ" }
+    - { name: "向郷", yomi: "むかいごう" }
+    - { name: "女影上組", yomi: "おなかげかみぐみ" }
+    - { name: "女影北口", yomi: "おなかげきたぐち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

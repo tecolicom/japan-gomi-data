@@ -6,11 +6,11 @@
 metadata:
   city: hidaka
   course: "15"
-  area_names:
-    - 別所
-    - 下高萩
-    - 女影本村
-    - 新宿(高萩)
+  areas:
+    - { name: "別所", yomi: "べっしょ" }
+    - { name: "下高萩", yomi: "しもたかはぎ" }
+    - { name: "女影本村", yomi: "おなかげほんむら" }
+    - { name: "新宿(高萩)", yomi: "しんじゅくたかはぎ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

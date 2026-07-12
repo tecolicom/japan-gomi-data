@@ -7,8 +7,8 @@
 metadata:
   city: hidaka
   course: "4"
-  area_names:
-    - 高萩団地
+  areas:
+    - { name: "高萩団地", yomi: "たかはぎだんち" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

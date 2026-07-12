@@ -8,16 +8,16 @@ metadata:
   city: hanno
   course: A-3
   course_name_ja: 加治コース
-  area_names:
-    - 岩沢(国道299号旧道南)
-    - 笠縫
-    - 川寺
-    - 阿須
-    - 落合
-    - 前ヶ貫
-    - 矢颪
-    - 征矢町
-    - 双柳(国道299号旧道南)
+  areas:
+    - { name: "岩沢(国道299号旧道南)", yomi: "いわさわ" }
+    - { name: "笠縫", yomi: "かさぬい" }
+    - { name: "川寺", yomi: "かわでら" }
+    - { name: "阿須", yomi: "あず" }
+    - { name: "落合", yomi: "おちあい" }
+    - { name: "前ヶ貫", yomi: "まえがぬき" }
+    - { name: "矢颪", yomi: "やおろし" }
+    - { name: "征矢町", yomi: "そやちょう" }
+    - { name: "双柳(国道299号旧道南)", yomi: "なみやなぎ" }
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
