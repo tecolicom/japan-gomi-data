@@ -25,12 +25,19 @@ const errors = [];
 const fail = (f, msg) => errors.push(`${f}: ${msg}`);
 
 const muniDir = join(ROOT, 'municipalities');
-const handles = existsSync(muniDir)
-  ? readdirSync(muniDir).filter((h) => statSync(join(muniDir, h)).isDirectory())
-  : [];
+// municipalities/<県>/<handle>/ の2階層。handle は leaf 名 (全国一意)。
+const isDir = (p) => statSync(p).isDirectory();
+const handles = [];
+if (existsSync(muniDir)) {
+  for (const pref of readdirSync(muniDir).filter((p) => isDir(join(muniDir, p)))) {
+    const prefDir = join(muniDir, pref);
+    for (const h of readdirSync(prefDir).filter((h) => isDir(join(prefDir, h)))) {
+      handles.push({ handle: h, dir: join(prefDir, h) });
+    }
+  }
+}
 
-for (const handle of handles) {
-  const dir = join(muniDir, handle);
+for (const { handle, dir } of handles) {
 
   // meta
   const metaPath = join(dir, 'meta.yaml');

@@ -44,10 +44,17 @@ const muniDir = join(ROOT, 'municipalities');
 const OUT = join(ROOT, 'ics');
 if (existsSync(OUT)) rmSync(OUT, { recursive: true, force: true });
 
-const handles = readdirSync(muniDir).filter((h) => statSync(join(muniDir, h)).isDirectory());
+// municipalities/<県>/<handle>/ の2階層。handle は leaf 名。ics/ 出力は handle フラット。
+const isDir = (p) => statSync(p).isDirectory();
+const handles = [];
+for (const pref of readdirSync(muniDir).filter((p) => isDir(join(muniDir, p)))) {
+  const prefDir = join(muniDir, pref);
+  for (const h of readdirSync(prefDir).filter((h) => isDir(join(prefDir, h)))) {
+    handles.push({ handle: h, dir: join(prefDir, h) });
+  }
+}
 let count = 0;
-for (const handle of handles) {
-  const dir = join(muniDir, handle);
+for (const { handle, dir } of handles) {
   const taxOv = (loadYaml(join(dir, 'taxonomy.yaml')).overrides) || {};
   // slug -> { courseLabel, dtstamp, events: [{day,next,title}] }
   const bySlug = new Map();
