@@ -18,3 +18,13 @@
 ## 出典・免責
 各自治体データは公式配布物(PDF 等)由来。原典は各 `course-*.yaml` の `metadata.source` を参照。
 機械抽出のため誤りが残りうる。実際のごみ出しは各自治体の公式情報も併せて確認すること。
+
+## カレンダー購読 (.ics)
+
+各自治体・コースの収集日を全日イベントで購読できます (通知はカレンダーアプリの全日予定アラートで設定)。GitHub Pages で `text/calendar` 配信。
+
+- URL: `https://tecolicom.github.io/japan-gomi-data/ics/<handle>/<course-slug>.ics`
+- 購読は上記の `https` を `webcal` に置換。
+- 例: 飯能 A-1 → `webcal://tecolicom.github.io/japan-gomi-data/ics/hanno/a1.ics`
+
+course-slug は小文字化 + 最初のハイフン除去 (A-1→a1)。コース一覧は各 `municipalities/<handle>/` 参照。
