@@ -10,7 +10,7 @@
 
 ## 構造
 - `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)
-- `municipalities/<都道府県>/<handle>/` — `meta.yaml` / `taxonomy.yaml` / `<年度>/course-*.yaml`
+- `municipalities/<都道府県>/<handle>/` — `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml`
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
   - handle は leaf 名で全国一意。ツール(validate/build-ics/ダウンストリーム)は leaf を都市キーとして使う。
 - `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)
@@ -27,16 +27,22 @@
 - 日高市 — `hidaka` (20コース)
 
 ### 福井県 (fukui)
-- 鯖江市 — `sabae` (4コース)
+- 鯖江市 — `sabae` (4コース) ※**未検証**(福井県OD の曜日データ由来。実際の収集日と照合できる公式カレンダーが無い)
 
 ## 検証
 `npm ci && npm test` で全データを schema + 語彙 + 相互整合で検証する。
 `npm run build:ics` で全日イベントの .ics を `ics/<handle>/` へ生成する(CI がドリフトを検知)。
 
 ## 出典・免責
-各自治体データは公式の配布物・公開データ由来。原典は各 `course-*.yaml` の `metadata.source` を参照
-(`pdf_url` = PDF 由来 / `source_url` = 構造化オープンデータ由来。例: 福井県のごみ収集日 CSV)。
+各自治体データは公式の配布物・公開データ由来。**更新に必要な情報源は `meta.yaml` に集約**する:
+`source.index_url`(公式窓口)、`source.schedule_url`(収集日程の一次ソース)、
+`source.yearend_url`(年末年始・特別収集など例外日の情報源)、`notes`(可燃は休日も収集/資源は祝日休止 等の運用ルール)。
+course 単位の取得メタは各 `course-*.yaml` の `metadata.source`(`pdf_url` = PDF 由来 / `source_url` = 構造化 OD 由来 / `extracted_at`)。
+
+**検証状態**: 実際の収集日と突き合わせられる公式カレンダー(PDF 等)がある自治体は照合検証できるが、
+曜日ベースのオープンデータだけで独立照合できない自治体(例: 鯖江市)は **未検証**。
 機械変換のため誤りが残りうる。実際のごみ出しは各自治体の公式情報も併せて確認すること。
+誤りに気づいた場合の報告先は各ダウンストリーム(街てこり等)の Discord などを利用のこと。
 
 ## カレンダー購読 (.ics)
 
