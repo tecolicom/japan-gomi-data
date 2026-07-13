@@ -9,6 +9,7 @@ categories:
   beverage_can: { label: 飲料缶,       short: 缶,     color: '#5B9BB0' }
   glass_bottle: { label: びん,         short: びん,   color: '#7A8A4A' }
   paper_cloth:  { label: 紙・布,       short: 紙布,   color: '#A87FBA' }
+  paper:        { label: 古紙,         short: 古紙,   color: '#B8860B' }
   hazardous:    { label: 有害ごみ,     short: 有害,   color: '#735272' }
   oversized:    { label: 粗大ごみ,     short: 粗大,   color: '#8B6F47' }
   metal:        { label: 金属ごみ,     short: 金属,   color: '#5C7C8A' }

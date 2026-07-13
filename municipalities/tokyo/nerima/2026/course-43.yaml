@@ -29,7 +29,7 @@ rules:
     pattern: weekly
     days: &a1
       - FR
-  - category: paper_cloth
+  - category: paper
     pattern: weekly
     days: *a1
   - category: glass_bottle

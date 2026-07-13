@@ -24,7 +24,7 @@ function rowToRules(row) {
   rules.push({ category: 'non_burnable', pattern: 'monthly_nth', occurrences: nb.occurrences, days: nb.days });
   const pp = parseWeekly(row.plaPaper);
   rules.push({ category: 'plastic', pattern: 'weekly', days: pp });
-  rules.push({ category: 'paper_cloth', pattern: 'weekly', days: pp });
+  rules.push({ category: 'paper', pattern: 'weekly', days: pp });
   const bc = parseWeekly(row.binCan);
   rules.push({ category: 'glass_bottle', pattern: 'weekly', days: bc });
   rules.push({ category: 'beverage_can', pattern: 'weekly', days: bc });
