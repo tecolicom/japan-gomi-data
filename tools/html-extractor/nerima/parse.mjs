@@ -9,8 +9,10 @@ export function parseWeekly(text) {
 }
 
 export function parseMonthlyNth(text) {
-  const t = norm(text); // 例 "第1・3 月曜"
-  const m = t.match(/^第([\d・]+)\s*([日月火水木金土])曜/);
+  // 例 "第1・3 月曜"。稀に空白の位置がゆれる("第1･ 3水曜" 等)ため、
+  // 曜日判定前に空白位置に依存しないよう内部の空白を除去する。
+  const t = norm(text).replace(/\s+/g, '');
+  const m = t.match(/^第([\d・]+)([日月火水木金土])曜/);
   if (!m) throw new Error(`monthly parse 失敗: "${text}"`);
   return {
     occurrences: m[1].split('・').map(Number),

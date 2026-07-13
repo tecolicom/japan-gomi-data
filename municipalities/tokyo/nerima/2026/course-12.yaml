@@ -1,0 +1,60 @@
+metadata:
+  city: nerima
+  course: "12"
+  course_name_ja: 可燃月木・不燃第1・3火・プラ古紙水・缶土・ペット土
+  areas:
+    - name: 上石神井1丁目
+      yomi: かみしゃくじい1
+    - name: 豊玉上2丁目
+      yomi: とよたまかみ2
+    - name: 豊玉北1～4丁目
+      yomi: とよたまきた1-4
+    - name: 豊玉中1・2丁目
+      yomi: とよたまなか1-2
+    - name: 豊玉南
+      yomi: とよたまみなみ
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+    extracted_at: 2026-07-13
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(練馬区公式「地域別収集曜日一覧」HTML表の機械変換。エッジは地域別PDFでスポット照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - TU
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - WE
+  - category: paper_cloth
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: &a2
+      - SA
+  - category: beverage_can
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - SA
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

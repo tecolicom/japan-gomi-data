@@ -1,0 +1,14 @@
+handle: nerima
+name_ja: 練馬区
+region_ja: 東京都
+code: "13120"
+source:
+  index_url: https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/index.html
+  schedule_url: https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+  yearend_url: https://www.city.nerima.tokyo.jp/kusei/koho/oshirase/nenmatsu_nenshi.html
+notes:
+  - 祝日も通常収集する(年末年始を除く)。
+  - 年末年始は 12/31〜1/3 休止・1/4 から通常運用。振替収集なし。本データは overrides にこの4日の休止のみ反映。
+  - 年末年始の細部(最終/最初の収集日)は年により郵便番号(176〜179)別に変わり得る。詳細は yearend_url を参照。
+  - 容器包装プラスチックと古紙は同日収集。びん・缶は同日収集。data では別 category(plastic/paper_cloth, glass_bottle/beverage_can)として同日規則を持つ。
+  - 「古紙」は語彙上 paper_cloth に対応(布は練馬区では別枠だが最も近い語彙)。taxonomy.overrides で表示ラベルを「古紙」に上書き。

@@ -1,0 +1,64 @@
+metadata:
+  city: nerima
+  course: "4"
+  course_name_ja: 可燃月木・不燃第1・3金・プラ古紙水・缶木・ペット木
+  areas:
+    - name: 関町北1～3丁目
+      yomi: せきまちきた1-3
+    - name: 関町南2～4丁目
+      yomi: せきまちみなみ2-4
+    - name: 立野町
+      yomi: たてのちょう
+    - name: 中村1・2丁目
+      yomi: なかむら1-2
+    - name: 中村北1・2丁目
+      yomi: なかむらきた1-2
+    - name: 中村南1・2丁目
+      yomi: なかむらみなみ1-2
+    - name: 光が丘7丁目3番1・2・6・7号
+      yomi: ひかりがおか7-3-1-2-6-7
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+    extracted_at: 2026-07-13
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(練馬区公式「地域別収集曜日一覧」HTML表の機械変換。エッジは地域別PDFでスポット照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - FR
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - WE
+  - category: paper_cloth
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: &a2
+      - TH
+  - category: beverage_can
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - TH
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

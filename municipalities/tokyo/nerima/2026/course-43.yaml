@@ -1,0 +1,52 @@
+metadata:
+  city: nerima
+  course: "43"
+  course_name_ja: 可燃水土・不燃第2・4月・プラ古紙金・缶月・ペット月
+  areas:
+    - name: 東大泉1～3・5丁目
+      yomi: ひがしおおいずみ1-3-5
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+    extracted_at: 2026-07-13
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(練馬区公式「地域別収集曜日一覧」HTML表の機械変換。エッジは地域別PDFでスポット照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - MO
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - FR
+  - category: paper_cloth
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: &a2
+      - MO
+  - category: beverage_can
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

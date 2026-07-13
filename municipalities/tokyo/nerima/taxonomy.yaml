@@ -1,0 +1,13 @@
+# 練馬区。公式「古紙」を paper_cloth に対応(表示は「古紙」へ上書き)。びん/缶・プラ/古紙は同日別category。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper_cloth
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  paper_cloth:
+    label: 古紙
+    short: 古紙
