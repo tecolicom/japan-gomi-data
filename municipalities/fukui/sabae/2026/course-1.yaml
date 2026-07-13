@@ -104,11 +104,27 @@ rules:
     days:
       - TU
 
-# 年末年始の休止は元CSVに無いため、鯖江公式「令和8年度 年末年始のごみの収集日」PDFより補完。
+# 休止(overrides): 資源系は祝日は収集なし(可燃は休日も収集)。年末年始は全種休止。
+# 祝日は @holiday-jp で算出。年末年始は鯖江公式「年末年始のごみ収集日」PDFより。GWの特別収集5/6は資源も収集のため休止に含めない。
 overrides:
+  - date: 2026-05-05
+    cancelled: true
+    note: 祝日休止(資源は休日収集なし)
+  - date: 2026-08-11
+    cancelled: true
+    note: 祝日休止(資源は休日収集なし)
+  - date: 2026-09-22
+    cancelled: true
+    note: 祝日休止(資源は休日収集なし)
+  - date: 2026-11-03
+    cancelled: true
+    note: 祝日休止(資源は休日収集なし)
   - date: 2026-12-29
     cancelled: true
     note: 年末年始休止
   - date: 2026-12-31
     cancelled: true
     note: 年末年始休止
+  - date: 2027-02-23
+    cancelled: true
+    note: 祝日休止(資源は休日収集なし)
