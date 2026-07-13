@@ -14,8 +14,15 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "index_url": { "type": "string", "format": "uri" }
+        "index_url": { "type": "string", "format": "uri", "description": "自治体公式のごみ案内窓口ページ" },
+        "schedule_url": { "type": "string", "format": "uri", "description": "通常収集日程の取得元 (CSV/API/PDF)。機械変換の一次ソース" },
+        "yearend_url": { "type": "string", "format": "uri", "description": "年末年始・特別収集など例外日の情報源。毎年更新されるため手動で拾う" }
       }
+    },
+    "notes": {
+      "type": "array",
+      "description": "運用ルールや来年更新時の注意 (人間可読)。可燃は休日も収集/資源は祝日休止 等、データだけでは表せない事項を残す",
+      "items": { "type": "string" }
     }
   }
 }

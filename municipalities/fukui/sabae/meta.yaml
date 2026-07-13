@@ -3,4 +3,15 @@ name_ja: 鯖江市
 region_ja: 福井県
 code: "18207"
 source:
-  index_url: https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi.html
+  # 自治体公式のごみ案内窓口
+  index_url: https://www.city.sabae.fukui.jp/kurashi_tetsuduki/gomi_risaikuru/kateigomi/index.html
+  # 通常収集日程の一次ソース（福井県オープンデータ CSV, 機械変換）。地区名/読みも同 CSV 由来
+  schedule_url: https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
+  # 年末年始・GW 特別収集など例外日の情報源（毎年更新。市役所ポスターの QR からも辿れる）
+  yearend_url: https://www.ecoplaza-sabae.jp/_files/ugd/622687_af9f8871cc87414789446ad8caf412fc.pdf
+notes:
+  # ↓ CSV には無く yearend_url/ポスターから拾う運用ルール。来年度更新時はここを確認する
+  - 可燃ごみは休日も収集する（週2回, 各コース固定曜日）
+  - 資源系（缶/びん/ペットボトル/古紙/古布/危険物/その他プラ）は祝日は収集しない。祝日は @holiday-jp で算出し overrides に休止として記載
+  - 年末年始は全種休止。休止日は yearend_url（エコプラザさばえ「年末年始のごみ収集」PDF, 毎年更新）で確認
+  - GW は資源収集日が2週連続で祝日になるコースに特別収集日あり（2026年度はコース4/水の 5/6, 資源も収集）。yearend_url/市役所ポスターで要確認
