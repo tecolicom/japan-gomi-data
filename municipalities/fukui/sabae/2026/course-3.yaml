@@ -82,3 +82,12 @@ rules:
     pattern: weekly
     days:
       - TH
+
+# 年末年始の休止は元CSVに無いため、鯖江公式「令和8年度 年末年始のごみの収集日」PDFより補完。
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止
