@@ -72,16 +72,10 @@ let n = 0;
 for (const sig of sigs) {
   n++;
   const { rules, areas } = bySig.get(sig);
-  const nb = rules.find((r) => r.category === 'non_burnable');
-  const name_ja =
-    `可燃${rules.find((r)=>r.category==='burnable').days.map(dJa).join('')}` +
-    `・不燃第${nb.occurrences.join('・')}${dJa(nb.days[0])}` +
-    `・プラ古紙${rules.find((r)=>r.category==='plastic').days.map(dJa).join('')}` +
-    `・缶${rules.find((r)=>r.category==='beverage_can').days.map(dJa).join('')}` +
-    `・ペット${rules.find((r)=>r.category==='pet_bottle').days.map(dJa).join('')}`;
   const doc = {
     metadata: {
-      city: 'nerima', course: String(n), course_name_ja: name_ja,
+      // course_name_ja は付けない: 曜日サマリの機械生成名は激長で UI/ICS の表示を壊す (2026-07-15 廃止)
+      city: 'nerima', course: String(n),
       areas: areas.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
       year: 2026, fiscal_year_ja: '令和8年度',
       source: {
@@ -97,4 +91,3 @@ for (const sig of sigs) {
 }
 console.log(`generated ${n} courses`);
 
-function dJa(x){return {SU:'日',MO:'月',TU:'火',WE:'水',TH:'木',FR:'金',SA:'土'}[x];}

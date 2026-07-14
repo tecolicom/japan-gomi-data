@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//tecoli//gomi//JP
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:ゴミ収集 44 可燃水土・不燃第2・4月・プラ古紙金・缶木・ペット木
+X-WR-CALNAME:ゴミ収集 44
 X-WR-TIMEZONE:Asia/Tokyo
 BEGIN:VEVENT
 UID:gomi-nerima-44-20260401@city.tecoli.com

@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//tecoli//gomi//JP
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:ゴミ収集 40 可燃水土・不燃第1・3月・プラ古紙火・缶火・ペット火
+X-WR-CALNAME:ゴミ収集 40
 X-WR-TIMEZONE:Asia/Tokyo
 BEGIN:VEVENT
 UID:gomi-nerima-40-20260401@city.tecoli.com
