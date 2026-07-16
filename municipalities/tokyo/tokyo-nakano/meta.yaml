@@ -1,0 +1,18 @@
+handle: tokyo-nakano
+name_ja: 中野区
+region_ja: 東京都
+code: "13114"
+source:
+  index_url: https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
+  # 一次ソース: 区オープンデータ CSV「資源とごみの収集曜日一覧」(CC BY 4.0)。
+  # 東京都カタログ https://catalog.data.metro.tokyo.lg.jp/dataset/t131148d0000000135 掲載、実体は下記 (中野区データマップ)。
+  schedule_url: https://www2.wagmap.jp/nakanodatamap/nakanodatamap/opendatafile/map_1/CSV/opendata_550239.csv
+  # 年末年始の確定情報は毎年12月頃に区 HP に掲載 (例: 2025年度は syusyuyobi/nenmatsu2025.html)。ここから辿る
+  yearend_url: https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/syusyuyobi/index.html
+notes:
+  - 祝日 (振替休日含む) も通常収集する。休みは日曜と年末年始のみ。
+  - "年末年始は 12/31〜1/3 の休止を overrides に反映 (前年度実績・23区標準)。区の年次カレンダー PDF は 12/28 以降の最終週を空白にしており (確定告知は12月頃に区HP掲載)、12/28〜12/30 の収集有無は 12月に yearend_url から要確認・要更新。前年度 (2025年度) はびん・缶・ペットのみ 1/4 まで休止だったが 1/4 が日曜のため実質差なし。"
+  - 古紙 (新聞・雑誌・雑がみ・段ボール)・古着・古布は区収集でなく町会等の集団回収 (回収団体ごとに日程が異なる) のため本データの対象外。
+  - 中野二・三・五丁目には「毎日収集地域」(駅前商業地区) があり公式表で除外されている。該当地域の詳細は収集曜日ページ群に記載なし。
+  - びん・缶・ペットボトルは同日収集。data では glass_bottle/beverage_can/pet_bottle の3カテゴリが同日規則を持つ。
+  - "検証(2026-07-16): オープンデータ CSV (最終確認日2021-02-08) と現行公式「中野区全域のごみと資源の収集曜日一覧」HTML 表が全42行×4種別で一致 (収集曜日は2021年から不変)。さらに町丁目別「資源とごみのカレンダー」PDF 全42枚 (R8-<N>.pdf、N は CSV の NO 列と一致) と通年機械照合し、全コースの曜日・第n週パターンが一致。差分はすべて区 PDF 側の誤植等: R8-28 は 2027-03 全体が1日ズレ印字・2027-01 最終週の日付欠落、R8-29 は 5/28・8/27 のチップ文字が「資源プラ」誤記 (チップ色は陶ガラ金で正)、R8-15/28 の 2026-04-27〜30 空白は未解明 (過去日のため影響なし)。"

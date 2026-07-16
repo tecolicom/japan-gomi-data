@@ -14,6 +14,7 @@
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
   - handle は leaf 名で全国一意。ツール(validate/build-ics/ダウンストリーム)は leaf を都市キーとして使う。
 - `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)
+- `tools/html-extractor/` / `tools/csv-extractor/` — HTML 表 / オープンデータ CSV からの抽出パイプライン
 - `docs/opendata-sources.md` — ごみ収集オープンデータの調査記録(新自治体収録時の探索ガイド・自治体別メモ)
 
 ## 収録自治体
@@ -28,6 +29,7 @@
 - 日高市 — `hidaka` (20コース)
 
 ### 東京都 (tokyo)
+- 中野区 — `tokyo-nakano` (25コース) ※区オープンデータ CSV 由来。町丁目別カレンダー PDF 全42枚と通年機械照合済み
 - 練馬区 — `nerima` (57コース)
 
 ### 福井県 (fukui)

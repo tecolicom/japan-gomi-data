@@ -1,0 +1,48 @@
+metadata:
+  city: tokyo-nakano
+  course: "20"
+  areas:
+    - name: 沼袋
+      yomi: ぬまぶくろ
+    - name: 野方4丁目
+      yomi: のがた4
+    - name: 松が丘2丁目
+      yomi: まつがおか2
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www2.wagmap.jp/nakanodatamap/nakanodatamap/opendatafile/map_1/CSV/opendata_550239.csv
+    extracted_at: 2026-07-16
+    extracted_by: claude-fable-5
+    verified_by: Claude(中野区オープンデータCSVの機械変換。現行公式HTML表と全行照合 + 町丁目別カレンダーPDF全42枚と通年機械照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - MO
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days: &a1
+      - TU
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+overrides:
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

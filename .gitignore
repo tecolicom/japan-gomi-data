@@ -1,2 +1,4 @@
 node_modules/
 tools/html-extractor/nerima/cache/
+tools/csv-extractor/tokyo-nakano/cache/
+__pycache__/

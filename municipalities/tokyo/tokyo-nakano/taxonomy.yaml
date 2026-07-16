@@ -1,0 +1,13 @@
+# 中野区。公式4区分: 燃やすごみ / 陶器・ガラス・金属ごみ / 資源プラスチック / びん・缶・ペットボトル。
+# びん・缶・ペットは同日別 category。古紙・古布は集団回収 (区収集外) のため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 陶器・ガラス・金属ごみ, short: 陶ガラ金 }
+  plastic: { label: 資源プラスチック }
