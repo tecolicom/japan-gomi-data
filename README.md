@@ -18,7 +18,10 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
   例: 上富良野町 = `town.kamifurano.lg.jp` → `kamifurano-town`。
 - **政令指定都市は市で 1 handle**(行政区は自治体ではなく lg.jp を持たない)。
   例: 川崎市 = `city.kawasaki.lg.jp` → `kawasaki`。
-- 新自治体を足すときは lg.jp ドメインの実在を確認して決める(例: `dig NS city.suginami.lg.jp` → 杉並区 = `suginami`)。
+
+全国分は生成済み: **[tecolicom/city-tecoli-data](https://github.com/tecolicom/city-tecoli-data)** の
+`municipalities/municipalities.yaml`(JPRS WHOIS で lg.jp 実在＋組織名を検証済みの全 1,786 自治体、CC0)。
+新自治体を足すときは自分で綴りを考えず**このレジストリを引く**。
 
 ## 構造
 - `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)

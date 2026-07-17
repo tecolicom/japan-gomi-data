@@ -74,7 +74,7 @@
 
 ### 杉並区 (未収録, 調査済み 2026-07-17)
 
-- handle: **`suginami`** — city-tecoli の city 識別子規約 (`docs/design/city-identifier-url-scheme.md`, lg.jp ラベル準拠) に基づく。`city.suginami.lg.jp` の存在を DNS で確認済み (2026-07-17。`city.tokyo-suginami.lg.jp` は不存在 = 県名前置なし)。
+- handle: **`suginami`** — 全国自治体レジストリ ([tecolicom/city-tecoli-data](https://github.com/tecolicom/city-tecoli-data) `municipalities.yaml`, code 13115) で確認。
 - **収集曜日のオープンデータは無い**。東京都カタログの杉並区 (組織 t131156) は「ごみ集積所一覧」「ごみの分別方法一覧」の 2 件のみ (2026-07-17 ブラウザで確認)。LinkData `rdf1s1306i`「杉並区ごみ収集日」は旧 (応答も不安定) で使わない。
 - **一次ソース候補: 区公式サイトの収集曜日検索を駆動する CSV** (公式ページ埋め込み、OD 宣言なし)
   - https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv (UTF-8 BOM 付き)
@@ -92,7 +92,7 @@
 
 ### 川崎市 (未収録, 調査済み 2026-07-17)
 
-- handle: **`kawasaki`** — lg.jp ラベル準拠 (`city.kawasaki.lg.jp` の存在を DNS で確認済み 2026-07-17)。川崎町 (宮城・福岡) とは lg.jp 側で種別/県名前置により分離される (例: `town.fukuoka-kawasaki.lg.jp`)。政令市の行政区は自治体でないため handle を持たない。
+- handle: **`kawasaki`** — 全国自治体レジストリ ([tecolicom/city-tecoli-data](https://github.com/tecolicom/city-tecoli-data) `municipalities.yaml`, code 14130) で確認。政令市の行政区は自治体でないため handle を持たない (川崎町 (宮城・福岡) とは lg.jp 側で種別/県名前置により分離)。
 - **収集日のオープンデータは無い**。市 OD カタログ (https://www.city.kawasaki.jp/main/opendata/opendata_list.html) のごみ関連は「ごみの分別オープンデータ」(分別辞典 CSV、ごみ分別アプリページ掲載) のみ。神奈川県カタログにも収集日系は見当たらず。
 - **一次ソース候補: 市公式の収集日一覧 HTML 表** (町名ごと、練馬方式で機械変換)。4 ページで全 7 区をカバー:
   - 川崎区: https://www.city.kawasaki.jp/300/page/0000012570.html (75 町名)
