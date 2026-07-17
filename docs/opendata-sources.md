@@ -52,7 +52,10 @@
     と運用ルール列まで持つ。鯖江の福井県 CSV (横持ち・種別が列) とはスキーマ別物な点に注意。
 - → 東京 23 区は共通スキーマに乗れないため、**区ごとに個別対応** (練馬 = HTML 変換、中野 = CSV + HTML 照合) が前提。
 
-### 中野区 (`tokyo/tokyo-nakano`, 収録準備中)
+### 中野区 (`tokyo/tokyo-nakano`, 収録済み)
+
+- 収録: `municipalities/tokyo/tokyo-nakano/` (25 コース)。抽出・照合パイプラインは
+  `tools/csv-extractor/tokyo-nakano/` (fetch → build → verify、下記の照合をすべて自動化済み)。
 
 - データセット: 中野区「資源とごみの収集曜日一覧」
   - dataset: `t131148d0000000135` / resource: `2372d8ea-1d6c-4df0-b4a8-b92fabafc331`
