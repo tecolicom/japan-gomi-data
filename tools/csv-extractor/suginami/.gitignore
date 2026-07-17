@@ -1,0 +1,2 @@
+# fetch.mjs が取得する一次ソース/PDF/冊子 (再取得可能・大きい。他 extractor と同様に非追跡)
+cache/

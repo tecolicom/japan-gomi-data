@@ -1,0 +1,15 @@
+# 杉並区。公式4区分: 可燃ごみ / 不燃ごみ / びん・かん・資源プラスチック / 古紙・ペットボトル。
+# 「びん・かん・資源プラスチック」は同日別 category (glass_bottle/beverage_can/plastic)。
+# 「古紙・ペットボトル」も同日別 category (paper/pet_bottle)。
+# 2026年4月から「資源プラスチック」収集開始 (現行4区分は令和8年度から)。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - glass_bottle
+  - beverage_can
+  - paper
+  - pet_bottle
+overrides:
+  plastic: { label: 資源プラスチック }
+  beverage_can: { label: かん, short: かん }

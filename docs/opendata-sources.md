@@ -85,20 +85,21 @@
 - 運用ルール: 祝日 (振替含む)・お盆も通常収集。年末年始はカレンダーに実日付で明示 (12/31・1/1 のみ全休、12/29〜30 は品目を絞って収集・移動あり) — 中野のような「12月に要確認」の空白が無い。
 - **検証 (2026-07-17)**: テキストカレンダーを機械抽出 → rules+overrides を categoriesOn で通年再展開 → 全 4 地区×365 日照合で**相違ゼロ**。
 
-### 杉並区 (未収録, 調査済み 2026-07-17)
+### 杉並区 (`tokyo/suginami`, 収録済み)
 
 - handle: **`suginami`** — 全国自治体レジストリ ([tecolicom/city-tecoli-data](https://github.com/tecolicom/city-tecoli-data) `municipalities.yaml`, code 13115) で確認。
+- 収録: **28 コース** (コース = 地域別カレンダー PDF 番号)・52 area (町丁目グループ)。抽出は `tools/csv-extractor/suginami/` (fetch → parse → build → verify)。
 - **収集曜日のオープンデータは無い**。東京都カタログの杉並区 (組織 t131156) は「ごみ集積所一覧」「ごみの分別方法一覧」の 2 件のみ (2026-07-17 ブラウザで確認)。LinkData `rdf1s1306i`「杉並区ごみ収集日」は旧 (応答も不安定) で使わない。
-- **一次ソース候補: 区公式サイトの収集曜日検索を駆動する CSV** (公式ページ埋め込み、OD 宣言なし)
-  - https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv (UTF-8 BOM 付き)
+- **一次ソース: 区公式サイトの収集曜日検索を駆動する CSV** (公式ページ埋め込み、OD 宣言なし)
+  - https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv (UTF-8。取得実体に BOM は無かった — パーサは有無どちらも吸収)
   - 同梱: [`sources/suginami_garbage_20260717.csv`](sources/suginami_garbage_20260717.csv)
   - 52 行 (町名×丁目グループ)、列: 五十音 / 町名 / 可燃ごみ (週2曜日) / 不燃ごみ (「第1,3水曜日」形式) / びん・かん・プラ / 古紙・ペットボトル / **地域別カレンダー PDF の URL** (`/shared/garbage/<N>.pdf`, N=1〜28)。
   - ユニークな曜日パターンは 26。PDF は 28 地域 (複数町名行が 1 PDF を共有)。コース単位は PDF 番号に揃えると照合が 1:1 になる。
 - 種別 4 区分 (2026年4月から資源プラ開始で現行区分に):
   可燃 (週2) / 不燃 (月2、第n回目=その月n回目の該当曜日) / 古紙・ペットボトル (週1同日) / びん・かん・資源プラスチック (週1同日)。
   → 正典: burnable / non_burnable / paper+pet_bottle 同日 / glass_bottle+beverage_can+plastic 同日。語彙追加は不要。
-- **検証ソース**: 地域別「収集カレンダー」PDF 28 枚 (`/shared/garbage/<N>.pdf`, 2026年度版・日付入り月間カレンダー) → 中野方式の通年機械照合が可能。
-  加えて全地域版冊子 P.21「ごみ・資源の収集曜日一覧」(https://www.city.suginami.tokyo.jp/documents/715/t2026zentiiki.pdf, 18MB) が全町丁目×4種別の一覧表。
+- **検証 (2026-07-17)**: 地域別「収集カレンダー」PDF 全 28 枚 (`/shared/garbage/<N>.pdf`, 2026年度版・日付入り) と通年機械照合 — 期待収集日 延べ 5,785 日で**差分ゼロ**。加えて全地域版冊子 P.21「ごみ・資源の収集曜日一覧」(https://www.city.suginami.tokyo.jp/documents/715/t2026zentiiki.pdf, 18MB) と CSV を突合し全 52 行の曜日パターンが一致。日付レベル独立照合 (中野と同等の最上位等級)。
+  PDF 側の印字癖 (一部 PDF の 12 月見出しグリフ二重打ち、月末セルのラベル文字分解、右端ページタブ数字の混入) は抽出器で吸収 — いずれもデータ誤りではなく描画起因。
 - 運用ルール (冊子 P.21 記載): **祝日もお盆も通常収集**。年末年始 (12/31〜1/3) のみ休止 (休止期間を変更する場合は 12 月の広報・区 HP で告知)。粗大ごみは事前申込制・有料 (受付センター 03-5296-5300)。
 - 清掃事務所は 2 管轄 (杉並清掃事務所 / 方南支所)。区指定ごみ袋なし。
 - サイト利用規約: 「Copyright © City Suginami. All rights reserved.」で CC BY 等の宣言なし。練馬と同じ「事実データの抽出」整理で扱う。

@@ -1,0 +1,54 @@
+metadata:
+  city: suginami
+  course: "5"
+  areas:
+    - name: 宮前2・3丁目
+      yomi: みやまえ2-3
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv
+    pdf_url: https://www.city.suginami.tokyo.jp/shared/garbage/5.pdf
+    extracted_at: 2026-07-17
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(杉並区公式の収集曜日 CSV の機械変換。地域別カレンダー PDF 全28枚と通年機械照合 + 全地域版冊子P.21一覧表と突合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - FR
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - SA
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: paper
+    pattern: weekly
+    days: &a2
+      - FR
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
