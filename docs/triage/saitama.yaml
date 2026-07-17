@@ -6,26 +6,34 @@
 #   population: 埼玉県推計人口 2026-06-01 現在
 #   status: collected = 収録済み (飯能・日高)
 # 調査は 1 自治体 10 分の見切り。unknown/null は「未確認」であり「無い」ではない。
-# 県共同のごみ収集日データセットは無い (2026-07-17 確認。福井方式は使えない)。
-- code: '11100'
+# 県共同のごみ収集日データセットは無い (2026-07-17 確認。福井方式は使えない)。- code: '11100'
   handle: saitama
   name_ja: さいたま市
   population: 1351082
-  source_type: app-only
-  schedule_url: https://www.city.saitama.jp/001/006/010/007/p041882.html
-  calendar_urls: []
-  verify_sources: []
-  license: unknown
-  difficulty: 4
-  district_unit: 町丁目
-  district_count_approx: null
-  yearend: unknown
-  notes: 収集日検索は第三者「ごみサク(gomisuke)」app id=0017 が駆動。area.html は admin.gomisuke.jp/app/0017/api/gomisuke_ssl.js + gomisuke.css
-    を読み込み、gomisukeData/gomisukeQuery/gomisuke_calendar 等で住所→収集日を表示する JS 実装。 市サイト内に素の収集曜日 CSV/JSON/HTML表/PDF は本調査(ローカル素材)では確認できず。gomisuke
-    側の JSON データファイル (gomisukeData) を辿れば機械抽出できる可能性は高いが、エンドポイントの実体取得は統括の追加調査禁止指示により未実施 → difficulty=4 と評価 (素の市 CSV/HTML
-    でないため 2 ではなく、明確な画像PDFでもないため gomisuke API 解析コスト相当を 4 とした)。 政令市10区。curl 403 の有無は未確認。市公式「ごみ分別アプリ」も同 gomisuke 由来のため独立検証源にならない。
-    ※本ファイルは調査エージェント完了前に統括の即時書き出し指示に従い G1 がローカル素材(area.html/gomisuke.js)から作成。 未確認項目(license/yearend/データファイル実体)は推測で埋めず
-    unknown/null とし理由を明記。
+  source_type: json
+  schedule_url: https://admin.gomisuke.jp/app/0017/api/jsonp.php?file=calendar
+  calendar_urls:
+  - https://www.city.saitama.lg.jp/001/006/010/003/p042612.html?page=area
+  - https://www.city.saitama.lg.jp/001/006/010/003/p001912.html
+  - https://www.city.saitama.lg.jp/001/006/010/003/p005300_d/fil/r8_jp_gomimanual.pdf
+  verify_sources:
+  - site-json
+  - booklet
+  license: proprietary-site
+  difficulty: 2
+  district_unit: 地区
+  district_count_approx: 70
+  yearend: calendar-explicit
+  notes: '【前回G1のdifficulty=4/unknownを是正】gomisukeエンドポイントの実体取得を実施し疑問点を解消。 一次ソースは優先順③に該当する JSON(JSONP)。さいたま市公式カレンダーページ
+    (p042612.html?page=area)は第三者商用サービス「ごみすけ(gomisuke)」app0017を埋め込み、 実データは admin.gomisuke.jp/app/0017/api/jsonp.php?file={area,type,calendar}
+    から JSONP で配信(curl 200・認証不要、Referer付与で取得確認済)。3ファイル結合で完全再構成可: (1) file=area … areaID→町名リスト(全70エリア, 【区名】::町名… 形式)
+    (2) file=type … typeID→ごみ種別名(1もえるごみ/2もえないごみ/6びん/7かん/8ペット/9容プラ/4古紙/5繊維/3有害危険/…/15お休み) (3) file=calendar(約290KB)
+    … 月×areaID×日→typeID群。202601〜202703 の15ヶ月ローリング(年末年始含む)。 政令市10区は全区この単一 gomisuke システムで統一(区ごとに別ソース構造は無い)。収集グループ数は
+    区で差(南区13が最多、西区3が最少)。アプリ「さいちゃん(jp.gomisuke.app.Gomisuke0017)」iOS/Android も同バックエンド。 年末年始は毎年カレンダーデータに直接反映され明示的(告知待ちでない)。
+    埼玉県ODポータル opendata.pref.saitama.lg.jp にごみ収集日の個別ODは無し(確認済)。 出し方マニュアルPDF(r8)はテキスト層あり=検証用に利用可。gomisuke配信データは商用サービス由来で
+    ライセンス明示なし=proprietary-site 扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。
+
+    '
   surveyed_at: '2026-07-17'
 - code: '11201'
   handle: kawagoe
