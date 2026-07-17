@@ -162,7 +162,7 @@
   - course-pdf
   - booklet
   license: CC-BY-4.0
-  difficulty: 1
+  difficulty: 2
   granularity: weekday-rules
   district_unit: 町丁目 (丁目単位でグループ化した町丁名)
   district_count_approx: 39
@@ -173,7 +173,8 @@
     令和7年更新)。同一データが公式HTML表 shushubi_zentai.html (HTTP 200, 町丁名×資源/燃やす/ 燃やさない、ページ内埋め込み) にもあり検証ソースとして利用可。日付入り通年カレンダーが必要なら
     R8ごみ出しカレンダーの地域別PDF (整理番号01〜12, 例 .../R8gomidasikarennda-.files/2026_01L.pdf, 色分け実日付) が別途あり (未DL検証)。年末年始: CSV/HTML表は曜日規則のみで年末年始の記載なし。
     別途12月に告知される想定のため december-announce と判定 (ただし地域別PDFカレンダーには実日付が 載る可能性が高い=未確認)。東京都カタログ (catalog.data.metro.tokyo.lg.jp/organization/t131067)
-    はCLI 403だが、リソース実体は区ドメイン配布で curl 取得可能。population=216084は令和7(2025)住基。'
+    はCLI 403だが、リソース実体は区ドメイン配布で curl 取得可能。population=216084は令和7(2025)住基。 【統括正規化】difficulty 1→2: d1 は県共同/標準スキーマ専用
+    (単独自治体の OD CSV は中野の先例どおり d2)。'
   surveyed_at: '2026-07-18'
 - code: '13107'
   handle: sumida
@@ -1113,7 +1114,7 @@
   - OD分別辞典CSV (opendata.metro.tokyo.lg.jp/higashikurume/132225_higashikurumeshi_garbage_separate.csv)
   - ごみサク分別辞典 (https://www.gomisaku.jp/0069/)
   - ごみカレンダー.com (https://gomi-calendar.com/tokyo/higashikurume/)
-  license: CC-BY-4.0
+  license: unknown
   difficulty: 2
   granularity: weekday-rules
   district_unit: 地区 (東地域 / 西地域, 各地区内は町丁で構成)
@@ -1124,7 +1125,7 @@
     西地域(小山/幸町/野火止/八幡町/下里/南町/前沢/弥生/滝山/柳窪 の10町丁)。 曜日ルール例: 東地域=月:容器包装プラ・PET/火:燃やせるごみ・びん/水:燃やせないごみ・有害/木:缶・紙・布/金:燃やせるごみ・びん。
     西地域=月火が入替+金:缶・紙・布。収集曜日のCSV/JSONは不在(OD配布ドメインにあるCSVは 132225_higashikurumeshi_garbage_separate.csv=品目別分別辞典1109行UTF-8BOM、schedule系名8パターン試行全404)。
     年末年始は祝日ページ1024838.htmlで「決まり次第掲載」=随時告知。HTMLに<table>が無いためPDFのテキスト層の方が 地区↔町丁↔曜日の対応が取りやすい(source_typeはpdfも実用候補)。catalog.data.metro.tokyo.lg.jpはWebSearch経由でのみ到達(CLI
-    403想定)。 ライセンス: 分別CSVはCC-BY-4.0だが収集日程ページ/PDF自体のライセンス明記は未確認。'
+    403想定)。 ライセンス: 分別CSVはCC-BY-4.0だが収集日程ページ/PDF自体のライセンス明記は未確認。 【統括正規化】license: CC-BY は市OD分別CSVのもので収集日程ソース自体は unknown。'
   surveyed_at: '2026-07-18'
 - code: '13223'
   handle: musashimurayama

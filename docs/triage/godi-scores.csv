@@ -17,7 +17,6 @@ tokyo,13103,minato,港区,270458,pdf,20,10,20,10,15,75,A,
 tokyo,13208,chofu,調布市,242418,txt,20,20,20,10,5,75,A,E
 tokyo,13211,kodaira,小平市,198303,pdf,20,10,20,10,15,75,A,
 tokyo,13212,hino,日野市,189522,pdf,20,10,20,10,15,75,A,
-tokyo,13222,higashikurume,東久留米市,116809,html,15,15,10,20,15,75,A,
 tokyo,13220,higashiyamato,東大和市,85022,pdf,20,10,20,10,15,75,A,
 tokyo,13228,akiruno,あきる野市,78460,pdf,20,10,20,10,15,75,A,
 tokyo,13221,kiyose,清瀬市,76157,pdf,20,10,20,10,15,75,A,
@@ -66,6 +65,7 @@ tokyo,13203,musashino,武蔵野市,148594,pdf,20,10,10,10,15,65,B,
 saitama,11227,asaka,朝霞市,147521,html,20,15,10,10,10,65,B,CD
 saitama,11232,kuki,久喜市,146995,pdf,20,10,10,10,15,65,B,C
 saitama,11237,misato,三郷市,140427,pdf,20,10,10,10,15,65,B,CD
+tokyo,13222,higashikurume,東久留米市,116809,html,15,15,10,10,15,65,B,D
 tokyo,13207,akishima,昭島市,116765,pdf,20,10,20,10,5,65,B,E
 saitama,11239,sakado,坂戸市,98990,pdf,20,10,10,10,15,65,B,C
 saitama,11465,matsubushi-town,松伏町,26882,pdf,20,10,10,10,15,65,B,C
