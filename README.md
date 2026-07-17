@@ -5,8 +5,20 @@
 
 - ライセンス: CC BY 4.0(出典を明記すれば自由に利用可)
 - 収録範囲: 収集日程 + 種別定義。品目→種別の分別辞書は対象外。
-- 自治体キー: **handle**(lg.jp ラベル体系。市は無印、町は `-town` 等。全国一意)。
+- 自治体キー: **handle**(lg.jp ドメインのラベルに準拠、全国一意。規則は下記)。
   ディレクトリは都道府県で束ねる: `municipalities/<都道府県>/<handle>/`
+
+## handle の命名規則
+
+handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPRS 管理)から機械的に決める。自前では採番しない(一意性は lg.jp 側の先願主義が保証する)。
+
+- **`<値>` をそのまま使う**。同名重複で後願側が県名を前置している場合はそれも含む。
+  例: 中野区 = `city.tokyo-nakano.lg.jp` → `tokyo-nakano`(先願の長野県中野市が `city.nakano.lg.jp`)。
+- **種別は `city`(市・特別区)を省略**し、それ以外は接尾辞で明示する: 町 `-town` / 村 `-vill`。
+  例: 上富良野町 = `town.kamifurano.lg.jp` → `kamifurano-town`。
+- **政令指定都市は市で 1 handle**(行政区は自治体ではなく lg.jp を持たない)。
+  例: 川崎市 = `city.kawasaki.lg.jp` → `kawasaki`。
+- 新自治体を足すときは lg.jp ドメインの実在を確認して決める(例: `dig NS city.suginami.lg.jp` → 杉並区 = `suginami`)。
 
 ## 構造
 - `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)
