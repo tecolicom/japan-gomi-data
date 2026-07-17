@@ -1,0 +1,32 @@
+# 調布市。公式区分(ごみリサイクルカレンダー):
+#   燃やせるごみ / 燃やせないごみ / 容器包装プラスチック / 古紙・古布 /
+#   シュレッダー紙 / ビン / カン / ペットボトル / 有害ごみ
+# シュレッダー紙(シュレッダーにかけた古紙)はビンと同日に週1収集され、
+# 別日・週1の古紙・古布(paper_cloth)とは収集日が異なるため paper として分離。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper_cloth
+  - paper
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - hazardous
+overrides:
+  burnable:
+    label: 燃やせるごみ
+  non_burnable:
+    label: 燃やせないごみ
+  plastic:
+    label: 容器包装プラスチック
+    short: 容プラ
+  paper_cloth:
+    label: 古紙・古布
+  paper:
+    label: シュレッダー紙
+    short: シュレッダー
+  glass_bottle:
+    label: ビン
+  beverage_can:
+    label: カン
