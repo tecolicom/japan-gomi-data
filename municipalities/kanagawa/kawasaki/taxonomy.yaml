@@ -1,0 +1,18 @@
+# 川崎市。公式区分: 普通ごみ / 空き缶・ペットボトル・空きびん・使用済み乾電池 (同日) /
+# ミックスペーパー / プラスチック資源 / 小物金属 (粗大ごみと同日・粗大は申込制)。
+# 空き缶等の4種は同日別 category。
+categories:
+  - burnable
+  - beverage_can
+  - pet_bottle
+  - glass_bottle
+  - hazardous
+  - paper
+  - plastic
+  - metal
+overrides:
+  burnable: { label: 普通ごみ, short: 普通 }
+  hazardous: { label: 使用済み乾電池, short: 乾電池 }
+  paper: { label: ミックスペーパー, short: ミックス }
+  plastic: { label: プラスチック資源, short: プラ }
+  metal: { label: 小物金属, short: 小物金属 }

@@ -103,9 +103,14 @@
 - 清掃事務所は 2 管轄 (杉並清掃事務所 / 方南支所)。区指定ごみ袋なし。
 - サイト利用規約: 「Copyright © City Suginami. All rights reserved.」で CC BY 等の宣言なし。練馬と同じ「事実データの抽出」整理で扱う。
 
-### 川崎市 (未収録, 調査済み 2026-07-17)
+### 川崎市 (`kanagawa/kawasaki`, 収録済み)
 
 - handle: **`kawasaki`** — 全国自治体レジストリ ([tecolicom/city-tecoli-data](https://github.com/tecolicom/city-tecoli-data) `municipalities.yaml`, code 14130) で確認。政令市の行政区は自治体でないため handle を持たない (川崎町 (宮城・福岡) とは lg.jp 側で種別/県名前置により分離)。
+- 収録: 全 7 区 255 町名 → **80 コース**。抽出は `tools/html-extractor/kawasaki/` (fetch → parse → build)。
+- **政令市の区表現 (先例として確定)**: コースは区ごとにグルーピングし course slug = `<区romaji>-<n>` (course-saiwai-3 等)。区 romaji = 川崎 kawasaki / 幸 saiwai / 中原 nakahara / 高津 takatsu / 宮前 miyamae / 多摩 tama / 麻生 asao。areas の name は公式表の町名表記そのまま、区をまたぐ同名 (梶ヶ谷 = 高津・宮前) のみ「町名（区名）」で解消 — 市のカバー PDF 自身も同じ表記で区別している。
+- **照合 (2026-07-17)**: 区別カバー PDF 5 枚は Microsoft Print To PDF 製で**テキスト層が無く** (文字はベクタアウトライン) pdftotext 不可 → 画像化+目視転記で機械比較した。PDF は HTML と別レイアウト (上表=週次パターンで町をグルーピング / 下表=小物金属パターンでグルーピング) の再ファクタ表で、独立照合として機能する。**254/254 町一致・不一致ゼロ**。
+- 照合で判明した唯一の差異: **宮前区「野川」が PDF に掲載漏れ** (上表・下表とも)。HTML には存在し同一パターン町 (野川台・西野川ほか) と完全一致 → HTML 準拠で収録 (PDF 側の漏れと判断)。
+- 高津宮前・多摩麻生の R8 版 PDF は「令和8年4月収集分から」の新スケジュール (発行 令和8年2月)。現行 HTML もこれに一致。
 - **収集日のオープンデータは無い**。市 OD カタログ (https://www.city.kawasaki.jp/main/opendata/opendata_list.html) のごみ関連は「ごみの分別オープンデータ」(分別辞典 CSV、ごみ分別アプリページ掲載) のみ。神奈川県カタログにも収集日系は見当たらず。
 - **一次ソース候補: 市公式の収集日一覧 HTML 表** (町名ごと、練馬方式で機械変換)。4 ページで全 7 区をカバー:
   - 川崎区: https://www.city.kawasaki.jp/300/page/0000012570.html (75 町名)
