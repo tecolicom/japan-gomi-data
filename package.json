@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "test": "node scripts/validate.mjs",
+    "test": "node scripts/validate.mjs && node --test tools/_lib/lib.test.mjs",
     "build:ics": "node scripts/build-ics.mjs"
   },
   "devDependencies": {

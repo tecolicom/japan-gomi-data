@@ -24,6 +24,7 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 新自治体を足すときは自分で綴りを考えず**このレジストリを引く**。
 
 ## 構造
+- `docs/playbook.md` — **新自治体の収録手順書** (ソース探索の優先順・実装規約・照合とサンプリング・エージェント並行運用)
 - `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)
 - `municipalities/<都道府県>/<handle>/` — `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml`
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
@@ -31,6 +32,8 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 - `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)
 - `tools/html-extractor/` / `tools/csv-extractor/` — HTML 表 / オープンデータ CSV からの抽出パイプライン
 - `tools/txt-extractor/` — 自治体配布のテキスト版カレンダー (日付入り通年) からの抽出パイプライン
+- `tools/_lib/` — extractor 共通部品 (曜日/第n回目パース・categoriesOn 正典展開・コース畳み込み・照合と rule of three・レジストリ)。build-ics も同じ展開を使う
+- `tools/_template/` — 新自治体 extractor の雛形 (コピーして使う)
 - `docs/opendata-sources.md` — ごみ収集オープンデータの調査記録(新自治体収録時の探索ガイド・自治体別メモ)
 
 ## 収録自治体

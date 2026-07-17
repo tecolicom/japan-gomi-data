@@ -1,0 +1,87 @@
+# 新自治体 収録プレイブック
+
+9 自治体の実績 (2026-07-17 時点) を蒸留した、1 自治体を最短で収録するための手順書。
+エージェント (または人) はこれと [`opendata-sources.md`](opendata-sources.md) を読んでから着手する。
+
+## 0. handle を引く (1 分)
+
+自分で綴りを考えない。全国自治体レジストリ
+[tecolicom/city-tecoli-data](https://github.com/tecolicom/city-tecoli-data) の `municipalities.yaml`
+(lg.jp/WHOIS 検証済み 1,786 件) から `handle` / `code` / `yomi` を引く。
+コードからは `tools/_lib/registry.mjs` の `lookupMunicipality()` が使える。
+配置は `municipalities/<都道府県romaji>/<handle>/`。
+
+## 1. ソース調査 (30 分で見切る)
+
+**優先順に探す** (上ほど良い。見つかった時点で下は補助に回す):
+
+1. **テキスト版カレンダー** — 視覚障害者向け等で市が配布する「日付・曜日・品目」列挙のテキスト。
+   日付レベルで直接照合でき最良 (調布)。検索: `site:city.<x>.lg.jp カレンダー テキスト版`
+2. **収集曜日のオープンデータ CSV** — 自治体 OD カタログ・都道府県カタログ (中野)。
+   都カタログ等は CLI から 403 のことがある → リソース実体 (自治体ドメイン) の URL を検索で見つけて curl。
+3. **公式サイト内の CSV/JSON** — 収集曜日検索ページを駆動するデータファイル (杉並の garbage.csv)。
+   ページの HTML ソースから `.csv` `.json` への参照を grep する。
+4. **公式 HTML 表** — 町名×種別の一覧表 (練馬・川崎)。
+5. **テキスト層のある PDF** — pdftotext で機械抽出 (上富良野・中野の照合 PDF)。
+6. **テキスト層のない PDF** (Print To PDF 製・画像) — 最終手段。全数転記はせず §4 のサンプリングで。
+
+同時に調べて記録するもの:
+- **検証ソース** (一次と独立な第2表現): 地域別カレンダー PDF、冊子の一覧表、別レイアウトのカバー表 等
+- **運用ルール**: 祝日・振替・お盆の収集有無 / 年末年始の休止日 (毎年 12 月告知型か、カレンダーに明示か)
+  / 粗大ごみの扱い (申込制なら rules 対象外) / 集団回収 (区収集外の品目)
+- **ライセンス**: OD なら CC BY 等を記録。通常ページなら「事実データの抽出」整理 (練馬先例) で可
+- 地区割の単位 (町丁目 / 地区番号 / コース) と、丁目分割・区またぎ同名の有無
+
+**ソースが機械可読でない・地区割に確信が持てないなら、作らずに調査報告で止める** (推測でデータを作らない)。
+
+## 2. 実装 (tools/_lib を使う)
+
+`tools/_template/` を `tools/<形式>-extractor/<handle>/` にコピーして埋める。
+共通部品 (`tools/_lib/`) にあるものを再実装しない:
+
+| 部品 | 提供 |
+|---|---|
+| jp.mjs | 曜日・第n回目の日本語パース、町名正規化 |
+| schedule.mjs | categoriesOn 展開 (正典)、署名キー、年末 overrides |
+| emit.mjs | コース畳み込み、course YAML 出力 (フィールド順統一) |
+| fetch.mjs | キャッシュつき取得 (encoding 対応) |
+| verify.mjs | 通年 diff、rule of three、層化サンプリング |
+| registry.mjs | レジストリ lookup |
+
+規約:
+- 「第n」は全都市「その月 n 回目の該当曜日」(第n週ではない)。頻度が季節変動する品目 (調布のペット等) は
+  weekly にせず monthly_specific (実日付列挙) で。
+- 同日収集グループは days 配列を共有 (YAML anchor になり同日性が明示される)。
+- 政令市はコース slug を `<区romaji>-<n>`、区またぎ同名町は「町名（区名）」(川崎先例)。
+- taxonomy.yaml は `schema/categories.yaml` の部分集合 + ラベル override。**新語彙が要りそうなら追加せず相談**。
+- 未パース表記は throw (黙って落とさない)。`Date.now()` 禁止 (EXTRACTED_AT を env で)。
+
+## 3. 照合 (docs/opendata-sources.md「検証の考え方」に従う)
+
+- 独立ソースがあれば `expandFiscalYear` + `diffYear` で機械照合。日付レベル > 曜日レベル。
+- **高コスト照合 (目視転記など) は全数をやらない**: 目標上限 p* を決め n≈3/p* 件 (5%なら60件) を
+  層化サンプリング (`sampleStratified` + 例外的な行を追加) → ゼロ不一致で打ち切り。不一致 1 件で昇格。
+- 不一致はベイズ的に裁定 (印刷物側の誤植事前確率が高い。同パターン隣接町・他表と突き合わせ)、
+  判断根拠を notes に書く。**ソースを勝手に「修正」しない**。
+- meta.yaml notes に「確率的信頼度:」1 行 (N=独立誤り単位のパターン/行数、rule of three 上限、残余リスク、等級)。
+
+## 4. 仕上げ
+
+1. `municipalities/<県>/<handle>/` の meta.yaml (source 3 URL + notes: 運用ルール・年末年始・検証・確率的信頼度)
+2. ルートで `npm test` (schema+語彙+整合) と `node --test tools/_lib/` を通す
+3. `node scripts/build-ics.mjs` (統合担当が実行・commit することが多い)
+4. docs/opendata-sources.md への追記案・README 収録リスト更新案を報告 (docs は統合担当が編集)
+5. 一次ソースのスナップショットを `docs/sources/<handle>_…_<日付>` へ (統合担当)
+
+## 5. エージェント並行運用 (統括者向け)
+
+2026-07-17 に 3 自治体 (杉並・川崎・調布) を 1 日で収録した実証済みモデル:
+
+- **1 自治体 1 エージェント**。書き込み許可は `tools/*/<handle>/` と `municipalities/<県>/<handle>/` のみ。
+  docs/・schema/・他自治体・git 操作は禁止 (統合担当が一元処理)。
+- 指示に含める確定事項: handle (レジストリで引いた値)、一次ソース URL (調査済みなら)、
+  カテゴリ対応の当たり、運用ルール、本プレイブックと手本自治体の参照。
+- 完了報告の様式: コース数・area 数 / 照合統計 (N・不一致内訳・確率的信頼度) / npm test 結果 /
+  docs 追記案 / 未解決事項。
+- 統合担当はレビューで **報告を鵜呑みにせず追試** する: verify 再実行、抜き取りで一次ソースを直接見る、
+  build 再現、npm test。その後 docs 統合 → ics 生成 → 自治体単位で commit。
