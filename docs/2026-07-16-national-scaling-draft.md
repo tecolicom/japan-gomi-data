@@ -203,7 +203,7 @@ Phase 1 の第一県として埼玉 63 自治体 (収録済み飯能・日高含
   鶴ヶ島の「テキスト版」は収集曜日変更有無の要約文のみで**調布型ではなかった**)
 - **granularity** (2026-07-18 バックフィル): dates (日付入り通年) 40 / weekday-rules 20 / partial 1 / none 1 / unknown 1 —
   6 割超が日付入りソースを持つ (ほぼカレンダー PDF 形態)
-- **source_type**: pdf 31、html 15、image-pdf 11、json 1 (さいたま)、csv/xls/none 各 1
+- **source_type**: pdf 33、html 15、image-pdf 10、json 2 (さいたま・行田)、csv/xls/none 各 1
 - **人口カバー**: 県人口 729 万のうち difficulty≤3 で **83%**。
   残りは d4 の上尾・春日部・戸田・富士見・加須・北本・鶴ヶ島など (いずれも画像 PDF)。
 - さいたま市 (135万) の一次は第三者商用サービス「ごみすけ」の JSONP API
