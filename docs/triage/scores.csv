@@ -31,7 +31,6 @@ saitama,11207,chichibu,秩父市,53932,pdf,20,10,18,10,15,73,B,
 saitama,11242,hidaka,日高市,53141,pdf,20,10,18,10,15,73,B,
 saitama,11240,satte,幸手市,47564,pdf,20,10,18,10,15,73,B,
 saitama,11326,moroyama-town,毛呂山町,32987,pdf,20,10,18,10,15,73,B,
-tokyo,13303,tokyo-mizuho-town,瑞穂町,31893,pdf,20,10,18,10,15,73,B,
 saitama,11465,matsubushi-town,松伏町,26882,pdf,20,10,18,10,15,73,B,
 saitama,11343,saitama-ogawa-town,小川町,26033,pdf,20,10,18,10,15,73,B,D
 saitama,11346,kawajima-town,川島町,17788,pdf,20,10,18,10,15,73,B,
@@ -75,6 +74,7 @@ tokyo,13206,tokyo-fuchu,府中市,263231,image-pdf,20,3,18,10,15,66,B,D
 saitama,11210,kazo,加須市,109479,image-pdf,20,3,18,10,15,66,B,D
 saitama,11241,tsurugashima,鶴ヶ島市,70534,image-pdf,20,3,18,10,15,66,B,
 saitama,11301,saitama-ina-town,伊奈町,44420,image-pdf,20,3,18,10,15,66,B,
+tokyo,13303,tokyo-mizuho-town,瑞穂町,31893,image-pdf,20,3,18,10,15,66,B,
 tokyo,13121,adachi,足立区,708138,pdf,20,10,10,10,15,65,B,D
 tokyo,13105,bunkyo,文京区,237413,pdf,20,10,10,10,15,65,B,
 tokyo,13203,musashino,武蔵野市,148594,pdf,20,10,10,10,15,65,B,

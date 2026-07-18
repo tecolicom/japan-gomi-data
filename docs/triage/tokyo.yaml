@@ -1396,7 +1396,7 @@
   handle: tokyo-mizuho-town
   name_ja: 瑞穂町
   population: 31893
-  source_type: pdf
+  source_type: image-pdf
   schedule_url: https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693.html
   calendar_urls:
     - https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-1.pdf
@@ -1429,7 +1429,9 @@
     収集曜日のCSV/JSON等の機械可読データは無し: opendata.metro.tokyo.lg.jp/mizuho/ には
     133035_mizuhomachi_garbage_separate_rule.csv (curl 200 text/csv 1626, 分別ルールのみ・収集日情報なし) が存在するが、
     collect系の収集日CSVは 404。カレンダーHTMLページ内にも .csv/.json 参照なし(grepでPDFリンクのみ)。 ライセンス:
-    PDFは町サイト著作物で開放ライセンス表示なし=proprietary-site。ODのrule.csvは東京都OD標準だが本件スケジュールには非該当。"
+    PDFは町サイト著作物で開放ライセンス表示なし=proprietary-site。ODのrule.csvは東京都OD標準だが本件スケジュールには非該当。 【統括実確認 2026-07-18】健全度検査
+    (かな漢字+ASCII比率 27.6%) で本体の日付グリッドが CID フォント化けと確認。エージェント判定 (実質画像PDF) どおり image-pdf
+    に是正。杉戸と同じく「テキスト層はあるが実用不能」型。"
   surveyed_at: 2026-07-18
 - code: "13305"
   handle: hinode-town
