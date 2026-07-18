@@ -4,6 +4,7 @@
 #   status: collected = 収録済み (中野・練馬・杉並・調布)
 # 調査は 1 自治体 10 分の見切り。unknown/null は「未確認」であり「無い」ではない。
 # 都カタログは CLI 403 だが CKAN API (/api/3/action/*) と リソース実体 (www.opendata.metro.tokyo.lg.jp) は curl 可。
+# PDF テキスト層は 2026-07-18 に全数実測検査済み (直接URL 80件、主張との不一致なし)。
 - code: '13101'
   handle: chiyoda
   name_ja: 千代田区

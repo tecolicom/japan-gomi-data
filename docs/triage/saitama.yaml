@@ -7,6 +7,7 @@
 #   status: collected = 収録済み (飯能・日高)
 # 調査は 1 自治体 10 分の見切り。unknown/null は「未確認」であり「無い」ではない。
 # 県共同のごみ収集日データセットは無い (2026-07-17 確認。福井方式は使えない)。
+# PDF テキスト層は 2026-07-18 に全数実測検査済み (直接URL 80件を取得し pdftotext 検査。主張との不一致は深谷1件のみ→是正)。
 - code: '11100'
   handle: saitama
   name_ja: さいたま市
@@ -384,7 +385,7 @@
   handle: fukaya
   name_ja: 深谷市
   population: 137934
-  source_type: pdf
+  source_type: html
   schedule_url: https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/kankyoeisei/tanto/gomi/1391428524402.html
   calendar_urls:
   - https://www.city.fukaya.saitama.jp/material/files/group/36/R8gominowakekatadaskata.pdf
@@ -427,9 +428,8 @@
 
     gomisaku.jp/0135 は分別辞典のみで収集日データなし。nishi.or.jp のごみカレンダーは非公式第三者で信頼性未検証。
 
-    curlはPDF 200取得可(403なし)。合併(2006 岡部・川本・花園)は地区名として現存。
-
-    '
+    curlはPDF 200取得可(403なし)。合併(2006 岡部・川本・花園)は地区名として現存。 【統括是正 2026-07-18】source_type を pdf→html に是正: notes のとおりリーフレットは画像PDF
+    (全数検査でも実測0字) で、機械可読の一次は公式HTMLの曜日規則テキスト。'
   surveyed_at: '2026-07-17'
   granularity: weekday-rules
 - code: '11219'

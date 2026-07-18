@@ -49,6 +49,7 @@ saitama,11231,okegawa,桶川市,73060,html,20,15,10,10,15,70,B,
 saitama,11385,kamisato-town,上里町,29434,html,20,15,10,10,15,70,B,D
 tokyo,13381,miyake-vill,三宅村,2108,html,20,20,10,10,10,70,B,D
 tokyo,13104,shinjuku,新宿区,356134,html,20,15,14,10,10,69,B,
+saitama,11218,fukaya,深谷市,137934,html,20,15,14,10,10,69,B,D
 saitama,11100,saitama,さいたま市,1351082,json,10,25,18,5,10,68,B,A
 tokyo,13201,hachioji,八王子市,559753,pdf,20,10,18,10,10,68,B,
 tokyo,13110,meguro,目黒区,283795,pdf,20,10,18,10,10,68,B,
@@ -87,7 +88,6 @@ tokyo,13382,mikurajima-vill,御蔵島村,287,html,20,15,10,10,10,65,B,
 saitama,11201,kawagoe,川越市,355376,pdf,20,10,14,10,10,64,B,
 tokyo,13202,tachikawa,立川市,188040,html,15,15,14,10,10,64,B,D
 tokyo,13213,higashimurayama,東村山市,152444,pdf,15,10,14,10,15,64,B,D
-saitama,11218,fukaya,深谷市,137934,pdf,20,10,14,10,10,64,B,D
 tokyo,13227,hamura,羽村市,53953,pdf,20,10,14,10,10,64,B,D
 saitama,11221,soka,草加市,251623,pdf,20,10,18,10,5,63,B,DE
 tokyo,13207,akishima,昭島市,116765,pdf,20,10,18,10,5,63,B,E
