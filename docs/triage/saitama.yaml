@@ -187,10 +187,12 @@
   name_ja: 飯能市
   population: 77256
   status: collected
-  source_type: pdf
-  difficulty: 3
+  source_type: image-pdf
+  difficulty: 4
   notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hanno-data の sources.yaml から一次ソースを転記:
-    コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に override。検証ソースは単一。'
+    コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に override。検証ソースは単一。
+    【統括実確認 2026-07-18】「テキスト層あり」は誤った推定だった。2026haraichibanaguri.pdf を実取得し pdftotext 出力 2 バイト = テキスト層なしの画像 PDF と確認
+    → image-pdf/d4 に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。'
   granularity: dates
   schedule_url: https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
   calendar_urls: []
