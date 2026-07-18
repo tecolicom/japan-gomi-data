@@ -1547,7 +1547,7 @@
   handle: sugito-town
   name_ja: 杉戸町
   population: 42377
-  source_type: pdf
+  source_type: image-pdf
   schedule_url: https://www.town.sugito.lg.jp/page/18664.html
   calendar_urls:
     - https://www.town.sugito.lg.jp/uploaded/attachment/16368.pdf
@@ -1566,7 +1566,9 @@
     (町内会区域: A=中央1・中央3, B=中央2・中央4, C=西, D=東・南・泉)。地区割は地図PNGあり。
     PDFはスキャン画像+隠しOCR層(HiddenHorzOCRフォント)構成の5.5MB画像PDF。pdftotext 抽出結果は激しく文字化けし信頼できず→実質OCR必要(difficulty
     4)。CSV/JSON参照なし。 埼玉県ODポータルに杉戸町のごみ収集曜日データセットは見当たらず(掲載は吉川市等)。 自治体ODカタログも未確認だが公式にCSV提供の痕跡なし。年末年始はPDF内カレンダーに
-    埋め込み。町独自「杉戸ごみ分別アプリ」あり。一部事務組合: 久喜宮代衛生組合は 久喜市・宮代町が対象で杉戸町は非該当と見られる(要確認)。ロカポ等民間アプリも対応。"
+    埋め込み。町独自「杉戸ごみ分別アプリ」あり。一部事務組合: 久喜宮代衛生組合は 久喜市・宮代町が対象で杉戸町は非該当と見られる(要確認)。ロカポ等民間アプリも対応。 【統括実確認
+    2026-07-18】隠しOCR層の実測: 抽出テキストは「杉**戸**」のようなノイズ混じりの文字化けで実用不能。エージェント判定 (実質OCR必要) どおり source_type を image-pdf
+    に是正。文字数ベースの全数検査ではテキスト層ありに見える偽陽性の実例。"
   surveyed_at: 2026-07-17
   granularity: dates
 - code: "11465"

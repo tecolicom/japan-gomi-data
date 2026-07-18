@@ -63,7 +63,6 @@ tokyo,13219,komae,狛江市,82189,pdf,20,10,18,10,10,68,B,D
 tokyo,13215,kunitachi,国立市,76879,pdf,20,10,18,10,10,68,B,
 saitama,11243,yoshikawa,吉川市,71136,pdf,20,10,18,10,10,68,B,D
 tokyo,13218,fussa,福生市,56961,pdf,15,10,18,10,15,68,B,
-saitama,11464,sugito-town,杉戸町,42377,pdf,20,10,18,10,10,68,B,
 saitama,11408,yorii-town,寄居町,30495,pdf,20,10,18,10,10,68,B,
 saitama,11341,namegawa-town,滑川町,19904,pdf,20,10,18,10,10,68,B,D
 saitama,11349,tokigawa-town,ときがわ町,9606,pdf,20,10,18,10,10,68,B,
@@ -99,6 +98,7 @@ saitama,11363,nagatoro-town,長瀞町,5998,pdf,20,10,18,10,5,63,B,DE
 saitama,11214,kasukabe,春日部市,222659,image-pdf,20,3,18,10,10,61,B,
 tokyo,13223,musashimurayama,武蔵村山市,70516,image-pdf,20,3,18,10,10,61,B,D
 saitama,11233,kitamoto,北本市,64120,image-pdf,20,3,18,10,10,61,B,
+saitama,11464,sugito-town,杉戸町,42377,image-pdf,20,3,18,10,10,61,B,
 tokyo,13305,hinode-town,日の出町,15637,image-pdf,20,3,18,10,10,61,B,D
 tokyo,13123,edogawa,江戸川区,701652,pdf,20,10,10,10,10,60,B,
 tokyo,13117,kita,北区,369802,pdf,20,10,10,10,10,60,B,D
