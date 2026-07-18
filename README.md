@@ -85,3 +85,9 @@ course 単位の取得メタは各 `course-*.yaml` の `metadata.source`(`pdf_ur
 - 例: 飯能 A-1 → `webcal://tecolicom.github.io/japan-gomi-data/ics/hanno/a1.ics`
 
 course-slug は小文字化 + 最初のハイフン除去 (A-1→a1)。
+
+- **`ics/index.csv`** — 全コースの一覧表 (build:ics が生成)。列: 団体コード / 都道府県 / handle / 自治体名 /
+  コース / コース名 / 対象地区 (「；」区切り) / ICS URL。**自治体コードや町名からコースを探すにはこれを引く**。
+- `ics/` を handle フラットにしているのは**公開済み ICS URL を変えないため** (購読者のカレンダーに永続登録される)。
+  全国 1,741 自治体でも配信 (GitHub Pages) に支障はない。GitHub の Web UI は 1,000 エントリ超で省略表示になるが、
+  探索は index.csv が担うので構造は変えない。

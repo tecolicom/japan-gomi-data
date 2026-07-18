@@ -30,11 +30,14 @@ const handles = [];
 for (const pref of readdirSync(muniDir).filter((p) => isDir(join(muniDir, p)))) {
   const prefDir = join(muniDir, pref);
   for (const h of readdirSync(prefDir).filter((h) => isDir(join(prefDir, h)))) {
-    handles.push({ handle: h, dir: join(prefDir, h) });
+    handles.push({ handle: h, dir: join(prefDir, h), pref });
   }
 }
 let count = 0;
-for (const { handle, dir } of handles) {
+const indexRows = []; // 自治体コードから探せる一覧 (ics/index.csv)
+const ICS_BASE = 'https://tecolicom.github.io/japan-gomi-data/ics';
+for (const { handle, dir, pref } of handles) {
+  const meta = loadYaml(join(dir, 'meta.yaml'));
   const taxOv = (loadYaml(join(dir, 'taxonomy.yaml')).overrides) || {};
   // slug -> { courseLabel, dtstamp, events: [{day,next,title}] }
   const bySlug = new Map();
@@ -49,7 +52,8 @@ for (const { handle, dir } of handles) {
       const rec = bySlug.get(slug) || {
         courseLabel: `${m.course} ${m.course_name_ja ?? ''}`.trim(),
         dtstamp: `${iso(m.source.extracted_at).replace(/-/g, '')}T000000Z`,
-        course: m.course, events: [],
+        course: m.course, courseNameJa: m.course_name_ja ?? '',
+        areas: (m.areas || []).map((a) => a.name), events: [],
       };
       for (let d = new Date(start); d < end; d = new Date(d.getTime() + 86400000)) {
         const cats = categoriesOn(d, rules, overrides);
@@ -80,7 +84,19 @@ for (const { handle, dir } of handles) {
     const outDir = join(OUT, handle);
     mkdirSync(outDir, { recursive: true });
     writeFileSync(join(outDir, `${slug}.ics`), L.join('\r\n') + '\r\n');
+    indexRows.push({
+      code: meta.code, pref, handle, name_ja: meta.name_ja,
+      course: rec.course, course_name_ja: rec.courseNameJa,
+      areas: rec.areas.join('；'),
+      ics: `${ICS_BASE}/${handle}/${slug}.ics`,
+    });
     count++;
   }
 }
-console.log(`generated ${count} .ics files under ics/`);
+// ics/index.csv — 自治体コード・handle・町名からコースと ICS URL を引ける一覧
+const csvEsc = (v) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
+const cols = ['code', 'pref', 'handle', 'name_ja', 'course', 'course_name_ja', 'areas', 'ics'];
+indexRows.sort((a, b) => a.code.localeCompare(b.code) || a.course.localeCompare(b.course, 'ja', { numeric: true }));
+writeFileSync(join(OUT, 'index.csv'),
+  '﻿' + [cols.join(','), ...indexRows.map((r) => cols.map((c) => csvEsc(r[c] ?? '')).join(','))].join('\n') + '\n');
+console.log(`generated ${count} .ics files under ics/ (+index.csv ${indexRows.length} rows)`);
