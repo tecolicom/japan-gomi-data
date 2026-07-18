@@ -1,6 +1,6 @@
-// GODI (ごみ収集日データ開放度指数) を triage 台帳から算出する。
+// 「ごみの日データ 使いやすさスコア」を triage 台帳から算出する。
 // 規則は docs/opendata-quality-index.md が正典。unknown は保守値+estimated フラグ。
-// 使い方: node scripts/triage-score.mjs [--csv docs/triage/godi-scores.csv]
+// 使い方: node scripts/triage-score.mjs [--csv docs/triage/scores.csv]
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -61,7 +61,7 @@ function score(r) {
 
   const total = A + B + C + D + E;
   const rank = total >= 90 ? 'S' : total >= 75 ? 'A' : total >= 60 ? 'B' : total >= 40 ? 'C' : total >= 20 ? 'D' : 'E';
-  const s = { A, B, C, D, E, ...(r.godi_overrides || {}) };
+  const s = { A, B, C, D, E, ...(r.score_overrides || {}) };
   let t2 = s.A + s.B + s.C + s.D + s.E;
   // キャップ規則: 基幹品目欠落 (partial) は C 止まり、データ無し (none) は E 止まり
   if (g === 'partial') t2 = Math.min(t2, 59);
