@@ -236,7 +236,7 @@
   - official-html
   license: CC-BY-4.0
   difficulty: 2
-  granularity: weekday-rules
+  granularity: rules
   district_unit: 地区 (町丁目)
   district_count_approx: 137
   yearend: unknown
@@ -244,7 +244,8 @@
     (1行=分類×地区)。列= ゴミ分類区分,地区名,地区名(英語),収集曜日, 祝日の収集,特別に収集する日,特別に収集しない日,適用開始日,適用終了日,標準地域コード(LOD URI)。運用ルール列まで持つ。 例:
     大井1丁目 燃やすごみ=火金/陶器・ガラス・金属=第2木・第4木/資源=土, いずれも祝日収集○。 地区(町丁目)数は約137 (412行÷3種別)。同 .rdf も併存 (odp.jig.jp/odp/1.0# 語彙)=独立検証源。
     granularity: weekday-rules (曜日規則+第n木形式, 日付入り通年ではない)。祝日収集は列で明示だが年末年始休止日はCSVに無し=partial (要別途)。 license: 東京都カタログ標準
-    CC BY 4.0 (opendata-sources.md 総論の記録どおり)。difficulty 2 (JSONP不要・素直なCSV・cp932デコードのみ)。'
+    CC BY 4.0 (opendata-sources.md 総論の記録どおり)。difficulty 2 (JSONP不要・素直なCSV・cp932デコードのみ)。 【統括 2026-07-18】granularity=rules
+    に格上げ: ODP 縦持ち CSV は収集曜日に加え「祝日の収集」「特別に収集する日/しない日」「適用開始/終了日」の運用列を持ち、規則+例外日が機械可読・解釈一意な理想形に該当 (今回調査で唯一)。'
   surveyed_at: '2026-07-18'
 - code: '13110'
   handle: meguro

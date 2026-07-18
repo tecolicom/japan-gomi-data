@@ -34,10 +34,11 @@ function score(r) {
   else if (st === 'image-pdf') B = 3;
   else B = 0;
 
-  // C. 粒度 (20)
+  // C. 粒度 (20) — 理想形 (規則+例外・一意) が満点、日付列挙は一歩劣る
   let C;
   const g = r.granularity;
-  if (g === 'dates') C = 20;
+  if (g === 'rules') C = 20;
+  else if (g === 'dates') C = 18;
   else if (g === 'weekday-rules') C = r.yearend === 'calendar-explicit' ? 14 : 10;
   else if (g === 'partial') C = 5;
   else if (g === 'none' || st === 'none') C = 0;
