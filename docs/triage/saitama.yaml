@@ -169,6 +169,7 @@
   schedule_url: https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/index.html
   calendar_urls:
   - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309105228447.html
+  - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309091749902.files/R8aobadai.pdf
   verify_sources:
   - course-pdf
   license: proprietary-site
@@ -178,9 +179,8 @@
   yearend: calendar-explicit
   notes: '地区別収集カレンダーは頭文字別8ページ(あ行/か・き/く・け・こ/さ行/た・な行/は行/ま行/や・わ行)に 各町ごとの個別PDFが並ぶ(「は行」だけで15PDF、全体で数十〜百規模とみられる)。R8hanazono.pdf
     を DLし pdftotext 検証: テキスト層あり(2頁23036字)、4月〜翌3月の通年・日付入りカレンダーで機械抽出可。 年末年始も日付入りで明示される見込み(通年カレンダーのため)。CSV/テキスト版ODは無し。分別アプリ
-    「わけトコっ！」あり。地区数が多く個別PDFを網羅する手間が主コスト。市サイトはCC宣言なし。
-
-    '
+    「わけトコっ！」あり。地区数が多く個別PDFを網羅する手間が主コスト。市サイトはCC宣言なし。 【統括実測 2026-07-18】R8aobadai.pdf を取得し pdftotext 8,539字 = テキスト層あり・日付入り通年を追認
+    (全数検査の URL 未記録分の補完)。'
   surveyed_at: '2026-07-17'
   granularity: dates
 - code: '11209'
