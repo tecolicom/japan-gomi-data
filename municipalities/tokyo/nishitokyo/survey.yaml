@@ -1,0 +1,24 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13229'
+handle: nishitokyo
+name_ja: 西東京市
+population: 207812
+source_type: txt
+schedule_url: https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
+calendar_urls:
+- https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/111.html
+- https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/999.html
+verify_sources:
+- pdf-calendar
+license: proprietary-site
+difficulty: 2
+granularity: dates
+district_unit: 地域
+district_count_approx: 8
+yearend: calendar-explicit
+notes: '★好条件。一次ソースは「ごみ・資源物収集カレンダー(テキスト版)」= 地域別HTMLページ (gomicalender_exel/111.html〜、地域番号1〜8)。調布のテキスト版カレンダーと同種で、 「日付・曜日・品目」を列挙した日付入り通年テキスト(令和7年10月〜令和8年9月の1年、年度でなく10月起点)。
+  年末年始も明示(2025/12/29〜31・2026/1/1〜2 は収集なし)=calendar-explicit。granularity=dates、difficulty 2。 地域は8(1=田無町・西原町・芝久保町5丁目/2=緑町・谷戸町1・2丁目・北原町・ひばりが丘/
+  3=谷戸町3丁目・東町・泉町・住吉町/7=南町・芝久保町1〜4丁目 …)。分別: びん・スプレー缶・ライター・古紙古布/ 可燃・せん定枝/不燃・有害危険物/等。補助/検証: PDF版カレンダー(999.html)。 収集曜日CSV/JSONは未発見(ページに.txt/.xls/.csv直リンクは無く、テキストはHTML本文として提供)。
+  ごみ分別アプリ・分別辞典(gomisaku.jp/0017)あり。ライセンス明示なし=proprietary-site。'
+surveyed_at: '2026-07-18'

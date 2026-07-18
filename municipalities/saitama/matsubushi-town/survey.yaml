@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11465'
+handle: matsubushi-town
+name_ja: 松伏町
+population: 26882
+source_type: pdf
+schedule_url: https://www.town.matsubushi.lg.jp/0000000835.html
+calendar_urls:
+- https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/ako-su.pdf
+- https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/bko-su.pdf
+- https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/cko-su.pdf
+- https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/dko-su.pdf
+- https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/eko-su.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 3
+district_unit: コース
+district_count_approx: 5
+yearend: unknown
+notes: '5コース(A-E)、各コースにカレンダーPDF。テキスト層あり(pdftotext -layout で月別グリッドと 可燃/資源/ビン/カン/不燃・有・危/粗大ごみ戸別収集日 のラベルを抽出可、約2000字/枚)。
+  R7(2025.4)からごみの出し方を変更。収集は松伏清掃(matsubushi-seisou.com)。 Aコース=火金(築比地・金杉・魚沼等)、Bコース=月木(松伏一部・上赤岩・ゆめみ野等)。年末年始は未記載。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

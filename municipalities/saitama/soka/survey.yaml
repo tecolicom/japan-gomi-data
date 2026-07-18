@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11221'
+handle: soka
+name_ja: 草加市
+population: 251623
+source_type: pdf
+schedule_url: https://www.city.soka.saitama.jp/cont/s1702/010/020/010/PAGE000000000000083921.html
+calendar_urls:
+- https://www.city.soka.saitama.jp/cont/s1702/010/020/010/R8_01.pdf
+verify_sources:
+- app
+license: unknown
+difficulty: 3
+district_unit: 地区
+district_count_approx: 18
+yearend: december-announce
+notes: '一次候補「令和8年度版草加市ごみ収集カレンダー」。R8_01.pdf(16ページ, Adobe PDF Library製)は テキスト層あり(pdftotext可)。18地区(番号1〜18)に分かれ地区別カレンダーPDFを配布(冊子は町会経由配布)。
+  草加市ごみ分別アプリあり。年末年始は専用ページ(PAGE...058570)で毎年告知。 収集日オープンデータは未発見。ライセンス表記未確認(市公式サイト)。多言語見出し(中/西)入り。 ※R8_01.pdf が全地区束ねの冊子か個別地区版かは要精査(冒頭は総合表紙)。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11383'
+handle: saitama-kamikawa-town
+name_ja: 神川町
+population: 12476
+source_type: html
+schedule_url: https://www.town.kamikawa.saitama.jp/soshiki/bosaikankyou/gomi_kankyou/477.html
+calendar_urls:
+- https://www.town.kamikawa.saitama.jp/material/files/group/12/garbagedasikata.pdf
+verify_sources:
+- booklet
+license: proprietary-site
+difficulty: 2
+district_unit: 地区
+district_count_approx: 3
+yearend: unknown
+notes: 'A・B・Cの3地区。公式ページ(477.html)にHTMLテーブルで品目別の収集曜日を記載(練馬方式で機械変換可)。 例: 可燃=A・C地区は月木/不燃=第1・3月曜/資源=第1・3水曜。可燃は週2(年末年始除く)、資源はA・B地区月2・
+  C地区月1。曜日ベース(日付なし)のため年末年始は別記載/PDF側の可能性 → 未確認(unknownまたは12月告知型)。 「ごみの出し方」PDF(多言語版あり、英語版に2025表記)が独立検証源。町サイトはCC宣言なし。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

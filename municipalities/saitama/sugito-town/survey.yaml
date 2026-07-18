@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11464'
+handle: sugito-town
+name_ja: 杉戸町
+population: 42377
+source_type: pdf
+schedule_url: https://www.town.sugito.lg.jp/page/18664.html
+calendar_urls:
+- https://www.town.sugito.lg.jp/uploaded/attachment/16368.pdf
+- https://www.town.sugito.lg.jp/uploaded/attachment/17263.pdf
+- https://www.town.sugito.lg.jp/uploaded/attachment/16370.pdf
+- https://www.town.sugito.lg.jp/uploaded/attachment/16371.pdf
+verify_sources:
+- https://www.town.sugito.lg.jp/uploaded/attachment/13811.pdf
+- https://www.town.sugito.lg.jp/uploaded/attachment/4814.png
+license: proprietary-site
+difficulty: 4
+district_unit: 地区
+district_count_approx: 4
+yearend: calendar-explicit
+notes: '埼玉県北葛飾郡杉戸町。収集は町(環境課)が独自運営。公式ページ page/18664.html に 令和8年度(2026-04〜2027-03)カレンダーを地区別PDFで掲載。地区はA/B/C/Dの4区分 (町内会区域:
+  A=中央1・中央3, B=中央2・中央4, C=西, D=東・南・泉)。地区割は地図PNGあり。 PDFはスキャン画像+隠しOCR層(HiddenHorzOCRフォント)構成の5.5MB画像PDF。pdftotext 抽出結果は激しく文字化けし信頼できず→実質OCR必要(difficulty
+  4)。CSV/JSON参照なし。 埼玉県ODポータルに杉戸町のごみ収集曜日データセットは見当たらず(掲載は吉川市等)。 自治体ODカタログも未確認だが公式にCSV提供の痕跡なし。年末年始はPDF内カレンダーに 埋め込み。町独自「杉戸ごみ分別アプリ」あり。一部事務組合:
+  久喜宮代衛生組合は 久喜市・宮代町が対象で杉戸町は非該当と見られる(要確認)。ロカポ等民間アプリも対応。'
+surveyed_at: '2026-07-17'
+granularity: dates

@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13363'
+handle: niijima-vill
+name_ja: 新島村
+population: 2339
+source_type: pdf
+schedule_url: https://www.niijima.com/kurashi/seikatsu/gomi/gomibunbetsu.html
+calendar_urls:
+- https://www.niijima.com/kurashi/seikatsu/gomi/files/R8.gomi.pdf
+verify_sources: []
+license: proprietary-site
+difficulty: 3
+granularity: weekday-rules
+district_unit: 集落（地区）
+district_count_approx: 2
+yearend: unknown
+notes: '島嶼部。一次ソースは村公式「ごみと資源物の出し方ルール(一般家庭ごみ用)」PDF (files/R8.gomi.pdf、令和8年度)。A4両面1ページ、テキスト層あり(pdftotext 成功、10921字)。
+  PDF下部に「日 月 火 水 木 金 土」の週間曜日グリッドがあり、新島地区/式根島地区の2集落別に 収集曜日を割当(granularity=weekday-rules)。ただしグリッドが座標依存レイアウトで、品目セルと曜日の
+  対応をレイアウトから解く必要あり=difficulty 3。分別品目は多数(燃やすごみ/不燃/金属/電化製品/ ガラス陶磁器/缶/ペットボトル/電池/蛍光灯/粗大 等)。 ※旧URL files/R6.gomi.pdf
+  はHTMLエラー(404相当、拡張子.pdfだが実体XML)なので R8.gomi.pdf を使う。 収集曜日CSV/JSON・HTML表・テキスト版カレンダーは無し(村サイトはPDF1本のみ)。 年末年始の休止日はPDF本文で未確認=unknown。令和7年3月末で指定ごみ袋は廃止。
+  ライセンス明示なし(Copyright NIIJIMA Village)=proprietary-site。 問合せ: 村役場民生課民生係(04992-5-0243)。焼却施設は新島地区/式根島地区に各1。'
+surveyed_at: '2026-07-18'

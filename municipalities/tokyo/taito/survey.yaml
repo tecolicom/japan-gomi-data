@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13106'
+handle: taito
+name_ja: 台東区
+population: 217798
+source_type: csv
+schedule_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
+calendar_urls:
+- https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.html
+- https://www.city.taito.lg.jp/kurashi/gomi/wakekata/gomiinfo/shushubi/shushubi_zentai.html
+- https://www.city.taito.lg.jp/kurashi/gomi/keikaku/kakusyupanfuretto/R8gomidasikarennda-.html
+verify_sources:
+- html
+- course-pdf
+- booklet
+license: CC-BY-4.0
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町丁目 (丁目単位でグループ化した町丁名)
+district_count_approx: 39
+yearend: december-announce
+notes: '一次ソースは台東区オープンデータ「ごみ分別・収集一覧」内の CSV「地域別収集曜日一覧」 (tiikibetusyuusyuuyoubiitiran.csv, Shift_JIS, HTTP 200, 3172
+  bytes, 39行+ヘッダ)。 列=索引,町丁名,資源,燃やすごみ,燃やさないごみ。曜日規則のみで日付は入らない (例 秋葉原: 資源=水曜, 燃やすごみ=月曜・木曜, 燃やさないごみ=その月の1回目・3回目の土曜日)
+  のため granularity=weekday-rules。ライセンスはOD配布ページに「クリエイティブ・コモンズ 表示 4.0 国際 (CC BY 4.0)」と明記。CSVは令和4年3月29日公開 (同ページのごみ分別一覧CSVは
+  令和7年更新)。同一データが公式HTML表 shushubi_zentai.html (HTTP 200, 町丁名×資源/燃やす/ 燃やさない、ページ内埋め込み) にもあり検証ソースとして利用可。日付入り通年カレンダーが必要なら
+  R8ごみ出しカレンダーの地域別PDF (整理番号01〜12, 例 .../R8gomidasikarennda-.files/2026_01L.pdf, 色分け実日付) が別途あり (未DL検証)。年末年始: CSV/HTML表は曜日規則のみで年末年始の記載なし。
+  別途12月に告知される想定のため december-announce と判定 (ただし地域別PDFカレンダーには実日付が 載る可能性が高い=未確認)。東京都カタログ (catalog.data.metro.tokyo.lg.jp/organization/t131067)
+  はCLI 403だが、リソース実体は区ドメイン配布で curl 取得可能。population=216084は令和7(2025)住基。 【統括正規化】difficulty 1→2: d1 は県共同/標準スキーマ専用 (単独自治体の
+  OD CSV は中野の先例どおり d2)。'
+surveyed_at: '2026-07-18'

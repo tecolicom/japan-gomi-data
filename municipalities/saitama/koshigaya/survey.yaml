@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11222'
+handle: koshigaya
+name_ja: 越谷市
+population: 341344
+source_type: html
+schedule_url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/gomishuushuukarenda.html
+calendar_urls:
+- https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/onsei_calendar/index.html
+- https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/onsei_calendar/202607chiku01.html
+- https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/files/R8-01.pdf
+verify_sources:
+- course-pdf
+- audio-html
+license: proprietary-site
+difficulty: 2
+district_unit: 地区(町丁目を10地区に割当)
+district_count_approx: 10
+yearend: december-announce
+notes: 一次ソースは「音声対応版ごみ収集カレンダー」のテキストHTML。URLパターンは onsei_calendar/YYYYMMchiku[01-10].html で、地区ごと×月ごとにページ分割 (例 202607chiku01.html)。各ページは「7月2日
+  木曜 燃えるごみ」形式の日付 ×ごみ種別テキスト表で機械可読。全10地区×各月を巡回する必要あり。地区割は 町丁目単位で10地区に割当(別途「収集地区割り表」PDFで対応)。地区別の正式版 はfiles/R8-0[1-10].pdf(令和8年度、各約9.4MBで画像主体の可能性、検証用)。
+  埼玉県ODポータル(opendata.pref.saitama.lg.jp/datasets/2084)に越谷市データ あるが「ゴミの分別方法一覧」CSVのみで収集日程は含まず。年末年始の特別扱いは 月次ページに記載なく別途告知と推測(要確認)。CLIでのPDFテキスト層未確認。
+surveyed_at: '2026-07-17'
+granularity: dates

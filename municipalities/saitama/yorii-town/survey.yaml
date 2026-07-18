@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11408'
+handle: yorii-town
+name_ja: 寄居町
+population: 30495
+source_type: pdf
+schedule_url: https://www.town.yorii.saitama.jp/soshiki/11/gomisyusyu.html
+calendar_urls:
+- https://www.town.yorii.saitama.jp/uploaded/attachment/27398.pdf
+- https://www.town.yorii.saitama.jp/uploaded/attachment/27409.pdf
+- https://www.town.yorii.saitama.jp/uploaded/attachment/23818.pdf
+verify_sources:
+- booklet
+- app
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: null
+yearend: unknown
+notes: 'ごみ処理は大里広域市町村圏組合(熊谷・深谷・寄居)管轄だが、収集カレンダーは町が 月別PDFで配布。令和8年4月〜令和9年3月の12枚(27398〜27409.pdf, 各57〜87KB)。 pdftotext
+  でテキスト層あり(約4200字/月, 日付入り)。地区は「川北地区/川南地区」の 2大区分+区(本町区・菅原区 等)単位で収集日が異なる=区↔曜日の対応精査が必要 (地区数はnull、区は多数)。保存版パンフ(23818.pdf)に可燃/不燃等の分別と曜日表。
+  年末年始は月別カレンダー(12月・1月分)に入るとみられるが未精読(unknown)。 収集曜日OD・CSVなし。ごみ分別アプリあり。課: 生活環境エコタウン課。'
+surveyed_at: '2026-07-17'
+granularity: dates

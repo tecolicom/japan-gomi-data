@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11348'
+handle: hatoyama-town
+name_ja: 鳩山町
+population: 12531
+source_type: pdf
+schedule_url: https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
+calendar_urls:
+- https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
+- https://www.town.hatoyama.saitama.jp/data/doc/1773387148_doc_50_0.pdf
+- https://www.town.hatoyama.saitama.jp/kurashi/gomi_seikatsukankyo/gomi_recycle/gomi_recycling.html
+- http://www.hozenkumiai.or.jp/shigen.html
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 2
+yearend: calendar-explicit
+notes: '一次ソースは公式サイトが配布する令和8年度PDF(A地区/B地区の2種)。pdftotextでテキスト層抽出可(日付・品目が取れる。ただしカレンダーグリッドのため配置は乱れ、要パース)。 地区は A地区(大橋・奥田・須江・竹本・泉井・高野倉・熊井・小用・大豆戸・赤沼・今宿・石坂)と
+  B地区(松ヶ丘/楓ヶ丘/鳩ヶ丘の団地地区)の2区分。町域を実質2分割。 ごみ処理は一部事務組合「埼玉西部環境保全組合」(hozenkumiai.or.jp)が担当。収集業務委託は株式会社鳩山環境サービス。組合サイトにも同等PDF(hatoyama2025_a/b.pdf)あり。
+  ※公式ドメインは town.hatoyama.saitama.jp (指示の town.saitama-hatoyama.lg.jp ではない)。※組合サイト直リンク(hozenkumiai.or.jp/pdf/hatoyama2025_a.pdf)はCLIで196バイトの空応答=実質取得不可、公式サイト側は正常取得。
+  オープンデータ: 鳩山町ODページ(gyousei/hatoyama_opendata.html)にごみ収集日程データセットは無し。埼玉県ポータル(opendata.pref.saitama.lg.jp)にも収集日CSVは確認できず。
+  年末年始: 通年カレンダー(令和8年4月〜翌3月)のためグリッドに反映=calendar-explicit扱い。ただし抽出テキストが乱れ「年末年始休み」等の明示注記までは未確認。アプリは無し。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

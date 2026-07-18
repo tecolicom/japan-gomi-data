@@ -1,0 +1,24 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11362'
+handle: minano-town
+name_ja: 皆野町
+population: 8278
+source_type: pdf
+schedule_url: https://www.town.minano.saitama.jp/section/seikatu/265/
+calendar_urls:
+- https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/ad9f53afdff8f682d38752a8e8429111-11.pdf
+- https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/51ad3cd62cf1f3d84c5071fbea3ddf85-12.pdf
+- https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/52a3509281a700734ff8299b52005ffb-11.pdf
+- https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/f9eb63572d046a0170bc788b856f0c36-11.pdf
+verify_sources: []
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 4
+yearend: unknown
+notes: 'ごみ処理は秩父広域市町村圏組合の管轄、皆野町サイトにも令和8年度版カレンダーPDFを 掲載。町を4地区に分割(1:戦場・土京・親鼻・駒形・上の台・根岸・下田野 / 2:腰・上原・ 原・下原・上大浜・中大浜・下大浜
+  / 3:日野沢・金沢・国神・大渕・野巻 / 4:三沢・金崎)。 4ハッシュ×版番号のPDF(各3.6MB)。pdftotext でテキスト層あり(日付入り令和8年度、 地区名見出しつき)。可燃=毎週月・木(日野沢上区は木のみ)/不燃=月1/資源=月2。
+  年末年始はカレンダー内とみられるが未精読(unknown)。収集曜日OD・CSVなし。 秩父広域はPDF版のメール送付申込フォームも用意。課: 皆野町町民生活課(62-1232)。'
+surveyed_at: '2026-07-17'
+granularity: dates

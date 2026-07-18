@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11201'
+handle: kawagoe
+name_ja: 川越市
+population: 355376
+source_type: pdf
+schedule_url: https://www.city.kawagoe.saitama.jp/kurashi/gomi/1002375/1020639.html
+calendar_urls:
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_04.pdf
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_05-06.pdf
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_07-08.pdf
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_09-10.pdf
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_11-12.pdf
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_13-14.pdf
+- https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_15-16.pdf
+verify_sources:
+- booklet
+- app
+license: proprietary-site
+difficulty: 3
+district_unit: コース
+district_count_approx: 60
+yearend: calendar-explicit
+notes: '令和8年度版。収集は「自治会別」で全60コース。日程表PDF(r8_05-06〜15-16)は pdftotext でテキスト層あり(分別×コースの曜日グリッド。日付ではなく曜日ベース)。 コース一覧表PDF(r8_04)も自治会名→コース番号のテキスト層あり。分別は
+  可燃/プラスチック製容器包装/不燃・有害/布類/紙類/びん・かん・ペットボトル。 年末年始は「土日・12/30〜1/3休」とページに明示。収集曜日オープンデータ・ テキスト版カレンダー・サイト内CSV/JSONは無し(自治体OD言及なし)。電子ブック版
+  冊子(16p)あり。川越市ごみ分別アプリ(ごみすけ)あり。粗大は申込制。 課: 環境部資源循環推進課/収集管理課(049-239-5058)。'
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

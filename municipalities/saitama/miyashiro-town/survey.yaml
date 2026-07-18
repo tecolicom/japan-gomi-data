@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11442'
+handle: miyashiro-town
+name_ja: 宮代町
+population: 33509
+source_type: image-pdf
+schedule_url: https://www.town.miyashiro.lg.jp/0000017999.html
+calendar_urls:
+- https://www.town.miyashiro.lg.jp/cmsfiles/contents/0000017/17999/1b.pdf
+- https://www.town.miyashiro.lg.jp/cmsfiles/contents/0000017/17999/2b.pdf
+verify_sources:
+- app
+license: unknown
+difficulty: 4
+district_unit: ブロック
+district_count_approx: 2
+yearend: unknown
+notes: '一次候補「令和8年度版 家庭ごみ・資源物収集カレンダー」= 2ブロック制(1b.pdf=1ブロック/旧E、2b.pdf=2ブロック/旧F)。 1b.pdf は14MB・pdffonts空・pdftotext抽出ほぼ0字
+  → 画像PDF(テキスト層なし)。OCRまたは目視転記が必要 → difficulty4。 ブロック内の町丁目割当は本文に列挙あり(須賀・東粂原・宮代台・和戸… / 東・中・姫宮・道佛・百間・本田…)。 宮代ごみ分別アプリあり(収集日カレンダー機能)
+  → アプリ内データが機械可読の可能性は別途要確認。 多言語版PDF(中/英/葡/西/タガログ/越)も同ページに存在。収集日オープンデータは未発見。年末年始扱いは未確認。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

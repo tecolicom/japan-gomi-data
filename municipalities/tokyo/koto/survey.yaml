@@ -1,0 +1,22 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13108'
+handle: koto
+name_ja: 江東区
+population: 544445
+source_type: csv
+schedule_url: https://www.opendata.metro.tokyo.lg.jp/koto/131083_201_kotocity_waste_recycle_collectionday.csv
+calendar_urls:
+- https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
+verify_sources:
+- html
+license: CC-BY-4.0
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町名
+district_count_approx: 58
+yearend: unknown
+notes: 都カタログ「資源回収・ごみ収集日一覧」CSV (CC BY 4.0)。CKAN API 経由でデータセット特定、実体 www.opendata.metro.tokyo.lg.jp を curl 200 で実取得
+  (cp932、58町+ヘッダ、住所よみ/地区番号/資源/プラ/燃やす/燃やさない)。【罠】燃やさないごみが「（隔週）土」表記 = 週パリティ依存で起点日が CSV に無い → 実装時は区の地区別カレンダー等で隔週の位相を要確認。区サイトの一覧
+  PDF (8omote.pdf) はテキスト層なし画像。粗大は申込制。統括が直接調査 (2026-07-18、G1 未納品分の補完)。
+surveyed_at: '2026-07-18'

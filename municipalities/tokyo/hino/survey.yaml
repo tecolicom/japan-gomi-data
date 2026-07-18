@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13212'
+handle: hino
+name_ja: 日野市
+population: 189522
+source_type: pdf
+schedule_url: https://www.city.hino.lg.jp/kurashi/gomi/kihon/1002863.html
+calendar_urls:
+- https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/002/863/r8.tamadaira.pdf
+- https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/002/863/r8.common.pdf
+verify_sources:
+- course-pdf-cross
+- official-html-rules
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区（コース）
+district_count_approx: 10
+yearend: unknown
+notes: '一次ソースは地区別「ごみ・資源分別カレンダー(令和8年版・保存版)」PDF。地区別ファイルは /_res/…/001/002/863/r8.<地区>.pdf(higashihirayama/hinohonmachi/hirayama/kamida/minamidaira/
+  mogusa/ochikawa/osakaue/tamadaira/toyoda=10地区)+共通ページ r8.common.pdf。テキスト層あり (pdftotext 成功、tamadaira=85727字)、日付入り通年カレンダーで
+  granularity=dates。ただし各PDFが 20〜25MBと重い(画像混在)ため取得コスト高め。曜日規則: 全域を月曜コース(月・木収集)/火曜コース (火・金収集)に分け可燃週2、水曜に不燃・ペットボトルを4週に1回=rules
+  再構成の当たりは付く。 東京都オープンデータ opendata.metro.tokyo.lg.jp/hino/132128_hinoshi_garbage_separate.csv は 存在するが中身は品目分別辞典(品目/分別区分)で収集曜日カレンダーではない(スケジュール用途に不可)。
+  カレンダーは毎年11〜12月に全戸配布。年末年始はページ・共通ページ側の想定でこのページに明示なし=unknown (要 common.pdf/12月号確認)。ライセンス明示なし=proprietary-site。剪定枝は戸別収集。
+  difficulty 3(機械可読PDFだが大容量・月次グリッドのパースが主コスト)。'
+surveyed_at: '2026-07-18'

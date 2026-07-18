@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11232'
+handle: kuki
+name_ja: 久喜市
+population: 146995
+source_type: pdf
+schedule_url: https://www.city.kuki.lg.jp/machizukuri/gomi/bunbetsu/1007473.html
+calendar_urls:
+- https://www.city.kuki.lg.jp/_res/projects/default_project/_page_/001/007/473/2026kuki_a.pdf
+- https://www.city.kuki.lg.jp/_res/projects/default_project/_page_/001/007/473/2026shobu_b.pdf
+verify_sources:
+- course-pdf
+- app
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 14
+yearend: december-announce
+notes: '公式サイトに地区別の月次カレンダーPDFが14ブロック分ある(久喜A-D/菖蒲A-B/鷲宮A-D/栗橋E-H。旧4市町合併の地区割)。 PDFはテキスト層あり。pdftotext -layout で日付×品目のカレンダーグリッドが復元可能(品目=燃やせるごみ/燃やせないごみ/資源/プラスチック類/びん・缶・ペット/新聞・雑誌・段ボール等)。
+  ただし1PDF=28ページ・月ごとのカレンダー方眼レイアウトで、日付と品目のセル対応をレイアウト座標から解く必要があり素直なテキスト版ではない(difficulty 3)。 収集曜日CSV/JSONは公式サイト・埼玉県ポータル(geospatial.jp
+  CKAN)いずれにも無し(久喜市のOD公開は学校教育施設・公共施設情報の2件のみCC-BY、ごみ日程は非公開)。県共同のごみ日程DSも無し。 「久喜市ごみ・資源物分別アプリ」(iPhone/Android)あり=収集日程表・分別辞典・アラート機能。第三者サイト(gomi-calendar.info/.com
+  等)も存在するが非一次。 年末年始: 現行PDFは令和8年4月〜11月のみ収録。令和8年12月以降のカレンダーは令和8年11月に行政区経由で全戸配布+HP公開予定(=毎年12月分は別配布)。祝日はカレンダー面に明示(例:
+  昭和の日)。 なお令和8年12月第1週から旧4地区で異なる分別区分が統一予定(R9.4久喜市クリーンセンター本稼働に伴う)。収録時は分別区分の切替に注意。 curl は公式PDF取得成功(200)、403無し。'
+surveyed_at: '2026-07-17'
+granularity: dates

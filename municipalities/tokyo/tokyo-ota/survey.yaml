@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13111'
+handle: tokyo-ota
+name_ja: 大田区
+population: 748569
+source_type: xls
+schedule_url: https://www.opendata.metro.tokyo.lg.jp/ootaku/131113_shigengomiyoubi.xlsx
+calendar_urls:
+- https://www.city.ota.tokyo.jp/seikatsu/gomi/shigentogomi/gomishigen.files/shuushuuyoubi.pdf
+- https://www.city.ota.tokyo.jp/seikatsu/gomi/shigentogomi/gomishigen.html
+- https://www.opendata.metro.tokyo.lg.jp/ota/131113_funensyuusyuubi.xls
+verify_sources:
+- 東京都ODカタログ t131113d0000000024 (資源・ごみ収集曜日、清掃事業所管轄一覧)
+- 大田区公式PDF shuushuuyoubi.pdf (テキスト層あり・同内容)
+- 東京都ODカタログ t131113d0000000025 (不燃ごみグループ別収集日 XLS)
+license: CC-BY-4.0
+difficulty: 4
+granularity: weekday-rules
+district_unit: 町丁目 (一部は丁目内を番地で分割)
+district_count_approx: 54町名 / 約87丁目グループ
+yearend: unknown
+notes: '一次ソースは東京都ODカタログの「資源・ごみ収集曜日、清掃事業所管轄一覧」(dataset t131113d0000000024, num_resources=1, XLSX)。 カタログHTMLはCloudFrontでCLI/WebFetch共に403だが、CKAN
+  API https://catalog.data.metro.tokyo.lg.jp/api/3/action/package_show?id=t131113d0000000024 はCLIで200取得可能。 リソース実体は別ホスト
+  https://www.opendata.metro.tokyo.lg.jp/ootaku/131113_shigengomiyoubi.xlsx で curl 200 application/vnd.openxmlformats..sheet
+  18196bytes。openpyxlで検証: シート1枚「R07全域」88行×8列。 列=町丁目名(よみ/町名/丁目)/プラ/資源/可燃ごみ/不燃ごみ/管轄の清掃事務所。管轄=大森・蒲田・調布の3清掃事務所名が実際に入っている(管轄付き確認OK)。
+  曜日は「水曜」「月曜\n木曜」等、不燃は「第2第4\n金曜」形式のweekday-rules。 丁目内を番地(例:5丁目〔23番・24番・27番・28番〕)で分割する行があり単純な丁目マッピング不可。集計54町名/87丁目グループ。
+  公式PDF shuushuuyoubi.pdf は curl 200 252510bytes・pdftotextでテキスト層あり同内容(検証用の独立ソース)。 city.ota HTMLページ(gomishigen.html,
+  200)内のデータ参照はこのPDFのみでCSV/JSON直リンクなし。テキスト版カレンダーは存在せず。 年末年始はこのデータからは不明(曜日ルールのみ・日付なし)。 ★実装ヒント: カタログ403は CKAN API /api/3/action/package_show
+  で回避でき、リソース配布は www.opendata.metro.tokyo.lg.jp 別ホスト。他の23区・都内自治体でも有効な突破口。'
+surveyed_at: '2026-07-18'

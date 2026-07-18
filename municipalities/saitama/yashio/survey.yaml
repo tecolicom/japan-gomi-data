@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11234'
+handle: yashio
+name_ja: 八潮市
+population: 93135
+source_type: html
+schedule_url: https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/index.html
+calendar_urls:
+- https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/index.html
+- https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/yashio.html
+- https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/500.html
+verify_sources:
+- image-pdf-calendar
+- sanaru-app
+- cross-check-html-pages
+license: unknown
+difficulty: 2
+district_unit: 町丁目 (町名リンク25本に集約、各ページ内で丁目/地番単位)
+district_count_approx: 25
+yearend: december-announce
+notes: '一次ソースは住所別ごみカレンダー検索表配下の25町名HTMLページ。各ページに 地名/地番/燃えるごみ(曜日)/資源燃えないごみ(曜日)/ペットボトル(第N週の曜日)/ カレンダー番号 のクリーンなHTML表。全域スクレイプで機械可読、difficulty
+  2。 例: 八潮一丁目=燃えるごみ月木/資源燃えない水/ペット第2・4土。 CSV/JSONへの参照はHTMLソースにgrepで無し。curlは200(403無し)。 カレンダーPDF(gomiR8.1〜11.pdf 各約6.5MB)は画像PDF:
+  pdftotextで16文字しか 抽出できずテキスト層なし。検証はPDF目視/OCRか25HTMLページ相互照合で行う。 分別アプリ「さんあ~る」提供あり。 ライセンス: 公式サイトは Copyright YASHIO
+  CITY のみ、OD/CC表示なし=unknown。 埼玉県ODポータル(opendata.pref.saitama.lg.jp org=八潮市)のデータセットは 人口/OD一覧/文化財/ゆるキャラの4件のみでごみ収集データは無し(県共同も個別も無し)。
+  年末年始: HTML表・カレンダーページに明示なし。毎年12月に広報やしお/公式で 地区別最終日・開始日を告知(december-announce)。'
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

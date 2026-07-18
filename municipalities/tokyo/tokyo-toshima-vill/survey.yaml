@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13362'
+handle: tokyo-toshima-vill
+name_ja: 利島村
+population: 308
+source_type: pdf
+schedule_url: https://www.toshimamura.org/life/living/recycle.html
+calendar_urls:
+- https://www.toshimamura.org/fs/3/3/2/9/2/9/_/R08_bunbetsu_handbook.pdf
+- https://www.toshimamura.org/fs/2/7/2/1/0/0/_/R07_bunbetsu_handbook.pdf
+verify_sources:
+- handbook-pdf-text
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 全島単一 (地区分けなし)
+district_count_approx: 1
+yearend: calendar-explicit
+notes: '★島嶼部だが想定外の好結果 (2026-07-18 実測)。公式ページ recycle.html 本文には曜日表記なし (SHIRASAGI CMS, 収集日は「当日朝8時30分まで」のみ) だが、「令和8年度
+  資源物とごみの分別ハンドブック」PDF (R08_bunbetsu_handbook.pdf, 7.75MB) にテキスト層あり(44875字)、しかも★日付入り通年カレンダー(令和8年│2026年, 月×日×品目グリッド)を内包=granularity
+  dates。 品目= 生ごみ/可燃ごみ/段ボール/新聞紙/雑誌・雑紙/ボトル(缶?)/透明なビン/アルミ缶/スチール缶/プラ包装＆製品プラ/ 不燃ごみ(陶磁器・鍋・ガラス・傘)/有害ごみ(蛍光灯・電池)/危険ごみ(ハサミ・スプレー)/小型家電。
+  全島単一の日程 (地区分けの記述なし)。難所はカレンダーグリッドのレイアウトパース=difficulty 3。 年末年始はカレンダー面に日付で反映される見込み(calendar-explicit)。オープンデータ・CSVは無し。
+  市サイトCC宣言なし=事実データ抽出整理。課: 環境建設課(04992-9-0014)。'
+surveyed_at: '2026-07-18'

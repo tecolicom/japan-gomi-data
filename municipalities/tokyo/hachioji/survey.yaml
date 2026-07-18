@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13201'
+handle: hachioji
+name_ja: 八王子市
+population: 559753
+source_type: pdf
+schedule_url: https://www.city.hachioji.tokyo.jp/kurashi/gomi/kateigomi/shushubi/p030315.html
+calendar_urls:
+- https://www.city.hachioji.tokyo.jp/kurashi/gomi/kateigomi/shushubi/p030315_d/fil/2026calender8.pdf
+- https://www.city.hachioji.tokyo.jp/kurashi/gomi/kateigomi/shushubi/p029891.html
+verify_sources:
+- town-to-district-html
+- district-name-list-in-pdf
+- linkdata-mirror-unverified
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 収集地区番号 (1〜20)
+district_count_approx: 20
+yearend: calendar-explicit
+notes: '東京都最大級 (人口約58万) だが地区は収集地区番号 1〜20 で整理され意外と扱いやすい。 一次ソースは収集地区別カレンダーPDF (全20地区)。地区ページ p030309.html〜p030328.html
+  に対応、 例 地区8 → .../shushubi/p030315_d/fil/2026calender8.pdf。CLI 200 (約11MB)、pdftotext でテキスト層あり (26,141字)。 日付・曜日・品目が機械抽出可、各PDF冒頭に対象町名も列挙。収録範囲
+  2026.3〜2027.4=日付入り通年 (granularity=dates)。 年末年始: PDF内「年末年始のごみ・資源物の収集日」欄に実日付明示 (calendar-explicit)。 difficulty 3:
+  テキスト層ありだが月×曜日グリッド+品目セルの版面パース+20ファイル横断が必要。 ライセンス: "Copyright © Hachioji-City. All Rights Reserved." (通常著作権)。収集日PDFのOD/CC表記は未確認=proprietary-site。
+  【重要な注意】東京都カタログ配下に分別区分CSV (opendata.metro.tokyo.lg.jp/hachioji/132012_hachiojishi_garbage_separate.csv, HTTP200/149KB/UTF-8)
+  があるが、 これは品目→分別区分の辞典であって収集日ではない (CC BY 4.0相当だが用途外)。収集日程CSVはODに見当たらず (推測名404、ディレクトリ一覧はCloudFront 403)。 検証源: 町名→収集地区
+  対応表HTML (p029891.html, 括弧内に「収集地区○」明記), 各PDF冒頭の町名リスト, LinkData rdf1s1675i (第三者ミラー・WebFetchタイムアウトで未検証・おそらく旧年度)。'
+surveyed_at: '2026-07-18'

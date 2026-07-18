@@ -1,0 +1,38 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13303'
+handle: tokyo-mizuho-town
+name_ja: 瑞穂町
+population: 31893
+source_type: pdf
+schedule_url: https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693.html
+calendar_urls:
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-1.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-2.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-3.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-4.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-5.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-6.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-7.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-8.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/5-9.pdf
+- https://www.town.mizuho.tokyo.jp/kurashi/005/009/p006693_d/fil/4-10.pdf
+verify_sources:
+- od-csv-separate-rule (opendata.metro.tokyo.lg.jp/mizuho/133035_mizuhomachi_garbage_separate_rule.csv, 分別のみ)
+- bunbetsu-jiten-pdf (p000612_d/fil/honbun.pdf, テキスト層あり)
+- gomi-calendar.com/tokyo/nishitama-mizuho/ (第三者)
+license: proprietary-site
+difficulty: 4
+granularity: dates
+district_unit: 地区
+district_count_approx: 10
+yearend: calendar-explicit
+notes: '一次ソースは公式カレンダーページ p006693.html (curl 200 text/html 94851)。地区別のごみ・資源物収集カレンダーPDFを 10地区分配布 (5-1.pdf〜5-9.pdf
+  + 4-10.pdf)。地区対応=1:安住町・表町・仲町・中芝町 / 2:東砂町・西砂町・丸町・神明町・表東町・表上町・上仲町・旭町 / 3:東一〜九丁目 / 4:西一丁目・中三丁目・西三丁目 / 5:富士山町・松山町・栗原町
+  / 6:二本木町・駒形町・高根町 / 7:長岡町・東長岡町・春日町・愛宕町・水保町 / 8:松原町 / 9:南平町・旭が丘 / 10:さかえ町・富士見町。各PDFは curl 200 application/pdf・約7MB。
+  令和8年度 (2026.4.1〜2027.3.31) の年度カレンダーで年末年始も同一PDFに含まれ明示的 (calendar-explicit)。 pdftotextでテキスト層は約49KB抽出できるが、-layout
+  でも月グリッド部・種別ラベルの多くが独自CIDフォントで文字化けし、 日付↔ごみ種別の対応表は機械的に復元不能。凡例語と曜日行は読めるが位置情報が失われるため実質OCR/手転記が必要 → 事実上 image-pdf 相当・difficulty
+  4。 収集曜日のCSV/JSON等の機械可読データは無し: opendata.metro.tokyo.lg.jp/mizuho/ には 133035_mizuhomachi_garbage_separate_rule.csv
+  (curl 200 text/csv 1626, 分別ルールのみ・収集日情報なし) が存在するが、 collect系の収集日CSVは 404。カレンダーHTMLページ内にも .csv/.json 参照なし(grepでPDFリンクのみ)。
+  ライセンス: PDFは町サイト著作物で開放ライセンス表示なし=proprietary-site。ODのrule.csvは東京都OD標準だが本件スケジュールには非該当。'
+surveyed_at: '2026-07-18'

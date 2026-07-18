@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13224'
+handle: tama
+name_ja: 多摩市
+population: 148612
+source_type: pdf
+schedule_url: https://www.city.tama.lg.jp/kurashi/gomi/shushu/1019650.html
+calendar_urls:
+- https://www.city.tama.lg.jp/kurashi/gomi/shushu/1019650.html
+- https://www.city.tama.lg.jp/_res/projects/default_project/_page_/001/019/650/kiiro4-6.pdf
+- https://www.city.tama.lg.jp/_res/projects/default_project/_page_/001/019/650/kinenkan.pdf
+- https://www.city.tama.lg.jp/_res/projects/default_project/_page_/001/019/650/kiirohyousi.pdf
+verify_sources:
+- 民間ごみカレンダーサイト(ゴミの日.com/zenkoku.mond.jp)
+- 町名別割当(表紙記載)
+- OD品目別索引CSV(分別種別の裏取り)
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 色分け地区(町丁目を4地区=黄/オレンジ/緑/青に割当)
+district_count_approx: 4
+yearend: calendar-explicit
+notes: '令和8年度(2026/4-2027/3)版カレンダーを市公式サイトが配布。地区は町丁目を4色(黄/オレンジ/緑/青)に区分し、 各地区ごとに「表紙+四半期PDF(4-6/7-9/10-12/1-3)+年間カレンダー(kinenkan.pdf)」の構成。
+  四半期PDF(例 kiiro4-6.pdf, 8.4MB, http200)は月別カレンダーグリッドに実日付+品目(燃やせるごみ/プラスチック/ 缶・ペットボトル/びん/新聞古布/小型家電金属/燃やせないごみ有害性ダンボール等)を明記し、pdffontsで埋込サブセット
+  フォント(ShinMGoPro/UDShinGo等)、pdftotext -layoutでテキスト抽出成功→機械可読(dates)。表紙PDFは デザイン重視でテキストが錯綜するが四半期本体は表形式で読める。祝日は「昭和の日
+  収集はお休み」等グリッド内に 日付付きで明示されるため年末年始も同様に calendar-explicit と判断。難易度3: テキスト層はあるがカレンダー グリッドのレイアウト解析(日付セルと品目の対応付け)が必要、かつ4地区×5PDF=約20ファイルを跨ぐ。
+  オープンデータ: 東京都カタログに多摩市org(t132241)あり品目別索引CSV (…/001/012/082/132241_tamashi_garbage_separate.csv, city.tama.lg.jpドメイン配布で取得可)を公開するが、
+  これは品目→分別種別の索引であり収集"日"データではない。カタログサイト本体はCLI/WebFetchともCloudFront 403で 未確認(注意書き通り)。収集曜日/日付のOD(CSV/JSON)は現時点で確認できず→PDFが一次ソース。ライセンス:
+  PDFは 市サイト掲載で明示のCC表記を確認できずproprietary-site。品目索引CSVはCC系との一般記述があるが未検証のためここでは PDF基準で判定。人口: 約14.7万(2020国勢調査147,648の概数、要確認)。'
+surveyed_at: '2026-07-18'

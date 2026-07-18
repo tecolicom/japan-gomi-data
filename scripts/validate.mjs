@@ -37,11 +37,20 @@ if (existsSync(muniDir)) {
   }
 }
 
+let surveyOnly = 0;
 for (const { handle, dir } of handles) {
 
-  // meta
+  // meta — 無い場合、survey.yaml だけの「調査済み・未収録」ディレクトリは許容する
   const metaPath = join(dir, 'meta.yaml');
-  if (!existsSync(metaPath)) fail(handle, 'meta.yaml がありません');
+  if (!existsSync(metaPath)) {
+    if (existsSync(join(dir, 'survey.yaml'))) {
+      const sv = loadYaml(join(dir, 'survey.yaml'));
+      if (sv.handle !== handle) fail(`${handle}/survey.yaml`, `handle "${sv.handle}" がディレクトリ名と不一致`);
+      surveyOnly++;
+      continue;
+    }
+    fail(handle, 'meta.yaml がありません');
+  }
   else {
     const meta = loadYaml(metaPath);
     if (!metaV(meta)) fail(`${handle}/meta.yaml`, ajv.errorsText(metaV.errors));
@@ -88,4 +97,4 @@ if (errors.length) {
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ 検証 OK (${handles.length} 自治体)`);
+console.log(`✓ 検証 OK (収録 ${handles.length - surveyOnly} + 調査のみ ${surveyOnly} = ${handles.length} 自治体)`);

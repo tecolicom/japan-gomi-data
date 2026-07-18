@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13104'
+handle: shinjuku
+name_ja: 新宿区
+population: 356134
+source_type: html
+schedule_url: https://www.city.shinjuku.lg.jp/seikatsu/file09_01_00001.html
+calendar_urls:
+- https://www.city.shinjuku.lg.jp/content/000259262.pdf
+- https://www.city.shinjuku.lg.jp/content/000169714.pdf
+- https://www.city.shinjuku.lg.jp/seikatsu/seiso01_001002.html
+- https://www.city.shinjuku.lg.jp/content/000420404.csv
+verify_sources:
+- 一覧PDF (町丁目×曜日規則, 別レイアウト, テキスト層あり)
+- 地域別月次カレンダーPDF (日付入り, 全27エリア)
+- 東京都OD分別CSV (品目分類の裏取り用)
+license: proprietary-site
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町丁目 (各町丁目を約27の収集エリア=カレンダーPDFに割当)
+district_count_approx: 27
+yearend: calendar-explicit
+notes: 'WebSearchで公式収集日ページを特定。schedule_url は令和8年度「資源回収・ごみ収集日」HTMLで curl 200 text/html 119KB。町丁目ごとに 資源(週1回=曜日)/燃やすごみ(週2回=2曜日)/金属・陶器・ガラスごみ(月2回=第N曜日)/管轄(東・新等)/地域別カレンダーPDFリンク
+  を持つ整形済みHTML表(丁目149・町66言及)。HTMLソースを grep したが .csv/.json 参照は無し(収集日を駆動するデータファイルは非公開)。 同内容の一覧PDF 000259262 は curl
+  200 application/pdf 2.9MB, pdftotext で58,503字=テキスト層あり、町丁目×曜日規則を抽出可 (例: 中落合1・2丁目→資源:火/燃やす:月・木/金属:第1・3金/新)。地域別カレンダーPDF
+  000169714 は 200 pdf 150KB, pdftotext 5,755字で 2026年3月・4月の日付グリッド+品目凡例を確認(全27エリア, HTML表から179箇所リンク)だが 日付→品目の対応はセル装飾側で、テキスト層は日付数字と凡例のみ抽出→dates化には版面解析が要る。よって一次は
+  weekday-rules の HTML表を採用。 年末年始は専用告知ページ(seiso01_001002.html 200)あり+地域別カレンダーが年度全月(3月〜)を収録=calendar-explicit。 OD分別CSV
+  000420404 は 200 octet-stream 49KB, ヘッダ「全国地方公共団体コード,ID,地方公共団体名,ゴミの品目,分別区分…」で 品目分類のみ・収集日程は含まず(東京都OD/自治体標準データセット)。'
+surveyed_at: '2026-07-18'

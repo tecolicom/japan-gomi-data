@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13228'
+handle: akiruno
+name_ja: あきる野市
+population: 78460
+source_type: pdf
+schedule_url: https://www.city.akiruno.tokyo.jp/0000019941.html
+calendar_urls:
+- https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000019/19941/A202604-202803.pdf
+- https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000019/19941/B202604-202803.pdf
+- https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000019/19941/C202604-202803.pdf
+- https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000019/19941/D202604-202803.pdf
+- https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000019/19941/E202604-202803.pdf
+- https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000019/19941/F202604-202803-.pdf
+verify_sources:
+- calendar-pdf-text
+- chikubetsu-html
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区 (A〜F)
+district_count_approx: 6
+yearend: calendar-explicit
+notes: '★新カレンダー (2026年4月〜2028年3月, 2年分) が最新版。市内6地区 A〜F。地区別PDF (実測HTTP 200): A=菅生・草花・秋川三丁目9番地ほか / B〜F は住所割当 (地区別収集日ページ
+  0000004819.html で対応)。 ★実測 (2026-07-18): A202604-202803.pdf(4.6MB) テキスト層あり(21374字)、日付入り通年(2年)カレンダー=granularity
+  dates。 「リチウムイオン電池は有害ごみ」等の注記付き。難所はカレンダーグリッドのレイアウトパース=difficulty 3。 地区別収集日ページに「月〜金(祝日・年末年始を除く)」の記載=年末年始はカレンダー面に反映(calendar-explicit)。
+  収集曜日オープンデータ・CSV/JSONは無し。旧版 (2024-2026, C_calendar202404_202603.pdf) は現在404 (新版に置換)。 非公式 akizuki検索CGI (akizuki.xsrv.jp)
+  が地区別収集日を提供するが出典・機械可読データ記載なし。 市サイトCC宣言なし=事実データ抽出整理。課: 環境農林部生活環境課清掃・リサイクル係。'
+surveyed_at: '2026-07-18'

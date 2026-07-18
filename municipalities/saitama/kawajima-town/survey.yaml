@@ -1,0 +1,57 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11346'
+handle: kawajima-town
+name_ja: 川島町
+population: 17788
+source_type: pdf
+schedule_url: https://www.town.kawajima.saitama.jp/8581.htm
+calendar_urls:
+- https://www.town.kawajima.saitama.jp/9169.htm
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part1.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part2.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part3.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part4.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part5.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part6.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part7.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part8.pdf
+- https://www.town.kawajima.saitama.jp/secure/14751/2026_Part9.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 3
+district_unit: 行政区グループ (町丁目・大字を9グループに集約)
+district_count_approx: 9
+yearend: december-announce
+notes: '公式ドメイン town.kawajima.saitama.jp。一次ソースは行政区別 PDF カレンダー。
+
+  令和8年度 (2026-04-01〜2027-03-31) 収集日程ページ /9169.htm から 9 本の PDF
+
+  (2026_Part1〜Part9.pdf) にリンク。各 PDF はグループ(例 1:東中廓・西中廓・宮本・伏木・
+
+  久保・かわじま2丁目 … 9:虫塚・梅ノ木ほか)の前期/後期カレンダー。全域一律ではなく、
+
+  町域は小さいが 9 収集グループに分かれる(曜日パターン差あり)。
+
+  PDF はテキスト層あり(pdftotext で日付・区分名を抽出可)だが、月次カレンダーグリッド
+
+  レイアウトで位置依存の整形が必要 → 素直な表ではない。可燃/紙布類/びん缶/容器包装/
+
+  ペットボトル/不燃有害危険 等 14分別。よって difficulty 3。
+
+  年末年始: 環境センターは 12/29〜1/3 持込受付なし。年末年始の収集変更は PDF カレンダー
+
+  内(12月・1月ページ)に反映される想定 (december-announce)。
+
+  埼玉県オープンデータポータル(opendata.pref.saitama.lg.jp)に川島町の該当データ無し
+
+  (川島町は指定道路図のみ)。収集曜日 CSV/JSON も公式サイトに見当たらず(HTMLソースに
+
+  .csv/.json 参照なし)。ごみ分別アプリ(gomisuke, jp.gomisuke.app.Gomisuke0011)あるが
+
+  データは非公開。旧年度カレンダー(7370/7971/8637.htm)も同形式で検証用に利用可。
+
+  WebFetch では 8637/1652.htm が 404 を返したが curl は 200(サイト側のUA/経路差)。'
+surveyed_at: '2026-07-17'
+granularity: dates

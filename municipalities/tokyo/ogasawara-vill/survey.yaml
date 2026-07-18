@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13421'
+handle: ogasawara-vill
+name_ja: 小笠原村
+population: 2434
+source_type: pdf
+schedule_url: https://www.vill.ogasawara.tokyo.jp/kankyo/gomi/gomikaisyu/
+calendar_urls:
+- https://www.vill.ogasawara.tokyo.jp/wp-content/uploads/sites/2/2025/05/4e37bb1a21ae40041e28495ae2608a37.pdf
+- https://www.vill.ogasawara.tokyo.jp/wp-content/uploads/sites/2/2025/05/ea272a303dcb6523c84eaecf13e5ab5e.pdf
+verify_sources:
+- guidebook-pdf-text
+license: proprietary-site
+difficulty: 4
+granularity: partial
+district_unit: 父島/母島 + ごみステーション別
+district_count_approx: 2
+yearend: unknown
+notes: '★島嶼部・部分的 (2026-07-18 実測)。父島・母島それぞれの「ごみの分け方・出し方ガイドブック(令和7年6月版)」PDF (ハッシュ名, 各3.6MB) にテキスト層あり(35003/36382字)。「収集日一覧」の枠はあるが、★可燃ごみ等の曜日は
+  「今、お使いのステーションの曜日に○をつけてください」と住民手書き記入様式=固定曜日が公表されていない (羽生市型の罠)。 月次固定品目のみ具体日あり: ペットボトル/有害物・危険物=父島「毎月第2水/第3水」, 母島「毎月第2木」(島で異なる)。
+  公式ページも「収集日が分からない場合は環境課へ」と明記=可燃の曜日はステーション別で非公開。 → 主要品目の週間曜日を機械可読で全収録するのは困難。granularity partial, difficulty 4 (ステーション別データが要電話照会/現地確認)。
+  オープンデータ・CSV・収集曜日検索フォームは無し。年末年始記載なし。課: 環境課(04998-2-3111)/母島支所。 【統括 2026-07-18】可燃のステーション別曜日が非公開 (空欄様式) のため core_missing=true
+  → スコアは E 止まり。'
+surveyed_at: '2026-07-18'
+core_missing: true

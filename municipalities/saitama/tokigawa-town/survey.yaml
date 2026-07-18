@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11349'
+handle: tokigawa-town
+name_ja: ときがわ町
+population: 9606
+source_type: pdf
+schedule_url: https://www.town.tokigawa.lg.jp/info/3231
+calendar_urls:
+- https://www.town.tokigawa.lg.jp/div/201020/pdf/kankyou/R8gomicalendar0.pdf
+- https://www.town.tokigawa.lg.jp/info/2688
+verify_sources:
+- booklet
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 3
+yearend: calendar-explicit
+notes: 'R8年度ごみ・資源分別カレンダーは2分割PDF。info/3231ページからのリンクは中間HTML経由(/Link/Pdf/3872 → /div/201020/pdf/kankyou/R8gomicalendar0.pdf)。実体DL検証済:
+  テキスト層あり(zip deflate, 約1.3MB, 59677字)、4月1日〜翌3月31日の日付入り通年カレンダーで機械抽出可、本文に「可燃」「資源」「地区」を含む。 地区は本文中に3件言及(=3地区前後とみられるが要精査)。年末年始も日付入りで明示の見込み。分別一覧表
+  (info/2688)が独立検証源。町サイトはCC宣言なし。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

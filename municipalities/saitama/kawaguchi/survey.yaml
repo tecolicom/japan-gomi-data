@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11203'
+handle: kawaguchi
+name_ja: 川口市
+population: 594171
+source_type: pdf
+schedule_url: https://www.city.kawaguchi.lg.jp/soshiki/01100/040/4/2/3488.html
+calendar_urls:
+- https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
+- https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---18.pdf
+- https://www.city.kawaguchi.lg.jp/material/files/group/94/banngouitirannhyou.pdf
+verify_sources:
+- course-pdf
+- html
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 18
+yearend: calendar-explicit
+notes: '地区別ごみ収集日カレンダーPDF (18地区、2025/2026各1〜18) が一次ソース。 URLパターン: 令和8年 material/files/group/94/2026---{1..18}.pdf、令和7年
+  2025--{1..18}.pdf。 地区番号↔町丁目の対応は banngouitirannhyou.pdf。PDFはテキスト層あり (curl 200/pdftotext成功、 地区名・曜日ルール・実日付が抽出可)。1地区は複数の町丁目/町会をグループ化
+  (例①=金山町/舟戸町/川口1丁目/本町1-4/幸町1-3/栄町1-3)。 収集: 一般・有害=週2曜日、プラ容器包装=週1、びん/かん・金属/紙・ペット/繊維=第n週の曜日指定。 PDFに1〜12月の実日付が明示され年末年始も日付で確認可
+  (calendar-explicit)。 検証用: 公式検索ページ kawaguchi-gomimaru.jp (住所→地区→曜日表示、HTMLのみ・.csv/.json参照なし)。 オープンデータCSVは自治体OD・埼玉県ポータルとも収集日データは発見できず
+  (unknown→なし想定)。 分別アプリは未確認だがメール通知サービス・粗大ごみネット受付・集積所検索は別途あり。'
+surveyed_at: '2026-07-17'
+granularity: dates

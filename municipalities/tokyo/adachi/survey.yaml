@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13121'
+handle: adachi
+name_ja: 足立区
+population: 708138
+source_type: pdf
+schedule_url: https://www.city.adachi.tokyo.jp/seso/2026calender.html
+calendar_urls:
+- https://www.city.adachi.tokyo.jp/seso/2026calender.html
+- https://www.city.adachi.tokyo.jp/documents/75227/001.pdf
+- https://www.city.adachi.tokyo.jp/documents/75227/002.pdf
+verify_sources:
+- 足立区ごみ分別辞典 gomisaku (https://www.gomisaku.jp/0258/, 住所別収集日検索・独立実装)
+- ゴミの日.com (https://gominohi.com/Tokyo/Adachi/, 第三者集約)
+- zenkoku.mond.jp/gomi-calendar/tokyo-adachi.html (第三者集約)
+license: unknown
+difficulty: 3
+granularity: weekday-rules
+district_unit: 町丁 (12収集地区にグループ化)
+district_count_approx: 12
+yearend: december-announce
+notes: '一次ソースは令和8年度「資源とごみの収集カレンダー」ランディングHTML(2026calender.html, HTTP200)。 五十音(あ〜ら行)の町名リンクが12本の地区別PDF(/documents/75227/001〜012.pdf)に集約。
+  001.pdf(HTTP200, application/pdf, 130KB)は pdftotext -layout でテキスト層良好、地区の対象町丁(例:栗原1,2丁目/島根1〜4丁目/千住旭町/…)と 収集ルール「プラスチック
+  週1回【水】/資源 週1回【金】/燃やすごみ 週2回【月・木】/燃やさないごみ 月2回【第1・第3 火】」を明記、加えて月別カレンダーグリッド(4月〜翌3月)を掲載。 ゆえに曜日ルール+第N週ルールが機械抽出可能→weekday-rules。ただし町丁→地区(001〜012)の対応表はHTMLアンカー側にあり別途パース要。
+  集約版の「町丁別収集曜日一覧表」002.pdf(HTTP200, 556KB)は pdftotext 出力1文字=テキスト層なしの画像PDFで不可、個別地区PDF(001等)を使うべき。 旧「収集曜日一覧」HTML(20220304shuushuuyoubiitiran.html)と外国人向けsche.htmlは現在HTTP404。
+  オープンデータ面: 足立区opendataカタログ(index.php?p=30_n, HTTP200)のCSV20件はkouhyou/kyuuyo系のみでごみ収集曜日CSVは無し。 東京都ODカタログの足立区組織(t131211)にごみ収集曜日ODは未確認(CLIは403のためWebSearchのみ,
+  収集曜日CSVリソースは検出できず)。 祝日・お盆は通常収集、年末年始のみ休止で詳細は12月のあだち広報で告知(ページ明記)→december-announce。 ライセンスはPDF/カレンダーページに明示なし→unknown。'
+surveyed_at: '2026-07-18'

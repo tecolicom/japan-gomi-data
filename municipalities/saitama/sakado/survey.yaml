@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11239'
+handle: sakado
+name_ja: 坂戸市
+population: 98990
+source_type: pdf
+schedule_url: https://www.city.sakado.lg.jp/soshiki/65/8680.html
+calendar_urls:
+- https://www.city.sakado.lg.jp/uploaded/attachment/34529.pdf
+- https://www.city.sakado.lg.jp/uploaded/attachment/34530.pdf
+- https://www.city.sakado.lg.jp/uploaded/attachment/34531.pdf
+- https://www.city.sakado.lg.jp/uploaded/attachment/34532.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 4
+yearend: unknown
+notes: '令和8年度(2026.4-2027.3)地区別カレンダーPDF。テキスト層あり(pdftotext可、町名・注記は抽出可)。 ただし色帯で第1〜第5曜日を示すカレンダーグリッド表現のため曜日パターン抽出は要工夫。
+  「坂戸ごみ分別アプリ」あり。旧attachment(30725.pdf等)は404で現行はR8版。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

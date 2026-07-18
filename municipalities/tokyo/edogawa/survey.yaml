@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13123'
+handle: edogawa
+name_ja: 江戸川区
+population: 701652
+source_type: pdf
+schedule_url: https://www.city.edogawa.tokyo.jp/e025/kurashi/gomi_recycle/kategomi/yobihyo.html
+calendar_urls:
+- https://www.city.edogawa.tokyo.jp/e025/kurashi/gomi_recycle/kategomi/yobihyo.html
+- https://www.city.edogawa.tokyo.jp/documents/6055/youbi021102.pdf
+verify_sources:
+- サードパーティごみアプリ (5374.jp江戸川区版)
+- スマゴミ/GOMICALE等の民間収集日サイト
+- 区公式の年末年始収集お知らせページ
+license: proprietary-site
+difficulty: 3
+granularity: weekday-rules
+district_unit: 町丁目 (町名ごと、丁目・番地範囲で細分。管轄清掃事務所は小松川/葛西/小岩の3系統)
+district_count_approx: 120
+yearend: december-announce
+notes: '公式「資源回収・ごみ収集地域別曜日表」ページ (yobihyo.html) にHTML表6段と PDF (youbi021102.pdf, 令和2年11月2日現在, 4頁, 131KB) の両方あり。curlで取得成功。
+  pdffontsでCIDフォント埋め込み・pdftotextでテキスト層あり(整形されたテキスト抽出可、 「一之江 1丁目〜5丁目 月 水・土 第1・3金 小松川」等の町丁目×種別×曜日行を確認)。 granularityは曜日ルール型:
+  燃やすごみ週2(例:水・土)、資源週1、燃やさないごみ月2 (第1・3金など第N曜日規則)。実日付カレンダーではないためweekday-rules。 年末年始はPDF冒頭に「年末年始の作業日は別途お知らせ」と明記→december-announce
+  (別途 nenmatukaisyu.html で年末年始告知)。 ライセンス: 区公式サイト掲載物でオープンデータ明示・CC BY表示は確認できず proprietary-site とした。東京都オープンデータカタログに江戸川区組織(t131237)は存在するが
+  収集曜日データセットの有無はCLIがCloudFront 403で未確認(unknown)。 difficulty 3: 機械可読PDF (テキスト層あり)。HTML表からの抽出も可能だが構造が細かく 町丁目・番地範囲の但し書きが多い点が罠。district_count_approxは丁目行約112+全域8から
+  約120と概算(不確実)。populationは約68.5万の一般的推計値(住民基本台帳の厳密値は未確認)。'
+surveyed_at: '2026-07-18'

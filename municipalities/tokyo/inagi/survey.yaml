@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13225'
+handle: inagi
+name_ja: 稲城市
+population: 95110
+source_type: pdf
+schedule_url: https://www.city.inagi.tokyo.jp/kurashi/gomi/1013699.html
+calendar_urls:
+- https://www.city.inagi.tokyo.jp/_res/projects/default_project/_page_/001/013/699/yanokuchi-r8.pdf
+- https://www.city.inagi.tokyo.jp/_res/projects/default_project/_page_/001/013/699/kyoutsu-r8.pdf
+verify_sources:
+- region-pdf-item-table
+- unofficial-portal
+- app
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区 (地域名, 町名・番地で振分)
+district_count_approx: 11
+yearend: calendar-explicit
+notes: '一次ソースは地区別ごみカレンダーPDF (令和8年度=2026/4〜2027/3, 11地区+共通=計12本)。 URLパターン: .../001/013/699/<name>-r8.pdf (矢野口 yanokuchi
+  / 東長沼 higashinaganuma / 大丸 oomaru / 百村 momura / 坂浜 sakahama / 平尾 hirao / 平尾賃貸 hirao_chintai / 押立 oshitate / 向陽台
+  koyodai / 長峰 nagamine / 若葉台 wakabadai / 共通 kyoutsu)。CLI 200 取得可 (yanokuchi 実測3.7MB)。 pdftotext -layout でテキスト層あり
+  (約46,753字)。月別グリッドカレンダーで各日付に品目名 (燃える/びん/ ガラス類・陶磁器類 等) と祝日名 (昭和の日等) が入る=日付入り通年 (granularity=dates)。 ただしグリッドレイアウトのため曜日×品目マッピングに位置解析が必要=difficulty
+  3。 CSV/JSON/テキスト版カレンダーは未発見。東京都ODカタログにも稲城市の収集曜日リソースは確認できず。 ライセンス: OD明示なし。"Copyright © Inagi City. All Rights Reserved."
+  (索引ページに制作委託者表記あり)。 地区割: 地区(地域名)ベース、町名・番地で振分 (例 東長沼3100番地以降・南山東部区画整理地内→百村、平尾住宅1〜41号棟→平尾賃貸)。約11地区。 年末年始: 通年グリッドの
+  Dec2026・Jan2027 ページに実日付で明示 (calendar-explicit)。 検証源: 各PDF内「ごみ・資源物の出し方一覧表」同梱で相互検証可、非公式ポータル (portal.inagi-info.com,
+  出典非公開)、 ごみサク (0276, 品目のみ)、稲城ごみ分別アプリ (公式推奨)。'
+surveyed_at: '2026-07-18'

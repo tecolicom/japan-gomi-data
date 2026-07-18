@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13202'
+handle: tachikawa
+name_ja: 立川市
+population: 188040
+source_type: html
+schedule_url: https://www.city.tachikawa.lg.jp/kurashi/gomi/1001712/1001741.html
+calendar_urls:
+- https://www.city.tachikawa.lg.jp/kurashi/gomi/1001716/1027202/index.html
+- https://www.city.tachikawa.lg.jp/kurashi/gomi/1001716/1027202/1027203.html
+- https://www.city.tachikawa.lg.jp/kurashi/gomi/1001716/1027202/1027204.html
+- https://www.city.tachikawa.lg.jp/kurashi/gomi/1001716/1027202/1027205.html
+- https://www.city.tachikawa.lg.jp/kurashi/gomi/1001716/1027202/1027206.html
+verify_sources:
+- https://www.opendata.metro.tokyo.lg.jp/tachikawa/132021_tachikawashi_garbage_separate.csv
+- https://www.city.tachikawa.lg.jp/_res/projects/default_project/_page_/001/001/733/20230320handbook.pdf
+license: unknown
+difficulty: 2
+granularity: weekday-rules
+district_unit: 地区
+district_count_approx: 4
+yearend: calendar-explicit
+notes: "一次ソースはHTML「資源とごみの収集日」ページ (schedule_url)。CLI curl 200 で全取得可。\n市域を町丁目で4地区に区分し、地区ごとに曜日ルールをテキストで完全記載:\n  1地区=富士見/柴崎/錦/羽衣、2地区=曙/高松/栄、3地区=若葉/幸/柏、4地区=緑/泉/砂川/上砂/一番/西砂。\n\
+  品目=燃やせるごみ/プラスチック/ペットボトル/びん/缶/雑誌本雑がみ/古布・新聞折込チラシ/有害・スプレー缶 等。\n各曜日「毎週」と「隔週」の別が明記される (例:1地区 月=毎週燃やせるごみ、金=毎週ペットボトル+隔週…)。\n\
+  ただし隔週(第何週かの確定)は月次カレンダーPDFに依存するため granularity は weekday-rules とし、\n隔週の週確定・年末年始は calendar_urls の月次PDF (_res/.../8calendar-Ntiku*gatu.pdf)\
+  \ で解決する必要あり。\n年末年始: 月次カレンダーに「12月29日～1月3日」休止が明記 → calendar-explicit。\n収集曜日そのもののオープンデータ CSV/JSON は発見できず (opendataの立川リソースは品目辞典\
+  \ garbage_separate.csv のみ、\ngarbage_collection*.csv 等は404)。東京都 catalog.data.metro.tokyo.lg.jp は CLI 403 だが\n配布実体\
+  \ opendata.metro.tokyo.lg.jp/tachikawa/ は curl 200。\n難易度2: HTMLが構造的で曜日ルールは容易に抽出可。隔週の実日付は月次PDF併用が必要な点のみ手間。"
+surveyed_at: '2026-07-18'

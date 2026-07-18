@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13110'
+handle: meguro
+name_ja: 目黒区
+population: 283795
+source_type: pdf
+schedule_url: https://www.city.meguro.tokyo.jp/seisou/kurashi/gomi/youbiichiran.html
+calendar_urls:
+- https://www.city.meguro.tokyo.jp/documents/4335/aobadai123.pdf
+- https://www.city.meguro.tokyo.jp/documents/4335/h28syuusyuuyoubi.pdf
+verify_sources:
+- weekday-list-pdf
+- tokyo-opendata
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地域（町丁目グループ）
+district_count_approx: 50
+yearend: unknown
+notes: '一次ソースは地域別「資源・ごみ収集日カレンダー<2026年度版>」PDF(例 aobadai123.pdf, /documents/4335/ 配下)。テキスト層あり(pdftotext 成功、10140字/2p)、日付入り通年カレンダー
+  (2026/4-2027/3、日〜土グリッドに資源/可燃/不燃・水銀を配置)で granularity=dates。約50地域分。 補助/検証: 「収集曜日一覧表」PDF(h28syuusyuuyoubi.pdf、テキスト層あり)=五十音/地域/資源(週1曜日)/
+  燃やすごみ(週2曜日)/燃やさないごみ(月2・第n曜日、○付き週表記)の weekday-rules 表。ファイル名 h28 だが現行ページから配信中(曜日は経年安定の想定、要日付照合)。 もう一つの検証源: 東京都オープンデータカタログ
+  目黒区「不燃ごみ収集曜日グループ別収集日一覧」 (dataset t131113d0000000025, CC-BY-4.0)=不燃のみの部分データ(全品目ではない)。 ページはPDFのみでHTML表・収集日CSVは無し。年末年始はページに明示なし=unknown(要12月告知確認)。
+  古紙は町会等の集団回収(区収集外、看板/HP参照)。粗大は有料申込制。 ライセンス明示なし(Copyright Meguro City)、カレンダー本体は proprietary-site 扱い。 difficulty
+  3(機械可読PDFグリッド。一覧表PDFのみなら曜日規則で難度2相当だが鮮度検証が要る)。'
+surveyed_at: '2026-07-18'

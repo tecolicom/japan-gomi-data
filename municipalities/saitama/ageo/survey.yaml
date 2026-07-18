@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11219'
+handle: ageo
+name_ja: 上尾市
+population: 224884
+source_type: image-pdf
+schedule_url: https://www.city.ageo.lg.jp/page/423990.html
+calendar_urls:
+- https://www.city.ageo.lg.jp/uploaded/attachment/119606.pdf
+- https://www.city.ageo.lg.jp/uploaded/attachment/119607.pdf
+- https://www.city.ageo.lg.jp/uploaded/attachment/119608.pdf
+- https://www.city.ageo.lg.jp/uploaded/attachment/119609.pdf
+verify_sources:
+- app
+license: proprietary-site
+difficulty: 4
+district_unit: 地区
+district_count_approx: 4
+yearend: unknown
+notes: 令和8年7月〜令和9年6月版。市内を4地区(A/B/C/D)に分割、各地区に町名割当あり (A:仲町・愛宕・原市1〜3区・東今泉ほか / B:原市6〜9区・平方・西貝塚ほか / C:上町・柏座・緑丘・本町ほか
+  / D:上・南・久保・菅谷・錦町ほか)。 ただしカレンダーPDF(119606-609, 各1.1MB)は pdftotext でテキスト層ほぼ皆無 (2文字)=画像PDF。地区↔町名の対応は別途「収集区域図」PDF(画像)にあり=
+  地区割データも機械可読でない。OD・CSV言及なし。年末年始はページに記載なく 毎年別告知型とみられる(未確認でunknown)。上尾市ごみカレンダーアプリあり。 → 収録には画像PDFのOCR/目視転記が必要。難度高い。
+surveyed_at: '2026-07-17'
+granularity: dates

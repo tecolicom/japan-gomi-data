@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13219'
+handle: komae
+name_ja: 狛江市
+population: 82189
+source_type: pdf
+schedule_url: https://www.city.komae.tokyo.jp/index.cfm/41,0,323,3022,html
+calendar_urls:
+- https://www.city.komae.tokyo.jp/index.cfm/41,142177,c,html/142177/20260303-150754.pdf
+verify_sources:
+- https://www.city.komae.tokyo.jp/index.cfm/41,78217,323,2021,html
+- https://catalog.data.metro.tokyo.lg.jp/organization/t132195
+license: unknown
+difficulty: 3
+granularity: dates
+district_unit: 町丁 (丁目・町全域)
+district_count_approx: 22
+yearend: calendar-explicit
+notes: '一次ソースは公式サイト「ごみ・リサイクルカレンダー」ページ (city.komae.tokyo.jp)。 地区別に PDF が 22 種類ぶら下がる (町丁単位: 猪方全域/駒井町全域/西野川全域/中和泉1丁目/
+  和泉本町1丁目・2丁目 …等、丁目や全域で細分)。各PDF約3.7MB。 PDFはテキスト層あり (pdftotext可)。通常出力はカレンダーグリッドで読み順が崩れるが、 pdftotext -layout で週行×曜日列に整い、各日セルの下に「プラ/可燃/不燃・有害/紙・布/缶/
+  ペット/金属/発火ビン」等の区分ラベルが並ぶ形で抽出可能。1PDFに令和8年4月～令和9年3月の 12か月グリッドを収録 (全年具体日付=granularity: dates)。年末年始表記あり→calendar-explicit。
+  収集曜日ルールのテキストやCSV/JSONは公式HTMLソース内に見当たらず (grepで .csv/.json 参照なし)。 東京都オープンデータカタログの狛江市(t132195)はCLI/WebFetchともCloudFront
+  403。 WebSearch上では狛江市の公開データは施設/観光/文化財と「分別方法一覧」(CC-BY-4.0)程度で、 収集日・収集曜日のCSVは確認できず。カレンダーPDF自体に明示的な利用ライセンス表示なし→license
+  unknown。 実装難度3: テキスト層はあるがグリッドの列マッピングと22ファイル分の地区対応が必要。 別途「狛江ごみ分別アプリ」もあるがPDFで足りるため未調査。'
+surveyed_at: '2026-07-18'

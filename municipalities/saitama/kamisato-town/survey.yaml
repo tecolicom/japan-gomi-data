@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11385'
+handle: kamisato-town
+name_ja: 上里町
+population: 29434
+source_type: html
+schedule_url: https://www.town.kamisato.saitama.jp/1643.htm
+calendar_urls:
+- https://www.town.kamisato.saitama.jp/1643.htm
+verify_sources:
+- https://www.town.kamisato.saitama.jp/secure/2226/R8_gomibunbetsu.pdf
+- https://gomi-calendar.com/saitama/kodama-kamisato/
+- https://www.kodamakouiki.jp/jigyougaiyou/gomiapp.html
+license: unknown
+difficulty: 2
+district_unit: 地区別
+district_count_approx: 5
+yearend: december-announce
+notes: 収集日程は町公式サイト「家庭ごみの出し方」(1643.htm) 内の HTML 表で公開。5地区 (賀美/長幡/七本木/上里東/神保原) ×可燃・不燃・資源・有害の曜日パターン方式で、 可燃は週2日 (月木 or
+  火金)、他は「第2・4水」等の第n曜日指定。curl 200 で クリーンに取得可、機械可読性高い。ごみ処理は一部事務組合「児玉郡市広域市町村圏組合」 が担当 (本庄市・美里町・神川町・上里町共通の指定袋/分別アプリ)
+  だが、収集曜日表は 町が公開。組合サイト(kodamakouiki.jp)にはアプリ経由のカレンダー機能あり。 分別辞典は gomisaku.jp/0241。埼玉県ODポータルに上里町は19データセット登録あるが ごみ収集日程のデータセットは無し
+  (人口・コミバス等のみ)。町サイトの分別PDF R8_gomibunbetsu.pdf はテキスト層なしの画像PDF (pdftotext 空) で検証用のみ。 HTML表は曜日の周期パターンのみで暦日への展開はカレンダー生成が必要。年末年始の
+  休止日は表に明記なく毎年12月に別途告知される想定。license は表記未確認で unknown。
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

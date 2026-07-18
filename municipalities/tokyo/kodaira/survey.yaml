@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13211'
+handle: kodaira
+name_ja: 小平市
+population: 198303
+source_type: pdf
+schedule_url: https://www.city.kodaira.tokyo.jp/kurashi/092/092557.html
+calendar_urls:
+- https://www.city.kodaira.tokyo.jp/kurashi/files/92557/092557/att_0000021.pdf
+- https://www.city.kodaira.tokyo.jp/kurashi/files/92557/092557/att_0000023.pdf
+- https://www.city.kodaira.tokyo.jp/kurashi/files/92557/092557/att_0000024.pdf
+- https://www.city.kodaira.tokyo.jp/kurashi/files/92557/092557/att_0000025.pdf
+- https://www.city.kodaira.tokyo.jp/kurashi/files/92557/092557/att_0000026.pdf
+verify_sources:
+- calendar-pdf-text
+- app
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区 (A〜E)
+district_count_approx: 5
+yearend: calendar-explicit
+notes: '2025年9月版「資源とごみの収集カレンダー」。市内を A〜E の5地区に分割 (家庭ごみ有料化済み)。 ★実測 (2026-07-18): 地区別カレンダーPDF att_0000021.pdf(A地区,
+  8.3MB) はテキスト層あり(58115字)、 「令和7年9月〜令和8年9月」の日付入り通年カレンダー=granularity dates。品目=資源・ごみのマーク方式。 地区↔町名の対応・年末年始も通年カレンダー内に日付で明示される見込み(calendar-explicit)。難所は方眼カレンダーの
+  日付×品目セル対応をレイアウト座標から解く必要=difficulty 3 (中野/杉並のカレンダーPDFと同系)。 収集曜日オープンデータ・テキスト版・サイト内CSV/JSONは無し。「小平ごみ分別アプリ」あり(同バックエンド,
+  検証源)。 分別辞典Web版 gomisaku.jp/0101。市サイトCC宣言なし=事実データ抽出整理。課: 資源循環課(リサイクルセンター内)。'
+surveyed_at: '2026-07-18'

@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13305'
+handle: hinode-town
+name_ja: 日の出町
+population: 15637
+source_type: image-pdf
+schedule_url: https://www.town.hinode.tokyo.jp/0000004241.html
+calendar_urls:
+- https://www.town.hinode.tokyo.jp/cmsfiles/contents/0000004/4241/R8kateiyou.pdf
+- https://www.town.hinode.tokyo.jp/0000000162.html
+verify_sources:
+- HTML「ごみの出し方について」に曜日ルール記載 (可燃=毎週月木, 不燃=毎月1回火, 資源A=毎月2回水)
+- ごみ分別辞典PDF (https://www.town.hinode.tokyo.jp/cmsfiles/contents/0000000/162/shigenntogominobunnbetu.pdf)
+- ごみ分別検索module (https://www.town.hinode.tokyo.jp/module/garbage.php) ※品目→分別区分の辞書で収集日程データではない
+license: unknown
+difficulty: 4
+granularity: dates
+district_unit: 町全体で曜日は共通 (粗大ごみのみ収集委託業者でA地区/B地区の2区分)
+district_count_approx: 2
+yearend: calendar-explicit
+notes: '処理主体は西秋川衛生組合(あきる野市・日の出町・檜原村の一部事務組合)。※プレイブック想定の「西多摩衛生組合(青梅・福生・羽村・瑞穂)」ではなく別組合。収集運搬は町が民間業者へ委託(粗大でA地区=クリーンエコロジー/B地区=藤谷産業と地区別)。
+  最有力の収集日程ソースは町公式「令和8年度【家庭用】資源とごみの収集カレンダー」PDF(R8kateiyou.pdf, 令和8年4月〜令和9年3月, 4.06MB)を curl で HTTP 200 取得成功。ただし pdftotext
+  で抽出文字数20字≒テキスト層なし=画像PDFのため機械抽出不可(difficulty=4)。年間カレンダー形式なので年末年始休止日はPDF紙面に明示される想定(calendar-explicit)。 公式HTML「ごみの出し方について」には主要区分の曜日ルール(可燃=毎週月・木,
+  不燃=毎月1回火曜, 資源A=毎月2回水曜)が本文テキストで記載されており部分的に機械可読だが、資源B・ペットボトル・有害ごみ等の曜日と具体日付・地区差は本文に無くPDF依存。したがってgranularityは(カレンダー上は)dates相当だが自動取得はできない。
+  オープンデータ: 東京都ODカタログに日の出町の組織ページ(organization=t133051)は存在するが、CLI curl / WebFetch とも CloudFront 403で内容確認不可。WebSearch上では日の出町のごみ収集(収集曜日)標準ODデータセットは確認できず(検索でヒットしたt131113等は八王子市のデータ)。よってgomi収集のOD有無はunknown寄り(未確認)。
+  ライセンス: 収集カレンダーPDFは町サイト掲載物でライセンス表記未確認のためunknown。ODカタログ側は通例CC-BYだが当該gomiデータセット自体が未確認のため断定しない。 未確認点: (1)ODカタログ内に収集日程データセットがあるか(403で未確認),
+  (2)画像PDF内の全区分の曜日・地区割・祝日収集可否・年末年始具体日。いずれも要ブラウザ/OCR。'
+surveyed_at: '2026-07-18'

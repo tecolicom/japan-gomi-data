@@ -1,0 +1,32 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13361'
+handle: tokyo-oshima-town
+name_ja: 大島町
+population: 6500
+source_type: pdf
+schedule_url: https://www.town.oshima.tokyo.jp/soshiki/suidou/gomi2025.html
+calendar_urls:
+- https://www.town.oshima.tokyo.jp/uploaded/attachment/8394.pdf
+- https://www.town.oshima.tokyo.jp/uploaded/attachment/8395.pdf
+- https://www.town.oshima.tokyo.jp/uploaded/attachment/8396.pdf
+- https://www.town.oshima.tokyo.jp/uploaded/attachment/8397.pdf
+- https://www.town.oshima.tokyo.jp/uploaded/attachment/8398.pdf
+- https://www.town.oshima.tokyo.jp/uploaded/attachment/8399.pdf
+verify_sources:
+- https://www.town.oshima.tokyo.jp/life/1/11/36/
+- https://www.nishi.or.jp/homepage/gomicalendar/calendar_c.html?date=2026-4&id=56
+license: unknown
+difficulty: 3
+granularity: dates
+district_unit: 地区
+district_count_approx: 6
+yearend: calendar-explicit
+notes: '一次ソースは公式サイト内「地区別ごみ収集カレンダー・分別表」(www.town.oshima.tokyo.jp/soshiki/suidou/gomi2025.html)。 2026年度版として6地区分の月別カレンダーPDF
+  (attachment/8394〜8399.pdf) を掲載。 地区区分は集落単位で6つ: (1)元町1・2丁目/北の山/野増 (2)元町3・4丁目/岡田/泉津 (3)間伏 (4)差木地 (5)クダッチ (6)波浮港。
+  PDFはテキスト層あり (pdftotextで日付・分別区分を抽出確認済み)。1日単位の日付グリッドカレンダーで granularity=dates。 会計年度 (4月〜翌3月) を通した暦なので年末年始も同一カレンダー内に明示
+  → yearend=calendar-explicit。 分別区分: 可燃ごみ/金属ごみ/ビン・ガラス・瀬戸物/空き缶/ペットボトル/発泡スチロール。「収集しません」で祝日休止を明記。 難易度3: テキスト層PDFで抽出は容易だが、日付セルと分別ラベルの2次元グリッド構造をパースする必要があり、地区ごとに6ファイル。
+  オープンデータCSV/JSONはページ内に存在せず。東京都オープンデータカタログ(CLI 403)およびWebSearchでも島嶼部ごみ収集の構造化データは確認できず。 ライセンス: 公式サイトフッターに「Copyright
+  (C) Oshima Town All rights reserved.」のみ。オープンデータライセンス明記なし → unknown。 検証時 curl はツール権限拒否のため WebFetch/WebSearch と保存済みPDFの
+  pdftotext で確認。 注意: 「西宮市大島町」など同名の別地名が検索に混入するため要区別。'
+surveyed_at: '2026-07-18'

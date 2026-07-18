@@ -1,0 +1,21 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13120'
+handle: nerima
+name_ja: 練馬区
+population: 752789
+status: collected
+source_type: html
+schedule_url: https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+calendar_urls: []
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町丁目グループ
+district_count_approx: 57
+yearend: december-announce
+notes: 公式「地域別収集曜日一覧」HTML表を機械変換・収録済み (57コース)。地域別PDF (日付入り、R8) でエッジ照合済み。収集曜日ODは都カタログに無し。年末年始は12/31〜1/3休止だが細部は年により郵便番号別に変わり得る
+  (12月告知)。
+surveyed_at: '2026-07-18'

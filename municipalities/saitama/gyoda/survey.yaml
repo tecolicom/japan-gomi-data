@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11206'
+handle: gyoda
+name_ja: 行田市
+population: 75859
+source_type: json
+schedule_url: https://www.city.gyoda.lg.jp/kurashi/gomi/gomi_search/chikubetsu/search.html
+calendar_urls:
+- https://www.city.gyoda.lg.jp/soshiki/kankyokeizaibu/kankyo/gyomu/gomi/recycle/3208.html
+- https://www.city.gyoda.lg.jp/material/files/group/18/syuusyuu.pdf
+- https://www.city.gyoda.lg.jp/material/files/group/18/r6-12.pdf
+verify_sources:
+- site-json
+- course-pdf
+license: proprietary-site
+difficulty: 2
+district_unit: 町名
+district_count_approx: 132
+yearend: december-announce
+notes: '収集曜日検索は SMART CMS(smart-lgov)の汎用データJSON APIが駆動。CLIから token/type_id=2 で 132町全件を200取得成功(実データ確認済)。header列=
+  燃えるごみ/燃えないごみ/粗大ごみ/有害ごみ/ 資源物(缶・ビン類)/資源物(紙・布類)。曜日は「毎週火・金」「毎月第4木曜日」等の日本語表記。 独立検証に資源物地区別収集日程表PDF(group/18)が使える。source_typeはenum外だが本質はCSV/JSON層。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

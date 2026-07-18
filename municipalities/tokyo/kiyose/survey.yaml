@@ -1,0 +1,24 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13221'
+handle: kiyose
+name_ja: 清瀬市
+population: 76157
+source_type: pdf
+schedule_url: https://www.city.kiyose.lg.jp/kurashi/gomi/gomi/1013539.html
+calendar_urls:
+- https://www.city.kiyose.lg.jp/_res/projects/default_project/_page_/001/013/539/2026sitajyukutou.pdf
+verify_sources:
+- course-pdf-cross
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区
+district_count_approx: 6
+yearend: calendar-explicit
+notes: 一次ソースは「令和8年度ごみ・資源物収集カレンダー」(kurashi/gomi/gomi/1013539.html)配下の 地区別カレンダーPDF。6地区(①下宿・旭が丘・中里4〜6丁目/②上清戸・中清戸・下清戸/③中里3丁目/
+  ④元町1丁目/⑤元町2丁目・中里1・2丁目・野塩・梅園/⑥松山・竹丘)、URLは /_res/…/001/013/539/2026<地区>.pdf。 テキスト層あり(pdftotext 成功、29842字)、日付入り通年カレンダー(令和8年4月〜令和9年3月、日〜土グリッドに
+  可燃/不燃/容器包装プラスチック/ペットボトル等を配置)で granularity=dates。全域おおむね共通パターン (燃えるごみ=月木/資源=火金/プラ=金/古紙古布=火 が基調、地区差は要精査)。 ※旧「地区別収集表」tikubetu.pdf(/001/003/808/)は画像PDF(pdftotext=2字)なので使わず、R8カレンダーPDFを一次にする。
+  年末年始は「年末年始を除き、収集日前日・当日が祝日でも収集」と明記、年度版カレンダーに実日付反映=calendar-explicit。 収集曜日CSV/JSON・テキスト版は未発見。ライセンス明示なし=proprietary-site。
+  difficulty 3(機械可読PDFグリッドのセル対応パースが主コスト)。
+surveyed_at: '2026-07-18'

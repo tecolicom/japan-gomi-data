@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11228'
+handle: shiki
+name_ja: 志木市
+population: 75075
+source_type: html
+schedule_url: https://www.city.shiki.lg.jp/soshiki/16/1201.html
+calendar_urls:
+- https://www.city.shiki.lg.jp/uploaded/attachment/14875.pdf
+- https://www.city.shiki.lg.jp/uploaded/attachment/14876.pdf
+- https://www.city.shiki.lg.jp/uploaded/attachment/14877.pdf
+- https://www.city.shiki.lg.jp/uploaded/attachment/14878.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 2
+district_unit: 地区
+district_count_approx: 7
+yearend: unknown
+notes: '一次は市サイト「各地区のごみ収集日程表」ページ内のHTML表(<table>1個、地区× 曜日で本文に月曜/火曜等が展開)。地区は7つ(上宗岡/中宗岡/下宗岡/本町/幸町/ 館/柏町)。丁目分割の有無は要精査。検証用に地区別日程表PDF(14875〜,
+  日本語版 535KB ほか多言語)あり=練馬方式でHTML一次+PDF照合が現実的。祝日も収集 (年末年始は除くと明記)、年末年始の実休止日はページ本文に無く要確認(unknown)。 収集曜日OD・CSVは無し。令和8年3月版「分け方・出し方」冊子あり。
+  課: 環境推進課(048-473-1492)。素直なHTML表で難度は低い。'
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

@@ -1,0 +1,33 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13122'
+handle: katsushika
+name_ja: 葛飾区
+population: 474536
+source_type: image-pdf
+schedule_url: https://www.city.katsushika.lg.jp/kurashi/1000048/1017199/1020038.html
+calendar_urls:
+- https://www.city.katsushika.lg.jp/kurashi/1000048/1017199/index.html
+- https://www.city.katsushika.lg.jp/kurashi/1000048/1017199/1020038.html
+- https://www.city.katsushika.lg.jp/_res/projects/default_project/_page_/001/020/038/08-1.pdf
+- https://www.city.katsushika.lg.jp/_res/projects/default_project/_page_/001/020/038/2025k-1.pdf
+verify_sources:
+- GOMICALE(ゴミカレ) https://gomicale.com/Tokyo/Katsushika (第三者転記)
+- ごみカレンダー.com https://note.com/gomi_calendar/n/n56a8ab4f8230 (第三者転記)
+- スマゴミ https://www.scoooop.com/apps/smartgomiapp/東京都-葛飾区/ (第三者転記)
+- 葛飾区総合アプリ(kokosil) https://katsushika-data.kokosil.net/ (公式アプリ)
+- 花しょうぶコールセンター 03-6758-2222 / 清掃事務所作業係 03-3693-6113
+license: unknown
+difficulty: 4
+granularity: dates
+district_unit: 丁目単位でグルーピングした収集地区
+district_count_approx: 16
+yearend: calendar-explicit
+notes: '公式は「2026年度版 資源とごみの収集カレンダー」を収集地区16区分でPDF配布(2026年4月〜2027年3月の通年,日付単位)。 HTMLソースから .pdf 参照を grep: フルカレンダー 08-1〜08-16.pdf(各約2.5MB)/全地区共通
+  08-al.pdf(4.7MB)/簡易版 2025k-1〜2025k-16.pdf。 curl 200 取得成功。フルカレンダー(08-1.pdf 等)と共通ページ(08-al.pdf)は pdftotext で7〜13字=テキスト層なしの画像PDF。
+  簡易版(2025k-1.pdf)のみテキスト層あり(約2000字)だが,抽出できるのは表題+地区の対象町丁名(例:①地区=お花茶屋1〜3丁目,小菅1〜4丁目,東堀切1〜3丁目,堀切6〜8丁目)+ 素の月別日付グリッドのみで,どの曜日/日が何の収集(燃やすごみ/資源/プラ等)かの区分マークは画像側にありテキスト非抽出。よって実スケジュール内容はOCR/転記が必要=image-pdf,
+  difficulty 4。 地区割は丁目単位で16地区。収集品目や祝日収集の可否・年末年始休止の文言は本文ページ/FAQ(1009354)には記載なく,通年フルカレンダー画像上に明示される想定(画像PDFのためテキスト検証不可,yearend=calendar-explicit
+  は通年カレンダー構成からの推定)。 住所→地区の検索ページやCSV/JSONは未確認(存在の記述なし)。都オープンデータカタログの葛飾区データセット t131229d0000000015 は「粗大ごみ持込施設/集積所一覧」であり収集日程スケジュールではない(CLI
+  は CloudFront 403 で実体未確認)。 ライセンスはカレンダーPDFに明示的OD表示が見当たらず unknown(区サイトの著作権/利用規約下)。population は確実値未確認のため null(推測回避)。
+  毎年3月に翌年度分を公開(FAQ記載)。'
+surveyed_at: '2026-07-18'

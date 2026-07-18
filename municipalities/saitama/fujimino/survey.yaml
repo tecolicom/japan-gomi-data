@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11245'
+handle: fujimino
+name_ja: ふじみ野市
+population: 112602
+source_type: pdf
+schedule_url: https://www.city.fujimino.saitama.jp/soshikiichiran/kankyoka/haikibutsutaisakugakari/kateigomi/wakekatadasikta/2415.html
+calendar_urls:
+- https://www.city.fujimino.saitama.jp/material/files/group/19/2026A.pdf
+- https://www.city.fujimino.saitama.jp/material/files/group/19/2026B.pdf
+- https://www.city.fujimino.saitama.jp/material/files/group/19/2026C.pdf
+- https://www.city.fujimino.saitama.jp/material/files/group/19/2026D.pdf
+verify_sources:
+- app
+license: proprietary-site
+difficulty: 3
+district_unit: 地域
+district_count_approx: 4
+yearend: unknown
+notes: 令和8年度(2026/4〜2027/3)版。市内を4地域(A〜D)に分割、地域別収集カレンダーPDF (2026A〜D.pdf, 各約300KB)。pdftotext でテキスト層あり=日付入りカレンダー本体
+  に加え、各PDF冒頭に対象町名(例A:池上/上ノ原1〜3丁目/亀久保1601番地以降/駒林…) と分別品目(資源物1=びん・新聞紙・ダンボール・紙パック・布類 ほか)を列挙。 丁目・番地単位の分割あり(亀久保が番地で分かれる)。年末年始はカレンダーPDF内に
+  日付で入る可能性が高いが未精読(unknown)。収集曜日OD・CSVなし。多言語版・ ごみ分別アプリあり。日付入りテキスト層PDFで機械抽出しやすく難度は中。
+surveyed_at: '2026-07-17'
+granularity: dates

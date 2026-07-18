@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11225'
+handle: iruma
+name_ja: 入間市
+population: 139748
+source_type: csv
+schedule_url: https://opendata.pref.saitama.lg.jp/resource_download/1494
+calendar_urls:
+- https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
+- https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf
+verify_sources:
+- site-csv
+- booklet
+license: PDL-1.0
+difficulty: 2
+district_unit: 地区
+district_count_approx: null
+yearend: calendar-explicit
+notes: '★最良候補。埼玉県ODポータルに日付入り実カレンダーCSV(resource 1494 / dataset 274)。列=識別情報/ 団体コード/団体名/収集地域/収集分別区分/年月日。DL検証済(398KB,
+  UTF-8, 2026/04/01〜の縦持ち)。 分別区分例=可燃ごみ/不燃ごみ/プラスチックごみ/ビン・缶・ペットボトル・有害ごみ。日付データそのものなので 年末年始も日付で表現(休止日=データ欠落)。ライセンスはポータル標準=PDL1.0(公共データ利用規約、CC-BY互換・
+  出典明示要)。カタログ上のリリース2022-10-13だがCSV実体は2026年度日付を含む=更新済。難所は「収集地域」が 「扇台3〜6丁目、久保稲荷3〜5丁目、…、大字扇町屋1217・1219番地」等のフリーテキストで町丁目分割のパースが必要。
+  地域(コース)のユニーク数は未カウント。社協「パッと見て分かるごみ分別カレンダー」も別途あり。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

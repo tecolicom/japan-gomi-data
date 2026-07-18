@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11207'
+handle: chichibu
+name_ja: 秩父市
+population: 53932
+source_type: pdf
+schedule_url: https://www.city.chichibu.lg.jp/9098.html
+calendar_urls:
+- https://city.chichibu.lg.jp/secure/22218/28%E6%A0%83%E8%B0%B7.pdf
+- https://www.c-kouiki.jp/gomi-2-2-2-2-2-2/calendar-1-2/
+verify_sources:
+- course-pdf
+- booklet
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 43
+yearend: calendar-explicit
+notes: 収集主体は秩父広域市町村圏組合(5市町共同)、日程管理は秩父市生活衛生課。 市サイト /9098.html に地区別ごみカレンダーPDFを掲載。地区は 43分割 (秩父中央34・吉田4・大滝2・荒川3)、PDFは
+  /secure/22218/01〜43 の番号+地区名.pdf。 PDF はテキスト層あり(pdftotext 抽出可、CLI 200)だが月別カレンダーのグリッド レイアウトで日番号と品目名が散在するため要パース=difficulty
+  3。令和7年度版 (4月〜翌3月)のため年末年始も表内に含まれる想定(グリッド中の12/1月部分は 未詳細確認)。テキスト版カレンダー・収集曜日CSV/JSONは未発見。埼玉県OD ポータルにも秩父市のごみ収集日データセットは無し(県共同データセットも無し確認済)。
+  組合サイト(c-kouiki.jp)のカレンダーは申込フォーム経由でPDF送付、直リンク無し だが検証用の独立系統として利用可。アプリ提供は未確認。
+surveyed_at: '2026-07-17'
+granularity: dates

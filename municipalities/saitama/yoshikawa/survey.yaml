@@ -1,0 +1,37 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11243'
+handle: yoshikawa
+name_ja: 吉川市
+population: 71136
+source_type: pdf
+schedule_url: https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,121,682,html
+calendar_urls:
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_01.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_02.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_03.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_04.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_05.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_06.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_07.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_08.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_09.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_10.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_11.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_12.pdf
+- https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_13.pdf
+verify_sources:
+- district-pdf-crosscheck
+- bunbetsu-jiten-50on
+license: unknown
+difficulty: 3
+district_unit: 地区
+district_count_approx: 13
+yearend: calendar-explicit
+notes: '一次ソースは公式サイトの地区別ごみ収集カレンダー(令和8年度=2026/4〜2027/3)。 13地区に分割、各地区1つのPDF (R8_gomi_01〜13.pdf)。CSV/JSON/収集曜日検索は無し
+  (HTMLソースをgrepしたがPDFリンクのみ)。PDFはテキスト層あり(pdftotextで日付・ ごみ種別が抽出可)だが、レイアウトがカレンダーグリッドのためテキスト順が錯綜し、 日付→ごみ種別の対応付けにはグリッド解析が必要
+  → difficulty 3。年間カレンダーで December/January も同一PDF内に収録され、年末年始の収集日はカレンダーグリッドに 直接記載 (別途12月告知に依存しない) → yearend=in-calendar。
+  検証: 13地区PDF群の相互照合 + 50音別ごみ分別辞典。 ライセンス: カレンダーPDF自体に明示的な利用条件記載なし → unknown。 埼玉県ODポータル(opendata.pref.saitama.lg.jp)には吉川市の収集"量"統計CSVはあるが
+  収集"日程"データセットは無し(県共同データセットも無し確認済)。 curl は Mozilla UA で 200 (403 なし)。'
+surveyed_at: '2026-07-17'
+granularity: dates

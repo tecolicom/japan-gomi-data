@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11324'
+handle: saitama-miyoshi-town
+name_ja: 三芳町
+population: 37201
+source_type: image-pdf
+schedule_url: https://www.town.saitama-miyoshi.lg.jp/life/gomi/gomi_syuusyuu.html
+calendar_urls:
+- https://www.town.saitama-miyoshi.lg.jp/life/gomi/documents/r8gomikarenda.pdf
+verify_sources:
+- app
+license: proprietary-site
+difficulty: 4
+district_unit: コース
+district_count_approx: null
+yearend: unknown
+notes: 'R8収集日程表PDF(r8gomikarenda.pdf)はテキスト層が実質無し(埋込フォント1・抽出文字2字=画像化)→OCR必須。 収集コースは公式ページの画像地図で示され、コース数・対象地区が機械可読テキストに無い。
+  主導線は「三芳ごみ分別アプリ」。9自治体中もっとも難物。地区割の確度を上げるには役場資料の追加確認が必要。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

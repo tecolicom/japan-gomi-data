@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13402'
+handle: aogashima-vill
+name_ja: 青ヶ島村
+population: 159
+source_type: pdf
+schedule_url: http://www.vill.aogashima.tokyo.jp/life/recycle.pdf
+calendar_urls:
+- http://www.vill.aogashima.tokyo.jp/life/recycle.html
+- http://www.vill.aogashima.tokyo.jp/life/recycle.pdf
+verify_sources:
+- http://www.vill.aogashima.tokyo.jp/office/reiki_int/reiki_honbun/g163RG00000197.html
+- https://www.sfinter.com/type/tokyo/aogashimamura/
+license: unknown
+difficulty: 2
+granularity: weekday-rules
+district_unit: 全村
+district_count_approx: 1
+yearend: unknown
+notes: "人口約170人の日本最小級の村。公式サイト vill.aogashima.tokyo.jp は実在 (HTTP 200)。 ごみ収集情報は「ゴミ・リサイクル」ページ (http://www.vill.aogashima.tokyo.jp/life/recycle.html)\
+  \ にあり、実体は PDF 「ゴミ集積場所への出し方のルール」(recycle.pdf, 389KB, application/pdf)。 pdftotext でテキスト層あり (抽出可能) → source_type=pdf\
+  \ (テキスト層あり)。 収集運用は全村一律・極めて簡素:\n  - 燃えるごみ/生ごみ: 収集日=月・水・金 (週3回・曜日固定)。生ごみ当日朝9時まで、燃えるごみ当日朝9時30分まで。\n  - 燃えないごみ・有害ごみ・資源ごみ・粗大ごみ:\
+  \ 「随時」= クリーンセンター/リサイクル品等置場/池之沢仮置場へ各自持込 (定曜日収集なし)。\n  - 家電リサイクル品: 毎月第3月曜日 (指定) に村役場が収集 or 各自持込。\n地区割なし (全村1区)。曜日は燃えるごみのみ規定、他は持込のため\
+  \ granularity=weekday-rules と判定。 カレンダー形式 (日付列挙) の CSV/JSON/PDF は存在しない。オープンデータ提供も確認できず。 PDF は「平成23年1月1日現在」付で古いが、これが現行の公式配布ルール文書。\
+  \ 同ページに「廃棄物処理施設で処分した廃棄物の種類および数量PDF (quantity&kind_of_waste.pdf)」もあるが、 これは月次の処分量統計であり収集日程データではない。 問合せ: 村役場(廃棄物担当)\
+  \ 04996-9-0111。"
+surveyed_at: '2026-07-18'

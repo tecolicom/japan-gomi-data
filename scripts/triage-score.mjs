@@ -72,10 +72,15 @@ function score(r) {
            estimated: [...est].join('') || '' };
 }
 
+const MUNI = join(ROOT, 'municipalities');
+const { statSync, existsSync } = await import('node:fs');
+const isDir = (p) => statSync(p).isDirectory();
 const rows = [];
-for (const f of readdirSync(TRIAGE).filter((f) => f.endsWith('.yaml'))) {
-  const pref = f.replace('.yaml', '');
-  for (const r of yamlParse(readFileSync(join(TRIAGE, f), 'utf8'))) {
+for (const pref of readdirSync(MUNI).filter((p) => isDir(join(MUNI, p)))) {
+  for (const h of readdirSync(join(MUNI, pref)).filter((h) => isDir(join(MUNI, pref, h)))) {
+    const sp = join(MUNI, pref, h, 'survey.yaml');
+    if (!existsSync(sp)) continue;
+    const r = yamlParse(readFileSync(sp, 'utf8'));
     const s = score(r);
     rows.push({ pref, code: r.code, handle: r.handle, name_ja: r.name_ja, population: r.population,
                 source_type: r.source_type, ...s });

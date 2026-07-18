@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13118'
+handle: arakawa
+name_ja: 荒川区
+population: 226289
+source_type: csv
+schedule_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+calendar_urls:
+- https://www.city.arakawa.tokyo.jp/a025/recycle/shuushuubi/syusyubi.html
+- https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
+verify_sources:
+- official-html
+- region-pdf
+license: unknown
+difficulty: 2
+granularity: weekday-rules
+district_unit: 地区→丁目→番地・号
+district_count_approx: null
+yearend: calendar-explicit
+notes: '★一次ソース確定・実測 (2026-07-18): 区公式サイト配布CSV gomi_20251216.csv を HTTP 200・text/csv・cp932・ 479347バイト・2250行で取得確認。粒度が非常に細かく「地区,丁目,番地・号」単位まで分解。
+  列= 地区,丁目,番地・号,燃やすごみ,燃やさないごみ,プラスチック,ごみ備考欄,びん・缶/古紙, ペットボトル・発泡スチロール製食品用トレイ,古布,資源備考欄。 例: 南千住1丁目1番 燃やす=月木/燃やさない=第1・第3金/プラ=水/びん缶古紙=土/ペット=土/古布=土。
+  ★年末年始が備考欄に文字で明示 (ごみ「1/1〜1/3収集なし」, 資源「12/31〜1/3回収なし」)=calendar-explicit。 granularity: weekday-rules (曜日・第n金形式)。難所は「番地・号」行が2249件と多く、丁目/番地グループへの畳み込みが要る。
+  license: 区ポータル (portal/gomi/index.html) からリンクされるがページに「オープンデータ/CC BY」の宣言をgrepで確認できず=unknown (収集日程CSV自体のライセンス表記は要精査。区サイト利用規約の確認要)。difficulty
+  2 (素直なCSV・cp932)。 検証用に地域別ごみ収集カレンダーPDF (/documents/735/2026-1〜5.pdf) あり。'
+surveyed_at: '2026-07-18'

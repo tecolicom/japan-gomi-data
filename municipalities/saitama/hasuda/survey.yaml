@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11238'
+handle: hasuda
+name_ja: 蓮田市
+population: 60584
+source_type: html
+schedule_url: https://hs-eiseikumiai.org/shimin/schedule/hasuda/
+calendar_urls:
+- https://hs-eiseikumiai.org/shimin/schedule/hasuda/
+- https://hs-eiseikumiai.org/shimin/schedule/hasuda/calendar/
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 2
+district_unit: 地区（収集区域）
+district_count_approx: 7
+yearend: calendar-explicit
+notes: 'ごみ処理は蓮田白岡衛生組合 (hs-eiseikumiai.org) が担当。市公式サイト (city.hasuda.saitama.jp) は組合サイトとごみ分別アプリ「げんちゃん」へ誘導するのみ。 一次ソースは組合サイトの日程表ページ
+  (schedule_url)。7収集区域それぞれの 燃えるごみ/燃やせないごみ/ガラス類/ペットボトル等の収集曜日が HTML の表で テキスト明記されている(例「月・木」「火・金」)。各区域は複数の町丁を包含し、 区域名に町名を列挙(例:
+  江ヶ崎・藤ノ木・笹山・黒浜(宇都宮線東側) など)。 検証用に地域別カレンダー版 (/calendar/) が区域別 PDF で年度別(令和5〜8)に提供、 掲示用収集日程表 PDF もあり。CSV/JSON 参照は HTML
+  ソースに無し。 自治体/埼玉県ポータルのごみ収集オープンデータは確認できず。 年末年始: ページに明記「年末は12/31まで、年始は1/5から平常収集、令和8年は1/1・1/2休み」。 ライセンス: © HasudaShiraoka
+  Eisei Kumiai のみ、OD ライセンス表記なし → proprietary-site。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

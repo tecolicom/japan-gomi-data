@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11231'
+handle: okegawa
+name_ja: 桶川市
+population: 73060
+source_type: html
+schedule_url: https://www.city.okegawa.lg.jp/kurashi/gomi_kankyo/gomi_recycle/shushubi/2360.html
+calendar_urls:
+- https://www.city.okegawa.lg.jp/material/files/group/3/gomi_3.pdf
+- https://www.city.okegawa.lg.jp/material/files/group/3/higashi.pdf
+- https://www.city.okegawa.lg.jp/material/files/group/3/nisi_gomi_R4.pdf
+verify_sources:
+- html
+- course-pdf
+license: proprietary-site
+difficulty: 2
+district_unit: 地区
+district_count_approx: 2
+yearend: unknown
+notes: 'JR高崎線で東/西の2地区。地区別収集日ページ(HTML表)に全種別の曜日を掲載 (燃やせる/プラ/金属・ガラス・乾電池/その他/紙製容器包装/古着・新聞・雑誌・段ボール・紙パック)。 収集日程表PDF(group/3)が独立検証に使える。素直で難度低い。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

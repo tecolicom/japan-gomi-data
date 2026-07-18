@@ -1,0 +1,34 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13214'
+handle: kokubunji
+name_ja: 国分寺市
+population: 130916
+source_type: pdf
+schedule_url: https://www.city.kokubunji.tokyo.jp/kurashi/gomi/1029919.html
+calendar_urls:
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/higasimoto080309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/minamichou080309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/hinnchou0309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/higasikoi080309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/nisikoi080309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/takagi080309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/fujimoto080309.pdf
+- https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/029/919/tokura080309.pdf
+verify_sources:
+- gominohi.com (国分寺市 収集日一覧・全4地域表示)
+- 国分寺市OD「ゴミの分別方法一覧」(t132144d3100000014, 品目分別のみ / 曜日なし)
+- gomisaku.jp 国分寺市ごみ分別辞典 (品目分別)
+license: unknown
+difficulty: 3
+granularity: dates
+district_unit: 町名グループ (収集地区)
+district_count_approx: 8
+yearend: calendar-explicit
+notes: '公式「ごみ・リサイクルカレンダー」ページ(1029919.html)から8地区分の年度版PDF(令和8年度=2026年4月〜2027年3月)を配布。higasimoto080309.pdf を curl 200
+  取得、pdftotext でテキスト層あり(約11,433字)を確認 — 年月・曜日ヘッダ・品目名(燃やせるごみ/プラスチック/資源/本雑誌/その他の紙/有害ごみ等)が抽出でき機械可読PDF。ただし各PDFは1年分の日付付きカレンダー画像レイアウトで、日付セル内に品目名が配置される形式のため、日付×品目の対応抽出には座標ベース解析かレイアウト整形(pdftotext
+  -layout)が必要 → difficulty 3。市内は町名グループで8収集地区に分割(PDF 8種: 東元町西元町/南町泉町/本町本多/東恋ケ窪東戸倉/西恋ケ窪日吉町/高木町西町/富士本内藤光町/戸倉新町並木町北町)。年末年始はカレンダー内に明記(「12月29日(火)まで」「年末年始を除く」等の文言あり)
+  → calendar-explicit。東京都ODカタログ(CKAN API organization_show=t132144 で200取得)には国分寺市データセット10件があるが収集曜日CSV/JSONは存在せず、ごみ関連は品目分別の「ゴミの分別方法一覧」(CC-BY-4.0)のみ。HTMLページ上に.csv/.json参照なし(PDF専用)。人口は市統計
+  令和8(2026)年5月1日現在130,904人。収集曜日そのもののオープンデータは無く、一次ソースはテキスト層付きPDFカレンダー。検証はgominohi.com等の二次サイトで可能。PDFカレンダー自体のライセンス表記は未確認のため
+  license は事実上unknown。'
+surveyed_at: '2026-07-18'

@@ -1,0 +1,37 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13210'
+handle: koganei
+name_ja: 小金井市
+population: 126610
+source_type: pdf
+schedule_url: https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.html
+calendar_urls:
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/01_Nukuikitamachi_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/02_Honcho3.4.5_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/03_Midoricho4.5_Honcho2_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/04_Kajinocho_Sekinocho_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/05_Midoricho1.2.3_Sakuracho_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/06_Higashicho1.5_Nakacho1.2_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/07_Higashicho2.4_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/08_Higashicho3_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/09_Naka3.4_Hon1.6_Nukuiminami3_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/10_Maeharacho1.2.3.4_2026.pdf
+- https://www.city.koganei.lg.jp/kurashi/446/gomidashikata/gomicalendartebiki/gomicalendar.files/11_Nukuiminami1.2.4.5_Maeharacho5_2026.pdf
+verify_sources:
+- http://koganei.5374.jp/
+- https://gomicale.com/Tokyo/Koganei
+- https://catalog.data.metro.tokyo.lg.jp/dataset/t132101d0000000038
+license: unknown
+difficulty: 3
+granularity: dates
+district_unit: 地区
+district_count_approx: 11
+yearend: calendar-explicit
+notes: '一次ソースは公式サイトの地区別「令和8年度ごみ・リサイクルカレンダー」PDF (11地区分)。 各PDFは 14MB 前後だがテキスト層あり (pdftotext 成功)。年間カレンダー(2026年4月〜2027年3月)で、
+  燃やすごみ/古紙布などの定期品目は曜日固定 (例:月曜=燃やすごみ、火・金=古紙布)、 粗大・有害・プラ・びん缶ペット等の隔週品目は「4月8日,22日」のように実日付で列挙されており、 年末年始も年間グリッド内で明示 (注記「年末年始を除き、祝日も収集します」)
+  → yearend=calendar-explicit。 地区は11 (貫井北町/本町3-4-5/緑町4-5+本町2/梶野町関野町/緑町1-2-3+桜町/東町1-5+中町1-2/東町2-4/ 東町3/中町3-4+本町1-6+貫井南町3/前原町1-4/貫井南町1-2-4-5+前原町5)。
+  収集「日程」のオープンデータCSV/JSONは無し。東京都カタログ(t132101)に存在するのは 「ゴミの分別方法一覧」(t132101...0038, 分別辞典であり収集日ではない)のみ。CLIは catalog.data.metro.tokyo.lg.jp
+  が CloudFront 403、WebFetchも403。市の opendata ページは「都カタログで公開」と案内するのみ。 カレンダーPDFのライセンス表記は未確認 (市著作物と推定、CC等の明示見当たらず) →
+  license=unknown。 検証用に 5374.jp (koganei.5374.jp) とゴミカレ(gomicale)が曜日パターンを提供。 難易度3: テキスト層はあるが年間グリッドのレイアウトが複雑で、日付と品目の対応付けパースに要工夫。11PDF分の処理が必要。'
+surveyed_at: '2026-07-18'

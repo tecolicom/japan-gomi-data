@@ -26,7 +26,8 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 ## 構造
 - `docs/playbook.md` — **新自治体の収録手順書** (ソース探索の優先順・実装規約・照合とサンプリング・エージェント並行運用)
 - `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)
-- `municipalities/<都道府県>/<handle>/` — `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml`
+- `municipalities/<都道府県>/<handle>/` — `survey.yaml`(収集日データの**公開状況サーベイ**。調査済みなら未収録でも置く) /
+  `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml`
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
   - handle は leaf 名で全国一意。ツール(validate/build-ics/ダウンストリーム)は leaf を都市キーとして使う。
 - `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)
@@ -35,10 +36,10 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 - `tools/_lib/` — extractor 共通部品 (曜日/第n回目パース・categoriesOn 正典展開・コース畳み込み・照合と rule of three・レジストリ)。build-ics も同じ展開を使う
 - `tools/_template/` — 新自治体 extractor の雛形 (コピーして使う)
 - `docs/opendata-sources.md` — ごみ収集オープンデータの調査記録(新自治体収録時の探索ガイド・自治体別メモ)
-- `docs/triage/` — **調査台帳データセット**。自治体ごとの収集日データ公開状況 (出典 URL・形式・粒度・ライセンス・
-  「使いやすさスコア」) を記録した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 埼玉63+東京62=125 自治体。
-  `<都道府県>.yaml` が正典、`triage.csv` (全県 flatten) と `scores.csv` (採点) は生成物
-  (`node scripts/triage-csv.mjs` / `node scripts/triage-score.mjs --csv docs/triage/scores.csv`)。
+- `docs/triage/` — **調査台帳データセット** (すべて生成物)。自治体ごとの収集日データ公開状況 (出典 URL・形式・粒度・
+  ライセンス・「使いやすさスコア」) を集約した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 埼玉63+東京62=125 自治体。
+  **正典は各自治体の `municipalities/<都道府県>/<handle>/survey.yaml`** で、`<都道府県>.yaml`・`triage.csv`・`scores.csv` は
+  そこから再生成する (`node scripts/triage-csv.mjs` / `node scripts/triage-score.mjs --csv docs/triage/scores.csv`)。
   スコア定義は [`docs/opendata-quality-index.md`](docs/opendata-quality-index.md)。
   調査は外部からの確認 (2026-07) で誤りがあり得る — 指摘歓迎、随時更新する。
 

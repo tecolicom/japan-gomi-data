@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13215'
+handle: kunitachi
+name_ja: 国立市
+population: 76879
+source_type: pdf
+schedule_url: https://www.city.kunitachi.tokyo.jp/material/files/group/48/calender_allpage.pdf
+calendar_urls:
+- https://www.city.kunitachi.tokyo.jp/material/files/group/48/calender_allpage.pdf
+- https://www.city.kunitachi.tokyo.jp/soshiki/Dept05/Div03/Sec01/gyomu/gomirecycle/kateigomi/0427/12249.html
+verify_sources:
+- 市公式「家庭ごみの出し方」ページ(HTML・地区別曜日ルール明記)
+- 東京都オープンデータカタログ(国立市ごみ分別データ CSV/XLSX。ただし品目分類であり収集日ではない)
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区(A/B。町名でグルーピング)
+district_count_approx: 2
+yearend: calendar-explicit
+notes: '一次ソースは市公式サイト配布の年度版「くにたちごみの分け方・出し方カレンダー」全ページPDF(令和8年度版, 60ページ, 約11.7MB)。 pdffonts でBIZ-UDフォント等が uni=yes で埋め込み、pdftotext
+  でテキスト層を良好に抽出できることを確認(curl取得成功)。 表紙・目次・一覧表・品目別出し方ページはテキスト抽出可。カレンダー本体(A地区7〜19ページ, B地区20〜32ページ)は 月別グリッドで「2026 Apr.
+  / 日付 / 品目名」が実日付レベルで抽出できるため granularity=dates。ただしグリッドの セル位置対応(何日に何を出すか)の機械パースには相応の実装が必要なため difficulty=3(機械可読PDF)。
+  地区はA(東・中・谷保・泉・青柳・石田・矢川)とB(富士見台・西・北)の2区分で、市HTMLページに 「A地区:可燃 月木/不燃 隔週火」「B地区:可燃 火金/不燃 隔週月」等の曜日ルールも明記されており検証に使える。
+  カレンダーは令和8年4月〜令和9年3月をカバーし12月・1月ページに年末年始の実日付が載る想定のため yearend=calendar-explicit。 ライセンス: PDFに明示的なCCライセンス表記は未確認のため
+  proprietary-site と判定(市著作物・国立市観光まちづくり協会編集)。 東京都オープンデータカタログには国立市の「ごみ分別」CSV/XLSXが存在するが品目→分別区分の対応表であり収集日程データではない。
+  CLIからカタログ本体はCloudFront 403想定・未取得。収集日検索(kana.html)は品目の五十音索引であり町名別収集日一覧ではない。'
+surveyed_at: '2026-07-18'

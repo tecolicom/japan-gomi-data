@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11363'
+handle: nagatoro-town
+name_ja: 長瀞町
+population: 5998
+source_type: pdf
+schedule_url: https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/
+calendar_urls:
+- https://www.town.nagatoro.saitama.jp/wp-content/uploads/2023/03/1384cdbc7a619df1da7d22644b8d2d8e-2.pdf
+verify_sources: []
+license: unknown
+difficulty: 3
+district_unit: 地区
+district_count_approx: 3
+yearend: unknown
+notes: '収集は秩父広域市町村圏組合(TEL 24-8050)が実施、町民課が窓口。一次候補「ごみカレンダー(家庭用)」= 地区別PDF3本(本野上・中野上・野上下郷/袋区/矢那瀬・岩田・井戸・風布 等の3グループ)。日付入りカレンダーで
+  テキスト層あり(pdftotext可)。【注意】掲載PDFが令和5年度版(2023/03アップロード)で、最新年度版の公開有無を 要確認(サイト上のリンクがR5止まりの可能性)。収集日オープンデータは未発見。ライセンス未確認。
+  種別: もえるごみ・もえないごみ(指定袋)ほか。年末年始扱いは未確認。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

@@ -1,0 +1,33 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13205'
+handle: ome
+name_ja: 青梅市
+population: 128407
+source_type: pdf
+schedule_url: https://www.city.ome.tokyo.jp/soshiki/23/1182.html
+calendar_urls:
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77610.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77621.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77611.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77615.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77665.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77667.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77617.pdf
+- https://www.city.ome.tokyo.jp/uploaded/attachment/77679.pdf
+verify_sources:
+- 東京都ODカタログ 青梅市 organization t132055 (分別/集積所/リサイクルセンター, 収集日程は無し)
+- gomicale.com/Tokyo/Ome (第三者ごみカレンダー, 地区別収集曜日)
+- zenkoku.mond.jp/gomi-calendar/tokyo-oume.html (第三者)
+license: unknown
+difficulty: 4
+granularity: partial
+district_unit: 町丁目を8つの収集日程(A〜H)にグルーピング
+district_count_approx: 8
+yearend: calendar-explicit
+notes: 主ソースは令和8年度版「青梅市のごみと資源物の分け方・出し方」PDF(A-H日程)。schedule_url=soshiki/23/1182.html は HTTP 200。 A日程PDF (uploaded/attachment/77610.pdf)
+  は HTTP 200 application/pdf 6,892,849 bytes、pdftotext でテキスト層あり(約92,585文字)。 ただし抽出できるのは分別ルール解説と「収集は週2回(毎週)」「容器包装プラ=週1回・第3週除く」等の頻度テキストのみで、
+  地区別の具体的収集曜日/日付は月間カレンダーの画像グリッド内にあり pdftotext では取得不可 (検出した「月曜/金曜/日曜」トークンは全て窓口/電話受付時間の記載)。よって granularity=partial(頻度ルールはテキスト、確定曜日は画像)。
+  東京都ODカタログ t132055 には分別方法一覧(t132055d0000000010)・ゴミ集積所一覧(t132055d0000000037)・リサイクルセンター一覧等があるが、 収集日程/収集曜日のCSV/JSONは存在せず(WebSearchで確認)。市オープンデータページ(soshiki/80/2094.html)にも収集日データ無し。
+  実装は画像OCRか第三者サイト照合が必要 → difficulty 4。各 A-H PDF がどの町丁目かの対応表は 1182.html 本文の町名列挙(約42町)から要抽出。
+surveyed_at: '2026-07-18'

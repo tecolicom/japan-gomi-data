@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11230'
+handle: niiza
+name_ja: 新座市
+population: 164382
+source_type: html
+schedule_url: https://www.city.niiza.lg.jp/site/gominodasikata/gomirecycleshushunittei.html
+calendar_urls:
+- https://www.city.niiza.lg.jp/site/gominodasikata/gomirecycleshushunittei.html
+- https://www.city.niiza.lg.jp/site/gominodasikata/hunennnitteihyou.html
+- https://www.city.niiza.lg.jp/site/gominodasikata/list341.html
+verify_sources:
+- course-pdf
+- savings-pdf
+license: proprietary-site
+difficulty: 2
+district_unit: 町丁目グループ (地域)
+district_count_approx: 38
+yearend: december-announce
+notes: 'リサイクル資源・可燃ごみの収集曜日は公式HTMLの素直な1テーブル (地域 / リサイクル資源収集日 / 可燃ごみ収集日、約38グループ、町丁目を番地範囲で細分) で取得可。可燃は週2回(火金 or 月木)。祝日も収集。これが一次ソースで
+  difficulty 2。 オープンデータCSV/JSONは無し (自治体ODカタログ・埼玉県ポータルとも該当なし)。 収集日検索ページ (search.php, CDN cdnext.stream.ne.jp、証明書は
+  www.city.niiza.lg.jp 用で ホスト不一致・curl は -k 必要) は kana/kouku をキーにしたサーバ側PHP検索で、 クライアント側 .csv/.json 参照は無し。 不燃・有害・危険・使い捨てライターの地区別日程は
+  HTML 表ではなく 4.11MB の画像PDF (uploaded/attachment/70282.pdf、テキスト層なし=OCR必要) のみ。この分別まで含める場合は 該当部分だけ difficulty 4 相当。
+  検証用: 保存版 分別表・収集日程表 PDF (uploaded/attachment/38179.pdf, 38181.pdf)。 年末年始は専用告知ページ (soshiki/15/nenmatsunenshi.html)
+  で毎年案内。 さんあ～る ごみ分別アプリも提供。'
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

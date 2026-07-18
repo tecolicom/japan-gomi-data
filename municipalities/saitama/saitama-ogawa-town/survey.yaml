@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11343'
+handle: saitama-ogawa-town
+name_ja: 小川町
+population: 26033
+source_type: pdf
+schedule_url: https://www.town.ogawa.saitama.jp/gyosei/sosiki/10/2/5/6640.html
+calendar_urls:
+- https://www.town.ogawa.saitama.jp/material/files/group/10/higashiogawaR8C.pdf
+verify_sources:
+- course-pdf
+- app
+license: unknown
+difficulty: 3
+district_unit: 地区
+district_count_approx: 9
+yearend: unknown
+notes: '一次候補「【地区別】令和8年度ごみ収集カレンダー」= 地区別PDF9本(daiaparesu/higashiogawa/honiti/ ikeda/koshigoe/midori/oozeki/takezawa/yawata
+  = 台アパレス・東小川・本一・池田・腰越・みどり・大寄・竹沢・八和田等)。 各地区に base(品目・ルール表)/C(日付入りカレンダー・多言語)/E(英)/V(越)版。base・C ともテキスト層あり(pdftotext可)。
+  種別: もえるごみ(指定袋)/缶/ペットボトル/ビン/資源プラ/古紙類/有害。焼却は小川地区衛生組合。 小川町ごみ分別アプリあり。収集日オープンデータは未発見。ライセンス未確認。年末年始扱いは未確認。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

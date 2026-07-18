@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13112'
+handle: setagaya
+name_ja: 世田谷区
+population: 931922
+source_type: csv
+schedule_url: https://www.city.setagaya.lg.jp/02241/416.html
+calendar_urls:
+- https://www.city.setagaya.lg.jp/documents/416/27-08-26.csv
+- https://www.city.setagaya.lg.jp/documents/416/syusyubi.pdf
+- https://www.city.setagaya.lg.jp/02241/27859.html
+verify_sources:
+- 官公式PDF(町丁目別・日付入り通年カレンダー 27859.html)
+- 官公式一覧PDF(syusyubi.pdf)
+license: CC-BY-4.0
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町丁目 (町名+丁目のグルーピング)
+district_count_approx: 118
+yearend: unknown
+notes: '公式サイト「資源・ごみ収集日(一覧)」(416.html) に区提供オープンデータの CSV「資源・ごみ収集曜日一覧」を確認。実取得成功: CSV=HTTP200/10005B (Shift-JIS), PDF(syusyubi.pdf)=HTTP200/925KB。CSV列構成=50音,町名,丁目,資源(週1回),
+  可燃ごみ(週2回),不燃ごみ(月2回),ペットボトル(月2回),管轄清掃事務所 の8列。 データ行118 (世田谷49/玉川39/砧30 の3清掃事務所管轄)。粒度は曜日規則のみ (weekday-rules): 資源=特定曜日,
+  可燃=週2曜日, 不燃/ペット="○回目・△回目の×曜日" 形式(第N週相当)。日付入り通年ではない。難易度2 (素直なCSV, ただし "N回目の曜日"の展開ロジックが要る)。ライセンスはページ記載でCC BY 4.0国際
+  (区オープンデータ利用規約 01000/5451.html) — 根拠は公式ページ明記。 地区割は町丁目単位(赤堤1・3〜5 等の丁目グルーピング)。CSVに祝日収集・ 年末年始の運用注記なし→yearend=unknown。町丁目別の日付入り通年カレンダー
+  PDF(27859.html, 令和8年版)が別途存在し検証源になる(年末年始・祝日も記載と 推測されるが未取得・未確認)。一覧PDF(syusyubi.pdf)はテキスト層ほぼ皆無 (抽出27文字)の画像PDFだが、機械可読のCSVが一次ソースとして優先されるため
+  問題なし。population はnull (背景メモで約92万・23区最大人口だが正確値未確認)。'
+surveyed_at: '2026-07-18'

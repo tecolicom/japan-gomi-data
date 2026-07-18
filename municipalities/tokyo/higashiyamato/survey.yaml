@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13220'
+handle: higashiyamato
+name_ja: 東大和市
+population: 85022
+source_type: pdf
+schedule_url: https://www.city.higashiyamato.lg.jp/kurashi/gomirecycle/1001937.html
+calendar_urls:
+- https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/001/937/2025_2026imokubo.pdf
+- https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/001/937/2025_2026kohan.pdf
+- https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/001/937/2025_2026sayama.pdf
+- https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/001/937/2025_2026nakahara.pdf
+verify_sources:
+- calendar-pdf-text
+- bunbetsu-guide-pdf
+- app
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区 (4地区)
+district_count_approx: 4
+yearend: unknown
+notes: '令和7年(2025)10月〜令和8年(2026)9月版「ごみ排出カレンダー」。市内4地区、各地区別PDF (全て実測HTTP 200): imokubo(芋窪/蔵敷/上北台/立野) / kohan(湖畔=向原・南街・清水ほか)
+  / sayama(狭山) / nakahara(中原・向原・桜が丘)。 各地区に通常版 + 粗大用 kani_版 (2025_2026kani_*.pdf) の2種。 ★実測 (2026-07-18): imokubo.pdf(3.9MB)
+  テキスト層あり(29524字)、日付入り通年カレンダー=granularity dates, difficulty 3 (カレンダーグリッドのレイアウトパース要)。品目・有料指定袋・減免制度の解説付き。 収集曜日オープンデータ・CSV/JSONは無し。分別ガイド
+  bunbetu2025.pdf (テキスト層あり) と分別アプリ・AIナビが検証源。 年末年始はページ本文に記載なし=要カレンダーPDF内確認。市サイトCC宣言なし=事実データ抽出整理。課: 環境対策課ごみ減量係。'
+surveyed_at: '2026-07-18'

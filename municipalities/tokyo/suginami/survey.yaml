@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13115'
+handle: suginami
+name_ja: 杉並区
+population: 585730
+status: collected
+source_type: csv
+schedule_url: https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv
+calendar_urls:
+- https://www.city.suginami.tokyo.jp/shared/garbage/19.pdf
+verify_sources:
+- course-pdf
+- booklet
+license: proprietary-site
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町丁目グループ
+district_count_approx: 52
+yearend: calendar-explicit
+notes: 公式収集曜日検索を駆動するサイト内CSV (52行、OD宣言なし) を機械変換・収録済み (28コース)。地域別カレンダーPDF28枚 (日付入り・年末年始印字) と通年5,785日照合で差分ゼロ。冊子P.21一覧とも突合。収集曜日ODは都カタログに無し
+  (集積所・分別のみ)。
+surveyed_at: '2026-07-18'

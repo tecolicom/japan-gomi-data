@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13204'
+handle: mitaka
+name_ja: 三鷹市
+population: 191747
+source_type: html
+schedule_url: https://www.city.mitaka.lg.jp/c_categories/index01004001001.html
+calendar_urls:
+- https://www.city.mitaka.lg.jp/c_service/095/095682.html
+- https://www.city.mitaka.lg.jp/c_service/095/095671.html
+verify_sources:
+- monthly-pdf
+license: proprietary-site
+difficulty: 2
+granularity: weekday-rules
+district_unit: 地区（全域/丁目グループ）
+district_count_approx: 11
+yearend: calendar-explicit
+notes: '一次ソースは市公式「収集日程」配下の地区別HTMLページ(令和8年度、c_service/095/… 各地区)。 地区は11(井の頭全域/下連雀1〜4/上連雀1〜5/新川6・下連雀5〜9/大沢3・深大寺・井口・野崎2・3/
+  中原全域・新川1・4・5/北野全域・新川2・3/牟礼全域/野崎1・上連雀6〜9/野崎4・大沢1・2・4・5・6/ 北野全域ほか)。各ページ本文に曜日規則を表形式で掲載(例 牟礼=月:燃やせるごみ/火:古紙古着/ 水:プラ・有害+第1・3週
+  燃やせないごみ/木:燃やせるごみ…)=granularity weekday-rules、素直で difficulty 2。 補助/検証: 各地区に月別リサイクルカレンダーPDF(2026年4月〜2027年3月、日付入り)+週間用+お知らせ版。
+  年末年始は専用PDF(2026年12月・2027年1月、日程・時間が異なる注記)=calendar-explicit。 収集曜日CSV/JSON・テキスト版は未発見。ごみ分別アプリあり。可燃系はふじみ衛生組合(調布市と共同処理)。
+  ライセンス明示なし(市公式)、proprietary-site 扱い(練馬方式で事実データ抽出)。'
+surveyed_at: '2026-07-18'

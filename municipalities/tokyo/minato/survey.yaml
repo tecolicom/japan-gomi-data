@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13103'
+handle: minato
+name_ja: 港区
+population: 270458
+source_type: pdf
+schedule_url: https://www.city.minato.tokyo.jp/unei/2025gomikarenda.html
+calendar_urls:
+- https://www.city.minato.tokyo.jp/documents/157490/20260123175103.pdf
+verify_sources:
+- course-pdf-cross
+- guidebook
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区（町丁目単位）
+district_count_approx: 40
+yearend: december-announce
+notes: 一次ソースは「ごみ・資源収集日カレンダー(令和8年4月1日からの収集曜日)」ページ (unei/2025gomikarenda.html)配下の地域別カレンダーPDF。PDF は /documents/157490/<数字>.pdf
+  形式で計64本、テキスト層あり(pdftotext 成功、curl 200/403なし)。各PDFは日付入り通年カレンダー (2026年度版、日Sun月Mon…のグリッドに「プラ/資源/可燃/不燃」を配置)で granularity=dates。
+  1PDFに同一曜日パターンの複数地域(例=赤坂1/麻布台1/六本木1…8地域)を束ねる構成。地区は町丁目単位で 約40地域。分別4区分(資源プラスチック/古紙・ペットボトル・びん・かん/可燃/不燃)、日英併記。 収集曜日OD(CSV/JSON)・テキスト版カレンダー・サイト内CSVは未発見(HTMLに.csv/.json参照なし)。
+  年末年始は本文に「毎年12月にホームページでお知らせ」=december-announce。分別アプリ 「Tokyo Minato Waste Separation」あり。粗大は申込制(みなとリサイクル清掃事務所)。 ライセンス明示なし(Copyright
+  Minato City)=事実データ抽出整理(練馬方式)、proprietary-site 扱い。 difficulty 3(機械可読PDFだが月次グリッドのセル対応パースが必要)。
+surveyed_at: '2026-07-18'

@@ -1,0 +1,24 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11246'
+handle: shiraoka
+name_ja: 白岡市
+population: 51298
+source_type: pdf
+schedule_url: https://hs-eiseikumiai.org/shimin/schedule/shiraoka/
+calendar_urls:
+- https://hs-eiseikumiai.org/wp-content/uploads/2026/03/a55dd53e085b67d9c156832f4d034863.pdf
+verify_sources:
+- app
+license: unknown
+difficulty: 3
+district_unit: 地区
+district_count_approx: null
+yearend: unknown
+notes: '収集は蓮田白岡衛生組合(蓮田市と共同)が実施。一次候補は組合サイトの「白岡市(地域別カレンダー版)」PDF群 + 全域版PDF。全域版(2026/03公開)はテキスト層あり(pdftotext可、日付入りカレンダー)。地域割は宇都宮線
+  東側/西側で複数地域(新白岡・寺塚・上野田/千駄野・岡泉・太田新井/下大崎・荒井新田・柴山/小久喜・白岡東 等)。 蓮田市・白岡市ごみ分別アプリ「げんちゃん」あり(収集日カレンダー機能)。gomisaku.jp に分別辞典。
+  収集日オープンデータは未発見。地区数は未計測。ライセンス(組合サイト)未確認。年末年始扱いは未確認。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

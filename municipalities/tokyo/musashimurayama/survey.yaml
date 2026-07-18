@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13223'
+handle: musashimurayama
+name_ja: 武蔵村山市
+population: 70516
+source_type: image-pdf
+schedule_url: https://www.city.musashimurayama.lg.jp/kurashi/gomi/1016435/1016460/1016472.html
+calendar_urls:
+- https://www.city.musashimurayama.lg.jp/_res/projects/default_project/_page_/001/016/472/2026a_course.pdf
+- https://www.city.musashimurayama.lg.jp/_res/projects/default_project/_page_/001/016/472/2026b_course.pdf
+- https://www.city.musashimurayama.lg.jp/_res/projects/default_project/_page_/001/016/472/2026c_course.pdf
+- https://www.city.musashimurayama.lg.jp/_res/projects/default_project/_page_/001/016/472/2026d_course.pdf
+verify_sources:
+- 4地区PDF相互照合 (a/b/c/dコースの地区割・収集日整合性)
+- 武蔵村山市ごみ分別アプリ (公式無償配信。カレンダーを日/週/月表示。PDFと同一データ想定)
+- 年末年始のごみ収集ページ (令和7年度年末年始のごみ等収集予定表PDF)
+license: unknown
+difficulty: 4
+granularity: dates
+district_unit: 町丁目・集合住宅の棟番号
+district_count_approx: 4
+yearend: calendar-explicit
+notes: '公式カレンダーページ (1016472.html, HTTP200) に地区別PDF 4本 (2026a〜d_course.pdf) を掲載。対象期間は令和7年10月〜令和8年9月。 a.pdf を取得 (HTTP200,
+  4.6MB) し pdftotext したがテキスト層はほぼ皆無 (約20文字) = 画像PDF。OCRまたは転記が必要なため difficulty=4。 地区割は4コース、単位は町丁目＋集合住宅(緑が丘)の棟番号 (例:
+  2026a=伊奈平・残堀・三ツ藤1・2丁目・緑が丘33/41/45〜50号棟等)。 granularity=dates: カレンダーは1年分の具体的収集日を示す形式 (曜日ルールの単純テーブルではない)。 yearend=calendar-explicit:
+  年間カレンダーが10月〜翌9月で年末年始期間を内包。加えて別途「令和7年度年末年始のごみ等収集予定表」PDFを毎年公開 (電子申請の記述から令和7/12/25〜令和8/1/4頃が休止期間と推定)。祝日収集の有無は本調査では明記を未確認。
+  オープンデータ: 市オープンデータページ (opendata/index.html) および都カタログ組織ページ t132233 を確認したが、ごみ収集曜日/日程のCSV/JSONは発見できず (収集日程のODは無しと判断)。都カタログ本体はCLIでCloudFront想定のため未直取得。
+  ライセンス: カレンダーPDFは市サイト掲載物でOD配布ではなく、明示ライセンス表示を確認できず unknown。 検証源: 第三者サイト zenkoku.mond.jp は「情報作成中」で収集頻度のみ・日付/曜日未掲載のため検証源として不適。主検証は4PDF相互照合＋公式分別アプリ。
+  population=70465 は公式 jinkou202511.pdf (令和7年11月) の総数。'
+surveyed_at: '2026-07-18'

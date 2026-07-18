@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13119'
+handle: itabashi
+name_ja: 板橋区
+population: 587481
+source_type: pdf
+schedule_url: https://www.city.itabashi.tokyo.jp/tetsuduki/gomi/kaishu/1038152.html
+calendar_urls:
+- https://www.city.itabashi.tokyo.jp/_res/projects/default_project/_page_/001/038/152/r8/w01.pdf
+- https://www.city.itabashi.tokyo.jp/_res/projects/default_project/_page_/001/038/152/r8/higashi/nishi/e01.pdf
+verify_sources:
+- area-weekday-table
+- course-pdf-rules
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地域（東西×番号）
+district_count_approx: 24
+yearend: december-announce
+notes: 一次ソースは「地域別 資源回収・ごみ収集曜日カレンダー(令和8年度版)」(kaishu/1038152.html)配下の 地域別カレンダーPDF。東(e01〜e12)+西(w01〜w12)=計24地域、URLは
+  /_res/…/001/038/152/r8/w##.pdf および r8/higashi/nishi/e##.pdf。テキスト層あり(pdftotext 成功、5375字/1p、curl 200/403なし)、 日付入り通年カレンダー(令和8年4月〜令和9年3月、日Sun月Mon…のグリッド)で
+  granularity=dates。 各PDF冒頭に曜日規則も明記(例 西①=資源:週1土/可燃:週3月水金/不燃:毎月1回目・3回目の木)。 ランディング「資源回収・ごみ収集地域別曜日表」(kaishu/index.html)は地域番号への索引ページで
+  HTML曜日表・CSVは持たない(要 地域別一覧表で番号→町丁目対応を取得)。オープンデータは施設位置情報等の CSVのみで収集日データセットは未発見。年末年始はPDF注記に「改めて区HP・区報・集積所看板でお知らせ」
+  =december-announce。清掃事務所は板橋西/(東)の2管轄。ライセンス明示なし=proprietary-site。 difficulty 3(機械可読PDFグリッドのパースが主コスト。曜日規則が明記されるため
+  rules 再構成も可)。
+surveyed_at: '2026-07-18'

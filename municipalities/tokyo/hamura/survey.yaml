@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13227'
+handle: hamura
+name_ja: 羽村市
+population: 53953
+source_type: pdf
+schedule_url: https://www.city.hamura.tokyo.jp/cmsfiles/contents/0000002/2643/sigenoyobigomi.pdf
+calendar_urls:
+- https://www.city.hamura.tokyo.jp/0000016166.html
+- https://www.city.hamura.tokyo.jp/0000002643.html
+verify_sources:
+- https://www.city.hamura.tokyo.jp/cmsfiles/contents/0000016/16166/07_sinmei3_4.pdf
+- https://www.city.hamura.tokyo.jp/category/1-8-18-0-0-0-0-0-0-0.html
+license: unknown
+difficulty: 2
+granularity: weekday-rules
+district_unit: 地区
+district_count_approx: 12
+yearend: calendar-explicit
+notes: 'ドメインは www.city.hamura.tokyo.jp (HTTP200確認)。lg.jp は不使用。 本命ソースは「資源及びごみを出す日(地区別)一覧表」PDF sigenoyobigomi.pdf。
+  pdftotext でテキスト層あり (実取得・実読取確認)。全12地区を1枚にまとめた曜日ルール表で、 カテゴリは 資源A / 資源B(硬質プラ・ペットボトル・金属) / 燃やせるごみ / 燃やせないごみ / 有害ごみ。
+  ルールは「毎週X曜日」「毎月第2・第4X曜日」「毎月第1X曜日」等の序数曜日で完全記述 → weekday-rules で機械化可能。 12地区: 川崎/玉川/清流, 羽東, 羽中, 羽加美/羽西, 小作台, 神明台一二丁目,
+  神明台三四丁目, 双葉町/緑ヶ丘三丁目/羽武蔵野/五ノ神武蔵野/川崎武蔵野, 富士見平, 五ノ神, 緑ヶ丘一二四五丁目, 栄町(0000016166の12PDFに対応)。 カレンダーは 0000016166.html に地区別PDF
+  (令和7年度: 4-9月/10-3月の半期月グリッド, 2026年度版も併掲)。 これらのカレンダーPDFもテキスト層あり(sinmei3_4で確認)、実日付グリッドなので年末年始休止も明示される想定 → yearend=calendar-explicit(月グリッドPDF準拠、ただし12月休止日そのものは未精読)。
+  収集オープンデータ(CSV/JSON)は HTMLソース grep で発見できず(.csv/.json 参照なし)。東京都カタログ側のリソース実体も未確認。 ライセンスは公式サイト利用規約未確認のため unknown。
+  難易度2: 単一テキスト層PDFに全地区の曜日ルールが構造的にまとまり、日本語序数のパースのみ。'
+surveyed_at: '2026-07-18'

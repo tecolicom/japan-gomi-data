@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13206'
+handle: tokyo-fuchu
+name_ja: 府中市
+population: 263231
+source_type: image-pdf
+schedule_url: https://www.city.fuchu.tokyo.jp/kurashi/gomirisaikuru/bunbetu_calendar/gomicalendar/gomicalender.html
+calendar_urls:
+- https://www.city.fuchu.tokyo.jp/kurashi/gomirisaikuru/bunbetu_calendar/gomicalendar/gomicalender.files/R8_A1.pdf
+- https://www.city.fuchu.tokyo.jp/kurashi/gomirisaikuru/bunbetu_calendar/gomicalendar/gomicalender.files/R8_D4.pdf
+- https://www.city.fuchu.tokyo.jp/kurashi/gomirisaikuru/bunbetu_calendar/gomicalendar/gomicalender.files/R8_{A1..A4,B1..B4,C1..C4,D1..D4}.pdf
+  (16地区)
+verify_sources:
+- ふちゅうごみ資源物分別アプリ (公式・アプリ駆動の収集日カレンダー/アラート)
+- 東京都OD「ゴミの分別方法一覧」CSV (分別のみ・収集日は非収録)
+- 民間サイト gomicale.com / gomi-calendar.com / gominohi.com (丁目別収集日を掲載)
+license: unknown
+difficulty: 4
+granularity: dates
+district_unit: 町丁目 (16地域グループ A1-D4)
+district_count_approx: 16
+yearend: calendar-explicit
+notes: 収集日程は令和8年度(R8年4月〜R9年3月)の地域別カレンダーPDFのみ。市内を町丁目単位で16地域(A1-A4/B1-B4/C1-C4/D1-D4)に分割し地域ごとにPDFを配布。取得はいずれもHTTP 200だが
+  pdftotext で A1/P02/P03_P06 とも本文0〜数文字=テキスト層なしの画像PDF(A1で約3MB)。よってOCRまたは転記が必須で difficulty=4。府中市オープンデータ(www.city.fuchu.tokyo.jp/gyosei/opendata/)には
+  garbage_separation.csv(分別方法)と garbage_collection_place.xlsx(集積所位置)のみで、収集曜日/収集日程の機械可読データは無し(東京都カタログ t132063 のごみ関連も同2種のみ)。テキスト版カレンダーの提供は確認できず。granularity=dates
+  は年間カレンダー形式(具体的日付)に基づくが画像のため機械抽出不可。yearend=calendar-explicit は年間カレンダーが年末年始を含む期間を網羅する印刷物である事実に基づく推定で、画像PDFのため祝日収集有無・年末年始休止の文面は未確認(推定)。population
+  は未検証のため null(府中市はおよそ26万規模だが数値未確認)。地区の町丁目→A1-D4対応表は冊子内(R8_P03_P06等)にあるとみられるがこれも画像PDF。公式アプリが実質的な収集日照会手段。
+surveyed_at: '2026-07-18'

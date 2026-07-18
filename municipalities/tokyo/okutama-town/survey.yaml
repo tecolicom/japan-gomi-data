@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13308'
+handle: okutama-town
+name_ja: 奥多摩町
+population: 4322
+source_type: pdf
+schedule_url: https://www.town.okutama.tokyo.jp/1/kankyoseibika/seikatsu_kankyo/1/666.html
+calendar_urls:
+- https://www.town.okutama.tokyo.jp/material/files/group/9/2025A.pdf
+- https://www.town.okutama.tokyo.jp/material/files/group/9/2025B.pdf
+- https://www.town.okutama.tokyo.jp/material/files/group/9/2025C.pdf
+- https://www.town.okutama.tokyo.jp/material/files/group/9/2025D.pdf
+verify_sources:
+- dual-representation-in-pdf
+- guidebook-pdf
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区 (A/B/C/D)
+district_count_approx: 4
+yearend: calendar-explicit
+notes: '山間部の小規模町だが地区割は4分割で単純ではない。一次ソースは「奥多摩町ごみリサイクルカレンダー」地区別PDF (A/B/C/D 各1本)。URL: .../material/files/group/9/2025{A,B,C,D}.pdf、CLI
+  全て 200 取得可 (各1.2MB前後)。 pdftotext -layout でテキスト層あり。1PDF内に2表現を併載: (a)曜日規則表 (可燃=毎週月・木/不燃=第3水/ 資源紙布=火隔週/資源ビン缶=火隔週/有害・小型電子=第1水)、(b)日付入り月別グリッド
+  (2025.4〜2026.3, 各日に品目ラベル)。 → granularity=dates (通年実日付)、かつ曜日規則表も併載で相互検証可 (verify: dual-representation)。 difficulty
+  3: テキスト層ありだがグリッドレイアウトの日付↔ラベル対応に整形処理要。 地区割: A=川井・大丹波・梅澤・丹三郎 / B=小丹波・棚澤 / C=白丸・大氷川・長畑・大沢・日原・海澤 / D=常磐・南氷川・栃久保・境・中山・小河内
+  等。曜日規則は地区で異なる。 ライセンス: OD非公開。"Copyright (c) 2022 Okutama Town. All Rights Reserved."。都カタログでの配布も確認できず。 年末年始: 日付入りグリッドの12月末〜1月初に品目ラベル有無で収集有無判別可
+  (calendar-explicit)。持込施設は年末年始除く注記。 【注意】PDFは年度更新型でファイル名パターンが年度ごとに変わる (2025C.pdf / 旧 Calendar2023web_A.pdf)。 索引ページ
+  (666.html) は WebFetch 404 (CMS移行の可能性) だがPDF直リンクは生存し収録に支障なし。'
+surveyed_at: '2026-07-18'

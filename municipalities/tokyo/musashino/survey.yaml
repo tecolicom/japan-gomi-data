@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13203'
+handle: musashino
+name_ja: 武蔵野市
+population: 148594
+source_type: pdf
+schedule_url: https://www.city.musashino.lg.jp/gomi_kankyo/gomi/gomi_shushubi/1053782.html
+calendar_urls:
+- https://www.city.musashino.lg.jp/_res/projects/default_project/_page_/001/053/782/2026a-2.pdf
+- https://www.city.musashino.lg.jp/_res/projects/default_project/_page_/001/053/782/2026a-1.pdf
+verify_sources:
+- list-pdf-text
+- calendar-pdf
+license: proprietary-site
+difficulty: 3
+granularity: weekday-rules
+district_unit: 地区
+district_count_approx: 10
+yearend: unknown
+notes: '令和8年度(2026.4〜2027.3)版。市内10地区 (A吉祥寺南町/B吉祥寺本町2-4・御殿山/C吉祥寺本町1・吉祥寺東町/ D吉祥寺北町/E中町/F緑町・八幡町/G西久保/H関前・桜堤/I境/J境南町)。
+  各地区に3種のPDF: 収集カレンダー(2026x-1.pdf, 4.3-4.5MB, 通年日付入り) / 収集日一覧表(2026x-2.pdf, 約750KB) / 集合住宅用一覧表(sticker2026x.pdf)。★実測
+  (2026-07-18): 一覧表2026a-2.pdf はテキスト層あり(4627字)。 ただし多言語(和英中)併記でレイアウトが横長・品目ヘッダと曜日値が散在=素直なテキスト版ではなく要パース → difficulty
+  3。 品目= 燃やすごみ/古紙・古着/びん・缶/危険・有害/ペットボトル/燃やさないごみ/プラスチック製容器包装。 granularity: 一覧表は weekday-rules だがカレンダーPDF(2026x-1)は日付入り通年=dates級
+  (未テキスト層確認, 一覧表と同系ならテキスト層あり見込み)。 収集曜日オープンデータ・CSV/JSONは無し (ページに参照なし)。年末年始はページ本文に記載なし=要カレンダーPDF確認。 市サイトはCC宣言なし=事実データ抽出整理(proprietary-site)。'
+surveyed_at: '2026-07-18'

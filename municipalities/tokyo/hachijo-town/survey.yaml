@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13401'
+handle: hachijo-town
+name_ja: 八丈町
+population: 6551
+source_type: pdf
+schedule_url: https://www.town.hachijo.tokyo.jp/kurashi/seikatsukankyo/gomikan/
+calendar_urls:
+- https://prd-hachijo.s3.ap-northeast-1.amazonaws.com/wp-content/uploads/2026/02/bunbetsu.pdf
+verify_sources:
+- bunbetsuplan-pdf
+- waste-basic-plan-pdf
+license: proprietary-site
+difficulty: 3
+granularity: weekday-rules
+district_unit: 地区 (三根/大賀郷/坂上)
+district_count_approx: 3
+yearend: unknown
+notes: '島嶼部だが情報は薄くない。一次ソースは「八丈町ごみ分別区分表 (令和6年4月1日更新)」PDF (S3直配布)。 URL: prd-hachijo.s3.ap-northeast-1.amazonaws.com/wp-content/uploads/2026/02/bunbetsu.pdf、CLI
+  200 (CloudFront系ブロックなし)。 pdftotext -layout でテキスト層あり (32,675字)。地域×収集曜日×品目の表を機械抽出可 (例 燃やせるごみ=三根 火・金/大賀郷 月・木/坂上 月・木、資源ごみ=三根
+  水曜)。 掲載元ページ .../seikatsukankyo/gomikan/ (200)。旧URL /gomi/calendar/calendar.html は404 (WordPress新CMS移行済)。 地区割:
+  三根/大賀郷/坂上 の3地区 (坂上は樫立・中之郷・末吉を包含する広域呼称)。単純。 granularity: weekday-rules — 曜日規則のみで実日付入りカレンダーは存在せず。 【罠】曜日情報の独立第2表現
+  (HTML表・CSV) は未発見。分別区分表PDF単独が実質唯一の曜日ソース。 検証源候補は同ページの bunbetsuplan.pdf (分別収集計画・テキスト層あり) と waste.pdf (一般廃棄物処理基本計画)
+  だが いずれも計画書で収集曜日一覧ではない=独立照合力は弱い。 年末年始: 分別区分表は曜日規則のみで実日付なし → 収集の年末年始特例は判別不可 (unknown)。役場は12/29〜1/3休の一般記載のみ。 ライセンス:
+  "Copyright © Hachijo Town. All rights reserved." (OD/CC明示なし)=proprietary-site。都カタログでの八丈町ごみ収集データも未確認。 difficulty
+  3 (機械可読PDF、S3直リンク取得可・テキスト層ありで収録容易度は中)。'
+surveyed_at: '2026-07-18'

@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11365'
+handle: ogano-town
+name_ja: 小鹿野町
+population: 9236
+source_type: pdf
+schedule_url: https://www.town.ogano.lg.jp/kurashi-tetsuzuki/kankyou-gomi-suidou/gomicalendar/
+calendar_urls:
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8shimoogano_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8izusawa_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8araikoshinone_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8nagawaka_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8mitagawakurao_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki8k_gomicalendar.pdf
+- https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8komorisusuki_gomicalendar.pdf
+verify_sources:
+- gomi-calendar.com
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 8
+yearend: calendar-explicit
+notes: '収集は秩父広域市町村圏組合 (一部事務組合) が実施、住民生活課が窓口。ソースは地区別の年度カレンダーPDF (令和8年度=r8*_gomicalendar.pdf、8地区)。 各PDFはテキスト層あり (pdftotext
+  で抽出可、curl 200)。ただし4-9月/10-3月の両面カレンダーグリッド (曜日×日付マス) 形式で、 収集品目が日付マス内に配置されるためパースは非自明→difficulty 3。地区名: 下小鹿野/小鹿野・伊豆沢/小鹿野(新井・腰の根)/長若/三田川・倉尾/薄/薄8区/小森・薄(3区・須川)。
+  年末年始はカレンダー内に明記 (新年1〜3日は収集・持込休み)。CSV/JSONの一次ソースは無し。埼玉県ODポータルに小鹿野町のごみ収集データは未確認 (登録先はポータル側だが該当データ見当たらず)。'
+surveyed_at: '2026-07-17'
+granularity: dates

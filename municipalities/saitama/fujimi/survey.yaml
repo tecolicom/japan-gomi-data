@@ -1,0 +1,22 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11235'
+handle: fujimi
+name_ja: 富士見市
+population: 113307
+source_type: image-pdf
+schedule_url: https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/gomi_recycle/gomi/dashikata/gominobunbtunituite.html
+calendar_urls:
+- https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/gomi_recycle/gomi/dashikata/gominobunbtunituite.files/R7_pamphlet.pdf
+verify_sources:
+- app
+license: proprietary-site
+difficulty: 4
+district_unit: 不明
+district_count_approx: null
+yearend: december-announce
+notes: '地域別ごみ収集カレンダーPDFは提供なし。収集曜日表は「家庭ごみと資源の出し方」 パンフレット(R7_pamphlet.pdf, 約23MB)のP7に掲載。ただし pdftotext でテキスト層 8文字=画像PDF(全ページ画像)。地区(地域)の分け方はページに明記されず、町丁目↔
+  収集日の対応データが機械可読な形で見当たらない(district_unit不明)。市は 「富士見ごみ分別アプリ」推しで地域別収集日はアプリ機能中心。年末年始は専用告知 ページ(.../2016-1129-1417-51.html)あり=毎年12月告知型。収集曜日OD・CSVなし。
+  → 地区割データが取れず現状は収録困難(アプリのデータ源特定 or 目視転記が必要)。 課: 環境課 資源リサイクル係(049-252-7100)。'
+surveyed_at: '2026-07-17'
+granularity: partial

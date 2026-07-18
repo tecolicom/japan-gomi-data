@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13209'
+handle: machida
+name_ja: 町田市
+population: 431440
+source_type: html
+schedule_url: https://www.city.machida.tokyo.jp/kurashi/kankyo/gomi/gominowakekata/gomi-dashikata/syuusyuu/index.html
+calendar_urls:
+- https://www.city.machida.tokyo.jp/kurashi/kankyo/gomi/gominowakekata/gomi-dashikata/syuusyuu/syusyu13.html
+- https://www.city.machida.tokyo.jp/kurashi/kankyo/gomi/gominowakekata/gomi-dashikata/syuusyuu/syusyu13.files/2025ippan13.pdf
+verify_sources:
+- dated-pdf-calendar
+- html-weekday-rules
+license: proprietary-site
+difficulty: 2
+granularity: dates
+district_unit: 地区番号 (町丁目を地区番号に割当)
+district_count_approx: 17
+yearend: calendar-explicit
+notes: '一次ソースは地区番号別HTMLページ。品目→収集曜日がHTMLテキストで直載り (素直=difficulty 2)。 例 地区13 .../syuusyuu/syusyu13.html、CLI 200・生テキストに「燃やせるごみ=火曜日・金曜日(1月2日を除く)」
+  「ビン・カン・スプレー缶=水曜日(12月31日を除く)」等が存在。索引 index.html、各地区ページ命名 1.html / syusyu02.html〜syusyu17.html。 検証源 (独立第2表現): 各地区の日付入りPDFカレンダー
+  (通年、例 syusyu13.files/2025ippan13.pdf, CLI 200, pdftotext テキスト層あり約72,168字、期間例 2025.10〜2026.9)、簡略版A4 PDF (13kan2025.pdf)
+  も併存。 → HTML(曜日規則+例外日付) と PDF(実日付) で相互検証可。granularity: PDFが日付入り通年なので dates (HTML単体は weekday-rules、両方取得可)。 地区割:
+  地区番号 (通常地区1〜13 + 特別指定団体4=小山田桜台/公社森野住宅/シーアイハイツ/都営武蔵岡=syusyu14〜17)。約17。 年末年始: HTML/PDF両方に「1月1日/1月2日/12月31日を除く」等を実日付で明示
+  (calendar-explicit)。 ライセンス: 収集カレンダーはOD対象外の通常ページ、フッター Copyright「Machida City」=proprietary-site。 町田市ODカタログ (opendata.city.machida.tokyo.jp)
+  のごみ枠は出し方ガイドPDF・排出量データ等のみで収集カレンダーCSV/JSONは無し。 ごみ分別アプリ(11言語)提供あるが、公式HTML/PDFで機械可読取得できるためapp依存不要。'
+surveyed_at: '2026-07-18'

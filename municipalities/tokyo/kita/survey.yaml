@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13117'
+handle: kita
+name_ja: 北区
+population: 369802
+source_type: pdf
+schedule_url: https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/002/019/wakedashi_book_r08.pdf
+calendar_urls:
+- https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/002/019/wakedashi_book_r08.pdf
+- https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/002/019/wakedashi_book_r07.pdf
+verify_sources:
+- https://www.city.kita.lg.jp/living/bins/1002013/1002014.html
+- https://www.city.kita.lg.jp/living/bins/1002013/1002019.html
+- https://gominohi.com/Tokyo/Kita/
+license: unknown
+difficulty: 3
+granularity: weekday-rules
+district_unit: 丁目 (町丁目単位。地区は赤羽/王子/滝野川など、その下の丁目ごとに曜日設定)
+district_count_approx: 72
+yearend: december-announce
+notes: 'ドメインは city.kita.lg.jp (city.kita.tokyo.jp ではない)。公式に地域別収集曜日を載せる 一次ソースは PDF「北区の収集曜日一覧」(wakedashi_book_r08.pdf,
+  令和8年度=2026, 約12MB)。 curl 200 で取得可・pdftotext でテキスト層あり。ただし多段組(地区→町/丁目→可燃/不燃/古紙/ プラ/びん缶ペット/粗大 の曜日)のテーブルがテキスト抽出で列順に崩れ、丁目名と曜日値の対応付けが
+  素直に取れない → 実装時はレイアウト保持(pdftotext -layout や座標)や手作業マッピングが必要。 難易度3の主因はこの表構造。 公式HTMLページ(1002014.html)は案内のみで地域別の曜日表・リンクは無し、CSV/JSON参照も
+  grep でヒットせず。 東京都オープンデータカタログ/ckan横断検索で「北区 収集 ごみ」を検索したが、北区の収集曜日データセット (CSV/JSON)は見つからず(集積所一覧など別データは存在)→オープンデータ経路は現時点で無し。
+  地域数は民間サイト(ゴミの日.com 等)が「全72地域」と記載、PDFの丁目列挙とも整合。district_count_approx=72。 granularity は日付ではなく曜日ルール(不燃は「第○週の○曜」等の週指定あり、PDF3ページに週の数え方説明)。
+  年末年始: 日付つきカレンダーは無く、PDFに「年末年始を除く」「1月は年始の休業により月1回収集となる 場合あり」等の注記のみ。具体日程は例年12月に別途告知される想定 → december-announce と判断
+  (calendar-explicit ではない)。ライセンスは明示表記が確認できず unknown。'
+surveyed_at: '2026-07-18'

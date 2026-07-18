@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11217'
+handle: kounosu
+name_ja: 鴻巣市
+population: 115442
+source_type: pdf
+schedule_url: https://www.city.kounosu.saitama.jp/page/1174.html
+calendar_urls:
+- https://www.city.kounosu.saitama.jp/uploaded/attachment/25586.pdf
+- https://www.city.kounosu.saitama.jp/uploaded/attachment/25585.pdf
+verify_sources:
+- booklet
+- app
+license: proprietary-site
+difficulty: 3
+district_unit: コース
+district_count_approx: 5
+yearend: unknown
+notes: '3地域5コース(鴻巣=高崎線東側/西側、吹上=北側/南側、川里=1)。「ごみの早見表」PDF(表=品目別曜日、 裏面=通年収集カレンダー)。R8年度版PDFあり(各1.0MB前後)。PDFテキスト層は未DL・未確認(所沢/ときがわ
+  同様テキスト層ありの可能性が高いが要確認)。「鴻巣ごみ分別アプリ」あり。分別マニュアルPDF(鴻巣・川里版/ 吹上版)が独立検証源。曜日パターン例(西側): 可燃=月木/不燃=火/プラ=金/びん缶ペット=第2・4水/金属=第1・3水。
+  年末年始の扱いは未確認。市サイトはCC宣言なし。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

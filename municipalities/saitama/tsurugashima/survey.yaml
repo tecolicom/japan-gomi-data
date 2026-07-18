@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11241'
+handle: tsurugashima
+name_ja: 鶴ヶ島市
+population: 70534
+source_type: image-pdf
+schedule_url: https://www.city.tsurugashima.lg.jp/page/page003533.html
+calendar_urls:
+- https://www.city.tsurugashima.lg.jp/page/page003543.html
+- https://www.city.tsurugashima.lg.jp/page/page003542.html
+- https://www.city.tsurugashima.lg.jp/page/page003541.html
+- https://www.city.tsurugashima.lg.jp/page/page003540.html
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 4
+district_unit: 地区
+district_count_approx: 4
+yearend: calendar-explicit
+notes: ★有望。A・B・C・Dの4地区。各地区に「収集カレンダー テキスト版」ページが存在(調布型=日付・曜日・品目の 列挙で日付レベル照合できる可能性)。ただしCMSがJS/フレーム駆動で curl/WebFetch
+  では本文が取得できず (426バイトの殻のみ) → テキスト版の中身とR8年度版の有無はブラウザ確認が必要。検索ではR6/R7版が確認できた。 PDF版カレンダー(page003533)が独立検証源。市公式アプリ「つるポッケ」あり。市サイトはCC宣言なし。
+  埼玉県ODポータルに鶴ヶ島市は117データセットあるが、ごみ収集日程CSVは未確認(明示ヒットせず)。 【統括実確認 2026-07-18】テキスト版ページの実体は「収集曜日に変更なし・祝日も収集・12/29〜1/3休止」の要約文のみで調布型の日付列挙ではない。地区別カレンダーPDF
+  (1772674740_doc_1199_0.pdf) はテキスト層なし画像 → image-pdf/d4 に是正 (当初の txt/d2 は過大評価)。住所→地区対応は親ページ HTML にあり。
+surveyed_at: '2026-07-17'
+granularity: dates

@@ -1,0 +1,23 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11229'
+handle: wako
+name_ja: 和光市
+population: 84378
+source_type: html
+schedule_url: https://www.city.wako.lg.jp/kurashi/gomi/1002742/1010170/1002746.html
+calendar_urls: []
+verify_sources:
+- app
+license: proprietary-site
+difficulty: 2
+district_unit: 地区
+district_count_approx: 15
+yearend: unknown
+notes: '一次候補「資源・ごみ収集地区と曜日一覧」= 公式HTML表(練馬方式で機械変換可)。15収集地区、 地区名は町名+丁目(例「白子1・2丁目」「新倉3〜8丁目」)。列: プラ/ペットボトル/びん缶紙布/燃やせないごみ/
+  有害ごみ/燃やすごみ。CSV・PDFリンクなし(Web版ごみ分別アプリのカレンダー機能に誘導)。 LinkData rdf1s7968i は「分別辞典」であって収集日程ではない。収集日オープンデータは未発見。 「Copyright
+  (c) 2023 Wako City」でCC等の宣言なし → 事実データ抽出整理。年末年始扱いは未確認。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

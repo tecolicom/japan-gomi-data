@@ -1,0 +1,21 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11369'
+handle: higashichichibu-vill
+name_ja: 東秩父村
+population: 2223
+source_type: html
+schedule_url: https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html
+calendar_urls: []
+verify_sources: []
+license: proprietary-site
+difficulty: 2
+district_unit: 全域一律
+district_count_approx: 1
+yearend: unknown
+notes: '村全域一律。ごみの出し方ページ(HTML本文)に全種別の曜日を明記: 燃えるごみ=月・木 / 資源プラ=第1・2・3・5金 / 廃プラ=第4金 / 金属類=第1火 / 有害=第2火 / ガラス・ペット=第3火
+  / びん=第4火 / 資源回収=第2水(役場前)・第4水(各ステーション)。 地区割が無く9自治体中もっとも素直。粗大は自己搬入(小川地区衛生組合)。独立検証ソースはWeb上に無い(紙のみ)。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

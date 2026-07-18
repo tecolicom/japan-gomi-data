@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11210'
+handle: kazo
+name_ja: 加須市
+population: 109479
+source_type: image-pdf
+schedule_url: https://www.city.kazo.lg.jp/kurashi_bosai/gomi_recycle/1/index.html
+calendar_urls:
+- https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28813.html
+- https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28814.html
+- https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28815.html
+- https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28816.html
+verify_sources:
+- region-calendar-pages
+- wakekata-pdf
+- third-party-search
+license: unknown
+difficulty: 4
+district_unit: 地区/自治会 (4合併地域→地区→町丁目・自治会グループ)
+district_count_approx: 71
+yearend: unknown
+notes: '一次ソースは公式サイトの地域別ごみカレンダーPDF群のみ。CSV/JSON/オープンデータは 未提供 (ページHTMLに .csv/.json 参照なし、埼玉県ポータルの加須市データは広報誌URLのみ、 ごみ収集データセットは無し)。カレンダーPDFは全て画像PDF
+  (pdftotext=0文字, pdffonts=埋込 フォントなし; 例 chuuou1.pdf 1.1MB/1p, iitsumi.pdf 18MB/1p) のためOCR必須→difficulty 4。 対照的に「分け方」解説PDF
+  (wakekata.pdf) にはテキスト層あり。地区割は2010年合併の 4地域 (加須58本/騎西7本/北川辺3本/大利根3本=計約71本) を町丁目・自治会単位に細分。 ファイル名接頭 080101〜080158
+  等で地区順に整理。年末年始は年度版カレンダー(4月〜翌3月)に 作図されている可能性が高いが画像のため中身未確認(index頁の12/29-1/3は窓口閉庁の記載)。 curl/WebFetchとも200で取得可 (403なし)。非公式のakizuki検索CGIが地区別収集日を提供するが
+  出典・機械可読データの記載なし。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

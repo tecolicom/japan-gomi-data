@@ -1,0 +1,24 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11341'
+handle: namegawa-town
+name_ja: 滑川町
+population: 19904
+source_type: pdf
+schedule_url: https://www.town.namegawa.saitama.jp/soshikikarasagasu/kankyoka/gomi_kankyo_pet/2/5138.html
+calendar_urls:
+- https://www.town.namegawa.saitama.jp/material/files/group/7/gomi2026.pdf
+verify_sources:
+- https://www.town.namegawa.saitama.jp/soshikikarasagasu/kankyoka/gomi_kankyo_pet/2/index.html
+license: unknown
+difficulty: 3
+district_unit: 全域一律
+district_count_approx: 1
+yearend: calendar-explicit
+notes: ごみ収集(収集運搬)は滑川町が実施。ごみ処理(焼却/し尿)は一部事務組合「小川地区衛生組合」 (小川町・嵐山町・滑川町・ときがわ町・東秩父村の4町1村)が担うが、収集日程は町が発行。 一次ソースは令和8年度「資源・ごみ分別収集カレンダー」PDF
+  (gomi2026.pdf, 20頁, 8.5MB) でテキスト層あり(pdftotext可)。全域一律で地区/コース分けなし。収集は 規則ベース(もえるごみ=毎週月・木曜、資源プラ=毎週金曜、廃プラ=第1・3水曜、 ペットボトル=第3火曜
+  等)で全町共通。カレンダーは各月グリッド(12ヶ月分, 令和8年4月〜 令和9年3月)に日付入りで収録。年末年始は12月末に「年末の特別収集日」がカレンダー グリッド上に明示(毎年告知でなくPDF内に記載)。埼玉県ODポータル
+  (opendata.pref.saitama.lg.jp)に滑川町ごみ収集のODは見当たらず、町独自ODカタログ も未確認。町サイトの「ごみの分別かな検索」は分別区分検索であり収集日程CSVではない。 CLI curl
+  は 200 で取得可(403なし)。
+surveyed_at: '2026-07-17'
+granularity: dates

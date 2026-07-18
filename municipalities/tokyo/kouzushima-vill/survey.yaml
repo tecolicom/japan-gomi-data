@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13364'
+handle: kouzushima-vill
+name_ja: 神津島村
+population: 1688
+source_type: none
+schedule_url: null
+calendar_urls: []
+verify_sources:
+- 家庭ごみの出し方・分け方について (分別ガイドPDF、収集日記載なし; https://www.vill.kouzushima.tokyo.jp/images/2023/03/20160218-gomidasikata.pdf)
+- 環境衛生課 TEL 04992-8-0011
+license: unknown
+difficulty: 5
+granularity: none
+district_unit: 全島一律 (推定・未確認)
+district_count_approx: null
+yearend: unknown
+notes: '検索語「神津島村 ごみ 収集 カレンダー」「神津島村 ごみ 分別 収集日」「神津島村 広報こうづしま ごみ収集 曜日」等で調査。 公式サイト vill.kouzushima.tokyo.jp を特定。くらし・手続きページ
+  /kurashi/ と環境衛生課ページ /busyo/kankyoeisei/ を確認したが、 ごみ関連リンクは「家庭ごみの出し方・分け方について」の1件のみ。同ページのPDF https://www.vill.kouzushima.tokyo.jp/images/2023/03/20160218-gomidasikata.pdf
+  は HTTP 200 / application/pdf / 1,847,593 bytes、 pdftotext でテキスト層あり(約1271文字)だが内容は可燃/不燃/資源/持込の分別区分・出し方の説明のみ。 曜日・収集日・毎週・第N週などの語句は
+  pdftotext grep で0件ヒットで、収集日程は記載されていない。 ごみ収集カレンダー・収集曜日OD・HTML表は公式サイト上に存在せず。島民限定ページ /gentei/ にもごみ日程の記載・リンクなし。 広報こうづ(月刊)に掲載の可能性はあるが、Web検索・サイト確認では収集日一覧を発見できなかった。
+  地区割は人口約1700人の単一集落の小島であることから全島一律の可能性が高いが、収集日程ソース自体が無いため確認不能。 収集日程を得るには環境衛生課(04992-8-0011)への問い合わせが必要と推定。source_type:
+  none, difficulty: 5(実質収録不能)。'
+surveyed_at: '2026-07-18'

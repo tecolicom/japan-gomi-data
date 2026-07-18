@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11240'
+handle: satte
+name_ja: 幸手市
+population: 47564
+source_type: pdf
+schedule_url: https://www.city.satte.lg.jp/soshiki/kankyou/1/1/13626.html
+calendar_urls:
+- https://www.city.satte.lg.jp/material/files/group/14/R8no1.pdf
+- https://www.city.satte.lg.jp/material/files/group/14/R8no2.pdf
+- https://www.city.satte.lg.jp/material/files/group/14/R8no3.pdf
+- https://www.city.satte.lg.jp/material/files/group/14/R8no4.pdf
+- https://www.city.satte.lg.jp/material/files/group/14/R8no5.pdf
+verify_sources:
+- course-pdf
+- booklet
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 5
+yearend: calendar-explicit
+notes: '収集日程の一次ソースは地区別カレンダーPDF(R8no1〜5、各4.1MB)。pdftotextでテキスト層あり (可燃/プラ/ペットボトル/かん・びん/有害ごみ/粗大 と月〜土の曜日列を抽出できた)が、 地図・週次パターン主体のグラフィカルなレイアウトで機械抽出はやや手間→difficulty
+  3。 収集曜日検索ページ(gomi_search/chikubetsu)はスマート自治体CMS(smart-lgov.jp)製で、 API //lg-api3rd.smart-lgov.jp/v1/trash + JWTトークン(HTMLに埋込)を叩くが、これは
+  「品目→分別区分」検索用であり日程データではない。よって収録は地区別PDFが本命。 埼玉県ODポータル・幸手市個別ODに収集日程CSVは見当たらず(川越市の分別一覧CSV例はあるが別物)。 補助PDF: setumei.pdf(14〜40ページ、粗大ごみ収集日程表含む)、R8gomibunbetu.pdf(分別一覧)。
+  WebFetchは旧年度9987.html等が404(令和8年度13626.htmlへ更新済)。curlは200で取得可(403なし)。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

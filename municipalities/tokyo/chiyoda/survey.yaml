@@ -1,0 +1,43 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13101'
+handle: chiyoda
+name_ja: 千代田区
+population: 69736
+source_type: pdf
+schedule_url: https://www.city.chiyoda.lg.jp/koho/kurashi/gomi/wakekata/index.html
+calendar_urls:
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-1.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-2.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-3.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-4.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-5.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-6.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-7.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-8.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-9.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-10.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-11.pdf
+- https://www.city.chiyoda.lg.jp/documents/1952/r8calender-12.pdf
+verify_sources:
+- course-pdf
+- html
+- app
+- booklet
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: カレンダーNo (町丁目割)
+district_count_approx: 12
+yearend: calendar-explicit
+notes: '一次ソースは優先順⑤該当のテキスト層ありPDF。R8年度(2026)版カレンダーは r8calender-1〜12.pdf の12種 (wakekata/index.html の #calender セクションから全12リンクを
+  grep で確認)。curl で r8calender-1.pdf は HTTP200 application/pdf 3.05MB、pdftotext で 「資源とごみの収集カレンダー①」「収集地域(飯田橋二・三丁目,
+  神田神保町三丁目の偶数番地…)」 「令和8年4月〜」の日付マス目に 可燃/不燃/プラ/資源/蛍光管等 が抽出でき、テキスト層あり=機械抽出可を確認。 granularity=dates (日付入り通年)。年末年始は pdftotext
+  上に「年末休み」「年始休み」の文字が 日付マスに直接記載=calendar-explicit (冊子 r701pamphlet でも閉庁日=12/31〜1/3 明記)。 地区割は町丁目単位で12カレンダーに割当 (HTMLに50音順の住所→No対応表あり。番地・偶奇で分割される町あり)。
+  収集曜日はHTML本文にはテキスト化されておらず(「集積所により異なる」記載のみ)、実データはPDF/アプリ側。 CSV/JSONの直接配布は wakekata ページに無し (grep で .csv/.json 参照ゼロ)。
+  東京都ODカタログはCLIがCloudFront 403のため未確認 (unknown)。 【JSON候補・未確認】区公式アプリ「分けちよ！」は gomisuke系 (Google Play id=jp.gomisuke.app.Gomisuke0018,
+  提供G-Place)。さいたま(app0017)と同一ベンダで、0017は admin.gomisuke.jp/app/0017/api/jsonp.php?file=area が Referer付与で HTTP200
+  取得可を対照確認済。しかし 0018 の同一パス(admin.gomisuke.jp/app/0018/api/jsonp.php) は area/type/calendar とも HTTP404 (app/0018/
+  ディレクトリ自体は200/空)。エンドポイント構造が 0017と異なる可能性があり、時間切れのため未特定。もし0018のJSONP実体が判明すれば source_type=json・ difficulty=2 に格上げ可能
+  (要追加調査)。現時点の確実な機械可読ソースはPDFのため difficulty=3 とした。'
+surveyed_at: '2026-07-18'

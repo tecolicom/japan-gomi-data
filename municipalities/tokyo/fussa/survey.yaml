@@ -1,0 +1,30 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13218'
+handle: fussa
+name_ja: 福生市
+population: 56961
+source_type: pdf
+schedule_url: https://www.city.fussa.tokyo.jp/life/recycle/calendar/1014534.html
+calendar_urls:
+- https://www.city.fussa.tokyo.jp/_res/projects/default_project/_page_/001/014/534/r0809cyuo.pdf
+- https://www.city.fussa.tokyo.jp/_res/projects/default_project/_page_/001/014/534/r0809higasi.pdf
+- https://www.city.fussa.tokyo.jp/_res/projects/default_project/_page_/001/014/534/r0809minami.pdf
+- https://www.city.fussa.tokyo.jp/_res/projects/default_project/_page_/001/014/534/r0809nisi.pdf
+verify_sources:
+- collection-area-list-html
+- area-map-pdf
+- english-calendar-pdf
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区 (東/西/中央/南)
+district_count_approx: 4
+yearend: calendar-explicit
+notes: '一次ソースは地区別「ごみ・リサイクルカレンダー」令和8・9年度版 (2026.4〜2028.3, 2年分)。 4地区PDF (中央 r0809cyuo / 東 r0809higasi / 南 r0809minami
+  / 西 r0809nisi)、CLI 全て 200 取得可。 pdftotext でテキスト層あり (各9.7万〜9.9万字)。冒頭に地区の対象町丁目を明記 (例 中央=牛浜・志茂・北田園1丁目・福生の一部)、 日付マス内に品目名
+  (燃やせるごみ/容器包装プラスチック/缶金属/ビン/ダンボール等) が並ぶ=日付入り通年 (granularity=dates)。 2年分の実日付を含むため年末年始も日付マスで明示 (calendar-explicit)。difficulty
+  3 (機械可読PDF, グリッド整形要)。 地区割: 東/西/中央/南 の4区分、各地区に町丁目リスト割当。 検証源: 収集区域一覧HTML (1001989.html) +「収集区域図」PDF (.../001/001/989/6.pdf,
+  テキスト層あり) で地区↔町丁目対応を独立取得可、 英語版カレンダーPDF (同一日程の別表現)。「声のごみ・リサイクルカレンダー」はCDデイジー版のみでDL不可 (テキスト版としては使えず)。 ライセンス: OD配布ではなく通常公式サイト掲載、著作権表記
+  (Copyright 福生市) 準拠=proprietary-site。 東京都ODカタログでの福生市収集曜日CSVは確認できず (カタログCLI 403、検索でもヒットせず)。CSV/JSON/テキスト版カレンダーは無し。'
+surveyed_at: '2026-07-18'

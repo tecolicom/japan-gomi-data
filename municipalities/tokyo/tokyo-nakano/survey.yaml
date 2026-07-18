@@ -1,0 +1,22 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13114'
+handle: tokyo-nakano
+name_ja: 中野区
+population: 345178
+status: collected
+source_type: csv
+schedule_url: https://www2.wagmap.jp/nakanodatamap/nakanodatamap/opendatafile/map_1/CSV/opendata_550239.csv
+calendar_urls:
+- https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/syusyuyobi/nakanoku.html
+verify_sources:
+- html
+- course-pdf
+license: CC-BY-4.0
+difficulty: 2
+granularity: weekday-rules
+district_unit: 町丁目グループ
+district_count_approx: 42
+yearend: december-announce
+notes: 区OD「資源とごみの収集曜日一覧」CSV (東京都カタログ掲載、CC BY 4.0)。町丁目別カレンダーPDF全42枚 (日付入り) で通年機械照合済み・収録済み。CSV自体は曜日規則で最終確認日2021年 (現行HTMLと一致確認済み)。年末年始は毎年12月告知。
+surveyed_at: '2026-07-18'

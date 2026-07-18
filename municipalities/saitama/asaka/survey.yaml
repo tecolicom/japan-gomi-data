@@ -1,0 +1,40 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11227'
+handle: asaka
+name_ja: 朝霞市
+population: 147521
+source_type: html
+schedule_url: https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
+calendar_urls:
+- https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
+- https://raw.githubusercontent.com/publitechasaka/5374/master/data/area_days.csv
+verify_sources:
+- official-html-table
+- 5374-area-csv
+license: unknown
+difficulty: 2
+district_unit: 町名・丁目（一部は番地/河川境界で細分）
+district_count_approx: 38
+yearend: december-announce
+notes: '一次ソース: 公式サイト「家庭ごみ収集日一覧表」dust-syuusyuu.html の HTML 表(4列: 区域/資源/プラ資源=燃やせないごみ/燃やすごみ)。約38の町丁グループ、各グループに固定曜日(週次パターン)。CSV/PDF
+  ダウンロードは無し(HTML表のみ)。
+
+  独立/機械可読の代替: 市民団体 Publitech ASAKA の 5374.jp 版アプリ(https://publitechasaka.github.io/5374/)。GitHub 公開(publitechasaka/5374)で
+  data/area_days.csv が地区×4分別の収集曜日を CSV 化(36行、朝霞市クリーンセンター管内)。市データを転記したもので公式HTML表と照合可能。ただしコードは MPL2.0、remarks.csv
+  等は金沢/渋谷のテンプレ雛形が残存(未ローカライズ)なので area_days.csv 以外は要注意。
+
+  ライセンス: 収集日程データ自体の公開ライセンスは未確認。朝霞市ODは埼玉県ポータル(opendata.pref.saitama.lg.jp)掲載だが、ごみ収集日程のデータセットは確認できず(Asakaは人口等のみ surface)。県共同のごみ収集日データセットは無し(既知)。市サイト利用規約ページは
+  404。→ unknown。
+
+  年末年始: HTML表に「祝日も収集します（年末年始を除く）」明記。年末年始は毎年12月に別途告知の運用。
+
+  アプリ: 全国系「さんあ〜る」は不採用。朝霞市は独自の 5374.jp ベース分別アプリ + PDF/Excel 分別辞典。
+
+  収集は朝霞市クリーンセンター単一。多言語ガイドPDF: /uploaded/attachment/70441.pdf, 70442.pdf。
+
+  CLI アクセス: 公式サイト・GitHub・県ポータルとも curl 200(403 なし)。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

@@ -1,0 +1,53 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11218'
+handle: fukaya
+name_ja: 深谷市
+population: 137934
+source_type: html
+schedule_url: https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/kankyoeisei/tanto/gomi/1391428524402.html
+calendar_urls:
+- https://www.city.fukaya.saitama.jp/material/files/group/36/R8gominowakekatadaskata.pdf
+verify_sources:
+- official-html-rules
+- leaflet-image-pdf
+- smart-lgov-monthly-notice
+license: unknown
+difficulty: 3
+district_unit: 郵便番号2グループ
+district_count_approx: 2
+yearend: calendar-explicit
+notes: '一次ソースは令和8年度「ごみの分け方・出し方」リーフレット(A4両面)＝画像PDF。
+
+  pdffonts空・pdftotext 2バイト・pdfimagesは全面JPEG(300dpi)でテキスト層なし=画像PDF。
+
+  ただし収集日程は極めてルールベースで、公式HTML「ごみの出しかた」に文字情報として全曜日規則あり
+
+  (燃やせるごみ=月火水金/資源物=木/粗大=火/…)、OCRなしで再構成可能なため難易度3と判定。
+
+  地区割は郵便番号366始まり=深谷地区、それ以外=岡部・川本・花園地区の2グループのみ。
+
+  地区で異なるのは「燃やせないごみ」(深谷=水/岡部等=金、毎月第2週を除く)と
+
+  「使用済小型家電」(深谷=第2水/岡部等=第2金)の2品目だけ。他は市内共通。
+
+  月次品目の具体日付(小型家電=第2水/金、リチウム蓄電池=第3水、有害ごみ=第3金)はPDFに明示日付リスト
+
+  だが第N週ルールで導出可能。
+
+  年末年始はリーフレット裏面に明示: 令和8年12/29(火)・12/30(水)は燃やせるごみのみ特別収集、
+
+  令和9年1/4(月)より通常収集(=calendar-explicit。fukkachan等でも毎年告知あり)。
+
+  ライセンス: 深谷市OD(埼玉県ポータルorg=40)はCC BY 2.1 JPだが収録22件にごみ収集データは無し。
+
+  リーフレットはOD公開物ではないため schedule データのライセンスは unknown。
+
+  収集曜日検索ツール・CSV/JSONは公式サイトに見当たらず(HTMLに.csv/.json参照なし)。
+
+  gomisaku.jp/0135 は分別辞典のみで収集日データなし。nishi.or.jp のごみカレンダーは非公式第三者で信頼性未検証。
+
+  curlはPDF 200取得可(403なし)。合併(2006 岡部・川本・花園)は地区名として現存。 【統括是正 2026-07-18】source_type を pdf→html に是正: notes のとおりリーフレットは画像PDF
+  (全数検査でも実測0字) で、機械可読の一次は公式HTMLの曜日規則テキスト。'
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

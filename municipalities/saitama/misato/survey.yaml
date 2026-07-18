@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11237'
+handle: misato
+name_ja: 三郷市
+population: 140427
+source_type: pdf
+schedule_url: https://www.city.misato.lg.jp/material/files/group/20/hppet.pdf
+calendar_urls:
+- https://www.city.misato.lg.jp/soshiki/shiminseikatsu/kurinraifu/2/9739.html
+- https://www.city.misato.lg.jp/material/files/group/20/31.pdf
+verify_sources:
+- course-pdf
+license: unknown
+difficulty: 3
+district_unit: 地区
+district_count_approx: null
+yearend: unknown
+notes: '一次候補「三郷市 地区別 ごみと資源物の収集曜日 一覧表」hppet.pdf はテキスト層あり(pdftotext可)、 町名(あかさたな…50音)×収集区の全域一覧表で機械可読性が高い(実質html表相当だがPDFなのでdifficulty3)。
+  種別: もえるごみ(週2)/もえない・有害ごみ(第1・3週)/びん缶ペットボトル(第2・4週)/資源古紙布類。 【罠】三郷は「第n週」を第1週=1〜7日・第2週=8〜14日…とカレンダー週で定義。プレイブック標準の 「第n回目(その月n回目の該当曜日)」とは別解釈なので実装時に区別必須。検証用に地区別カレンダーPDF(31.pdf等)。
+  収集日オープンデータは未発見。地区数(収集区数)は未計測。年末年始扱いは未確認。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

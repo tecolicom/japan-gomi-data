@@ -1,0 +1,41 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11326'
+handle: moroyama-town
+name_ja: 毛呂山町
+population: 32987
+source_type: pdf
+schedule_url: http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
+calendar_urls:
+- http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
+- http://www.hozenkumiai.or.jp/pdf/moroyama2026_b.pdf
+- http://www.hozenkumiai.or.jp/pdf/moroyama2026_c.pdf
+- https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndaatiku.pdf
+- https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndabtiku.pdf
+- https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndactiku.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 3
+yearend: calendar-explicit
+notes: '一次ソース候補は埼玉西部環境保全組合(hozenkumiai.or.jp、毛呂山町のごみ処理を担う一部事務組合)が
+
+  発行する令和8年度カレンダーPDF。pdftotext/pdffonts で確認したところ埋込CIDフォントによる完全な
+
+  テキスト層あり(日付・曜日・品目=可燃/不燃/他プラ/びん缶/有害/紙布/ペット等が抽出可能)。CLI curl 正常取得。
+
+  町公式サイト(town.moroyama.saitama.jp)の R8gomikarennda[abc]tiku.pdf は同内容だがベクター描画で
+
+  テキスト層なし(pdffonts/pdfimages 共に空)=OCR必要。よって組合PDFを一次に採用すれば difficulty 3。
+
+  収集日のオープンデータCSVは町・埼玉県ポータル共に確認できず(license=proprietary-site)。
+
+  地区は A/B/C の3地区一律。旧年度 moroyama2025_*.pdf は現在404、moroyama2026_*.pdf が現行。
+
+  収集運搬の委託業者に株式会社鳩山環境サービス等の記載あり(処理は組合)。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

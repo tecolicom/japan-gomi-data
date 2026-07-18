@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11215'
+handle: sayama
+name_ja: 狭山市
+population: 142634
+source_type: xls
+schedule_url: https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.html
+calendar_urls:
+- https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.files/2026_irumagawa1.4.xls
+- https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.files/2026_irumagawa1.4.pdf
+verify_sources:
+- xls
+- course-pdf
+license: proprietary-site
+difficulty: 3
+district_unit: 地区
+district_count_approx: 35
+yearend: calendar-explicit
+notes: '2026年度カレンダーを大地区8つに分け、各地区の下に町丁単位で約35のカレンダーを配置。各カレンダーに .xls(真のExcel表, cp932, Last Printed 2026-02) + .pdf
+  を併載。Excelは機械可読だがカレンダー グリッド形式のためパースは要手当。生ごみリサイクル専用バケツ収集は地区別曜日指定。ごみ分別アプリあり。 source_typeはenum外(xls)。CSVは無い。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: dates

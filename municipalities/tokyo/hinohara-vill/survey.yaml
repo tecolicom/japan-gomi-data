@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13307'
+handle: hinohara-vill
+name_ja: 檜原村
+population: 1892
+source_type: pdf
+schedule_url: https://www.vill.hinohara.tokyo.jp/0000000004.html
+calendar_urls:
+- https://www.vill.hinohara.tokyo.jp/cmsfiles/contents/0000000/4/2026-1.pdf
+- https://www.vill.hinohara.tokyo.jp/cmsfiles/contents/0000000/4/2026-2.pdf
+- https://www.vill.hinohara.tokyo.jp/cmsfiles/contents/0000000/4/2026-3.pdf
+- https://www.vill.hinohara.tokyo.jp/cmsfiles/contents/0000000/4/2026-4.pdf
+verify_sources:
+- 民間ごみ回収業者の解説ページ (sfinter.com, otasukeusagi.jp, tokyo-kataduke110ban.com)
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 収集地区 (複数の集落を束ねた4収集ゾーン。各PDFに下元郷・数馬・本宿・和田等の集落名を列挙)
+district_count_approx: 4
+yearend: calendar-explicit
+notes: '公式サイト「ごみ収集カレンダー」ページ (0000000004.html) から令和8年度カレンダーを地区別に4本のPDFで公開。 curl で4本とも取得成功 (各約4.7MB, 18ページ)。pdffonts
+  で埋め込みフォント確認、pdftotext でテキスト層あり。 冒頭に「収集しない日:土曜・日曜・年末年始 (12/29～1/3)」「祝日も収集」を明記 (yearend=calendar-explicit)。 本体は月別カレンダーグリッドで実日付
+  (19,20,14,21,28…) に可燃ごみ/粗大ごみ/資源/缶・びん/ペットボトル/白色トレイ/ 有害ごみ/食用油等を割付 → granularity=dates。ただしテキスト層は抽出可だがグリッド由来で日付と品目の順序が
+  バラバラに出力されるため、日付-品目の対応付けにはレイアウト解析が必要 (difficulty=3: 機械可読PDFだが構造復元に手間)。 CSV/JSON等のオープンデータ提供は無し。東京都ODカタログでの登録は未確認
+  (CLIがCloudFront 403のため深追いせず)。 ライセンスはフッタ「Copyright (C) Hinohara Village All Rights Reserved」でCC-BY等の明示なし → proprietary-site。
+  地区は集落名を4収集ゾーンに束ねた形式。人口は約1,900人 (小村) の一般知識ベースの概数、村統計未確認のため参考値。'
+surveyed_at: '2026-07-18'

@@ -1,199 +1,198 @@
-# 埼玉県 全63自治体 ごみ収集日程 triage 台帳 (パイロット, 2026-07-17 調査)
-# スキーマ: docs/2026-07-16-national-scaling-draft.md §2 を拡張。
-#   source_type: txt | csv | json | xls | html | pdf | image-pdf | app-only | none
-#     (json=CMSのAPI, xls=Excel配布, txt=テキスト版カレンダー。image-pdf=テキスト層なし→OCR/転記要)
-#   difficulty: 1=県共同/標準OD 2=素直なCSV/HTML 3=機械可読PDF 4=画像PDF/app駆動 5=収録不能
-#   population: 埼玉県推計人口 2026-06-01 現在
-#   status: collected = 収録済み (飯能・日高)
-# 調査は 1 自治体 10 分の見切り。unknown/null は「未確認」であり「無い」ではない。
-# 県共同のごみ収集日データセットは無い (2026-07-17 確認。福井方式は使えない)。
-# PDF テキスト層は 2026-07-18 に全数実測検査済み (直接URL 80件を取得し pdftotext 検査。主張との不一致は深谷1件のみ→是正)。
-- code: '11100'
+# saitama の調査台帳 (生成物 — 正典は municipalities/saitama/<handle>/survey.yaml。編集はそちらへ)
+# 再生成: node scripts/triage-csv.mjs / スコア: node scripts/triage-score.mjs --csv docs/triage/scores.csv
+- code: "11100"
   handle: saitama
   name_ja: さいたま市
   population: 1351082
   source_type: json
   schedule_url: https://admin.gomisuke.jp/app/0017/api/jsonp.php?file=calendar
   calendar_urls:
-  - https://www.city.saitama.lg.jp/001/006/010/003/p042612.html?page=area
-  - https://www.city.saitama.lg.jp/001/006/010/003/p001912.html
-  - https://www.city.saitama.lg.jp/001/006/010/003/p005300_d/fil/r8_jp_gomimanual.pdf
+    - https://www.city.saitama.lg.jp/001/006/010/003/p042612.html?page=area
+    - https://www.city.saitama.lg.jp/001/006/010/003/p001912.html
+    - https://www.city.saitama.lg.jp/001/006/010/003/p005300_d/fil/r8_jp_gomimanual.pdf
   verify_sources:
-  - site-json
-  - booklet
+    - site-json
+    - booklet
   license: proprietary-site
   difficulty: 2
   district_unit: 地区
   district_count_approx: 70
   yearend: calendar-explicit
-  notes: '【前回G1のdifficulty=4/unknownを是正】gomisukeエンドポイントの実体取得を実施し疑問点を解消。 一次ソースは優先順③に該当する JSON(JSONP)。さいたま市公式カレンダーページ
-    (p042612.html?page=area)は第三者商用サービス「ごみすけ(gomisuke)」app0017を埋め込み、 実データは admin.gomisuke.jp/app/0017/api/jsonp.php?file={area,type,calendar}
-    から JSONP で配信(curl 200・認証不要、Referer付与で取得確認済)。3ファイル結合で完全再構成可: (1) file=area … areaID→町名リスト(全70エリア, 【区名】::町名… 形式)
-    (2) file=type … typeID→ごみ種別名(1もえるごみ/2もえないごみ/6びん/7かん/8ペット/9容プラ/4古紙/5繊維/3有害危険/…/15お休み) (3) file=calendar(約290KB)
-    … 月×areaID×日→typeID群。202601〜202703 の15ヶ月ローリング(年末年始含む)。 政令市10区は全区この単一 gomisuke システムで統一(区ごとに別ソース構造は無い)。収集グループ数は
-    区で差(南区13が最多、西区3が最少)。アプリ「さいちゃん(jp.gomisuke.app.Gomisuke0017)」iOS/Android も同バックエンド。 年末年始は毎年カレンダーデータに直接反映され明示的(告知待ちでない)。
-    埼玉県ODポータル opendata.pref.saitama.lg.jp にごみ収集日の個別ODは無し(確認済)。 出し方マニュアルPDF(r8)はテキスト層あり=検証用に利用可。gomisuke配信データは商用サービス由来で
-    ライセンス明示なし=proprietary-site 扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    【前回G1のdifficulty=4/unknownを是正】gomisukeエンドポイントの実体取得を実施し疑問点を解消。 一次ソースは優先順③に該当する JSON(JSONP)。さいたま市公式カレンダーページ
+    (p042612.html?page=area)は第三者商用サービス「ごみすけ(gomisuke)」app0017を埋め込み、 実データは
+    admin.gomisuke.jp/app/0017/api/jsonp.php?file={area,type,calendar} から JSONP で配信(curl
+    200・認証不要、Referer付与で取得確認済)。3ファイル結合で完全再構成可: (1) file=area … areaID→町名リスト(全70エリア, 【区名】::町名… 形式) (2) file=type
+    … typeID→ごみ種別名(1もえるごみ/2もえないごみ/6びん/7かん/8ペット/9容プラ/4古紙/5繊維/3有害危険/…/15お休み) (3) file=calendar(約290KB) …
+    月×areaID×日→typeID群。202601〜202703 の15ヶ月ローリング(年末年始含む)。 政令市10区は全区この単一 gomisuke
+    システムで統一(区ごとに別ソース構造は無い)。収集グループ数は 区で差(南区13が最多、西区3が最少)。アプリ「さいちゃん(jp.gomisuke.app.Gomisuke0017)」iOS/Android
+    も同バックエンド。 年末年始は毎年カレンダーデータに直接反映され明示的(告知待ちでない)。 埼玉県ODポータル opendata.pref.saitama.lg.jp にごみ収集日の個別ODは無し(確認済)。
+    出し方マニュアルPDF(r8)はテキスト層あり=検証用に利用可。gomisuke配信データは商用サービス由来で ライセンス明示なし=proprietary-site
+    扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11201'
+- code: "11201"
   handle: kawagoe
   name_ja: 川越市
   population: 355376
   source_type: pdf
   schedule_url: https://www.city.kawagoe.saitama.jp/kurashi/gomi/1002375/1020639.html
   calendar_urls:
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_04.pdf
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_05-06.pdf
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_07-08.pdf
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_09-10.pdf
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_11-12.pdf
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_13-14.pdf
-  - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_15-16.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_04.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_05-06.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_07-08.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_09-10.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_11-12.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_13-14.pdf
+    - https://www.city.kawagoe.saitama.jp/_res/projects/default_project/_page_/001/020/639/r8_15-16.pdf
   verify_sources:
-  - booklet
-  - app
+    - booklet
+    - app
   license: proprietary-site
   difficulty: 3
   district_unit: コース
   district_count_approx: 60
   yearend: calendar-explicit
-  notes: '令和8年度版。収集は「自治会別」で全60コース。日程表PDF(r8_05-06〜15-16)は pdftotext でテキスト層あり(分別×コースの曜日グリッド。日付ではなく曜日ベース)。 コース一覧表PDF(r8_04)も自治会名→コース番号のテキスト層あり。分別は
-    可燃/プラスチック製容器包装/不燃・有害/布類/紙類/びん・かん・ペットボトル。 年末年始は「土日・12/30〜1/3休」とページに明示。収集曜日オープンデータ・ テキスト版カレンダー・サイト内CSV/JSONは無し(自治体OD言及なし)。電子ブック版
-    冊子(16p)あり。川越市ごみ分別アプリ(ごみすけ)あり。粗大は申込制。 課: 環境部資源循環推進課/収集管理課(049-239-5058)。'
-  surveyed_at: '2026-07-17'
+  notes: "令和8年度版。収集は「自治会別」で全60コース。日程表PDF(r8_05-06〜15-16)は pdftotext でテキスト層あり(分別×コースの曜日グリッド。日付ではなく曜日ベース)。
+    コース一覧表PDF(r8_04)も自治会名→コース番号のテキスト層あり。分別は 可燃/プラスチック製容器包装/不燃・有害/布類/紙類/びん・かん・ペットボトル。
+    年末年始は「土日・12/30〜1/3休」とページに明示。収集曜日オープンデータ・ テキスト版カレンダー・サイト内CSV/JSONは無し(自治体OD言及なし)。電子ブック版
+    冊子(16p)あり。川越市ごみ分別アプリ(ごみすけ)あり。粗大は申込制。 課: 環境部資源循環推進課/収集管理課(049-239-5058)。"
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11202'
+- code: "11202"
   handle: kumagaya
   name_ja: 熊谷市
   population: 188244
   source_type: pdf
   schedule_url: https://www.city.kumagaya.lg.jp/kurashi/kankyo/gomi/gomidasi.files/syuusyuubi.pdf
   calendar_urls:
-  - https://www.city.kumagaya.lg.jp/kurashi/kankyo/gomi/gomidasi.html
-  - https://www.city.kumagaya.lg.jp/about/soshiki/shochoko/kohokotyo/oshirase/reiwa8nenndokarennda.html
+    - https://www.city.kumagaya.lg.jp/kurashi/kankyo/gomi/gomidasi.html
+    - https://www.city.kumagaya.lg.jp/about/soshiki/shochoko/kohokotyo/oshirase/reiwa8nenndokarennda.html
   verify_sources:
-  - booklet
-  - app
+    - booklet
+    - app
   license: unknown
   difficulty: 3
   district_unit: 町名
   district_count_approx: null
   yearend: unknown
-  notes: '一次候補「集積所所在地別収集曜日一覧表(50音順)」syuusyuubi.pdf はテキスト層あり(pdftotext可)。 ただし対象は燃えるごみ/資源物(紙類)/粗大ごみの3種のみで、缶・ビン・ペットボトル・不燃ごみは
-    moenaimono.html 等の別ページで規定 → 一次ソースを複数束ねる必要あり。区域は「町字名+境界道路」単位。 月次「くらしのカレンダー」PDF(gomidasi.html に R8.7.pdf 等)も併存。熊谷市ごみ分別アプリあり。
-    収集日オープンデータは未発見(市OD言及はあるが収集日データセット未確認)。 ※旧URL gomidasi.files/syusyubi.pdf は404、正は syuusyuubi.pdf。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次候補「集積所所在地別収集曜日一覧表(50音順)」syuusyuubi.pdf はテキスト層あり(pdftotext可)。
+    ただし対象は燃えるごみ/資源物(紙類)/粗大ごみの3種のみで、缶・ビン・ペットボトル・不燃ごみは moenaimono.html 等の別ページで規定 →
+    一次ソースを複数束ねる必要あり。区域は「町字名+境界道路」単位。 月次「くらしのカレンダー」PDF(gomidasi.html に R8.7.pdf 等)も併存。熊谷市ごみ分別アプリあり。
+    収集日オープンデータは未発見(市OD言及はあるが収集日データセット未確認)。 ※旧URL gomidasi.files/syusyubi.pdf は404、正は
+    syuusyuubi.pdf。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11203'
+- code: "11203"
   handle: kawaguchi
   name_ja: 川口市
   population: 594171
   source_type: pdf
   schedule_url: https://www.city.kawaguchi.lg.jp/soshiki/01100/040/4/2/3488.html
   calendar_urls:
-  - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
-  - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---18.pdf
-  - https://www.city.kawaguchi.lg.jp/material/files/group/94/banngouitirannhyou.pdf
+    - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
+    - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---18.pdf
+    - https://www.city.kawaguchi.lg.jp/material/files/group/94/banngouitirannhyou.pdf
   verify_sources:
-  - course-pdf
-  - html
+    - course-pdf
+    - html
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 18
   yearend: calendar-explicit
-  notes: '地区別ごみ収集日カレンダーPDF (18地区、2025/2026各1〜18) が一次ソース。 URLパターン: 令和8年 material/files/group/94/2026---{1..18}.pdf、令和7年
-    2025--{1..18}.pdf。 地区番号↔町丁目の対応は banngouitirannhyou.pdf。PDFはテキスト層あり (curl 200/pdftotext成功、 地区名・曜日ルール・実日付が抽出可)。1地区は複数の町丁目/町会をグループ化
-    (例①=金山町/舟戸町/川口1丁目/本町1-4/幸町1-3/栄町1-3)。 収集: 一般・有害=週2曜日、プラ容器包装=週1、びん/かん・金属/紙・ペット/繊維=第n週の曜日指定。 PDFに1〜12月の実日付が明示され年末年始も日付で確認可
-    (calendar-explicit)。 検証用: 公式検索ページ kawaguchi-gomimaru.jp (住所→地区→曜日表示、HTMLのみ・.csv/.json参照なし)。 オープンデータCSVは自治体OD・埼玉県ポータルとも収集日データは発見できず
-    (unknown→なし想定)。 分別アプリは未確認だがメール通知サービス・粗大ごみネット受付・集積所検索は別途あり。'
-  surveyed_at: '2026-07-17'
+  notes: "地区別ごみ収集日カレンダーPDF (18地区、2025/2026各1〜18) が一次ソース。 URLパターン: 令和8年
+    material/files/group/94/2026---{1..18}.pdf、令和7年 2025--{1..18}.pdf。 地区番号↔町丁目の対応は
+    banngouitirannhyou.pdf。PDFはテキスト層あり (curl 200/pdftotext成功、 地区名・曜日ルール・実日付が抽出可)。1地区は複数の町丁目/町会をグループ化
+    (例①=金山町/舟戸町/川口1丁目/本町1-4/幸町1-3/栄町1-3)。 収集: 一般・有害=週2曜日、プラ容器包装=週1、びん/かん・金属/紙・ペット/繊維=第n週の曜日指定。
+    PDFに1〜12月の実日付が明示され年末年始も日付で確認可 (calendar-explicit)。 検証用: 公式検索ページ kawaguchi-gomimaru.jp
+    (住所→地区→曜日表示、HTMLのみ・.csv/.json参照なし)。 オープンデータCSVは自治体OD・埼玉県ポータルとも収集日データは発見できず (unknown→なし想定)。
+    分別アプリは未確認だがメール通知サービス・粗大ごみネット受付・集積所検索は別途あり。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11206'
+- code: "11206"
   handle: gyoda
   name_ja: 行田市
   population: 75859
   source_type: json
   schedule_url: https://www.city.gyoda.lg.jp/kurashi/gomi/gomi_search/chikubetsu/search.html
   calendar_urls:
-  - https://www.city.gyoda.lg.jp/soshiki/kankyokeizaibu/kankyo/gyomu/gomi/recycle/3208.html
-  - https://www.city.gyoda.lg.jp/material/files/group/18/syuusyuu.pdf
-  - https://www.city.gyoda.lg.jp/material/files/group/18/r6-12.pdf
+    - https://www.city.gyoda.lg.jp/soshiki/kankyokeizaibu/kankyo/gyomu/gomi/recycle/3208.html
+    - https://www.city.gyoda.lg.jp/material/files/group/18/syuusyuu.pdf
+    - https://www.city.gyoda.lg.jp/material/files/group/18/r6-12.pdf
   verify_sources:
-  - site-json
-  - course-pdf
+    - site-json
+    - course-pdf
   license: proprietary-site
   difficulty: 2
   district_unit: 町名
   district_count_approx: 132
   yearend: december-announce
-  notes: '収集曜日検索は SMART CMS(smart-lgov)の汎用データJSON APIが駆動。CLIから token/type_id=2 で 132町全件を200取得成功(実データ確認済)。header列=
-    燃えるごみ/燃えないごみ/粗大ごみ/有害ごみ/ 資源物(缶・ビン類)/資源物(紙・布類)。曜日は「毎週火・金」「毎月第4木曜日」等の日本語表記。 独立検証に資源物地区別収集日程表PDF(group/18)が使える。source_typeはenum外だが本質はCSV/JSON層。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    収集曜日検索は SMART CMS(smart-lgov)の汎用データJSON APIが駆動。CLIから token/type_id=2 で 132町全件を200取得成功(実データ確認済)。header列=
+    燃えるごみ/燃えないごみ/粗大ごみ/有害ごみ/ 資源物(缶・ビン類)/資源物(紙・布類)。曜日は「毎週火・金」「毎月第4木曜日」等の日本語表記。
+    独立検証に資源物地区別収集日程表PDF(group/18)が使える。source_typeはenum外だが本質はCSV/JSON層。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11207'
+- code: "11207"
   handle: chichibu
   name_ja: 秩父市
   population: 53932
   source_type: pdf
   schedule_url: https://www.city.chichibu.lg.jp/9098.html
   calendar_urls:
-  - https://city.chichibu.lg.jp/secure/22218/28%E6%A0%83%E8%B0%B7.pdf
-  - https://www.c-kouiki.jp/gomi-2-2-2-2-2-2/calendar-1-2/
+    - https://city.chichibu.lg.jp/secure/22218/28%E6%A0%83%E8%B0%B7.pdf
+    - https://www.c-kouiki.jp/gomi-2-2-2-2-2-2/calendar-1-2/
   verify_sources:
-  - course-pdf
-  - booklet
+    - course-pdf
+    - booklet
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 43
   yearend: calendar-explicit
-  notes: 収集主体は秩父広域市町村圏組合(5市町共同)、日程管理は秩父市生活衛生課。 市サイト /9098.html に地区別ごみカレンダーPDFを掲載。地区は 43分割 (秩父中央34・吉田4・大滝2・荒川3)、PDFは
-    /secure/22218/01〜43 の番号+地区名.pdf。 PDF はテキスト層あり(pdftotext 抽出可、CLI 200)だが月別カレンダーのグリッド レイアウトで日番号と品目名が散在するため要パース=difficulty
-    3。令和7年度版 (4月〜翌3月)のため年末年始も表内に含まれる想定(グリッド中の12/1月部分は 未詳細確認)。テキスト版カレンダー・収集曜日CSV/JSONは未発見。埼玉県OD ポータルにも秩父市のごみ収集日データセットは無し(県共同データセットも無し確認済)。
+  notes: 収集主体は秩父広域市町村圏組合(5市町共同)、日程管理は秩父市生活衛生課。 市サイト /9098.html に地区別ごみカレンダーPDFを掲載。地区は 43分割
+    (秩父中央34・吉田4・大滝2・荒川3)、PDFは /secure/22218/01〜43 の番号+地区名.pdf。 PDF はテキスト層あり(pdftotext 抽出可、CLI
+    200)だが月別カレンダーのグリッド レイアウトで日番号と品目名が散在するため要パース=difficulty 3。令和7年度版 (4月〜翌3月)のため年末年始も表内に含まれる想定(グリッド中の12/1月部分は
+    未詳細確認)。テキスト版カレンダー・収集曜日CSV/JSONは未発見。埼玉県OD ポータルにも秩父市のごみ収集日データセットは無し(県共同データセットも無し確認済)。
     組合サイト(c-kouiki.jp)のカレンダーは申込フォーム経由でPDF送付、直リンク無し だが検証用の独立系統として利用可。アプリ提供は未確認。
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11208'
+- code: "11208"
   handle: tokorozawa
   name_ja: 所沢市
   population: 343416
   source_type: pdf
   schedule_url: https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/index.html
   calendar_urls:
-  - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309105228447.html
-  - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309091749902.files/R8aobadai.pdf
+    - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309105228447.html
+    - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309091749902.files/R8aobadai.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 町名
   district_count_approx: null
   yearend: calendar-explicit
-  notes: '地区別収集カレンダーは頭文字別8ページ(あ行/か・き/く・け・こ/さ行/た・な行/は行/ま行/や・わ行)に 各町ごとの個別PDFが並ぶ(「は行」だけで15PDF、全体で数十〜百規模とみられる)。R8hanazono.pdf
-    を DLし pdftotext 検証: テキスト層あり(2頁23036字)、4月〜翌3月の通年・日付入りカレンダーで機械抽出可。 年末年始も日付入りで明示される見込み(通年カレンダーのため)。CSV/テキスト版ODは無し。分別アプリ
-    「わけトコっ！」あり。地区数が多く個別PDFを網羅する手間が主コスト。市サイトはCC宣言なし。 【統括実測 2026-07-18】R8aobadai.pdf を取得し pdftotext 8,539字 = テキスト層あり・日付入り通年を追認
-    (全数検査の URL 未記録分の補完)。'
-  surveyed_at: '2026-07-17'
+  notes: "地区別収集カレンダーは頭文字別8ページ(あ行/か・き/く・け・こ/さ行/た・な行/は行/ま行/や・わ行)に
+    各町ごとの個別PDFが並ぶ(「は行」だけで15PDF、全体で数十〜百規模とみられる)。R8hanazono.pdf を DLし pdftotext 検証:
+    テキスト層あり(2頁23036字)、4月〜翌3月の通年・日付入りカレンダーで機械抽出可。 年末年始も日付入りで明示される見込み(通年カレンダーのため)。CSV/テキスト版ODは無し。分別アプリ
+    「わけトコっ！」あり。地区数が多く個別PDFを網羅する手間が主コスト。市サイトはCC宣言なし。 【統括実測 2026-07-18】R8aobadai.pdf を取得し pdftotext 8,539字 =
+    テキスト層あり・日付入り通年を追認 (全数検査の URL 未記録分の補完)。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11209'
+- code: "11209"
   handle: hanno
   name_ja: 飯能市
   population: 77256
   status: collected
   source_type: image-pdf
   difficulty: 4
-  notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hanno-data の sources.yaml から一次ソースを転記:
-    コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に override。検証ソースは単一。
-    【統括実確認 2026-07-18】「テキスト層あり」は誤った推定だった。2026haraichibanaguri.pdf を実取得し pdftotext 出力 2 バイト = テキスト層なしの画像 PDF と確認
-    → image-pdf/d4 に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。'
+  notes: "収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hanno-data の sources.yaml
+    から一次ソースを転記: コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に
+    override。検証ソースは単一。 【統括実確認 2026-07-18】「テキスト層あり」は誤った推定だった。2026haraichibanaguri.pdf を実取得し pdftotext 出力 2 バイト
+    = テキスト層なしの画像 PDF と確認 → image-pdf/d4 に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。"
   granularity: dates
   schedule_url: https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
   calendar_urls: []
@@ -202,36 +201,36 @@
   yearend: calendar-explicit
   score_overrides:
     A: 15
-- code: '11210'
+- code: "11210"
   handle: kazo
   name_ja: 加須市
   population: 109479
   source_type: image-pdf
   schedule_url: https://www.city.kazo.lg.jp/kurashi_bosai/gomi_recycle/1/index.html
   calendar_urls:
-  - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28813.html
-  - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28814.html
-  - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28815.html
-  - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28816.html
+    - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28813.html
+    - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28814.html
+    - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28815.html
+    - https://www.city.kazo.lg.jp/soshiki/shigen/gomicalendar/28816.html
   verify_sources:
-  - region-calendar-pages
-  - wakekata-pdf
-  - third-party-search
+    - region-calendar-pages
+    - wakekata-pdf
+    - third-party-search
   license: unknown
   difficulty: 4
   district_unit: 地区/自治会 (4合併地域→地区→町丁目・自治会グループ)
   district_count_approx: 71
   yearend: unknown
-  notes: '一次ソースは公式サイトの地域別ごみカレンダーPDF群のみ。CSV/JSON/オープンデータは 未提供 (ページHTMLに .csv/.json 参照なし、埼玉県ポータルの加須市データは広報誌URLのみ、
-    ごみ収集データセットは無し)。カレンダーPDFは全て画像PDF (pdftotext=0文字, pdffonts=埋込 フォントなし; 例 chuuou1.pdf 1.1MB/1p, iitsumi.pdf 18MB/1p)
-    のためOCR必須→difficulty 4。 対照的に「分け方」解説PDF (wakekata.pdf) にはテキスト層あり。地区割は2010年合併の 4地域 (加須58本/騎西7本/北川辺3本/大利根3本=計約71本)
-    を町丁目・自治会単位に細分。 ファイル名接頭 080101〜080158 等で地区順に整理。年末年始は年度版カレンダー(4月〜翌3月)に 作図されている可能性が高いが画像のため中身未確認(index頁の12/29-1/3は窓口閉庁の記載)。
-    curl/WebFetchとも200で取得可 (403なし)。非公式のakizuki検索CGIが地区別収集日を提供するが 出典・機械可読データの記載なし。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次ソースは公式サイトの地域別ごみカレンダーPDF群のみ。CSV/JSON/オープンデータは 未提供 (ページHTMLに .csv/.json 参照なし、埼玉県ポータルの加須市データは広報誌URLのみ、
+    ごみ収集データセットは無し)。カレンダーPDFは全て画像PDF (pdftotext=0文字, pdffonts=埋込 フォントなし; 例 chuuou1.pdf 1.1MB/1p, iitsumi.pdf
+    18MB/1p) のためOCR必須→difficulty 4。 対照的に「分け方」解説PDF (wakekata.pdf) にはテキスト層あり。地区割は2010年合併の 4地域
+    (加須58本/騎西7本/北川辺3本/大利根3本=計約71本) を町丁目・自治会単位に細分。 ファイル名接頭 080101〜080158 等で地区順に整理。年末年始は年度版カレンダー(4月〜翌3月)に
+    作図されている可能性が高いが画像のため中身未確認(index頁の12/29-1/3は窓口閉庁の記載)。 curl/WebFetchとも200で取得可
+    (403なし)。非公式のakizuki検索CGIが地区別収集日を提供するが 出典・機械可読データの記載なし。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11211'
+- code: "11211"
   handle: honjo
   name_ja: 本庄市
   population: 76085
@@ -239,166 +238,169 @@
   schedule_url: https://www.city.honjo.lg.jp/kurashi_tetsuzuki/gomi/gominoshushubikensaku/index.html
   calendar_urls: []
   verify_sources:
-  - app
+    - app
   license: unknown
   difficulty: 4
   district_unit: 自治会
   district_count_approx: null
   yearend: unknown
   notes: 収集日は「自治会別」。一次候補は市サイトの「ごみの収集日検索(自治会別)」だが、 検索は外部サービス(mt.adaptive-techs.com HttpAdaptor)駆動で、ページソースに 収集日を持つ
-    .csv/.json/.pdf の直リンクを発見できず(自治会マスタ・曜日データの 実体が不可視)。自治会数は未確認(null)。収集は児玉郡市広域市町村圏組合の管轄で、 分別アプリ(ロカポ系, 本庄市・美里町・神川町・上里町)とごみ分別辞典(gomisaku.jp
-    /0239)あり=アプリ側にカレンダー機能。年末年始・OD言及は未確認。 収録には検索フォームの裏データ特定 or アプリのデータ源調査が必要で難度高め。
-  surveyed_at: '2026-07-17'
+    .csv/.json/.pdf の直リンクを発見できず(自治会マスタ・曜日データの 実体が不可視)。自治会数は未確認(null)。収集は児玉郡市広域市町村圏組合の管轄で、 分別アプリ(ロカポ系,
+    本庄市・美里町・神川町・上里町)とごみ分別辞典(gomisaku.jp /0239)あり=アプリ側にカレンダー機能。年末年始・OD言及は未確認。 収録には検索フォームの裏データ特定 or
+    アプリのデータ源調査が必要で難度高め。
+  surveyed_at: 2026-07-17
   granularity: unknown
-- code: '11212'
+- code: "11212"
   handle: higashimatsuyama
   name_ja: 東松山市
   population: 91589
   source_type: pdf
   schedule_url: https://www.city.higashimatsuyama.lg.jp/site/gomi-recycle/1454.html
   calendar_urls:
-  - https://www.city.higashimatsuyama.lg.jp/uploaded/attachment/18150.pdf
+    - https://www.city.higashimatsuyama.lg.jp/uploaded/attachment/18150.pdf
   verify_sources:
-  - site-search
+    - site-search
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: 9
   yearend: unknown
-  notes: '一次候補「令和8年度資源とごみの分別収集計画表」= 地区別カレンダー型PDF群(No.1松山地区①〜No.9、 /uploaded/attachment/181xx.pdf)。18150.pdf はテキスト層あり(pdftotext可、町名リスト+日付入りカレンダー)。
-    各地区にA判表版とカレンダー型の2種。地区は9(松山①〜④・平野大谷松山・大岡平野松山・唐子・高坂高坂丘陵・野本)。 収集日検索ページ search.php はサーバ側PHPで駆動、HTMLソースに .csv/.json
-    参照なし(search-garbage.js はUIのみ) → 検索由来CSVは非公開。収集日オープンデータは未発見。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次候補「令和8年度資源とごみの分別収集計画表」= 地区別カレンダー型PDF群(No.1松山地区①〜No.9、 /uploaded/attachment/181xx.pdf)。18150.pdf
+    はテキスト層あり(pdftotext可、町名リスト+日付入りカレンダー)。 各地区にA判表版とカレンダー型の2種。地区は9(松山①〜④・平野大谷松山・大岡平野松山・唐子・高坂高坂丘陵・野本)。 収集日検索ページ
+    search.php はサーバ側PHPで駆動、HTMLソースに .csv/.json 参照なし(search-garbage.js はUIのみ) →
+    検索由来CSVは非公開。収集日オープンデータは未発見。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11214'
+- code: "11214"
   handle: kasukabe
   name_ja: 春日部市
   population: 222659
   source_type: image-pdf
   schedule_url: https://www.city.kasukabe.lg.jp/benrinavi/shushubi/index.html
   calendar_urls:
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare1.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare2.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare3.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare4.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare5.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare6.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare7.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare8.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare9.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare10.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare11.pdf
-  - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare12.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare1.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare2.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare3.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare4.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare5.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare6.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare7.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare8.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare9.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare10.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare11.pdf
+    - https://www.city.kasukabe.lg.jp/material/files/group/32/R8gomikare12.pdf
   verify_sources:
-  - kana-search-page
+    - kana-search-page
   license: proprietary-site
   difficulty: 4
   district_unit: 収集区(町丁目を12収集区に割当)
   district_count_approx: 12
   yearend: december-announce
-  notes: '一次ソースは市内12収集区ごとの年度カレンダーPDF(R8gomikare1..12.pdf, 令和8年度)。 全て画像PDFでテキスト層なし(page毎0文字, 13ページ/A4横, 各約6.7MB)→OCR必須のためdifficulty
-    4。 収集日検索ページ(benrinavi/shushubi/index.html, かな検索kana.html)はdga製汎用検索ツール (cache.dga.jp/search_tool_v3_1.js)でページ内テキストを索引する方式で、CSV/JSONの機械可読データ源は無し。
-    埼玉県オープンデータ(opendata.pref.saitama.lg.jp datasets/2149)に春日部市の「ゴミの分別方法一覧」CSVは あるが、これは品目分別で収集曜日カレンダーではない(スケジュール用途に不可)。
-    ごみ分別アプリ「さんあ～る」を市が案内(公開APIは未確認)。 年末年始/1月は変則の注記あり(カレンダーに実日付明示、毎年3月にゴミニケーションカレンダー発行)。 町丁目→収集区の対応表はHTMLに直接無く、かな検索経由で判定する構造(独立検証に利用可)。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次ソースは市内12収集区ごとの年度カレンダーPDF(R8gomikare1..12.pdf, 令和8年度)。 全て画像PDFでテキスト層なし(page毎0文字, 13ページ/A4横,
+    各約6.7MB)→OCR必須のためdifficulty 4。 収集日検索ページ(benrinavi/shushubi/index.html, かな検索kana.html)はdga製汎用検索ツール
+    (cache.dga.jp/search_tool_v3_1.js)でページ内テキストを索引する方式で、CSV/JSONの機械可読データ源は無し。
+    埼玉県オープンデータ(opendata.pref.saitama.lg.jp datasets/2149)に春日部市の「ゴミの分別方法一覧」CSVは
+    あるが、これは品目分別で収集曜日カレンダーではない(スケジュール用途に不可)。 ごみ分別アプリ「さんあ～る」を市が案内(公開APIは未確認)。
+    年末年始/1月は変則の注記あり(カレンダーに実日付明示、毎年3月にゴミニケーションカレンダー発行)。 町丁目→収集区の対応表はHTMLに直接無く、かな検索経由で判定する構造(独立検証に利用可)。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11215'
+- code: "11215"
   handle: sayama
   name_ja: 狭山市
   population: 142634
   source_type: xls
   schedule_url: https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.html
   calendar_urls:
-  - https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.files/2026_irumagawa1.4.xls
-  - https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.files/2026_irumagawa1.4.pdf
+    - https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.files/2026_irumagawa1.4.xls
+    - https://www.city.sayama.saitama.jp/kurashi/gomi/syusyubunbetsu/2026_seikatsugomi.files/2026_irumagawa1.4.pdf
   verify_sources:
-  - xls
-  - course-pdf
+    - xls
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 35
   yearend: calendar-explicit
-  notes: '2026年度カレンダーを大地区8つに分け、各地区の下に町丁単位で約35のカレンダーを配置。各カレンダーに .xls(真のExcel表, cp932, Last Printed 2026-02) + .pdf
+  notes: >
+    2026年度カレンダーを大地区8つに分け、各地区の下に町丁単位で約35のカレンダーを配置。各カレンダーに .xls(真のExcel表, cp932, Last Printed 2026-02) + .pdf
     を併載。Excelは機械可読だがカレンダー グリッド形式のためパースは要手当。生ごみリサイクル専用バケツ収集は地区別曜日指定。ごみ分別アプリあり。 source_typeはenum外(xls)。CSVは無い。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11216'
+- code: "11216"
   handle: hanyu
   name_ja: 羽生市
   population: 52179
   source_type: html
   schedule_url: https://www.city.hanyu.lg.jp/docs/2014021800028/
   calendar_urls:
-  - https://www.city.hanyu.lg.jp/docs/2014021800028/file_contents/gaidoHP.pdf
-  - https://www.city.hanyu.lg.jp/docs/2021022500048/
-  - https://www.city.hanyu.lg.jp/docs/2021022500048/file_contents/R7.pdf
+    - https://www.city.hanyu.lg.jp/docs/2014021800028/file_contents/gaidoHP.pdf
+    - https://www.city.hanyu.lg.jp/docs/2021022500048/
+    - https://www.city.hanyu.lg.jp/docs/2021022500048/file_contents/R7.pdf
   verify_sources:
-  - html
-  - booklet
-  - course-pdf
+    - html
+    - booklet
+    - course-pdf
   license: proprietary-site
   difficulty: 4
   district_unit: 町名
   district_count_approx: 19
   yearend: unknown
-  notes: '最重要の罠: 燃やしてもよいごみ(週3回)・燃やしてはいけないごみ(週1回)の 「曜日」が公式Webに一切出ていない。分別ガイドブックPDF(gaidoHP.pdf, テキスト層あり)は「収集日 毎週__曜日」と空欄様式で、地区×曜日の表は無い。
-    住所により曜日・集積所が異なるため環境課(048-561-1121)へ電話照会せよ、 との案内。町名別に判るのは資源ごみの日曜(第1・3 / 第2・4)のみでHTML掲載。 粗大ごみは年4回・地区別PDF(R7.pdf)だが実URLはCLIで404、要ブラウザ確認。
-    CSV/JSON・オープンデータ・収集曜日検索フォームは公式サイトに見当たらず。 第三者サイト(gomi-calendar.info, gomi-calendar.com, zenkoku.mond.jp)が コース別週間カレンダーを掲載しており曜日データ自体は存在するが、
-    公式一次ソースからは週間曜日を機械可読で取得できない。 燃やすごみの週間曜日を全収録するには電話照会か第三者データ依存が必要で 難易度は実質4〜5。 【統括是正 2026-07-18】granularity は weekday-rules
-    でなく partial (Web で取れるのは資源ごみの日曜のみ、基幹の可燃・不燃が非公開のため)。 【統括 2026-07-18】可燃・不燃の日程が Web に無い (資源のみ) ため core_missing=true
-    → スコアは E 止まり。'
-  surveyed_at: '2026-07-17'
+  notes: "最重要の罠: 燃やしてもよいごみ(週3回)・燃やしてはいけないごみ(週1回)の 「曜日」が公式Webに一切出ていない。分別ガイドブックPDF(gaidoHP.pdf, テキスト層あり)は「収集日
+    毎週__曜日」と空欄様式で、地区×曜日の表は無い。 住所により曜日・集積所が異なるため環境課(048-561-1121)へ電話照会せよ、 との案内。町名別に判るのは資源ごみの日曜(第1・3 /
+    第2・4)のみでHTML掲載。 粗大ごみは年4回・地区別PDF(R7.pdf)だが実URLはCLIで404、要ブラウザ確認。 CSV/JSON・オープンデータ・収集曜日検索フォームは公式サイトに見当たらず。
+    第三者サイト(gomi-calendar.info, gomi-calendar.com, zenkoku.mond.jp)が コース別週間カレンダーを掲載しており曜日データ自体は存在するが、
+    公式一次ソースからは週間曜日を機械可読で取得できない。 燃やすごみの週間曜日を全収録するには電話照会か第三者データ依存が必要で 難易度は実質4〜5。 【統括是正 2026-07-18】granularity は
+    weekday-rules でなく partial (Web で取れるのは資源ごみの日曜のみ、基幹の可燃・不燃が非公開のため)。 【統括 2026-07-18】可燃・不燃の日程が Web に無い (資源のみ)
+    ため core_missing=true → スコアは E 止まり。"
+  surveyed_at: 2026-07-17
   granularity: partial
   core_missing: true
-- code: '11217'
+- code: "11217"
   handle: kounosu
   name_ja: 鴻巣市
   population: 115442
   source_type: pdf
   schedule_url: https://www.city.kounosu.saitama.jp/page/1174.html
   calendar_urls:
-  - https://www.city.kounosu.saitama.jp/uploaded/attachment/25586.pdf
-  - https://www.city.kounosu.saitama.jp/uploaded/attachment/25585.pdf
+    - https://www.city.kounosu.saitama.jp/uploaded/attachment/25586.pdf
+    - https://www.city.kounosu.saitama.jp/uploaded/attachment/25585.pdf
   verify_sources:
-  - booklet
-  - app
+    - booklet
+    - app
   license: proprietary-site
   difficulty: 3
   district_unit: コース
   district_count_approx: 5
   yearend: unknown
-  notes: '3地域5コース(鴻巣=高崎線東側/西側、吹上=北側/南側、川里=1)。「ごみの早見表」PDF(表=品目別曜日、 裏面=通年収集カレンダー)。R8年度版PDFあり(各1.0MB前後)。PDFテキスト層は未DL・未確認(所沢/ときがわ
-    同様テキスト層ありの可能性が高いが要確認)。「鴻巣ごみ分別アプリ」あり。分別マニュアルPDF(鴻巣・川里版/ 吹上版)が独立検証源。曜日パターン例(西側): 可燃=月木/不燃=火/プラ=金/びん缶ペット=第2・4水/金属=第1・3水。
-    年末年始の扱いは未確認。市サイトはCC宣言なし。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    3地域5コース(鴻巣=高崎線東側/西側、吹上=北側/南側、川里=1)。「ごみの早見表」PDF(表=品目別曜日、
+    裏面=通年収集カレンダー)。R8年度版PDFあり(各1.0MB前後)。PDFテキスト層は未DL・未確認(所沢/ときがわ
+    同様テキスト層ありの可能性が高いが要確認)。「鴻巣ごみ分別アプリ」あり。分別マニュアルPDF(鴻巣・川里版/ 吹上版)が独立検証源。曜日パターン例(西側):
+    可燃=月木/不燃=火/プラ=金/びん缶ペット=第2・4水/金属=第1・3水。 年末年始の扱いは未確認。市サイトはCC宣言なし。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11218'
+- code: "11218"
   handle: fukaya
   name_ja: 深谷市
   population: 137934
   source_type: html
   schedule_url: https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/kankyoeisei/tanto/gomi/1391428524402.html
   calendar_urls:
-  - https://www.city.fukaya.saitama.jp/material/files/group/36/R8gominowakekatadaskata.pdf
+    - https://www.city.fukaya.saitama.jp/material/files/group/36/R8gominowakekatadaskata.pdf
   verify_sources:
-  - official-html-rules
-  - leaflet-image-pdf
-  - smart-lgov-monthly-notice
+    - official-html-rules
+    - leaflet-image-pdf
+    - smart-lgov-monthly-notice
   license: unknown
   difficulty: 3
   district_unit: 郵便番号2グループ
   district_count_approx: 2
   yearend: calendar-explicit
-  notes: '一次ソースは令和8年度「ごみの分け方・出し方」リーフレット(A4両面)＝画像PDF。
+  notes: >-
+    一次ソースは令和8年度「ごみの分け方・出し方」リーフレット(A4両面)＝画像PDF。
 
     pdffonts空・pdftotext 2バイト・pdfimagesは全面JPEG(300dpi)でテキスト層なし=画像PDF。
 
@@ -428,170 +430,179 @@
 
     gomisaku.jp/0135 は分別辞典のみで収集日データなし。nishi.or.jp のごみカレンダーは非公式第三者で信頼性未検証。
 
-    curlはPDF 200取得可(403なし)。合併(2006 岡部・川本・花園)は地区名として現存。 【統括是正 2026-07-18】source_type を pdf→html に是正: notes のとおりリーフレットは画像PDF
-    (全数検査でも実測0字) で、機械可読の一次は公式HTMLの曜日規則テキスト。'
-  surveyed_at: '2026-07-17'
+    curlはPDF 200取得可(403なし)。合併(2006 岡部・川本・花園)は地区名として現存。 【統括是正 2026-07-18】source_type を pdf→html に是正: notes
+    のとおりリーフレットは画像PDF (全数検査でも実測0字) で、機械可読の一次は公式HTMLの曜日規則テキスト。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11219'
+- code: "11219"
   handle: ageo
   name_ja: 上尾市
   population: 224884
   source_type: image-pdf
   schedule_url: https://www.city.ageo.lg.jp/page/423990.html
   calendar_urls:
-  - https://www.city.ageo.lg.jp/uploaded/attachment/119606.pdf
-  - https://www.city.ageo.lg.jp/uploaded/attachment/119607.pdf
-  - https://www.city.ageo.lg.jp/uploaded/attachment/119608.pdf
-  - https://www.city.ageo.lg.jp/uploaded/attachment/119609.pdf
+    - https://www.city.ageo.lg.jp/uploaded/attachment/119606.pdf
+    - https://www.city.ageo.lg.jp/uploaded/attachment/119607.pdf
+    - https://www.city.ageo.lg.jp/uploaded/attachment/119608.pdf
+    - https://www.city.ageo.lg.jp/uploaded/attachment/119609.pdf
   verify_sources:
-  - app
+    - app
   license: proprietary-site
   difficulty: 4
   district_unit: 地区
   district_count_approx: 4
   yearend: unknown
-  notes: 令和8年7月〜令和9年6月版。市内を4地区(A/B/C/D)に分割、各地区に町名割当あり (A:仲町・愛宕・原市1〜3区・東今泉ほか / B:原市6〜9区・平方・西貝塚ほか / C:上町・柏座・緑丘・本町ほか
-    / D:上・南・久保・菅谷・錦町ほか)。 ただしカレンダーPDF(119606-609, 各1.1MB)は pdftotext でテキスト層ほぼ皆無 (2文字)=画像PDF。地区↔町名の対応は別途「収集区域図」PDF(画像)にあり=
-    地区割データも機械可読でない。OD・CSV言及なし。年末年始はページに記載なく 毎年別告知型とみられる(未確認でunknown)。上尾市ごみカレンダーアプリあり。 → 収録には画像PDFのOCR/目視転記が必要。難度高い。
-  surveyed_at: '2026-07-17'
+  notes: 令和8年7月〜令和9年6月版。市内を4地区(A/B/C/D)に分割、各地区に町名割当あり (A:仲町・愛宕・原市1〜3区・東今泉ほか / B:原市6〜9区・平方・西貝塚ほか /
+    C:上町・柏座・緑丘・本町ほか / D:上・南・久保・菅谷・錦町ほか)。 ただしカレンダーPDF(119606-609, 各1.1MB)は pdftotext でテキスト層ほぼ皆無
+    (2文字)=画像PDF。地区↔町名の対応は別途「収集区域図」PDF(画像)にあり= 地区割データも機械可読でない。OD・CSV言及なし。年末年始はページに記載なく
+    毎年別告知型とみられる(未確認でunknown)。上尾市ごみカレンダーアプリあり。 → 収録には画像PDFのOCR/目視転記が必要。難度高い。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11221'
+- code: "11221"
   handle: soka
   name_ja: 草加市
   population: 251623
   source_type: pdf
   schedule_url: https://www.city.soka.saitama.jp/cont/s1702/010/020/010/PAGE000000000000083921.html
   calendar_urls:
-  - https://www.city.soka.saitama.jp/cont/s1702/010/020/010/R8_01.pdf
+    - https://www.city.soka.saitama.jp/cont/s1702/010/020/010/R8_01.pdf
   verify_sources:
-  - app
+    - app
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: 18
   yearend: december-announce
-  notes: '一次候補「令和8年度版草加市ごみ収集カレンダー」。R8_01.pdf(16ページ, Adobe PDF Library製)は テキスト層あり(pdftotext可)。18地区(番号1〜18)に分かれ地区別カレンダーPDFを配布(冊子は町会経由配布)。
-    草加市ごみ分別アプリあり。年末年始は専用ページ(PAGE...058570)で毎年告知。 収集日オープンデータは未発見。ライセンス表記未確認(市公式サイト)。多言語見出し(中/西)入り。 ※R8_01.pdf が全地区束ねの冊子か個別地区版かは要精査(冒頭は総合表紙)。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次候補「令和8年度版草加市ごみ収集カレンダー」。R8_01.pdf(16ページ, Adobe PDF Library製)は
+    テキスト層あり(pdftotext可)。18地区(番号1〜18)に分かれ地区別カレンダーPDFを配布(冊子は町会経由配布)。
+    草加市ごみ分別アプリあり。年末年始は専用ページ(PAGE...058570)で毎年告知。 収集日オープンデータは未発見。ライセンス表記未確認(市公式サイト)。多言語見出し(中/西)入り。 ※R8_01.pdf
+    が全地区束ねの冊子か個別地区版かは要精査(冒頭は総合表紙)。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11222'
+- code: "11222"
   handle: koshigaya
   name_ja: 越谷市
   population: 341344
   source_type: html
   schedule_url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/gomishuushuukarenda.html
   calendar_urls:
-  - https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/onsei_calendar/index.html
-  - https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/onsei_calendar/202607chiku01.html
-  - https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/files/R8-01.pdf
+    - https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/onsei_calendar/index.html
+    - https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/onsei_calendar/202607chiku01.html
+    - https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/gomicalendar/files/R8-01.pdf
   verify_sources:
-  - course-pdf
-  - audio-html
+    - course-pdf
+    - audio-html
   license: proprietary-site
   difficulty: 2
   district_unit: 地区(町丁目を10地区に割当)
   district_count_approx: 10
   yearend: december-announce
-  notes: 一次ソースは「音声対応版ごみ収集カレンダー」のテキストHTML。URLパターンは onsei_calendar/YYYYMMchiku[01-10].html で、地区ごと×月ごとにページ分割 (例 202607chiku01.html)。各ページは「7月2日
-    木曜 燃えるごみ」形式の日付 ×ごみ種別テキスト表で機械可読。全10地区×各月を巡回する必要あり。地区割は 町丁目単位で10地区に割当(別途「収集地区割り表」PDFで対応)。地区別の正式版 はfiles/R8-0[1-10].pdf(令和8年度、各約9.4MBで画像主体の可能性、検証用)。
-    埼玉県ODポータル(opendata.pref.saitama.lg.jp/datasets/2084)に越谷市データ あるが「ゴミの分別方法一覧」CSVのみで収集日程は含まず。年末年始の特別扱いは 月次ページに記載なく別途告知と推測(要確認)。CLIでのPDFテキスト層未確認。
-  surveyed_at: '2026-07-17'
+  notes: 一次ソースは「音声対応版ごみ収集カレンダー」のテキストHTML。URLパターンは onsei_calendar/YYYYMMchiku[01-10].html で、地区ごと×月ごとにページ分割 (例
+    202607chiku01.html)。各ページは「7月2日 木曜 燃えるごみ」形式の日付 ×ごみ種別テキスト表で機械可読。全10地区×各月を巡回する必要あり。地区割は
+    町丁目単位で10地区に割当(別途「収集地区割り表」PDFで対応)。地区別の正式版 はfiles/R8-0[1-10].pdf(令和8年度、各約9.4MBで画像主体の可能性、検証用)。
+    埼玉県ODポータル(opendata.pref.saitama.lg.jp/datasets/2084)に越谷市データ あるが「ゴミの分別方法一覧」CSVのみで収集日程は含まず。年末年始の特別扱いは
+    月次ページに記載なく別途告知と推測(要確認)。CLIでのPDFテキスト層未確認。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11223'
+- code: "11223"
   handle: warabi
   name_ja: 蕨市
   population: 75954
   source_type: html
   schedule_url: https://www.city.warabi.saitama.jp/kurashi/gomi/shushubi/1001322.html
   calendar_urls:
-  - https://www.city.warabi.saitama.jp/kurashi/gomi/shushubi/1005656.html
-  - https://www.city.warabi.saitama.jp/kurashi/gomi/shushubi/1004345.html
+    - https://www.city.warabi.saitama.jp/kurashi/gomi/shushubi/1005656.html
+    - https://www.city.warabi.saitama.jp/kurashi/gomi/shushubi/1004345.html
   verify_sources:
-  - html
-  - course-pdf
+    - html
+    - course-pdf
   license: proprietary-site
   difficulty: 2
   district_unit: 地区
   district_count_approx: 4
   yearend: december-announce
-  notes: '市内4地区。ごみ収集日ページ(HTML本文)に地区ごとの曜日を記載、素直。乾電池は市内全域毎月第3水共通。 PDF/CSVは無くHTMLのみ。地域別カレンダー(R5世代)は独立検証に使える。粗大ごみは施設管理公社(申込制)。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    市内4地区。ごみ収集日ページ(HTML本文)に地区ごとの曜日を記載、素直。乾電池は市内全域毎月第3水共通。
+    PDF/CSVは無くHTMLのみ。地域別カレンダー(R5世代)は独立検証に使える。粗大ごみは施設管理公社(申込制)。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11224'
+- code: "11224"
   handle: toda
   name_ja: 戸田市
   population: 139749
   source_type: image-pdf
   schedule_url: https://www.city.toda.saitama.jp/uploaded/attachment/78679.pdf
   calendar_urls:
-  - https://www.city.toda.saitama.jp/uploaded/attachment/78679.pdf
+    - https://www.city.toda.saitama.jp/uploaded/attachment/78679.pdf
   verify_sources: []
   license: proprietary-site
   difficulty: 4
   district_unit: 地区
   district_count_approx: null
   yearend: calendar-explicit
-  notes: '一次ソースは「令和8年度ごみ収集日一覧表」PDF (78679.pdf, 2ページ 4.3MB)。地区×品目の表だが テキスト層なし (pdftotext で2文字のみ) の画像PDF → OCR必須。公式ごみページ
-    (soshiki/212/kankyo-cl-gomi.html) からリンク。地区割は「地区 (Collection District)」単位だが 地区数はOCRしないと不明のため null。収集日検索フォーム・HTML町名別表・CSV/JSON参照は
-    サイト内に見当たらず。オープンデータ (site/opendata) にごみ収集日データセットは無し (ごみ分別表タグがgomiページを指すのみ)。埼玉県ポータル県共同データセットも対象外。 年末年始: 公式ページに休止日を明示
-    (11/23勤労感謝の日, 12/31, 1/1, 1/2, 1/3)、 年度版一覧表に反映されるためcalendar-explicit扱い。土日と年末年始以外は祝日も通常収集。 通知は公式LINE (専用アプリではなくLINE通知設定)。CLI
-    curl は 200 で取得可 (403なし)。 他言語版の分け方PDF (中/韓/英/越) や令和8年度分け方PDF(78306) は分別ガイドで日程表ではない。'
-  surveyed_at: '2026-07-17'
+  notes: "一次ソースは「令和8年度ごみ収集日一覧表」PDF (78679.pdf, 2ページ 4.3MB)。地区×品目の表だが テキスト層なし (pdftotext で2文字のみ) の画像PDF →
+    OCR必須。公式ごみページ (soshiki/212/kankyo-cl-gomi.html) からリンク。地区割は「地区 (Collection District)」単位だが 地区数はOCRしないと不明のため
+    null。収集日検索フォーム・HTML町名別表・CSV/JSON参照は サイト内に見当たらず。オープンデータ (site/opendata) にごみ収集日データセットは無し
+    (ごみ分別表タグがgomiページを指すのみ)。埼玉県ポータル県共同データセットも対象外。 年末年始: 公式ページに休止日を明示 (11/23勤労感謝の日, 12/31, 1/1, 1/2, 1/3)、
+    年度版一覧表に反映されるためcalendar-explicit扱い。土日と年末年始以外は祝日も通常収集。 通知は公式LINE (専用アプリではなくLINE通知設定)。CLI curl は 200 で取得可
+    (403なし)。 他言語版の分け方PDF (中/韓/英/越) や令和8年度分け方PDF(78306) は分別ガイドで日程表ではない。"
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11225'
+- code: "11225"
   handle: iruma
   name_ja: 入間市
   population: 139748
   source_type: csv
   schedule_url: https://opendata.pref.saitama.lg.jp/resource_download/1494
   calendar_urls:
-  - https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
-  - https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf
+    - https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
+    - https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf
   verify_sources:
-  - site-csv
-  - booklet
+    - site-csv
+    - booklet
   license: PDL-1.0
   difficulty: 2
   district_unit: 地区
   district_count_approx: null
   yearend: calendar-explicit
-  notes: '★最良候補。埼玉県ODポータルに日付入り実カレンダーCSV(resource 1494 / dataset 274)。列=識別情報/ 団体コード/団体名/収集地域/収集分別区分/年月日。DL検証済(398KB,
-    UTF-8, 2026/04/01〜の縦持ち)。 分別区分例=可燃ごみ/不燃ごみ/プラスチックごみ/ビン・缶・ペットボトル・有害ごみ。日付データそのものなので 年末年始も日付で表現(休止日=データ欠落)。ライセンスはポータル標準=PDL1.0(公共データ利用規約、CC-BY互換・
-    出典明示要)。カタログ上のリリース2022-10-13だがCSV実体は2026年度日付を含む=更新済。難所は「収集地域」が 「扇台3〜6丁目、久保稲荷3〜5丁目、…、大字扇町屋1217・1219番地」等のフリーテキストで町丁目分割のパースが必要。
+  notes: >
+    ★最良候補。埼玉県ODポータルに日付入り実カレンダーCSV(resource 1494 / dataset 274)。列=識別情報/ 団体コード/団体名/収集地域/収集分別区分/年月日。DL検証済(398KB,
+    UTF-8, 2026/04/01〜の縦持ち)。 分別区分例=可燃ごみ/不燃ごみ/プラスチックごみ/ビン・缶・ペットボトル・有害ごみ。日付データそのものなので
+    年末年始も日付で表現(休止日=データ欠落)。ライセンスはポータル標準=PDL1.0(公共データ利用規約、CC-BY互換・
+    出典明示要)。カタログ上のリリース2022-10-13だがCSV実体は2026年度日付を含む=更新済。難所は「収集地域」が
+    「扇台3〜6丁目、久保稲荷3〜5丁目、…、大字扇町屋1217・1219番地」等のフリーテキストで町丁目分割のパースが必要。
     地域(コース)のユニーク数は未カウント。社協「パッと見て分かるごみ分別カレンダー」も別途あり。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11227'
+- code: "11227"
   handle: asaka
   name_ja: 朝霞市
   population: 147521
   source_type: html
   schedule_url: https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
   calendar_urls:
-  - https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
-  - https://raw.githubusercontent.com/publitechasaka/5374/master/data/area_days.csv
+    - https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
+    - https://raw.githubusercontent.com/publitechasaka/5374/master/data/area_days.csv
   verify_sources:
-  - official-html-table
-  - 5374-area-csv
+    - official-html-table
+    - 5374-area-csv
   license: unknown
   difficulty: 2
   district_unit: 町名・丁目（一部は番地/河川境界で細分）
   district_count_approx: 38
   yearend: december-announce
-  notes: '一次ソース: 公式サイト「家庭ごみ収集日一覧表」dust-syuusyuu.html の HTML 表(4列: 区域/資源/プラ資源=燃やせないごみ/燃やすごみ)。約38の町丁グループ、各グループに固定曜日(週次パターン)。CSV/PDF
-    ダウンロードは無し(HTML表のみ)。
+  notes: >
+    一次ソース: 公式サイト「家庭ごみ収集日一覧表」dust-syuusyuu.html の HTML 表(4列:
+    区域/資源/プラ資源=燃やせないごみ/燃やすごみ)。約38の町丁グループ、各グループに固定曜日(週次パターン)。CSV/PDF ダウンロードは無し(HTML表のみ)。
 
-    独立/機械可読の代替: 市民団体 Publitech ASAKA の 5374.jp 版アプリ(https://publitechasaka.github.io/5374/)。GitHub 公開(publitechasaka/5374)で
-    data/area_days.csv が地区×4分別の収集曜日を CSV 化(36行、朝霞市クリーンセンター管内)。市データを転記したもので公式HTML表と照合可能。ただしコードは MPL2.0、remarks.csv
-    等は金沢/渋谷のテンプレ雛形が残存(未ローカライズ)なので area_days.csv 以外は要注意。
+    独立/機械可読の代替: 市民団体 Publitech ASAKA の 5374.jp 版アプリ(https://publitechasaka.github.io/5374/)。GitHub
+    公開(publitechasaka/5374)で data/area_days.csv が地区×4分別の収集曜日を CSV
+    化(36行、朝霞市クリーンセンター管内)。市データを転記したもので公式HTML表と照合可能。ただしコードは MPL2.0、remarks.csv 等は金沢/渋谷のテンプレ雛形が残存(未ローカライズ)なので
+    area_days.csv 以外は要注意。
 
-    ライセンス: 収集日程データ自体の公開ライセンスは未確認。朝霞市ODは埼玉県ポータル(opendata.pref.saitama.lg.jp)掲載だが、ごみ収集日程のデータセットは確認できず(Asakaは人口等のみ
+    ライセンス:
+    収集日程データ自体の公開ライセンスは未確認。朝霞市ODは埼玉県ポータル(opendata.pref.saitama.lg.jp)掲載だが、ごみ収集日程のデータセットは確認できず(Asakaは人口等のみ
     surface)。県共同のごみ収集日データセットは無し(既知)。市サイト利用規約ページは 404。→ unknown。
 
     年末年始: HTML表に「祝日も収集します（年末年始を除く）」明記。年末年始は毎年12月に別途告知の運用。
@@ -601,34 +612,33 @@
     収集は朝霞市クリーンセンター単一。多言語ガイドPDF: /uploaded/attachment/70441.pdf, 70442.pdf。
 
     CLI アクセス: 公式サイト・GitHub・県ポータルとも curl 200(403 なし)。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11228'
+- code: "11228"
   handle: shiki
   name_ja: 志木市
   population: 75075
   source_type: html
   schedule_url: https://www.city.shiki.lg.jp/soshiki/16/1201.html
   calendar_urls:
-  - https://www.city.shiki.lg.jp/uploaded/attachment/14875.pdf
-  - https://www.city.shiki.lg.jp/uploaded/attachment/14876.pdf
-  - https://www.city.shiki.lg.jp/uploaded/attachment/14877.pdf
-  - https://www.city.shiki.lg.jp/uploaded/attachment/14878.pdf
+    - https://www.city.shiki.lg.jp/uploaded/attachment/14875.pdf
+    - https://www.city.shiki.lg.jp/uploaded/attachment/14876.pdf
+    - https://www.city.shiki.lg.jp/uploaded/attachment/14877.pdf
+    - https://www.city.shiki.lg.jp/uploaded/attachment/14878.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 2
   district_unit: 地区
   district_count_approx: 7
   yearend: unknown
-  notes: '一次は市サイト「各地区のごみ収集日程表」ページ内のHTML表(<table>1個、地区× 曜日で本文に月曜/火曜等が展開)。地区は7つ(上宗岡/中宗岡/下宗岡/本町/幸町/ 館/柏町)。丁目分割の有無は要精査。検証用に地区別日程表PDF(14875〜,
-    日本語版 535KB ほか多言語)あり=練馬方式でHTML一次+PDF照合が現実的。祝日も収集 (年末年始は除くと明記)、年末年始の実休止日はページ本文に無く要確認(unknown)。 収集曜日OD・CSVは無し。令和8年3月版「分け方・出し方」冊子あり。
-    課: 環境推進課(048-473-1492)。素直なHTML表で難度は低い。'
-  surveyed_at: '2026-07-17'
+  notes: "一次は市サイト「各地区のごみ収集日程表」ページ内のHTML表(<table>1個、地区× 曜日で本文に月曜/火曜等が展開)。地区は7つ(上宗岡/中宗岡/下宗岡/本町/幸町/
+    館/柏町)。丁目分割の有無は要精査。検証用に地区別日程表PDF(14875〜, 日本語版 535KB ほか多言語)あり=練馬方式でHTML一次+PDF照合が現実的。祝日も収集
+    (年末年始は除くと明記)、年末年始の実休止日はページ本文に無く要確認(unknown)。 収集曜日OD・CSVは無し。令和8年3月版「分け方・出し方」冊子あり。 課:
+    環境推進課(048-473-1492)。素直なHTML表で難度は低い。"
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11229'
+- code: "11229"
   handle: wako
   name_ja: 和光市
   population: 84378
@@ -636,93 +646,96 @@
   schedule_url: https://www.city.wako.lg.jp/kurashi/gomi/1002742/1010170/1002746.html
   calendar_urls: []
   verify_sources:
-  - app
+    - app
   license: proprietary-site
   difficulty: 2
   district_unit: 地区
   district_count_approx: 15
   yearend: unknown
-  notes: '一次候補「資源・ごみ収集地区と曜日一覧」= 公式HTML表(練馬方式で機械変換可)。15収集地区、 地区名は町名+丁目(例「白子1・2丁目」「新倉3〜8丁目」)。列: プラ/ペットボトル/びん缶紙布/燃やせないごみ/
-    有害ごみ/燃やすごみ。CSV・PDFリンクなし(Web版ごみ分別アプリのカレンダー機能に誘導)。 LinkData rdf1s7968i は「分別辞典」であって収集日程ではない。収集日オープンデータは未発見。 「Copyright
-    (c) 2023 Wako City」でCC等の宣言なし → 事実データ抽出整理。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次候補「資源・ごみ収集地区と曜日一覧」= 公式HTML表(練馬方式で機械変換可)。15収集地区、 地区名は町名+丁目(例「白子1・2丁目」「新倉3〜8丁目」)。列:
+    プラ/ペットボトル/びん缶紙布/燃やせないごみ/ 有害ごみ/燃やすごみ。CSV・PDFリンクなし(Web版ごみ分別アプリのカレンダー機能に誘導)。 LinkData rdf1s7968i
+    は「分別辞典」であって収集日程ではない。収集日オープンデータは未発見。 「Copyright (c) 2023 Wako City」でCC等の宣言なし → 事実データ抽出整理。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11230'
+- code: "11230"
   handle: niiza
   name_ja: 新座市
   population: 164382
   source_type: html
   schedule_url: https://www.city.niiza.lg.jp/site/gominodasikata/gomirecycleshushunittei.html
   calendar_urls:
-  - https://www.city.niiza.lg.jp/site/gominodasikata/gomirecycleshushunittei.html
-  - https://www.city.niiza.lg.jp/site/gominodasikata/hunennnitteihyou.html
-  - https://www.city.niiza.lg.jp/site/gominodasikata/list341.html
+    - https://www.city.niiza.lg.jp/site/gominodasikata/gomirecycleshushunittei.html
+    - https://www.city.niiza.lg.jp/site/gominodasikata/hunennnitteihyou.html
+    - https://www.city.niiza.lg.jp/site/gominodasikata/list341.html
   verify_sources:
-  - course-pdf
-  - savings-pdf
+    - course-pdf
+    - savings-pdf
   license: proprietary-site
   difficulty: 2
   district_unit: 町丁目グループ (地域)
   district_count_approx: 38
   yearend: december-announce
-  notes: 'リサイクル資源・可燃ごみの収集曜日は公式HTMLの素直な1テーブル (地域 / リサイクル資源収集日 / 可燃ごみ収集日、約38グループ、町丁目を番地範囲で細分) で取得可。可燃は週2回(火金 or 月木)。祝日も収集。これが一次ソースで
-    difficulty 2。 オープンデータCSV/JSONは無し (自治体ODカタログ・埼玉県ポータルとも該当なし)。 収集日検索ページ (search.php, CDN cdnext.stream.ne.jp、証明書は
-    www.city.niiza.lg.jp 用で ホスト不一致・curl は -k 必要) は kana/kouku をキーにしたサーバ側PHP検索で、 クライアント側 .csv/.json 参照は無し。 不燃・有害・危険・使い捨てライターの地区別日程は
-    HTML 表ではなく 4.11MB の画像PDF (uploaded/attachment/70282.pdf、テキスト層なし=OCR必要) のみ。この分別まで含める場合は 該当部分だけ difficulty 4 相当。
-    検証用: 保存版 分別表・収集日程表 PDF (uploaded/attachment/38179.pdf, 38181.pdf)。 年末年始は専用告知ページ (soshiki/15/nenmatsunenshi.html)
-    で毎年案内。 さんあ～る ごみ分別アプリも提供。'
-  surveyed_at: '2026-07-17'
+  notes: "リサイクル資源・可燃ごみの収集曜日は公式HTMLの素直な1テーブル (地域 / リサイクル資源収集日 / 可燃ごみ収集日、約38グループ、町丁目を番地範囲で細分) で取得可。可燃は週2回(火金 or
+    月木)。祝日も収集。これが一次ソースで difficulty 2。 オープンデータCSV/JSONは無し (自治体ODカタログ・埼玉県ポータルとも該当なし)。 収集日検索ページ (search.php, CDN
+    cdnext.stream.ne.jp、証明書は www.city.niiza.lg.jp 用で ホスト不一致・curl は -k 必要) は kana/kouku をキーにしたサーバ側PHP検索で、
+    クライアント側 .csv/.json 参照は無し。 不燃・有害・危険・使い捨てライターの地区別日程は HTML 表ではなく 4.11MB の画像PDF
+    (uploaded/attachment/70282.pdf、テキスト層なし=OCR必要) のみ。この分別まで含める場合は 該当部分だけ difficulty 4 相当。 検証用: 保存版 分別表・収集日程表
+    PDF (uploaded/attachment/38179.pdf, 38181.pdf)。 年末年始は専用告知ページ (soshiki/15/nenmatsunenshi.html) で毎年案内。 さんあ～る
+    ごみ分別アプリも提供。"
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11231'
+- code: "11231"
   handle: okegawa
   name_ja: 桶川市
   population: 73060
   source_type: html
   schedule_url: https://www.city.okegawa.lg.jp/kurashi/gomi_kankyo/gomi_recycle/shushubi/2360.html
   calendar_urls:
-  - https://www.city.okegawa.lg.jp/material/files/group/3/gomi_3.pdf
-  - https://www.city.okegawa.lg.jp/material/files/group/3/higashi.pdf
-  - https://www.city.okegawa.lg.jp/material/files/group/3/nisi_gomi_R4.pdf
+    - https://www.city.okegawa.lg.jp/material/files/group/3/gomi_3.pdf
+    - https://www.city.okegawa.lg.jp/material/files/group/3/higashi.pdf
+    - https://www.city.okegawa.lg.jp/material/files/group/3/nisi_gomi_R4.pdf
   verify_sources:
-  - html
-  - course-pdf
+    - html
+    - course-pdf
   license: proprietary-site
   difficulty: 2
   district_unit: 地区
   district_count_approx: 2
   yearend: unknown
-  notes: 'JR高崎線で東/西の2地区。地区別収集日ページ(HTML表)に全種別の曜日を掲載 (燃やせる/プラ/金属・ガラス・乾電池/その他/紙製容器包装/古着・新聞・雑誌・段ボール・紙パック)。 収集日程表PDF(group/3)が独立検証に使える。素直で難度低い。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    JR高崎線で東/西の2地区。地区別収集日ページ(HTML表)に全種別の曜日を掲載 (燃やせる/プラ/金属・ガラス・乾電池/その他/紙製容器包装/古着・新聞・雑誌・段ボール・紙パック)。
+    収集日程表PDF(group/3)が独立検証に使える。素直で難度低い。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11232'
+- code: "11232"
   handle: kuki
   name_ja: 久喜市
   population: 146995
   source_type: pdf
   schedule_url: https://www.city.kuki.lg.jp/machizukuri/gomi/bunbetsu/1007473.html
   calendar_urls:
-  - https://www.city.kuki.lg.jp/_res/projects/default_project/_page_/001/007/473/2026kuki_a.pdf
-  - https://www.city.kuki.lg.jp/_res/projects/default_project/_page_/001/007/473/2026shobu_b.pdf
+    - https://www.city.kuki.lg.jp/_res/projects/default_project/_page_/001/007/473/2026kuki_a.pdf
+    - https://www.city.kuki.lg.jp/_res/projects/default_project/_page_/001/007/473/2026shobu_b.pdf
   verify_sources:
-  - course-pdf
-  - app
+    - course-pdf
+    - app
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 14
   yearend: december-announce
-  notes: '公式サイトに地区別の月次カレンダーPDFが14ブロック分ある(久喜A-D/菖蒲A-B/鷲宮A-D/栗橋E-H。旧4市町合併の地区割)。 PDFはテキスト層あり。pdftotext -layout で日付×品目のカレンダーグリッドが復元可能(品目=燃やせるごみ/燃やせないごみ/資源/プラスチック類/びん・缶・ペット/新聞・雑誌・段ボール等)。
-    ただし1PDF=28ページ・月ごとのカレンダー方眼レイアウトで、日付と品目のセル対応をレイアウト座標から解く必要があり素直なテキスト版ではない(difficulty 3)。 収集曜日CSV/JSONは公式サイト・埼玉県ポータル(geospatial.jp
-    CKAN)いずれにも無し(久喜市のOD公開は学校教育施設・公共施設情報の2件のみCC-BY、ごみ日程は非公開)。県共同のごみ日程DSも無し。 「久喜市ごみ・資源物分別アプリ」(iPhone/Android)あり=収集日程表・分別辞典・アラート機能。第三者サイト(gomi-calendar.info/.com
-    等)も存在するが非一次。 年末年始: 現行PDFは令和8年4月〜11月のみ収録。令和8年12月以降のカレンダーは令和8年11月に行政区経由で全戸配布+HP公開予定(=毎年12月分は別配布)。祝日はカレンダー面に明示(例:
-    昭和の日)。 なお令和8年12月第1週から旧4地区で異なる分別区分が統一予定(R9.4久喜市クリーンセンター本稼働に伴う)。収録時は分別区分の切替に注意。 curl は公式PDF取得成功(200)、403無し。'
-  surveyed_at: '2026-07-17'
+  notes: "公式サイトに地区別の月次カレンダーPDFが14ブロック分ある(久喜A-D/菖蒲A-B/鷲宮A-D/栗橋E-H。旧4市町合併の地区割)。 PDFはテキスト層あり。pdftotext -layout
+    で日付×品目のカレンダーグリッドが復元可能(品目=燃やせるごみ/燃やせないごみ/資源/プラスチック類/びん・缶・ペット/新聞・雑誌・段ボール等)。
+    ただし1PDF=28ページ・月ごとのカレンダー方眼レイアウトで、日付と品目のセル対応をレイアウト座標から解く必要があり素直なテキスト版ではない(difficulty 3)。
+    収集曜日CSV/JSONは公式サイト・埼玉県ポータル(geospatial.jp
+    CKAN)いずれにも無し(久喜市のOD公開は学校教育施設・公共施設情報の2件のみCC-BY、ごみ日程は非公開)。県共同のごみ日程DSも無し。
+    「久喜市ごみ・資源物分別アプリ」(iPhone/Android)あり=収集日程表・分別辞典・アラート機能。第三者サイト(gomi-calendar.info/.com 等)も存在するが非一次。 年末年始:
+    現行PDFは令和8年4月〜11月のみ収録。令和8年12月以降のカレンダーは令和8年11月に行政区経由で全戸配布+HP公開予定(=毎年12月分は別配布)。祝日はカレンダー面に明示(例: 昭和の日)。
+    なお令和8年12月第1週から旧4地区で異なる分別区分が統一予定(R9.4久喜市クリーンセンター本稼働に伴う)。収録時は分別区分の切替に注意。 curl は公式PDF取得成功(200)、403無し。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11233'
+- code: "11233"
   handle: kitamoto
   name_ja: 北本市
   population: 64120
@@ -730,684 +743,672 @@
   schedule_url: https://www.city.kitamoto.lg.jp/soshiki/shiminkeizai/kankyou/gyomu/g1/gomical/16024.html
   calendar_urls: []
   verify_sources:
-  - booklet
+    - booklet
   license: proprietary-site
   difficulty: 4
   district_unit: コース
   district_count_approx: 4
   yearend: calendar-explicit
-  notes: 'コース区分: Aコース(JR高崎線東側) / B・Cコース(西側+特定5マンション) / 北本団地コース。実PDFは3枚 (A / B・C / 北本団地、各2.1MB, R8年度)。PDFのテキスト層は未DL・未確認。CSV/HTML表/テキスト版は無し。
-    カレンダーは広報きたもと3月号と全戸ポスティング。多言語版カレンダーあり(検証源になりうる)。年末年始の 扱いは未確認。市サイトはCC宣言なし。 【統括実確認 2026-07-18】R8_a.pdf を開封: 通年日付入りカレンダー
-    (年始の休マークまで印字) だが pdftotext 1字=テキスト層なし → image-pdf/d4 に是正、granularity=dates。'
-  surveyed_at: '2026-07-17'
+  notes: "コース区分: Aコース(JR高崎線東側) / B・Cコース(西側+特定5マンション) / 北本団地コース。実PDFは3枚 (A / B・C / 北本団地、各2.1MB,
+    R8年度)。PDFのテキスト層は未DL・未確認。CSV/HTML表/テキスト版は無し。 カレンダーは広報きたもと3月号と全戸ポスティング。多言語版カレンダーあり(検証源になりうる)。年末年始の
+    扱いは未確認。市サイトはCC宣言なし。 【統括実確認 2026-07-18】R8_a.pdf を開封: 通年日付入りカレンダー (年始の休マークまで印字) だが pdftotext 1字=テキスト層なし →
+    image-pdf/d4 に是正、granularity=dates。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11234'
+- code: "11234"
   handle: yashio
   name_ja: 八潮市
   population: 93135
   source_type: html
   schedule_url: https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/index.html
   calendar_urls:
-  - https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/index.html
-  - https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/yashio.html
-  - https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/500.html
+    - https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/index.html
+    - https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/ichiran/yashio.html
+    - https://www.city.yashio.lg.jp/kurashi/gomi_kankyo/shushubi/500.html
   verify_sources:
-  - image-pdf-calendar
-  - sanaru-app
-  - cross-check-html-pages
+    - image-pdf-calendar
+    - sanaru-app
+    - cross-check-html-pages
   license: unknown
   difficulty: 2
   district_unit: 町丁目 (町名リンク25本に集約、各ページ内で丁目/地番単位)
   district_count_approx: 25
   yearend: december-announce
-  notes: '一次ソースは住所別ごみカレンダー検索表配下の25町名HTMLページ。各ページに 地名/地番/燃えるごみ(曜日)/資源燃えないごみ(曜日)/ペットボトル(第N週の曜日)/ カレンダー番号 のクリーンなHTML表。全域スクレイプで機械可読、difficulty
-    2。 例: 八潮一丁目=燃えるごみ月木/資源燃えない水/ペット第2・4土。 CSV/JSONへの参照はHTMLソースにgrepで無し。curlは200(403無し)。 カレンダーPDF(gomiR8.1〜11.pdf
-    各約6.5MB)は画像PDF: pdftotextで16文字しか 抽出できずテキスト層なし。検証はPDF目視/OCRか25HTMLページ相互照合で行う。 分別アプリ「さんあ~る」提供あり。 ライセンス: 公式サイトは
-    Copyright YASHIO CITY のみ、OD/CC表示なし=unknown。 埼玉県ODポータル(opendata.pref.saitama.lg.jp org=八潮市)のデータセットは 人口/OD一覧/文化財/ゆるキャラの4件のみでごみ収集データは無し(県共同も個別も無し)。
-    年末年始: HTML表・カレンダーページに明示なし。毎年12月に広報やしお/公式で 地区別最終日・開始日を告知(december-announce)。'
-  surveyed_at: '2026-07-17'
+  notes: "一次ソースは住所別ごみカレンダー検索表配下の25町名HTMLページ。各ページに 地名/地番/燃えるごみ(曜日)/資源燃えないごみ(曜日)/ペットボトル(第N週の曜日)/ カレンダー番号
+    のクリーンなHTML表。全域スクレイプで機械可読、difficulty 2。 例: 八潮一丁目=燃えるごみ月木/資源燃えない水/ペット第2・4土。
+    CSV/JSONへの参照はHTMLソースにgrepで無し。curlは200(403無し)。 カレンダーPDF(gomiR8.1〜11.pdf 各約6.5MB)は画像PDF: pdftotextで16文字しか
+    抽出できずテキスト層なし。検証はPDF目視/OCRか25HTMLページ相互照合で行う。 分別アプリ「さんあ~る」提供あり。 ライセンス: 公式サイトは Copyright YASHIO CITY
+    のみ、OD/CC表示なし=unknown。 埼玉県ODポータル(opendata.pref.saitama.lg.jp org=八潮市)のデータセットは
+    人口/OD一覧/文化財/ゆるキャラの4件のみでごみ収集データは無し(県共同も個別も無し)。 年末年始: HTML表・カレンダーページに明示なし。毎年12月に広報やしお/公式で
+    地区別最終日・開始日を告知(december-announce)。"
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11235'
+- code: "11235"
   handle: fujimi
   name_ja: 富士見市
   population: 113307
   source_type: image-pdf
   schedule_url: https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/gomi_recycle/gomi/dashikata/gominobunbtunituite.html
   calendar_urls:
-  - https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/gomi_recycle/gomi/dashikata/gominobunbtunituite.files/R7_pamphlet.pdf
+    - https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/gomi_recycle/gomi/dashikata/gominobunbtunituite.files/R7_pamphlet.pdf
   verify_sources:
-  - app
+    - app
   license: proprietary-site
   difficulty: 4
   district_unit: 不明
   district_count_approx: null
   yearend: december-announce
-  notes: '地域別ごみ収集カレンダーPDFは提供なし。収集曜日表は「家庭ごみと資源の出し方」 パンフレット(R7_pamphlet.pdf, 約23MB)のP7に掲載。ただし pdftotext でテキスト層 8文字=画像PDF(全ページ画像)。地区(地域)の分け方はページに明記されず、町丁目↔
-    収集日の対応データが機械可読な形で見当たらない(district_unit不明)。市は 「富士見ごみ分別アプリ」推しで地域別収集日はアプリ機能中心。年末年始は専用告知 ページ(.../2016-1129-1417-51.html)あり=毎年12月告知型。収集曜日OD・CSVなし。
-    → 地区割データが取れず現状は収録困難(アプリのデータ源特定 or 目視転記が必要)。 課: 環境課 資源リサイクル係(049-252-7100)。'
-  surveyed_at: '2026-07-17'
+  notes: "地域別ごみ収集カレンダーPDFは提供なし。収集曜日表は「家庭ごみと資源の出し方」 パンフレット(R7_pamphlet.pdf, 約23MB)のP7に掲載。ただし pdftotext でテキスト層
+    8文字=画像PDF(全ページ画像)。地区(地域)の分け方はページに明記されず、町丁目↔ 収集日の対応データが機械可読な形で見当たらない(district_unit不明)。市は
+    「富士見ごみ分別アプリ」推しで地域別収集日はアプリ機能中心。年末年始は専用告知 ページ(.../2016-1129-1417-51.html)あり=毎年12月告知型。収集曜日OD・CSVなし。 →
+    地区割データが取れず現状は収録困難(アプリのデータ源特定 or 目視転記が必要)。 課: 環境課 資源リサイクル係(049-252-7100)。"
+  surveyed_at: 2026-07-17
   granularity: partial
-- code: '11237'
+- code: "11237"
   handle: misato
   name_ja: 三郷市
   population: 140427
   source_type: pdf
   schedule_url: https://www.city.misato.lg.jp/material/files/group/20/hppet.pdf
   calendar_urls:
-  - https://www.city.misato.lg.jp/soshiki/shiminseikatsu/kurinraifu/2/9739.html
-  - https://www.city.misato.lg.jp/material/files/group/20/31.pdf
+    - https://www.city.misato.lg.jp/soshiki/shiminseikatsu/kurinraifu/2/9739.html
+    - https://www.city.misato.lg.jp/material/files/group/20/31.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: null
   yearend: unknown
-  notes: '一次候補「三郷市 地区別 ごみと資源物の収集曜日 一覧表」hppet.pdf はテキスト層あり(pdftotext可)、 町名(あかさたな…50音)×収集区の全域一覧表で機械可読性が高い(実質html表相当だがPDFなのでdifficulty3)。
-    種別: もえるごみ(週2)/もえない・有害ごみ(第1・3週)/びん缶ペットボトル(第2・4週)/資源古紙布類。 【罠】三郷は「第n週」を第1週=1〜7日・第2週=8〜14日…とカレンダー週で定義。プレイブック標準の
+  notes: >
+    一次候補「三郷市 地区別 ごみと資源物の収集曜日 一覧表」hppet.pdf はテキスト層あり(pdftotext可)、
+    町名(あかさたな…50音)×収集区の全域一覧表で機械可読性が高い(実質html表相当だがPDFなのでdifficulty3)。 種別:
+    もえるごみ(週2)/もえない・有害ごみ(第1・3週)/びん缶ペットボトル(第2・4週)/資源古紙布類。 【罠】三郷は「第n週」を第1週=1〜7日・第2週=8〜14日…とカレンダー週で定義。プレイブック標準の
     「第n回目(その月n回目の該当曜日)」とは別解釈なので実装時に区別必須。検証用に地区別カレンダーPDF(31.pdf等)。 収集日オープンデータは未発見。地区数(収集区数)は未計測。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11238'
+- code: "11238"
   handle: hasuda
   name_ja: 蓮田市
   population: 60584
   source_type: html
   schedule_url: https://hs-eiseikumiai.org/shimin/schedule/hasuda/
   calendar_urls:
-  - https://hs-eiseikumiai.org/shimin/schedule/hasuda/
-  - https://hs-eiseikumiai.org/shimin/schedule/hasuda/calendar/
+    - https://hs-eiseikumiai.org/shimin/schedule/hasuda/
+    - https://hs-eiseikumiai.org/shimin/schedule/hasuda/calendar/
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 2
   district_unit: 地区（収集区域）
   district_count_approx: 7
   yearend: calendar-explicit
-  notes: 'ごみ処理は蓮田白岡衛生組合 (hs-eiseikumiai.org) が担当。市公式サイト (city.hasuda.saitama.jp) は組合サイトとごみ分別アプリ「げんちゃん」へ誘導するのみ。 一次ソースは組合サイトの日程表ページ
-    (schedule_url)。7収集区域それぞれの 燃えるごみ/燃やせないごみ/ガラス類/ペットボトル等の収集曜日が HTML の表で テキスト明記されている(例「月・木」「火・金」)。各区域は複数の町丁を包含し、
-    区域名に町名を列挙(例: 江ヶ崎・藤ノ木・笹山・黒浜(宇都宮線東側) など)。 検証用に地域別カレンダー版 (/calendar/) が区域別 PDF で年度別(令和5〜8)に提供、 掲示用収集日程表 PDF もあり。CSV/JSON
-    参照は HTML ソースに無し。 自治体/埼玉県ポータルのごみ収集オープンデータは確認できず。 年末年始: ページに明記「年末は12/31まで、年始は1/5から平常収集、令和8年は1/1・1/2休み」。 ライセンス:
-    © HasudaShiraoka Eisei Kumiai のみ、OD ライセンス表記なし → proprietary-site。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    ごみ処理は蓮田白岡衛生組合 (hs-eiseikumiai.org) が担当。市公式サイト (city.hasuda.saitama.jp) は組合サイトとごみ分別アプリ「げんちゃん」へ誘導するのみ。
+    一次ソースは組合サイトの日程表ページ (schedule_url)。7収集区域それぞれの 燃えるごみ/燃やせないごみ/ガラス類/ペットボトル等の収集曜日が HTML の表で
+    テキスト明記されている(例「月・木」「火・金」)。各区域は複数の町丁を包含し、 区域名に町名を列挙(例: 江ヶ崎・藤ノ木・笹山・黒浜(宇都宮線東側) など)。 検証用に地域別カレンダー版 (/calendar/)
+    が区域別 PDF で年度別(令和5〜8)に提供、 掲示用収集日程表 PDF もあり。CSV/JSON 参照は HTML ソースに無し。 自治体/埼玉県ポータルのごみ収集オープンデータは確認できず。 年末年始:
+    ページに明記「年末は12/31まで、年始は1/5から平常収集、令和8年は1/1・1/2休み」。 ライセンス: © HasudaShiraoka Eisei Kumiai のみ、OD ライセンス表記なし →
+    proprietary-site。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11239'
+- code: "11239"
   handle: sakado
   name_ja: 坂戸市
   population: 98990
   source_type: pdf
   schedule_url: https://www.city.sakado.lg.jp/soshiki/65/8680.html
   calendar_urls:
-  - https://www.city.sakado.lg.jp/uploaded/attachment/34529.pdf
-  - https://www.city.sakado.lg.jp/uploaded/attachment/34530.pdf
-  - https://www.city.sakado.lg.jp/uploaded/attachment/34531.pdf
-  - https://www.city.sakado.lg.jp/uploaded/attachment/34532.pdf
+    - https://www.city.sakado.lg.jp/uploaded/attachment/34529.pdf
+    - https://www.city.sakado.lg.jp/uploaded/attachment/34530.pdf
+    - https://www.city.sakado.lg.jp/uploaded/attachment/34531.pdf
+    - https://www.city.sakado.lg.jp/uploaded/attachment/34532.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 4
   yearend: unknown
-  notes: '令和8年度(2026.4-2027.3)地区別カレンダーPDF。テキスト層あり(pdftotext可、町名・注記は抽出可)。 ただし色帯で第1〜第5曜日を示すカレンダーグリッド表現のため曜日パターン抽出は要工夫。
+  notes: >
+    令和8年度(2026.4-2027.3)地区別カレンダーPDF。テキスト層あり(pdftotext可、町名・注記は抽出可)。 ただし色帯で第1〜第5曜日を示すカレンダーグリッド表現のため曜日パターン抽出は要工夫。
     「坂戸ごみ分別アプリ」あり。旧attachment(30725.pdf等)は404で現行はR8版。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11240'
+- code: "11240"
   handle: satte
   name_ja: 幸手市
   population: 47564
   source_type: pdf
   schedule_url: https://www.city.satte.lg.jp/soshiki/kankyou/1/1/13626.html
   calendar_urls:
-  - https://www.city.satte.lg.jp/material/files/group/14/R8no1.pdf
-  - https://www.city.satte.lg.jp/material/files/group/14/R8no2.pdf
-  - https://www.city.satte.lg.jp/material/files/group/14/R8no3.pdf
-  - https://www.city.satte.lg.jp/material/files/group/14/R8no4.pdf
-  - https://www.city.satte.lg.jp/material/files/group/14/R8no5.pdf
+    - https://www.city.satte.lg.jp/material/files/group/14/R8no1.pdf
+    - https://www.city.satte.lg.jp/material/files/group/14/R8no2.pdf
+    - https://www.city.satte.lg.jp/material/files/group/14/R8no3.pdf
+    - https://www.city.satte.lg.jp/material/files/group/14/R8no4.pdf
+    - https://www.city.satte.lg.jp/material/files/group/14/R8no5.pdf
   verify_sources:
-  - course-pdf
-  - booklet
+    - course-pdf
+    - booklet
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 5
   yearend: calendar-explicit
-  notes: '収集日程の一次ソースは地区別カレンダーPDF(R8no1〜5、各4.1MB)。pdftotextでテキスト層あり (可燃/プラ/ペットボトル/かん・びん/有害ごみ/粗大 と月〜土の曜日列を抽出できた)が、
-    地図・週次パターン主体のグラフィカルなレイアウトで機械抽出はやや手間→difficulty 3。 収集曜日検索ページ(gomi_search/chikubetsu)はスマート自治体CMS(smart-lgov.jp)製で、
-    API //lg-api3rd.smart-lgov.jp/v1/trash + JWTトークン(HTMLに埋込)を叩くが、これは 「品目→分別区分」検索用であり日程データではない。よって収録は地区別PDFが本命。
-    埼玉県ODポータル・幸手市個別ODに収集日程CSVは見当たらず(川越市の分別一覧CSV例はあるが別物)。 補助PDF: setumei.pdf(14〜40ページ、粗大ごみ収集日程表含む)、R8gomibunbetu.pdf(分別一覧)。
+  notes: >
+    収集日程の一次ソースは地区別カレンダーPDF(R8no1〜5、各4.1MB)。pdftotextでテキスト層あり (可燃/プラ/ペットボトル/かん・びん/有害ごみ/粗大 と月〜土の曜日列を抽出できた)が、
+    地図・週次パターン主体のグラフィカルなレイアウトで機械抽出はやや手間→difficulty 3。
+    収集曜日検索ページ(gomi_search/chikubetsu)はスマート自治体CMS(smart-lgov.jp)製で、 API //lg-api3rd.smart-lgov.jp/v1/trash +
+    JWTトークン(HTMLに埋込)を叩くが、これは 「品目→分別区分」検索用であり日程データではない。よって収録は地区別PDFが本命。
+    埼玉県ODポータル・幸手市個別ODに収集日程CSVは見当たらず(川越市の分別一覧CSV例はあるが別物)。 補助PDF:
+    setumei.pdf(14〜40ページ、粗大ごみ収集日程表含む)、R8gomibunbetu.pdf(分別一覧)。
     WebFetchは旧年度9987.html等が404(令和8年度13626.htmlへ更新済)。curlは200で取得可(403なし)。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11241'
+- code: "11241"
   handle: tsurugashima
   name_ja: 鶴ヶ島市
   population: 70534
   source_type: image-pdf
   schedule_url: https://www.city.tsurugashima.lg.jp/page/page003533.html
   calendar_urls:
-  - https://www.city.tsurugashima.lg.jp/page/page003543.html
-  - https://www.city.tsurugashima.lg.jp/page/page003542.html
-  - https://www.city.tsurugashima.lg.jp/page/page003541.html
-  - https://www.city.tsurugashima.lg.jp/page/page003540.html
+    - https://www.city.tsurugashima.lg.jp/page/page003543.html
+    - https://www.city.tsurugashima.lg.jp/page/page003542.html
+    - https://www.city.tsurugashima.lg.jp/page/page003541.html
+    - https://www.city.tsurugashima.lg.jp/page/page003540.html
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 4
   district_unit: 地区
   district_count_approx: 4
   yearend: calendar-explicit
-  notes: ★有望。A・B・C・Dの4地区。各地区に「収集カレンダー テキスト版」ページが存在(調布型=日付・曜日・品目の 列挙で日付レベル照合できる可能性)。ただしCMSがJS/フレーム駆動で curl/WebFetch
-    では本文が取得できず (426バイトの殻のみ) → テキスト版の中身とR8年度版の有無はブラウザ確認が必要。検索ではR6/R7版が確認できた。 PDF版カレンダー(page003533)が独立検証源。市公式アプリ「つるポッケ」あり。市サイトはCC宣言なし。
-    埼玉県ODポータルに鶴ヶ島市は117データセットあるが、ごみ収集日程CSVは未確認(明示ヒットせず)。 【統括実確認 2026-07-18】テキスト版ページの実体は「収集曜日に変更なし・祝日も収集・12/29〜1/3休止」の要約文のみで調布型の日付列挙ではない。地区別カレンダーPDF
+  notes: ★有望。A・B・C・Dの4地区。各地区に「収集カレンダー テキスト版」ページが存在(調布型=日付・曜日・品目の 列挙で日付レベル照合できる可能性)。ただしCMSがJS/フレーム駆動で
+    curl/WebFetch では本文が取得できず (426バイトの殻のみ) → テキスト版の中身とR8年度版の有無はブラウザ確認が必要。検索ではR6/R7版が確認できた。
+    PDF版カレンダー(page003533)が独立検証源。市公式アプリ「つるポッケ」あり。市サイトはCC宣言なし。
+    埼玉県ODポータルに鶴ヶ島市は117データセットあるが、ごみ収集日程CSVは未確認(明示ヒットせず)。 【統括実確認
+    2026-07-18】テキスト版ページの実体は「収集曜日に変更なし・祝日も収集・12/29〜1/3休止」の要約文のみで調布型の日付列挙ではない。地区別カレンダーPDF
     (1772674740_doc_1199_0.pdf) はテキスト層なし画像 → image-pdf/d4 に是正 (当初の txt/d2 は過大評価)。住所→地区対応は親ページ HTML にあり。
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11242'
+- code: "11242"
   handle: hidaka
   name_ja: 日高市
   population: 53141
   status: collected
   source_type: pdf
   difficulty: 3
-  notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml から一次ソースを転記:
-    全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。'
+  notes: "収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml
+    から一次ソースを転記: 全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。"
   granularity: dates
   schedule_url: https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
   calendar_urls:
-  - https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
+    - https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   yearend: calendar-explicit
-- code: '11243'
+- code: "11243"
   handle: yoshikawa
   name_ja: 吉川市
   population: 71136
   source_type: pdf
   schedule_url: https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,121,682,html
   calendar_urls:
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_01.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_02.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_03.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_04.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_05.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_06.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_07.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_08.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_09.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_10.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_11.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_12.pdf
-  - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_13.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_01.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_02.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_03.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_04.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_05.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_06.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_07.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_08.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_09.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_10.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_11.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_12.pdf
+    - https://www.city.yoshikawa.saitama.jp/index.cfm/23,86002,c,html/86002/R8_gomi_13.pdf
   verify_sources:
-  - district-pdf-crosscheck
-  - bunbetsu-jiten-50on
+    - district-pdf-crosscheck
+    - bunbetsu-jiten-50on
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: 13
   yearend: calendar-explicit
-  notes: '一次ソースは公式サイトの地区別ごみ収集カレンダー(令和8年度=2026/4〜2027/3)。 13地区に分割、各地区1つのPDF (R8_gomi_01〜13.pdf)。CSV/JSON/収集曜日検索は無し
-    (HTMLソースをgrepしたがPDFリンクのみ)。PDFはテキスト層あり(pdftotextで日付・ ごみ種別が抽出可)だが、レイアウトがカレンダーグリッドのためテキスト順が錯綜し、 日付→ごみ種別の対応付けにはグリッド解析が必要
-    → difficulty 3。年間カレンダーで December/January も同一PDF内に収録され、年末年始の収集日はカレンダーグリッドに 直接記載 (別途12月告知に依存しない) → yearend=in-calendar。
-    検証: 13地区PDF群の相互照合 + 50音別ごみ分別辞典。 ライセンス: カレンダーPDF自体に明示的な利用条件記載なし → unknown。 埼玉県ODポータル(opendata.pref.saitama.lg.jp)には吉川市の収集"量"統計CSVはあるが
-    収集"日程"データセットは無し(県共同データセットも無し確認済)。 curl は Mozilla UA で 200 (403 なし)。'
-  surveyed_at: '2026-07-17'
+  notes: '一次ソースは公式サイトの地区別ごみ収集カレンダー(令和8年度=2026/4〜2027/3)。 13地区に分割、各地区1つのPDF
+    (R8_gomi_01〜13.pdf)。CSV/JSON/収集曜日検索は無し (HTMLソースをgrepしたがPDFリンクのみ)。PDFはテキスト層あり(pdftotextで日付・
+    ごみ種別が抽出可)だが、レイアウトがカレンダーグリッドのためテキスト順が錯綜し、 日付→ごみ種別の対応付けにはグリッド解析が必要 → difficulty 3。年間カレンダーで December/January
+    も同一PDF内に収録され、年末年始の収集日はカレンダーグリッドに 直接記載 (別途12月告知に依存しない) → yearend=in-calendar。 検証: 13地区PDF群の相互照合 +
+    50音別ごみ分別辞典。 ライセンス: カレンダーPDF自体に明示的な利用条件記載なし → unknown。
+    埼玉県ODポータル(opendata.pref.saitama.lg.jp)には吉川市の収集"量"統計CSVはあるが 収集"日程"データセットは無し(県共同データセットも無し確認済)。 curl は
+    Mozilla UA で 200 (403 なし)。'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11245'
+- code: "11245"
   handle: fujimino
   name_ja: ふじみ野市
   population: 112602
   source_type: pdf
   schedule_url: https://www.city.fujimino.saitama.jp/soshikiichiran/kankyoka/haikibutsutaisakugakari/kateigomi/wakekatadasikta/2415.html
   calendar_urls:
-  - https://www.city.fujimino.saitama.jp/material/files/group/19/2026A.pdf
-  - https://www.city.fujimino.saitama.jp/material/files/group/19/2026B.pdf
-  - https://www.city.fujimino.saitama.jp/material/files/group/19/2026C.pdf
-  - https://www.city.fujimino.saitama.jp/material/files/group/19/2026D.pdf
+    - https://www.city.fujimino.saitama.jp/material/files/group/19/2026A.pdf
+    - https://www.city.fujimino.saitama.jp/material/files/group/19/2026B.pdf
+    - https://www.city.fujimino.saitama.jp/material/files/group/19/2026C.pdf
+    - https://www.city.fujimino.saitama.jp/material/files/group/19/2026D.pdf
   verify_sources:
-  - app
+    - app
   license: proprietary-site
   difficulty: 3
   district_unit: 地域
   district_count_approx: 4
   yearend: unknown
-  notes: 令和8年度(2026/4〜2027/3)版。市内を4地域(A〜D)に分割、地域別収集カレンダーPDF (2026A〜D.pdf, 各約300KB)。pdftotext でテキスト層あり=日付入りカレンダー本体
-    に加え、各PDF冒頭に対象町名(例A:池上/上ノ原1〜3丁目/亀久保1601番地以降/駒林…) と分別品目(資源物1=びん・新聞紙・ダンボール・紙パック・布類 ほか)を列挙。 丁目・番地単位の分割あり(亀久保が番地で分かれる)。年末年始はカレンダーPDF内に
-    日付で入る可能性が高いが未精読(unknown)。収集曜日OD・CSVなし。多言語版・ ごみ分別アプリあり。日付入りテキスト層PDFで機械抽出しやすく難度は中。
-  surveyed_at: '2026-07-17'
+  notes: 令和8年度(2026/4〜2027/3)版。市内を4地域(A〜D)に分割、地域別収集カレンダーPDF (2026A〜D.pdf, 各約300KB)。pdftotext
+    でテキスト層あり=日付入りカレンダー本体 に加え、各PDF冒頭に対象町名(例A:池上/上ノ原1〜3丁目/亀久保1601番地以降/駒林…) と分別品目(資源物1=びん・新聞紙・ダンボール・紙パック・布類
+    ほか)を列挙。 丁目・番地単位の分割あり(亀久保が番地で分かれる)。年末年始はカレンダーPDF内に 日付で入る可能性が高いが未精読(unknown)。収集曜日OD・CSVなし。多言語版・
+    ごみ分別アプリあり。日付入りテキスト層PDFで機械抽出しやすく難度は中。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11246'
+- code: "11246"
   handle: shiraoka
   name_ja: 白岡市
   population: 51298
   source_type: pdf
   schedule_url: https://hs-eiseikumiai.org/shimin/schedule/shiraoka/
   calendar_urls:
-  - https://hs-eiseikumiai.org/wp-content/uploads/2026/03/a55dd53e085b67d9c156832f4d034863.pdf
+    - https://hs-eiseikumiai.org/wp-content/uploads/2026/03/a55dd53e085b67d9c156832f4d034863.pdf
   verify_sources:
-  - app
+    - app
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: null
   yearend: unknown
-  notes: '収集は蓮田白岡衛生組合(蓮田市と共同)が実施。一次候補は組合サイトの「白岡市(地域別カレンダー版)」PDF群 + 全域版PDF。全域版(2026/03公開)はテキスト層あり(pdftotext可、日付入りカレンダー)。地域割は宇都宮線
-    東側/西側で複数地域(新白岡・寺塚・上野田/千駄野・岡泉・太田新井/下大崎・荒井新田・柴山/小久喜・白岡東 等)。 蓮田市・白岡市ごみ分別アプリ「げんちゃん」あり(収集日カレンダー機能)。gomisaku.jp に分別辞典。
-    収集日オープンデータは未発見。地区数は未計測。ライセンス(組合サイト)未確認。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    収集は蓮田白岡衛生組合(蓮田市と共同)が実施。一次候補は組合サイトの「白岡市(地域別カレンダー版)」PDF群 +
+    全域版PDF。全域版(2026/03公開)はテキスト層あり(pdftotext可、日付入りカレンダー)。地域割は宇都宮線
+    東側/西側で複数地域(新白岡・寺塚・上野田/千駄野・岡泉・太田新井/下大崎・荒井新田・柴山/小久喜・白岡東 等)。 蓮田市・白岡市ごみ分別アプリ「げんちゃん」あり(収集日カレンダー機能)。gomisaku.jp
+    に分別辞典。 収集日オープンデータは未発見。地区数は未計測。ライセンス(組合サイト)未確認。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11301'
+- code: "11301"
   handle: saitama-ina-town
   name_ja: 伊奈町
   population: 44420
   source_type: image-pdf
   schedule_url: https://www.town.saitama-ina.lg.jp/0000006664.html
   calendar_urls:
-  - https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8_north.pdf
-  - https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8_south.pdf
-  - https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8rule.pdf
+    - https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8_north.pdf
+    - https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8_south.pdf
+    - https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8rule.pdf
   verify_sources:
-  - https://csi-ina.co.jp/ina_carender/
-  - https://gomi-calendar.com/saitama/kitaadachi-ina/
-  - https://www.scoooop.com/apps/smartgomiapp/%E5%9F%BC%E7%8E%89%E7%9C%8C-%E4%BC%8A%E5%A5%88%E7%94%BA/
+    - https://csi-ina.co.jp/ina_carender/
+    - https://gomi-calendar.com/saitama/kitaadachi-ina/
+    - https://www.scoooop.com/apps/smartgomiapp/%E5%9F%BC%E7%8E%89%E7%9C%8C-%E4%BC%8A%E5%A5%88%E7%94%BA/
   license: proprietary-site
   difficulty: 4
   district_unit: 地区(北・南の2区分)
   district_count_approx: 2
   yearend: unknown
-  notes: '一次ソースは公式サイトのごみ収集カレンダーページ(0000006664.html)。地区は「北地区」「南地区」の 2つのみで、それぞれ令和8年度(2026-04-01〜2027-03-31)のPDFカレンダー(r8_north.pdf
-    / r8_south.pdf)を配布。両PDFともAdobe Illustrator由来の画像PDFでテキスト層なし→OCR必須のため difficulty 4。ただし地区が2つだけ・収集は週次の規則的パターン(可燃週2/プラ週1/缶・ペット・古紙・
-    古布・不燃 原則月2)なので抽出負荷はdifficulty 4の中では軽い。CSV/JSON/HTML表は見当たらず、 ごみ分別検索(module/garbage.php)は品目分別のみで収集曜日データは持たない。オープンデータ
-    カタログ・埼玉県ポータルにも収集曜日データは確認できず。ごみ分別アプリ「さんあ〜る」提供 (proprietary)。年末年始の扱いはページ本文に記載なくPDF画像内のみと推測(unknown)。 検証用にごみ収集運搬会社CSI(csi-ina.co.jp)の案内ページ、第三者スクレイプ
-    (gomi-calendar.com / scoooop=さんあ〜る由来)あり。公式ドメイン: town.saitama-ina.lg.jp。'
-  surveyed_at: '2026-07-17'
+  notes: "一次ソースは公式サイトのごみ収集カレンダーページ(0000006664.html)。地区は「北地区」「南地区」の
+    2つのみで、それぞれ令和8年度(2026-04-01〜2027-03-31)のPDFカレンダー(r8_north.pdf / r8_south.pdf)を配布。両PDFともAdobe
+    Illustrator由来の画像PDFでテキスト層なし→OCR必須のため difficulty 4。ただし地区が2つだけ・収集は週次の規則的パターン(可燃週2/プラ週1/缶・ペット・古紙・ 古布・不燃
+    原則月2)なので抽出負荷はdifficulty 4の中では軽い。CSV/JSON/HTML表は見当たらず、
+    ごみ分別検索(module/garbage.php)は品目分別のみで収集曜日データは持たない。オープンデータ カタログ・埼玉県ポータルにも収集曜日データは確認できず。ごみ分別アプリ「さんあ〜る」提供
+    (proprietary)。年末年始の扱いはページ本文に記載なくPDF画像内のみと推測(unknown)。 検証用にごみ収集運搬会社CSI(csi-ina.co.jp)の案内ページ、第三者スクレイプ
+    (gomi-calendar.com / scoooop=さんあ〜る由来)あり。公式ドメイン: town.saitama-ina.lg.jp。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11324'
+- code: "11324"
   handle: saitama-miyoshi-town
   name_ja: 三芳町
   population: 37201
   source_type: image-pdf
   schedule_url: https://www.town.saitama-miyoshi.lg.jp/life/gomi/gomi_syuusyuu.html
   calendar_urls:
-  - https://www.town.saitama-miyoshi.lg.jp/life/gomi/documents/r8gomikarenda.pdf
+    - https://www.town.saitama-miyoshi.lg.jp/life/gomi/documents/r8gomikarenda.pdf
   verify_sources:
-  - app
+    - app
   license: proprietary-site
   difficulty: 4
   district_unit: コース
   district_count_approx: null
   yearend: unknown
-  notes: 'R8収集日程表PDF(r8gomikarenda.pdf)はテキスト層が実質無し(埋込フォント1・抽出文字2字=画像化)→OCR必須。 収集コースは公式ページの画像地図で示され、コース数・対象地区が機械可読テキストに無い。
-    主導線は「三芳ごみ分別アプリ」。9自治体中もっとも難物。地区割の確度を上げるには役場資料の追加確認が必要。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    R8収集日程表PDF(r8gomikarenda.pdf)はテキスト層が実質無し(埋込フォント1・抽出文字2字=画像化)→OCR必須。
+    収集コースは公式ページの画像地図で示され、コース数・対象地区が機械可読テキストに無い。 主導線は「三芳ごみ分別アプリ」。9自治体中もっとも難物。地区割の確度を上げるには役場資料の追加確認が必要。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11326'
+- code: "11326"
   handle: moroyama-town
   name_ja: 毛呂山町
   population: 32987
   source_type: pdf
   schedule_url: http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
   calendar_urls:
-  - http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
-  - http://www.hozenkumiai.or.jp/pdf/moroyama2026_b.pdf
-  - http://www.hozenkumiai.or.jp/pdf/moroyama2026_c.pdf
-  - https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndaatiku.pdf
-  - https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndabtiku.pdf
-  - https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndactiku.pdf
+    - http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
+    - http://www.hozenkumiai.or.jp/pdf/moroyama2026_b.pdf
+    - http://www.hozenkumiai.or.jp/pdf/moroyama2026_c.pdf
+    - https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndaatiku.pdf
+    - https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndabtiku.pdf
+    - https://www.town.moroyama.saitama.jp/material/files/group/18/R8gomikarenndactiku.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 3
   yearend: calendar-explicit
-  notes: '一次ソース候補は埼玉西部環境保全組合(hozenkumiai.or.jp、毛呂山町のごみ処理を担う一部事務組合)が
-
+  notes: |
+    一次ソース候補は埼玉西部環境保全組合(hozenkumiai.or.jp、毛呂山町のごみ処理を担う一部事務組合)が
     発行する令和8年度カレンダーPDF。pdftotext/pdffonts で確認したところ埋込CIDフォントによる完全な
-
     テキスト層あり(日付・曜日・品目=可燃/不燃/他プラ/びん缶/有害/紙布/ペット等が抽出可能)。CLI curl 正常取得。
-
     町公式サイト(town.moroyama.saitama.jp)の R8gomikarennda[abc]tiku.pdf は同内容だがベクター描画で
-
     テキスト層なし(pdffonts/pdfimages 共に空)=OCR必要。よって組合PDFを一次に採用すれば difficulty 3。
-
     収集日のオープンデータCSVは町・埼玉県ポータル共に確認できず(license=proprietary-site)。
-
     地区は A/B/C の3地区一律。旧年度 moroyama2025_*.pdf は現在404、moroyama2026_*.pdf が現行。
-
     収集運搬の委託業者に株式会社鳩山環境サービス等の記載あり(処理は組合)。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11327'
+- code: "11327"
   handle: ogose-town
   name_ja: 越生町
   population: 10097
   source_type: pdf
   schedule_url: http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
   calendar_urls:
-  - http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
-  - http://www.hozenkumiai.or.jp/pdf/ogose2026_b.pdf
+    - http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
+    - http://www.hozenkumiai.or.jp/pdf/ogose2026_b.pdf
   verify_sources: []
   license: unknown
   difficulty: 3
   district_unit: 不明
   district_count_approx: null
   yearend: calendar-explicit
-  notes: 一次ソース未特定。町サイトの「ごみカレンダー」「ごみ収集」ページ本文には収集日程が無く、分別方法は 「埼玉西部環境保全組合」サイトへ誘導するのみ(curlで本文確認済、収集曜日の記載なし)。組合サイト hozenkumiai.or.jp
-    が収集日を持つか未確認。地区割・コース・PDF/CSVの所在いずれも未確認。small town。 10分枠では機械可読な一次ソースを特定できず → 追加調査 or ブラウザ確認要。difficulty は暫定4(不能寄り)。
-    【統括実確認 2026-07-18】E判定は10分打ち切りの見落としだった。埼玉西部環境保全組合サイトに「令和8年度 越生町 ごみ・資源収集カレンダー」PDF が実在 (ogose2026_a/b、A・B の2地区、テキスト層あり5,852字、日付入り年間カレンダー・多言語表記)。source
-    none→pdf / d4→d3 / granularity dates に是正。yearend は通年カレンダー版面からの推定。
-  surveyed_at: '2026-07-17'
+  notes: 一次ソース未特定。町サイトの「ごみカレンダー」「ごみ収集」ページ本文には収集日程が無く、分別方法は 「埼玉西部環境保全組合」サイトへ誘導するのみ(curlで本文確認済、収集曜日の記載なし)。組合サイト
+    hozenkumiai.or.jp が収集日を持つか未確認。地区割・コース・PDF/CSVの所在いずれも未確認。small town。 10分枠では機械可読な一次ソースを特定できず → 追加調査 or
+    ブラウザ確認要。difficulty は暫定4(不能寄り)。 【統括実確認 2026-07-18】E判定は10分打ち切りの見落としだった。埼玉西部環境保全組合サイトに「令和8年度 越生町
+    ごみ・資源収集カレンダー」PDF が実在 (ogose2026_a/b、A・B の2地区、テキスト層あり5,852字、日付入り年間カレンダー・多言語表記)。source none→pdf / d4→d3 /
+    granularity dates に是正。yearend は通年カレンダー版面からの推定。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11341'
+- code: "11341"
   handle: namegawa-town
   name_ja: 滑川町
   population: 19904
   source_type: pdf
   schedule_url: https://www.town.namegawa.saitama.jp/soshikikarasagasu/kankyoka/gomi_kankyo_pet/2/5138.html
   calendar_urls:
-  - https://www.town.namegawa.saitama.jp/material/files/group/7/gomi2026.pdf
+    - https://www.town.namegawa.saitama.jp/material/files/group/7/gomi2026.pdf
   verify_sources:
-  - https://www.town.namegawa.saitama.jp/soshikikarasagasu/kankyoka/gomi_kankyo_pet/2/index.html
+    - https://www.town.namegawa.saitama.jp/soshikikarasagasu/kankyoka/gomi_kankyo_pet/2/index.html
   license: unknown
   difficulty: 3
   district_unit: 全域一律
   district_count_approx: 1
   yearend: calendar-explicit
-  notes: ごみ収集(収集運搬)は滑川町が実施。ごみ処理(焼却/し尿)は一部事務組合「小川地区衛生組合」 (小川町・嵐山町・滑川町・ときがわ町・東秩父村の4町1村)が担うが、収集日程は町が発行。 一次ソースは令和8年度「資源・ごみ分別収集カレンダー」PDF
-    (gomi2026.pdf, 20頁, 8.5MB) でテキスト層あり(pdftotext可)。全域一律で地区/コース分けなし。収集は 規則ベース(もえるごみ=毎週月・木曜、資源プラ=毎週金曜、廃プラ=第1・3水曜、
-    ペットボトル=第3火曜 等)で全町共通。カレンダーは各月グリッド(12ヶ月分, 令和8年4月〜 令和9年3月)に日付入りで収録。年末年始は12月末に「年末の特別収集日」がカレンダー グリッド上に明示(毎年告知でなくPDF内に記載)。埼玉県ODポータル
-    (opendata.pref.saitama.lg.jp)に滑川町ごみ収集のODは見当たらず、町独自ODカタログ も未確認。町サイトの「ごみの分別かな検索」は分別区分検索であり収集日程CSVではない。 CLI curl
-    は 200 で取得可(403なし)。
-  surveyed_at: '2026-07-17'
+  notes: ごみ収集(収集運搬)は滑川町が実施。ごみ処理(焼却/し尿)は一部事務組合「小川地区衛生組合」 (小川町・嵐山町・滑川町・ときがわ町・東秩父村の4町1村)が担うが、収集日程は町が発行。
+    一次ソースは令和8年度「資源・ごみ分別収集カレンダー」PDF (gomi2026.pdf, 20頁, 8.5MB) でテキスト層あり(pdftotext可)。全域一律で地区/コース分けなし。収集は
+    規則ベース(もえるごみ=毎週月・木曜、資源プラ=毎週金曜、廃プラ=第1・3水曜、 ペットボトル=第3火曜 等)で全町共通。カレンダーは各月グリッド(12ヶ月分, 令和8年4月〜
+    令和9年3月)に日付入りで収録。年末年始は12月末に「年末の特別収集日」がカレンダー グリッド上に明示(毎年告知でなくPDF内に記載)。埼玉県ODポータル
+    (opendata.pref.saitama.lg.jp)に滑川町ごみ収集のODは見当たらず、町独自ODカタログ も未確認。町サイトの「ごみの分別かな検索」は分別区分検索であり収集日程CSVではない。 CLI
+    curl は 200 で取得可(403なし)。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11342'
+- code: "11342"
   handle: ranzan-town
   name_ja: 嵐山町
   population: 17261
   source_type: pdf
   schedule_url: https://www.town.ranzan.saitama.jp/0000000215.html
   calendar_urls:
-  - https://www.town.ranzan.saitama.jp/cmsfiles/contents/0000000/215/R8karenda-_827924_sanitized.pdf
+    - https://www.town.ranzan.saitama.jp/cmsfiles/contents/0000000/215/R8karenda-_827924_sanitized.pdf
   verify_sources:
-  - html
+    - html
   license: proprietary-site
   difficulty: 3
   district_unit: 不明
   district_count_approx: null
   yearend: unknown
-  notes: '令和8年度版「ごみ・資源分別収集カレンダー」PDF(26ページ, 5.78MB)。pdftotext で テキスト層あり。冊子1本で全戸配布型。地区分割の明記が見当たらず全町一律の可能性 があるが未確定(district_unit不明・要確認)。市サイトに「ごみ分別検索」モジュール
-    (module/garbage.php, 全726件)あり=品目検索用で収集日地区データではない。年末年始 はカレンダー冊子内に入るとみられるが未精読(unknown)。収集曜日OD・CSVなし。 多言語訳はP26。新年度版は毎年3月1日以降全戸配布。課:
-    環境課(0493-62-0719)。'
-  surveyed_at: '2026-07-17'
+  notes: "令和8年度版「ごみ・資源分別収集カレンダー」PDF(26ページ, 5.78MB)。pdftotext で テキスト層あり。冊子1本で全戸配布型。地区分割の明記が見当たらず全町一律の可能性
+    があるが未確定(district_unit不明・要確認)。市サイトに「ごみ分別検索」モジュール (module/garbage.php, 全726件)あり=品目検索用で収集日地区データではない。年末年始
+    はカレンダー冊子内に入るとみられるが未精読(unknown)。収集曜日OD・CSVなし。 多言語訳はP26。新年度版は毎年3月1日以降全戸配布。課: 環境課(0493-62-0719)。"
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11343'
+- code: "11343"
   handle: saitama-ogawa-town
   name_ja: 小川町
   population: 26033
   source_type: pdf
   schedule_url: https://www.town.ogawa.saitama.jp/gyosei/sosiki/10/2/5/6640.html
   calendar_urls:
-  - https://www.town.ogawa.saitama.jp/material/files/group/10/higashiogawaR8C.pdf
+    - https://www.town.ogawa.saitama.jp/material/files/group/10/higashiogawaR8C.pdf
   verify_sources:
-  - course-pdf
-  - app
+    - course-pdf
+    - app
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: 9
   yearend: unknown
-  notes: '一次候補「【地区別】令和8年度ごみ収集カレンダー」= 地区別PDF9本(daiaparesu/higashiogawa/honiti/ ikeda/koshigoe/midori/oozeki/takezawa/yawata
-    = 台アパレス・東小川・本一・池田・腰越・みどり・大寄・竹沢・八和田等)。 各地区に base(品目・ルール表)/C(日付入りカレンダー・多言語)/E(英)/V(越)版。base・C ともテキスト層あり(pdftotext可)。
-    種別: もえるごみ(指定袋)/缶/ペットボトル/ビン/資源プラ/古紙類/有害。焼却は小川地区衛生組合。 小川町ごみ分別アプリあり。収集日オープンデータは未発見。ライセンス未確認。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次候補「【地区別】令和8年度ごみ収集カレンダー」= 地区別PDF9本(daiaparesu/higashiogawa/honiti/
+    ikeda/koshigoe/midori/oozeki/takezawa/yawata = 台アパレス・東小川・本一・池田・腰越・みどり・大寄・竹沢・八和田等)。 各地区に
+    base(品目・ルール表)/C(日付入りカレンダー・多言語)/E(英)/V(越)版。base・C ともテキスト層あり(pdftotext可)。 種別:
+    もえるごみ(指定袋)/缶/ペットボトル/ビン/資源プラ/古紙類/有害。焼却は小川地区衛生組合。 小川町ごみ分別アプリあり。収集日オープンデータは未発見。ライセンス未確認。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11346'
+- code: "11346"
   handle: kawajima-town
   name_ja: 川島町
   population: 17788
   source_type: pdf
   schedule_url: https://www.town.kawajima.saitama.jp/8581.htm
   calendar_urls:
-  - https://www.town.kawajima.saitama.jp/9169.htm
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part1.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part2.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part3.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part4.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part5.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part6.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part7.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part8.pdf
-  - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part9.pdf
+    - https://www.town.kawajima.saitama.jp/9169.htm
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part1.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part2.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part3.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part4.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part5.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part6.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part7.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part8.pdf
+    - https://www.town.kawajima.saitama.jp/secure/14751/2026_Part9.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 行政区グループ (町丁目・大字を9グループに集約)
   district_count_approx: 9
   yearend: december-announce
-  notes: '公式ドメイン town.kawajima.saitama.jp。一次ソースは行政区別 PDF カレンダー。
-
+  notes: |-
+    公式ドメイン town.kawajima.saitama.jp。一次ソースは行政区別 PDF カレンダー。
     令和8年度 (2026-04-01〜2027-03-31) 収集日程ページ /9169.htm から 9 本の PDF
-
     (2026_Part1〜Part9.pdf) にリンク。各 PDF はグループ(例 1:東中廓・西中廓・宮本・伏木・
-
     久保・かわじま2丁目 … 9:虫塚・梅ノ木ほか)の前期/後期カレンダー。全域一律ではなく、
-
     町域は小さいが 9 収集グループに分かれる(曜日パターン差あり)。
-
     PDF はテキスト層あり(pdftotext で日付・区分名を抽出可)だが、月次カレンダーグリッド
-
     レイアウトで位置依存の整形が必要 → 素直な表ではない。可燃/紙布類/びん缶/容器包装/
-
     ペットボトル/不燃有害危険 等 14分別。よって difficulty 3。
-
     年末年始: 環境センターは 12/29〜1/3 持込受付なし。年末年始の収集変更は PDF カレンダー
-
     内(12月・1月ページ)に反映される想定 (december-announce)。
-
     埼玉県オープンデータポータル(opendata.pref.saitama.lg.jp)に川島町の該当データ無し
-
     (川島町は指定道路図のみ)。収集曜日 CSV/JSON も公式サイトに見当たらず(HTMLソースに
-
     .csv/.json 参照なし)。ごみ分別アプリ(gomisuke, jp.gomisuke.app.Gomisuke0011)あるが
-
     データは非公開。旧年度カレンダー(7370/7971/8637.htm)も同形式で検証用に利用可。
-
-    WebFetch では 8637/1652.htm が 404 を返したが curl は 200(サイト側のUA/経路差)。'
-  surveyed_at: '2026-07-17'
+    WebFetch では 8637/1652.htm が 404 を返したが curl は 200(サイト側のUA/経路差)。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11347'
+- code: "11347"
   handle: yoshimi-town
   name_ja: 吉見町
   population: 16623
   source_type: pdf
   schedule_url: https://www.town.yoshimi.saitama.jp/soshiki/kankyo/4/4/3606.html
   calendar_urls:
-  - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_kita_higashi1.pdf
-  - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_nishi1_higashi2.pdf
-  - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_nishi2.pdf
-  - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_minami.pdf
+    - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_kita_higashi1.pdf
+    - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_nishi1_higashi2.pdf
+    - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_nishi2.pdf
+    - https://www.town.yoshimi.saitama.jp/material/files/group/9/R8_minami.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 4
   yearend: unknown
-  notes: '令和8年度ごみ分別収集日程表、地区別4PDF。テキスト層あり(pdftotext -layout で月別カレンダーグリッドと 可燃/資源/プラ/不燃/ペのラベルを抽出可、各区に含まれる町名もヘッダにテキストで列挙)。
-    可燃は月木/火金コース+資源A/B系。カレンダーグリッドなので日付から曜日パターン再構成する形。年末年始は未記載。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    令和8年度ごみ分別収集日程表、地区別4PDF。テキスト層あり(pdftotext -layout で月別カレンダーグリッドと
+    可燃/資源/プラ/不燃/ペのラベルを抽出可、各区に含まれる町名もヘッダにテキストで列挙)。 可燃は月木/火金コース+資源A/B系。カレンダーグリッドなので日付から曜日パターン再構成する形。年末年始は未記載。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11348'
+- code: "11348"
   handle: hatoyama-town
   name_ja: 鳩山町
   population: 12531
   source_type: pdf
   schedule_url: https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
   calendar_urls:
-  - https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
-  - https://www.town.hatoyama.saitama.jp/data/doc/1773387148_doc_50_0.pdf
-  - https://www.town.hatoyama.saitama.jp/kurashi/gomi_seikatsukankyo/gomi_recycle/gomi_recycling.html
-  - http://www.hozenkumiai.or.jp/shigen.html
+    - https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
+    - https://www.town.hatoyama.saitama.jp/data/doc/1773387148_doc_50_0.pdf
+    - https://www.town.hatoyama.saitama.jp/kurashi/gomi_seikatsukankyo/gomi_recycle/gomi_recycling.html
+    - http://www.hozenkumiai.or.jp/shigen.html
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 2
   yearend: calendar-explicit
-  notes: '一次ソースは公式サイトが配布する令和8年度PDF(A地区/B地区の2種)。pdftotextでテキスト層抽出可(日付・品目が取れる。ただしカレンダーグリッドのため配置は乱れ、要パース)。 地区は A地区(大橋・奥田・須江・竹本・泉井・高野倉・熊井・小用・大豆戸・赤沼・今宿・石坂)と
-    B地区(松ヶ丘/楓ヶ丘/鳩ヶ丘の団地地区)の2区分。町域を実質2分割。 ごみ処理は一部事務組合「埼玉西部環境保全組合」(hozenkumiai.or.jp)が担当。収集業務委託は株式会社鳩山環境サービス。組合サイトにも同等PDF(hatoyama2025_a/b.pdf)あり。
-    ※公式ドメインは town.hatoyama.saitama.jp (指示の town.saitama-hatoyama.lg.jp ではない)。※組合サイト直リンク(hozenkumiai.or.jp/pdf/hatoyama2025_a.pdf)はCLIで196バイトの空応答=実質取得不可、公式サイト側は正常取得。
-    オープンデータ: 鳩山町ODページ(gyousei/hatoyama_opendata.html)にごみ収集日程データセットは無し。埼玉県ポータル(opendata.pref.saitama.lg.jp)にも収集日CSVは確認できず。
-    年末年始: 通年カレンダー(令和8年4月〜翌3月)のためグリッドに反映=calendar-explicit扱い。ただし抽出テキストが乱れ「年末年始休み」等の明示注記までは未確認。アプリは無し。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: |
+    一次ソースは公式サイトが配布する令和8年度PDF(A地区/B地区の2種)。pdftotextでテキスト層抽出可(日付・品目が取れる。ただしカレンダーグリッドのため配置は乱れ、要パース)。 地区は A地区(大橋・奥田・須江・竹本・泉井・高野倉・熊井・小用・大豆戸・赤沼・今宿・石坂)と B地区(松ヶ丘/楓ヶ丘/鳩ヶ丘の団地地区)の2区分。町域を実質2分割。 ごみ処理は一部事務組合「埼玉西部環境保全組合」(hozenkumiai.or.jp)が担当。収集業務委託は株式会社鳩山環境サービス。組合サイトにも同等PDF(hatoyama2025_a/b.pdf)あり。 ※公式ドメインは town.hatoyama.saitama.jp (指示の town.saitama-hatoyama.lg.jp ではない)。※組合サイト直リンク(hozenkumiai.or.jp/pdf/hatoyama2025_a.pdf)はCLIで196バイトの空応答=実質取得不可、公式サイト側は正常取得。 オープンデータ: 鳩山町ODページ(gyousei/hatoyama_opendata.html)にごみ収集日程データセットは無し。埼玉県ポータル(opendata.pref.saitama.lg.jp)にも収集日CSVは確認できず。 年末年始: 通年カレンダー(令和8年4月〜翌3月)のためグリッドに反映=calendar-explicit扱い。ただし抽出テキストが乱れ「年末年始休み」等の明示注記までは未確認。アプリは無し。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11349'
+- code: "11349"
   handle: tokigawa-town
   name_ja: ときがわ町
   population: 9606
   source_type: pdf
   schedule_url: https://www.town.tokigawa.lg.jp/info/3231
   calendar_urls:
-  - https://www.town.tokigawa.lg.jp/div/201020/pdf/kankyou/R8gomicalendar0.pdf
-  - https://www.town.tokigawa.lg.jp/info/2688
+    - https://www.town.tokigawa.lg.jp/div/201020/pdf/kankyou/R8gomicalendar0.pdf
+    - https://www.town.tokigawa.lg.jp/info/2688
   verify_sources:
-  - booklet
+    - booklet
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 3
   yearend: calendar-explicit
-  notes: 'R8年度ごみ・資源分別カレンダーは2分割PDF。info/3231ページからのリンクは中間HTML経由(/Link/Pdf/3872 → /div/201020/pdf/kankyou/R8gomicalendar0.pdf)。実体DL検証済:
-    テキスト層あり(zip deflate, 約1.3MB, 59677字)、4月1日〜翌3月31日の日付入り通年カレンダーで機械抽出可、本文に「可燃」「資源」「地区」を含む。 地区は本文中に3件言及(=3地区前後とみられるが要精査)。年末年始も日付入りで明示の見込み。分別一覧表
-    (info/2688)が独立検証源。町サイトはCC宣言なし。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    R8年度ごみ・資源分別カレンダーは2分割PDF。info/3231ページからのリンクは中間HTML経由(/Link/Pdf/3872 →
+    /div/201020/pdf/kankyou/R8gomicalendar0.pdf)。実体DL検証済: テキスト層あり(zip deflate, 約1.3MB,
+    59677字)、4月1日〜翌3月31日の日付入り通年カレンダーで機械抽出可、本文に「可燃」「資源」「地区」を含む。
+    地区は本文中に3件言及(=3地区前後とみられるが要精査)。年末年始も日付入りで明示の見込み。分別一覧表 (info/2688)が独立検証源。町サイトはCC宣言なし。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11361'
+- code: "11361"
   handle: yokoze-town
   name_ja: 横瀬町
   population: 7135
   source_type: pdf
   schedule_url: https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/1042
   calendar_urls:
-  - https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/44川西・中郷・宇根.pdf
-  - https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/45川東・苅米（根古屋の一部地域含む）.pdf
-  - https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/46根古屋・芦ヶ久保（苅米の一部地域含む）.pdf
+    - https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/44川西・中郷・宇根.pdf
+    - https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/45川東・苅米（根古屋の一部地域含む）.pdf
+    - https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/46根古屋・芦ヶ久保（苅米の一部地域含む）.pdf
   verify_sources:
-  - https://www.c-kouiki.jp/gomi-2-2-2-2-2-2/calendar-1-2/
-  - https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/877
-  - https://www.c-kouiki.jp/news/gomiapli-start/
+    - https://www.c-kouiki.jp/gomi-2-2-2-2-2-2/calendar-1-2/
+    - https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/877
+    - https://www.c-kouiki.jp/news/gomiapli-start/
   license: proprietary-site
   difficulty: 3
   district_unit: 地区(3区分)
   district_count_approx: 3
   yearend: calendar-explicit
-  notes: 'ごみ処理は秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町)が担うが、 収集日程カレンダーPDFは横瀬町公式サイトが町独自に公開している(組合サイトはPDF申込フォーム/各市町HP誘導のみで実ファイル無し)。
-    令和8年度(2026)版、地区は「川西・中郷・宇根」「川東・苅米(根古屋の一部含む)」「根古屋・芦ヶ久保(苅米の一部含む)」の3区分。 各PDFはAdobe InDesign 21生成の2ページ、テキスト層あり(pdftotextで日付・ごみ種別が抽出可能、char~6600)。
-    ただし複数月を横並びにした雑誌型グリッドレイアウトで、テキストの座標配置から日付と種別を対応付ける解析が必要なため難度3。 収集回数: 可燃週2/不燃月1/紙布月2/カンビン月2/ペットボトル月2。 年末年始はカレンダー内に明示(「新年の1日〜3日はごみ収集・持込ともお休み」、12月末〜1月初に「休」マーク)。
-    ライセンス: サイトポリシーで無断複製・転載・改変を禁止(全権利留保、CC BY/政府標準利用規約の記載なし)。 埼玉県ODポータル(opendata.pref.saitama.lg.jp)に横瀬町ごみ収集の個別データセットは確認できず。CSV/JSON提供なし。
-    curl 403 なし(3PDFとも HTTP 200 で取得可)。'
-  surveyed_at: '2026-07-17'
+  notes: "ごみ処理は秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町)が担うが、
+    収集日程カレンダーPDFは横瀬町公式サイトが町独自に公開している(組合サイトはPDF申込フォーム/各市町HP誘導のみで実ファイル無し)。
+    令和8年度(2026)版、地区は「川西・中郷・宇根」「川東・苅米(根古屋の一部含む)」「根古屋・芦ヶ久保(苅米の一部含む)」の3区分。 各PDFはAdobe InDesign
+    21生成の2ページ、テキスト層あり(pdftotextで日付・ごみ種別が抽出可能、char~6600)。
+    ただし複数月を横並びにした雑誌型グリッドレイアウトで、テキストの座標配置から日付と種別を対応付ける解析が必要なため難度3。 収集回数: 可燃週2/不燃月1/紙布月2/カンビン月2/ペットボトル月2。
+    年末年始はカレンダー内に明示(「新年の1日〜3日はごみ収集・持込ともお休み」、12月末〜1月初に「休」マーク)。 ライセンス: サイトポリシーで無断複製・転載・改変を禁止(全権利留保、CC
+    BY/政府標準利用規約の記載なし)。 埼玉県ODポータル(opendata.pref.saitama.lg.jp)に横瀬町ごみ収集の個別データセットは確認できず。CSV/JSON提供なし。 curl 403
+    なし(3PDFとも HTTP 200 で取得可)。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11362'
+- code: "11362"
   handle: minano-town
   name_ja: 皆野町
   population: 8278
   source_type: pdf
   schedule_url: https://www.town.minano.saitama.jp/section/seikatu/265/
   calendar_urls:
-  - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/ad9f53afdff8f682d38752a8e8429111-11.pdf
-  - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/51ad3cd62cf1f3d84c5071fbea3ddf85-12.pdf
-  - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/52a3509281a700734ff8299b52005ffb-11.pdf
-  - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/f9eb63572d046a0170bc788b856f0c36-11.pdf
+    - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/ad9f53afdff8f682d38752a8e8429111-11.pdf
+    - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/51ad3cd62cf1f3d84c5071fbea3ddf85-12.pdf
+    - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/52a3509281a700734ff8299b52005ffb-11.pdf
+    - https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/f9eb63572d046a0170bc788b856f0c36-11.pdf
   verify_sources: []
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 4
   yearend: unknown
-  notes: 'ごみ処理は秩父広域市町村圏組合の管轄、皆野町サイトにも令和8年度版カレンダーPDFを 掲載。町を4地区に分割(1:戦場・土京・親鼻・駒形・上の台・根岸・下田野 / 2:腰・上原・ 原・下原・上大浜・中大浜・下大浜
-    / 3:日野沢・金沢・国神・大渕・野巻 / 4:三沢・金崎)。 4ハッシュ×版番号のPDF(各3.6MB)。pdftotext でテキスト層あり(日付入り令和8年度、 地区名見出しつき)。可燃=毎週月・木(日野沢上区は木のみ)/不燃=月1/資源=月2。
-    年末年始はカレンダー内とみられるが未精読(unknown)。収集曜日OD・CSVなし。 秩父広域はPDF版のメール送付申込フォームも用意。課: 皆野町町民生活課(62-1232)。'
-  surveyed_at: '2026-07-17'
+  notes: "ごみ処理は秩父広域市町村圏組合の管轄、皆野町サイトにも令和8年度版カレンダーPDFを 掲載。町を4地区に分割(1:戦場・土京・親鼻・駒形・上の台・根岸・下田野 / 2:腰・上原・
+    原・下原・上大浜・中大浜・下大浜 / 3:日野沢・金沢・国神・大渕・野巻 / 4:三沢・金崎)。 4ハッシュ×版番号のPDF(各3.6MB)。pdftotext でテキスト層あり(日付入り令和8年度、
+    地区名見出しつき)。可燃=毎週月・木(日野沢上区は木のみ)/不燃=月1/資源=月2。 年末年始はカレンダー内とみられるが未精読(unknown)。収集曜日OD・CSVなし。
+    秩父広域はPDF版のメール送付申込フォームも用意。課: 皆野町町民生活課(62-1232)。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11363'
+- code: "11363"
   handle: nagatoro-town
   name_ja: 長瀞町
   population: 5998
   source_type: pdf
   schedule_url: https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/
   calendar_urls:
-  - https://www.town.nagatoro.saitama.jp/wp-content/uploads/2023/03/1384cdbc7a619df1da7d22644b8d2d8e-2.pdf
+    - https://www.town.nagatoro.saitama.jp/wp-content/uploads/2023/03/1384cdbc7a619df1da7d22644b8d2d8e-2.pdf
   verify_sources: []
   license: unknown
   difficulty: 3
   district_unit: 地区
   district_count_approx: 3
   yearend: unknown
-  notes: '収集は秩父広域市町村圏組合(TEL 24-8050)が実施、町民課が窓口。一次候補「ごみカレンダー(家庭用)」= 地区別PDF3本(本野上・中野上・野上下郷/袋区/矢那瀬・岩田・井戸・風布 等の3グループ)。日付入りカレンダーで
-    テキスト層あり(pdftotext可)。【注意】掲載PDFが令和5年度版(2023/03アップロード)で、最新年度版の公開有無を 要確認(サイト上のリンクがR5止まりの可能性)。収集日オープンデータは未発見。ライセンス未確認。
-    種別: もえるごみ・もえないごみ(指定袋)ほか。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    収集は秩父広域市町村圏組合(TEL 24-8050)が実施、町民課が窓口。一次候補「ごみカレンダー(家庭用)」= 地区別PDF3本(本野上・中野上・野上下郷/袋区/矢那瀬・岩田・井戸・風布
+    等の3グループ)。日付入りカレンダーで テキスト層あり(pdftotext可)。【注意】掲載PDFが令和5年度版(2023/03アップロード)で、最新年度版の公開有無を
+    要確認(サイト上のリンクがR5止まりの可能性)。収集日オープンデータは未発見。ライセンス未確認。 種別: もえるごみ・もえないごみ(指定袋)ほか。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11365'
+- code: "11365"
   handle: ogano-town
   name_ja: 小鹿野町
   population: 9236
   source_type: pdf
   schedule_url: https://www.town.ogano.lg.jp/kurashi-tetsuzuki/kankyou-gomi-suidou/gomicalendar/
   calendar_urls:
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8shimoogano_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8izusawa_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8araikoshinone_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8nagawaka_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8mitagawakurao_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki8k_gomicalendar.pdf
-  - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8komorisusuki_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8shimoogano_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8izusawa_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8araikoshinone_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8nagawaka_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8mitagawakurao_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki8k_gomicalendar.pdf
+    - https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8komorisusuki_gomicalendar.pdf
   verify_sources:
-  - gomi-calendar.com
+    - gomi-calendar.com
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: 8
   yearend: calendar-explicit
-  notes: '収集は秩父広域市町村圏組合 (一部事務組合) が実施、住民生活課が窓口。ソースは地区別の年度カレンダーPDF (令和8年度=r8*_gomicalendar.pdf、8地区)。 各PDFはテキスト層あり
-    (pdftotext で抽出可、curl 200)。ただし4-9月/10-3月の両面カレンダーグリッド (曜日×日付マス) 形式で、 収集品目が日付マス内に配置されるためパースは非自明→difficulty 3。地区名:
-    下小鹿野/小鹿野・伊豆沢/小鹿野(新井・腰の根)/長若/三田川・倉尾/薄/薄8区/小森・薄(3区・須川)。 年末年始はカレンダー内に明記 (新年1〜3日は収集・持込休み)。CSV/JSONの一次ソースは無し。埼玉県ODポータルに小鹿野町のごみ収集データは未確認
-    (登録先はポータル側だが該当データ見当たらず)。'
-  surveyed_at: '2026-07-17'
+  notes: "収集は秩父広域市町村圏組合 (一部事務組合) が実施、住民生活課が窓口。ソースは地区別の年度カレンダーPDF (令和8年度=r8*_gomicalendar.pdf、8地区)。 各PDFはテキスト層あり
+    (pdftotext で抽出可、curl 200)。ただし4-9月/10-3月の両面カレンダーグリッド (曜日×日付マス) 形式で、 収集品目が日付マス内に配置されるためパースは非自明→difficulty
+    3。地区名: 下小鹿野/小鹿野・伊豆沢/小鹿野(新井・腰の根)/長若/三田川・倉尾/薄/薄8区/小森・薄(3区・須川)。 年末年始はカレンダー内に明記
+    (新年1〜3日は収集・持込休み)。CSV/JSONの一次ソースは無し。埼玉県ODポータルに小鹿野町のごみ収集データは未確認 (登録先はポータル側だが該当データ見当たらず)。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11369'
+- code: "11369"
   handle: higashichichibu-vill
   name_ja: 東秩父村
   population: 2223
@@ -1420,13 +1421,12 @@
   district_unit: 全域一律
   district_count_approx: 1
   yearend: unknown
-  notes: '村全域一律。ごみの出し方ページ(HTML本文)に全種別の曜日を明記: 燃えるごみ=月・木 / 資源プラ=第1・2・3・5金 / 廃プラ=第4金 / 金属類=第1火 / 有害=第2火 / ガラス・ペット=第3火
-    / びん=第4火 / 資源回収=第2水(役場前)・第4水(各ステーション)。 地区割が無く9自治体中もっとも素直。粗大は自己搬入(小川地区衛生組合)。独立検証ソースはWeb上に無い(紙のみ)。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    村全域一律。ごみの出し方ページ(HTML本文)に全種別の曜日を明記: 燃えるごみ=月・木 / 資源プラ=第1・2・3・5金 / 廃プラ=第4金 / 金属類=第1火 / 有害=第2火 / ガラス・ペット=第3火 /
+    びん=第4火 / 資源回収=第2水(役場前)・第4水(各ステーション)。 地区割が無く9自治体中もっとも素直。粗大は自己搬入(小川地区衛生組合)。独立検証ソースはWeb上に無い(紙のみ)。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11381'
+- code: "11381"
   handle: saitama-misato-town
   name_ja: 美里町
   population: 10233
@@ -1434,166 +1434,163 @@
   schedule_url: https://www.town.saitama-misato.lg.jp/0000000045.html
   calendar_urls: []
   verify_sources:
-  - html
-  - app
+    - html
+    - app
   license: proprietary-site
   difficulty: 2
   district_unit: コース
   district_count_approx: 2
   yearend: december-announce
-  notes: 'ごみ処理は児玉郡市広域市町村圏組合(本庄市・美里町・神川町・上里町)。組合は「児玉郡市ごみ分別アプリ」
-
+  notes: |
+    ごみ処理は児玉郡市広域市町村圏組合(本庄市・美里町・神川町・上里町)。組合は「児玉郡市ごみ分別アプリ」
     (iOS/Android, カレンダー+アラート機能)と分別辞典(gomisaku.jp/0240)を提供するが、収集"日程"の一次ソースは
-
     美里町公式サイト 0000000045.html の HTML 表(A/Bコースごとに 可燃=毎週◯・◯、資源=毎月第n◯曜 等)。
-
     同ページに PDF 群(分別表 hyopdf.pdf / 資源物収集所 shigenbasyo.pdf / 有害ごみ yugai.pdf / ラベルはがし raberu.pdf)
-
     があるが、いずれも分別・収集所案内で日程カレンダーではない。粗大ごみは毎月第4月曜のリクエスト収集。
-
     埼玉県ODポータルに美里町のごみ収集日OD無し(県共同データセットも無しと既知)。curl未実施(WebFetchで取得)。
-
-    '
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11383'
+- code: "11383"
   handle: saitama-kamikawa-town
   name_ja: 神川町
   population: 12476
   source_type: html
   schedule_url: https://www.town.kamikawa.saitama.jp/soshiki/bosaikankyou/gomi_kankyou/477.html
   calendar_urls:
-  - https://www.town.kamikawa.saitama.jp/material/files/group/12/garbagedasikata.pdf
+    - https://www.town.kamikawa.saitama.jp/material/files/group/12/garbagedasikata.pdf
   verify_sources:
-  - booklet
+    - booklet
   license: proprietary-site
   difficulty: 2
   district_unit: 地区
   district_count_approx: 3
   yearend: unknown
-  notes: 'A・B・Cの3地区。公式ページ(477.html)にHTMLテーブルで品目別の収集曜日を記載(練馬方式で機械変換可)。 例: 可燃=A・C地区は月木/不燃=第1・3月曜/資源=第1・3水曜。可燃は週2(年末年始除く)、資源はA・B地区月2・
-    C地区月1。曜日ベース(日付なし)のため年末年始は別記載/PDF側の可能性 → 未確認(unknownまたは12月告知型)。 「ごみの出し方」PDF(多言語版あり、英語版に2025表記)が独立検証源。町サイトはCC宣言なし。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    A・B・Cの3地区。公式ページ(477.html)にHTMLテーブルで品目別の収集曜日を記載(練馬方式で機械変換可)。 例:
+    可燃=A・C地区は月木/不燃=第1・3月曜/資源=第1・3水曜。可燃は週2(年末年始除く)、資源はA・B地区月2・ C地区月1。曜日ベース(日付なし)のため年末年始は別記載/PDF側の可能性 →
+    未確認(unknownまたは12月告知型)。 「ごみの出し方」PDF(多言語版あり、英語版に2025表記)が独立検証源。町サイトはCC宣言なし。
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11385'
+- code: "11385"
   handle: kamisato-town
   name_ja: 上里町
   population: 29434
   source_type: html
   schedule_url: https://www.town.kamisato.saitama.jp/1643.htm
   calendar_urls:
-  - https://www.town.kamisato.saitama.jp/1643.htm
+    - https://www.town.kamisato.saitama.jp/1643.htm
   verify_sources:
-  - https://www.town.kamisato.saitama.jp/secure/2226/R8_gomibunbetsu.pdf
-  - https://gomi-calendar.com/saitama/kodama-kamisato/
-  - https://www.kodamakouiki.jp/jigyougaiyou/gomiapp.html
+    - https://www.town.kamisato.saitama.jp/secure/2226/R8_gomibunbetsu.pdf
+    - https://gomi-calendar.com/saitama/kodama-kamisato/
+    - https://www.kodamakouiki.jp/jigyougaiyou/gomiapp.html
   license: unknown
   difficulty: 2
   district_unit: 地区別
   district_count_approx: 5
   yearend: december-announce
   notes: 収集日程は町公式サイト「家庭ごみの出し方」(1643.htm) 内の HTML 表で公開。5地区 (賀美/長幡/七本木/上里東/神保原) ×可燃・不燃・資源・有害の曜日パターン方式で、 可燃は週2日 (月木
-    or 火金)、他は「第2・4水」等の第n曜日指定。curl 200 で クリーンに取得可、機械可読性高い。ごみ処理は一部事務組合「児玉郡市広域市町村圏組合」 が担当 (本庄市・美里町・神川町・上里町共通の指定袋/分別アプリ)
-    だが、収集曜日表は 町が公開。組合サイト(kodamakouiki.jp)にはアプリ経由のカレンダー機能あり。 分別辞典は gomisaku.jp/0241。埼玉県ODポータルに上里町は19データセット登録あるが ごみ収集日程のデータセットは無し
-    (人口・コミバス等のみ)。町サイトの分別PDF R8_gomibunbetsu.pdf はテキスト層なしの画像PDF (pdftotext 空) で検証用のみ。 HTML表は曜日の周期パターンのみで暦日への展開はカレンダー生成が必要。年末年始の
+    or 火金)、他は「第2・4水」等の第n曜日指定。curl 200 で クリーンに取得可、機械可読性高い。ごみ処理は一部事務組合「児玉郡市広域市町村圏組合」 が担当
+    (本庄市・美里町・神川町・上里町共通の指定袋/分別アプリ) だが、収集曜日表は 町が公開。組合サイト(kodamakouiki.jp)にはアプリ経由のカレンダー機能あり。 分別辞典は
+    gomisaku.jp/0241。埼玉県ODポータルに上里町は19データセット登録あるが ごみ収集日程のデータセットは無し (人口・コミバス等のみ)。町サイトの分別PDF R8_gomibunbetsu.pdf
+    はテキスト層なしの画像PDF (pdftotext 空) で検証用のみ。 HTML表は曜日の周期パターンのみで暦日への展開はカレンダー生成が必要。年末年始の
     休止日は表に明記なく毎年12月に別途告知される想定。license は表記未確認で unknown。
-  surveyed_at: '2026-07-17'
+  surveyed_at: 2026-07-17
   granularity: weekday-rules
-- code: '11408'
+- code: "11408"
   handle: yorii-town
   name_ja: 寄居町
   population: 30495
   source_type: pdf
   schedule_url: https://www.town.yorii.saitama.jp/soshiki/11/gomisyusyu.html
   calendar_urls:
-  - https://www.town.yorii.saitama.jp/uploaded/attachment/27398.pdf
-  - https://www.town.yorii.saitama.jp/uploaded/attachment/27409.pdf
-  - https://www.town.yorii.saitama.jp/uploaded/attachment/23818.pdf
+    - https://www.town.yorii.saitama.jp/uploaded/attachment/27398.pdf
+    - https://www.town.yorii.saitama.jp/uploaded/attachment/27409.pdf
+    - https://www.town.yorii.saitama.jp/uploaded/attachment/23818.pdf
   verify_sources:
-  - booklet
-  - app
+    - booklet
+    - app
   license: proprietary-site
   difficulty: 3
   district_unit: 地区
   district_count_approx: null
   yearend: unknown
-  notes: 'ごみ処理は大里広域市町村圏組合(熊谷・深谷・寄居)管轄だが、収集カレンダーは町が 月別PDFで配布。令和8年4月〜令和9年3月の12枚(27398〜27409.pdf, 各57〜87KB)。 pdftotext
-    でテキスト層あり(約4200字/月, 日付入り)。地区は「川北地区/川南地区」の 2大区分+区(本町区・菅原区 等)単位で収集日が異なる=区↔曜日の対応精査が必要 (地区数はnull、区は多数)。保存版パンフ(23818.pdf)に可燃/不燃等の分別と曜日表。
-    年末年始は月別カレンダー(12月・1月分)に入るとみられるが未精読(unknown)。 収集曜日OD・CSVなし。ごみ分別アプリあり。課: 生活環境エコタウン課。'
-  surveyed_at: '2026-07-17'
+  notes: "ごみ処理は大里広域市町村圏組合(熊谷・深谷・寄居)管轄だが、収集カレンダーは町が 月別PDFで配布。令和8年4月〜令和9年3月の12枚(27398〜27409.pdf, 各57〜87KB)。
+    pdftotext でテキスト層あり(約4200字/月, 日付入り)。地区は「川北地区/川南地区」の 2大区分+区(本町区・菅原区 等)単位で収集日が異なる=区↔曜日の対応精査が必要
+    (地区数はnull、区は多数)。保存版パンフ(23818.pdf)に可燃/不燃等の分別と曜日表。 年末年始は月別カレンダー(12月・1月分)に入るとみられるが未精読(unknown)。
+    収集曜日OD・CSVなし。ごみ分別アプリあり。課: 生活環境エコタウン課。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11442'
+- code: "11442"
   handle: miyashiro-town
   name_ja: 宮代町
   population: 33509
   source_type: image-pdf
   schedule_url: https://www.town.miyashiro.lg.jp/0000017999.html
   calendar_urls:
-  - https://www.town.miyashiro.lg.jp/cmsfiles/contents/0000017/17999/1b.pdf
-  - https://www.town.miyashiro.lg.jp/cmsfiles/contents/0000017/17999/2b.pdf
+    - https://www.town.miyashiro.lg.jp/cmsfiles/contents/0000017/17999/1b.pdf
+    - https://www.town.miyashiro.lg.jp/cmsfiles/contents/0000017/17999/2b.pdf
   verify_sources:
-  - app
+    - app
   license: unknown
   difficulty: 4
   district_unit: ブロック
   district_count_approx: 2
   yearend: unknown
-  notes: '一次候補「令和8年度版 家庭ごみ・資源物収集カレンダー」= 2ブロック制(1b.pdf=1ブロック/旧E、2b.pdf=2ブロック/旧F)。 1b.pdf は14MB・pdffonts空・pdftotext抽出ほぼ0字
-    → 画像PDF(テキスト層なし)。OCRまたは目視転記が必要 → difficulty4。 ブロック内の町丁目割当は本文に列挙あり(須賀・東粂原・宮代台・和戸… / 東・中・姫宮・道佛・百間・本田…)。 宮代ごみ分別アプリあり(収集日カレンダー機能)
-    → アプリ内データが機械可読の可能性は別途要確認。 多言語版PDF(中/英/葡/西/タガログ/越)も同ページに存在。収集日オープンデータは未発見。年末年始扱いは未確認。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    一次候補「令和8年度版 家庭ごみ・資源物収集カレンダー」= 2ブロック制(1b.pdf=1ブロック/旧E、2b.pdf=2ブロック/旧F)。 1b.pdf
+    は14MB・pdffonts空・pdftotext抽出ほぼ0字 → 画像PDF(テキスト層なし)。OCRまたは目視転記が必要 → difficulty4。
+    ブロック内の町丁目割当は本文に列挙あり(須賀・東粂原・宮代台・和戸… / 東・中・姫宮・道佛・百間・本田…)。 宮代ごみ分別アプリあり(収集日カレンダー機能) → アプリ内データが機械可読の可能性は別途要確認。
+    多言語版PDF(中/英/葡/西/タガログ/越)も同ページに存在。収集日オープンデータは未発見。年末年始扱いは未確認。
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11464'
+- code: "11464"
   handle: sugito-town
   name_ja: 杉戸町
   population: 42377
   source_type: pdf
   schedule_url: https://www.town.sugito.lg.jp/page/18664.html
   calendar_urls:
-  - https://www.town.sugito.lg.jp/uploaded/attachment/16368.pdf
-  - https://www.town.sugito.lg.jp/uploaded/attachment/17263.pdf
-  - https://www.town.sugito.lg.jp/uploaded/attachment/16370.pdf
-  - https://www.town.sugito.lg.jp/uploaded/attachment/16371.pdf
+    - https://www.town.sugito.lg.jp/uploaded/attachment/16368.pdf
+    - https://www.town.sugito.lg.jp/uploaded/attachment/17263.pdf
+    - https://www.town.sugito.lg.jp/uploaded/attachment/16370.pdf
+    - https://www.town.sugito.lg.jp/uploaded/attachment/16371.pdf
   verify_sources:
-  - https://www.town.sugito.lg.jp/uploaded/attachment/13811.pdf
-  - https://www.town.sugito.lg.jp/uploaded/attachment/4814.png
+    - https://www.town.sugito.lg.jp/uploaded/attachment/13811.pdf
+    - https://www.town.sugito.lg.jp/uploaded/attachment/4814.png
   license: proprietary-site
   difficulty: 4
   district_unit: 地区
   district_count_approx: 4
   yearend: calendar-explicit
-  notes: '埼玉県北葛飾郡杉戸町。収集は町(環境課)が独自運営。公式ページ page/18664.html に 令和8年度(2026-04〜2027-03)カレンダーを地区別PDFで掲載。地区はA/B/C/Dの4区分
-    (町内会区域: A=中央1・中央3, B=中央2・中央4, C=西, D=東・南・泉)。地区割は地図PNGあり。 PDFはスキャン画像+隠しOCR層(HiddenHorzOCRフォント)構成の5.5MB画像PDF。pdftotext
-    抽出結果は激しく文字化けし信頼できず→実質OCR必要(difficulty 4)。CSV/JSON参照なし。 埼玉県ODポータルに杉戸町のごみ収集曜日データセットは見当たらず(掲載は吉川市等)。 自治体ODカタログも未確認だが公式にCSV提供の痕跡なし。年末年始はPDF内カレンダーに
-    埋め込み。町独自「杉戸ごみ分別アプリ」あり。一部事務組合: 久喜宮代衛生組合は 久喜市・宮代町が対象で杉戸町は非該当と見られる(要確認)。ロカポ等民間アプリも対応。'
-  surveyed_at: '2026-07-17'
+  notes: "埼玉県北葛飾郡杉戸町。収集は町(環境課)が独自運営。公式ページ page/18664.html に 令和8年度(2026-04〜2027-03)カレンダーを地区別PDFで掲載。地区はA/B/C/Dの4区分
+    (町内会区域: A=中央1・中央3, B=中央2・中央4, C=西, D=東・南・泉)。地区割は地図PNGあり。
+    PDFはスキャン画像+隠しOCR層(HiddenHorzOCRフォント)構成の5.5MB画像PDF。pdftotext 抽出結果は激しく文字化けし信頼できず→実質OCR必要(difficulty
+    4)。CSV/JSON参照なし。 埼玉県ODポータルに杉戸町のごみ収集曜日データセットは見当たらず(掲載は吉川市等)。 自治体ODカタログも未確認だが公式にCSV提供の痕跡なし。年末年始はPDF内カレンダーに
+    埋め込み。町独自「杉戸ごみ分別アプリ」あり。一部事務組合: 久喜宮代衛生組合は 久喜市・宮代町が対象で杉戸町は非該当と見られる(要確認)。ロカポ等民間アプリも対応。"
+  surveyed_at: 2026-07-17
   granularity: dates
-- code: '11465'
+- code: "11465"
   handle: matsubushi-town
   name_ja: 松伏町
   population: 26882
   source_type: pdf
   schedule_url: https://www.town.matsubushi.lg.jp/0000000835.html
   calendar_urls:
-  - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/ako-su.pdf
-  - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/bko-su.pdf
-  - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/cko-su.pdf
-  - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/dko-su.pdf
-  - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/eko-su.pdf
+    - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/ako-su.pdf
+    - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/bko-su.pdf
+    - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/cko-su.pdf
+    - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/dko-su.pdf
+    - https://www.town.matsubushi.lg.jp/cmsfiles/contents/0000000/835/eko-su.pdf
   verify_sources:
-  - course-pdf
+    - course-pdf
   license: proprietary-site
   difficulty: 3
   district_unit: コース
   district_count_approx: 5
   yearend: unknown
-  notes: '5コース(A-E)、各コースにカレンダーPDF。テキスト層あり(pdftotext -layout で月別グリッドと 可燃/資源/ビン/カン/不燃・有・危/粗大ごみ戸別収集日 のラベルを抽出可、約2000字/枚)。
-    R7(2025.4)からごみの出し方を変更。収集は松伏清掃(matsubushi-seisou.com)。 Aコース=火金(築比地・金杉・魚沼等)、Bコース=月木(松伏一部・上赤岩・ゆめみ野等)。年末年始は未記載。
-
-    '
-  surveyed_at: '2026-07-17'
+  notes: >
+    5コース(A-E)、各コースにカレンダーPDF。テキスト層あり(pdftotext -layout で月別グリッドと 可燃/資源/ビン/カン/不燃・有・危/粗大ごみ戸別収集日
+    のラベルを抽出可、約2000字/枚)。 R7(2025.4)からごみの出し方を変更。収集は松伏清掃(matsubushi-seisou.com)。
+    Aコース=火金(築比地・金杉・魚沼等)、Bコース=月木(松伏一部・上赤岩・ゆめみ野等)。年末年始は未記載。
+  surveyed_at: 2026-07-17
   granularity: dates

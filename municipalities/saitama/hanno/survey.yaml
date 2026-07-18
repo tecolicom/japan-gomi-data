@@ -1,0 +1,21 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11209'
+handle: hanno
+name_ja: 飯能市
+population: 77256
+status: collected
+source_type: image-pdf
+difficulty: 4
+notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hanno-data の sources.yaml から一次ソースを転記:
+  コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に override。検証ソースは単一。 【統括実確認
+  2026-07-18】「テキスト層あり」は誤った推定だった。2026haraichibanaguri.pdf を実取得し pdftotext 出力 2 バイト = テキスト層なしの画像 PDF と確認 → image-pdf/d4
+  に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。'
+granularity: dates
+schedule_url: https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
+calendar_urls: []
+verify_sources: []
+license: proprietary-site
+yearend: calendar-explicit
+score_overrides:
+  A: 15

@@ -1,0 +1,19 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11242'
+handle: hidaka
+name_ja: 日高市
+population: 53141
+status: collected
+source_type: pdf
+difficulty: 3
+notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml から一次ソースを転記:
+  全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。'
+granularity: dates
+schedule_url: https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
+calendar_urls:
+- https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
+verify_sources:
+- course-pdf
+license: proprietary-site
+yearend: calendar-explicit

@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11301'
+handle: saitama-ina-town
+name_ja: 伊奈町
+population: 44420
+source_type: image-pdf
+schedule_url: https://www.town.saitama-ina.lg.jp/0000006664.html
+calendar_urls:
+- https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8_north.pdf
+- https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8_south.pdf
+- https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000006/6664/r8rule.pdf
+verify_sources:
+- https://csi-ina.co.jp/ina_carender/
+- https://gomi-calendar.com/saitama/kitaadachi-ina/
+- https://www.scoooop.com/apps/smartgomiapp/%E5%9F%BC%E7%8E%89%E7%9C%8C-%E4%BC%8A%E5%A5%88%E7%94%BA/
+license: proprietary-site
+difficulty: 4
+district_unit: 地区(北・南の2区分)
+district_count_approx: 2
+yearend: unknown
+notes: '一次ソースは公式サイトのごみ収集カレンダーページ(0000006664.html)。地区は「北地区」「南地区」の 2つのみで、それぞれ令和8年度(2026-04-01〜2027-03-31)のPDFカレンダー(r8_north.pdf
+  / r8_south.pdf)を配布。両PDFともAdobe Illustrator由来の画像PDFでテキスト層なし→OCR必須のため difficulty 4。ただし地区が2つだけ・収集は週次の規則的パターン(可燃週2/プラ週1/缶・ペット・古紙・
+  古布・不燃 原則月2)なので抽出負荷はdifficulty 4の中では軽い。CSV/JSON/HTML表は見当たらず、 ごみ分別検索(module/garbage.php)は品目分別のみで収集曜日データは持たない。オープンデータ
+  カタログ・埼玉県ポータルにも収集曜日データは確認できず。ごみ分別アプリ「さんあ〜る」提供 (proprietary)。年末年始の扱いはページ本文に記載なくPDF画像内のみと推測(unknown)。 検証用にごみ収集運搬会社CSI(csi-ina.co.jp)の案内ページ、第三者スクレイプ
+  (gomi-calendar.com / scoooop=さんあ〜る由来)あり。公式ドメイン: town.saitama-ina.lg.jp。'
+surveyed_at: '2026-07-17'
+granularity: dates

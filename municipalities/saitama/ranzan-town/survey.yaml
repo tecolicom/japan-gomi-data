@@ -1,0 +1,22 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11342'
+handle: ranzan-town
+name_ja: 嵐山町
+population: 17261
+source_type: pdf
+schedule_url: https://www.town.ranzan.saitama.jp/0000000215.html
+calendar_urls:
+- https://www.town.ranzan.saitama.jp/cmsfiles/contents/0000000/215/R8karenda-_827924_sanitized.pdf
+verify_sources:
+- html
+license: proprietary-site
+difficulty: 3
+district_unit: 不明
+district_count_approx: null
+yearend: unknown
+notes: '令和8年度版「ごみ・資源分別収集カレンダー」PDF(26ページ, 5.78MB)。pdftotext で テキスト層あり。冊子1本で全戸配布型。地区分割の明記が見当たらず全町一律の可能性 があるが未確定(district_unit不明・要確認)。市サイトに「ごみ分別検索」モジュール
+  (module/garbage.php, 全726件)あり=品目検索用で収集日地区データではない。年末年始 はカレンダー冊子内に入るとみられるが未精読(unknown)。収集曜日OD・CSVなし。 多言語訳はP26。新年度版は毎年3月1日以降全戸配布。課:
+  環境課(0493-62-0719)。'
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

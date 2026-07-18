@@ -1,0 +1,21 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11211'
+handle: honjo
+name_ja: 本庄市
+population: 76085
+source_type: html
+schedule_url: https://www.city.honjo.lg.jp/kurashi_tetsuzuki/gomi/gominoshushubikensaku/index.html
+calendar_urls: []
+verify_sources:
+- app
+license: unknown
+difficulty: 4
+district_unit: 自治会
+district_count_approx: null
+yearend: unknown
+notes: 収集日は「自治会別」。一次候補は市サイトの「ごみの収集日検索(自治会別)」だが、 検索は外部サービス(mt.adaptive-techs.com HttpAdaptor)駆動で、ページソースに 収集日を持つ .csv/.json/.pdf
+  の直リンクを発見できず(自治会マスタ・曜日データの 実体が不可視)。自治会数は未確認(null)。収集は児玉郡市広域市町村圏組合の管轄で、 分別アプリ(ロカポ系, 本庄市・美里町・神川町・上里町)とごみ分別辞典(gomisaku.jp
+  /0239)あり=アプリ側にカレンダー機能。年末年始・OD言及は未確認。 収録には検索フォームの裏データ特定 or アプリのデータ源調査が必要で難度高め。
+surveyed_at: '2026-07-17'
+granularity: unknown

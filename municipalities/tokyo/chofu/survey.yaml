@@ -1,0 +1,21 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13208'
+handle: chofu
+name_ja: 調布市
+population: 242418
+status: collected
+source_type: txt
+schedule_url: https://www.city.chofu.lg.jp/documents/16365/r8calendar_no1.txt
+calendar_urls:
+- https://www.city.chofu.lg.jp/070030/p041249.html
+verify_sources: []
+license: proprietary-site
+difficulty: 2
+granularity: dates
+district_unit: 地区
+district_count_approx: 4
+yearend: calendar-explicit
+notes: 市配布「ごみリサイクルカレンダー」地区別テキスト版 (第1〜4地区、日付・曜日・品目の通年列挙) を機械変換・収録済み。日付入り一次ソースの最良例。独立の第2ソースは無く検証は自己照合+郵便町域裏取り。市OD
+  (CC BY) に収集日程は無し。
+surveyed_at: '2026-07-18'

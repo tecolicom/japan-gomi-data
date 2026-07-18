@@ -1,0 +1,26 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13382'
+handle: mikurajima-vill
+name_ja: 御蔵島村
+population: 287
+source_type: html
+schedule_url: https://www.vill.mikurasima.tokyo.jp/section/jumin/gomi.html
+calendar_urls:
+- https://www.vill.mikurasima.tokyo.jp/section/jumin/gomi.html
+- https://www.vill.mikurasima.tokyo.jp/data/gomi.pdf
+verify_sources:
+- 民間ごみ回収業者サイト (収集曜日を月水金と一致記載)
+license: proprietary-site
+difficulty: 2
+granularity: weekday-rules
+district_unit: 島全体 (単一集落・全島一律)
+district_count_approx: 1
+yearend: unknown
+notes: '村公式サイトの清掃・リサイクルページ (schedule_url) 本文に収集曜日ルールが明記されており、 離島の極小村としては例外的にWeb公開・機械可読。区分は3系統: 可燃ごみ=月・水・金 (午前7時15分頃)、
+  不燃ごみ(ガラス/陶器/金属/がれき)=第1・第3火曜日、リサイクルごみ(缶類)=第2・第4火曜日。 有害ごみ/ペットボトル/ガラスビン等は村役場横ダストボックスで随時受入 (収集日なし)。 全島単一集落で地区割なし、全島一律と判断
+  (district_count=1)。granularity は日付リストでなく 曜日ルール記述のため weekday-rules。 別途 https://www.vill.mikurasima.tokyo.jp/data/gomi.pdf
+  は「ごみの分け方・出し方」分別ガイド (平成27年4月版) で、収集カレンダーではない。pdffonts=CID TrueType 埋込サブセット、 pdftotext でテキスト層あり・本文抽出可能 (但し表レイアウトで語順は乱れる)。分別区分の裏取りに有用。
+  年末年始の特例記述はHTML・PDFいずれにも見当たらず unknown。オープンデータ(CSV/JSON)は未発見。 ライセンス表記は確認できず proprietary-site。人口は住民基本台帳2024年1月1日で291人。
+  ごみ処理体制(島内焼却か島外搬出か)は公式ページに明記なく unknown (深追いせず)。 検証: 民間回収業者サイト複数が可燃=月水金・朝7時15分収集開始と一致記述、公式内容と整合。'
+surveyed_at: '2026-07-18'

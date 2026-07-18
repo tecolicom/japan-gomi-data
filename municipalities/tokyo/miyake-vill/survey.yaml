@@ -1,0 +1,25 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13381'
+handle: miyake-vill
+name_ja: 三宅村
+population: 2108
+source_type: html
+schedule_url: https://www.vill.miyake.tokyo.jp/kurashi/seikatsu_kankyou/kankyou_gomi_recycle/gomi.html
+calendar_urls: []
+verify_sources:
+- 三宅村役場 環境・ごみ・リサイクル ページ (https://www.vill.miyake.tokyo.jp/kurashi/seikatsu_kankyou/kankyou_gomi_recycle/index.html)
+- 三宅村廃棄物の処理及び清掃に関する条例
+license: unknown
+difficulty: 2
+granularity: weekday-rules
+district_unit: 集落(地区)
+district_count_approx: 5
+yearend: unknown
+notes: '公式サイト (vill.miyake.tokyo.jp) あり。gomi ページ (kurashi/seikatsu_kankyou/kankyou_gomi_recycle/gomi.html) を HTTP200
+  で取得。日付入りカレンダーは存在せず、固定曜日ルールを HTML 本文に明記: 燃えるごみ=阿古・伊ヶ谷・伊豆地区は月・木、坪田・神着地区は火・金 / 不燃ごみ・資源ごみ=島内全地区 水曜。 収集時間は当日午前8時まで。集落は阿古・伊ヶ谷・伊豆・坪田・神着の5地区で、燃えるごみは2ゾーンに分かれる。
+  収集主体は三宅村役場 地域整備課 環境整備係 (クリーンセンター運営)。 ページ内 PDF は files/gomidashikata.pdf (2.1MB) を取得したが pdftotext で約592文字のみ=実質画像PDF
+  (分別早見表であり収集日データではない)。祝日収集・年末年始の記載はHTML/PDFいずれにも無く unknown。 東京都オープンデータカタログには三宅村データセットが存在するが確認できたのは「ゴミ集積所一覧」相当で
+  収集スケジュールのOD (CSV/JSON) は未発見。テキスト版カレンダー・app も無し。 granularity は日付ではなく固定曜日ルールのため weekday-rules。ライセンスは未記載で unknown。
+  population は本調査では未取得 (null)。'
+surveyed_at: '2026-07-18'

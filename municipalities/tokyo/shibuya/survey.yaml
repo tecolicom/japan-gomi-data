@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13113'
+handle: shibuya
+name_ja: 渋谷区
+population: 231424
+source_type: pdf
+schedule_url: https://www.city.shibuya.tokyo.jp/kurashi/gomi/kateigomi/gomid.html
+calendar_urls:
+- https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/59863ae2476944aaa09fa7d90393ce9e/syuusyuubiitirannR8.3~10.pdf
+- https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/6da4b9a0e1f34a4a8a10fbbf29c03c09/chiikibetushuushuuyoubiitiran2025.pdf
+verify_sources:
+- 5374.jp(shibuya.5374.jp / Code for Japan)
+- ごみカレンダー.com
+- ゴミの日.com
+license: proprietary-site
+difficulty: 3
+granularity: weekday-rules
+district_unit: 町丁目 (町名+丁目、繁華街地域と通常地域の区別あり)
+district_count_approx: 65
+yearend: december-announce
+notes: '公式ポータル gomid.html から2種のPDFを配布。(1)「資源とごみの収集日一覧表」 syuusyuubiitirannR8.3~10.pdf (141KB, 2頁) と (2)「地域別収集日(曜日)一覧表」
+  chiikibetushuushuuyoubiitiran2025.pdf (104KB, 1頁)。両者とも curl 取得成功、 pdffonts で CID TrueType (MS-Gothic/HGSoeiKakugothic)
+  埋め込み、pdftotext で テキスト層あり (機械可読PDF)。可燃ごみ=週2回の曜日規則(例「水・土」)、資源=週1回の 曜日(例「火」)、不燃=月1回の第N曜日規則(例「第2月曜日」)。granularity
+  は weekday-rules と判定。ただし(1)の PDF は不燃ごみのみ 9月～翌4月の実日付(8日/13日等)を 別表で明示しており、この不燃分は日付入り(partial的)。可燃・資源は日付明示なし。 地区割は町丁目単位で
+  chiikibetu PDF の可燃曜日行が約61行、繁華街地域の別扱いあり。 district_count_approx=65 は概数。年末年始は gomid.html に「収集を休んだり変更あり、 日程が決まり次第しぶや区ニュース等でお知らせ」「毎月29・30・31日の不燃収集なし
+  (年末年始は変更あり)」とあり、カレンダーに実日付明示せず→december-announce。 ライセンス: 一次ソースPDFは公式サイト(city.shibuya.tokyo.jp)配布で proprietary-site。
+  SHIBUYA OPEN DATA (ArcGIS Hub, city-shibuya-data.opendata.arcgis.com) には 「ごみの分別方法一覧」データセットは在るが、収集日程(収集曜日/地域別)の
+  CSV/JSON オープンデータは確認できず(存在せず=unknown、深追い打ち切り)。検証用に 5374.jp 渋谷区版(Code for Japan 解析、area_days.csv系)、ごみカレンダー.com、ゴミの日.com
+  等の 二次ソースが複数あり相互検証可能だが公式一次ではない。difficulty 3: テキスト層ある 機械可読PDFだが、町丁目×種別の表でセル結合・丁目レンジ表記(例「3丁目～4丁目(8除く)」)が 多くパースは非自明。'
+surveyed_at: '2026-07-18'

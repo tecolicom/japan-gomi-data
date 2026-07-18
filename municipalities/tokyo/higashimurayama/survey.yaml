@@ -1,0 +1,31 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13213'
+handle: higashimurayama
+name_ja: 東村山市
+population: 152444
+source_type: pdf
+schedule_url: https://www.city.higashimurayama.tokyo.jp/kurashi/gomi/gomi/29gomi-calendar.html
+calendar_urls:
+- https://www.city.higashimurayama.tokyo.jp/kurashi/gomi/gomi/files/gomi_calender_2024honchou.pdf
+- https://www.city.higashimurayama.tokyo.jp/kurashi/gomi/gomi/files/gomi_calender_2024kumegawachou.pdf
+- https://www.city.higashimurayama.tokyo.jp/kurashi/gomi/gomi/files/gomi_calender_2024akitsu.pdf
+- https://www.city.higashimurayama.tokyo.jp/kurashi/gomi/gomi/files/gomi_calender_2024sakae1.pdf
+verify_sources:
+- 東京都ODカタログ 東村山市 分別方法一覧CSV (opendata.metro.tokyo.lg.jp, CC BY, ただし収集曜日は含まず)
+- 東村山市ごみ分別アプリ (iOS/Android, カレンダー機能)
+- gomi-calendar.com / zenkoku.mond.jp (第三者ごみカレンダー)
+license: unknown
+difficulty: 4
+granularity: weekday-rules
+district_unit: 町・丁目
+district_count_approx: 16
+yearend: calendar-explicit
+notes: '公式カレンダー索引ページ 29gomi-calendar.html は通常UAのcurl/WebFetchで CloudFront 403 (WAF)。 ★実装ヒント: `-H "Referer: https://www.google.com/"`
+  + Chrome UA を付けると HTML(200,44882B)・PDF(200,application/pdf,2968802B) とも取得成功。 索引HTMLから gomi_calender_2024*.pdf
+  を16地区分抽出(honchou/kumegawachou/akitsu/aobachou/onta/megurita/misumi/noguchi/suwa/tamako/fujimi/hagiyamachou系/sakae1/sakae2/sakae3)。
+  地区割は町丁目単位。honchou PDF を pdftotext するとテキスト層あり(35103文字)、収集曜日ルールが本文抽出可能: 容器包装プラ・ペット「月・木」, びん・かん「金曜日」, 丁目別で「第1水曜日/第2水曜日」「第2・4木曜日/第2・4水曜日」等。
+  カレンダー本体は2024/10〜2025/9の月間グリッド(P6-11)で年末年始も明示。 オープンデータは東京都カタログ(catalog.data.metro.tokyo.lg.jp, CLI 403)経由の実体が opendata.metro.tokyo.lg.jp/higashimurayama/132136_higashimurayamashi_garbage_separate.csv
+  (200, text/csv, 88267B, 830行) だが内容は品目→分別区分の一覧で収集曜日を含まない。集積所一覧CSVも存在するが日程ではない。収集曜日OD(CSV/JSON)は不在。 difficulty 4
+  は「PDFテキスト層はあるが日付グリッドは画像、曜日ルール抽出は全16地区の個別処理が要る」ため。 ライセンスはPDF/カレンダーページに明示記載を確認できず unknown。'
+surveyed_at: '2026-07-18'

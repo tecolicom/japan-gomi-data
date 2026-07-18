@@ -1,0 +1,32 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11381'
+handle: saitama-misato-town
+name_ja: 美里町
+population: 10233
+source_type: html
+schedule_url: https://www.town.saitama-misato.lg.jp/0000000045.html
+calendar_urls: []
+verify_sources:
+- html
+- app
+license: proprietary-site
+difficulty: 2
+district_unit: コース
+district_count_approx: 2
+yearend: december-announce
+notes: 'ごみ処理は児玉郡市広域市町村圏組合(本庄市・美里町・神川町・上里町)。組合は「児玉郡市ごみ分別アプリ」
+
+  (iOS/Android, カレンダー+アラート機能)と分別辞典(gomisaku.jp/0240)を提供するが、収集"日程"の一次ソースは
+
+  美里町公式サイト 0000000045.html の HTML 表(A/Bコースごとに 可燃=毎週◯・◯、資源=毎月第n◯曜 等)。
+
+  同ページに PDF 群(分別表 hyopdf.pdf / 資源物収集所 shigenbasyo.pdf / 有害ごみ yugai.pdf / ラベルはがし raberu.pdf)
+
+  があるが、いずれも分別・収集所案内で日程カレンダーではない。粗大ごみは毎月第4月曜のリクエスト収集。
+
+  埼玉県ODポータルに美里町のごみ収集日OD無し(県共同データセットも無しと既知)。curl未実施(WebFetchで取得)。
+
+  '
+surveyed_at: '2026-07-17'
+granularity: weekday-rules

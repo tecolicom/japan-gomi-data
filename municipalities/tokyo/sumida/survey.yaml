@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13107'
+handle: sumida
+name_ja: 墨田区
+population: 289527
+source_type: pdf
+schedule_url: https://www.city.sumida.lg.jp/kurashi/gomi_recycle/kateikei/gomi-calendar.html
+calendar_urls:
+- https://www.city.sumida.lg.jp/kurashi/gomi_recycle/kateikei/gomi-calendar.files/0804_01.pdf
+- https://www.city.sumida.lg.jp/kurashi/gomi_recycle/kateikei/gomi-calendar.files/0804_12.pdf
+verify_sources:
+- region-calendar-pdf-halfyear
+- image-pdf-fullyear
+- gomisaku-dict
+license: proprietary-site
+difficulty: 3
+granularity: partial
+district_unit: 収集地区 (町丁目グループ)
+district_count_approx: 12
+yearend: unknown
+notes: '一次ソースは地域別ごみカレンダーPDF (12地区, 0804_01〜0804_12.pdf)。CLI 全て 200 取得可、 pdftotext -layout でテキスト層あり — 各日付に品目 (可燃/資源/プラ/不燃)
+  明記、ヘッダに地区名+曜日規則 (例: 両国等=資源火/プラ水/燃やすごみ月・木/不燃 第1・3土) も併記され機械抽出可。 【重大な罠】地域別PDFは 2026年4月〜9月の半期分のみ掲載。後期 (10月〜翌3月) PDF
+  は未公開 (例年秋頃)。 全体版2種 (横様式 01syusyucalender_0804.pdf / 縦様式 02syusyucalender_0804.pdf) は年間だが テキスト層ゼロ=画像PDF で機械照合不可。→
+  現状 granularity=partial (通年の機械可読データが揃わない)。 ライセンス: カレンダーページは "Copyright Sumida City. All rights reserved." (OD明示なし=proprietary-site)。
+  区ODポータルのごみ関連は「ゴミの分別方法一覧」(CC BY 2.1 JP) のみで収集曜日データは非掲載。 【総論の墨田区2015年CSVリンク切れ】現状も収集曜日CSVは公式・都カタログとも確認できず (旧CSVの生存も未確認)。
+  年末年始: テキスト層PDF (半期分) には含まれず、年間の実日付は画像PDF側のみ=機械可読では未確認 (unknown)。 検証源: 地域別PDF内の曜日規則と日付グリッドの2表現、gomisaku (0279,
+  品目分別のみ)、第三者住所検索サイト複数 (非公式)。 難易度3: テキスト層PDFで抽出可だが12ファイル横断+半期のみで通年化に手間。後期PDF公開後に再評価要。'
+surveyed_at: '2026-07-18'

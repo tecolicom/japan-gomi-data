@@ -1,0 +1,27 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13222'
+handle: higashikurume
+name_ja: 東久留米市
+population: 116809
+source_type: html
+schedule_url: https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/1018874/1000817.html
+calendar_urls:
+- https://www.city.higashikurume.lg.jp/_res/projects/default_project/_page_/001/000/817/gomi_karennda.pdf
+verify_sources:
+- OD分別辞典CSV (opendata.metro.tokyo.lg.jp/higashikurume/132225_higashikurumeshi_garbage_separate.csv)
+- ごみサク分別辞典 (https://www.gomisaku.jp/0069/)
+- ごみカレンダー.com (https://gomi-calendar.com/tokyo/higashikurume/)
+license: unknown
+difficulty: 2
+granularity: weekday-rules
+district_unit: 地区 (東地域 / 西地域, 各地区内は町丁で構成)
+district_count_approx: 2
+yearend: december-announce
+notes: '収集日程はHTMLページ 1000817.html(HTTP200, <table>0個, テキスト/リスト形式)とテキスト層付きPDF gomi_karennda.pdf(HTTP200, application/pdf,
+  351606B, pdftotext82行, 日付なし恒久カレンダー)で提供。 2地区制=東地域(氷川台/金山町/上の原/神宝町/大門町/東本町/新川町/浅間町/本町/学園町/ひばりが丘団地/南沢/中央町 の13町丁)・
+  西地域(小山/幸町/野火止/八幡町/下里/南町/前沢/弥生/滝山/柳窪 の10町丁)。 曜日ルール例: 東地域=月:容器包装プラ・PET/火:燃やせるごみ・びん/水:燃やせないごみ・有害/木:缶・紙・布/金:燃やせるごみ・びん。
+  西地域=月火が入替+金:缶・紙・布。収集曜日のCSV/JSONは不在(OD配布ドメインにあるCSVは 132225_higashikurumeshi_garbage_separate.csv=品目別分別辞典1109行UTF-8BOM、schedule系名8パターン試行全404)。
+  年末年始は祝日ページ1024838.htmlで「決まり次第掲載」=随時告知。HTMLに<table>が無いためPDFのテキスト層の方が 地区↔町丁↔曜日の対応が取りやすい(source_typeはpdfも実用候補)。catalog.data.metro.tokyo.lg.jpはWebSearch経由でのみ到達(CLI
+  403想定)。 ライセンス: 分別CSVはCC-BY-4.0だが収集日程ページ/PDF自体のライセンス明記は未確認。 【統括正規化】license: CC-BY は市OD分別CSVのもので収集日程ソース自体は unknown。'
+surveyed_at: '2026-07-18'

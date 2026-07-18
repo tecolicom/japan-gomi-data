@@ -1,0 +1,28 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '11361'
+handle: yokoze-town
+name_ja: 横瀬町
+population: 7135
+source_type: pdf
+schedule_url: https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/1042
+calendar_urls:
+- https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/44川西・中郷・宇根.pdf
+- https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/45川東・苅米（根古屋の一部地域含む）.pdf
+- https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/46根古屋・芦ヶ久保（苅米の一部地域含む）.pdf
+verify_sources:
+- https://www.c-kouiki.jp/gomi-2-2-2-2-2-2/calendar-1-2/
+- https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/877
+- https://www.c-kouiki.jp/news/gomiapli-start/
+license: proprietary-site
+difficulty: 3
+district_unit: 地区(3区分)
+district_count_approx: 3
+yearend: calendar-explicit
+notes: 'ごみ処理は秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町)が担うが、 収集日程カレンダーPDFは横瀬町公式サイトが町独自に公開している(組合サイトはPDF申込フォーム/各市町HP誘導のみで実ファイル無し)。
+  令和8年度(2026)版、地区は「川西・中郷・宇根」「川東・苅米(根古屋の一部含む)」「根古屋・芦ヶ久保(苅米の一部含む)」の3区分。 各PDFはAdobe InDesign 21生成の2ページ、テキスト層あり(pdftotextで日付・ごみ種別が抽出可能、char~6600)。
+  ただし複数月を横並びにした雑誌型グリッドレイアウトで、テキストの座標配置から日付と種別を対応付ける解析が必要なため難度3。 収集回数: 可燃週2/不燃月1/紙布月2/カンビン月2/ペットボトル月2。 年末年始はカレンダー内に明示(「新年の1日〜3日はごみ収集・持込ともお休み」、12月末〜1月初に「休」マーク)。
+  ライセンス: サイトポリシーで無断複製・転載・改変を禁止(全権利留保、CC BY/政府標準利用規約の記載なし)。 埼玉県ODポータル(opendata.pref.saitama.lg.jp)に横瀬町ごみ収集の個別データセットは確認できず。CSV/JSON提供なし。
+  curl 403 なし(3PDFとも HTTP 200 で取得可)。'
+surveyed_at: '2026-07-17'
+granularity: dates

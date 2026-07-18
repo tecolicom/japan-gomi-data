@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13116'
+handle: toshima
+name_ja: 豊島区
+population: 297511
+source_type: app-only
+schedule_url: https://www.city.toshima.lg.jp/150/kurashi/gomi/shigen/2303021832.html
+calendar_urls:
+- https://manage.delight-system.com/threeR/web/calendar?jichitaiId=toshimaku&areaId=144919&year=2026&month=8&lang=ja
+- https://www.city.toshima.lg.jp/documents/1056/syuusyuyoubiitiran.pdf
+verify_sources:
+- multilingual-pamphlet-pdf-weak
+- image-pdf-weekday-list
+license: proprietary-site
+difficulty: 4
+granularity: dates
+district_unit: さんあ～る areaId (町丁目/地域単位)
+district_count_approx: null
+yearend: december-announce
+notes: '23区だが機械可読の一次ソースが弱い難物。最有力は第三者アプリ「さんあ～る」(delight-system) のWEB版カレンダー。 URL: manage.delight-system.com/threeR/web/calendar?jichitaiId=toshimaku&areaId=<地域ID>&year=YYYY&month=MM&lang=ja、CLI
+  200。 生HTMLにサーバサイドで実日付×品目が埋込 (8月分で燃やす19/資源38/プラ13/粗大3, class="day"31セル)。 【最大の罠】各日の品目は data:image/png;base64 のアイコン画像で表現され、テキストラベルは凡例側のみ。
+  日付↔品目をテキスト抽出できるか (アイコンの alt/title/ファイル名で識別可か) は未検証=突破口だが打ち切りのため unknown。取れれば difficulty 3 相当に低下。 公式PDF「回収・収集曜日一覧(50音順)」(documents/1056/syuusyuyoubiitiran.pdf,
+  別版 1053/20260403165803.pdf) は CLI 200 だが Microsoft Print To PDF製・埋込フォント0・抽出1文字=完全な画像PDF。テキスト層のある公式曜日表は存在しない。 granularity:
+  さんあ～るは実日付入り通年 (dates)。source_type: app-only (主) + image-pdf (公式曜日一覧補助)。difficulty 4。 地区割: さんあ～るの areaId (町丁目/地域単位,
+  例144919=高松地域)。地域option抽出に失敗し総数 unknown (null)。曜日一覧PDFは50音順町名索引。 検証源: 多言語併記版パンフレット (1053/20260612132419.pdf, テキスト層あり約17.4万字)
+  は分別ルール解説主体で町名別曜日表は含まず=照合力弱い。 年末年始: 公式に「年末年始の資源回収・ごみ収集について」別リンクあり=毎年12月別途告知の運用とみられる (december-announce)。カレンダー実日付明示有無は
+  unknown。 ライセンス: "Copyright © Toshima City. All rights reserved." (OD/CC明示なし)=proprietary-site。都カタログのOD配布も未確認。'
+surveyed_at: '2026-07-18'

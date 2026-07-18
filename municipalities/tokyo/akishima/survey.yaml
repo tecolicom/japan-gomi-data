@@ -1,0 +1,20 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13207'
+handle: akishima
+name_ja: 昭島市
+population: 116765
+source_type: pdf
+schedule_url: https://www.city.akishima.lg.jp/kurashi/gomi/1001527/index.html
+calendar_urls:
+- https://www.city.akishima.lg.jp/_res/projects/default_project/_page_/001/001/530/r8-atiku.pdf
+verify_sources: []
+license: proprietary-site
+difficulty: 3
+granularity: dates
+district_unit: 地区
+district_count_approx: 6
+yearend: calendar-explicit
+notes: A〜F の6地区別「資源・ごみの収集カレンダー」PDF (令和8年4月〜令和9年3月、日付入り通年)。A地区 r8-atiku.pdf を実取得し pdftotext でテキスト層ありを確認 (年度・地区名・品目を抽出可。日付グリッドの座標解析は要検証)。収集曜日
+  OD/CSV は未発見。市公式ごみ分別アプリあり。yearend は通年カレンダー版面からの推定 (文面詳細は未精読)。統括が直接調査 (2026-07-18、G6 未納品分の補完)。
+surveyed_at: '2026-07-18'

@@ -1,0 +1,29 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '13105'
+handle: bunkyo
+name_ja: 文京区
+population: 237413
+source_type: pdf
+schedule_url: https://www.city.bunkyo.lg.jp/b039/p000926/index.html
+calendar_urls:
+- https://www.city.bunkyo.lg.jp/documents/953/youbiitiran.pdf
+- https://www.city.bunkyo.lg.jp/b039/p000927.html
+verify_sources:
+- course-pdf
+- booklet
+- html
+license: proprietary-site
+difficulty: 3
+granularity: weekday-rules
+district_unit: 町丁目
+district_count_approx: 33
+yearend: unknown
+notes: '一次ソースは区公式の「ごみ・資源収集曜日一覧」PDF (youbiitiran.pdf, HTTP200/446KB)。 pdftotext でテキスト層あり(3231字, -layout で表構造も抽出可)。全町丁目(後楽〜本駒込,
+  約33グループ)× 種別(可燃/不燃/資源[新聞雑誌雑がみ段ボール びん缶ペット/プラ]/粗大)の収集曜日を1枚に掲載。 granularity=weekday-rules(曜日規則: 可燃「火・金」、不燃「第1・第3木」等、第5曜日は収集なしの注記あり)。
+  別途、収集日ページ p000927 から町丁目別の年間カレンダー(実日付入り)PDFへリンクあり (例 documents/954/... 令和7年度版、月別実日付掲載=dates級)。ただし当該カレンダーPDFはファイル名が年度で変わり、
+  今回試した旧URL(kouraku2suidou.pdf)は404。年間カレンダーPDFは実日付を持つため year-end も明示される見込みだが、 現行版で年末年始(12-1月)の休止日を実確認できず yearend=unknown
+  とした(推測回避)。 東京都ODカタログ(組織t131059, CloudFront403でCLI不可)には文京区の「ごみと資源の分別品目」(t131059d0110060002) や「ごみ収集量」等のCC-BY-4.0データセットは存在するが、収集曜日そのものの機械可読CSV/XLSXは今回確認できず
+  (先行メモの「XLSX+CSV収集曜日」は分別品目データセットの誤認の可能性)。よって曜日データの一次源は区公式PDFのみ→ license=proprietary-site。検証源: 民間サイト ゴミの日.com(gominohi.com/Tokyo/Bunkyo,
+  全33地区), GOMICALE 等で 突合可能。地区割=町名+丁目グループ(丁目内で番地分割あり: 小石川1丁目1〜16/17〜28 等)。難易度3(テキスト層あるPDFを表整形して抽出)。'
+surveyed_at: '2026-07-18'
