@@ -340,9 +340,10 @@
   notes: '最重要の罠: 燃やしてもよいごみ(週3回)・燃やしてはいけないごみ(週1回)の 「曜日」が公式Webに一切出ていない。分別ガイドブックPDF(gaidoHP.pdf, テキスト層あり)は「収集日 毎週__曜日」と空欄様式で、地区×曜日の表は無い。
     住所により曜日・集積所が異なるため環境課(048-561-1121)へ電話照会せよ、 との案内。町名別に判るのは資源ごみの日曜(第1・3 / 第2・4)のみでHTML掲載。 粗大ごみは年4回・地区別PDF(R7.pdf)だが実URLはCLIで404、要ブラウザ確認。
     CSV/JSON・オープンデータ・収集曜日検索フォームは公式サイトに見当たらず。 第三者サイト(gomi-calendar.info, gomi-calendar.com, zenkoku.mond.jp)が コース別週間カレンダーを掲載しており曜日データ自体は存在するが、
-    公式一次ソースからは週間曜日を機械可読で取得できない。 燃やすごみの週間曜日を全収録するには電話照会か第三者データ依存が必要で 難易度は実質4〜5。'
+    公式一次ソースからは週間曜日を機械可読で取得できない。 燃やすごみの週間曜日を全収録するには電話照会か第三者データ依存が必要で 難易度は実質4〜5。 【統括是正 2026-07-18】granularity は weekday-rules
+    でなく partial (Web で取れるのは資源ごみの日曜のみ、基幹の可燃・不燃が非公開のため)。'
   surveyed_at: '2026-07-17'
-  granularity: weekday-rules
+  granularity: partial
 - code: '11217'
   handle: kounosu
   name_ja: 鴻巣市
@@ -541,7 +542,7 @@
   verify_sources:
   - site-csv
   - booklet
-  license: CC-BY-4.0
+  license: PDL-1.0
   difficulty: 2
   district_unit: 地区
   district_count_approx: null

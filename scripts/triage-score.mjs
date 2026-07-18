@@ -62,7 +62,10 @@ function score(r) {
   const total = A + B + C + D + E;
   const rank = total >= 90 ? 'S' : total >= 75 ? 'A' : total >= 60 ? 'B' : total >= 40 ? 'C' : total >= 20 ? 'D' : 'E';
   const s = { A, B, C, D, E, ...(r.godi_overrides || {}) };
-  const t2 = s.A + s.B + s.C + s.D + s.E;
+  let t2 = s.A + s.B + s.C + s.D + s.E;
+  // キャップ規則: 基幹品目欠落 (partial) は C 止まり、データ無し (none) は E 止まり
+  if (g === 'partial') t2 = Math.min(t2, 59);
+  if (g === 'none' || st === 'none' || !st) t2 = Math.min(t2, 19);
   return { ...s, total: t2, rank: t2 >= 90 ? 'S' : t2 >= 75 ? 'A' : t2 >= 60 ? 'B' : t2 >= 40 ? 'C' : t2 >= 20 ? 'D' : 'E',
            estimated: [...est].join('') || '' };
 }
