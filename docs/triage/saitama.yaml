@@ -189,8 +189,16 @@
   status: collected
   source_type: pdf
   difficulty: 3
-  notes: 収録済み (municipalities/saitama/ 参照)。triage 対象外。
+  notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hanno-data の sources.yaml から一次ソースを転記:
+    コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に override。検証ソースは単一。'
   granularity: dates
+  schedule_url: https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
+  calendar_urls: []
+  verify_sources: []
+  license: proprietary-site
+  yearend: calendar-explicit
+  score_overrides:
+    A: 15
 - code: '11210'
   handle: kazo
   name_ja: 加須市
@@ -909,8 +917,16 @@
   status: collected
   source_type: pdf
   difficulty: 3
-  notes: 収録済み (municipalities/saitama/ 参照)。triage 対象外。
+  notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml から一次ソースを転記:
+    全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。'
   granularity: dates
+  schedule_url: https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
+  calendar_urls:
+  - https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
+  verify_sources:
+  - course-pdf
+  license: proprietary-site
+  yearend: calendar-explicit
 - code: '11243'
   handle: yoshikawa
   name_ja: 吉川市

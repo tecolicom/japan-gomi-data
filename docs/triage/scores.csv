@@ -26,6 +26,7 @@ tokyo,13228,akiruno,あきる野市,78460,pdf,20,10,20,10,15,75,A,
 tokyo,13221,kiyose,清瀬市,76157,pdf,20,10,20,10,15,75,A,
 tokyo,13101,chiyoda,千代田区,69736,pdf,20,10,20,10,15,75,A,
 saitama,11207,chichibu,秩父市,53932,pdf,20,10,20,10,15,75,A,
+saitama,11242,hidaka,日高市,53141,pdf,20,10,20,10,15,75,A,
 saitama,11240,satte,幸手市,47564,pdf,20,10,20,10,15,75,A,
 saitama,11326,moroyama-town,毛呂山町,32987,pdf,20,10,20,10,15,75,A,
 tokyo,13303,tokyo-mizuho-town,瑞穂町,31893,pdf,20,10,20,10,15,75,A,
@@ -105,6 +106,7 @@ tokyo,13113,shibuya,渋谷区,231424,pdf,20,10,10,10,10,60,B,
 tokyo,13102,chuo,中央区,191873,html,15,15,10,10,10,60,B,
 saitama,11202,kumagaya,熊谷市,188244,pdf,20,10,10,10,10,60,B,D
 saitama,11229,wako,和光市,84378,html,20,15,10,10,5,60,B,E
+saitama,11209,hanno,飯能市,77256,pdf,15,10,20,10,5,60,B,E
 saitama,11211,honjo,本庄市,76085,html,20,15,10,10,5,60,B,CDE
 saitama,11342,ranzan-town,嵐山町,17261,pdf,20,10,10,10,10,60,B,
 tokyo,13401,hachijo-town,八丈町,6551,pdf,20,10,10,10,10,60,B,
@@ -115,8 +117,6 @@ tokyo,13205,ome,青梅市,128407,pdf,20,10,5,10,15,59,C,D
 saitama,11219,ageo,上尾市,224884,image-pdf,20,3,20,10,5,58,C,E
 saitama,11324,saitama-miyoshi-town,三芳町,37201,image-pdf,20,3,20,10,5,58,C,E
 saitama,11442,miyashiro-town,宮代町,33509,image-pdf,20,3,20,10,5,58,C,DE
-saitama,11209,hanno,飯能市,77256,pdf,10,10,20,10,5,55,C,ADE
-saitama,11242,hidaka,日高市,53141,pdf,10,10,20,10,5,55,C,ADE
 tokyo,13363,niijima-vill,新島村,2339,pdf,20,10,10,10,5,55,C,E
 saitama,11224,toda,戸田市,139749,image-pdf,20,3,14,10,5,52,C,E
 tokyo,13116,toshima,豊島区,297511,app-only,5,0,20,10,10,45,C,
