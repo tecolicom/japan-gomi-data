@@ -1079,23 +1079,23 @@
   handle: ogose-town
   name_ja: 越生町
   population: 10097
-  source_type: none
-  schedule_url: null
+  source_type: pdf
+  schedule_url: http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
   calendar_urls:
-  - https://www.town.ogose.saitama.jp/kamei/machi/kankyo/gyomuannai/gomi_calendar/1450931735922.html
-  - http://www.hozenkumiai.or.jp/shigen.html
+  - http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
+  - http://www.hozenkumiai.or.jp/pdf/ogose2026_b.pdf
   verify_sources: []
   license: unknown
-  difficulty: 4
+  difficulty: 3
   district_unit: 不明
   district_count_approx: null
-  yearend: unknown
-  notes: '一次ソース未特定。町サイトの「ごみカレンダー」「ごみ収集」ページ本文には収集日程が無く、分別方法は 「埼玉西部環境保全組合」サイトへ誘導するのみ(curlで本文確認済、収集曜日の記載なし)。組合サイト hozenkumiai.or.jp
+  yearend: calendar-explicit
+  notes: 一次ソース未特定。町サイトの「ごみカレンダー」「ごみ収集」ページ本文には収集日程が無く、分別方法は 「埼玉西部環境保全組合」サイトへ誘導するのみ(curlで本文確認済、収集曜日の記載なし)。組合サイト hozenkumiai.or.jp
     が収集日を持つか未確認。地区割・コース・PDF/CSVの所在いずれも未確認。small town。 10分枠では機械可読な一次ソースを特定できず → 追加調査 or ブラウザ確認要。difficulty は暫定4(不能寄り)。
-
-    '
+    【統括実確認 2026-07-18】E判定は10分打ち切りの見落としだった。埼玉西部環境保全組合サイトに「令和8年度 越生町 ごみ・資源収集カレンダー」PDF が実在 (ogose2026_a/b、A・B の2地区、テキスト層あり5,852字、日付入り年間カレンダー・多言語表記)。source
+    none→pdf / d4→d3 / granularity dates に是正。yearend は通年カレンダー版面からの推定。
   surveyed_at: '2026-07-17'
-  granularity: none
+  granularity: dates
 - code: '11341'
   handle: namegawa-town
   name_ja: 滑川町

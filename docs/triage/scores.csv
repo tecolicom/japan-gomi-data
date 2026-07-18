@@ -86,6 +86,7 @@ saitama,11245,fujimino,ふじみ野市,112602,pdf,20,10,20,10,5,65,B,E
 saitama,11246,shiraoka,白岡市,51298,pdf,20,10,20,10,5,65,B,DE
 saitama,11383,saitama-kamikawa-town,神川町,12476,html,20,15,10,10,10,65,B,
 saitama,11381,saitama-misato-town,美里町,10233,html,20,15,10,10,10,65,B,
+saitama,11327,ogose-town,越生町,10097,pdf,20,10,20,10,5,65,B,DE
 saitama,11362,minano-town,皆野町,8278,pdf,20,10,20,10,5,65,B,E
 saitama,11363,nagatoro-town,長瀞町,5998,pdf,20,10,20,10,5,65,B,DE
 tokyo,13382,mikurajima-vill,御蔵島村,287,html,20,15,10,10,10,65,B,
@@ -122,5 +123,4 @@ tokyo,13363,niijima-vill,新島村,2339,pdf,20,10,10,10,5,55,C,E
 saitama,11224,toda,戸田市,139749,image-pdf,20,3,14,10,5,52,C,E
 tokyo,13116,toshima,豊島区,297511,app-only,5,0,20,10,10,45,C,
 saitama,11235,fujimi,富士見市,113307,image-pdf,20,3,5,10,5,43,C,E
-saitama,11327,ogose-town,越生町,10097,none,0,0,0,0,0,0,E,
 tokyo,13364,kouzushima-vill,神津島村,1688,none,0,0,0,0,0,0,E,
