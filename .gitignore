@@ -3,3 +3,4 @@ tools/html-extractor/nerima/cache/
 tools/html-extractor/kawasaki/cache/
 tools/csv-extractor/tokyo-nakano/cache/
 __pycache__/
+.DS_Store
