@@ -25,8 +25,7 @@ notes: '【前回G1のdifficulty=4/unknownを是正】gomisukeエンドポイン
   … 月×areaID×日→typeID群。202601〜202703 の15ヶ月ローリング(年末年始含む)。 政令市10区は全区この単一 gomisuke システムで統一(区ごとに別ソース構造は無い)。収集グループ数は
   区で差(南区13が最多、西区3が最少)。アプリ「さいちゃん(jp.gomisuke.app.Gomisuke0017)」iOS/Android も同バックエンド。 年末年始は毎年カレンダーデータに直接反映され明示的(告知待ちでない)。
   埼玉県ODポータル opendata.pref.saitama.lg.jp にごみ収集日の個別ODは無し(確認済)。 出し方マニュアルPDF(r8)はテキスト層あり=検証用に利用可。gomisuke配信データは商用サービス由来で
-  ライセンス明示なし=proprietary-site 扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。
-
-  '
+  ライセンス明示なし=proprietary-site 扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。 【収録方針 2026-07-18】gomisuke API は本プロジェクトの一次ソースとして採用しない
+  (playbook 参照)。収録時は市の直接公開物 (出し方マニュアルPDF等) か市への照会経由で。スコアは公開状況の記述として維持。'
 surveyed_at: '2026-07-17'
 granularity: dates
