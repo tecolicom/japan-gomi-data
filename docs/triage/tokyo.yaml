@@ -41,7 +41,9 @@
     admin.gomisuke.jp/app/0017/api/jsonp.php?file=area が Referer付与で HTTP200 取得可を対照確認済。しかし 0018
     の同一パス(admin.gomisuke.jp/app/0018/api/jsonp.php) は area/type/calendar とも HTTP404 (app/0018/
     ディレクトリ自体は200/空)。エンドポイント構造が 0017と異なる可能性があり、時間切れのため未特定。もし0018のJSONP実体が判明すれば source_type=json・ difficulty=2
-    に格上げ可能 (要追加調査)。現時点の確実な機械可読ソースはPDFのため difficulty=3 とした。"
+    に格上げ可能 (要追加調査)。現時点の確実な機械可読ソースはPDFのため difficulty=3 とした。 【統括実測 2026-07-18】さいたま型 JSONP
+    (admin.gomisuke.jp/app/0018/api/jsonp.php) は area/type/calendar とも 404。区サイトに gomisuke の Web
+    埋め込みも無く、「分けちよ！」はアプリのみの導入形態とみられる → json 格上げの目は無し、一次はテキスト層あり PDF のままが正。"
   surveyed_at: 2026-07-18
 - code: "13102"
   handle: chuo
