@@ -1,0 +1,167 @@
+metadata:
+  city: tokorozawa
+  course: "29"
+  areas:
+    - name: 中富
+      yomi: なかとみ
+    - name: 中富南
+      yomi: なかとみみなみ
+    - name: 若狭
+      yomi: わかさ
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    pdf_url: https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/haitai20160309103654062.files/R8nakatomi.pdf
+    extracted_at: 2026-07-19
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(所沢市 地区別収集カレンダーPDF群の機械抽出。日付入り通年カレンダーとcategoriesOn再展開で全日照合し完全一致)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: non_burnable
+    pattern: monthly_specific
+    dates:
+      - 2026-04-10
+      - 2026-04-24
+      - 2026-05-08
+      - 2026-05-22
+      - 2026-06-12
+      - 2026-06-26
+      - 2026-07-10
+      - 2026-07-24
+      - 2026-08-14
+      - 2026-08-28
+      - 2026-09-11
+      - 2026-09-25
+      - 2026-10-09
+      - 2026-10-23
+      - 2026-11-13
+      - 2026-11-27
+      - 2026-12-11
+      - 2026-12-25
+      - 2027-01-15
+      - 2027-01-29
+      - 2027-02-12
+      - 2027-02-26
+      - 2027-03-12
+      - 2027-03-26
+  - category: hazardous
+    pattern: monthly_specific
+    dates:
+      - 2026-04-10
+      - 2026-04-24
+      - 2026-05-08
+      - 2026-05-22
+      - 2026-06-12
+      - 2026-06-26
+      - 2026-07-10
+      - 2026-07-24
+      - 2026-08-14
+      - 2026-08-28
+      - 2026-09-11
+      - 2026-09-25
+      - 2026-10-09
+      - 2026-10-23
+      - 2026-11-13
+      - 2026-11-27
+      - 2026-12-11
+      - 2026-12-25
+      - 2027-01-15
+      - 2027-01-29
+      - 2027-02-12
+      - 2027-02-26
+      - 2027-03-12
+      - 2027-03-26
+  - category: glass_bottle
+    pattern: monthly_specific
+    dates:
+      - 2026-04-03
+      - 2026-04-17
+      - 2026-05-01
+      - 2026-05-15
+      - 2026-06-05
+      - 2026-06-19
+      - 2026-07-03
+      - 2026-07-17
+      - 2026-08-07
+      - 2026-08-21
+      - 2026-09-04
+      - 2026-09-18
+      - 2026-10-02
+      - 2026-10-16
+      - 2026-11-06
+      - 2026-11-20
+      - 2026-12-04
+      - 2026-12-18
+      - 2027-01-08
+      - 2027-01-22
+      - 2027-02-05
+      - 2027-02-19
+      - 2027-03-05
+      - 2027-03-19
+  - category: beverage_can
+    pattern: monthly_specific
+    dates:
+      - 2026-04-03
+      - 2026-04-17
+      - 2026-05-01
+      - 2026-05-15
+      - 2026-06-05
+      - 2026-06-19
+      - 2026-07-03
+      - 2026-07-17
+      - 2026-08-07
+      - 2026-08-21
+      - 2026-09-04
+      - 2026-09-18
+      - 2026-10-02
+      - 2026-10-16
+      - 2026-11-06
+      - 2026-11-20
+      - 2026-12-04
+      - 2026-12-18
+      - 2027-01-08
+      - 2027-01-22
+      - 2027-02-05
+      - 2027-02-19
+      - 2027-03-05
+      - 2027-03-19
+  - category: paper
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 1
+  - category: metal
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 3
+  - category: paper_cloth
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 3
+overrides:
+  - date: 2026-12-30
+    cancelled: true
+    note: 年末年始休止
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止

@@ -1,0 +1,43 @@
+# 所沢市。地区別収集カレンダー(PDF)凡例の 7 収集区分を正典語彙へ割り当てる。
+#   燃やせるごみ / 容器包装プラスチック(容プラ) / ペットボトル /
+#   破砕ごみ類・有害ごみ(破砕/有害, 同日) / びん・かん・スプレー缶(びん・缶・スプレー, 同日) /
+#   新聞・雑誌雑がみ・段ボール(新・雑・段, 古紙) / 小型家電製品・古着古布(小型家電/古着・古布, 同日)
+# 「破砕/有害」は破砕ごみ類(不燃)=non_burnable と 有害ごみ=hazardous の同日収集を分けて表現。
+# 「びん・缶・スプレー」はびん=glass_bottle と かん(スプレー缶含む)=beverage_can の同日収集。
+# 「小型家電/古着・古布」は小型家電製品=metal と 古着・古布=paper_cloth の同日収集。
+categories:
+  - burnable
+  - plastic
+  - pet_bottle
+  - non_burnable
+  - hazardous
+  - glass_bottle
+  - beverage_can
+  - paper
+  - metal
+  - paper_cloth
+overrides:
+  burnable:
+    label: 燃やせるごみ
+  plastic:
+    label: 容器包装プラスチック
+    short: 容プラ
+  non_burnable:
+    label: 破砕ごみ類
+    short: 破砕
+  hazardous:
+    label: 有害ごみ
+  glass_bottle:
+    label: びん
+  beverage_can:
+    label: かん・スプレー缶
+    short: かん
+  paper:
+    label: 新聞・雑誌・段ボール
+    short: 古紙
+  metal:
+    label: 小型家電製品
+    short: 家電
+  paper_cloth:
+    label: 古着・古布
+    short: 古布
