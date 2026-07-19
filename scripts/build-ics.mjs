@@ -37,6 +37,8 @@ let count = 0;
 const indexRows = []; // 自治体コードから探せる一覧 (ics/index.csv)
 const ICS_BASE = 'https://tecolicom.github.io/japan-gomi-data/ics';
 for (const { handle, dir, pref } of handles) {
+  // survey.yaml のみの「調査済み・未収録」ディレクトリは配信対象外
+  if (!existsSync(join(dir, 'meta.yaml'))) continue;
   const meta = loadYaml(join(dir, 'meta.yaml'));
   const taxOv = (loadYaml(join(dir, 'taxonomy.yaml')).overrides) || {};
   // slug -> { courseLabel, dtstamp, events: [{day,next,title}] }
