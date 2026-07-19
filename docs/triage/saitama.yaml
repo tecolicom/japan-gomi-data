@@ -163,6 +163,7 @@
   handle: tokorozawa
   name_ja: 所沢市
   population: 343416
+  status: collected
   source_type: pdf
   schedule_url: https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/index.html
   calendar_urls:
@@ -553,6 +554,7 @@
   handle: iruma
   name_ja: 入間市
   population: 139748
+  status: collected
   source_type: csv
   schedule_url: https://opendata.pref.saitama.lg.jp/resource_download/1494
   calendar_urls:
