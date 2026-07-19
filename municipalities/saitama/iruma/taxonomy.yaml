@@ -1,0 +1,33 @@
+# 入間市。公式区分(家庭ごみの分け方・出し方):
+#   可燃ごみ / 不燃ごみ / プラスチックごみ / 古布・紙類 /
+#   ビン・缶・ペットボトル・有害ごみ (この4品目は同日収集)。
+# 資源の「ビン・缶・ペットボトル・有害ごみ」は同日収集のため glass_bottle/beverage_can/
+# pet_bottle/hazardous の4区分に分解して収録 (収集日は同一)。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper_cloth
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - hazardous
+overrides:
+  burnable:
+    label: 可燃ごみ
+  non_burnable:
+    label: 不燃ごみ
+  plastic:
+    label: プラスチックごみ
+    short: プラ
+  paper_cloth:
+    label: 古布・紙類
+    short: 古布紙
+  glass_bottle:
+    label: ビン
+  beverage_can:
+    label: 缶
+  pet_bottle:
+    label: ペットボトル
+  hazardous:
+    label: 有害ごみ

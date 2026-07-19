@@ -4,6 +4,7 @@ code: '11225'
 handle: iruma
 name_ja: 入間市
 population: 139748
+status: collected
 source_type: csv
 schedule_url: https://opendata.pref.saitama.lg.jp/resource_download/1494
 calendar_urls:
