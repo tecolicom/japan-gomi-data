@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>japan-gomi-data — 日本の自治体の「ごみの日」オープンデータ</title>
+<meta name="description" content="自治体のごみ収集日程を機械可読なオープンデータ (CC BY 4.0) として集約。カレンダーアプリで収集日を購読できます。">
+<meta property="og:title" content="japan-gomi-data — 「ごみの日」オープンデータ">
+<meta property="og:description" content="自治体のごみ収集日程を機械可読データとして集約。カレンダー購読 (.ics) にも対応。">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fbfcfd; --panel: #f0f4f8; --ink: #191b1e; --sub: #59616b; --line: #dde3ea;
+  --accent: #2a78d6; --accent-ink: #1c5cab;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #16181b; --panel: #1e2226; --ink: #edeff2; --sub: #a6adb6; --line: #333a42;
+    --accent: #3987e5; --accent-ink: #86b6ef;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", sans-serif;
+  font-size: 15.5px; line-height: 1.8; }
+main { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+header.top { border-bottom: 2px solid var(--accent); padding-bottom: 18px; margin-bottom: 30px; }
+h1 { font-size: 24px; margin: 0 0 6px; line-height: 1.4; }
+.tagline { color: var(--sub); margin: 0 0 12px; }
+nav a { color: var(--accent-ink); margin-right: 16px; text-decoration: none; font-size: 14px; }
+nav a:hover, a:focus-visible { text-decoration: underline; }
+h2 { font-size: 18px; margin: 40px 0 10px; padding-left: 11px; border-left: 4px solid var(--accent); }
+a { color: var(--accent-ink); }
+.picker { background: var(--panel); border-radius: 10px; padding: 18px; }
+.picker label { display: block; font-size: 13px; color: var(--sub); margin-bottom: 6px; }
+select { width: 100%; font-size: 16px; padding: 9px 10px; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--bg); color: var(--ink); }
+#courses { margin-top: 14px; display: grid; gap: 10px; }
+.course { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.course h3 { margin: 0 0 2px; font-size: 15px; }
+.areas { font-size: 13px; color: var(--sub); margin: 0 0 8px; }
+.acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.acts a, .acts button { font-size: 13.5px; padding: 6px 12px; border-radius: 7px; border: 1px solid var(--accent);
+  background: var(--accent); color: #fff; text-decoration: none; cursor: pointer; font-family: inherit; }
+.acts .ghost { background: transparent; color: var(--accent-ink); }
+.hint { font-size: 13px; color: var(--sub); margin-top: 10px; }
+ul { padding-left: 1.3em; }
+footer { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--sub); }
+.stat { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <h1>japan-gomi-data</h1>
+  <p class="tagline">日本の自治体の「ごみの日」を、機械可読なオープンデータに。</p>
+  <nav>
+    <a href="https://github.com/tecolicom/japan-gomi-data">GitHub</a>
+    <a href="https://zenn.dev/tecolicom/articles/gomi-open-data-survey-125">解説記事</a>
+    <a href="https://github.com/tecolicom/japan-gomi-data#readme">データの説明</a>
+  </nav>
+</header>
+
+<p>自治体が公式に発表しているごみ収集日程を、共通の形式 (収集規則+例外日) に整理して
+<a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a> で公開しています。
+現在 <span class="stat" id="stat">—</span> を収録。各自治体の公式資料と照合した検証記録つきです。</p>
+
+<h2>カレンダーで購読する</h2>
+<div class="picker">
+  <label for="muni">自治体を選ぶと、収集コースごとの購読ボタンが出ます</label>
+  <select id="muni"><option value="">読み込み中…</option></select>
+  <div id="courses"></div>
+  <p class="hint">「カレンダーに追加」でお使いのカレンダーアプリ (iPhone・Google カレンダー等) に収集日が終日予定として入ります。
+  自分の地区がどのコースかは、コース名の下の対象地区で確認してください。</p>
+</div>
+
+<h2>データ</h2>
+<ul>
+  <li><a href="https://github.com/tecolicom/japan-gomi-data/tree/main/municipalities">収集日程データ (YAML)</a> — 規則+例外日の構造化データ。<a href="https://github.com/tecolicom/japan-gomi-data/tree/main/schema">スキーマ</a>つき</li>
+  <li><a href="ics/index.csv">コース一覧 (CSV)</a> — 全コースの自治体コード・対象地区・購読 URL</li>
+  <li><a href="https://github.com/tecolicom/japan-gomi-data/blob/main/docs/triage/triage.csv">調査台帳 (CSV)</a> — 東京・埼玉 125 自治体の収集日データ公開状況。<a href="https://zenn.dev/tecolicom/articles/gomi-open-data-survey-125">解説記事</a></li>
+</ul>
+
+<footer>
+  <p>収集日程は各自治体の公式発表に基づきますが、機械変換のため誤りが残り得ます。実際のごみ出しは自治体の公式情報も併せてご確認ください。
+  誤りに気づいた場合は <a href="https://github.com/tecolicom/japan-gomi-data/issues">GitHub Issues</a> へどうぞ。</p>
+  <p>© <a href="https://www.tecoli.com/office">tecoli.com</a> — データは CC BY 4.0 (出典明記で自由に利用できます)</p>
+</footer>
+</main>
+<script>
+const PREF = { hokkaido: '北海道', saitama: '埼玉県', tokyo: '東京都', kanagawa: '神奈川県', fukui: '福井県' };
+function parseCsv(text) {
+  const rows = []; let row = [], field = '', q = false;
+  const s = text.replace(/^﻿/, '');
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (q) { if (c === '"') { if (s[i+1] === '"') { field += '"'; i++; } else q = false; } else field += c; }
+    else if (c === '"') q = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (c === '\r' && s[i+1] === '\n') i++;
+      row.push(field); field = '';
+      if (row.some(f => f !== '')) rows.push(row);
+      row = [];
+    } else field += c;
+  }
+  if (field !== '' || row.length) { row.push(field); if (row.some(f => f !== '')) rows.push(row); }
+  return rows;
+}
+fetch('ics/index.csv').then(r => r.text()).then(text => {
+  const rows = parseCsv(text);
+  const head = rows[0];
+  const col = Object.fromEntries(head.map((h, i) => [h, i]));
+  const data = rows.slice(1).map(r => ({
+    code: r[col.code], pref: r[col.pref], handle: r[col.handle], name: r[col.name_ja],
+    course: r[col.course], courseName: r[col.course_name_ja], areas: r[col.areas], ics: r[col.ics],
+  }));
+  const munis = [];
+  const seen = new Set();
+  for (const d of data) if (!seen.has(d.handle)) { seen.add(d.handle); munis.push(d); }
+  munis.sort((a, b) => a.code.localeCompare(b.code));
+  document.getElementById('stat').textContent =
+    `${munis.length} 自治体・${data.length} コース`;
+  const sel = document.getElementById('muni');
+  sel.innerHTML = '<option value="">— 自治体を選択 —</option>' + munis.map(m =>
+    `<option value="${m.handle}">${PREF[m.pref] ?? m.pref} ${m.name}</option>`).join('');
+  const box = document.getElementById('courses');
+  sel.addEventListener('change', () => {
+    const list = data.filter(d => d.handle === sel.value);
+    box.innerHTML = list.map(d => {
+      const webcal = d.ics.replace(/^https:/, 'webcal:');
+      const label = d.courseName ? `${d.course} (${d.courseName})` : `コース ${d.course}`;
+      const areas = (d.areas || '').split('；').join('、');
+      return `<div class="course"><h3>${label}</h3>
+        ${areas ? `<p class="areas">対象地区: ${areas}</p>` : ''}
+        <div class="acts">
+          <a href="${webcal}">カレンダーに追加</a>
+          <button class="ghost" data-url="${d.ics}">URL をコピー</button>
+        </div></div>`;
+    }).join('') || '';
+    for (const b of box.querySelectorAll('button[data-url]')) {
+      b.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(b.dataset.url); b.textContent = 'コピーしました'; }
+        catch { prompt('この URL をコピーしてください', b.dataset.url); }
+        setTimeout(() => { b.textContent = 'URL をコピー'; }, 1500);
+      });
+    }
+  });
+}).catch(() => {
+  document.getElementById('muni').innerHTML = '<option value="">一覧の読み込みに失敗しました (再読み込みしてください)</option>';
+});
+</script>
+</body>
+</html>
