@@ -1,0 +1,49 @@
+metadata:
+  city: setagaya
+  course: "33"
+  course_name_ja: 対象地区33
+  areas:
+    - name: 給田1〜3丁目
+      yomi: きゅうでん1-2-3
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.setagaya.lg.jp/documents/416/27-08-26.csv
+    pdf_url: https://www.city.setagaya.lg.jp/documents/27859/no33.pdf
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(区オープンデータCSVの機械変換。配布ページHTML表と全行突合 + 町丁目別カレンダーPDF 37枚と日付レベル目視照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - FR
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - SA
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - FR
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末休止 (令和8年版カレンダー印字)

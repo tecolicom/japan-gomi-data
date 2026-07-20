@@ -1,0 +1,55 @@
+metadata:
+  city: setagaya
+  course: "21"
+  course_name_ja: 対象地区21
+  areas:
+    - name: 経堂1・4・5丁目
+      yomi: きょうどう1-4-5
+    - name: 瀬田3丁目
+      yomi: せた3
+    - name: 宮坂1・2丁目
+      yomi: みやさか1-2
+    - name: 用賀1丁目
+      yomi: ようが1
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.setagaya.lg.jp/documents/416/27-08-26.csv
+    pdf_url: https://www.city.setagaya.lg.jp/documents/27859/no21.pdf
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(区オープンデータCSVの機械変換。配布ページHTML表と全行突合 + 町丁目別カレンダーPDF 37枚と日付レベル目視照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - MO
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - MO
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末休止 (令和8年版カレンダー印字)

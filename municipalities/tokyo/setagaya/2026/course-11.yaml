@@ -1,0 +1,51 @@
+metadata:
+  city: setagaya
+  course: "11"
+  course_name_ja: 対象地区11
+  areas:
+    - name: 豪徳寺2丁目
+      yomi: ごうとくじ2
+    - name: 桜3丁目
+      yomi: さくら3
+    - name: 世田谷1〜4丁目
+      yomi: せたがや1-2-3-4
+    - name: 若林3・4丁目
+      yomi: わかばやし3-4
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.setagaya.lg.jp/documents/416/27-08-26.csv
+    pdf_url: https://www.city.setagaya.lg.jp/documents/27859/no11.pdf
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(区オープンデータCSVの機械変換。配布ページHTML表と全行突合 + 町丁目別カレンダーPDF 37枚と日付レベル目視照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - FR
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - FR

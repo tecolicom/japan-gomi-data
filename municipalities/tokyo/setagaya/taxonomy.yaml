@@ -1,0 +1,16 @@
+# 世田谷区。公式4区分: 資源 / 可燃ごみ / 不燃ごみ / ペットボトル。
+# 「資源」(週1回) は 古紙 (新聞・雑誌類・紙パック・段ボール) + ガラスびん + 缶 を同じ日に回収する
+# ひとまとまりの区分 (収集カレンダー P12-13 で確認)。正典語彙に「資源」一括の種別が無いため
+# paper / glass_bottle / beverage_can の 3 つに展開し、同日収集として days を共有させている。
+# ペットボトル (月2回) は資源とは別日。古着・古布は区収集でなく集団回収のため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - paper
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  paper: { label: 古紙, short: 古紙 }
+  glass_bottle: { label: ガラスびん, short: びん }
+  beverage_can: { label: 缶, short: 缶 }
