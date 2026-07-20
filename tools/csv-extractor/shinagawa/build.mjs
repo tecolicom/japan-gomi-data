@@ -188,6 +188,31 @@ const courses = foldCourses(
 
 // 署名順に採番して決定的な出力にする
 courses.sort((a, b) => (signatureKey(a.rules) < signatureKey(b.rules) ? -1 : 1));
+
+// 年末年始のうち複数年実績で不変の部分のみ反映 (詳細は meta.yaml notes):
+//   令和2・6・7年度の区告知で共通して (1) 1/1〜1/3 は全品目休み、(2) 資源は 12/31 も休み。
+//   燃やすごみの 12/31 (収集する年と休む年がある)・振替の臨時収集は年により変動するため
+//   ここでは扱わず、毎年11月下旬の yearend_url 告知で確定・更新する。
+//   2026-12-31 は第5木曜のため陶器・ガラス・金属ごみ (第1〜4のみ) は非該当。木曜資源の
+//   コースに木曜燃やすごみのコースは無い (build 時に検査) ため、12/31 の資源休止は
+//   日単位 cancelled で正確に表現できる (カテゴリ別 cancelled の正典解釈問題を回避)。
+const RESOURCE_CATS = new Set(['plastic', 'pet_bottle', 'glass_bottle', 'beverage_can', 'paper', 'hazardous']);
+function yearEndOverrides(rules) {
+  const out = [];
+  const resTh = rules.some((r) => RESOURCE_CATS.has(r.category) && r.pattern === 'weekly' && r.days.includes('TH'));
+  const burnTh = rules.some((r) => r.category === 'burnable' && r.days.includes('TH'));
+  if (resTh && burnTh) throw new Error('木曜に資源と燃やすごみが同居するコースが出現 — 12/31 の日単位 cancelled では表現不能 (カテゴリ別休止の実装が必要)');
+  if (resTh) out.push({ date: '2026-12-31', cancelled: true, note: '年末年始休止(資源は12/31から休み。令和2・6・7年度実績より、12月の区告知で要確認)' });
+  const DAY_TO_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
+  for (const iso of ['2027-01-01', '2027-01-02', '2027-01-03']) {
+    const d = new Date(iso + 'T00:00:00');
+    const occ = Math.floor((d.getDate() - 1) / 7) + 1;
+    const hit = rules.some((r) => (r.days || []).some((x) => DAY_TO_INDEX[x] === d.getDay()) &&
+      (r.pattern === 'weekly' || (r.pattern === 'monthly_nth' && r.occurrences.includes(occ))));
+    if (hit) out.push({ date: iso, cancelled: true, note: '年末年始休止(1/1〜1/3。複数年実績、12月の区告知で要確認)' });
+  }
+  return out;
+}
 const docs = courses.map(({ rules, areas: as }, i) => courseDoc({
   city: 'shinagawa',
   course: String(i + 1),
@@ -201,9 +226,7 @@ const docs = courses.map(({ rules, areas: as }, i) => courseDoc({
     verified_by: 'Claude(品川区ODP CSVの機械変換。同ODP RDF を別実装でパースし全411行突合 + 区公式「ごみ・資源収集日一覧」HTML 全137地区と突合)',
   },
   rules,
-  // 年末年始 overrides は置かない: 令和8年度分 (2026年末〜2027年始) が未公表のため。
-  // 詳細は municipalities/tokyo/shinagawa/meta.yaml の notes を参照。
-  overrides: [],
+  overrides: yearEndOverrides(rules),
 }));
 
 const n = writeCourses(OUT, YEAR, docs);

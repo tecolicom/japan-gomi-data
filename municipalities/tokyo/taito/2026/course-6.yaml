@@ -52,3 +52,7 @@ rules:
   - category: plastic
     pattern: weekly
     days: *a1
+overrides:
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(1/1〜1/3。複数年実績、12月の広報たいとう・区HPで要確認)

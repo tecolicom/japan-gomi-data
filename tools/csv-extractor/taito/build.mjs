@@ -6,9 +6,10 @@
 //   (3) 令和8年度カレンダー案内の整理番号 … 区公式のコース分け。畳み込み結果と一致すべき
 //
 // コース番号は区公式の「整理番号」(1〜12) をそのまま採用する。
-// 年末年始: 区の令和8年度カレンダーが「※年末年始は収集日を変更する場合があります。
-// 12月の広報たいとうや台東区ホームページなどでご確認ください」と明示し、日程未確定。
-// 推測でoverridesを作らない (playbook §1「推測でデータを作らない」)。
+// 年末年始: 令和8年度分の日程は12月告知で未確定だが、複数年実績で不変の 1/1〜1/3 全品目
+// 休止のみ反映する (令和5年度=1/1〜1/3・令和6年度=広報たいとう表の年始開始日から逆算して
+// 1/1〜1/3、資源の 12/31 は令和6年度に火曜地区で収集実績があり年により変動するため未反映)。
+// 12/31 の扱いと臨時収集 (振替) は 12 月の広報たいとう・区HPで確定し要更新。
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -124,6 +125,17 @@ for (const no of nos) {
     },
     rules,
   };
+  // 年末年始の不変部分 (1/1〜1/3) のみ。1/3 は日曜のため実質 1/1(金)・1/2(土)。
+  const DOWI = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
+  const yearEnd = [];
+  for (const iso of ['2027-01-01', '2027-01-02', '2027-01-03']) {
+    const d = new Date(iso + 'T00:00:00');
+    const occ = Math.floor((d.getDate() - 1) / 7) + 1;
+    const hit = rules.some((r) => (r.days || []).some((x) => DOWI[x] === d.getDay()) &&
+      (r.pattern === 'weekly' || (r.pattern === 'monthly_nth' && r.occurrences.includes(occ))));
+    if (hit) yearEnd.push({ date: iso, cancelled: true, note: '年末年始休止(1/1〜1/3。複数年実績、12月の広報たいとう・区HPで要確認)' });
+  }
+  if (yearEnd.length) doc.overrides = yearEnd;
   writeFileSync(join(OUT, '2026', `course-${no}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
 }
 const areaTotal = [...bySig.values()].reduce((n, g) => n + g.areas.length, 0);

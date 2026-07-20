@@ -49,3 +49,10 @@ rules:
   - category: hazardous
     pattern: weekly
     days: *a1
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(資源は12/31から休み。令和2・6・7年度実績より、12月の区告知で要確認)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(1/1〜1/3。複数年実績、12月の区告知で要確認)

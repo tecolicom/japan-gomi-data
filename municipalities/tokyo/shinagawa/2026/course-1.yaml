@@ -49,3 +49,7 @@ rules:
   - category: hazardous
     pattern: weekly
     days: *a1
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(1/1〜1/3。複数年実績、12月の区告知で要確認)
