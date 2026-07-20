@@ -133,10 +133,12 @@ fetch('ics/index.csv').then(r => r.text()).then(text => {
       const webcal = d.ics.replace(/^https:/, 'webcal:');
       const label = d.courseName ? `${d.course} (${d.courseName})` : `コース ${d.course}`;
       const areas = (d.areas || '').split('；').join('、');
+      const slug = d.ics.replace(/^.*\/ics\//, '').replace(/\.ics$/, '');
       return `<div class="course"><h3>${label}</h3>
         ${areas ? `<p class="areas">対象地区: ${areas}</p>` : ''}
         <div class="acts">
           <a href="${webcal}">カレンダーに追加</a>
+          <a class="ghost" href="calendar.html?c=${slug}">カレンダーを見る</a>
           <button class="ghost" data-url="${d.ics}">URL をコピー</button>
         </div></div>`;
     }).join('') || '';

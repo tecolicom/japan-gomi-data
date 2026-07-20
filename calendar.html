@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>収集カレンダー — japan-gomi-data</title>
+<meta name="description" content="収録データから生成した月別のごみ収集カレンダー。自治体の公式カレンダーとの突き合わせ確認に使えます。">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fbfcfd; --panel: #f0f4f8; --ink: #191b1e; --sub: #59616b; --line: #dde3ea;
+  --accent: #2a78d6; --accent-ink: #1c5cab; --sun: #c0392b; --sat: #1c5cab;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #16181b; --panel: #1e2226; --ink: #edeff2; --sub: #a6adb6; --line: #333a42;
+    --accent: #3987e5; --accent-ink: #86b6ef; --sun: #e07060; --sat: #86b6ef;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", sans-serif;
+  font-size: 15.5px; line-height: 1.7; }
+main { max-width: 760px; margin: 0 auto; padding: 28px 16px 60px; }
+a { color: var(--accent-ink); }
+header.top { margin-bottom: 14px; }
+.crumb { font-size: 13px; margin-bottom: 10px; }
+h1 { font-size: 20px; margin: 0 0 2px; line-height: 1.4; }
+.areas { font-size: 13px; color: var(--sub); margin: 0 0 10px; }
+.acts { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.acts a, .acts button { font-size: 13.5px; padding: 6px 12px; border-radius: 7px; border: 1px solid var(--accent);
+  background: var(--accent); color: #fff; text-decoration: none; cursor: pointer; font-family: inherit; }
+.acts .ghost { background: transparent; color: var(--accent-ink); }
+.calnav { display: flex; align-items: center; justify-content: space-between; margin: 6px 0 8px; }
+.calnav h2 { font-size: 17px; margin: 0; }
+.calnav button { font-size: 13.5px; padding: 5px 12px; border-radius: 7px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--ink); cursor: pointer; font-family: inherit; }
+.calnav button:disabled { opacity: .35; cursor: default; }
+table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+th { padding: 4px 0; font-size: 12.5px; }
+th.sun { color: var(--sun); } th.sat { color: var(--sat); }
+td { vertical-align: top; border: 1px solid var(--line); height: 74px; padding: 2px; }
+td.empty { background: var(--panel); }
+.dnum { font-size: 12.5px; line-height: 1; margin-bottom: 3px; }
+.dnum.sun { color: var(--sun); } .dnum.sat { color: var(--sat); }
+.chips { display: flex; flex-direction: column; gap: 2px; }
+.chip { display: block; color: #fff; text-align: center; border-radius: 4px;
+  font-size: 11.5px; line-height: 1.5; padding: 0 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.legend { display: flex; gap: 8px 14px; flex-wrap: wrap; margin: 16px 0 0; font-size: 13px; }
+.legend .chip { display: inline-block; min-width: 3.2em; margin-right: 4px; }
+footer { margin-top: 34px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--sub); }
+#err { color: var(--sun); }
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <p class="crumb"><a href="./">japan-gomi-data</a> › 収集カレンダー</p>
+  <h1 id="title">読み込み中…</h1>
+  <p class="areas" id="areas"></p>
+  <div class="acts" id="acts" hidden>
+    <a id="webcal" href="#">カレンダーに追加</a>
+    <button class="ghost" id="copy">購読 URL をコピー</button>
+  </div>
+</header>
+
+<p id="err" hidden></p>
+
+<div class="calnav" id="calnav" hidden>
+  <button id="prev">← 前月</button>
+  <h2 id="mtitle"></h2>
+  <button id="next">翌月 →</button>
+</div>
+<div id="grid"></div>
+<div class="legend" id="legend"></div>
+
+<footer>
+  <p>このカレンダーは収録データ (YAML) から機械生成したもので、カレンダー購読 (.ics) と同一の内容です。
+  自治体の公式カレンダーとの突き合わせ確認にお使いください。誤りに気づいた場合は
+  <a href="https://github.com/tecolicom/japan-gomi-data/issues">GitHub Issues</a> へどうぞ。</p>
+</footer>
+</main>
+<script>
+const q = new URLSearchParams(location.search).get('c') || '';
+const err = (m) => { const e = document.getElementById('err'); e.textContent = m; e.hidden = false;
+  document.getElementById('title').textContent = '収集カレンダー'; };
+if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(q)) {
+  err('コースが指定されていません。トップページから「カレンダーを見る」で開いてください。');
+} else fetch(`ics/${q}.json`).then((r) => { if (!r.ok) throw 0; return r.json(); }).then((d) => {
+  const label = d.course_name_ja ? `${d.course} (${d.course_name_ja})` : `コース ${d.course}`;
+  document.getElementById('title').textContent = `${d.city} ${label}`;
+  document.title = `${d.city} ${label} の収集カレンダー — japan-gomi-data`;
+  if (d.areas && d.areas.length) document.getElementById('areas').textContent = '対象地区: ' + d.areas.join('、');
+  const ics = `${location.origin}${location.pathname.replace(/calendar\.html$/, '')}ics/${q}.ics`;
+  document.getElementById('webcal').href = ics.replace(/^https:/, 'webcal:');
+  document.getElementById('copy').addEventListener('click', async function () {
+    try { await navigator.clipboard.writeText(ics); this.textContent = 'コピーしました'; }
+    catch { prompt('この URL をコピーしてください', ics); }
+    setTimeout(() => { this.textContent = '購読 URL をコピー'; }, 1500);
+  });
+  document.getElementById('acts').hidden = false;
+
+  const days = d.days;
+  const months = [...new Set(Object.keys(days).map((k) => k.slice(0, 7)))].sort();
+  if (!months.length) return err('収集日データがありません。');
+  // 凡例
+  document.getElementById('legend').innerHTML = Object.values(d.labels).map((l) =>
+    `<span><span class="chip" style="background:${l.color}">${esc(l.short)}</span>${esc(l.label)}</span>`).join('');
+
+  let idx = 0;
+  const today = new Date();
+  const tkey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
+  const ti = months.indexOf(tkey);
+  if (ti >= 0) idx = ti;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+  function render() {
+    const [y, m] = months[idx].split('-').map(Number);
+    document.getElementById('mtitle').textContent = `${y}年${m}月`;
+    document.getElementById('prev').disabled = idx === 0;
+    document.getElementById('next').disabled = idx === months.length - 1;
+    const first = new Date(y, m - 1, 1), ndays = new Date(y, m, 0).getDate();
+    let html = '<table><thead><tr>' +
+      ['日','月','火','水','木','金','土'].map((w, i) =>
+        `<th class="${i === 0 ? 'sun' : i === 6 ? 'sat' : ''}">${w}</th>`).join('') +
+      '</tr></thead><tbody><tr>';
+    let col = 0;
+    for (let i = 0; i < first.getDay(); i++, col++) html += '<td class="empty"></td>';
+    for (let day = 1; day <= ndays; day++) {
+      if (col === 7) { html += '</tr><tr>'; col = 0; }
+      const iso = `${y}-${String(m).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      const dow = (first.getDay() + day - 1) % 7;
+      const cats = days[iso] || [];
+      html += `<td><div class="dnum ${dow === 0 ? 'sun' : dow === 6 ? 'sat' : ''}">${day}</div>` +
+        (cats.length ? `<div class="chips">${cats.map((c) => {
+          const l = d.labels[c] || { short: c, label: c, color: '#888' };
+          return `<span class="chip" style="background:${l.color}" title="${esc(l.label)}">${esc(l.short)}</span>`;
+        }).join('')}</div>` : '') + '</td>';
+      col++;
+    }
+    for (; col < 7; col++) html += '<td class="empty"></td>';
+    html += '</tr></tbody></table>';
+    document.getElementById('grid').innerHTML = html;
+  }
+  document.getElementById('prev').addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
+  document.getElementById('next').addEventListener('click', () => { if (idx < months.length - 1) { idx++; render(); } });
+  document.getElementById('calnav').hidden = false;
+  render();
+}).catch(() => err('カレンダーデータの読み込みに失敗しました (再読み込みしてください)。'));
+</script>
+</body>
+</html>

@@ -64,6 +64,7 @@ for (const { handle, dir, pref } of handles) {
           day: ymd(d),
           next: ymd(new Date(d.getTime() + 86400000)),
           title: '🗑 ' + cats.map((c) => labelOf(c, taxOv)).join('、'),
+          cats,
         });
       }
       bySlug.set(slug, rec);
@@ -86,6 +87,19 @@ for (const { handle, dir, pref } of handles) {
     const outDir = join(OUT, handle);
     mkdirSync(outDir, { recursive: true });
     writeFileSync(join(outDir, `${slug}.ics`), L.join('\r\n') + '\r\n');
+    // 同名 .json — カレンダービュー (calendar.html) 用。日付→種別キーと自治体別ラベル・色
+    const usedCats = [...new Set(rec.events.flatMap((ev) => ev.cats))];
+    const isoDay = (y) => `${y.slice(0, 4)}-${y.slice(4, 6)}-${y.slice(6, 8)}`;
+    writeFileSync(join(outDir, `${slug}.json`), JSON.stringify({
+      city: meta.name_ja, pref, handle,
+      course: rec.course, course_name_ja: rec.courseNameJa, areas: rec.areas,
+      labels: Object.fromEntries(usedCats.map((c) => [c, {
+        label: taxOv?.[c]?.label ?? vocab[c]?.label ?? c,
+        short: taxOv?.[c]?.short ?? vocab[c]?.short ?? c,
+        color: vocab[c]?.color ?? '#888',
+      }])),
+      days: Object.fromEntries(rec.events.map((ev) => [isoDay(ev.day), ev.cats])),
+    }) + '\n');
     indexRows.push({
       code: meta.code, pref, handle, name_ja: meta.name_ja,
       course: rec.course, course_name_ja: rec.courseNameJa,
