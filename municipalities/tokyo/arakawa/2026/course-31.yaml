@@ -1,0 +1,75 @@
+metadata:
+  city: arakawa
+  course: "31"
+  areas:
+    - name: 荒川2丁目21番
+      yomi: あらかわ2-21
+    - name: 荒川2丁目31番
+      yomi: あらかわ2-31
+    - name: 荒川2丁目4番
+      yomi: あらかわ2-4
+    - name: 荒川2丁目6番
+      yomi: あらかわ2-6
+    - name: 荒川2丁目8番
+      yomi: あらかわ2-8
+    - name: 荒川4丁目1番
+      yomi: あらかわ4-1
+    - name: 荒川4丁目21〜22番
+      yomi: あらかわ4-21
+    - name: 荒川4丁目23番1～4・12～17号
+      yomi: あらかわ4-23
+    - name: 荒川4丁目24〜27番
+      yomi: あらかわ4-24
+    - name: 荒川4丁目29番1号
+      yomi: あらかわ4-29
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4.8
+    verified_by: Claude(荒川区配布CSVの機械変換。別実装(Python)で全2,249行を独立パースし生成YAMLと通年照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - SA
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - SA
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - WE
+  - category: paper_cloth
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(ごみ・プラスチック 1/1〜1/3)

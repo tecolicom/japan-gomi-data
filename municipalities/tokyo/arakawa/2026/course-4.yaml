@@ -1,0 +1,56 @@
+metadata:
+  city: arakawa
+  course: "4"
+  areas:
+    - name: 南千住2丁目1〜33番
+      yomi: みなみせんじゅ2-1
+    - name: 南千住3丁目1〜40番
+      yomi: みなみせんじゅ3-1
+    - name: 南千住7丁目1番
+      yomi: みなみせんじゅ7-1
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4.8
+    verified_by: Claude(荒川区配布CSVの機械変換。別実装(Python)で全2,249行を独立パースし生成YAMLと通年照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - FR
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+  - category: glass_bottle
+    pattern: weekly
+    days: &a1
+      - SA
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: paper
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - SA
+  - category: paper_cloth
+    pattern: weekly
+    days:
+      - SA
+overrides:
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(資源 12/31〜1/3)

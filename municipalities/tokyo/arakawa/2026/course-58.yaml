@@ -1,0 +1,63 @@
+metadata:
+  city: arakawa
+  course: "58"
+  areas:
+    - name: 東尾久6丁目1〜12番
+      yomi: ひがしおぐ6-1
+    - name: 東尾久6丁目23〜29番
+      yomi: ひがしおぐ6-23
+    - name: 町屋4丁目6番
+      yomi: まちや4-6
+    - name: 町屋4丁目8番
+      yomi: まちや4-8
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4.8
+    verified_by: Claude(荒川区配布CSVの機械変換。別実装(Python)で全2,249行を独立パースし生成YAMLと通年照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - SA
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TH
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - MO
+  - category: paper_cloth
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(ごみ・プラスチック 1/1〜1/3)

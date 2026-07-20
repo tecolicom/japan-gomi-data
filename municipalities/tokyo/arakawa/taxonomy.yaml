@@ -1,0 +1,47 @@
+# 荒川区。区配布 CSV の列見出し (6 列 = 同日収集の組を含め 8 種別) を正典語彙へ割り当てる。
+#   燃やすごみ=burnable 週2曜日
+#   燃やさないごみ=non_burnable 第n曜日
+#   プラスチック=plastic 週1曜日
+#   びん・缶、古紙 (びん=glass_bottle / 缶=beverage_can / 古紙=paper の3種同日収集)
+#   ペットボトル・発泡スチロール製食品用トレイ=pet_bottle
+#   古布=paper_cloth
+# 判断:
+# - 「発泡スチロール製食品用トレイ」に対応する正典語彙が無い。区はペットボトルと完全に同一の
+#   回収枠 (同一列・同一日程) で扱うため、独立種別を立てず pet_bottle のラベル override で表現した。
+#   語彙追加はしていない (新語彙が必要なら schema/categories.yaml で要相談)。
+# - 「古布」は古着・古布の資源回収。所沢・川口の先例に倣い paper_cloth へ割当 (古紙 paper とは別日のため分離)。
+# - びん・缶・古紙は区の 1 列 = 同日収集。course YAML では days 配列を共有し同日性を明示する。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - glass_bottle
+  - beverage_can
+  - paper
+  - pet_bottle
+  - paper_cloth
+overrides:
+  burnable:
+    label: 燃やすごみ
+    short: 燃やす
+  non_burnable:
+    label: 燃やさないごみ
+    short: 燃やさない
+  plastic:
+    label: プラスチック
+    short: プラ
+  glass_bottle:
+    label: びん
+    short: びん
+  beverage_can:
+    label: 缶
+    short: 缶
+  paper:
+    label: 古紙
+    short: 古紙
+  pet_bottle:
+    label: ペットボトル・食品用トレイ
+    short: ペット
+  paper_cloth:
+    label: 古布
+    short: 古布
