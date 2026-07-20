@@ -1,0 +1,77 @@
+metadata:
+  city: kawaguchi
+  course: "1"
+  course_name_ja: 川口１丁目、幸町１〜３丁目、本町１〜４丁目、栄町１〜３丁目、舟戸町、金山町
+  year: 2026
+  source:
+    pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(地区別カレンダーPDFヘッダの明示ルールを抽出し、同PDFのカレンダー本体実日付とcategoriesOn再展開で2026暦年を全日照合、相違ゼロ。年末年始休止は本体空欄より)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: hazardous
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+  - category: glass_bottle
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 1
+      - 3
+  - category: metal
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: paper
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 2
+      - 4
+  - category: paper_cloth
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 2
+      - 4
+overrides:
+  - date: 2026-01-01
+    cancelled: true
+    note: 年末年始休止(カレンダー本体で収集なし)
+  - date: 2026-12-30
+    cancelled: true
+    note: 年末年始休止(カレンダー本体で収集なし)
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(カレンダー本体で収集なし)

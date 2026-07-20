@@ -1,0 +1,3 @@
+# fetch.mjs が取得する一次ソース PDF、抽出中間物 (再生成可能・大きい)
+cache/
+__pycache__/

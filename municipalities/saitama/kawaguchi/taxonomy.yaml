@@ -1,0 +1,45 @@
+# 川口市。地区別ごみ収集日カレンダー(PDF)ヘッダ凡例の 5 収集区分(同日収集の対を含め 9 種別)を正典語彙へ割り当てる。
+#   ● 一般・有害ごみ(一般ごみ=burnable と 有害ごみ=hazardous を同日収集) 週2曜日
+#   ▲ プラスチック製容器包装=plastic 週1(水曜)
+#   びん・飲料かん(びん=glass_bottle と 飲料かん=beverage_can 同日) 第n・m曜日
+#   金属類・紙類(金属類=metal と 紙類=paper 同日) 第n・m曜日
+#   ペットボトル・繊維類(ペットボトル=pet_bottle と 繊維類=paper_cloth 同日) 第n・m曜日
+# 判断: 「一般ごみ」は市の呼称(可燃相当の家庭ごみ)。最も近い burnable に割当。「繊維類」(古着・古布)は paper_cloth。語彙追加なし。
+categories:
+  - burnable
+  - hazardous
+  - plastic
+  - glass_bottle
+  - beverage_can
+  - metal
+  - paper
+  - pet_bottle
+  - paper_cloth
+overrides:
+  burnable:
+    label: 一般ごみ
+    short: 一般
+  hazardous:
+    label: 有害ごみ
+    short: 有害
+  plastic:
+    label: プラスチック製容器包装
+    short: プラ
+  glass_bottle:
+    label: びん
+    short: びん
+  beverage_can:
+    label: 飲料かん
+    short: かん
+  metal:
+    label: 金属類
+    short: 金属
+  paper:
+    label: 紙類
+    short: 紙
+  pet_bottle:
+    label: ペットボトル
+    short: ペット
+  paper_cloth:
+    label: 繊維類
+    short: 繊維
