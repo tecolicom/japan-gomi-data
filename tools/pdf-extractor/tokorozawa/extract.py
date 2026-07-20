@@ -114,7 +114,12 @@ def parse(path, fiscal_start=2026):
                 col_centers = cluster([c[1] for c in date_cells], 12)
                 def col_of(xc):
                     return min(range(len(col_centers)), key=lambda i: abs(col_centers[i] - xc))
-                grid_bottom = max(c[0] for c in date_cells) + 60
+                # セル高 = 日付行間隔の実測値。固定 60pt だとページ下部の凡例チップ
+                # (注記が少なく凡例が近い PDF: 城・東所沢三〜五) を最終週セルに誤割当する
+                row_tops = sorted(cluster([c[0] for c in date_cells], 10))
+                pitches = [b - a for a, b in zip(row_tops, row_tops[1:])]
+                pitch = min(pitches) if pitches else 45
+                grid_bottom = max(c[0] for c in date_cells) + pitch
                 # ラベル文字を「同列で直上にある日付セル」に割り付ける
                 for w in bw:
                     t = w['text']

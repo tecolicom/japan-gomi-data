@@ -97,7 +97,14 @@ def parse(path, fiscal_start=2026):
                           and min(abs(c-w['xc']) for c in col_centers) <= 12]
             date_cells = [c for c in date_cells if 1<=c[2]<=31]
             if not date_cells: continue
-            grid_bottom = max(c[0] for c in date_cells)+60
+            # extract.py と同じく行ピッチ基準 (固定60ptは凡例チップを最終週に誤割当する)
+            tops = sorted({round(c[0]) for c in date_cells})
+            row_tops = []
+            for t in tops:
+                if not row_tops or t - row_tops[-1] > 10: row_tops.append(t)
+            pitches = [b-a for a, b in zip(row_tops, row_tops[1:])]
+            pitch = min(pitches) if pitches else 45
+            grid_bottom = max(c[0] for c in date_cells)+pitch
             for w in bw:
                 t = w['text']
                 if not (LABEL_CHARS & set(t)): continue
