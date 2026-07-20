@@ -4,6 +4,7 @@ code: '13118'
 handle: arakawa
 name_ja: 荒川区
 population: 226289
+status: collected
 source_type: csv
 schedule_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
 calendar_urls:

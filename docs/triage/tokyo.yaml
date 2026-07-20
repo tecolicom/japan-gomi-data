@@ -160,6 +160,7 @@
   handle: taito
   name_ja: 台東区
   population: 217798
+  status: collected
   source_type: csv
   schedule_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
   calendar_urls:
@@ -323,6 +324,7 @@
   handle: setagaya
   name_ja: 世田谷区
   population: 931922
+  status: collected
   source_type: csv
   schedule_url: https://www.city.setagaya.lg.jp/02241/416.html
   calendar_urls:
@@ -484,6 +486,7 @@
   handle: arakawa
   name_ja: 荒川区
   population: 226289
+  status: collected
   source_type: csv
   schedule_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
   calendar_urls:

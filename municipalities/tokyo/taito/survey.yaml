@@ -4,6 +4,7 @@ code: '13106'
 handle: taito
 name_ja: 台東区
 population: 217798
+status: collected
 source_type: csv
 schedule_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
 calendar_urls:

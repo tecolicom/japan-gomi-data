@@ -4,6 +4,7 @@ code: '13112'
 handle: setagaya
 name_ja: 世田谷区
 population: 931922
+status: collected
 source_type: csv
 schedule_url: https://www.city.setagaya.lg.jp/02241/416.html
 calendar_urls:
