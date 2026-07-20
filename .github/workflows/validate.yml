@@ -11,4 +11,3 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build:ics
-      - run: git diff --exit-code ics/ || (echo "ics/ が古い。npm run build:ics して commit してください" && exit 1)

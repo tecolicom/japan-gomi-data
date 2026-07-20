@@ -71,7 +71,7 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 
 ## 検証
 `npm ci && npm test` で全データを schema + 語彙 + 相互整合で検証する。
-`npm run build:ics` で全日イベントの .ics を `ics/<handle>/` へ生成する(CI がドリフトを検知)。
+`npm run build:ics` で全日イベントの .ics を `ics/<handle>/` へ生成する。生成物はリポジトリに含めず、GitHub Pages のデプロイ時に生成して配信する (CI はビルド成功のみ検証)。
 
 ## 出典・免責
 各自治体データは公式の配布物・公開データ由来。**更新に必要な情報源は `meta.yaml` に集約**する:
