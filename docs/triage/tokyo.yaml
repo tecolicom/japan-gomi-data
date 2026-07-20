@@ -240,6 +240,7 @@
   handle: shinagawa
   name_ja: 品川区
   population: 418389
+  status: collected
   source_type: csv
   schedule_url: http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
   calendar_urls:
