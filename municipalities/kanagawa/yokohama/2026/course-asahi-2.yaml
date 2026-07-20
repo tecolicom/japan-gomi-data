@@ -1,0 +1,81 @@
+metadata:
+  city: yokohama
+  course: asahi-2
+  areas:
+    - name: 市沢町
+      yomi: い
+    - name: 大池町
+      yomi: お
+    - name: 小高町
+      yomi: お
+    - name: 川島町（旭区）
+      yomi: か
+    - name: 桐が作
+      yomi: き
+    - name: 左近山
+      yomi: さ
+    - name: 三反田町
+      yomi: さ
+    - name: 四季美台(13・17・19番地付近)
+      yomi: し
+    - name: 鶴ケ峰2丁目(46・47・56・57番地付近)
+      yomi: つ
+    - name: 西川島町
+      yomi: に
+    - name: 二俣川2丁目(11番地の一部)
+      yomi: ふ
+    - name: 本宿町
+      yomi: ほ
+    - name: 本村町1〜25番地(相鉄線南側)
+      yomi: ほ
+    - name: 南本宿町
+      yomi: み
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/asahi/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - MO
+      - FR
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - SA
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

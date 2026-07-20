@@ -1,0 +1,72 @@
+metadata:
+  city: yokohama
+  course: izumi-4
+  areas:
+    - name: 和泉中央北1〜6丁目
+      yomi: い
+    - name: 和泉中央南5丁目
+      yomi: い
+    - name: ※和泉町1〜42番地および900番地台の一部(元木町内会)
+      yomi: い
+    - name: 和泉町3299〜3300台の一部※3347〜3355台除く
+      yomi: い
+    - name: 和泉町3400〜3500番地台
+      yomi: い
+    - name: 和泉町4100〜5800番地台※一部異なる地域あり
+      yomi: い
+    - name: 和泉町6400台(主水分橋〜宮西橋際までの地域)
+      yomi: い
+    - name: 和泉町6500台(上飯田町大塚〜いずみ野駅方面右側地域)
+      yomi: い
+    - name: 上飯田町※長後街道を戸塚に向かって右側地域(南側地域)
+      yomi: か
+    - name: 下飯田町
+      yomi: し
+    - name: ゆめが丘16〜72番地
+      yomi: ゆ
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/izumi/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

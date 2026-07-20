@@ -2,6 +2,7 @@ node_modules/
 tools/html-extractor/nerima/cache/
 tools/html-extractor/kawasaki/cache/
 tools/csv-extractor/tokyo-nakano/cache/
+tools/html-extractor/yokohama/cache/
 __pycache__/
 .DS_Store
 /ics/

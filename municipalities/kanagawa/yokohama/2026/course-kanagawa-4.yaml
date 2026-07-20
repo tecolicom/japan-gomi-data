@@ -1,0 +1,77 @@
+metadata:
+  city: yokohama
+  course: kanagawa-4
+  areas:
+    - name: 入江1丁目29〜34番地
+      yomi: い
+    - name: 入江2丁目
+      yomi: い
+    - name: 大口通1〜17番地
+      yomi: お
+    - name: 大口通27〜199番地
+      yomi: お
+    - name: 大口仲町10〜37番地
+      yomi: お
+    - name: 大口仲町51〜130番地
+      yomi: お
+    - name: 大口仲町150〜470番地
+      yomi: お
+    - name: 神之木台
+      yomi: か
+    - name: 神之木町
+      yomi: か
+    - name: 子安台2丁目
+      yomi: こ
+    - name: 新子安1丁目18番地
+      yomi: し
+    - name: 新子安2丁目
+      yomi: し
+    - name: 七島町147〜163番地
+      yomi: な
+    - name: 西寺尾1〜4丁目
+      yomi: に
+    - name: 松見町1〜4丁目
+      yomi: ま
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/kanagawa/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

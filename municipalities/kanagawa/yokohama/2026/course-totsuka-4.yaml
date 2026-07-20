@@ -1,0 +1,76 @@
+metadata:
+  city: yokohama
+  course: totsuka-4
+  areas:
+    - name: 柏尾町
+      yomi: か
+    - name: 上柏尾町
+      yomi: か
+    - name: 上矢部町2847の一部(国道1号線上の集積場所)
+      yomi: か
+    - name: 平戸1〜3・5丁目
+      yomi: ひ
+    - name: 平戸4丁目
+      yomi: ひ
+    - name: 平戸町(環状2号線の東側)※一部異なる地域あり
+      yomi: ひ
+    - name: 舞岡町33〜48番地付近(柏尾町との境目の道路の一部)
+      yomi: ま
+    - name: 舞岡町115〜122番地付近(吉田町との境目の道路の一部)
+      yomi: ま
+    - name: 舞岡町1091番地付近(日立和敬寮前のバス停付近のみ)
+      yomi: ま
+    - name: 舞岡町3575〜3589番地付近(柏尾町との境目の道路の一部)
+      yomi: ま
+    - name: 前田町(国道1号線(品濃口〜赤関橋)付近)
+      yomi: ま
+    - name: 矢部町(JR線路の東側)
+      yomi: や
+    - name: 吉田町（戸塚区）
+      yomi: よ
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/totsuka/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

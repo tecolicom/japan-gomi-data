@@ -1,0 +1,20 @@
+# 横浜市。公式区分: 燃やすごみ / 燃えないごみ / 電池類 / スプレー缶 (以上4種は同じ曜日・週2) /
+# 缶・びん・ペットボトル / 小さな金属類 (以上は同じ曜日・週1) / プラスチック資源 (週1)。
+# 缶・びん・ペットは同日別 category。粗大ごみは申込制、古紙・古布は資源集団回収 (市収集外) のため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - hazardous
+  - spray_can
+  - beverage_can
+  - glass_bottle
+  - pet_bottle
+  - metal
+  - plastic
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 燃えないごみ }
+  hazardous: { label: 電池類, short: 電池 }
+  beverage_can: { label: 缶, short: 缶 }
+  metal: { label: 小さな金属類, short: 金属 }
+  plastic: { label: プラスチック資源 }

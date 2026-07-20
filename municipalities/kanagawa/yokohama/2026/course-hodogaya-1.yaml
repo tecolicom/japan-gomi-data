@@ -1,0 +1,78 @@
+metadata:
+  city: yokohama
+  course: hodogaya-1
+  areas:
+    - name: 岩井町【JR線路より西側】
+      yomi: い
+    - name: 岩崎町
+      yomi: い
+    - name: 岩間町1・2丁目
+      yomi: い
+    - name: 霞台
+      yomi: か
+    - name: 帷子町1・2丁目
+      yomi: か
+    - name: 神戸町
+      yomi: こ
+    - name: 桜ケ丘1・2丁目
+      yomi: さ
+    - name: 月見台
+      yomi: つ
+    - name: 天王町1・2丁目
+      yomi: て
+    - name: 西久保町【JR線路から西側】
+      yomi: に
+    - name: 初音ケ丘【4・8番地付近】
+      yomi: は
+    - name: 花見台
+      yomi: は
+    - name: 星川1丁目
+      yomi: ほ
+    - name: 明神台
+      yomi: み
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/hodogaya/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - MO
+      - FR
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - SA
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

@@ -1,0 +1,72 @@
+metadata:
+  city: yokohama
+  course: kanagawa-7
+  areas:
+    - name: 片倉4丁目1〜3番地
+      yomi: か
+    - name: 片倉5丁目
+      yomi: か
+    - name: 神大寺4丁目
+      yomi: か
+    - name: 三枚町1〜195番地
+      yomi: さ
+    - name: 三枚町230〜260番地
+      yomi: さ
+    - name: 菅田町1〜1300番地
+      yomi: す
+    - name: 菅田町1400〜2881番地
+      yomi: す
+    - name: 西菅田団地1〜3街区及び4街区1〜6号棟
+      yomi: に
+    - name: 羽沢町1560番地付近〜1965番地
+      yomi: は
+    - name: 六角橋5丁目
+      yomi: ろ
+    - name: 六角橋6丁目
+      yomi: ろ
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/kanagawa/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
