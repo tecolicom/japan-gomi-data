@@ -88,6 +88,7 @@
   handle: kawaguchi
   name_ja: 川口市
   population: 594171
+  status: collected
   source_type: pdf
   schedule_url: https://www.city.kawaguchi.lg.jp/soshiki/01100/040/4/2/3488.html
   calendar_urls:
