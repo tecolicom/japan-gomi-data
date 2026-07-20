@@ -37,6 +37,14 @@ h1 { font-size: 20px; margin: 0 0 2px; line-height: 1.4; }
 .calnav button { font-size: 13.5px; padding: 5px 12px; border-radius: 7px; border: 1px solid var(--line);
   background: var(--panel); color: var(--ink); cursor: pointer; font-family: inherit; }
 .calnav button:disabled { opacity: .35; cursor: default; }
+.viewtoggle { text-align: right; margin: 0 0 8px; }
+.viewtoggle button { font-size: 13px; padding: 4px 10px; border-radius: 7px; border: 1px solid var(--line);
+  background: transparent; color: var(--accent-ink); cursor: pointer; font-family: inherit; }
+#grid.year { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 8px 20px; }
+#grid.year h3 { font-size: 15px; margin: 10px 0 4px; }
+#grid.year td { height: 52px; padding: 1px; }
+#grid.year .dnum { font-size: 11px; margin-bottom: 2px; }
+#grid.year .chip { font-size: 10px; line-height: 1.4; border-radius: 3px; }
 table { width: 100%; table-layout: fixed; border-collapse: collapse; }
 th { padding: 4px 0; font-size: 12.5px; }
 th.sun { color: var(--sun); } th.sat { color: var(--sat); }
@@ -67,6 +75,7 @@ footer { margin-top: 34px; padding-top: 12px; border-top: 1px solid var(--line);
 
 <p id="err" hidden></p>
 
+<div class="viewtoggle" id="viewtoggle" hidden><button id="toggle">1年分を表示</button></div>
 <div class="calnav" id="calnav" hidden>
   <button id="prev">← 前月</button>
   <h2 id="mtitle"></h2>
@@ -115,11 +124,8 @@ if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(q)) {
   if (ti >= 0) idx = ti;
 
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
-  function render() {
-    const [y, m] = months[idx].split('-').map(Number);
-    document.getElementById('mtitle').textContent = `${y}年${m}月`;
-    document.getElementById('prev').disabled = idx === 0;
-    document.getElementById('next').disabled = idx === months.length - 1;
+  function monthTable(mi) {
+    const [y, m] = months[mi].split('-').map(Number);
     const first = new Date(y, m - 1, 1), ndays = new Date(y, m, 0).getDate();
     let html = '<table><thead><tr>' +
       ['日','月','火','水','木','金','土'].map((w, i) =>
@@ -140,12 +146,32 @@ if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(q)) {
       col++;
     }
     for (; col < 7; col++) html += '<td class="empty"></td>';
-    html += '</tr></tbody></table>';
-    document.getElementById('grid').innerHTML = html;
+    return html + '</tr></tbody></table>';
+  }
+  let yearMode = false;
+  const grid = document.getElementById('grid');
+  function render() {
+    if (yearMode) {
+      grid.className = 'year';
+      grid.innerHTML = months.map((mk, mi) => {
+        const [y, m] = mk.split('-').map(Number);
+        return `<div><h3>${y}年${m}月</h3>${monthTable(mi)}</div>`;
+      }).join('');
+    } else {
+      const [y, m] = months[idx].split('-').map(Number);
+      document.getElementById('mtitle').textContent = `${y}年${m}月`;
+      document.getElementById('prev').disabled = idx === 0;
+      document.getElementById('next').disabled = idx === months.length - 1;
+      grid.className = '';
+      grid.innerHTML = monthTable(idx);
+    }
+    document.getElementById('calnav').hidden = yearMode;
+    document.getElementById('toggle').textContent = yearMode ? '月ごとに表示' : '1年分を表示';
   }
   document.getElementById('prev').addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
   document.getElementById('next').addEventListener('click', () => { if (idx < months.length - 1) { idx++; render(); } });
-  document.getElementById('calnav').hidden = false;
+  document.getElementById('toggle').addEventListener('click', () => { yearMode = !yearMode; render(); });
+  document.getElementById('viewtoggle').hidden = false;
   render();
 }).catch(() => err('カレンダーデータの読み込みに失敗しました (再読み込みしてください)。'));
 </script>
