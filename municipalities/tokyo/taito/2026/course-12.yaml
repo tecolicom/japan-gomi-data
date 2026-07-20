@@ -1,0 +1,64 @@
+metadata:
+  city: taito
+  course: "12"
+  areas:
+    - name: 池之端1丁目
+      yomi: いけのはた1
+    - name: 池之端2丁目
+      yomi: いけのはた2
+    - name: 池之端3丁目
+      yomi: いけのはた3
+    - name: 池之端4丁目
+      yomi: いけのはた4
+    - name: 上野公園
+      yomi: うえのこうえん
+    - name: 谷中1丁目
+      yomi: やなか1
+    - name: 谷中2丁目
+      yomi: やなか2
+    - name: 谷中3丁目
+      yomi: やなか3
+    - name: 谷中4丁目
+      yomi: やなか4
+    - name: 谷中5丁目
+      yomi: やなか5
+    - name: 谷中6丁目
+      yomi: やなか6
+    - name: 谷中7丁目
+      yomi: やなか7
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(台東区オープンデータCSVの機械変換。現行公式HTML表と全39行/108町丁を突合 + 令和8年度カレンダーの整理番号12区分と1対1一致)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - SA
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - WE
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: plastic
+    pattern: weekly
+    days: *a1

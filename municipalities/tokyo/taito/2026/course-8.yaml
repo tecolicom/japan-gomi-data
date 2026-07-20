@@ -1,0 +1,56 @@
+metadata:
+  city: taito
+  course: "8"
+  areas:
+    - name: 北上野1丁目
+      yomi: きたうえの1
+    - name: 北上野2丁目
+      yomi: きたうえの2
+    - name: 西浅草1丁目
+      yomi: にしあさくさ1
+    - name: 西浅草2丁目
+      yomi: にしあさくさ2
+    - name: 松が谷1丁目
+      yomi: まつがや1
+    - name: 松が谷2丁目
+      yomi: まつがや2
+    - name: 松が谷3丁目
+      yomi: まつがや3
+    - name: 松が谷4丁目
+      yomi: まつがや4
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(台東区オープンデータCSVの機械変換。現行公式HTML表と全39行/108町丁を突合 + 令和8年度カレンダーの整理番号12区分と1対1一致)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - TH
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: plastic
+    pattern: weekly
+    days: *a1

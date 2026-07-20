@@ -3,6 +3,10 @@ tools/html-extractor/nerima/cache/
 tools/html-extractor/kawasaki/cache/
 tools/csv-extractor/tokyo-nakano/cache/
 tools/html-extractor/yokohama/cache/
+tools/csv-extractor/taito/cache/
+tools/csv-extractor/setagaya/cache/
+tools/csv-extractor/arakawa/cache/
+tools/csv-extractor/shinagawa/cache/
 __pycache__/
 .DS_Store
 /ics/

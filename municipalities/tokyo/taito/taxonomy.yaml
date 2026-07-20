@@ -1,0 +1,19 @@
+# 台東区。区の公式区分は「資源」「燃やすごみ」「燃やさないごみ」「プラスチック」。
+# 「資源」は集積所で同日に回収する 古紙類 + びん・缶・ペットボトル の総称なので、
+# 正典語彙では paper / glass_bottle / beverage_can / pet_bottle の4種へ展開する
+# (いずれも同一曜日。course YAML では days 配列を共有し YAML anchor で同日性を明示)。
+# プラスチックは令和7年4月から区内全域で分別回収され、区公式が「回収曜日は資源と同じ曜日」
+# と明記しているため同じ曜日規則を持つ (集積所ではなく燃やすごみと同じ場所へ排出)。
+# 粗大ごみは申込制のため対象外。古着・古布・乾電池・蛍光灯等は拠点回収のため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - paper
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - plastic
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 燃やさないごみ }
+  paper: { label: 古紙類, short: 古紙 }

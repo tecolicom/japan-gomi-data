@@ -1,0 +1,52 @@
+metadata:
+  city: taito
+  course: "7"
+  areas:
+    - name: 浅草3丁目
+      yomi: あさくさ3
+    - name: 浅草4丁目
+      yomi: あさくさ4
+    - name: 浅草5丁目
+      yomi: あさくさ5
+    - name: 浅草6丁目
+      yomi: あさくさ6
+    - name: 浅草7丁目
+      yomi: あさくさ7
+    - name: 西浅草3丁目
+      yomi: にしあさくさ3
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(台東区オープンデータCSVの機械変換。現行公式HTML表と全39行/108町丁を突合 + 令和8年度カレンダーの整理番号12区分と1対1一致)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - TH
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: plastic
+    pattern: weekly
+    days: *a1

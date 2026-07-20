@@ -1,0 +1,52 @@
+metadata:
+  city: taito
+  course: "4"
+  areas:
+    - name: 下谷1丁目
+      yomi: したや1
+    - name: 根岸1丁目
+      yomi: ねぎし1
+    - name: 根岸2丁目
+      yomi: ねぎし2
+    - name: 根岸3丁目
+      yomi: ねぎし3
+    - name: 根岸4丁目
+      yomi: ねぎし4
+    - name: 根岸5丁目
+      yomi: ねぎし5
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-5
+    verified_by: Claude(台東区オープンデータCSVの機械変換。現行公式HTML表と全39行/108町丁を突合 + 令和8年度カレンダーの整理番号12区分と1対1一致)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - TU
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: plastic
+    pattern: weekly
+    days: *a1
