@@ -1,0 +1,51 @@
+metadata:
+  city: shinagawa
+  course: "36"
+  areas:
+    - name: 東品川1丁目
+      yomi: ひがししながわ1
+    - name: 東品川2丁目
+      yomi: ひがししながわ2
+    - name: 東品川3丁目
+      yomi: ひがししながわ3
+    - name: 東品川5丁目
+      yomi: ひがししながわ5
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-6
+    verified_by: Claude(品川区ODP CSVの機械変換。同ODP RDF を別実装でパースし全411行突合 + 区公式「ごみ・資源収集日一覧」HTML 全137地区と突合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - TU
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - MO
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: paper
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1

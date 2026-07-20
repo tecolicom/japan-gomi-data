@@ -1,0 +1,45 @@
+metadata:
+  city: shinagawa
+  course: "6"
+  areas:
+    - name: 西五反田8丁目
+      yomi: にしごたんだ8
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-6
+    verified_by: Claude(品川区ODP CSVの機械変換。同ODP RDF を別実装でパースし全411行突合 + 区公式「ごみ・資源収集日一覧」HTML 全137地区と突合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - SA
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - FR
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: paper
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1

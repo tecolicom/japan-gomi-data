@@ -1,0 +1,53 @@
+metadata:
+  city: shinagawa
+  course: "33"
+  areas:
+    - name: 戸越5丁目
+      yomi: とごし5
+    - name: 西品川1丁目（荏原エリア）
+      yomi: にししながわ1-えばらえりあ
+    - name: 二葉1丁目
+      yomi: ふたば1
+    - name: 豊町1丁目
+      yomi: ゆたかちょう1
+    - name: 豊町2丁目
+      yomi: ゆたかちょう2
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+    extracted_at: 2026-07-20
+    extracted_by: claude-opus-4-6
+    verified_by: Claude(品川区ODP CSVの機械変換。同ODP RDF を別実装でパースし全411行突合 + 区公式「ごみ・資源収集日一覧」HTML 全137地区と突合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - TU
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - FR
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: paper
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1

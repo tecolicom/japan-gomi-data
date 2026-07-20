@@ -1,0 +1,27 @@
+# 品川区。公式の収集区分は 3 つ (ほかに粗大ごみ=申込制・有料)。
+#   燃やすごみ            週2回          → burnable
+#   陶器・ガラス・金属ごみ 月2回 (第n・m) → non_burnable
+#   資源                  週1回          → 下記 6 品目を同日に資源回収ステーションで回収
+# 「資源」の内訳 (区公式「資源・ごみの分け方・出し方」/ 令和8年版ごみリサイクルカレンダー):
+#   資源プラスチック (製品プラスチック + プラスチック製容器包装) … plastic
+#   飲食用のペットボトル / びん / 缶                            … pet_bottle / glass_bottle / beverage_can
+#   古紙 (新聞・折込チラシ・段ボール・雑誌書籍・紙パック・雑がみ)  … paper
+#   蛍光灯・水銀体温計・水銀血圧計・乾電池                        … hazardous
+# 上記 6 品目は同日収集のため days 配列を共有する (course YAML では YAML anchor)。
+# 古着・古布は「資源」ではなく拠点回収 (毎月第2・4土曜 午前10時〜正午・区内一律) のため対象外。
+# 粗大ごみは事前申込制・有料で曜日が決まらないため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - pet_bottle
+  - glass_bottle
+  - beverage_can
+  - paper
+  - hazardous
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 陶器・ガラス・金属ごみ, short: 陶ガラ金 }
+  plastic: { label: 資源プラスチック, short: 資源プラ }
+  paper: { label: 古紙 }
+  hazardous: { label: 蛍光灯・電池類, short: 蛍光灯電池 }
