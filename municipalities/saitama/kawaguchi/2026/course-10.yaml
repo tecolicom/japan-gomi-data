@@ -1,7 +1,34 @@
 metadata:
   city: kawaguchi
   course: "10"
-  course_name_ja: 安行領在家、安行領根岸(根岸第１町会を除く）、新井宿、木曽呂（藤堤下を除く）、東内野、源左衛門新田（差間町会を除く）、石神、神戸（神根）、西新井宿、赤山、赤芝新田、道合、里（コンフォール西鳩ヶ谷を除く）
+  course_name_ja: 赤芝新田、赤山、新井宿、安行領在家、安行領根岸(根岸第１町会を除く）、石神、木曽呂（藤堤下を除く）、源左衛門新田（差間町会を除く）、神戸（神根）、里（コンフォール西鳩ヶ谷を除く）、西新井宿、東内野、道合
+  areas:
+    - name: 赤芝新田
+      yomi: あかしばしんでん
+    - name: 赤山
+      yomi: あかやま
+    - name: 新井宿
+      yomi: あらいじゅく
+    - name: 安行領在家
+      yomi: あんぎょうりょうざいけ
+    - name: 安行領根岸(根岸第１町会を除く）
+      yomi: あんぎょうりょうねぎし
+    - name: 石神
+      yomi: いしがみ
+    - name: 木曽呂（藤堤下を除く）
+      yomi: きぞろ
+    - name: 源左衛門新田（差間町会を除く）
+      yomi: げんざえもんしんでん
+    - name: 神戸（神根）
+      yomi: ごうど
+    - name: 里（コンフォール西鳩ヶ谷を除く）
+      yomi: さと
+    - name: 西新井宿
+      yomi: にしあらいじゅく
+    - name: 東内野
+      yomi: ひがしうちの
+    - name: 道合
+      yomi: みちあい
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---10.pdf

@@ -4,6 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parse as yamlParse } from 'yaml';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 import { categoriesOn, isoDate } from '../../_lib/schedule.mjs';
 
@@ -16,12 +17,36 @@ if (!EXTRACTED_AT) throw new Error('set EXTRACTED_AT=YYYY-MM-DD');
 const rulesJson = JSON.parse(readFileSync(join(HERE, 'cache', 'rules.json'), 'utf8'));
 const areasJson = JSON.parse(readFileSync(join(HERE, 'cache', 'areas.json'), 'utf8'));
 const gridJson = JSON.parse(readFileSync(join(HERE, 'cache', 'grid.json'), 'utf8'));
+const yomiMap = yamlParse(readFileSync(join(HERE, 'yomi.yaml'), 'utf8'));
 
 // 種別の並び (taxonomy 宣言順)
 const ORDER = ['burnable', 'hazardous', 'plastic', 'glass_bottle', 'beverage_can', 'metal', 'paper', 'pet_bottle', 'paper_cloth'];
 // 半角カナ→全角(番号一覧表に ｺﾝﾌｫｰﾙ 混在。course_name_ja の表記を統一)
 const HANKATA = { 'ｦ':'ヲ','ｧ':'ァ','ｨ':'ィ','ｩ':'ゥ','ｪ':'ェ','ｫ':'ォ','ｬ':'ャ','ｭ':'ュ','ｮ':'ョ','ｯ':'ッ','ｰ':'ー','ｱ':'ア','ｲ':'イ','ｳ':'ウ','ｴ':'エ','ｵ':'オ','ｶ':'カ','ｷ':'キ','ｸ':'ク','ｹ':'ケ','ｺ':'コ','ｻ':'サ','ｼ':'シ','ｽ':'ス','ｾ':'セ','ｿ':'ソ','ﾀ':'タ','ﾁ':'チ','ﾂ':'ツ','ﾃ':'テ','ﾄ':'ト','ﾅ':'ナ','ﾆ':'ニ','ﾇ':'ヌ','ﾈ':'ネ','ﾉ':'ノ','ﾊ':'ハ','ﾋ':'ヒ','ﾌ':'フ','ﾍ':'ヘ','ﾎ':'ホ','ﾏ':'マ','ﾐ':'ミ','ﾑ':'ム','ﾒ':'メ','ﾓ':'モ','ﾔ':'ヤ','ﾕ':'ユ','ﾖ':'ヨ','ﾗ':'ラ','ﾘ':'リ','ﾙ':'ル','ﾚ':'レ','ﾛ':'ロ','ﾜ':'ワ','ﾝ':'ン' };
 const zenkaku = (s) => s.replace(/[｡-ﾟ]/g, (c) => HANKATA[c] || c);
+const z2h = (s) => s.replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0));
+
+// area 表記名 → 郵便カナ引き用のベース町名 (丁目レンジ・番地・（…）注記・末尾数字を除去)
+function baseTown(name) {
+  let n = z2h(zenkaku(name)).replace(/[（(]/g, '（').replace(/[）)]/g, '）');
+  n = n.replace(/（[^）]*）/g, '');            // 注記 (…を除く / …町会) を除去
+  n = n.replace(/[0-9][0-9〜～・,]*番地.*$/, '');
+  n = n.replace(/[0-9][0-9〜～・,]*丁目$/, '');
+  n = n.replace(/[0-9]+$/, '');
+  return n;
+}
+// area {name, yomi}[] を作る (yomi はベース町名で引く。無ければ throw = 推測しない)
+function toAreas(townList) {
+  return townList
+    .map((raw) => {
+      const name = zenkaku(raw);
+      const base = baseTown(raw);
+      const yomi = yomiMap[base];
+      if (!yomi) throw new Error(`yomi 不明: "${name}" (base="${base}") — yomi.yaml に追加のこと`);
+      return { name, yomi };
+    })
+    .sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja'));
+}
 
 // 年末年始休止 (カレンダー本体で空欄になっている実日付。全 18 地区共通の窓)
 const YEAREND = ['2026-01-01', '2026-01-02', '2026-12-29', '2026-12-30', '2026-12-31'];
@@ -43,13 +68,14 @@ for (let d = 1; d <= 18; d++) {
     const dt = new Date(key + 'T00:00:00');
     if (categoriesOn(dt, rules, []).length) overrides.push({ date: key, cancelled: true, note: '年末年始休止(カレンダー本体で収集なし)' });
   }
-  const towns = (areasJson[String(d)] || []).map(zenkaku);
-  const courseNameJa = towns.join('、');
+  const townList = areasJson[String(d)] || [];
+  const areas = toAreas(townList);
+  const courseNameJa = areas.map((a) => a.name).join('、');
   docs.push(courseDoc({
     city: 'kawaguchi',
     course: String(d),
     courseNameJa,
-    areas: undefined, // 構造化 areas(+yomi)は yomi ソース確定後の追加作業。町名は course_name_ja に収録。
+    areas, // 構造化 areas(name+yomi)。yomi は日本郵便 郵便カナ由来(yomi.yaml)。
     year: YEAR,
     fiscalYearJa: undefined, // 川口は暦年(2026年)カレンダー。年度ではない。
     source: {

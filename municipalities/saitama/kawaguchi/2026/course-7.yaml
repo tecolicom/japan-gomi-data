@@ -1,7 +1,26 @@
 metadata:
   city: kawaguchi
   course: "7"
-  course_name_ja: 朝日１〜６丁目、本蓮１〜４丁目、東本郷、東本郷１・２丁目、江戸袋１・２丁目、江戸１〜３丁目、蓮沼、赤井、赤井１〜４丁目
+  course_name_ja: 赤井、赤井１〜４丁目、朝日１〜６丁目、江戸１〜３丁目、江戸袋１・２丁目、蓮沼、東本郷、東本郷１・２丁目、本蓮１〜４丁目
+  areas:
+    - name: 赤井
+      yomi: あかい
+    - name: 赤井１〜４丁目
+      yomi: あかい
+    - name: 朝日１〜６丁目
+      yomi: あさひ
+    - name: 江戸１〜３丁目
+      yomi: えど
+    - name: 江戸袋１・２丁目
+      yomi: えどぶくろ
+    - name: 蓮沼
+      yomi: はすぬま
+    - name: 東本郷
+      yomi: ひがしほんごう
+    - name: 東本郷１・２丁目
+      yomi: ひがしほんごう
+    - name: 本蓮１〜４丁目
+      yomi: ほんばす
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---7.pdf

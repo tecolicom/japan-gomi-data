@@ -1,7 +1,28 @@
 metadata:
   city: kawaguchi
   course: "12"
-  course_name_ja: 伊刈（小谷場町会）、南前川１・２丁目、坂下町１・２丁目、小谷場、芝中田１・２丁目、芝園町、芝富士１・２丁目、芝新町、芝樋ノ爪１・２丁目、芝１〜５丁目
+  course_name_ja: 伊刈（小谷場町会）、小谷場、坂下町１・２丁目、芝１〜５丁目、芝新町、芝園町、芝中田１・２丁目、芝樋ノ爪１・２丁目、芝富士１・２丁目、南前川１・２丁目
+  areas:
+    - name: 伊刈（小谷場町会）
+      yomi: いかり
+    - name: 小谷場
+      yomi: こやば
+    - name: 坂下町１・２丁目
+      yomi: さかしたちょう
+    - name: 芝１〜５丁目
+      yomi: しば
+    - name: 芝新町
+      yomi: しばしんまち
+    - name: 芝園町
+      yomi: しばぞのちょう
+    - name: 芝中田１・２丁目
+      yomi: しばなかだ
+    - name: 芝樋ノ爪１・２丁目
+      yomi: しばひのつめ
+    - name: 芝富士１・２丁目
+      yomi: しばふじ
+    - name: 南前川１・２丁目
+      yomi: みなみまえかわ
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---12.pdf

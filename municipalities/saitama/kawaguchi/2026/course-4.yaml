@@ -1,7 +1,22 @@
 metadata:
   city: kawaguchi
   course: "4"
-  course_name_ja: 仲町、南町１・２丁目、原町、宮町、川口５・６丁目、緑町、西川口１〜６丁目
+  course_name_ja: 川口５・６丁目、仲町、西川口１〜６丁目、原町、緑町、南町１・２丁目、宮町
+  areas:
+    - name: 川口５・６丁目
+      yomi: かわぐち
+    - name: 仲町
+      yomi: なかちょう
+    - name: 西川口１〜６丁目
+      yomi: にしかわぐち
+    - name: 原町
+      yomi: はらまち
+    - name: 緑町
+      yomi: みどりちょう
+    - name: 南町１・２丁目
+      yomi: みなみちょう
+    - name: 宮町
+      yomi: みやちょう
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---4.pdf

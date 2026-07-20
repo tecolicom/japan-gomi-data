@@ -53,11 +53,14 @@ EXTRACTED_AT=2026-07-20 node build.mjs  # rules + 年末年始 override + course
 `municipalities/saitama/kawaguchi/2026/course-{1..18}.yaml` (18コース = 市公式カレンダー番号①〜⑱に 1:1)。
 `cache/` は再生成可能なため非追跡 (.gitignore)。
 
+## 読み (yomi)
+
+`yomi.yaml` = ベース町名→読み(ひらがな)。日本郵便 郵便番号検索 (川口市 11203) の郵便カナ
+(`data-addr_kana`) 由来 113 町 + 通例読み 2 件。build.mjs が各 area 名からベース名 (丁目・番地・
+（…注記）除去) を引き、未収録なら throw (推測で埋めない)。町丁目 133 件中 131 件が郵便カナで確定、
+コンフォール東/西鳩ヶ谷 (郵便町名でない UR 団地) の 2 件のみ通例読み「こんふぉーる…」(要確認)。
+
 ## 残タスク (未完了)
 
-- **構造化 areas + yomi**: 現状は町丁目 133 件を course_name_ja に文字列収録のみ。`areas: [{name, yomi}]`
-  は未収録。理由 = 独立 yomi ソース (日本郵便) の取得経路が 2026-07 時点で不通 (kogaki zip / cgi-zip とも
-  404 or JS化)。町名→地区は `cache/areas.json` (番号表由来) に揃っており、yomi ソース確定後に build.mjs へ
-  areas 生成を追加すれば済む。読みを推測で埋めない方針のため保留。
 - **年末年始の確定日程**: PDF 脚注が「年末年始は別途『年末・年始ごみ収集のお知らせ』参照」と明記。
   本データは本体カレンダーが示す休止のみ収録。毎年12月に告知 PDF で要確認・更新。

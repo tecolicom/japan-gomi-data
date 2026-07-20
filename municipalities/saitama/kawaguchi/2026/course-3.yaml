@@ -1,7 +1,18 @@
 metadata:
   city: kawaguchi
   course: "3"
-  course_name_ja: コンフォール西鳩ヶ谷、並木元町、並木１〜４丁目、南鳩ヶ谷１・２丁目、桜町１・２丁目
+  course_name_ja: コンフォール西鳩ヶ谷、桜町１・２丁目、並木１〜４丁目、並木元町、南鳩ヶ谷１・２丁目
+  areas:
+    - name: コンフォール西鳩ヶ谷
+      yomi: こんふぉーるにしはとがや
+    - name: 桜町１・２丁目
+      yomi: さくらちょう
+    - name: 並木１〜４丁目
+      yomi: なみき
+    - name: 並木元町
+      yomi: なみきもとまち
+    - name: 南鳩ヶ谷１・２丁目
+      yomi: みなみはとがや
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---3.pdf

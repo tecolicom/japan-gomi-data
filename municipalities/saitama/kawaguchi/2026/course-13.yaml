@@ -1,7 +1,50 @@
 metadata:
   city: kawaguchi
   course: "13"
-  course_name_ja: 前田、前野宿、南鳩ヶ谷５・６丁目、坂下町４丁目、大竹、安行、安行出羽１〜５丁目、安行北谷、安行原、安行吉岡、安行吉蔵、安行小山、安行慈林、安行藤八、安行西立野、安行領家、新堀、新堀町、東貝塚、榛松、榛松１〜３丁目
+  course_name_ja: 安行、安行北谷、安行吉蔵、安行小山、安行慈林、安行出羽１〜５丁目、安行藤八、安行西立野、安行原、安行吉岡、安行領家、大竹、坂下町４丁目、新堀、新堀町、榛松、榛松１〜３丁目、東貝塚、前田、前野宿、南鳩ヶ谷５・６丁目
+  areas:
+    - name: 安行
+      yomi: あんぎょう
+    - name: 安行北谷
+      yomi: あんぎょうきたや
+    - name: 安行吉蔵
+      yomi: あんぎょうきちぞう
+    - name: 安行小山
+      yomi: あんぎょうこやま
+    - name: 安行慈林
+      yomi: あんぎょうじりん
+    - name: 安行出羽１〜５丁目
+      yomi: あんぎょうでわ
+    - name: 安行藤八
+      yomi: あんぎょうとうはち
+    - name: 安行西立野
+      yomi: あんぎょうにしたての
+    - name: 安行原
+      yomi: あんぎょうはら
+    - name: 安行吉岡
+      yomi: あんぎょうよしおか
+    - name: 安行領家
+      yomi: あんぎょうりょうけ
+    - name: 大竹
+      yomi: おおたけ
+    - name: 坂下町４丁目
+      yomi: さかしたちょう
+    - name: 新堀
+      yomi: にいほり
+    - name: 新堀町
+      yomi: にいほりちょう
+    - name: 榛松
+      yomi: はえまつ
+    - name: 榛松１〜３丁目
+      yomi: はえまつ
+    - name: 東貝塚
+      yomi: ひがしかいづか
+    - name: 前田
+      yomi: まえた
+    - name: 前野宿
+      yomi: まえのしゅく
+    - name: 南鳩ヶ谷５・６丁目
+      yomi: みなみはとがや
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---13.pdf

@@ -2,6 +2,9 @@ metadata:
   city: kawaguchi
   course: "6"
   course_name_ja: 青木１〜５丁目
+  areas:
+    - name: 青木１〜５丁目
+      yomi: あおき
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---6.pdf

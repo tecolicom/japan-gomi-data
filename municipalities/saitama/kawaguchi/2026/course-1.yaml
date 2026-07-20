@@ -1,7 +1,20 @@
 metadata:
   city: kawaguchi
   course: "1"
-  course_name_ja: 川口１丁目、幸町１〜３丁目、本町１〜４丁目、栄町１〜３丁目、舟戸町、金山町
+  course_name_ja: 金山町、川口１丁目、幸町１〜３丁目、栄町１〜３丁目、舟戸町、本町１〜４丁目
+  areas:
+    - name: 金山町
+      yomi: かなやまちょう
+    - name: 川口１丁目
+      yomi: かわぐち
+    - name: 幸町１〜３丁目
+      yomi: さいわいちょう
+    - name: 栄町１〜３丁目
+      yomi: さかえちょう
+    - name: 舟戸町
+      yomi: ふなとちょう
+    - name: 本町１〜４丁目
+      yomi: ほんちょう
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf

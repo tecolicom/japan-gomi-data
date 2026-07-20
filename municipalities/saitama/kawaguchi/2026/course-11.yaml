@@ -1,7 +1,30 @@
 metadata:
   city: kawaguchi
   course: "11"
-  course_name_ja: 伊刈（小谷場町会を除く）、八幡木１・２丁目、南鳩ヶ谷３・４丁目、南鳩ヶ谷８丁目、柳崎１〜５丁目、芝下１〜３丁目、芝塚原１・２丁目、芝宮根町、芝東町、芝西１・２丁目、芝高木１・２丁目
+  course_name_ja: 伊刈（小谷場町会を除く）、芝下１〜３丁目、芝高木１・２丁目、芝塚原１・２丁目、芝西１・２丁目、芝東町、芝宮根町、八幡木１・２丁目、南鳩ヶ谷３・４丁目、南鳩ヶ谷８丁目、柳崎１〜５丁目
+  areas:
+    - name: 伊刈（小谷場町会を除く）
+      yomi: いかり
+    - name: 芝下１〜３丁目
+      yomi: しばしも
+    - name: 芝高木１・２丁目
+      yomi: しばたかぎ
+    - name: 芝塚原１・２丁目
+      yomi: しばつかばら
+    - name: 芝西１・２丁目
+      yomi: しばにし
+    - name: 芝東町
+      yomi: しばひがしちょう
+    - name: 芝宮根町
+      yomi: しばみやねちょう
+    - name: 八幡木１・２丁目
+      yomi: はちまんぎ
+    - name: 南鳩ヶ谷３・４丁目
+      yomi: みなみはとがや
+    - name: 南鳩ヶ谷８丁目
+      yomi: みなみはとがや
+    - name: 柳崎１〜５丁目
+      yomi: やなぎさき
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---11.pdf

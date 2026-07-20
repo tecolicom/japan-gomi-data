@@ -2,6 +2,11 @@ metadata:
   city: kawaguchi
   course: "15"
   course_name_ja: コンフォール東鳩ヶ谷、鳩ヶ谷本町３・４丁目
+  areas:
+    - name: コンフォール東鳩ヶ谷
+      yomi: こんふぉーるひがしはとがや
+    - name: 鳩ヶ谷本町３・４丁目
+      yomi: はとがやほんちょう
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---15.pdf

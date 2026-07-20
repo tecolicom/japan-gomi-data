@@ -2,6 +2,11 @@ metadata:
   city: kawaguchi
   course: "18"
   course_name_ja: 桜町３〜５丁目（コンフォール東鳩ヶ谷を除く）、鳩ヶ谷本町１丁目
+  areas:
+    - name: 桜町３〜５丁目（コンフォール東鳩ヶ谷を除く）
+      yomi: さくらちょう
+    - name: 鳩ヶ谷本町１丁目
+      yomi: はとがやほんちょう
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---18.pdf

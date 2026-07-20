@@ -1,7 +1,20 @@
 metadata:
   city: kawaguchi
   course: "2"
-  course_name_ja: 南鳩ヶ谷７丁目、川口２〜４丁目、桜町６丁目、飯原町、飯塚１〜４丁目、鳩ヶ谷本町２丁目
+  course_name_ja: 飯塚１〜４丁目、飯原町、川口２〜４丁目、桜町６丁目、鳩ヶ谷本町２丁目、南鳩ヶ谷７丁目
+  areas:
+    - name: 飯塚１〜４丁目
+      yomi: いいづか
+    - name: 飯原町
+      yomi: いいはらちょう
+    - name: 川口２〜４丁目
+      yomi: かわぐち
+    - name: 桜町６丁目
+      yomi: さくらちょう
+    - name: 鳩ヶ谷本町２丁目
+      yomi: はとがやほんちょう
+    - name: 南鳩ヶ谷７丁目
+      yomi: みなみはとがや
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---2.pdf

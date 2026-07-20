@@ -1,7 +1,26 @@
 metadata:
   city: kawaguchi
   course: "5"
-  course_name_ja: 上青木西１〜５丁目、上青木１〜６丁目、中青木１〜５丁目、八幡木３丁目、前上町、前川１〜４丁目、本前川１・２丁目、本前川３丁目（根岸第１町会を除く）、西青木１〜５丁目
+  course_name_ja: 上青木１〜６丁目、上青木西１〜５丁目、中青木１〜５丁目、西青木１〜５丁目、八幡木３丁目、本前川１・２丁目、本前川３丁目（根岸第１町会を除く）、前上町、前川１〜４丁目
+  areas:
+    - name: 上青木１〜６丁目
+      yomi: かみあおき
+    - name: 上青木西１〜５丁目
+      yomi: かみあおきにし
+    - name: 中青木１〜５丁目
+      yomi: なかあおき
+    - name: 西青木１〜５丁目
+      yomi: にしあおき
+    - name: 八幡木３丁目
+      yomi: はちまんぎ
+    - name: 本前川１・２丁目
+      yomi: ほんまえかわ
+    - name: 本前川３丁目（根岸第１町会を除く）
+      yomi: ほんまえかわ
+    - name: 前上町
+      yomi: まえかみちょう
+    - name: 前川１〜４丁目
+      yomi: まえかわ
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---5.pdf

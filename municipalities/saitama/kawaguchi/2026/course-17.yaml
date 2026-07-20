@@ -2,6 +2,9 @@ metadata:
   city: kawaguchi
   course: "17"
   course_name_ja: 鳩ヶ谷緑町１・２丁目
+  areas:
+    - name: 鳩ヶ谷緑町１・２丁目
+      yomi: はとがやみどりちょう
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---17.pdf

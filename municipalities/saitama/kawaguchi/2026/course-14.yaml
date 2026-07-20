@@ -1,7 +1,40 @@
 metadata:
   city: kawaguchi
   course: "14"
-  course_name_ja: 久左衛門新田、北原台１〜３丁目、差間、差間１〜３丁目、戸塚南１〜５丁目、戸塚境町、戸塚東１〜４丁目、戸塚鋏町、戸塚１〜６丁目、東川口１〜６丁目、源左衛門新田（差間町会）、藤兵衛新田、行衛、西立野（戸塚）、長蔵新田、長蔵１〜３丁目
+  course_name_ja: 北原台１〜３丁目、久左衛門新田、行衛、源左衛門新田（差間町会）、差間、差間１〜３丁目、長蔵１〜３丁目、長蔵新田、藤兵衛新田、戸塚１〜６丁目、戸塚境町、戸塚鋏町、戸塚東１〜４丁目、戸塚南１〜５丁目、西立野（戸塚）、東川口１〜６丁目
+  areas:
+    - name: 北原台１〜３丁目
+      yomi: きたはらだい
+    - name: 久左衛門新田
+      yomi: きゅうざえもんしんでん
+    - name: 行衛
+      yomi: ぎょえ
+    - name: 源左衛門新田（差間町会）
+      yomi: げんざえもんしんでん
+    - name: 差間
+      yomi: さしま
+    - name: 差間１〜３丁目
+      yomi: さしま
+    - name: 長蔵１〜３丁目
+      yomi: ちょうぞう
+    - name: 長蔵新田
+      yomi: ちょうぞうしんでん
+    - name: 藤兵衛新田
+      yomi: とうべえしんでん
+    - name: 戸塚１〜６丁目
+      yomi: とづか
+    - name: 戸塚境町
+      yomi: とづかさかいちょう
+    - name: 戸塚鋏町
+      yomi: とづかはさみちょう
+    - name: 戸塚東１〜４丁目
+      yomi: とづかひがし
+    - name: 戸塚南１〜５丁目
+      yomi: とづかみなみ
+    - name: 西立野（戸塚）
+      yomi: にしたての
+    - name: 東川口１〜６丁目
+      yomi: ひがしかわぐち
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---14.pdf

@@ -1,7 +1,12 @@
 metadata:
   city: kawaguchi
   course: "16"
-  course_name_ja: 三ツ和１〜３丁目、坂下町３丁目
+  course_name_ja: 坂下町３丁目、三ツ和１〜３丁目
+  areas:
+    - name: 坂下町３丁目
+      yomi: さかしたちょう
+    - name: 三ツ和１〜３丁目
+      yomi: みつわ
   year: 2026
   source:
     pdf_url: https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---16.pdf
