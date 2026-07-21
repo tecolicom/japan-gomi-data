@@ -74,7 +74,7 @@ if (shigenNotes.size !== 1 || !shigenNotes.has(EXPECT_SHIGEN)) {
 // --- 年末年始 overrides ---
 // ごみ系は 1/1〜1/3 休止、資源系は 12/31〜1/3 休止。
 const GOMI_CATS = new Set(['burnable', 'non_burnable', 'plastic']);
-const SHIGEN_CATS = new Set(['glass_bottle', 'beverage_can', 'paper', 'pet_bottle', 'paper_cloth']);
+const SHIGEN_CATS = new Set(['glass_bottle', 'beverage_can', 'paper', 'pet_bottle', 'cloth']);
 const STOPPED_ON = {
   '2026-12-31': SHIGEN_CATS,                              // 資源のみ休止 (ごみは通常収集)
   '2027-01-01': new Set([...GOMI_CATS, ...SHIGEN_CATS]),

@@ -53,7 +53,7 @@ rules:
     pattern: weekly
     days:
       - FR
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     days:
       - TH

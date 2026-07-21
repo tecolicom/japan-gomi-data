@@ -73,7 +73,7 @@ test('rowToRules: 実データ 1 行 (南千住1丁目1番)', () => {
     { category: 'beverage_can', pattern: 'weekly', days: ['SA'] },
     { category: 'paper', pattern: 'weekly', days: ['SA'] },
     { category: 'pet_bottle', pattern: 'weekly', days: ['SA'] },
-    { category: 'paper_cloth', pattern: 'weekly', days: ['SA'] },
+    { category: 'cloth', pattern: 'weekly', days: ['SA'] },
   ]);
 });
 

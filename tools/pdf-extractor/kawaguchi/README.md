@@ -34,7 +34,7 @@ EXTRACTED_AT=2026-07-20 node build.mjs  # rules + 年末年始 override + course
 - 種別→正典語彙 (同日収集の対を分けて表現):
   一般ごみ=burnable / 有害ごみ=hazardous / プラスチック製容器包装=plastic /
   びん=glass_bottle・飲料かん=beverage_can / 金属類=metal・紙類=paper /
-  ペットボトル=pet_bottle・繊維類=paper_cloth。語彙追加なし。
+  ペットボトル=pet_bottle・繊維類=cloth。語彙追加なし。
 
 ## 検証 (2026-07-20)
 

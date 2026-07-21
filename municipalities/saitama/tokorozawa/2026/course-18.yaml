@@ -72,7 +72,7 @@ rules:
       - TH
     occurrences:
       - 3
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     days:
       - TH

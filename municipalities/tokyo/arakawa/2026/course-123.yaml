@@ -57,7 +57,7 @@ rules:
     pattern: weekly
     days:
       - TU
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     days:
       - TU

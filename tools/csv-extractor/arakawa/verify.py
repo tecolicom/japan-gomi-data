@@ -44,7 +44,7 @@ C_CLOTH = "古布"
 C_SNOTE = "資源備考欄"
 
 GOMI_CATS = {"burnable", "non_burnable", "plastic"}
-SHIGEN_CATS = {"glass_bottle", "beverage_can", "paper", "pet_bottle", "paper_cloth"}
+SHIGEN_CATS = {"glass_bottle", "beverage_can", "paper", "pet_bottle", "cloth"}
 
 errors = []
 
@@ -101,7 +101,7 @@ def row_rules(row):
             put(c, s)
 
     put("pet_bottle", parse_sched(row[C_PET]))
-    put("paper_cloth", parse_sched(row[C_CLOTH]))
+    put("cloth", parse_sched(row[C_CLOTH]))
     return out
 
 

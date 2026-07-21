@@ -60,7 +60,7 @@ rules:
     pattern: weekly
     days:
       - TU
-  - category: paper_cloth
+  - category: cloth
     pattern: weekly
     days:
       - TU

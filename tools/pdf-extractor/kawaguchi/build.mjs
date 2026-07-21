@@ -20,7 +20,7 @@ const gridJson = JSON.parse(readFileSync(join(HERE, 'cache', 'grid.json'), 'utf8
 const yomiMap = yamlParse(readFileSync(join(HERE, 'yomi.yaml'), 'utf8'));
 
 // 種別の並び (taxonomy 宣言順)
-const ORDER = ['burnable', 'hazardous', 'plastic', 'glass_bottle', 'beverage_can', 'metal', 'paper', 'pet_bottle', 'paper_cloth'];
+const ORDER = ['burnable', 'hazardous', 'plastic', 'glass_bottle', 'beverage_can', 'metal', 'paper', 'pet_bottle', 'cloth'];
 // 半角カナ→全角(番号一覧表に ｺﾝﾌｫｰﾙ 混在。course_name_ja の表記を統一)
 const HANKATA = { 'ｦ':'ヲ','ｧ':'ァ','ｨ':'ィ','ｩ':'ゥ','ｪ':'ェ','ｫ':'ォ','ｬ':'ャ','ｭ':'ュ','ｮ':'ョ','ｯ':'ッ','ｰ':'ー','ｱ':'ア','ｲ':'イ','ｳ':'ウ','ｴ':'エ','ｵ':'オ','ｶ':'カ','ｷ':'キ','ｸ':'ク','ｹ':'ケ','ｺ':'コ','ｻ':'サ','ｼ':'シ','ｽ':'ス','ｾ':'セ','ｿ':'ソ','ﾀ':'タ','ﾁ':'チ','ﾂ':'ツ','ﾃ':'テ','ﾄ':'ト','ﾅ':'ナ','ﾆ':'ニ','ﾇ':'ヌ','ﾈ':'ネ','ﾉ':'ノ','ﾊ':'ハ','ﾋ':'ヒ','ﾌ':'フ','ﾍ':'ヘ','ﾎ':'ホ','ﾏ':'マ','ﾐ':'ミ','ﾑ':'ム','ﾒ':'メ','ﾓ':'モ','ﾔ':'ヤ','ﾕ':'ユ','ﾖ':'ヨ','ﾗ':'ラ','ﾘ':'リ','ﾙ':'ル','ﾚ':'レ','ﾛ':'ロ','ﾜ':'ワ','ﾝ':'ン' };
 const zenkaku = (s) => s.replace(/[｡-ﾟ]/g, (c) => HANKATA[c] || c);

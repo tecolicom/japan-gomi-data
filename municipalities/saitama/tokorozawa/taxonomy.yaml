@@ -4,7 +4,7 @@
 #   新聞・雑誌雑がみ・段ボール(新・雑・段, 古紙) / 小型家電製品・古着古布(小型家電/古着・古布, 同日)
 # 「破砕/有害」は破砕ごみ類(不燃)=non_burnable と 有害ごみ=hazardous の同日収集を分けて表現。
 # 「びん・缶・スプレー」はびん=glass_bottle と かん(スプレー缶含む)=beverage_can の同日収集。
-# 「小型家電/古着・古布」は小型家電製品=metal と 古着・古布=paper_cloth の同日収集。
+# 「小型家電/古着・古布」は小型家電製品=metal と 古着・古布=cloth の同日収集。
 categories:
   - burnable
   - plastic
@@ -15,7 +15,7 @@ categories:
   - beverage_can
   - paper
   - metal
-  - paper_cloth
+  - cloth
 overrides:
   burnable:
     label: 燃やせるごみ
@@ -38,6 +38,6 @@ overrides:
   metal:
     label: 小型家電製品
     short: 家電
-  paper_cloth:
+  cloth:
     label: 古着・古布
     short: 古布

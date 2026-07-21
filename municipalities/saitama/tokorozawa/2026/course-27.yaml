@@ -68,7 +68,7 @@ rules:
       - MO
     occurrences:
       - 4
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     days:
       - MO

@@ -120,7 +120,7 @@ rules:
       - 2027-01-29
       - 2027-02-26
       - 2027-03-26
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_specific
     dates:
       - 2026-04-24

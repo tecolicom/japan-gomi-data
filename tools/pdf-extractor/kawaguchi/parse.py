@@ -14,7 +14,7 @@
 # カテゴリ対応 (市の区分 -> 正典語彙):
 #   一般ごみ=burnable / 有害ごみ=hazardous / プラスチック製容器包装=plastic /
 #   びん=glass_bottle / 飲料かん=beverage_can / 金属類=metal / 紙類=paper /
-#   ペットボトル=pet_bottle / 繊維類=paper_cloth
+#   ペットボトル=pet_bottle / 繊維類=cloth
 import pdfplumber, json, re, os, datetime, sys
 from collections import defaultdict
 
@@ -84,7 +84,7 @@ KEYCATS = {
     'plastic': ['plastic'],
     'bincan': ['glass_bottle', 'beverage_can'],
     'metalpaper': ['metal', 'paper'],
-    'petcloth': ['pet_bottle', 'paper_cloth'],
+    'petcloth': ['pet_bottle', 'cloth'],
 }
 
 def rule_to_rows(rule):
@@ -155,7 +155,7 @@ def parse_grid(pdf, district):
                 elif t == '金属':
                     cats = ['metal', 'paper']
                 elif t == 'ペット':
-                    cats = ['pet_bottle', 'paper_cloth']
+                    cats = ['pet_bottle', 'cloth']
                 if cats:
                     day = nearest_date(w['top'])
                     iso = datetime.date(YEAR, month, day).isoformat()

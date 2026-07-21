@@ -30,7 +30,7 @@ const INDEX_URL = 'https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/in
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 // 出力・署名の決定順 (同一日程の町が同一署名になるようカテゴリ順を固定)
 const CAT_ORDER = ['burnable', 'plastic', 'pet_bottle', 'non_burnable', 'hazardous',
-  'glass_bottle', 'beverage_can', 'paper', 'metal', 'paper_cloth'];
+  'glass_bottle', 'beverage_can', 'paper', 'metal', 'cloth'];
 const catRank = (c) => { const i = CAT_ORDER.indexOf(c); if (i < 0) throw new Error(`未知カテゴリ ${c}`); return i; };
 
 const extracted = JSON.parse(readFileSync(join(HERE, 'cache', 'extracted.json'), 'utf8'));

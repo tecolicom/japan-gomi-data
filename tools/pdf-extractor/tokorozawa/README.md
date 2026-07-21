@@ -30,7 +30,7 @@ node verify.mjs                   # categoriesOn 通年再展開で全 town-inst
   12/29 or 12/30〜1/3) は cancelled override。同一日程の町を 1 コースに畳む (署名一致)。
 - 品目→カテゴリ: 燃やせるごみ=burnable / 容プラ=plastic / ペットボトル=pet_bottle /
   破砕・有害(同日)=non_burnable+hazardous / びん・缶・スプレー(同日)=glass_bottle+beverage_can /
-  新・雑・段=paper / 小型家電・古着古布(同日)=metal+paper_cloth。
+  新・雑・段=paper / 小型家電・古着古布(同日)=metal+cloth。
 
 ## 検証 (2026-07-19)
 

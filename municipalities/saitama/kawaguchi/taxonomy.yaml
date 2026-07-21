@@ -3,8 +3,8 @@
 #   ▲ プラスチック製容器包装=plastic 週1(水曜)
 #   びん・飲料かん(びん=glass_bottle と 飲料かん=beverage_can 同日) 第n・m曜日
 #   金属類・紙類(金属類=metal と 紙類=paper 同日) 第n・m曜日
-#   ペットボトル・繊維類(ペットボトル=pet_bottle と 繊維類=paper_cloth 同日) 第n・m曜日
-# 判断: 「一般ごみ」は市の呼称(可燃相当の家庭ごみ)。最も近い burnable に割当。「繊維類」(古着・古布)は paper_cloth。語彙追加なし。
+#   ペットボトル・繊維類(ペットボトル=pet_bottle と 繊維類=cloth 同日) 第n・m曜日
+# 判断: 「一般ごみ」は市の呼称(可燃相当の家庭ごみ)。最も近い burnable に割当。「繊維類」(古着・古布)は cloth。語彙追加なし。
 categories:
   - burnable
   - hazardous
@@ -14,7 +14,7 @@ categories:
   - metal
   - paper
   - pet_bottle
-  - paper_cloth
+  - cloth
 overrides:
   burnable:
     label: 一般ごみ
@@ -40,6 +40,6 @@ overrides:
   pet_bottle:
     label: ペットボトル
     short: ペット
-  paper_cloth:
+  cloth:
     label: 繊維類
     short: 繊維

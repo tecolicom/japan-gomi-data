@@ -41,7 +41,7 @@ def label_to_cats(text):
     if '家' in text or '電' in text:       # 小型家電製品
         cats.add('metal')
     if '着' in text or '布' in text:       # 古着・古布
-        cats.add('paper_cloth')
+        cats.add('cloth')
     return cats
 
 DOW = '日月火水木金土'

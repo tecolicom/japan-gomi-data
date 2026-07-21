@@ -46,7 +46,7 @@ rules:
     pattern: weekly
     days:
       - FR
-  - category: paper_cloth
+  - category: cloth
     pattern: weekly
     days:
       - FR

@@ -96,7 +96,7 @@ export function rowToRules(row) {
     for (const c of categories) push(c, sched);
   }
   push('pet_bottle', parseSchedule(row[COL.pet]));
-  push('paper_cloth', parseSchedule(row[COL.cloth]));
+  push('cloth', parseSchedule(row[COL.cloth]));
 
   if (!rules.length) throw new Error(`全カテゴリが展開不能: ${JSON.stringify(row)}`);
   // schema の rules は category→pattern→days→occurrences 順で出す

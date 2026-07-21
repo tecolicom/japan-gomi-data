@@ -52,7 +52,7 @@ rules:
     pattern: weekly
     days:
       - SA
-  - category: paper_cloth
+  - category: cloth
     pattern: weekly
     days:
       - SA

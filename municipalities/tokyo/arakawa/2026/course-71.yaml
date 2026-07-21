@@ -49,7 +49,7 @@ rules:
     pattern: weekly
     days:
       - MO
-  - category: paper_cloth
+  - category: cloth
     pattern: weekly
     days:
       - MO

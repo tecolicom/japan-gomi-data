@@ -148,7 +148,7 @@ rules:
       - TU
     occurrences:
       - 2
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     days:
       - TU

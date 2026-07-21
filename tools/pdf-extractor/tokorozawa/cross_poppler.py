@@ -25,7 +25,7 @@ def label_to_cats(text):
     if '缶' in text: cats.add('beverage_can')
     if '雑' in text or '段' in text: cats.add('paper')
     if '家' in text or '電' in text: cats.add('metal')
-    if '着' in text or '布' in text: cats.add('paper_cloth')
+    if '着' in text or '布' in text: cats.add('cloth')
     return cats
 
 DOW = '日月火水木金土'
