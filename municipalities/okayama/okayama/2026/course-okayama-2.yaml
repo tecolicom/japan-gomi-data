@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-2
+  course_name_ja: "岡南: 青江１丁目／富田 ｜ 岡山中央: 石関町／出石町１丁目（中出石町町内会の４火は当面古紙古布ペットボトルのみ）／内山下１丁目（内山下元町五丁目町内会と相生町三丁目町内会と水の手二丁目町内会と内山下元町５丁目町内会と水の手三丁目町内会の４火は当面古紙古布ペットボトルのみ、内山下元町４丁目町内会の資源化物は２・４金（４金は当面古紙古布ペットボトルのみ））／内山下２丁目（内山下元町五丁目町内会と相生町三丁目町内会と水の手二丁目町内会と内山下元町５丁目町内会と水の手三丁目町内会の４火は当面古紙古布ペットボトルのみ、内山下元町４丁目町内会の資源化物は２・４金（４金は当面古紙古布ペットボトルのみ））／京橋町（橋本町町内会と川崎町町内会の４火は当面古紙古布ペットボトルのみ、紙屋町町内会の資源化物は２・４金）／天神町（天神町町内会の２火は当面古紙古布ペットボトルのみ）／蕃山町（西中山下蕃山町町内会の４火は当面古紙古布ペットボトルのみ）／丸の内１丁目（城下町町内会と相北町三丁目町内会の４火は当面古紙古布ペットボトルのみ）／丸の内２丁目／弓之町（難波町町内会と弓之町二丁目町内会の４火は当面古紙古布ペットボトルのみ） ｜ 大元・西: 下中野（南区）（ＪＲ瀬戸大橋線の東） ｜ 芳田・芳明: 新保（国道２号線バイパスの北） ｜ 芳明: 西市（ＪＲ瀬戸大橋線の東。国道２号線バイパスの北。） ｜ 鹿田: 東古松南町（青江津島線の西（２９番地のみ））"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 4
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR

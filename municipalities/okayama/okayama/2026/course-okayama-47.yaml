@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-47
+  course_name_ja: "加茂: 加茂（朝7時30分までにお出しください。）／新庄上（朝7時30分までにお出しください。）／新庄下（朝7時30分までにお出しください。）／惣爪（朝7時30分までにお出しください。）／津寺（朝7時30分までにお出しください。） ｜ 庄内: 小山（（国道１８０号以南）朝7時30分までにお出しください。）／高塚（朝7時30分までにお出しください。）／高松原古才（朝7時30分までにお出しください。）／三手（朝7時30分までにお出しください。）／門前（（国道180号以南）朝7時30分までにお出しください。）／立田（国道180号以南（朝7時30分までにお出しください。））／福崎（国道180号以南（朝7時30分までにお出しください。）） ｜ 横井: 田益（「田益」 朝7時30分までにお出しください。）／田益（「桃園」 朝7時30分までにお出しください。）／富原（「桃園」 （朝7時30分までにお出しください。））／横井上（「マスカット団地」  （朝7時30分までにお出しください。））"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences:
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - WE
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO

@@ -8,6 +8,7 @@ tools/csv-extractor/setagaya/cache/
 tools/csv-extractor/arakawa/cache/
 tools/csv-extractor/shinagawa/cache/
 tools/pdf-extractor/kurashiki/cache/
+tools/api-extractor/okayama/cache/
 __pycache__/
 .DS_Store
 /ics/

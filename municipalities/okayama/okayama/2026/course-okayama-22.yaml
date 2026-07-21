@@ -1,0 +1,80 @@
+metadata:
+  city: okayama
+  course: okayama-22
+  course_name_ja: "朝日: 犬島"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences: &a2
+      - 1
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a3
+      - FR
+    occurrences: &a4
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+      - TH

@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-7
+  course_name_ja: "幡多: 赤田／今谷／兼基／沢田／清水（JR山陽本線以南）／清水一丁目／清水二丁目／関／高屋／藤原／藤原西町二丁目／藤原光町一丁目／藤原光町二丁目／藤原光町三丁目 ｜ 御休: 浅川／浦間（御休学区（浦間 484番地～1214番地））／西祖／寺山／楢原／一日市／矢井／吉井 ｜ 伊島: 伊島北町／谷万成２丁目（Ｒ１８０－Ｒ５３より北）／津島京町１丁目 ｜ 平島: 浦間（平島学区（浦間 484番地～1214番地以外））／砂場／西平島／東平島／南古都 ｜ 雄神: 久保（※一部地域のみ、収集曜日が異なります。ステーション看板をご確認ください。）／河本町／西大寺東二丁目／西大寺東三丁目／西隆寺／富崎（砂川より東）／福治（砂川から東） ｜ 妹尾: 妹尾 ｜ 津島: 津島京町２丁目／津島京町３丁目／津島笹が瀬／津島西坂１丁目（ディアコート津島分の不燃ごみは1回目の金曜日）／津島西坂２丁目／津島西坂３丁目／津島本町（津島西坂町内会分は不燃3回目の金曜日）／津島南２丁目（津島西坂町内会分は不燃3回目の金曜日） ｜ 第一藤田・第二藤田・第三藤田: 藤田 ｜ 幡多･宇野: 藤原西町一丁目"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - WE
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR

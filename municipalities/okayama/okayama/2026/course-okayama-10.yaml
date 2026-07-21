@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-10
+  course_name_ja: "岡南: 旭本町（３水は当面古紙古布ペットボトルのみ）／岡南町１丁目（北旭町町内会の３水は当面古紙古布ペットボトルのみ）／岡南町２丁目／七日市西町（資源化物は当面の間３回目の水曜日のみ）／七日市東町 ｜ 清輝･岡南: 旭町（北旭町町内会の３水は当面古紙古布ペットボトルのみ）／二日市町（二日市新生会と下内田北部町内会と下内田南部町内会の３水は当面古紙古布ペットボトルのみ、二日市東通町内会の１水は当面古紙古布ペットボトルのみ） ｜ 清輝: 天瀬（天瀬共和会と天瀬あやめ町内会の３水は当面古紙古布ペットボトルのみ）／天瀬南町（油町町内会と小原町東部町内会と児島町町内会の３水は当面古紙古布ペットボトルのみ）／岡町（内田西本町町内会の１水は当面古紙古布ペットボトルのみ）／京町（瀬尾町内会の３水は当面古紙古布ペットボトルのみ）／下内田町／新道（新道町内会と下内田北部町内会の３回目の水曜日は当面古紙古布ペットボトルのみ、清輝橋東通り町内会の１回目の水曜日は当面古紙古布ペットボトルのみ）／清輝橋１丁目（清輝橋町内会の３水は当面古紙古布ペットボトルのみ、内田西本町町内会と小原町西部町内会の１水は当面古紙古布ペットボトルのみ）／清輝橋２丁目（清輝橋町内会の３水は当面古紙古布ペットボトルのみ）／清輝橋３丁目／清輝橋４丁目（小原町西部町内会の１水は当面古紙古布ペットボトルのみ）／清輝本町（小原町西部町内会の１水は当面古紙古布ペットボトルのみ、東小野田町町内会と瀬尾町内会の３水は当面古紙古布ペットボトルのみ、ライオンズマンション岡山医大東第２の資源化物は１水のみ）／船頭町（下内田北部町内会の３回目の水曜日は当面古紙古布ペットボトルのみ）／東中央町（東中央町町内会と桜町町内会と尾上町町内会の３水は当面古紙古布ペットボトルのみ）／南中央町（瓦町町内会の資源化物は２・４金、桜町町内会と尾上町町内会の３水は当面古紙古布ペットボトルのみ）／山科町（３水は当面古紙古布ペットボトルのみ） ｜ 桃丘: 佐山（(E69ステーション利用地区以外)）／芳賀佐山団地 （※）（県住芳賀佐山団地・佐山団地・芳賀団地・芳賀団地南 （※）芳賀佐山団地は町名ではありません）"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - WE
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU

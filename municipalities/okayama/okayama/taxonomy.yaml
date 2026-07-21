@@ -1,0 +1,25 @@
+# 岡山市 (政令指定都市)。市公式 kViewer「収集曜日一覧」の4区分を正典語彙へ割り当てる(語彙追加なし)。
+# 収集区分は 可燃ごみ / 不燃ごみ / 資源化物 / プラスチック資源 の4系統。
+#   資源化物は市公式(https://www.city.okayama.jp/kurashi/0000005214.html)の定義どおり
+#   ガラスびん・空き缶・スプレー缶・ペットボトル・古紙・古布 を同一収集日に一括で出すため、
+#   6カテゴリの同日収集(days 共有)に分解する。
+#   (一部町内会は移行期で「当面古紙古布ペットボトルのみ」= びん・缶・スプレー缶を除く場合がある。
+#    行の備考に原文保持。恒常規則としては全6品目の同日収集を採用。詳細は meta.yaml notes。)
+categories:
+  - burnable
+  - non_burnable
+  - glass_bottle
+  - beverage_can
+  - spray_can
+  - pet_bottle
+  - paper
+  - cloth
+  - plastic
+overrides:
+  beverage_can:
+    label: 缶
+  spray_can:
+    label: スプレー缶
+  plastic:
+    label: プラスチック資源
+    short: プラ

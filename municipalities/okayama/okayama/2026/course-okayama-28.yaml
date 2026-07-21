@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-28
+  course_name_ja: "岡山中央: 岩田町／駅前町１丁目／駅前町２丁目／桑田町／幸町／下石井１丁目／下石井２丁目／錦町／本町／柳町１丁目／柳町２丁目 ｜ 鹿田: 厚生町１丁目（旧国道２号線の北）／厚生町２丁目（旧国道２号線の北）／厚生町３丁目（旧国道２号線の北）／大供３丁目（資源（旧２号線より南は２．４金））／中島田町１丁目／中島田町２丁目／東島田町１丁目／東島田町２丁目 ｜ 津島: 津島桑の木町／津島中１丁目／津島新野１丁目／津島新野２丁目／津島南１丁目（津島新野町内会分は不燃4回目の金曜日）"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - FR
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU

@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-6
+  course_name_ja: "南輝: あけぼの町（３月は当面古紙古布ペットボトルのみ）／築港新町１丁目（築港新町東町内会の資源化物は当面の間１月のみ）／築港新町２丁目／築港ひかり町／築港緑町１丁目／築港緑町２丁目／築港緑町３丁目／並木町２丁目／南輝２丁目／南輝３丁目／松浜町（３の月は当面古紙古布ペットボトルのみ） ｜ 伊島: 伊島町１丁目／伊島町２丁目／伊島町３丁目／伊福町４丁目／京山１丁目／京山２丁目／津倉町１丁目 ｜ 浦安: 浦安南町 ｜ : 市場１丁目／市場２丁目 ｜ 福島: 立川町／千鳥町（１の月は当面古紙古布ペットボトルのみ）／並木町１丁目／若葉町 ｜ 福島･南輝: 築港栄町 ｜ 伊島･三門: 津倉町２丁目 ｜ 平福: 福浜町（３の月は当面古紙古布ペットボトルのみ）／三浜町１丁目（1月は当面古紙古布ペットボトルのみ）／三浜町２丁目"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - MO
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH

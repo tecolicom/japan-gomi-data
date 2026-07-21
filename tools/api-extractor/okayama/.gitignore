@@ -1,0 +1,2 @@
+# 一次ソースのスナップショット (fetch.mjs で再取得可能)。browser-records.json は独立取得の検証用コピー。
+cache/

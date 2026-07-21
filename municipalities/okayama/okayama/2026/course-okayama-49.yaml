@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-49
+  course_name_ja: "御野: 北方１丁目（北方東本町町内会の１火は当面古紙古布ペットボトルのみ）／北方２丁目（北方東本町町内会の１火は当面古紙古布ペットボトルのみ）／北方３丁目（北方東本町町内会の１火は当面古紙古布ペットボトルのみ）／北方４丁目／津島中２丁目／津島中３丁目／津島東１丁目／津島東２丁目／津島東３丁目／津島東４丁目／中井町１丁目／中井町２丁目／半田町／法界院／三野１丁目（1月は当面古紙古布ペットボトルのみ）／三野２丁目／三野３丁目／大和町１丁目／大和町２丁目／理大町 ｜ 津島: 津島福居1丁目／津島福居２丁目 ｜ 岡山中央･御野: 南方４丁目（南方長泉寺町内会の３金は当面古紙古布ペットボトルのみ）"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 4
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR

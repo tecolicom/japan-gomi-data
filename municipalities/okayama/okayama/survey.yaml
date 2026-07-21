@@ -15,9 +15,10 @@ granularity: rules
 district_unit: '地区 (町丁目 / 4行政区: 北区・中区・東区・南区)'
 district_count_approx: null
 yearend: december-announce
-recommendation: defer
+recommendation: collected
+status: collected
 notes: >-
-  政令指定都市 (4行政区: 北区・中区・東区・南区)。東京・埼玉トリアージ圏外のためソース調査から実施 (2026-07-21)。結論=見送り (recommendation: defer)。
+  政令指定都市 (4行政区: 北区・中区・東区・南区)。東京・埼玉トリアージ圏外のためソース調査から実施 (2026-07-21)。当初は kViewer 待合室ゲートで機械取得不能として見送り (defer) にしたが、2026-07-22 に取得プロトコルを確立し収録済へ昇格 (status: collected)。詳細は meta.yaml。
 
   【一次ソースの所在】市公式「収集曜日一覧表」ページ (kurashi/category/1-12-7-10-3-…、環境事業課ページ soshiki/14-2-6-0-0_20.html からもリンク)
   が案内する収集曜日データは、唯一「令和6年3月からの収集曜日一覧表」= kViewer (Cybozu kintone の公開ビュー、f5d44204.viewer.kintoneapp.com)
@@ -45,4 +46,10 @@ notes: >-
   【収録の条件】次のいずれかが満たされれば収録可へ昇格: (a) kViewer の待合室を通過し records を機械抽出できる安定経路が判明する
   (kintone REST / kViewer records API の直叩き等)、(b) 市がオープンデータカタログに地区別収集曜日 CSV を公開する、
   (c) 独立第2ソース (テキスト層ありの地区別カレンダー PDF 等) が現れ2経路突合が可能になる。現時点ではいずれも不成立のため作成を見送る。
+
+  【昇格 (2026-07-22)】上記条件(a)が成立。kViewer 待合室が現在無効 (waitingRoomEnabled:false) で、records API
+  (assign_request_order → generate_token → Cookie セッション → /public/internal/api/records/<code>/<page>) を curl/Node で実証。
+  全844行を機械取得し収録済 (status: collected)。取得プロトコル・検証・確率的信頼度は meta.yaml notes を参照。
+  待合室が再び有効化された場合は request_order のポーリングが要る (fetch.mjs は混雑時に明示中断)。
 surveyed_at: '2026-07-21'
+collected_at: '2026-07-22'

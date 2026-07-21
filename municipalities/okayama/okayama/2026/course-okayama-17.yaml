@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-17
+  course_name_ja: "岡山中央: 出石町２丁目／富田町１丁目／富田町２丁目／野田屋町１丁目／野田屋町２丁目（野田屋町二丁目町内会の３金は当面古紙古布ペットボトルのみ）／番町１丁目（二番町町内会と三番町町内会と四番町町内会の３金は当面古紙古布ペットボトルのみ）／番町２丁目（二番町町内会と三番町町内会と四番町町内会の３金は当面古紙古布ペットボトルのみ、小畑町東町内会の１金は当面古紙古布ペットボトルのみ）／広瀬町（四番町町内会と広瀬町東町町内会の３金は当面古紙古布ペットボトルのみ、小畑町東町内会の１金は当面古紙古布ペットボトルのみ、広瀬町西町町内会の資源化物は当面の間１金のみ）／兵団（資源化物は当面の間３金のみ）／南方１丁目（南方玉江町町内会と南方戎町町内会の３金は当面古紙古布ペットボトルのみ）／南方２丁目（南方玉江町町内会と南方新町町内会の３金は当面古紙古布ペットボトルのみ）／南方３丁目（南方中道町内会の３金は当面古紙古布ペットボトルのみ）／南方５丁目 ｜ 御野: 学南町１丁目／学南町２丁目／学南町３丁目"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 4
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - FR
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU

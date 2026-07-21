@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-57
+  course_name_ja: "石井: 島田本町１丁目（青江・津島線島田地下道以西）／島田本町２丁目／富町１丁目／富町２丁目（県道川入・巌井以南・北共） ｜ 三門: 下伊福１丁目（下伊福東町町内会の資源化物は、ステーションによってルールが違うので、町内会へご確認ください。）／下伊福２丁目（下伊福東町町内会の資源化物は、ステーションによってルールが違うので、町内会へご確認ください。）／下伊福上町／下伊福西町／下伊福本町（県道川入・巌井以南・北共）／高柳東町 ｜ 富山: 福泊／円山／湊（「湊池の内町内会」（富山学区））／海吉／山崎（「山崎本町町内会」（富山学区）） ｜ 石井･伊島: 奉還町４丁目"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TH
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO

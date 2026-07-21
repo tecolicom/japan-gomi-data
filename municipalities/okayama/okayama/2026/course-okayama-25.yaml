@@ -1,0 +1,54 @@
+metadata:
+  city: okayama
+  course: okayama-25
+  course_name_ja: "大元: 今２丁目／大元上町／上中野１丁目／上中野２丁目 ｜ 西: 今２丁目／今３丁目／今４丁目／今５丁目／今６丁目／今７丁目／今８丁目／今村／北長瀬表町１丁目／北長瀬表町２丁目／辰巳（辰巳西公園北側の道路の南）／辰巳（辰巳西公園北側の道路の北）／問屋町／中仙道／中仙道１丁目／平田（岡山西バイパスの東）／平田（岡山西バイパスの西） ｜ 西大寺南: 金岡西町／金岡東町一丁目（1番15号～30号以外）／金岡東町二丁目／金岡東町三丁目／西大寺金岡 ｜ 大元・西: 下中野（北区）（ＪＲ貨物西岡山駅からの南北道路の西。） ｜ 御南･西: 田中（岡山西バイパスの東。辰巳西公園北側の道路の南）／田中（岡山西バイパスの西。）／田中（辰巳西公園北東の角、プレステージ難波　北区田中１０９－１０１）"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - WE
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
