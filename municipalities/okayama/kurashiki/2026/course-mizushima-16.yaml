@@ -43,7 +43,7 @@ rules:
     occurrences: *a1
     days:
       - TH
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     occurrences: *a1
     days:

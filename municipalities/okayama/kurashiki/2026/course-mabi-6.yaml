@@ -50,7 +50,7 @@ rules:
     occurrences: *a2
     days:
       - MO
-  - category: paper_cloth
+  - category: cloth
     pattern: monthly_nth
     occurrences: *a1
     days:

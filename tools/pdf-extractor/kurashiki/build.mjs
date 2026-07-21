@@ -4,7 +4,7 @@
 // 種別マッピング(taxonomy.yaml と一致):
 //  真備以外5地区(倉敷/水島/玉島/児島/船穂): 燃やせる=burnable(週2 or 月n) /
 //    資源ごみ(月1・同日一括)=びん+缶+ペット+古紙+古布 / 埋立=non_burnable
-//  真備: 燃える=burnable / 燃えない=non_burnable / 資源[ペット・白トレイ・古布]=pet+plastic+paper_cloth /
+//  真備: 燃える=burnable / 燃えない=non_burnable / 資源[ペット・白トレイ・古布]=pet+plastic+cloth /
 //    資源[缶]=beverage_can / 資源[びん・古紙]=glass_bottle+paper / 有害[体温計・乾電池]=hazardous
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -32,7 +32,7 @@ const DISTRICTS = {
 
 // カテゴリの決定順(署名安定用)
 const CAT_ORDER = ['burnable', 'non_burnable', 'glass_bottle', 'beverage_can', 'pet_bottle',
-  'plastic', 'paper', 'paper_cloth', 'hazardous'];
+  'plastic', 'paper', 'cloth', 'hazardous'];
 const catRank = (c) => { const i = CAT_ORDER.indexOf(c); if (i < 0) throw new Error(`未知カテゴリ ${c}`); return i; };
 
 // weekly/nth の生値 [kind, a, b] → rule 断片(category を後付け)
@@ -48,13 +48,13 @@ function toRules(rec) {
   const rules = [];
   if (rec.schema === 'main') {
     rules.push(rule('burnable', v.burnable));
-    for (const c of ['glass_bottle', 'beverage_can', 'pet_bottle', 'paper', 'paper_cloth'])
+    for (const c of ['glass_bottle', 'beverage_can', 'pet_bottle', 'paper', 'cloth'])
       rules.push(rule(c, v.shigen));
     rules.push(rule('non_burnable', v.umetate));
   } else if (rec.schema === 'mabi') {
     rules.push(rule('burnable', v.moeru));
     rules.push(rule('non_burnable', v.moenai));
-    for (const c of ['pet_bottle', 'plastic', 'paper_cloth']) rules.push(rule(c, v.shigen_pet));
+    for (const c of ['pet_bottle', 'plastic', 'cloth']) rules.push(rule(c, v.shigen_pet));
     rules.push(rule('beverage_can', v.shigen_can));
     for (const c of ['glass_bottle', 'paper']) rules.push(rule(c, v.shigen_binpaper));
     rules.push(rule('hazardous', v.yugai));
