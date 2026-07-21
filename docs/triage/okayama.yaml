@@ -1,0 +1,91 @@
+# okayama の調査台帳 (生成物 — 正典は municipalities/okayama/<handle>/survey.yaml。編集はそちらへ)
+# 再生成: node scripts/triage-csv.mjs / スコア: node scripts/triage-score.mjs --csv docs/triage/scores.csv
+- code: "33100"
+  handle: okayama
+  name_ja: 岡山市
+  population: 712940
+  source_type: web-app
+  schedule_url: https://www.city.okayama.jp/kurashi/category/1-12-7-10-3-0-0-0-0-0.html
+  calendar_urls:
+    - https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+  verify_sources: []
+  license: unknown
+  difficulty: 5
+  granularity: rules
+  district_unit: "地区 (町丁目 / 4行政区: 北区・中区・東区・南区)"
+  district_count_approx: null
+  yearend: december-announce
+  recommendation: defer
+  notes: >-
+    政令指定都市 (4行政区: 北区・中区・東区・南区)。東京・埼玉トリアージ圏外のためソース調査から実施 (2026-07-21)。結論=見送り (recommendation: defer)。
+
+    【一次ソースの所在】市公式「収集曜日一覧表」ページ (kurashi/category/1-12-7-10-3-…、環境事業課ページ soshiki/14-2-6-0-0_20.html からもリンク)
+    が案内する収集曜日データは、唯一「令和6年3月からの収集曜日一覧表」= kViewer (Cybozu kintone の公開ビュー、f5d44204.viewer.kintoneapp.com)
+    のみ。市サイト直下に PDF/CSV/Excel/HTML 表としての地区別収集曜日一覧は存在しない (category ページ・soshiki ページとも直接 fetch で確認、リンクは kViewer
+    1本のみ)。
+
+    【kViewer が収録に耐えない理由 (実測 2026-07-21)】 (1) 仮想待合室ゲート: /waiting/ に転送され wr-api/request_order が 202
+    を返し続け、requestId を更新しても admit されない (3分以上 "loading..." のまま)。
+        curl は 302 で /waiting/ へ。自動 fetch (extractor の fetch 段) が成立しない。
+    (2) JS レンダリング (Next.js SPA): 素の HTML にデータ無し。テキスト層・CSV エクスポート・素直な records JSON エンドポイントを表層から確認できず、
+        待合室ゲートがすべての API を覆う。
+    (3) 商用インフラ経由: 市自身の kintone アプリだが配信は Cybozu kViewer (約款不明・同時アクセス制限つき)。playbook の
+        「第三者商用アプリ配信データは一次採用しない」方針のグレーゾーンに該当し、機械可読性・再現性とも不合格。
+
+    【独立照合ソースが無い】収録には独立2経路突合が必須だが、地区→曜日の第2表現が存在しない: - 市配布の冊子「家庭ごみ・資源の分け方出し方」(区別) は収集曜日欄が住民記入式の空欄 ("__曜日"
+    のフィル・イン) で、地区別の実曜日データを含まない。
+      第三者 mast-kiya.net が令和4年度版 北区冊子 PDF (kitakugomi.pdf, 2.3MB, テキスト層あり32p) をホストするが、内容は同フィル・イン式=データ無し・かつ旧年度・非公式。
+    - オープンデータ: おかやまオープンデータカタログ (okayama-city.dataeye.jp / okayama-opendata.jp、CC BY 4.0) にごみ収集曜日/日程のデータセットは無し
+      (ごみ関連は「公共施設マップ (ごみ・リサイクル)」のみ)。岡山県カタログにも収集日系は見当たらず。
+    - 電子町内会 (townweb.e-okayamacity.jp) は町内会単位のごみ出しカレンダーを個別掲載するが、市全域を網羅する単一ソースではなく地区割の裏取りに使えない。
+
+    【判明した運用ルール (FAQ frmId=319)】収集品目は 可燃ごみ・不燃ごみ・プラ資源・資源化物 の4系統。 祝日・振替休日も通常収集し、休みは土曜・日曜・年末年始
+    (土日休みの平日収集制)。地区ごとに収集曜日が異なる。 年末年始の休止期間は毎年 12 月に別途告知の運用とみられる (december-announce。専用ページ kurashi/0000005242 は
+    2026-07-21 時点 404)。
+
+    【収録の条件】次のいずれかが満たされれば収録可へ昇格: (a) kViewer の待合室を通過し records を機械抽出できる安定経路が判明する (kintone REST / kViewer records
+    API の直叩き等)、(b) 市がオープンデータカタログに地区別収集曜日 CSV を公開する、 (c) 独立第2ソース (テキスト層ありの地区別カレンダー PDF 等)
+    が現れ2経路突合が可能になる。現時点ではいずれも不成立のため作成を見送る。
+  surveyed_at: 2026-07-21
+- code: "33202"
+  handle: kurashiki
+  name_ja: 倉敷市
+  population: 474592
+  status: collected
+  source_type: pdf
+  schedule_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
+  calendar_urls:
+    - https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kurashiki.pdf
+    - https://kurashiki.dataeye.jp/resources/13960
+    - https://kurashiki.dataeye.jp/resource_download/4110
+  verify_sources:
+    - opendata-csv-2019
+    - dual-engine-pdf
+  license: proprietary-site
+  difficulty: 4
+  district_unit: 学区・地区(町内会)
+  district_count_approx: 250
+  yearend: december-announcement
+  granularity: weekday
+  surveyed_at: 2026-07-21
+  notes: >-
+    一次ソース: 倉敷市公式「各地区収集日一覧」ページ配下の地区別 PDF 6 枚 (kurashiki / mizushima / tamashimafunao / kojima / funao /
+    mabi。tamashimafunao は玉島+船穂を1PDFに同梱)。 いずれもテキスト層が健全な表 (pdfplumber の罫線グリッドで抽出可、隠しOCR/CID化けなし)。
+    収集単位は「学区」を細分した「地区(町内会)」で、境界条件つきフリーテキスト (例「北畝２丁目（古城池線以北）」「浦田（県道福田老松線より西）」)。全体で約 250 地区。
+
+    収集区分は地区群で2系統。(A) 真備以外の5地区(倉敷/水島/玉島/児島/船穂): 燃やせるごみ(週2曜日)/ 資源ごみ(月1・第n回目の曜日、びん・缶・ペットボトル・古紙・古布を同一日に一括)/
+    埋立ごみ(月1・第n回目)。 (B) 真備地区: 燃えるごみ(週2)/ 燃えないごみ(月1)/ 資源ごみ2系統[ペットボトル・白色トレイ・古布 / びん・缶・古紙](各月1)/
+    有害ごみ[廃体温計・乾電池](月1)。真備は平成30年西日本豪雨後に分別が細分化され公式サイトでも別扱い。 「第n・曜日」は「その月 n
+    回目の該当曜日」(第n週ではない)。粗大ごみは持込/戸別申込・有料で集積所対象外。 使用済乾電池は集積所の専用容器へ随時(固有の収集日なし)。
+
+    ライセンス: 一次PDFは市サイト(CC宣言なし)→ 収集日という事実データの抽出(練馬・杉並・所沢と同じ整理)。 検証補助の data eye
+    CSV「倉敷市_平成31年度_ごみ_地区別_収集日」(resource 4110、UTF-8/BOM、249行、5374アプリ対応、 「その他(オープンライセンス)」)は 2019年度だが現行PDFと曜日/第n
+    が一致(スケジュール不変)→ 独立第2ソースとして使える。
+
+    年末年始: 真備PDFに「年末年始の休業日は事前に広報紙でお知らせ」と明記(december-announcement型)。
+    他地区PDF・FAQにも実日付の年末年始休止は載らず、12月広報待ち。祝日収集の明記は一次ソースで未確認(要照会)。
+
+    罠: (1)PDFは縦マージセル多数(学区/値列が複数地区にまたがる)→ 罫線グリッド+上方向フィルで解釈。 (2)地区名がフリーテキストで町丁目・postal町名より細かく、境界記述(「〜線より東」等)を含む。
+    (3)yomi は日本郵便の町名カナ(独立ソース)が該当する基底町名にのみ付与可。町内会級の局所名(共睦社・如蘭社・早高 等)には
+    権威ある読みソースが無いため推測しない。(4)玉島PDFの「旧呼称」列は参考(collection には不使用)。
+    (5)ごみ分別アプリ「さんあ〜る」は第三者商用アプリのため一次ソースに採らない(方針2026-07-18)。

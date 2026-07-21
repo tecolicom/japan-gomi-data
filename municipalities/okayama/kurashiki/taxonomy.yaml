@@ -1,0 +1,39 @@
+# 倉敷市。地区別PDFの収集区分を正典語彙へ割り当てる(語彙追加なし)。
+# 真備以外5地区: 燃やせるごみ / 資源ごみ(びん・缶・ペットボトル・古紙・古布を月1で同日一括) / 埋立ごみ。
+#   → 資源ごみは市の分別定義どおり glass_bottle+beverage_can+pet_bottle+paper+paper_cloth の同日収集に分解。
+# 真備地区: 燃えるごみ / 燃えないごみ / 資源[ペットボトル・白色トレイ・古布] / 資源[缶] /
+#   資源[びん・古紙] / 有害[廃体温計・乾電池]。
+# non_burnable は5地区の「埋立ごみ」と真備の「燃えないごみ」を兼ねる(自治体1つに taxonomy は1つのため)。
+#   ラベルは多数派の「埋立ごみ」を採用。真備の呼称は course_name_ja / meta notes 参照。
+# plastic は真備の「白色トレイ」専用(他5地区の資源ごみにトレイは含まれない)。
+categories:
+  - burnable
+  - non_burnable
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - plastic
+  - paper
+  - paper_cloth
+  - hazardous
+overrides:
+  burnable:
+    label: 燃やせるごみ
+  non_burnable:
+    label: 埋立ごみ
+    short: 埋立
+  glass_bottle:
+    label: びん
+  beverage_can:
+    label: 缶
+  pet_bottle:
+    label: ペットボトル
+  plastic:
+    label: 白色トレイ
+    short: トレイ
+  paper:
+    label: 古紙
+  paper_cloth:
+    label: 古布
+  hazardous:
+    label: 有害ごみ

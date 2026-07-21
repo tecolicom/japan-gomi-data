@@ -1,0 +1,49 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '33202'
+handle: kurashiki
+name_ja: 倉敷市
+population: 474592
+status: collected
+source_type: pdf
+schedule_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
+calendar_urls:
+- https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kurashiki.pdf
+- https://kurashiki.dataeye.jp/resources/13960
+- https://kurashiki.dataeye.jp/resource_download/4110
+verify_sources:
+- opendata-csv-2019
+- dual-engine-pdf
+license: proprietary-site
+difficulty: 4
+district_unit: 学区・地区(町内会)
+district_count_approx: 250
+yearend: december-announcement
+granularity: weekday
+surveyed_at: '2026-07-21'
+notes: >-
+  一次ソース: 倉敷市公式「各地区収集日一覧」ページ配下の地区別 PDF 6 枚
+  (kurashiki / mizushima / tamashimafunao / kojima / funao / mabi。tamashimafunao は玉島+船穂を1PDFに同梱)。
+  いずれもテキスト層が健全な表 (pdfplumber の罫線グリッドで抽出可、隠しOCR/CID化けなし)。
+  収集単位は「学区」を細分した「地区(町内会)」で、境界条件つきフリーテキスト
+  (例「北畝２丁目（古城池線以北）」「浦田（県道福田老松線より西）」)。全体で約 250 地区。
+
+  収集区分は地区群で2系統。(A) 真備以外の5地区(倉敷/水島/玉島/児島/船穂): 燃やせるごみ(週2曜日)/
+  資源ごみ(月1・第n回目の曜日、びん・缶・ペットボトル・古紙・古布を同一日に一括)/ 埋立ごみ(月1・第n回目)。
+  (B) 真備地区: 燃えるごみ(週2)/ 燃えないごみ(月1)/ 資源ごみ2系統[ペットボトル・白色トレイ・古布 / びん・缶・古紙](各月1)/
+  有害ごみ[廃体温計・乾電池](月1)。真備は平成30年西日本豪雨後に分別が細分化され公式サイトでも別扱い。
+  「第n・曜日」は「その月 n 回目の該当曜日」(第n週ではない)。粗大ごみは持込/戸別申込・有料で集積所対象外。
+  使用済乾電池は集積所の専用容器へ随時(固有の収集日なし)。
+
+  ライセンス: 一次PDFは市サイト(CC宣言なし)→ 収集日という事実データの抽出(練馬・杉並・所沢と同じ整理)。
+  検証補助の data eye CSV「倉敷市_平成31年度_ごみ_地区別_収集日」(resource 4110、UTF-8/BOM、249行、5374アプリ対応、
+  「その他(オープンライセンス)」)は 2019年度だが現行PDFと曜日/第n が一致(スケジュール不変)→ 独立第2ソースとして使える。
+
+  年末年始: 真備PDFに「年末年始の休業日は事前に広報紙でお知らせ」と明記(december-announcement型)。
+  他地区PDF・FAQにも実日付の年末年始休止は載らず、12月広報待ち。祝日収集の明記は一次ソースで未確認(要照会)。
+
+  罠: (1)PDFは縦マージセル多数(学区/値列が複数地区にまたがる)→ 罫線グリッド+上方向フィルで解釈。
+  (2)地区名がフリーテキストで町丁目・postal町名より細かく、境界記述(「〜線より東」等)を含む。
+  (3)yomi は日本郵便の町名カナ(独立ソース)が該当する基底町名にのみ付与可。町内会級の局所名(共睦社・如蘭社・早高 等)には
+  権威ある読みソースが無いため推測しない。(4)玉島PDFの「旧呼称」列は参考(collection には不使用)。
+  (5)ごみ分別アプリ「さんあ〜る」は第三者商用アプリのため一次ソースに採らない(方針2026-07-18)。

@@ -1,0 +1,50 @@
+metadata:
+  city: kurashiki
+  course: kojima-10
+  course_name_ja: "児島地区: 阿津1丁目～3丁目・元浜町・赤崎2丁目・大畠1丁目，2丁目（阿津・元浜町・赤崎・大畠）"
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
+    pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kojima.pdf
+    extracted_at: 2026-07-21
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+    days:
+      - WE
+  - category: glass_bottle
+    pattern: monthly_nth
+    occurrences: &a1
+      - 3
+    days:
+      - MO
+  - category: beverage_can
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - MO
+  - category: pet_bottle
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - MO
+  - category: paper
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - MO
+  - category: paper_cloth
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - MO

@@ -1,0 +1,48 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
+code: '33100'
+handle: okayama
+name_ja: 岡山市
+population: 712940
+source_type: web-app
+schedule_url: https://www.city.okayama.jp/kurashi/category/1-12-7-10-3-0-0-0-0-0.html
+calendar_urls:
+- https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+verify_sources: []
+license: unknown
+difficulty: 5
+granularity: rules
+district_unit: '地区 (町丁目 / 4行政区: 北区・中区・東区・南区)'
+district_count_approx: null
+yearend: december-announce
+recommendation: defer
+notes: >-
+  政令指定都市 (4行政区: 北区・中区・東区・南区)。東京・埼玉トリアージ圏外のためソース調査から実施 (2026-07-21)。結論=見送り (recommendation: defer)。
+
+  【一次ソースの所在】市公式「収集曜日一覧表」ページ (kurashi/category/1-12-7-10-3-…、環境事業課ページ soshiki/14-2-6-0-0_20.html からもリンク)
+  が案内する収集曜日データは、唯一「令和6年3月からの収集曜日一覧表」= kViewer (Cybozu kintone の公開ビュー、f5d44204.viewer.kintoneapp.com)
+  のみ。市サイト直下に PDF/CSV/Excel/HTML 表としての地区別収集曜日一覧は存在しない (category ページ・soshiki ページとも直接 fetch で確認、リンクは kViewer 1本のみ)。
+
+  【kViewer が収録に耐えない理由 (実測 2026-07-21)】
+  (1) 仮想待合室ゲート: /waiting/ に転送され wr-api/request_order が 202 を返し続け、requestId を更新しても admit されない (3分以上 "loading..." のまま)。
+      curl は 302 で /waiting/ へ。自動 fetch (extractor の fetch 段) が成立しない。
+  (2) JS レンダリング (Next.js SPA): 素の HTML にデータ無し。テキスト層・CSV エクスポート・素直な records JSON エンドポイントを表層から確認できず、
+      待合室ゲートがすべての API を覆う。
+  (3) 商用インフラ経由: 市自身の kintone アプリだが配信は Cybozu kViewer (約款不明・同時アクセス制限つき)。playbook の
+      「第三者商用アプリ配信データは一次採用しない」方針のグレーゾーンに該当し、機械可読性・再現性とも不合格。
+
+  【独立照合ソースが無い】収録には独立2経路突合が必須だが、地区→曜日の第2表現が存在しない:
+  - 市配布の冊子「家庭ごみ・資源の分け方出し方」(区別) は収集曜日欄が住民記入式の空欄 ("__曜日" のフィル・イン) で、地区別の実曜日データを含まない。
+    第三者 mast-kiya.net が令和4年度版 北区冊子 PDF (kitakugomi.pdf, 2.3MB, テキスト層あり32p) をホストするが、内容は同フィル・イン式=データ無し・かつ旧年度・非公式。
+  - オープンデータ: おかやまオープンデータカタログ (okayama-city.dataeye.jp / okayama-opendata.jp、CC BY 4.0) にごみ収集曜日/日程のデータセットは無し
+    (ごみ関連は「公共施設マップ (ごみ・リサイクル)」のみ)。岡山県カタログにも収集日系は見当たらず。
+  - 電子町内会 (townweb.e-okayamacity.jp) は町内会単位のごみ出しカレンダーを個別掲載するが、市全域を網羅する単一ソースではなく地区割の裏取りに使えない。
+
+  【判明した運用ルール (FAQ frmId=319)】収集品目は 可燃ごみ・不燃ごみ・プラ資源・資源化物 の4系統。
+  祝日・振替休日も通常収集し、休みは土曜・日曜・年末年始 (土日休みの平日収集制)。地区ごとに収集曜日が異なる。
+  年末年始の休止期間は毎年 12 月に別途告知の運用とみられる (december-announce。専用ページ kurashi/0000005242 は 2026-07-21 時点 404)。
+
+  【収録の条件】次のいずれかが満たされれば収録可へ昇格: (a) kViewer の待合室を通過し records を機械抽出できる安定経路が判明する
+  (kintone REST / kViewer records API の直叩き等)、(b) 市がオープンデータカタログに地区別収集曜日 CSV を公開する、
+  (c) 独立第2ソース (テキスト層ありの地区別カレンダー PDF 等) が現れ2経路突合が可能になる。現時点ではいずれも不成立のため作成を見送る。
+surveyed_at: '2026-07-21'
