@@ -70,6 +70,25 @@ const folded = foldCourses(records, toRules, (r) => r);
 // 出現順(最初の行の id)でコース番号を安定化
 folded.sort((a, b) => Number(a.areas[0].id) - Number(b.areas[0].id));
 
+// 年末年始のうち複数年実績で不変の部分のみ反映 (詳細は meta.yaml notes):
+//   市告知 (Wayback 令和2/4/5年度) は「年末は12/29または12/30まで・年始は1/4から」で、
+//   共通する不変部分は 12/31〜1/3 休止。12/30 は年により収集する年としない年がある。
+//   休止日に当たる地区の振替は毎年12月の「年末年始収集日変更一覧」PDF で告知されるため未反映。
+//   2026年度の実効休止日は 12/31(木)・1/1(金) のみ (1/2土・1/3日は元々収集なし、
+//   12/31 は第5木曜のため monthly_nth は非該当 = weekly 該当分のみ)。
+const DAY_TO_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
+function yearEndOverrides(rules) {
+  const out = [];
+  for (const iso of ['2026-12-31', '2027-01-01', '2027-01-02', '2027-01-03']) {
+    const d = new Date(iso + 'T00:00:00');
+    const occ = Math.floor((d.getDate() - 1) / 7) + 1;
+    const hit = rules.some((r) => (r.days || []).some((x) => DAY_TO_INDEX[x] === d.getDay()) &&
+      (r.pattern === 'weekly' || (r.pattern === 'monthly_nth' && r.occurrences.includes(occ))));
+    if (hit) out.push({ date: iso, cancelled: true, note: '年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)' });
+  }
+  return out;
+}
+
 const docs = folded.map((c, i) => {
   // course_name_ja: 小学校区ごとに町名(備考)を束ねる
   const byDist = new Map();
@@ -92,6 +111,7 @@ const docs = folded.map((c, i) => {
       verified_by: 'Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)',
     },
     rules: c.rules,
+    overrides: yearEndOverrides(c.rules),
   });
 });
 
