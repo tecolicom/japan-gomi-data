@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-2
   course_name_ja: "水島地区: 鶴の浦1・2丁目，西之浦（腕，弁財天）"
+  areas:
+    - name: 鶴の浦1・2丁目，西之浦（腕，弁財天）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

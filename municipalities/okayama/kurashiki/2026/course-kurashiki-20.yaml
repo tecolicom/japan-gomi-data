@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-20
   course_name_ja: "倉敷地区: 中洲(※)／中島北部の一部・水江・中洲団地"
+  areas:
+    - name: 中洲(※)／中島北部の一部・水江・中洲団地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

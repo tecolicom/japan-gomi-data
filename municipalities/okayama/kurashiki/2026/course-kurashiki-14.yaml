@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-14
   course_name_ja: "倉敷地区: 東／美和1，2・鶴形1，2・阿知1，2，3（一部）・幸町・東町・昭和2・本町（北側）"
+  areas:
+    - name: 東／美和1，2・鶴形1，2・阿知1，2，3（一部）・幸町・東町・昭和2・本町（北側）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

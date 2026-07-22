@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-5
   course_name_ja: "倉敷地区: 茶屋町／茶屋町・早沖（ＪＲ西 1．2．3．4．5町内・鶴崎）"
+  areas:
+    - name: 茶屋町／茶屋町・早沖（ＪＲ西 1．2．3．4．5町内・鶴崎）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,6 +2,10 @@ metadata:
   city: kurashiki
   course: kurashiki-17
   course_name_ja: "倉敷地区: 老松／石見町・日吉町・老松1，2，3，4，5 ／ 万寿／昭和1・浜ノ茶屋2・大島と平田のうち山陽本線より北 ／ 万寿東／福島・大島と平田のうち山陽本線より南"
+  areas:
+    - name: 老松／石見町・日吉町・老松1，2，3，4，5
+    - name: 万寿／昭和1・浜ノ茶屋2・大島と平田のうち山陽本線より北
+    - name: 万寿東／福島・大島と平田のうち山陽本線より南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-24
   course_name_ja: "倉敷地区: 西阿知／ＪＲ北 西阿知町・西阿知町西原"
+  areas:
+    - name: 西阿知／ＪＲ北 西阿知町・西阿知町西原
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

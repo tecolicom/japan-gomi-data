@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: kojima-10
-  course_name_ja: "児島地区: 阿津1丁目～3丁目・元浜町・赤崎2丁目・大畠1丁目，2丁目（阿津・元浜町・赤崎・大畠）"
+  course_name_ja: "児島地区: 阿津1丁目～3丁目・元浜町・赤崎2丁目・大畠1丁目，2丁目"
+  areas:
+    - name: 阿津1丁目～3丁目・元浜町・赤崎2丁目・大畠1丁目，2丁目
+      note: 阿津・元浜町・赤崎・大畠
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

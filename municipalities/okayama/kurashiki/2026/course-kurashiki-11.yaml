@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-11
   course_name_ja: "倉敷地区: 葦高／笹沖・県営・太田"
+  areas:
+    - name: 葦高／笹沖・県営・太田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

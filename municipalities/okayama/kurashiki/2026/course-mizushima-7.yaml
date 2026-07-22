@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-7
   course_name_ja: "水島地区: 神田3・4丁目，連島1丁目，連島中央1～5丁目"
+  areas:
+    - name: 神田3・4丁目，連島1丁目，連島中央1～5丁目
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

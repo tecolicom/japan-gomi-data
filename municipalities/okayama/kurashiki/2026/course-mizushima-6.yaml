@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-6
   course_name_ja: "水島地区: 川崎通り1丁目（水島地区），西通り1丁目，中通り1・2丁目，神田1・2丁目・亀島1・2丁目，南北亀島町，明神町"
+  areas:
+    - name: 川崎通り1丁目（水島地区），西通り1丁目，中通り1・2丁目，神田1・2丁目・亀島1・2丁目，南北亀島町，明神町
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

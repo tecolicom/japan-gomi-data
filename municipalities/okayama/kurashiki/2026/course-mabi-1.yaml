@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mabi-1
   course_name_ja: "真備地区: 川辺"
+  areas:
+    - name: 川辺
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

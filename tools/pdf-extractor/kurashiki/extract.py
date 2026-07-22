@@ -98,6 +98,8 @@ def extract_table(page, table, colmap, schema, district, out):
         if not area:
             raise ValueError(f'{district}: 地区名が空 row={cells!r}')
         out.append({'district': district, 'label': label,
+                    'gakku': last_gakku if 'gakku' in colmap and last_gakku else None,
+                    'area': area, 'kyu': kyu if kyu else None,
                     'values': {k: list(v) for k, v in vals.items()}, 'schema': schema})
 
 

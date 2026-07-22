@@ -1,7 +1,12 @@
 metadata:
   city: kurashiki
   course: tamashima-9
-  course_name_ja: "玉島地区: 阿賀崎（柏島中） ／ 柏島（柏島中）"
+  course_name_ja: "玉島地区: 阿賀崎 ／ 柏島"
+  areas:
+    - name: 阿賀崎
+      note: 柏島中
+    - name: 柏島
+      note: 柏島中
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

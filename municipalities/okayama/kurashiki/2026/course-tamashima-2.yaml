@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: tamashima-2
-  course_name_ja: "玉島地区: 陶（弥高）"
+  course_name_ja: "玉島地区: 陶"
+  areas:
+    - name: 陶
+      note: 弥高
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

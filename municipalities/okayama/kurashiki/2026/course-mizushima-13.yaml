@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-13
   course_name_ja: "水島地区: 中畝2,3,7,8丁目，東塚1丁目（国道430号線以北），東塚2・3丁目・東塚5・6丁目，東塚7丁目（国道430号線以北）"
+  areas:
+    - name: 中畝2,3,7,8丁目，東塚1丁目（国道430号線以北），東塚2・3丁目・東塚5・6丁目，東塚7丁目（国道430号線以北）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

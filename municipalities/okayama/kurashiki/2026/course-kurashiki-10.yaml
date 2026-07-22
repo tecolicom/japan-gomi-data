@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-10
   course_name_ja: "倉敷地区: 帯江／Ｒ2北（倉敷ハイツ含む）羽島・二日市"
+  areas:
+    - name: 帯江／Ｒ2北（倉敷ハイツ含む）羽島・二日市
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-8
   course_name_ja: "倉敷地区: 粒江／粒江・粒浦・黒石・八軒屋・東粒浦・粒江団地"
+  areas:
+    - name: 粒江／粒江・粒浦・黒石・八軒屋・東粒浦・粒江団地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

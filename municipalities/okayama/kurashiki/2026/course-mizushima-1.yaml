@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-1
   course_name_ja: "水島地区: 鶴新田（連島南中学校以南）"
+  areas:
+    - name: 鶴新田（連島南中学校以南）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

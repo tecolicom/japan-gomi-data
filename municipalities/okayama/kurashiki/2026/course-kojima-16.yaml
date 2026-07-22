@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: kojima-16
-  course_name_ja: "児島地区: 菰池1丁目，2丁目・通生・塩生・金浜・宇頭間・宇野津（菰池1丁目，2丁目・本荘 通生・塩生・金浜・宇頭間（うとうま）・宇野津）"
+  course_name_ja: "児島地区: 菰池1丁目，2丁目・通生・塩生・金浜・宇頭間・宇野津"
+  areas:
+    - name: 菰池1丁目，2丁目・通生・塩生・金浜・宇頭間・宇野津
+      note: 菰池1丁目，2丁目・本荘 通生・塩生・金浜・宇頭間（うとうま）・宇野津
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

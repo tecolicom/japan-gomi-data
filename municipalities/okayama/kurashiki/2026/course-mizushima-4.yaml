@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-4
   course_name_ja: "水島地区: 矢柄（北面を除く），亀島新田（宝島寺入口交差点以東），連島（茂浦）・連島2～5丁目"
+  areas:
+    - name: 矢柄（北面を除く），亀島新田（宝島寺入口交差点以東），連島（茂浦）・連島2～5丁目
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-18
   course_name_ja: "倉敷地区: 菅生／西岡・宮前・青江・祐安"
+  areas:
+    - name: 菅生／西岡・宮前・青江・祐安
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-5
   course_name_ja: "水島地区: 西之浦（宮の浦，青木），矢柄（北面），連島（丸山，大浦，江長，旭丘，大江）・西阿知町（新田の一部）"
+  areas:
+    - name: 西之浦（宮の浦，青木），矢柄（北面），連島（丸山，大浦，江長，旭丘，大江）・西阿知町（新田の一部）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: tamashima-4
-  course_name_ja: "玉島地区: 八島（玉島中央北・島地）"
+  course_name_ja: "玉島地区: 八島"
+  areas:
+    - name: 八島
+      note: 玉島中央北・島地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

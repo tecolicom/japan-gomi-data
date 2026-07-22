@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-12
   course_name_ja: "倉敷地区: 葦高／堀南・吉岡・浦田（県道福田老松線より東）"
+  areas:
+    - name: 葦高／堀南・吉岡・浦田（県道福田老松線より東）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

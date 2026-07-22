@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-13
   course_name_ja: "倉敷地区: 大高／沖・沖新町・西中新田・四十瀬・上富井"
+  areas:
+    - name: 大高／沖・沖新町・西中新田・四十瀬・上富井
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

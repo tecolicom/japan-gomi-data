@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mabi-2
   course_name_ja: "真備地区: 岡田・辻田"
+  areas:
+    - name: 岡田・辻田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,16 @@
 metadata:
   city: kurashiki
   course: tamashima-1
-  course_name_ja: "玉島地区: 服部（穂井田） ／ 陶（穂井田） ／ 道口（穂井田） ／ 長尾（穂井田）"
+  course_name_ja: "玉島地区: 服部 ／ 陶 ／ 道口 ／ 長尾"
+  areas:
+    - name: 服部
+      note: 穂井田
+    - name: 陶
+      note: 穂井田
+    - name: 道口
+      note: 穂井田
+    - name: 長尾
+      note: 穂井田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

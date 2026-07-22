@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-2
   course_name_ja: "倉敷地区: 庄／上東・下庄・栗坂"
+  areas:
+    - name: 庄／上東・下庄・栗坂
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

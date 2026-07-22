@@ -1,7 +1,12 @@
 metadata:
   city: kurashiki
   course: tamashima-6
-  course_name_ja: "玉島地区: 長尾（長尾・爪崎） ／ 爪崎（長尾・爪崎）"
+  course_name_ja: "玉島地区: 長尾 ／ 爪崎"
+  areas:
+    - name: 長尾
+      note: 長尾・爪崎
+    - name: 爪崎
+      note: 長尾・爪崎
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

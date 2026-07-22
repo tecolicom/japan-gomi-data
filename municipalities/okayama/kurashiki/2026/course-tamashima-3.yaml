@@ -1,7 +1,16 @@
 metadata:
   city: kurashiki
   course: tamashima-3
-  course_name_ja: "玉島地区: 富（富田） ／ 道口（富田） ／ 道越（富田） ／ 八島（富田）"
+  course_name_ja: "玉島地区: 富 ／ 道口 ／ 道越 ／ 八島"
+  areas:
+    - name: 富
+      note: 富田
+    - name: 道口
+      note: 富田
+    - name: 道越
+      note: 富田
+    - name: 八島
+      note: 富田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

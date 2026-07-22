@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-7
   course_name_ja: "倉敷地区: 豊洲／観音台・五日市・中帯江・西田・早高・高須賀"
+  areas:
+    - name: 豊洲／観音台・五日市・中帯江・西田・早高・高須賀
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,14 @@
 metadata:
   city: kurashiki
   course: tamashima-15
-  course_name_ja: "玉島地区: 柏島（柏島南） ／ 柏台1～5丁目（柏島南） ／ 勇崎（柏島南）"
+  course_name_ja: "玉島地区: 柏島 ／ 柏台1～5丁目 ／ 勇崎"
+  areas:
+    - name: 柏島
+      note: 柏島南
+    - name: 柏台1～5丁目
+      note: 柏島南
+    - name: 勇崎
+      note: 柏島南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: kojima-9
-  course_name_ja: "児島地区: 稗田町・美野団地（稗田町・美野団地（みのだんち））"
+  course_name_ja: "児島地区: 稗田町・美野団地"
+  areas:
+    - name: 稗田町・美野団地
+      note: 稗田町・美野団地（みのだんち）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

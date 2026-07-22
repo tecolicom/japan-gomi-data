@@ -70,17 +70,21 @@ let seq = 0;
 for (const [distJa, meta] of Object.entries(DISTRICTS)) {
   const rows = records.filter((r) => r.district === distJa);
   if (!rows.length) continue;
-  // 環境センター(収集地区)内で同一日程を畳む。areas は使わず label のみ course_name_ja に集約。
-  const folded = foldCourses(rows, toRules, (r) => r.label);
+  // 環境センター(収集地区)内で同一日程を畳む。areas は {name, note} で構造化し、
+  // 旧呼称 (kyu) は note へ分離 (course_name_ja には入れない)。学区 (gakku) がある行は
+  // 「学区／地区」を name にして文脈を保つ。読み (yomi) は権威ソースが無いため付けない。
+  const folded = foldCourses(rows, toRules, (r) => ({
+    name: r.gakku ? `${r.gakku}／${r.area}` : r.area,
+    ...(r.kyu ? { note: r.kyu } : {}),
+  }));
   folded.forEach((c, i) => {
     seq++;
-    const labels = c.areas; // toArea = label 文字列
     const courseId = `${meta.romaji}-${i + 1}`;
     docs.push(courseDoc({
       city: 'kurashiki',
       course: courseId,
-      courseNameJa: `${distJa}地区: ${labels.join(' ／ ')}`,
-      areas: undefined,
+      courseNameJa: `${distJa}地区: ${c.areas.map((a) => a.name).join(' ／ ')}`,
+      areas: c.areas,
       year: YEAR,
       fiscalYearJa: FY_JA,
       source: {

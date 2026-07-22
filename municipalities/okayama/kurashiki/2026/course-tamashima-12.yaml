@@ -1,7 +1,14 @@
 metadata:
   city: kurashiki
   course: tamashima-12
-  course_name_ja: "玉島地区: 玉島1丁目（乙島中） ／ 玉島2丁目（乙島中） ／ 乙島（乙島中）"
+  course_name_ja: "玉島地区: 玉島1丁目 ／ 玉島2丁目 ／ 乙島"
+  areas:
+    - name: 玉島1丁目
+      note: 乙島中
+    - name: 玉島2丁目
+      note: 乙島中
+    - name: 乙島
+      note: 乙島中
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

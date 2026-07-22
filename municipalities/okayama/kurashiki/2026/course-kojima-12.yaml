@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: kojima-12
-  course_name_ja: "児島地区: 田の浦1丁目，2丁目・吹上1丁目，2丁目・下津井1～5丁目（田の浦1丁目，2丁目・吹上1丁目，2丁目・下津井1～5丁目）"
+  course_name_ja: "児島地区: 田の浦1丁目，2丁目・吹上1丁目，2丁目・下津井1～5丁目"
+  areas:
+    - name: 田の浦1丁目，2丁目・吹上1丁目，2丁目・下津井1～5丁目
+      note: 田の浦1丁目，2丁目・吹上1丁目，2丁目・下津井1～5丁目
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

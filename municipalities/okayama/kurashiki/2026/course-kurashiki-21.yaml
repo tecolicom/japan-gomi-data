@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-21
   course_name_ja: "倉敷地区: 中洲(※)／安江・八王寺町・酒津"
+  areas:
+    - name: 中洲(※)／安江・八王寺町・酒津
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

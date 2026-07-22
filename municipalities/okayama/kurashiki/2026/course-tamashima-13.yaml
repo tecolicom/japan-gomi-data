@@ -1,7 +1,20 @@
 metadata:
   city: kurashiki
   course: tamashima-13
-  course_name_ja: "玉島地区: 玉島1丁目（玉島中央南） ／ 玉島2丁目（玉島中央南） ／ 玉島3丁目（玉島中央南） ／ 玉島中央町1丁目（玉島中央南） ／ 玉島中央町2丁目（玉島中央南） ／ 玉島中央町3丁目（玉島中央南）"
+  course_name_ja: "玉島地区: 玉島1丁目 ／ 玉島2丁目 ／ 玉島3丁目 ／ 玉島中央町1丁目 ／ 玉島中央町2丁目 ／ 玉島中央町3丁目"
+  areas:
+    - name: 玉島1丁目
+      note: 玉島中央南
+    - name: 玉島2丁目
+      note: 玉島中央南
+    - name: 玉島3丁目
+      note: 玉島中央南
+    - name: 玉島中央町1丁目
+      note: 玉島中央南
+    - name: 玉島中央町2丁目
+      note: 玉島中央南
+    - name: 玉島中央町3丁目
+      note: 玉島中央南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

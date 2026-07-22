@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-15
   course_name_ja: "倉敷地区: 西／中央・阿知2（一部），3・船倉・向山・新田・本町（南側）"
+  areas:
+    - name: 西／中央・阿知2（一部），3・船倉・向山・新田・本町（南側）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

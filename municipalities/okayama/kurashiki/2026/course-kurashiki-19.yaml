@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-19
   course_name_ja: "倉敷地区: 菅生／西坂・生坂・三田・浅原"
+  areas:
+    - name: 菅生／西坂・生坂・三田・浅原
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

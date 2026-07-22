@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-14
   course_name_ja: "水島地区: 福田町広江，広江3丁目，4丁目（2524～2556番地除く），広江5～8丁目"
+  areas:
+    - name: 福田町広江，広江3丁目，4丁目（2524～2556番地除く），広江5～8丁目
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

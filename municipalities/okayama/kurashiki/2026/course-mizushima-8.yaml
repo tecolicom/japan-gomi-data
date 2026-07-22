@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-8
   course_name_ja: "水島地区: 高砂町，青葉町，南北幸町，南北春日町，南北緑町，南北瑞穂町，東川町・連島142番地"
+  areas:
+    - name: 高砂町，青葉町，南北幸町，南北春日町，南北緑町，南北瑞穂町，東川町・連島142番地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

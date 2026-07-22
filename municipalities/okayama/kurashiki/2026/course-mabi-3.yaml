@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mabi-3
   course_name_ja: "真備地区: 有井（丸山を除く）"
+  areas:
+    - name: 有井（丸山を除く）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

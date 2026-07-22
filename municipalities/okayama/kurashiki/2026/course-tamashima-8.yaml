@@ -1,7 +1,18 @@
 metadata:
   city: kurashiki
   course: tamashima-8
-  course_name_ja: "玉島地区: 長尾（駅南） ／ 爪崎（駅南） ／ 上成（駅南） ／ 新倉敷駅前1～5丁目（駅南） ／ 玉島（駅南）"
+  course_name_ja: "玉島地区: 長尾 ／ 爪崎 ／ 上成 ／ 新倉敷駅前1～5丁目 ／ 玉島"
+  areas:
+    - name: 長尾
+      note: 駅南
+    - name: 爪崎
+      note: 駅南
+    - name: 上成
+      note: 駅南
+    - name: 新倉敷駅前1～5丁目
+      note: 駅南
+    - name: 玉島
+      note: 駅南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: kojima-11
-  course_name_ja: "児島地区: 林・福江 沖縄手の一部 福江1432～1502・木見 12～194・串田（林・串田）"
+  course_name_ja: "児島地区: 林・福江 沖縄手の一部 福江1432～1502・木見 12～194・串田"
+  areas:
+    - name: 林・福江 沖縄手の一部 福江1432～1502・木見 12～194・串田
+      note: 林・串田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

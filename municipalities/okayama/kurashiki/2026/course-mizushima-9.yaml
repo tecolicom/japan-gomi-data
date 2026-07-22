@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-9
   course_name_ja: "水島地区: 海岸通り2丁目，福崎町，東西千鳥町，東西常盤町，東西栄町，東西弥生町，東西・寿町"
+  areas:
+    - name: 海岸通り2丁目，福崎町，東西千鳥町，東西常盤町，東西栄町，東西弥生町，東西・寿町
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

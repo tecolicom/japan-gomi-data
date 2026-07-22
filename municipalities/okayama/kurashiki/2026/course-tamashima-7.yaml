@@ -1,7 +1,18 @@
 metadata:
   city: kurashiki
   course: tamashima-7
-  course_name_ja: "玉島地区: 長尾（上成） ／ 爪崎（上成） ／ 上成（上成） ／ 玉島（上成） ／ 乙島（上成）"
+  course_name_ja: "玉島地区: 長尾 ／ 爪崎 ／ 上成 ／ 玉島 ／ 乙島"
+  areas:
+    - name: 長尾
+      note: 上成
+    - name: 爪崎
+      note: 上成
+    - name: 上成
+      note: 上成
+    - name: 玉島
+      note: 上成
+    - name: 乙島
+      note: 上成
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

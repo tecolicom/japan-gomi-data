@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mabi-5
   course_name_ja: "真備地区: 尾崎・妹・服部・箭田（所生・反古・遠田）"
+  areas:
+    - name: 尾崎・妹・服部・箭田（所生・反古・遠田）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

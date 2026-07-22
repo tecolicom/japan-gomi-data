@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: mizushima-16
   course_name_ja: "水島地区: 福田町浦田・福田町福田（古城池線以北）・福田町古新田（老松線以東で古城池線・以北）"
+  areas:
+    - name: 福田町浦田・福田町福田（古城池線以北）・福田町古新田（老松線以東で古城池線・以北）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

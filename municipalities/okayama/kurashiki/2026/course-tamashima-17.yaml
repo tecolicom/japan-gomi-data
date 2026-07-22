@@ -1,7 +1,14 @@
 metadata:
   city: kurashiki
   course: tamashima-17
-  course_name_ja: "玉島地区: 勇崎（黒崎） ／ 黒崎（黒崎） ／ 黒崎新町（黒崎）"
+  course_name_ja: "玉島地区: 勇崎 ／ 黒崎 ／ 黒崎新町"
+  areas:
+    - name: 勇崎
+      note: 黒崎
+    - name: 黒崎
+      note: 黒崎
+    - name: 黒崎新町
+      note: 黒崎
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

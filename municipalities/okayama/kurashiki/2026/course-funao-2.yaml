@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: funao-2
-  course_name_ja: "船穂地区: 船穂町 船穂（船穂北）"
+  course_name_ja: "船穂地区: 船穂町 船穂"
+  areas:
+    - name: 船穂町 船穂
+      note: 船穂北
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

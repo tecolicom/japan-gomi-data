@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-22
   course_name_ja: "倉敷地区: 中島(※)／中島・西阿知町新田（一部）・小溝・中島ハイツ"
+  areas:
+    - name: 中島(※)／中島・西阿知町新田（一部）・小溝・中島ハイツ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

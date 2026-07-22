@@ -2,6 +2,8 @@ metadata:
   city: kurashiki
   course: kurashiki-1
   course_name_ja: "倉敷地区: 庄／矢部・日畑・庄新町・西尾・山地・松島・二子"
+  areas:
+    - name: 庄／矢部・日畑・庄新町・西尾・山地・松島・二子
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

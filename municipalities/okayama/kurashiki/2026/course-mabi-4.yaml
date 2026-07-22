@@ -2,6 +2,9 @@ metadata:
   city: kurashiki
   course: mabi-4
   course_name_ja: "真備地区: 有井（丸山のみ） ／ 市場・上二万・下二万・箭田（福原・中学東）"
+  areas:
+    - name: 有井（丸山のみ）
+    - name: 市場・上二万・下二万・箭田（福原・中学東）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

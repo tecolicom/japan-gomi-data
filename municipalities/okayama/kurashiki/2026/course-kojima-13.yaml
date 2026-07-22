@@ -1,7 +1,10 @@
 metadata:
   city: kurashiki
   course: kojima-13
-  course_name_ja: "児島地区: 福江・曽原・尾原・木見・林2114～2187（福江・曽原・尾原・木見・佐野安）"
+  course_name_ja: "児島地区: 福江・曽原・尾原・木見・林2114～2187"
+  areas:
+    - name: 福江・曽原・尾原・木見・林2114～2187
+      note: 福江・曽原・尾原・木見・佐野安
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
