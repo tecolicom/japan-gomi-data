@@ -2,6 +2,16 @@ metadata:
   city: okayama
   course: okayama-60
   course_name_ja: "鹿田: 新屋敷町１丁目／新屋敷町２丁目／新屋敷町３丁目／西島田町／西之町 ｜ 大元: 西古松１丁目／野田１丁目／野田２丁目／野田５丁目"
+  areas:
+    - name: 新屋敷町１丁目
+    - name: 新屋敷町２丁目
+    - name: 新屋敷町３丁目
+    - name: 西島田町
+    - name: 西之町
+    - name: 西古松１丁目
+    - name: 野田１丁目
+    - name: 野田２丁目
+    - name: 野田５丁目
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

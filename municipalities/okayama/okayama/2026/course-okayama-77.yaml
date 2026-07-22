@@ -1,7 +1,22 @@
 metadata:
   city: okayama
   course: okayama-77
-  course_name_ja: "御津: 御津宇甘（上村・九谷）／御津勝尾（勝尾）／御津虎倉（市場・三谷・大野・宿・鼓田）／御津紙工（天満・久保・紙工河内・星原・宮脇・石原）／御津下田（下田）／御津高津（菅・下畑・大谷）／御津中泉（中泉）"
+  course_name_ja: "御津: 御津宇甘／御津勝尾／御津虎倉／御津紙工／御津下田／御津高津／御津中泉"
+  areas:
+    - name: 御津宇甘
+      note: 上村・九谷
+    - name: 御津勝尾
+      note: 勝尾
+    - name: 御津虎倉
+      note: 市場・三谷・大野・宿・鼓田
+    - name: 御津紙工
+      note: 天満・久保・紙工河内・星原・宮脇・石原
+    - name: 御津下田
+      note: 下田
+    - name: 御津高津
+      note: 菅・下畑・大谷
+    - name: 御津中泉
+      note: 中泉
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

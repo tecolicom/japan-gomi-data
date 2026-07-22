@@ -2,6 +2,13 @@ metadata:
   city: okayama
   course: okayama-52
   course_name_ja: "古都: 鉄／古都宿／古都南方／宍甘／藤井／矢津"
+  areas:
+    - name: 鉄
+    - name: 古都宿
+    - name: 古都南方
+    - name: 宍甘
+    - name: 藤井
+    - name: 矢津
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

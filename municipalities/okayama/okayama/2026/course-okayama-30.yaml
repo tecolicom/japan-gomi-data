@@ -1,7 +1,18 @@
 metadata:
   city: okayama
   course: okayama-30
-  course_name_ja: "操南: 江崎／倉田 ｜ 操明: 江並 ｜ 操南･操明: 沖元／桑野／藤崎 ｜ 旭操･操南: 倉富（国道2号線バイパス以南）／倉益（国道2号線バイパス以南）"
+  course_name_ja: "操南: 江崎／倉田 ｜ 操明: 江並 ｜ 操南･操明: 沖元／桑野／藤崎 ｜ 旭操･操南: 倉富／倉益"
+  areas:
+    - name: 江崎
+    - name: 江並
+    - name: 沖元
+    - name: 倉田
+    - name: 倉富
+      note: 国道2号線バイパス以南
+    - name: 倉益
+      note: 国道2号線バイパス以南
+    - name: 桑野
+    - name: 藤崎
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

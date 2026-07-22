@@ -1,7 +1,14 @@
 metadata:
   city: okayama
   course: okayama-79
-  course_name_ja: "御津: 御津鹿瀬（鹿瀬）／御津金川（金川）／御津草生（草生）"
+  course_name_ja: "御津: 御津鹿瀬／御津金川／御津草生"
+  areas:
+    - name: 御津鹿瀬
+      note: 鹿瀬
+    - name: 御津金川
+      note: 金川
+    - name: 御津草生
+      note: 草生
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,21 @@
 metadata:
   city: okayama
   course: okayama-1
-  course_name_ja: "三門: 葵町／岩井１丁目／岩井２丁目／岩井宮裏／関西町／三門中町／三門西町 ｜ 伊島: 谷万成１丁目／谷万成２丁目（Ｒ１８０－Ｒ５３より南）／万成西町／万成東町 ｜ 三門･伊島: 三門東町"
+  course_name_ja: "三門: 葵町／岩井１丁目／岩井２丁目／岩井宮裏／関西町／三門中町／三門西町 ｜ 伊島: 谷万成１丁目／谷万成２丁目／万成西町／万成東町 ｜ 三門･伊島: 三門東町"
+  areas:
+    - name: 葵町
+    - name: 岩井１丁目
+    - name: 岩井２丁目
+    - name: 岩井宮裏
+    - name: 関西町
+    - name: 谷万成１丁目
+    - name: 谷万成２丁目
+      note: Ｒ１８０－Ｒ５３より南
+    - name: 万成西町
+    - name: 万成東町
+    - name: 三門中町
+    - name: 三門西町
+    - name: 三門東町
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,19 @@
 metadata:
   city: okayama
   course: okayama-14
-  course_name_ja: "大井: 粟井（「粟井第4（堂坂）」） ｜ 福谷: 河原（黒谷下・河原・上吉田・下吉田・松井・三明）／庄田／西山内（広石上・広石下）／東山内（下杭田裏を除く）／真星（田口・古川・神谷b・神谷cを除く地区）"
+  course_name_ja: "大井: 粟井 ｜ 福谷: 河原／庄田／西山内／東山内／真星"
+  areas:
+    - name: 粟井
+      note: 「粟井第4（堂坂）」
+    - name: 河原
+      note: 黒谷下・河原・上吉田・下吉田・松井・三明
+    - name: 庄田
+    - name: 西山内
+      note: 広石上・広石下
+    - name: 東山内
+      note: 下杭田裏を除く
+    - name: 真星
+      note: 田口・古川・神谷b・神谷cを除く地区
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

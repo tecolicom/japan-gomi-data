@@ -1,7 +1,20 @@
 metadata:
   city: okayama
   course: okayama-26
-  course_name_ja: "平津: 今岡（上今岡） ｜ 馬屋下: 大窪（馬屋下学区）／長野／芳賀（上芳賀  下芳賀）／福谷／松尾／横尾 ｜ 中山: 辛川市場（辛川市場　(資源化物の収集日が第1回目の木曜日の地区を除く)）"
+  course_name_ja: "平津: 今岡 ｜ 馬屋下: 大窪／長野／芳賀／福谷／松尾／横尾 ｜ 中山: 辛川市場"
+  areas:
+    - name: 今岡
+      note: 上今岡
+    - name: 大窪
+      note: 馬屋下学区
+    - name: 辛川市場
+      note: 辛川市場　(資源化物の収集日が第1回目の木曜日の地区を除く)
+    - name: 長野
+    - name: 芳賀
+      note: 上芳賀  下芳賀
+    - name: 福谷
+    - name: 松尾
+    - name: 横尾
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

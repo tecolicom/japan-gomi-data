@@ -1,7 +1,10 @@
 metadata:
   city: okayama
   course: okayama-50
-  course_name_ja: "鯉山: 吉備津（朝8時までにお出しください。）"
+  course_name_ja: "鯉山: 吉備津"
+  areas:
+    - name: 吉備津
+      note: 朝8時までにお出しください。
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

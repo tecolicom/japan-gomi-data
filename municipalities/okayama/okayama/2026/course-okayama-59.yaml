@@ -1,7 +1,16 @@
 metadata:
   city: okayama
   course: okayama-59
-  course_name_ja: "福浜: 新福１丁目／新福２丁目／福富中１丁目／福富西１丁目 ｜ 芳泉: 豊成３丁目／福富西３丁目 ｜ 福浜・芳泉: 福富西２丁目（福富西町内会）"
+  course_name_ja: "福浜: 新福１丁目／新福２丁目／福富中１丁目／福富西１丁目 ｜ 芳泉: 豊成３丁目／福富西３丁目 ｜ 福浜・芳泉: 福富西２丁目"
+  areas:
+    - name: 新福１丁目
+    - name: 新福２丁目
+    - name: 豊成３丁目
+    - name: 福富中１丁目
+    - name: 福富西１丁目
+    - name: 福富西２丁目
+      note: 福富西町内会
+    - name: 福富西３丁目
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

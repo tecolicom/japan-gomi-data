@@ -2,6 +2,15 @@ metadata:
   city: okayama
   course: okayama-62
   course_name_ja: "江西: 瀬戸町旭ヶ丘一丁目／瀬戸町旭ヶ丘二丁目／瀬戸町旭ヶ丘三丁目／瀬戸町旭ヶ丘四丁目／瀬戸町江尻／瀬戸町沖／瀬戸町肩脊 ｜ 千種: 瀬戸町大内"
+  areas:
+    - name: 瀬戸町旭ヶ丘一丁目
+    - name: 瀬戸町旭ヶ丘二丁目
+    - name: 瀬戸町旭ヶ丘三丁目
+    - name: 瀬戸町旭ヶ丘四丁目
+    - name: 瀬戸町江尻
+    - name: 瀬戸町大内
+    - name: 瀬戸町沖
+    - name: 瀬戸町肩脊
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

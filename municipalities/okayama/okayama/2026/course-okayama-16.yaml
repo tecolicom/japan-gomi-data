@@ -1,7 +1,15 @@
 metadata:
   city: okayama
   course: okayama-16
-  course_name_ja: "高田: 石妻／上高田（元信・尾崎）／杉谷／日近（下日近（弥高・美和））／山上"
+  course_name_ja: "高田: 石妻／上高田／杉谷／日近／山上"
+  areas:
+    - name: 石妻
+    - name: 上高田
+      note: 元信・尾崎
+    - name: 杉谷
+    - name: 日近
+      note: 下日近（弥高・美和）
+    - name: 山上
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

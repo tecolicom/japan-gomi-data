@@ -1,7 +1,11 @@
 metadata:
   city: okayama
   course: okayama-54
-  course_name_ja: "西大寺: 西大寺中野（898番地～960番地を除く）／西大寺中野本町"
+  course_name_ja: "西大寺: 西大寺中野／西大寺中野本町"
+  areas:
+    - name: 西大寺中野
+      note: 898番地～960番地を除く
+    - name: 西大寺中野本町
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,19 @@
 metadata:
   city: okayama
   course: okayama-75
-  course_name_ja: "平井: 平井一丁目／平井二丁目／平井三丁目／平井四丁目／平井五丁目／湊（「操陽南山を含む」（平井学区）） ｜ 旭操: 湊（「池の内団地町内会」（旭操学区））／山崎（「山崎西町内会」（旭操学区））"
+  course_name_ja: "平井: 平井一丁目／平井二丁目／平井三丁目／平井四丁目／平井五丁目／湊 ｜ 旭操: 湊／山崎"
+  areas:
+    - name: 平井一丁目
+    - name: 平井二丁目
+    - name: 平井三丁目
+    - name: 平井四丁目
+    - name: 平井五丁目
+    - name: 湊
+      note: 「池の内団地町内会」（旭操学区）
+    - name: 湊
+      note: 「操陽南山を含む」（平井学区）
+    - name: 山崎
+      note: 「山崎西町内会」（旭操学区）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

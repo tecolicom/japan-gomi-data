@@ -2,6 +2,13 @@ metadata:
   city: okayama
   course: okayama-38
   course_name_ja: "財田: 乙多見／神下／下／長利／米田 ｜ 財田･竜之口: 長岡"
+  areas:
+    - name: 乙多見
+    - name: 神下
+    - name: 下
+    - name: 長岡
+    - name: 長利
+    - name: 米田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

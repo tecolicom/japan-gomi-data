@@ -2,6 +2,10 @@ metadata:
   city: okayama
   course: okayama-53
   course_name_ja: "福田: 古新田／妹尾崎／山田"
+  areas:
+    - name: 古新田
+    - name: 妹尾崎
+    - name: 山田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,6 +2,8 @@ metadata:
   city: okayama
   course: okayama-22
   course_name_ja: "朝日: 犬島"
+  areas:
+    - name: 犬島
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,16 @@
 metadata:
   city: okayama
   course: okayama-34
-  course_name_ja: "大元: 大元１丁目／大元２丁目／西古松２丁目／西古松西町 ｜ 大元・西: 下中野（北区）（ＪＲ瀬戸大橋線の西。岡山児島線の東。） ｜ 鹿田: 西古松（ＪＲ瀬戸大橋線の西。）"
+  course_name_ja: "大元: 大元１丁目／大元２丁目／西古松２丁目／西古松西町 ｜ 大元・西: 下中野（北区） ｜ 鹿田: 西古松"
+  areas:
+    - name: 大元１丁目
+    - name: 大元２丁目
+    - name: 下中野（北区）
+      note: ＪＲ瀬戸大橋線の西。岡山児島線の東。
+    - name: 西古松
+      note: ＪＲ瀬戸大橋線の西。
+    - name: 西古松２丁目
+    - name: 西古松西町
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -1,7 +1,14 @@
 metadata:
   city: okayama
   course: okayama-72
-  course_name_ja: "福谷: 西山内（広石上・広石下を除く地区）／東山内（下杭田裏）／間倉（猿見を除く地区）"
+  course_name_ja: "福谷: 西山内／東山内／間倉"
+  areas:
+    - name: 西山内
+      note: 広石上・広石下を除く地区
+    - name: 東山内
+      note: 下杭田裏
+    - name: 間倉
+      note: 猿見を除く地区
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

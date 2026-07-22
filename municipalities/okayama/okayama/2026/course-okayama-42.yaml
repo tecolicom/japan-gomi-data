@@ -1,7 +1,16 @@
 metadata:
   city: okayama
   course: okayama-42
-  course_name_ja: "可知: 可知一丁目／可知二丁目／可知三丁目（1番～3番、8番～12番）／可知四丁目／中川町／益野町 ｜ 芥子山: 目黒町"
+  course_name_ja: "可知: 可知一丁目／可知二丁目／可知三丁目／可知四丁目／中川町／益野町 ｜ 芥子山: 目黒町"
+  areas:
+    - name: 可知一丁目
+    - name: 可知二丁目
+    - name: 可知三丁目
+      note: 1番～3番、8番～12番
+    - name: 可知四丁目
+    - name: 中川町
+    - name: 益野町
+    - name: 目黒町
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

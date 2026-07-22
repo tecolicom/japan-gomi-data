@@ -1,7 +1,10 @@
 metadata:
   city: okayama
   course: okayama-12
-  course_name_ja: "足守: 足守（「岡・市営住宅岡団地・余町・山下・本町・新町・田原町・近水町・栄町・吾妻町・旭町・荒神町・河原町・上中河原通・メロンタウン」）"
+  course_name_ja: "足守: 足守"
+  areas:
+    - name: 足守
+      note: 「岡・市営住宅岡団地・余町・山下・本町・新町・田原町・近水町・栄町・吾妻町・旭町・荒神町・河原町・上中河原通・メロンタウン」
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

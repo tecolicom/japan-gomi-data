@@ -1,7 +1,15 @@
 metadata:
   city: okayama
   course: okayama-45
-  course_name_ja: "高田: 上高田（草谷下・張木・岩見・共和・森川下）／下高田（鯨）／日近（上日近・下日近（弥高・美和を除く地区））／吉"
+  course_name_ja: "高田: 上高田／下高田／日近／吉"
+  areas:
+    - name: 上高田
+      note: 草谷下・張木・岩見・共和・森川下
+    - name: 下高田
+      note: 鯨
+    - name: 日近
+      note: 上日近・下日近（弥高・美和を除く地区）
+    - name: 吉
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

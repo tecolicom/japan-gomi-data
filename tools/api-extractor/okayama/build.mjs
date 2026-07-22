@@ -58,8 +58,10 @@ function toRules(rec) {
     .map(([r]) => r);
 }
 
-// 行のラベル: 町名 (+備考は括弧で原文保持)
-const rowLabel = (r) => (r.note && r.note.trim() ? `${r.town}（${r.note.trim()}）` : r.town);
+// areas は構造化して備考を note フィールドへ分離する (course_name_ja には備考を入れない)。
+// name は町名そのまま。地区割れ (同一町名で日程違い) の判別は note が担う
+// (割れ町の備考は「砂川以東」等の地理区分)。読み (yomi) は権威ソースが無いため付けない。
+const rowArea = (r) => (r.note && r.note.trim() ? { name: r.town, note: r.note.trim() } : { name: r.town });
 
 const payload = JSON.parse(readFileSync(join(HERE, 'cache', 'records.json'), 'utf8'));
 const records = [...payload.records].sort((a, b) => Number(a.id) - Number(b.id));
@@ -90,18 +92,18 @@ function yearEndOverrides(rules) {
 }
 
 const docs = folded.map((c, i) => {
-  // course_name_ja: 小学校区ごとに町名(備考)を束ねる
+  // course_name_ja: 小学校区ごとに町名を束ねる (備考は areas[].note へ分離)
   const byDist = new Map();
   for (const r of c.areas) {
     if (!byDist.has(r.district)) byDist.set(r.district, []);
-    byDist.get(r.district).push(rowLabel(r));
+    byDist.get(r.district).push(r.town);
   }
   const courseNameJa = [...byDist.entries()].map(([d, ts]) => `${d}: ${ts.join('／')}`).join(' ｜ ');
   return courseDoc({
     city: 'okayama',
     course: `okayama-${i + 1}`,
     courseNameJa,
-    areas: undefined,
+    areas: c.areas.map(rowArea),
     year: YEAR,
     fiscalYearJa: FY_JA,
     source: {

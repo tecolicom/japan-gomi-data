@@ -1,7 +1,16 @@
 metadata:
   city: okayama
   course: okayama-21
-  course_name_ja: "伊島: いずみ町／伊福町２丁目／伊福町３丁目／絵図町／清心町 ｜ 岡山中央: 国体町 ｜ 鹿田: 東古松B（東古松484～513番地）"
+  course_name_ja: "伊島: いずみ町／伊福町２丁目／伊福町３丁目／絵図町／清心町 ｜ 岡山中央: 国体町 ｜ 鹿田: 東古松B"
+  areas:
+    - name: いずみ町
+    - name: 伊福町２丁目
+    - name: 伊福町３丁目
+    - name: 絵図町
+    - name: 国体町
+    - name: 清心町
+    - name: 東古松B
+      note: 東古松484～513番地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

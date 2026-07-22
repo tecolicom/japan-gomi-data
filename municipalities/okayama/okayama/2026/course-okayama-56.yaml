@@ -2,6 +2,9 @@ metadata:
   city: okayama
   course: okayama-56
   course_name_ja: "竜之口: 四御神 ｜ 竜之口･財田: 土田"
+  areas:
+    - name: 四御神
+    - name: 土田
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

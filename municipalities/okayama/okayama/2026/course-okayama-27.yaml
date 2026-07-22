@@ -1,7 +1,23 @@
 metadata:
   city: okayama
   course: okayama-27
-  course_name_ja: "高島: 今在家（３金は当面古紙古布ペットボトルのみ）／国府市場／清水（JR山陽本線以北）／賞田／高島新屋敷／中井／中井１丁目／中井２丁目／中井３丁目／中井４丁目／湯迫 ｜ 高島・竜之口・財田: 雄町 ｜ 高島・牧石: 祇園"
+  course_name_ja: "高島: 今在家／国府市場／清水／賞田／高島新屋敷／中井／中井１丁目／中井２丁目／中井３丁目／中井４丁目／湯迫 ｜ 高島・竜之口・財田: 雄町 ｜ 高島・牧石: 祇園"
+  areas:
+    - name: 今在家
+      note: ３金は当面古紙古布ペットボトルのみ
+    - name: 雄町
+    - name: 祇園
+    - name: 国府市場
+    - name: 清水
+      note: JR山陽本線以北
+    - name: 賞田
+    - name: 高島新屋敷
+    - name: 中井
+    - name: 中井１丁目
+    - name: 中井２丁目
+    - name: 中井３丁目
+    - name: 中井４丁目
+    - name: 湯迫
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

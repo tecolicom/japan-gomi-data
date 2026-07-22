@@ -1,7 +1,22 @@
 metadata:
   city: okayama
   course: okayama-76
-  course_name_ja: "五城: 御津石上（石上・佐野）／御津伊田（上伊田・下伊田）／御津新庄（寺部・新庄原・西谷・ひかり団地）／御津中畑（中畑）／御津平岡西（平岡西）／御津矢知（矢知） ｜ 御津・五城: 御津矢原（矢原・大園）"
+  course_name_ja: "五城: 御津石上／御津伊田／御津新庄／御津中畑／御津平岡西／御津矢知 ｜ 御津・五城: 御津矢原"
+  areas:
+    - name: 御津石上
+      note: 石上・佐野
+    - name: 御津伊田
+      note: 上伊田・下伊田
+    - name: 御津新庄
+      note: 寺部・新庄原・西谷・ひかり団地
+    - name: 御津中畑
+      note: 中畑
+    - name: 御津平岡西
+      note: 平岡西
+    - name: 御津矢知
+      note: 矢知
+    - name: 御津矢原
+      note: 矢原・大園
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

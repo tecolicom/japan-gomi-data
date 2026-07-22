@@ -1,7 +1,11 @@
 metadata:
   city: okayama
   course: okayama-65
-  course_name_ja: "江西: 瀬戸町下／瀬戸町瀬戸（瀬戸橋から主要地方県道岡山-赤穂線以南）"
+  course_name_ja: "江西: 瀬戸町下／瀬戸町瀬戸"
+  areas:
+    - name: 瀬戸町下
+    - name: 瀬戸町瀬戸
+      note: 瀬戸橋から主要地方県道岡山-赤穂線以南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

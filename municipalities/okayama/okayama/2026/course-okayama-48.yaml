@@ -1,7 +1,11 @@
 metadata:
   city: okayama
   course: okayama-48
-  course_name_ja: "中山: 辛川市場（辛川市場の一部　(資源化物の収集日が第1回目の木曜日の地区)）／西辛川"
+  course_name_ja: "中山: 辛川市場／西辛川"
+  areas:
+    - name: 辛川市場
+      note: 辛川市場の一部　(資源化物の収集日が第1回目の木曜日の地区)
+    - name: 西辛川
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

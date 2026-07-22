@@ -2,6 +2,19 @@ metadata:
   city: okayama
   course: okayama-44
   course_name_ja: "牧石: 金山寺／高野尻／下牧／玉柏／中原／中牧／畑鮎／原／牟佐 ｜ 御野: 宿／宿本町／三野本町"
+  areas:
+    - name: 金山寺
+    - name: 高野尻
+    - name: 下牧
+    - name: 宿
+    - name: 宿本町
+    - name: 玉柏
+    - name: 中原
+    - name: 中牧
+    - name: 畑鮎
+    - name: 原
+    - name: 三野本町
+    - name: 牟佐
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

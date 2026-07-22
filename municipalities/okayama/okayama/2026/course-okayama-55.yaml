@@ -1,7 +1,10 @@
 metadata:
   city: okayama
   course: okayama-55
-  course_name_ja: "桃丘: 佐山（「佐山町内会の一部 (E69ステーション利用地区)」）"
+  course_name_ja: "桃丘: 佐山"
+  areas:
+    - name: 佐山
+      note: 「佐山町内会の一部 (E69ステーション利用地区)」
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
