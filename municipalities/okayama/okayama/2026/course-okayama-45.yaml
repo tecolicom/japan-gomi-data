@@ -4,12 +4,16 @@ metadata:
   course_name_ja: "高田: 上高田／下高田／日近／吉"
   areas:
     - name: 上高田
+      yomi: かみたかだ
       note: 草谷下・張木・岩見・共和・森川下
     - name: 下高田
+      yomi: しもたかだ
       note: 鯨
     - name: 日近
+      yomi: ひぢかい
       note: 上日近・下日近（弥高・美和を除く地区）
     - name: 吉
+      yomi: よし
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,13 +4,20 @@ metadata:
   course_name_ja: "可知: 可知一丁目／可知二丁目／可知三丁目／可知四丁目／中川町／益野町 ｜ 芥子山: 目黒町"
   areas:
     - name: 可知一丁目
+      yomi: かち
     - name: 可知二丁目
+      yomi: かち
     - name: 可知三丁目
+      yomi: かち
       note: 1番～3番、8番～12番
     - name: 可知四丁目
+      yomi: かち
     - name: 中川町
+      yomi: なかがわちょう
     - name: 益野町
+      yomi: ますのちょう
     - name: 目黒町
+      yomi: めぐろちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

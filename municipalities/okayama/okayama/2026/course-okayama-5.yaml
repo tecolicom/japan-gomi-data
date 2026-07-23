@@ -4,33 +4,60 @@ metadata:
   course_name_ja: "甲浦: 飽浦／北浦／郡／宮浦 ｜ 小串: 阿津／小串 ｜ 御南: 今保／西長瀬 ｜ 彦崎: 植松／彦崎 ｜ 灘崎: 片岡／川張／宗津 ｜ 西: 北長瀬 ｜ 西･御南: 北長瀬表町３丁目／中仙道２丁目 ｜ 大野: 北長瀬本町／日吉町 ｜ 御南･陵南: 久米 ｜ 陵南: 白石／白石西新町／白石東新町／花尻／花尻あかね町／花尻ききょう町／花尻みどり町 ｜ 御南･西: 田中"
   areas:
     - name: 飽浦
+      yomi: あくら
     - name: 阿津
+      yomi: あつ
     - name: 今保
+      yomi: いまぼう
     - name: 植松
+      yomi: うえまつ
     - name: 片岡
+      yomi: かたおか
     - name: 川張
+      yomi: かわはり
     - name: 北浦
+      yomi: きたうら
     - name: 北長瀬
+      yomi: きたながせ
     - name: 北長瀬表町３丁目
+      yomi: きたながせおもてまち
     - name: 北長瀬本町
+      yomi: きたながせほんまち
     - name: 久米
+      yomi: くめ
     - name: 郡
+      yomi: こおり
     - name: 小串
+      yomi: こぐし
     - name: 白石
+      yomi: しらいし
     - name: 白石西新町
+      yomi: しらいしにししんまち
     - name: 白石東新町
+      yomi: しらいしひがししんまち
     - name: 宗津
+      yomi: そうづ
     - name: 田中
+      yomi: たなか
       note: 西長瀬町内会管理　北区田中１７３－１０２附近
     - name: 中仙道２丁目
+      yomi: なかせんどう
     - name: 西長瀬
+      yomi: にしながせ
     - name: 花尻
+      yomi: はなじり
     - name: 花尻あかね町
+      yomi: はなじりあかねまち
     - name: 花尻ききょう町
+      yomi: はなじりききょうまち
     - name: 花尻みどり町
+      yomi: はなじりみどりまち
     - name: 彦崎
+      yomi: ひこさき
     - name: 日吉町
+      yomi: ひよしちょう
     - name: 宮浦
+      yomi: みやうら
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

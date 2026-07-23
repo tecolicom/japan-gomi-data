@@ -4,33 +4,61 @@ metadata:
   course_name_ja: "太伯: 邑久郷／乙子／神崎町 ｜ 大宮: 上阿知／西大寺一宮／下阿知／宿毛／千手 ｜ 幸島: 北幸田／幸地崎町／水門町／西幸西／東幸西／東幸崎／南水門町 ｜ 朝日: 久々井／西片岡／東片岡／宝伝／正儀 ｜ 豊: 西大寺射越／西大寺川口／西大寺五明／西大寺新／西大寺新地／西大寺浜／西大寺門前／長沼"
   areas:
     - name: 邑久郷
+      yomi: おくのごう
     - name: 乙子
+      yomi: おとご
     - name: 上阿知
+      yomi: かみあち
     - name: 神崎町
+      yomi: かんざきちょう
     - name: 北幸田
+      yomi: きたこうだ
     - name: 久々井
+      yomi: くぐい
     - name: 幸地崎町
+      yomi: こうちざきちょう
     - name: 西大寺射越
+      yomi: さいだいじいこし
     - name: 西大寺一宮
+      yomi: さいだいじいちのみや
     - name: 西大寺川口
+      yomi: さいだいじかわぐち
     - name: 西大寺五明
+      yomi: さいだいじごみょう
     - name: 西大寺新
+      yomi: さいだいじしん
     - name: 西大寺新地
+      yomi: さいだいじしんち
     - name: 西大寺浜
+      yomi: さいだいじはま
     - name: 西大寺門前
+      yomi: さいだいじもんぜん
     - name: 下阿知
+      yomi: しもあち
     - name: 宿毛
+      yomi: しゅくも
     - name: 水門町
+      yomi: すいもんちょう
     - name: 千手
+      yomi: せんじゅ
     - name: 長沼
+      yomi: ながぬま
     - name: 西片岡
+      yomi: にしかたおか
     - name: 西幸西
+      yomi: にしこうざい
     - name: 東片岡
+      yomi: ひがしかたおか
     - name: 東幸西
+      yomi: ひがしこうざい
     - name: 東幸崎
+      yomi: ひがしこうざき
     - name: 宝伝
+      yomi: ほうでん
     - name: 正儀
+      yomi: まさき
     - name: 南水門町
+      yomi: みなみすいもんちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

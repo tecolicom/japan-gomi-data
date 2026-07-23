@@ -4,17 +4,29 @@ metadata:
   course_name_ja: "牧石: 金山寺／高野尻／下牧／玉柏／中原／中牧／畑鮎／原／牟佐 ｜ 御野: 宿／宿本町／三野本町"
   areas:
     - name: 金山寺
+      yomi: かなやまじ
     - name: 高野尻
+      yomi: こうやじり
     - name: 下牧
+      yomi: しもまき
     - name: 宿
+      yomi: しゅく
     - name: 宿本町
+      yomi: しゅくほんまち
     - name: 玉柏
+      yomi: たまがし
     - name: 中原
+      yomi: なかはら
     - name: 中牧
+      yomi: なかまき
     - name: 畑鮎
+      yomi: はたあゆ
     - name: 原
+      yomi: はら
     - name: 三野本町
+      yomi: みのほんまち
     - name: 牟佐
+      yomi: むさ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

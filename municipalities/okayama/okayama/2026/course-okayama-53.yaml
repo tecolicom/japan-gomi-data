@@ -4,8 +4,11 @@ metadata:
   course_name_ja: "福田: 古新田／妹尾崎／山田"
   areas:
     - name: 古新田
+      yomi: こしんでん
     - name: 妹尾崎
+      yomi: せのおざき
     - name: 山田
+      yomi: やまだ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

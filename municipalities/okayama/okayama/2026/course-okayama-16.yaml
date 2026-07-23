@@ -4,12 +4,17 @@ metadata:
   course_name_ja: "高田: 石妻／上高田／杉谷／日近／山上"
   areas:
     - name: 石妻
+      yomi: いしづま
     - name: 上高田
+      yomi: かみたかだ
       note: 元信・尾崎
     - name: 杉谷
+      yomi: すぎたに
     - name: 日近
+      yomi: ひぢかい
       note: 下日近（弥高・美和）
     - name: 山上
+      yomi: やまのうえ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

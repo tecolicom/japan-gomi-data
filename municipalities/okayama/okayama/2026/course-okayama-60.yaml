@@ -4,14 +4,23 @@ metadata:
   course_name_ja: "鹿田: 新屋敷町１丁目／新屋敷町２丁目／新屋敷町３丁目／西島田町／西之町 ｜ 大元: 西古松１丁目／野田１丁目／野田２丁目／野田５丁目"
   areas:
     - name: 新屋敷町１丁目
+      yomi: しんやしきちょう
     - name: 新屋敷町２丁目
+      yomi: しんやしきちょう
     - name: 新屋敷町３丁目
+      yomi: しんやしきちょう
     - name: 西島田町
+      yomi: にししまだちょう
     - name: 西之町
+      yomi: にしのちょう
     - name: 西古松１丁目
+      yomi: にしふるまつ
     - name: 野田１丁目
+      yomi: のだ
     - name: 野田２丁目
+      yomi: のだ
     - name: 野田５丁目
+      yomi: のだ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

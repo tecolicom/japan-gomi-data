@@ -4,8 +4,10 @@ metadata:
   course_name_ja: "横井: 津高／富原"
   areas:
     - name: 津高
+      yomi: つだか
       note: 「津高」（旧国道53号線以西） （朝7時30分までにお出しください。）
     - name: 富原
+      yomi: とみはら
       note: 「富原・松崎」 （朝7時30分までにお出しください。）
   year: 2026
   fiscal_year_ja: 令和8年度

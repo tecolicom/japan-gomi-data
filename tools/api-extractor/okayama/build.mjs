@@ -60,8 +60,37 @@ function toRules(rec) {
 
 // areas は構造化して備考を note フィールドへ分離する (course_name_ja には備考を入れない)。
 // name は町名そのまま。地区割れ (同一町名で日程違い) の判別は note が担う
-// (割れ町の備考は「砂川以東」等の地理区分)。読み (yomi) は権威ソースが無いため付けない。
-const rowArea = (r) => (r.note && r.note.trim() ? { name: r.town, note: r.note.trim() } : { name: r.town });
+// (割れ町の備考は「砂川以東」等の地理区分)。
+// yomi はデジタル庁アドレス・ベース・レジストリ (ABR) 町字マスターの大字・町名カナ由来
+// (fetch-yomi.mjs → cache/abr-town-kana.json、ひらがな化済み)。ベース町名 (丁目・区注記・
+// 記号サフィクスを除去) で引き、無ければ ①ひらがな/カタカナのみの町名は自身を読みとする
+// (表記=読み。推測ではない)、②それ以外は yomi を付けない (推測でカナを作らない)。
+let abrKana = {};
+try { abrKana = JSON.parse(readFileSync(join(HERE, 'cache', 'abr-town-kana.json'), 'utf8')); }
+catch { throw new Error('cache/abr-town-kana.json がありません。node fetch-yomi.mjs を先に実行'); }
+const nfkc = (s) => s.normalize('NFKC');
+const baseTown = (t) => nfkc(t)
+  .replace(/[（(][^）)]*[）)]/g, '')   // 区注記・※ 等 (NFKC で括弧が半角化されるため両対応)
+  .replace(/\s+/g, '')
+  .replace(/[0-9一二三四五六七八九十]+丁目.*$/, '')
+  .replace(/[0-9A-Za-z]+$/, '');      // 福田①→(NFKC)福田1・東古松A 等の記号サフィクス
+const yomiOf = (town) => {
+  const b = baseTown(town);
+  const hit = abrKana[b] ?? abrKana[b.replace(/ケ/g, 'ヶ')] ?? abrKana[b.replace(/ヶ/g, 'ケ')];
+  if (hit) return hit;
+  if (/^[ぁ-んァ-ヶー]+$/.test(b)) return b.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+  return undefined;
+};
+let yomiMissing = [];
+const rowArea = (r) => {
+  const yomi = yomiOf(r.town);
+  if (!yomi) yomiMissing.push(r.town);
+  return {
+    name: r.town,
+    ...(yomi ? { yomi } : {}),
+    ...(r.note && r.note.trim() ? { note: r.note.trim() } : {}),
+  };
+};
 
 const payload = JSON.parse(readFileSync(join(HERE, 'cache', 'records.json'), 'utf8'));
 const records = [...payload.records].sort((a, b) => Number(a.id) - Number(b.id));
@@ -119,3 +148,5 @@ const docs = folded.map((c, i) => {
 
 const n = writeCourses(OUTDIR, YEAR, docs);
 console.log(`wrote ${n} courses (from ${records.length} rows) -> ${OUTDIR}/${YEAR}/`);
+const uniqMissing = [...new Set(yomiMissing)];
+console.log(`yomi: ${records.length - yomiMissing.length}/${records.length} 行に付与 (未付与 町名: ${uniqMissing.join('、') || 'なし'})`);

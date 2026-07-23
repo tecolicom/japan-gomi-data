@@ -4,17 +4,26 @@ metadata:
   course_name_ja: "芳泉: 泉田５丁目／福田② ｜ 中山: 一宮／尾上 ｜ 浦安: 浦安西町／浦安本町 ｜ 南輝: 南輝１丁目 ｜ 芳泉･芳田･芳明: 芳泉１丁目／芳泉２丁目"
   areas:
     - name: 泉田５丁目
+      yomi: いずみだ
     - name: 一宮
+      yomi: いちのみや
       note: 「一宮町内会（A40ステーション利用地区を除く）」
     - name: 浦安西町
+      yomi: うらやすにしまち
     - name: 浦安本町
+      yomi: うらやすほんまち
     - name: 尾上
+      yomi: おのうえ
       note: 尾上・尾上雇用促進住宅
     - name: 南輝１丁目
+      yomi: なんき
     - name: 福田②
+      yomi: ふくだ
       note: 726.730から736.741.742番地にお住いの方は上記の収集曜日に出してください。
     - name: 芳泉１丁目
+      yomi: ほうせん
     - name: 芳泉２丁目
+      yomi: ほうせん
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

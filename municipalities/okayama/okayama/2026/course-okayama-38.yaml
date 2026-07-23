@@ -4,11 +4,17 @@ metadata:
   course_name_ja: "財田: 乙多見／神下／下／長利／米田 ｜ 財田･竜之口: 長岡"
   areas:
     - name: 乙多見
+      yomi: おたみ
     - name: 神下
+      yomi: こうした
     - name: 下
+      yomi: しも
     - name: 長岡
+      yomi: ながおか
     - name: 長利
+      yomi: ながとし
     - name: 米田
+      yomi: よねだ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,25 +4,39 @@ metadata:
   course_name_ja: "西大寺: 浅越／西庄／吉原 ｜ 芥子山: 大多羅町／可知五丁目／西大寺中野／西大寺松崎／富崎／広谷／福治／富士見町一丁目／松新町 ｜ 可知: 可知三丁目 ｜ 開成: 金田"
   areas:
     - name: 浅越
+      yomi: あさごえ
       note: 砂川以西
     - name: 大多羅町
+      yomi: おおだらちょう
     - name: 可知三丁目
+      yomi: かち
       note: 4番～7番、13番～17番
     - name: 可知五丁目
+      yomi: かち
     - name: 金田
+      yomi: かなだ
       note: 「川北町内会」
     - name: 西大寺中野
+      yomi: さいだいじなかの
       note: 898番地～960番地
     - name: 西大寺松崎
+      yomi: さいだいじまつざき
     - name: 富崎
+      yomi: とみさき
       note: 砂川より西
     - name: 西庄
+      yomi: にししょう
     - name: 広谷
+      yomi: ひろたに
     - name: 福治
+      yomi: ふくじ
       note: 砂川から西
     - name: 富士見町一丁目
+      yomi: ふじみちょう
     - name: 松新町
+      yomi: まつしんちょう
     - name: 吉原
+      yomi: よしわら
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

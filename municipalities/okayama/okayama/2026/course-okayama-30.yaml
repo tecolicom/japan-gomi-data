@@ -4,15 +4,23 @@ metadata:
   course_name_ja: "操南: 江崎／倉田 ｜ 操明: 江並 ｜ 操南･操明: 沖元／桑野／藤崎 ｜ 旭操･操南: 倉富／倉益"
   areas:
     - name: 江崎
+      yomi: えざき
     - name: 江並
+      yomi: えなみ
     - name: 沖元
+      yomi: おきもと
     - name: 倉田
+      yomi: くらた
     - name: 倉富
+      yomi: くらとみ
       note: 国道2号線バイパス以南
     - name: 倉益
+      yomi: くらます
       note: 国道2号線バイパス以南
     - name: 桑野
+      yomi: くわの
     - name: 藤崎
+      yomi: ふじさき
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

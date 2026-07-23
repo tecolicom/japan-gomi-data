@@ -4,15 +4,21 @@ metadata:
   course_name_ja: "大井: 粟井 ｜ 福谷: 河原／庄田／西山内／東山内／真星"
   areas:
     - name: 粟井
+      yomi: あわい
       note: 「粟井第4（堂坂）」
     - name: 河原
+      yomi: かわはら
       note: 黒谷下・河原・上吉田・下吉田・松井・三明
     - name: 庄田
+      yomi: しょうだ
     - name: 西山内
+      yomi: にしやまのうち
       note: 広石上・広石下
     - name: 東山内
+      yomi: ひがしやまのうち
       note: 下杭田裏を除く
     - name: 真星
+      yomi: まなぼし
       note: 田口・古川・神谷b・神谷cを除く地区
   year: 2026
   fiscal_year_ja: 令和8年度

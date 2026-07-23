@@ -4,13 +4,21 @@ metadata:
   course_name_ja: "岡南: 青江２丁目／青江３丁目／青江４丁目／青江５丁目／十日市西町 ｜ 芳泉: 青江６丁目／豊成１丁目／豊成２丁目"
   areas:
     - name: 青江２丁目
+      yomi: あおえ
     - name: 青江３丁目
+      yomi: あおえ
     - name: 青江４丁目
+      yomi: あおえ
     - name: 青江５丁目
+      yomi: あおえ
     - name: 青江６丁目
+      yomi: あおえ
     - name: 十日市西町
+      yomi: とうかいちにしまち
     - name: 豊成１丁目
+      yomi: とよなり
     - name: 豊成２丁目
+      yomi: とよなり
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

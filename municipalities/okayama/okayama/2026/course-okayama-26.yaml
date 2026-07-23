@@ -4,17 +4,25 @@ metadata:
   course_name_ja: "平津: 今岡 ｜ 馬屋下: 大窪／長野／芳賀／福谷／松尾／横尾 ｜ 中山: 辛川市場"
   areas:
     - name: 今岡
+      yomi: いまおか
       note: 上今岡
     - name: 大窪
+      yomi: おおくぼ
       note: 馬屋下学区
     - name: 辛川市場
+      yomi: からかわいちば
       note: 辛川市場　(資源化物の収集日が第1回目の木曜日の地区を除く)
     - name: 長野
+      yomi: ながの
     - name: 芳賀
+      yomi: はが
       note: 上芳賀  下芳賀
     - name: 福谷
+      yomi: ふくたに
     - name: 松尾
+      yomi: まつお
     - name: 横尾
+      yomi: よこお
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

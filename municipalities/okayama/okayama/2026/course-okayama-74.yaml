@@ -4,8 +4,11 @@ metadata:
   course_name_ja: "平井: 平井／平井六丁目／平井七丁目"
   areas:
     - name: 平井
+      yomi: ひらい
     - name: 平井六丁目
+      yomi: ひらい
     - name: 平井七丁目
+      yomi: ひらい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

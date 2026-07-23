@@ -4,10 +4,13 @@ metadata:
   course_name_ja: "御津: 御津鹿瀬／御津金川／御津草生"
   areas:
     - name: 御津鹿瀬
+      yomi: みつかせ
       note: 鹿瀬
     - name: 御津金川
+      yomi: みつかながわ
       note: 金川
     - name: 御津草生
+      yomi: みつくそう
       note: 草生
   year: 2026
   fiscal_year_ja: 令和8年度

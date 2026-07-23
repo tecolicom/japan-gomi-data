@@ -4,6 +4,7 @@ metadata:
   course_name_ja: "高田: 日近"
   areas:
     - name: 日近
+      yomi: ひぢかい
       note: 上日近・下日近を除く
   year: 2026
   fiscal_year_ja: 令和8年度

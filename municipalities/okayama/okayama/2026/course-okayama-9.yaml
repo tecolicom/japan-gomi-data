@@ -4,21 +4,35 @@ metadata:
   course_name_ja: "西大寺: 浅越／金岡東町一丁目／西大寺／西大寺上一丁目／西大寺上二丁目／西大寺上三丁目／西大寺北／西大寺中一丁目／西大寺中二丁目／西大寺中三丁目／西大寺東一丁目／西大寺南一丁目／西大寺南二丁目／向州"
   areas:
     - name: 浅越
+      yomi: あさごえ
       note: 砂川以東
     - name: 金岡東町一丁目
+      yomi: かなおかひがしまち
       note: 1番15号～30号
     - name: 西大寺
+      yomi: さいだいじ
     - name: 西大寺上一丁目
+      yomi: さいだいじかみ
     - name: 西大寺上二丁目
+      yomi: さいだいじかみ
     - name: 西大寺上三丁目
+      yomi: さいだいじかみ
     - name: 西大寺北
+      yomi: さいだいじきた
     - name: 西大寺中一丁目
+      yomi: さいだいじなか
     - name: 西大寺中二丁目
+      yomi: さいだいじなか
     - name: 西大寺中三丁目
+      yomi: さいだいじなか
     - name: 西大寺東一丁目
+      yomi: さいだいじひがし
     - name: 西大寺南一丁目
+      yomi: さいだいじみなみ
     - name: 西大寺南二丁目
+      yomi: さいだいじみなみ
     - name: 向州
+      yomi: むこうす
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

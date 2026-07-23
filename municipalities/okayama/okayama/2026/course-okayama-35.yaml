@@ -4,21 +4,35 @@ metadata:
   course_name_ja: "鹿田: 大元駅前／東古松１丁目／東古松３丁目／東古松４丁目／東古松５丁目／東古松A／東古松南町 ｜ 岡南･清輝: 奥田１丁目／奥田本町 ｜ 岡南: 奥田２丁目／奥田西町／奥田南町／神田町１丁目／神田町２丁目"
   areas:
     - name: 大元駅前
+      yomi: おおもとえきまえ
       note: 大元駅前・二日市町線以南
     - name: 奥田１丁目
+      yomi: おくだ
     - name: 奥田２丁目
+      yomi: おくだ
     - name: 奥田西町
+      yomi: おくだにしまち
     - name: 奥田本町
+      yomi: おくだほんまち
     - name: 奥田南町
+      yomi: おくだみなみまち
     - name: 神田町１丁目
+      yomi: かんだちょう
     - name: 神田町２丁目
+      yomi: かんだちょう
     - name: 東古松１丁目
+      yomi: ひがしふるまつ
     - name: 東古松３丁目
+      yomi: ひがしふるまつ
     - name: 東古松４丁目
+      yomi: ひがしふるまつ
     - name: 東古松５丁目
+      yomi: ひがしふるまつ
     - name: 東古松A
+      yomi: ひがしふるまつ
       note: 東古松209～241番地
     - name: 東古松南町
+      yomi: ひがしふるまつみなみまち
       note: 青江津島線の東
   year: 2026
   fiscal_year_ja: 令和8年度

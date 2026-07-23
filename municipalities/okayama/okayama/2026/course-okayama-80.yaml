@@ -4,10 +4,13 @@ metadata:
   course_name_ja: "御津・御津南: 御津川高 ｜ 御津南: 御津国ケ原／御津芳谷"
   areas:
     - name: 御津川高
+      yomi: みつかわたか
       note: 川高・大曽根
     - name: 御津国ケ原
+      yomi: みつくにがはら
       note: 国ヶ原
     - name: 御津芳谷
+      yomi: みつよしたに
       note: 田土・大鹿・鍋谷・河瀬
   year: 2026
   fiscal_year_ja: 令和8年度

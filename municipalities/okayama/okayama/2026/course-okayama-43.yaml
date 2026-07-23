@@ -4,13 +4,20 @@ metadata:
   course_name_ja: "開成: 金田／九蟠／豊田 ｜ 政田: 君津／光津／政津／升田"
   areas:
     - name: 金田
+      yomi: かなだ
       note: 「川北町内会以外」
     - name: 君津
+      yomi: きみつ
     - name: 九蟠
+      yomi: くばん
     - name: 光津
+      yomi: こうつ
     - name: 豊田
+      yomi: とよた
     - name: 政津
+      yomi: まさつ
     - name: 升田
+      yomi: ますだ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,12 +4,19 @@ metadata:
   course_name_ja: "伊島: いずみ町／伊福町２丁目／伊福町３丁目／絵図町／清心町 ｜ 岡山中央: 国体町 ｜ 鹿田: 東古松B"
   areas:
     - name: いずみ町
+      yomi: いずみちょう
     - name: 伊福町２丁目
+      yomi: いふくちょう
     - name: 伊福町３丁目
+      yomi: いふくちょう
     - name: 絵図町
+      yomi: えずちょう
     - name: 国体町
+      yomi: こくたいちょう
     - name: 清心町
+      yomi: せいしんちょう
     - name: 東古松B
+      yomi: ひがしふるまつ
       note: 東古松484～513番地
   year: 2026
   fiscal_year_ja: 令和8年度

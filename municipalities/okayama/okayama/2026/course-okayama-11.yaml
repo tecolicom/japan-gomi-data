@@ -4,11 +4,15 @@ metadata:
   course_name_ja: "足守: 足守／上土田／下足守 ｜ 大井: 大井"
   areas:
     - name: 足守
+      yomi: あしもり
       note: 「川崎町・宮路町・宮前町・深茂・竜王団地」
     - name: 大井
+      yomi: おおい
       note: 「本町三丁目（葵町）」
     - name: 上土田
+      yomi: かみつちだ
     - name: 下足守
+      yomi: しもあしもり
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

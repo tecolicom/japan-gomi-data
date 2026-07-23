@@ -4,18 +4,25 @@ metadata:
   course_name_ja: "五城: 御津石上／御津伊田／御津新庄／御津中畑／御津平岡西／御津矢知 ｜ 御津・五城: 御津矢原"
   areas:
     - name: 御津石上
+      yomi: みついしかみ
       note: 石上・佐野
     - name: 御津伊田
+      yomi: みついた
       note: 上伊田・下伊田
     - name: 御津新庄
+      yomi: みつしんじょう
       note: 寺部・新庄原・西谷・ひかり団地
     - name: 御津中畑
+      yomi: みつなかはた
       note: 中畑
     - name: 御津平岡西
+      yomi: みつひらおかにし
       note: 平岡西
     - name: 御津矢知
+      yomi: みつやち
       note: 矢知
     - name: 御津矢原
+      yomi: みつやばら
       note: 矢原・大園
   year: 2026
   fiscal_year_ja: 令和8年度

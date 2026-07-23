@@ -4,16 +4,22 @@ metadata:
   course_name_ja: "野谷: 菅野／高野 ｜ 馬屋上: 田原／富吉／日応寺／三和"
   areas:
     - name: 菅野
+      yomi: すがの
       note: 「西菅野・東菅野・辛香」 （朝7時30分までにお出しください。）
     - name: 高野
+      yomi: たかの
       note: 朝7時30分までにお出しください。
     - name: 田原
+      yomi: たばら
       note: 「田原」 朝7時30分までにお出しください。
     - name: 富吉
+      yomi: とみよし
       note: 「富吉」 （朝7時30分までにお出しください。）
     - name: 日応寺
+      yomi: にちおうじ
       note: 朝7時30分までにお出しください。
     - name: 三和
+      yomi: みと
       note: 朝7時30分までにお出しください。
   year: 2026
   fiscal_year_ja: 令和8年度
