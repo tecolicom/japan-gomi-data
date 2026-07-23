@@ -7,13 +7,11 @@ metadata:
       yomi: いずみだ
       machiaza_id: 331040-0006000
       note: ※一部地区のみ、収集曜日が異なります。
-    - name: さい
+    - name: さい（山陽本線より北）
       yomi: さい
-      note: 山陽本線より北
-    - name: 新保
+    - name: 新保（国道２号線バイパスの南）
       yomi: しんぼう
       machiaza_id: 331040-0025000
-      note: 国道２号線バイパスの南
     - name: 高島一丁目
       yomi: たかしま
       machiaza_id: 331023-0045001
@@ -23,23 +21,20 @@ metadata:
     - name: 中島
       yomi: なかしま
       machiaza_id: 331023-0088000
-    - name: 西市
+    - name: 西市（ＪＲ瀬戸大橋線の東。国道２号線バイパスの南。）
       yomi: にしいち
-      note: ＪＲ瀬戸大橋線の東。国道２号線バイパスの南。
-    - name: 万倍
+    - name: 万倍（洲崎米倉線より北）
       yomi: まんばい
       machiaza_id: 331040-0067000
-      note: 洲崎米倉線より北
     - name: 八幡
       yomi: やはた
       machiaza_id: 331023-0080000
     - name: 八幡東町
       yomi: やはたひがしまち
       machiaza_id: 331023-0081000
-    - name: 米倉
+    - name: 米倉（JR瀬戸大橋線以東・県道洲崎米倉線含む以北。）
       yomi: よねぐら
       machiaza_id: 331040-0072000
-      note: JR瀬戸大橋線以東・県道洲崎米倉線含む以北。
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

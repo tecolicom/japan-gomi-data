@@ -15,14 +15,12 @@ metadata:
     - name: 倉田
       yomi: くらた
       machiaza_id: 331023-0087000
-    - name: 倉富
+    - name: 倉富（国道2号線バイパス以南）
       yomi: くらとみ
       machiaza_id: 331023-0025000
-      note: 国道2号線バイパス以南
-    - name: 倉益
+    - name: 倉益（国道2号線バイパス以南）
       yomi: くらます
       machiaza_id: 331023-0026000
-      note: 国道2号線バイパス以南
     - name: 桑野
       yomi: くわの
       machiaza_id: 331023-0027000

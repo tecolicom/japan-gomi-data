@@ -6,9 +6,6 @@ metadata:
     - name: 今２丁目
       yomi: いま
       machiaza_id: 331015-0018002
-    - name: 今２丁目
-      yomi: いま
-      machiaza_id: 331015-0018002
     - name: 今３丁目
       yomi: いま
       machiaza_id: 331015-0018003
@@ -36,10 +33,9 @@ metadata:
     - name: 金岡西町
       yomi: かなおかにしまち
       machiaza_id: 331031-0010000
-    - name: 金岡東町一丁目
+    - name: 金岡東町一丁目（1番15号～30号以外）
       yomi: かなおかひがしまち
       machiaza_id: 331031-0011001
-      note: 1番15号～30号以外
     - name: 金岡東町二丁目
       yomi: かなおかひがしまち
       machiaza_id: 331031-0011002
@@ -61,30 +57,24 @@ metadata:
     - name: 西大寺金岡
       yomi: さいだいじかなおか
       machiaza_id: 331031-0031000
-    - name: 下中野（北区）
+    - name: 下中野（北区）（ＪＲ貨物西岡山駅からの南北道路の西。）
       yomi: しもなかの
       machiaza_id: 331015-0093000
-      note: ＪＲ貨物西岡山駅からの南北道路の西。
-    - name: 辰巳
+    - name: 辰巳（辰巳西公園北側の道路の南）
       yomi: たつみ
       machiaza_id: 331015-0152000
-      note: 辰巳西公園北側の道路の南
-    - name: 辰巳
+    - name: 辰巳（辰巳西公園北側の道路の北）
       yomi: たつみ
       machiaza_id: 331015-0152000
-      note: 辰巳西公園北側の道路の北
-    - name: 田中
+    - name: 田中（岡山西バイパスの東。辰巳西公園北側の道路の南）
       yomi: たなか
       machiaza_id: 331015-0329000
-      note: 岡山西バイパスの東。辰巳西公園北側の道路の南
-    - name: 田中
+    - name: 田中（岡山西バイパスの西。）
       yomi: たなか
       machiaza_id: 331015-0329000
-      note: 岡山西バイパスの西。
-    - name: 田中
+    - name: 田中（辰巳西公園北東の角、プレステージ難波 北区田中１０９－１０１）
       yomi: たなか
       machiaza_id: 331015-0329000
-      note: 辰巳西公園北東の角、プレステージ難波 北区田中１０９－１０１
     - name: 問屋町
       yomi: といやちょう
       machiaza_id: 331015-0176000
@@ -94,14 +84,12 @@ metadata:
     - name: 中仙道１丁目
       yomi: なかせんどう
       machiaza_id: 331015-0190001
-    - name: 平田
+    - name: 平田（岡山西バイパスの東）
       yomi: ひらた
       machiaza_id: 331015-0241000
-      note: 岡山西バイパスの東
-    - name: 平田
+    - name: 平田（岡山西バイパスの西）
       yomi: ひらた
       machiaza_id: 331015-0241000
-      note: 岡山西バイパスの西
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

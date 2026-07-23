@@ -92,6 +92,18 @@ export function expandRow(rec) {
   const gm = body.match(GROUP_LABEL);
   if (gm) { groupNote = gm[0].trim(); body = body.slice(gm[0].length); }
 
+  // 行全体条件の明示裁定: 茶屋町学区の対行「茶屋町・早沖（ＪＲ東…）」「茶屋町・早沖（ＪＲ西…）」は、
+  // 原文 PDF 上、末尾括弧 (ＪＲ東/西 + 町内会列挙) が行全体 (茶屋町・早沖の両方) に係る地域割り。
+  // 既定則 (括弧=直前トークンの note) では茶屋町側が判別不能になるため、行全体 note へ昇格する。
+  const ROW_WIDE_PAREN = [/^茶屋町・早沖[（(]/];
+  if (ROW_WIDE_PAREN.some((re) => re.test(body))) {
+    const m = body.match(/[（(]([^）)]*)[）)]\s*$/);
+    if (m) {
+      groupNote = groupNote ? `${groupNote} ${m[1].trim()}` : m[1].trim();
+      body = body.slice(0, m.index);
+    }
+  }
+
   const tokens = splitTop(body);
   if (!tokens.length) throw new Error(`area が空: ${JSON.stringify(rec.area)}`);
 

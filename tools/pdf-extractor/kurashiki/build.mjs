@@ -206,6 +206,24 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
   });
 }
 
+// 割れ area (同一 name が別コース・別条件で複数存在) は note の判別子を name に昇格し、
+// name 単独で地域特定できるようにする (岡山と同じ規則。横浜「上郷町1〜199の一部」先例)。
+// 昇格行の note は重複排除のため外す。判別 note の無い割れ name は警告。
+{
+  const nameCount = new Map();
+  for (const d of docs) for (const a of d.metadata.areas) nameCount.set(a.name, (nameCount.get(a.name) || 0) + 1);
+  const noNote = new Set();
+  for (const d of docs) {
+    d.metadata.areas = d.metadata.areas.map((a) => {
+      if ((nameCount.get(a.name) || 0) > 1) {
+        if (a.note) { const { note, ...rest } = a; return { ...rest, name: `${a.name}（${note}）` }; }
+        noNote.add(a.name);
+      }
+      return a;
+    });
+  }
+  if (noNote.size) console.log(`  警告: 割れ area なのに判別 note が無い: ${[...noNote].join('、')}`);
+}
 const n = writeCourses(OUTDIR, YEAR, docs);
 writeFileSync(join(HERE, 'cache', 'area_expansion.json'),
   JSON.stringify({ rows: expandTable.length, areas: stats.total, table: expandTable }, null, 1));

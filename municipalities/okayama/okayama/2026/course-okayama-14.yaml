@@ -3,29 +3,24 @@ metadata:
   course: okayama-14
   course_name_ja: "大井: 粟井 ｜ 福谷: 河原／庄田／西山内／東山内／真星"
   areas:
-    - name: 粟井
+    - name: 粟井（「粟井第4（堂坂）」）
       yomi: あわい
       machiaza_id: 331015-0008000
-      note: 「粟井第4（堂坂）」
-    - name: 河原
+    - name: 河原（黒谷下・河原・上吉田・下吉田・松井・三明）
       yomi: かわはら
       machiaza_id: 331015-0055000
-      note: 黒谷下・河原・上吉田・下吉田・松井・三明
     - name: 庄田
       yomi: しょうだ
       machiaza_id: 331015-0097000
-    - name: 西山内
+    - name: 西山内（広石上・広石下）
       yomi: にしやまのうち
       machiaza_id: 331015-0212000
-      note: 広石上・広石下
-    - name: 東山内
+    - name: 東山内（下杭田裏を除く）
       yomi: ひがしやまのうち
       machiaza_id: 331015-0238000
-      note: 下杭田裏を除く
-    - name: 真星
+    - name: 真星（田口・古川・神谷b・神谷cを除く地区）
       yomi: まなぼし
       machiaza_id: 331015-0256000
-      note: 田口・古川・神谷b・神谷cを除く地区
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

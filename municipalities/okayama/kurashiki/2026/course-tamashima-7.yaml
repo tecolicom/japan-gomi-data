@@ -3,32 +3,27 @@ metadata:
   course: tamashima-7
   course_name_ja: "玉島地区: 長尾／爪崎／上成／玉島／乙島"
   areas:
-    - name: 長尾
+    - name: 長尾（上成）
       yomi: ながお
       machiaza_id: 332020-0101000
-      note: 上成
-    - name: 爪崎
+    - name: 爪崎（上成）
       yomi: つまさき
       machiaza_id: 332020-0099000
-      note: 上成
-    - name: 上成
+    - name: 上成（上成）
       yomi: うわなり
       machiaza_id: 332020-0092000
-      note: 上成
-    - name: 玉島
+    - name: 玉島（上成）
       yomi: たましま
       machiaza_id: 332020-0089000
-      note: 上成
-    - name: 乙島
+    - name: 乙島（上成）
       yomi: おとしま
       machiaza_id: 332020-0231000
-      note: 上成
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/tamashimafunao.pdf
-    extracted_at: 2026-07-23
+    extracted_at: 2026-07-21
     extracted_by: claude-opus-4-8
     verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:

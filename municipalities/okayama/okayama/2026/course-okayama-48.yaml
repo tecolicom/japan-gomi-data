@@ -3,10 +3,9 @@ metadata:
   course: okayama-48
   course_name_ja: "中山: 辛川市場／西辛川"
   areas:
-    - name: 辛川市場
+    - name: 辛川市場（辛川市場の一部 (資源化物の収集日が第1回目の木曜日の地区)）
       yomi: からかわいちば
       machiaza_id: 331015-0053000
-      note: 辛川市場の一部 (資源化物の収集日が第1回目の木曜日の地区)
     - name: 西辛川
       yomi: にしからかわ
       machiaza_id: 331015-0200000

@@ -3,18 +3,15 @@ metadata:
   course: tamashima-8
   course_name_ja: "玉島地区: 長尾／爪崎／上成／新倉敷駅前／玉島"
   areas:
-    - name: 長尾
+    - name: 長尾（駅南）
       yomi: ながお
       machiaza_id: 332020-0101000
-      note: 駅南
-    - name: 爪崎
+    - name: 爪崎（駅南）
       yomi: つまさき
       machiaza_id: 332020-0099000
-      note: 駅南
-    - name: 上成
+    - name: 上成（駅南）
       yomi: うわなり
       machiaza_id: 332020-0092000
-      note: 駅南
     - name: 新倉敷駅前1丁目
       yomi: しんくらしきえきまえ
       machiaza_id: 332020-0081001
@@ -35,16 +32,15 @@ metadata:
       yomi: しんくらしきえきまえ
       machiaza_id: 332020-0081005
       note: 駅南
-    - name: 玉島
+    - name: 玉島（駅南）
       yomi: たましま
       machiaza_id: 332020-0089000
-      note: 駅南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/tamashimafunao.pdf
-    extracted_at: 2026-07-23
+    extracted_at: 2026-07-21
     extracted_by: claude-opus-4-8
     verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:

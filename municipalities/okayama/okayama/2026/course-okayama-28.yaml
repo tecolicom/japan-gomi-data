@@ -15,18 +15,15 @@ metadata:
     - name: 桑田町
       yomi: くわだちょう
       machiaza_id: 331015-0069000
-    - name: 厚生町１丁目
+    - name: 厚生町１丁目（旧国道２号線の北）
       yomi: こうせいちょう
       machiaza_id: 331015-0070001
-      note: 旧国道２号線の北
-    - name: 厚生町２丁目
+    - name: 厚生町２丁目（旧国道２号線の北）
       yomi: こうせいちょう
       machiaza_id: 331015-0070002
-      note: 旧国道２号線の北
-    - name: 厚生町３丁目
+    - name: 厚生町３丁目（旧国道２号線の北）
       yomi: こうせいちょう
       machiaza_id: 331015-0070003
-      note: 旧国道２号線の北
     - name: 幸町
       yomi: さいわいちょう
       machiaza_id: 331015-0079000

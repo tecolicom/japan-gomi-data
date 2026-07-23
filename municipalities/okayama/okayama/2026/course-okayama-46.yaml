@@ -3,14 +3,12 @@ metadata:
   course: okayama-46
   course_name_ja: "高田: 上高田／下高田"
   areas:
-    - name: 上高田
+    - name: 上高田（森川上・二ツ山・平林・草谷上・西の平）
       yomi: かみたかだ
       machiaza_id: 331015-0049000
-      note: 森川上・二ツ山・平林・草谷上・西の平
-    - name: 下高田
+    - name: 下高田（鯨を除く地区）
       yomi: しもたかだ
       machiaza_id: 331015-0091000
-      note: 鯨を除く地区
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -9,31 +9,26 @@ metadata:
     - name: 駅元町
       yomi: えきもとまち
       machiaza_id: 331015-0027000
-    - name: 大元駅前
+    - name: 大元駅前（大元駅前・二日市町線以北）
       yomi: おおもとえきまえ
       machiaza_id: 331015-0034000
-      note: 大元駅前・二日市町線以北
     - name: 春日町
       yomi: かすがちょう
       machiaza_id: 331015-0047000
-    - name: 厚生町１丁目
+    - name: 厚生町１丁目（旧国道２号線の南）
       yomi: こうせいちょう
       machiaza_id: 331015-0070001
-      note: 旧国道２号線の南
-    - name: 厚生町２丁目
+    - name: 厚生町２丁目（旧国道２号線の南）
       yomi: こうせいちょう
       machiaza_id: 331015-0070002
-      note: 旧国道２号線の南
-    - name: 厚生町３丁目
+    - name: 厚生町３丁目（旧国道２号線の南）
       yomi: こうせいちょう
       machiaza_id: 331015-0070003
-      note: 旧国道２号線の南
     - name: 寿町
       yomi: ことぶきちょう
       machiaza_id: 331015-0077000
-    - name: さい
+    - name: さい（山陽本線より南）
       yomi: さい
-      note: 山陽本線より南
     - name: さい東町一丁目
     - name: さい東町二丁目
     - name: 鹿田町１丁目
@@ -45,10 +40,9 @@ metadata:
     - name: 鹿田本町
       yomi: しかたほんまち
       machiaza_id: 331015-0082000
-    - name: 島田本町１丁目
+    - name: 島田本町１丁目（青江・津島線島田地下道以東）
       yomi: しまだほんまち
       machiaza_id: 331015-0083001
-      note: 青江・津島線島田地下道以東
     - name: 昭和町
       yomi: しょうわちょう
       machiaza_id: 331015-0098000
@@ -77,10 +71,9 @@ metadata:
     - name: 西川原一丁目
       yomi: にしがわら
       machiaza_id: 331023-0058001
-    - name: 西古松
+    - name: 西古松（ＪＲ瀬戸大橋線の東。）
       yomi: にしふるまつ
       machiaza_id: 331015-0210000
-      note: ＪＲ瀬戸大橋線の東。
     - name: 浜
       yomi: はま
       machiaza_id: 331023-0061000

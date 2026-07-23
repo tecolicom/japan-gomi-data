@@ -9,10 +9,9 @@ metadata:
     - name: 可知二丁目
       yomi: かち
       machiaza_id: 331031-0009002
-    - name: 可知三丁目
+    - name: 可知三丁目（1番～3番、8番～12番）
       yomi: かち
       machiaza_id: 331031-0009003
-      note: 1番～3番、8番～12番
     - name: 可知四丁目
       yomi: かち
       machiaza_id: 331031-0009004

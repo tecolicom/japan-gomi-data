@@ -3,10 +3,9 @@ metadata:
   course: okayama-54
   course_name_ja: "西大寺: 西大寺中野／西大寺中野本町"
   areas:
-    - name: 西大寺中野
+    - name: 西大寺中野（898番地～960番地を除く）
       yomi: さいだいじなかの
       machiaza_id: 331031-0039000
-      note: 898番地～960番地を除く
     - name: 西大寺中野本町
       yomi: さいだいじなかのほんまち
       machiaza_id: 331031-0040000

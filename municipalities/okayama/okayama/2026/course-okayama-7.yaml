@@ -15,14 +15,12 @@ metadata:
     - name: 今谷
       yomi: いまだに
       machiaza_id: 331023-0007000
-    - name: 浦間
+    - name: 浦間（御休学区（浦間 484番地～1214番地））
       yomi: うらま
       machiaza_id: 331031-0119000
-      note: 御休学区（浦間 484番地～1214番地）
-    - name: 浦間
+    - name: 浦間（平島学区（浦間 484番地～1214番地以外））
       yomi: うらま
       machiaza_id: 331031-0119000
-      note: 平島学区（浦間 484番地～1214番地以外）
     - name: 兼基
       yomi: かねもと
       machiaza_id: 331023-0019000
@@ -45,10 +43,9 @@ metadata:
     - name: 沢田
       yomi: さわだ
       machiaza_id: 331023-0035000
-    - name: 清水
+    - name: 清水（JR山陽本線以南）
       yomi: しみず
       machiaza_id: 331023-0038000
-      note: JR山陽本線以南
     - name: 清水一丁目
       yomi: しみず
       machiaza_id: 331023-0038001
@@ -70,10 +67,9 @@ metadata:
     - name: 高屋
       yomi: たかや
       machiaza_id: 331023-0047000
-    - name: 谷万成２丁目
+    - name: 谷万成２丁目（Ｒ１８０－Ｒ５３より北）
       yomi: たにまんなり
       machiaza_id: 331015-0154002
-      note: Ｒ１８０－Ｒ５３より北
     - name: 津島京町１丁目
       yomi: つしまきょうまち
       machiaza_id: 331015-0162001
@@ -107,10 +103,9 @@ metadata:
     - name: 寺山
       yomi: てらやま
       machiaza_id: 331031-0083000
-    - name: 富崎
+    - name: 富崎（砂川より東）
       yomi: とみさき
       machiaza_id: 331031-0084000
-      note: 砂川より東
     - name: 楢原
       yomi: ならばら
       machiaza_id: 331031-0089000
@@ -123,10 +118,9 @@ metadata:
     - name: 一日市
       yomi: ひといち
       machiaza_id: 331031-0099000
-    - name: 福治
+    - name: 福治（砂川から東）
       yomi: ふくじ
       machiaza_id: 331031-0101000
-      note: 砂川から東
     - name: 藤田
       yomi: ふじた
       machiaza_id: 331040-0064000

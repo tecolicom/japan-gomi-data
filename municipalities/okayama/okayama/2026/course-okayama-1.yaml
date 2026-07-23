@@ -21,10 +21,9 @@ metadata:
     - name: 谷万成１丁目
       yomi: たにまんなり
       machiaza_id: 331015-0154001
-    - name: 谷万成２丁目
+    - name: 谷万成２丁目（Ｒ１８０－Ｒ５３より南）
       yomi: たにまんなり
       machiaza_id: 331015-0154002
-      note: Ｒ１８０－Ｒ５３より南
     - name: 万成西町
       yomi: まんなりにしまち
       machiaza_id: 331015-0258000

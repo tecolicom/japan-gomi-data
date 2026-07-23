@@ -3,18 +3,15 @@ metadata:
   course: okayama-66
   course_name_ja: "横井: 津高／津高／横井上"
   areas:
-    - name: 津高
+    - name: 津高（「津高」（旧国道53号線以東[本村東2班・本村遠矢を除く]））
       yomi: つだか
       machiaza_id: 331015-0172000
-      note: 「津高」（旧国道53号線以東[本村東2班・本村遠矢を除く]）
-    - name: 津高
+    - name: 津高（「半田山ハイツ」）
       yomi: つだか
       machiaza_id: 331015-0172000
-      note: 「半田山ハイツ」
-    - name: 横井上
+    - name: 横井上（「半田山ハイツ」）
       yomi: よこいかみ
       machiaza_id: 331015-0306000
-      note: 「半田山ハイツ」
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

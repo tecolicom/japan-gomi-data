@@ -3,45 +3,39 @@ metadata:
   course: okayama-8
   course_name_ja: "西大寺: 浅越／西庄／吉原 ｜ 芥子山: 大多羅町／可知五丁目／西大寺中野／西大寺松崎／富崎／広谷／福治／富士見町一丁目／松新町 ｜ 可知: 可知三丁目 ｜ 開成: 金田"
   areas:
-    - name: 浅越
+    - name: 浅越（砂川以西）
       yomi: あさごえ
       machiaza_id: 331031-0002000
-      note: 砂川以西
     - name: 大多羅町
       yomi: おおだらちょう
       machiaza_id: 331031-0006000
-    - name: 可知三丁目
+    - name: 可知三丁目（4番～7番、13番～17番）
       yomi: かち
       machiaza_id: 331031-0009003
-      note: 4番～7番、13番～17番
     - name: 可知五丁目
       yomi: かち
       machiaza_id: 331031-0009005
-    - name: 金田
+    - name: 金田（「川北町内会」）
       yomi: かなだ
       machiaza_id: 331031-0012000
-      note: 「川北町内会」
-    - name: 西大寺中野
+    - name: 西大寺中野（898番地～960番地）
       yomi: さいだいじなかの
       machiaza_id: 331031-0039000
-      note: 898番地～960番地
     - name: 西大寺松崎
       yomi: さいだいじまつざき
       machiaza_id: 331031-0043000
-    - name: 富崎
+    - name: 富崎（砂川より西）
       yomi: とみさき
       machiaza_id: 331031-0084000
-      note: 砂川より西
     - name: 西庄
       yomi: にししょう
       machiaza_id: 331031-0092000
     - name: 広谷
       yomi: ひろたに
       machiaza_id: 331031-0144000
-    - name: 福治
+    - name: 福治（砂川から西）
       yomi: ふくじ
       machiaza_id: 331031-0101000
-      note: 砂川から西
     - name: 富士見町一丁目
       yomi: ふじみちょう
       machiaza_id: 331031-0103001

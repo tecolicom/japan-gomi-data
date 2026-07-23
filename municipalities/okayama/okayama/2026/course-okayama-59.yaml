@@ -18,10 +18,9 @@ metadata:
     - name: 福富西１丁目
       yomi: ふくとみにし
       machiaza_id: 331040-0058001
-    - name: 福富西２丁目
+    - name: 福富西２丁目（福富西町内会）
       yomi: ふくとみにし
       machiaza_id: 331040-0058002
-      note: 福富西町内会
     - name: 福富西３丁目
       yomi: ふくとみにし
       machiaza_id: 331040-0058003

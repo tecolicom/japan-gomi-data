@@ -58,9 +58,8 @@ metadata:
     - name: 中尾
       yomi: なかお
       machiaza_id: 331031-0086000
-    - name: 西市
+    - name: 西市（県道岡山児島線の東。ＪＲ瀬戸大橋線の西。）
       yomi: にしいち
-      note: 県道岡山児島線の東。ＪＲ瀬戸大橋線の西。
     - name: 西畦
       yomi: にしうね
       machiaza_id: 331040-0046000
@@ -76,10 +75,9 @@ metadata:
     - name: 東野山町
       yomi: ひがしのやまちょう
       machiaza_id: 331015-0233000
-    - name: 万倍
+    - name: 万倍（洲崎米倉線より南）
       yomi: まんばい
       machiaza_id: 331040-0067000
-      note: 洲崎米倉線より南
     - name: 箕島
       yomi: みしま
       machiaza_id: 331040-0068000
@@ -95,10 +93,9 @@ metadata:
     - name: 矢坂本町
       yomi: やさかほんまち
       machiaza_id: 331015-0300000
-    - name: 米倉
+    - name: 米倉（県道岡山児島線の東・・・ＪＲ瀬戸大橋線の西。）
       yomi: よねぐら
       machiaza_id: 331040-0072000
-      note: 県道岡山児島線の東・・・ＪＲ瀬戸大橋線の西。
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

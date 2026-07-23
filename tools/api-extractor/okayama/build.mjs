@@ -138,11 +138,31 @@ const stripTimeNote = (n) => {
   if (out !== n.trim()) timeNoteStripped++;
   return out;
 };
+// 割れ町 (同一町名が複数の日程レコードを持つ) は note の判別子を name に昇格させる:
+// name だけで地域を特定できるようにする (横浜「上郷町1〜199の一部」・川崎「梶ヶ谷（高津区）」の先例)。
+// 昇格した行の note は重複排除のため外す。非割れ町の note (限定条件等) はそのまま。
+// 割れ判定キー: 区注記括弧と記号サフィクス (①②・A/B) を除いた表示ベース名 (丁目は保持)。
+// 福田①/福田② や 下中野（北区）/（南区） を同一グループとして扱う。
+const splitKey = (t) => nfkc(t)
+  .replace(/[（(][^）)]*[）)]/g, '')
+  .replace(/\s+/g, '')
+  .replace(/[0-9A-Za-z]+$/, '');
+const splitCount = new Map(); // build 実行部で records 読込後に構築する
+const splitNoNote = [];
 const rowArea = (r) => {
   const { yomi, machiazaId } = abrOf(r.town);
   if (!yomi) yomiMissing.push(r.town);
   if (!machiazaId) idMissing.push(r.town);
   const note = r.note && r.note.trim() ? stripTimeNote(r.note) : '';
+  const isSplit = splitCount.get(splitKey(r.town)) > 1;
+  if (isSplit && !note) splitNoNote.push(r.town);
+  if (isSplit && note) {
+    return {
+      name: `${r.town}（${note}）`,
+      ...(yomi ? { yomi } : {}),
+      ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+    };
+  }
   return {
     name: r.town,
     ...(yomi ? { yomi } : {}),
@@ -153,6 +173,10 @@ const rowArea = (r) => {
 
 const payload = JSON.parse(readFileSync(join(HERE, 'cache', 'records.json'), 'utf8'));
 const records = [...payload.records].sort((a, b) => Number(a.id) - Number(b.id));
+for (const r of records) {
+  const k = splitKey(r.town);
+  splitCount.set(k, (splitCount.get(k) || 0) + 1);
+}
 
 // 市全域を日程シグネチャで畳む。areas は行(小学校区+町名+備考)を保持。
 const folded = foldCourses(records, toRules, (r) => r);
@@ -191,7 +215,9 @@ const docs = folded.map((c, i) => {
     city: 'okayama',
     course: `okayama-${i + 1}`,
     courseNameJa,
-    areas: c.areas.map(rowArea),
+    // 同一日程で学区だけ違う行 (例 今2丁目=西/大元) は畳み込みで同一コースに入り
+    // area が重複するため、同一表現 (name+yomi+id+note) を dedupe する
+    areas: [...new Map(c.areas.map(rowArea).map((a) => [JSON.stringify(a), a])).values()],
     year: YEAR,
     fiscalYearJa: FY_JA,
     source: {
@@ -213,3 +239,4 @@ const uniqIdMissing = [...new Set(idMissing)];
 console.log(`machiaza_id: ${records.length - idMissing.length}/${records.length} 行に付与 (未付与 町名: ${uniqIdMissing.join('、') || 'なし'})`);
 if (ambiguous.length) console.log(`  うち区またぎ同名で曖昧 (ID未付与): ${[...new Set(ambiguous)].join('、')}`);
 console.log(`note: 収集時刻の運用説明を ${timeNoteStripped} 行から除去`);
+if (splitNoNote.length) console.log(`  警告: 割れ町なのに判別 note が無い行: ${[...new Set(splitNoNote)].join('、')}`);

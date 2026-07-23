@@ -6,24 +6,21 @@ metadata:
     - name: 西花尻
       yomi: にしはなじり
       machiaza_id: 331015-0318000
-    - name: 庭瀬
+    - name: 庭瀬（JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以東）
       yomi: にわせ
       machiaza_id: 331015-0327000
-      note: JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以東
     - name: 延友
       yomi: のぶとも
       machiaza_id: 331015-0313000
     - name: 東花尻
       yomi: ひがしはなじり
       machiaza_id: 331015-0234000
-    - name: 平野
+    - name: 平野（JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以東）
       yomi: ひらの
       machiaza_id: 331015-0333000
-      note: JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以東
-    - name: 平野
+    - name: 平野（JR山陽本線以南）
       yomi: ひらの
       machiaza_id: 331015-0333000
-      note: JR山陽本線以南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

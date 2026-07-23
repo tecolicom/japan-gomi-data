@@ -54,10 +54,9 @@ metadata:
     - name: 宗津
       yomi: そうづ
       machiaza_id: 331040-0029000
-    - name: 田中
+    - name: 田中（西長瀬町内会管理 北区田中１７３－１０２附近）
       yomi: たなか
       machiaza_id: 331015-0329000
-      note: 西長瀬町内会管理 北区田中１７３－１０２附近
     - name: 中仙道２丁目
       yomi: なかせんどう
       machiaza_id: 331015-0190002

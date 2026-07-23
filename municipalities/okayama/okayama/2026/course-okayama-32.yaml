@@ -6,10 +6,9 @@ metadata:
     - name: 大崎
       yomi: おおざき
       machiaza_id: 331015-0032000
-    - name: 小山
+    - name: 小山（（国道１８０号以北））
       yomi: こやま
       machiaza_id: 331015-0317000
-      note: （国道１８０号以北）
     - name: 下土田
       yomi: しもつちだ
       machiaza_id: 331015-0092000
@@ -22,21 +21,18 @@ metadata:
     - name: 高松田中
       yomi: たかまつたなか
       machiaza_id: 331015-0125000
-    - name: 立田
+    - name: 立田（国道180号以北）
       yomi: たづた
       machiaza_id: 331015-0335000
-      note: 国道180号以北
     - name: 平山
       yomi: ひらやま
       machiaza_id: 331015-0243000
-    - name: 福崎
+    - name: 福崎（国道180号以北）
       yomi: ふくざき
       machiaza_id: 331015-0245000
-      note: 国道180号以北
-    - name: 門前
+    - name: 門前（（国道180号以北））
       yomi: もんぜん
       machiaza_id: 331015-0297000
-      note: （国道180号以北）
     - name: 和井元
       yomi: わいもと
       machiaza_id: 331015-0311000

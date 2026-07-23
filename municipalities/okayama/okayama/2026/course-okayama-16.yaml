@@ -6,17 +6,15 @@ metadata:
     - name: 石妻
       yomi: いしづま
       machiaza_id: 331015-0010000
-    - name: 上高田
+    - name: 上高田（元信・尾崎）
       yomi: かみたかだ
       machiaza_id: 331015-0049000
-      note: 元信・尾崎
     - name: 杉谷
       yomi: すぎたに
       machiaza_id: 331015-0107000
-    - name: 日近
+    - name: 日近（下日近（弥高・美和））
       yomi: ひぢかい
       machiaza_id: 331015-0239000
-      note: 下日近（弥高・美和）
     - name: 山上
       yomi: やまのうえ
       machiaza_id: 331015-0304000

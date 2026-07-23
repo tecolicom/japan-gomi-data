@@ -3,10 +3,9 @@ metadata:
   course: okayama-73
   course_name_ja: "高田: 日近"
   areas:
-    - name: 日近
+    - name: 日近（上日近・下日近を除く）
       yomi: ひぢかい
       machiaza_id: 331015-0239000
-      note: 上日近・下日近を除く
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

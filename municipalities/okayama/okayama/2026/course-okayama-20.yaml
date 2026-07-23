@@ -6,10 +6,9 @@ metadata:
     - name: 泉田５丁目
       yomi: いずみだ
       machiaza_id: 331040-0006005
-    - name: 一宮
+    - name: 一宮（「一宮町内会（A40ステーション利用地区を除く）」）
       yomi: いちのみや
       machiaza_id: 331015-0015000
-      note: 「一宮町内会（A40ステーション利用地区を除く）」
     - name: 浦安西町
       yomi: うらやすにしまち
       machiaza_id: 331040-0009000
@@ -23,10 +22,9 @@ metadata:
     - name: 南輝１丁目
       yomi: なんき
       machiaza_id: 331040-0044001
-    - name: 福田②
+    - name: 福田②（726.730から736.741.742番地）
       yomi: ふくだ
       machiaza_id: 331040-0079000
-      note: 726.730から736.741.742番地
     - name: 芳泉１丁目
       yomi: ほうせん
       machiaza_id: 331040-0065001

@@ -15,10 +15,9 @@ metadata:
     - name: 国府市場
       yomi: こくふいちば
       machiaza_id: 331023-0029000
-    - name: 清水
+    - name: 清水（JR山陽本線以北）
       yomi: しみず
       machiaza_id: 331023-0038000
-      note: JR山陽本線以北
     - name: 賞田
       yomi: しょうだ
       machiaza_id: 331023-0040000
