@@ -44,13 +44,13 @@ metadata:
     - name: 円山
       yomi: まるやま
       machiaza_id: 331023-0085000
-    - name: 湊（「湊池の内町内会」（富山学区））
+    - name: 湊（湊池の内町内会（富山学区））
       yomi: みなと
       machiaza_id: 331023-0076000
     - name: 海吉
       yomi: みよし
       machiaza_id: 331023-0078000
-    - name: 山崎（「山崎本町町内会」（富山学区））
+    - name: 山崎（山崎本町町内会（富山学区））
       yomi: やまさき
       machiaza_id: 331023-0082000
   year: 2026

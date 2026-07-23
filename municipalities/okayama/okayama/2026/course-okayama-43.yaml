@@ -3,7 +3,7 @@ metadata:
   course: okayama-43
   course_name_ja: "開成: 金田／九蟠／豊田 ｜ 政田: 君津／光津／政津／升田"
   areas:
-    - name: 金田（「川北町内会以外」）
+    - name: 金田（川北町内会以外）
       yomi: かなだ
       machiaza_id: 331031-0012000
     - name: 君津

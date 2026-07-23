@@ -3,10 +3,10 @@ metadata:
   course: okayama-11
   course_name_ja: "足守: 足守／上土田／下足守 ｜ 大井: 大井"
   areas:
-    - name: 足守（「川崎町・宮路町・宮前町・深茂・竜王団地」）
+    - name: 足守（川崎町・宮路町・宮前町・深茂・竜王団地）
       yomi: あしもり
       machiaza_id: 331015-0320000
-    - name: 大井（「本町三丁目（葵町）」）
+    - name: 大井（本町三丁目（葵町））
       yomi: おおい
       machiaza_id: 331015-0321000
     - name: 上土田

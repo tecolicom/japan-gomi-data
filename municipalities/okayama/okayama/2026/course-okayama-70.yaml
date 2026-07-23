@@ -3,16 +3,16 @@ metadata:
   course: okayama-70
   course_name_ja: "横井: 津高台一丁目／津高台二丁目／津高台三丁目／津高台四丁目"
   areas:
-    - name: 津高台一丁目（「津高台」）
+    - name: 津高台一丁目
       yomi: つだかだい
       machiaza_id: 331015-0173001
-    - name: 津高台二丁目（「津高台」）
+    - name: 津高台二丁目
       yomi: つだかだい
       machiaza_id: 331015-0173002
-    - name: 津高台三丁目（「津高台」）
+    - name: 津高台三丁目
       yomi: つだかだい
       machiaza_id: 331015-0173003
-    - name: 津高台四丁目（「津高台」）
+    - name: 津高台四丁目
       yomi: つだかだい
       machiaza_id: 331015-0173004
   year: 2026

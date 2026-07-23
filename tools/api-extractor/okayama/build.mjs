@@ -173,8 +173,21 @@ const rowArea = (r) => {
       };
     }
     // town が既に区注記括弧を持つ場合 (下中野（北区）等) は二重括弧にせず単一括弧へ統合。
-    // note 末尾の句点は括弧内では除去する。
-    const noteClean = note.replace(/。$/, '');
+    // 判別子の整形: かぎ括弧「」は強調なので除去、「town（…）」形式は中身だけに、
+    // town 名の繰り返し・末尾句点を除去 — name 内の括弧が入れ子にならないようにする
+    // (表示側が括弧で町名と判別子を分けられる形を保つ)。
+    let noteClean = note.replace(/。$/, '').replace(/[「」]/g, '');
+    {
+      const inner = noteClean.match(/^(.+?)（(.+)）$/);
+      if (inner && inner[1] === parseTown(r.town).base) noteClean = inner[2];
+    }
+    if (!noteClean || r.town.includes(noteClean)) {
+      return {
+        name: r.town,
+        ...(yomi ? { yomi } : {}),
+        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+      };
+    }
     const wm = r.town.match(/^(.+?)（([^）]+)）\s*$/);
     const name = wm ? `${wm[1]}（${wm[2]}・${noteClean}）` : `${r.town}（${noteClean}）`;
     return {

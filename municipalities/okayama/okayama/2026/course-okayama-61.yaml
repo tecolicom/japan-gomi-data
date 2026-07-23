@@ -3,16 +3,16 @@ metadata:
   course: okayama-61
   course_name_ja: "野谷: 菅野／高野 ｜ 馬屋上: 田原／富吉／日応寺／三和"
   areas:
-    - name: 菅野（「西菅野・東菅野・辛香」）
+    - name: 菅野（西菅野・東菅野・辛香）
       yomi: すがの
       machiaza_id: 331015-0106000
     - name: 高野
       yomi: たかの
       machiaza_id: 331015-0122000
-    - name: 田原（「田原」）
+    - name: 田原
       yomi: たばら
       machiaza_id: 331015-0328000
-    - name: 富吉（「富吉」）
+    - name: 富吉
       yomi: とみよし
       machiaza_id: 331015-0184000
     - name: 日応寺

@@ -3,19 +3,19 @@ metadata:
   course: okayama-69
   course_name_ja: "横井: 津高／富原／富原／富原／横井上"
   areas:
-    - name: 津高（「津高団地」）
+    - name: 津高（津高団地）
       yomi: つだか
       machiaza_id: 331015-0172000
-    - name: 富原（「大岩」）
+    - name: 富原（大岩）
       yomi: とみはら
       machiaza_id: 331015-0332000
-    - name: 富原（「長溝」）
+    - name: 富原（長溝）
       yomi: とみはら
       machiaza_id: 331015-0332000
-    - name: 富原（「北村ビル」）
+    - name: 富原（北村ビル）
       yomi: とみはら
       machiaza_id: 331015-0332000
-    - name: 横井上（「鳴下・小幸田」（旧国道53号線以西））
+    - name: 横井上（鳴下・小幸田（旧国道53号線以西））
       yomi: よこいかみ
       machiaza_id: 331015-0306000
   year: 2026

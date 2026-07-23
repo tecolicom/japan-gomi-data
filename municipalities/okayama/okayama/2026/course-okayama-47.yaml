@@ -24,16 +24,16 @@ metadata:
     - name: 高松原古才
       yomi: たかまつはらこさい
       machiaza_id: 331015-0126000
-    - name: 田益（「田益」）
+    - name: 田益
       yomi: たます
       machiaza_id: 331015-0157000
-    - name: 田益（「桃園」）
+    - name: 田益（桃園）
       yomi: たます
       machiaza_id: 331015-0157000
     - name: 津寺
       yomi: つでら
       machiaza_id: 331015-0174000
-    - name: 富原（「桃園」）
+    - name: 富原（桃園）
       yomi: とみはら
       machiaza_id: 331015-0332000
     - name: 三手
@@ -42,7 +42,7 @@ metadata:
     - name: 門前（（国道180号以南））
       yomi: もんぜん
       machiaza_id: 331015-0297000
-    - name: 横井上（「マスカット団地」）
+    - name: 横井上（マスカット団地）
       yomi: よこいかみ
       machiaza_id: 331015-0306000
     - name: 立田（国道180号以南）

@@ -3,10 +3,10 @@ metadata:
   course: okayama-67
   course_name_ja: "横井: 津高／富原"
   areas:
-    - name: 津高（「津高」（旧国道53号線以西））
+    - name: 津高（旧国道53号線以西）
       yomi: つだか
       machiaza_id: 331015-0172000
-    - name: 富原（「富原・松崎」）
+    - name: 富原（富原・松崎）
       yomi: とみはら
       machiaza_id: 331015-0332000
   year: 2026
