@@ -27,7 +27,7 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 
 ## 構造
 - `docs/playbook.md` — **新自治体の収録手順書** (ソース探索の優先順・実装規約・照合とサンプリング・エージェント並行運用)
-- `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)
+- `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)。course の `areas` は `{name, yomi?, machiaza_id?, note?}` (1 area = 1 町名。yomi/町字ID はデジタル庁アドレス・ベース・レジストリ由来、割れ町は「町名（判別子）」で name 単独特定可。作り方は playbook §2)
 - `municipalities/<都道府県>/<handle>/` — `survey.yaml`(収集日データの**公開状況サーベイ**。調査済みなら未収録でも置く) /
   `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml`
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
