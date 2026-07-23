@@ -69,6 +69,12 @@ for (const { handle, dir } of handles) {
         if (!vocab.has(c)) fail(`${handle}/taxonomy.yaml`, `未知の種別 "${c}"(schema/categories.yaml に無い)`);
         taxCats.add(c);
       }
+      // groups (参考情報の括り名) の members は宣言済み categories の部分集合であること
+      for (const g of tax.groups ?? []) {
+        for (const m of g.members ?? []) {
+          if (!taxCats.has(m)) fail(`${handle}/taxonomy.yaml`, `groups "${g.label}" の member "${m}" が categories に無い`);
+        }
+      }
     }
   }
 

@@ -3,19 +3,66 @@
   "$id": "https://raw.githubusercontent.com/tecolicom/japan-gomi-data/main/schema/taxonomy.schema.json",
   "title": "自治体別ごみ種別 taxonomy",
   "type": "object",
-  "required": ["categories"],
+  "required": [
+    "categories"
+  ],
   "additionalProperties": false,
   "properties": {
-    "categories": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "overrides": {
       "type": "object",
       "additionalProperties": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "label": { "type": "string" },
-          "short": { "type": "string" },
-          "color": { "type": "string" }
+          "label": {
+            "type": "string"
+          },
+          "short": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "description": "参考情報: 自治体が同日一括回収に付けている括り名 (「資源ごみ」「資源化物」等)。members は categories の部分集合。表示・icsタイトル等で括り名を出したい消費側だけが参照する (無視してよい)",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "members"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "short": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "note": {
+            "type": "string"
+          }
         }
       }
     }

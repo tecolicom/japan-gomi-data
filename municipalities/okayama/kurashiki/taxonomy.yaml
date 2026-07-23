@@ -37,3 +37,10 @@ overrides:
     label: 古布
   hazardous:
     label: 有害ごみ
+
+# 参考情報: 市の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源ごみ
+    short: 資源
+    members: [glass_bottle, beverage_can, pet_bottle, paper, cloth]
+    note: 真備以外の5管区。真備地区は「資源」が3グループ (ペットボトル・白色トレイ・古布 / 缶 / びん・古紙) に分かれ別日のため、この括りは適用されない

@@ -23,3 +23,10 @@ overrides:
   plastic:
     label: プラスチック資源
     short: プラ
+
+# 参考情報: 市の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源化物
+    short: 資源
+    members: [glass_bottle, beverage_can, spray_can, pet_bottle, paper, cloth]
+    note: 一部町内会は移行期で「当面古紙古布ペットボトルのみ」(びん・缶・スプレー缶を除く縮退運用)。該当は areas[].note 参照
