@@ -3,11 +3,12 @@ metadata:
   course: kojima-9
   course_name_ja: "児島地区: 稗田町／美野団地"
   areas:
-    - name: 稗田町（稗田町・美野団地（みのだんち））
+    - name: 稗田町（稗田町・美野団地）
       yomi: ひえだちょう
       machiaza_id: 332020-0061000
     - name: 美野団地
-      note: 稗田町・美野団地（みのだんち）
+      yomi: みのだんち
+      note: 稗田町・美野団地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

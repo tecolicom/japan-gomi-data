@@ -129,19 +129,38 @@ function abrOf(base, chome, distJa) {
 
 const records = JSON.parse(readFileSync(join(HERE, 'cache', 'records.json'), 'utf8'));
 
+// PDF 読み括弧: 市公式 PDF は難読地名にルビ「地名（ひらがな）」を振っている (宇頭間（うとうま）・
+// 美野団地（みのだんち）・中庄（なかんじょう）等 13 件)。市自身の読み表記なので権威ソースとして
+// 採用し、ABR に無い地名の yomi をこれで補完する。name/note からは読み括弧を除去する。
+const pdfYomi = new Map();
+for (const r of records) {
+  for (const src of [r.area, r.kyu || '']) {
+    for (const m of src.matchAll(/([^・，,\s（）()]+)[（(]([ぁ-んー]+)[）)]/g)) pdfYomi.set(m[1], m[2]);
+  }
+}
+console.log(`PDF 読み括弧 (市公式ルビ): ${pdfYomi.size} 地名 [${[...pdfYomi.keys()].join('、')}]`);
+const stripRuby = (t) => t ? t.replace(/[（(][ぁ-んー]+[）)]/g, '').replace(/\s+/g, ' ').trim() : t;
+
 // 各行を「1 町名 (丁目単位)」へ展開し yomi・machiaza_id・文脈 (gakku,base) を付す。
-const stats = { total: 0, abr: 0, kana: 0, none: 0, id: 0, missing: [] };
+const stats = { total: 0, abr: 0, kana: 0, ruby: 0, none: 0, id: 0, missing: [] };
 const expandTable = [];
 function expandWithYomi(r) {
   const out = expandRow(r).map((a) => {
+    const name = stripRuby(a.name);
+    const note = stripRuby(a.note);
     const hit = abrOf(a.base, a.chome, r.district);
-    const yomi = hit?.yomi;
+    let yomi = hit?.yomi;
+    let src = hit?.src;
+    if (!yomi) {
+      const ruby = pdfYomi.get(name) ?? pdfYomi.get(a.base);
+      if (ruby) { yomi = ruby; src = 'ruby'; }
+    }
     const machiazaId = hit?.machiazaId;
     stats.total++;
-    if (yomi) stats[hit.src]++; else { stats.none++; stats.missing.push(a.name); }
+    if (yomi) stats[src]++; else { stats.none++; stats.missing.push(name); }
     if (machiazaId) stats.id++;
-    return { name: a.name, base: a.base, gakku: r.gakku || '',
-      ...(yomi ? { yomi } : {}), ...(machiazaId ? { machiaza_id: machiazaId } : {}), ...(a.note ? { note: a.note } : {}) };
+    return { name, base: a.base, gakku: r.gakku || '',
+      ...(yomi ? { yomi } : {}), ...(machiazaId ? { machiaza_id: machiazaId } : {}), ...(note ? { note } : {}) };
   });
   expandTable.push({ district: r.district, gakku: r.gakku, kyu: r.kyu, area: r.area,
     expanded: out.map((a) => ({ name: a.name, ...(a.yomi ? { yomi: a.yomi } : {}),
@@ -228,7 +247,7 @@ const n = writeCourses(OUTDIR, YEAR, docs);
 writeFileSync(join(HERE, 'cache', 'area_expansion.json'),
   JSON.stringify({ rows: expandTable.length, areas: stats.total, table: expandTable }, null, 1));
 console.log(`wrote ${n} courses (${seq} total) → ${OUTDIR}/${YEAR}/`);
-console.log(`areas: ${stats.total} 展開 (ABR ${stats.abr} / ひらがな自明 ${stats.kana} / 未付与 ${stats.none})`);
+console.log(`areas: ${stats.total} 展開 (ABR ${stats.abr} / PDF読み括弧 ${stats.ruby} / ひらがな自明 ${stats.kana} / 未付与 ${stats.none})`);
 console.log(`yomi 付与率: ${((stats.abr + stats.kana) / stats.total * 100).toFixed(1)}%`);
 console.log(`machiaza_id 付与率: ${(stats.id / stats.total * 100).toFixed(1)}% (${stats.id}/${stats.total})`);
 console.log(`未付与 (uniq): ${[...new Set(stats.missing)].join('、')}`);
