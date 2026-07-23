@@ -14,14 +14,14 @@ metadata:
     - name: 辛川市場
       yomi: からかわいちば
       machiaza_id: 331015-0053000
-      note: 辛川市場　(資源化物の収集日が第1回目の木曜日の地区を除く)
+      note: 辛川市場 (資源化物の収集日が第1回目の木曜日の地区を除く)
     - name: 長野
       yomi: ながの
       machiaza_id: 331015-0326000
     - name: 芳賀
       yomi: はが
       machiaza_id: 331015-0221000
-      note: 上芳賀  下芳賀
+      note: 上芳賀 下芳賀
     - name: 福谷
       yomi: ふくたに
       machiaza_id: 331015-0246000

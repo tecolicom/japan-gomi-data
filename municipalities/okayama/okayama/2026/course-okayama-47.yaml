@@ -6,67 +6,59 @@ metadata:
     - name: 加茂
       yomi: かも
       machiaza_id: 331015-0052000
-      note: 朝7時30分までにお出しください。
     - name: 小山
       yomi: こやま
       machiaza_id: 331015-0317000
-      note: （国道１８０号以南）朝7時30分までにお出しください。
+      note: （国道１８０号以南）
     - name: 新庄上
       yomi: しんじょうかみ
       machiaza_id: 331015-0102000
-      note: 朝7時30分までにお出しください。
     - name: 新庄下
       yomi: しんじょうしも
       machiaza_id: 331015-0103000
-      note: 朝7時30分までにお出しください。
     - name: 惣爪
       yomi: そうづめ
       machiaza_id: 331015-0112000
-      note: 朝7時30分までにお出しください。
     - name: 高塚
       yomi: たかつか
       machiaza_id: 331015-0121000
-      note: 朝7時30分までにお出しください。
     - name: 高松原古才
       yomi: たかまつはらこさい
       machiaza_id: 331015-0126000
-      note: 朝7時30分までにお出しください。
     - name: 田益
       yomi: たます
       machiaza_id: 331015-0157000
-      note: 「田益」 朝7時30分までにお出しください。
+      note: 「田益」
     - name: 田益
       yomi: たます
       machiaza_id: 331015-0157000
-      note: 「桃園」 朝7時30分までにお出しください。
+      note: 「桃園」
     - name: 津寺
       yomi: つでら
       machiaza_id: 331015-0174000
-      note: 朝7時30分までにお出しください。
     - name: 富原
       yomi: とみはら
       machiaza_id: 331015-0332000
-      note: 「桃園」 （朝7時30分までにお出しください。）
+      note: 「桃園」
     - name: 三手
       yomi: みて
       machiaza_id: 331015-0290000
-      note: 朝7時30分までにお出しください。
     - name: 門前
       yomi: もんぜん
       machiaza_id: 331015-0297000
-      note: （国道180号以南）朝7時30分までにお出しください。
+      note: （国道180号以南）
     - name: 横井上
       yomi: よこいかみ
       machiaza_id: 331015-0306000
-      note: 「マスカット団地」  （朝7時30分までにお出しください。）
+      note: 「マスカット団地」
     - name: 立田
       yomi: たづた
       machiaza_id: 331015-0335000
-      note: 国道180号以南（朝7時30分までにお出しください。）
+      note: 国道180号以南
     - name: 福崎
       yomi: ふくざき
       machiaza_id: 331015-0245000
-      note: 国道180号以南（朝7時30分までにお出しください。）
+      note: 国道180号以南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -6,15 +6,15 @@ metadata:
     - name: 栢谷
       yomi: かいだに
       machiaza_id: 331015-0044000
-      note: 「栢谷・香橋団地」 （朝7時30分までにお出しください。）
+      note: 「栢谷・香橋団地」
     - name: 横井上
       yomi: よこいかみ
       machiaza_id: 331015-0306000
-      note: 「猿場町内会・猿場自治会の一部」  （朝7時30分までにお出しください。）
+      note: 「猿場町内会・猿場自治会の一部」
     - name: 吉宗
       yomi: よしむね
       machiaza_id: 331015-0309000
-      note: 「吉宗・苫田団地」 （朝7時30分までにお出しください。）
+      note: 「吉宗・苫田団地」
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

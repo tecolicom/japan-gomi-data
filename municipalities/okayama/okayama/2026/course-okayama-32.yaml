@@ -6,47 +6,40 @@ metadata:
     - name: 大崎
       yomi: おおざき
       machiaza_id: 331015-0032000
-      note: 朝7時30分までにお出しください。
     - name: 小山
       yomi: こやま
       machiaza_id: 331015-0317000
-      note: （国道１８０号以北）朝7時30分までにお出しください。
+      note: （国道１８０号以北）
     - name: 下土田
       yomi: しもつちだ
       machiaza_id: 331015-0092000
-      note: 朝7時30分までにお出しください。
     - name: 高松
       yomi: たかまつ
       machiaza_id: 331015-0123000
-      note: 朝7時30分までにお出しください。
     - name: 高松稲荷
       yomi: たかまついなり
       machiaza_id: 331015-0124000
-      note: 朝7時30分までにお出しください。
     - name: 高松田中
       yomi: たかまつたなか
       machiaza_id: 331015-0125000
-      note: 朝7時30分までにお出しください。
     - name: 立田
       yomi: たづた
       machiaza_id: 331015-0335000
-      note: 国道180号以北（朝7時30分までにお出しください。）
+      note: 国道180号以北
     - name: 平山
       yomi: ひらやま
       machiaza_id: 331015-0243000
-      note: 朝7時30分までにお出しください。
     - name: 福崎
       yomi: ふくざき
       machiaza_id: 331015-0245000
-      note: 国道180号以北（朝7時30分までにお出しください。）
+      note: 国道180号以北
     - name: 門前
       yomi: もんぜん
       machiaza_id: 331015-0297000
-      note: （国道180号以北）朝7時30分までにお出しください。
+      note: （国道180号以北）
     - name: 和井元
       yomi: わいもと
       machiaza_id: 331015-0311000
-      note: 朝7時30分までにお出しください。
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
