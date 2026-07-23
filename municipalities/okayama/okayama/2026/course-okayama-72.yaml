@@ -5,12 +5,15 @@ metadata:
   areas:
     - name: 西山内
       yomi: にしやまのうち
+      machiaza_id: 331015-0212000
       note: 広石上・広石下を除く地区
     - name: 東山内
       yomi: ひがしやまのうち
+      machiaza_id: 331015-0238000
       note: 下杭田裏
     - name: 間倉
       yomi: まぐら
+      machiaza_id: 331015-0254000
       note: 猿見を除く地区
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -5,70 +5,100 @@ metadata:
   areas:
     - name: あけぼの町
       yomi: あけぼのちょう
+      machiaza_id: 331040-0003000
       note: ３月は当面古紙古布ペットボトルのみ
     - name: 伊島町１丁目
       yomi: いしまちょう
+      machiaza_id: 331015-0012001
     - name: 伊島町２丁目
       yomi: いしまちょう
+      machiaza_id: 331015-0012002
     - name: 伊島町３丁目
       yomi: いしまちょう
+      machiaza_id: 331015-0012003
     - name: 伊福町４丁目
       yomi: いふくちょう
+      machiaza_id: 331015-0017004
     - name: 浦安南町
       yomi: うらやすみなみまち
+      machiaza_id: 331040-0011000
     - name: 京山１丁目
       yomi: きょうやま
+      machiaza_id: 331015-0067001
     - name: 京山２丁目
       yomi: きょうやま
+      machiaza_id: 331015-0067002
     - name: 市場１丁目
       yomi: しじょう
+      machiaza_id: 331040-0022001
     - name: 市場２丁目
       yomi: しじょう
+      machiaza_id: 331040-0022002
     - name: 立川町
       yomi: たちかわちょう
+      machiaza_id: 331040-0031000
     - name: 築港栄町
       yomi: ちっこうさかえまち
+      machiaza_id: 331040-0032000
     - name: 築港新町１丁目
       yomi: ちっこうしんまち
+      machiaza_id: 331040-0033001
       note: 築港新町東町内会の資源化物は当面の間１月のみ
     - name: 築港新町２丁目
       yomi: ちっこうしんまち
+      machiaza_id: 331040-0033002
     - name: 築港ひかり町
       yomi: ちっこうひかりまち
+      machiaza_id: 331040-0034000
     - name: 築港緑町１丁目
       yomi: ちっこうみどりまち
+      machiaza_id: 331040-0035001
     - name: 築港緑町２丁目
       yomi: ちっこうみどりまち
+      machiaza_id: 331040-0035002
     - name: 築港緑町３丁目
       yomi: ちっこうみどりまち
+      machiaza_id: 331040-0035003
     - name: 千鳥町
       yomi: ちどりちょう
+      machiaza_id: 331040-0037000
       note: １の月は当面古紙古布ペットボトルのみ
     - name: 津倉町１丁目
       yomi: つくらちょう
+      machiaza_id: 331015-0160001
     - name: 津倉町２丁目
       yomi: つくらちょう
+      machiaza_id: 331015-0160002
     - name: 並木町１丁目
       yomi: なみきちょう
+      machiaza_id: 331040-0043001
     - name: 並木町２丁目
       yomi: なみきちょう
+      machiaza_id: 331040-0043002
     - name: 南輝２丁目
       yomi: なんき
+      machiaza_id: 331040-0044002
     - name: 南輝３丁目
       yomi: なんき
+      machiaza_id: 331040-0044003
     - name: 福浜町
       yomi: ふくはまちょう
+      machiaza_id: 331040-0061000
       note: ３の月は当面古紙古布ペットボトルのみ
     - name: 松浜町
       yomi: まつはまちょう
+      machiaza_id: 331040-0066000
       note: ３の月は当面古紙古布ペットボトルのみ
     - name: 三浜町１丁目
       yomi: みはまちょう
+      machiaza_id: 331040-0069001
       note: 1月は当面古紙古布ペットボトルのみ
     - name: 三浜町２丁目
       yomi: みはまちょう
+      machiaza_id: 331040-0069002
     - name: 若葉町
       yomi: わかばちょう
+      machiaza_id: 331040-0073000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -5,20 +5,28 @@ metadata:
   areas:
     - name: 瀬戸町旭ヶ丘一丁目
       yomi: せとちょうあさひがおか
+      machiaza_id: 331031-0057001
     - name: 瀬戸町旭ヶ丘二丁目
       yomi: せとちょうあさひがおか
+      machiaza_id: 331031-0057002
     - name: 瀬戸町旭ヶ丘三丁目
       yomi: せとちょうあさひがおか
+      machiaza_id: 331031-0057003
     - name: 瀬戸町旭ヶ丘四丁目
       yomi: せとちょうあさひがおか
+      machiaza_id: 331031-0057004
     - name: 瀬戸町江尻
       yomi: せとちょうえじり
+      machiaza_id: 331031-0058000
     - name: 瀬戸町大内
       yomi: せとちょうおおち
+      machiaza_id: 331031-0059000
     - name: 瀬戸町沖
       yomi: せとちょうおき
+      machiaza_id: 331031-0060000
     - name: 瀬戸町肩脊
       yomi: せとちょうかたせ
+      machiaza_id: 331031-0062000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

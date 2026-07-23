@@ -5,25 +5,35 @@ metadata:
   areas:
     - name: 瀬戸町観音寺
       yomi: せとちょうかんおんじ
+      machiaza_id: 331031-0063000
     - name: 瀬戸町菊山
       yomi: せとちょうきくやま
+      machiaza_id: 331031-0064000
     - name: 瀬戸町光明谷
       yomi: せとちょうこうみょうたに
+      machiaza_id: 331031-0065000
     - name: 瀬戸町坂根
       yomi: せとちょうさかね
+      machiaza_id: 331031-0066000
     - name: 瀬戸町笹岡
       yomi: せとちょうささおか
+      machiaza_id: 331031-0067000
     - name: 瀬戸町宿奥
       yomi: せとちょうしゅくおく
+      machiaza_id: 331031-0070000
     - name: 瀬戸町瀬戸
       yomi: せとちょうせと
+      machiaza_id: 331031-0071000
       note: 瀬戸橋から主要地方県道岡山-赤穂線以北
     - name: 瀬戸町宗堂
       yomi: せとちょうそうどう
+      machiaza_id: 331031-0072000
     - name: 瀬戸町寺地
       yomi: せとちょうてらじ
+      machiaza_id: 331031-0074000
     - name: 瀬戸町森末
       yomi: せとちょうもりすえ
+      machiaza_id: 331031-0078000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

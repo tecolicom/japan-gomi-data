@@ -5,69 +5,99 @@ metadata:
   areas:
     - name: 内尾
       yomi: うちお
+      machiaza_id: 331040-0008000
     - name: 内ヶ原
       yomi: うちがはら
+      machiaza_id: 331031-0004000
       note: 角山学区
     - name: 草ケ部
       yomi: くさかべ
+      machiaza_id: 331031-0018000
     - name: 才崎
       yomi: さいざき
+      machiaza_id: 331031-0027000
     - name: 上道北方
       yomi: じょうとうきたがた
+      machiaza_id: 331031-0050000
     - name: 城東台西一丁目
       yomi: じょうとうだいにし
+      machiaza_id: 331031-0051001
     - name: 城東台西二丁目
       yomi: じょうとうだいにし
+      machiaza_id: 331031-0051002
     - name: 城東台西三丁目
       yomi: じょうとうだいにし
+      machiaza_id: 331031-0051003
     - name: 城東台東一丁目
       yomi: じょうとうだいひがし
+      machiaza_id: 331031-0052001
     - name: 城東台東二丁目
       yomi: じょうとうだいひがし
+      machiaza_id: 331031-0052002
     - name: 城東台南一丁目
       yomi: じょうとうだいみなみ
+      machiaza_id: 331031-0053001
     - name: 城東台南二丁目
       yomi: じょうとうだいみなみ
+      machiaza_id: 331031-0053002
     - name: 曽根
       yomi: そね
+      machiaza_id: 331040-0030000
     - name: 竹原
       yomi: たけわら
+      machiaza_id: 331031-0081000
     - name: 谷尻
       yomi: たにしり
+      machiaza_id: 331031-0082000
     - name: 当新田
       yomi: とうしんでん
+      machiaza_id: 331040-0078000
     - name: 中畦
       yomi: なかうね
+      machiaza_id: 331040-0042000
     - name: 中尾
       yomi: なかお
+      machiaza_id: 331031-0086000
     - name: 西市
       yomi: にしいち
       note: 県道岡山児島線の東。ＪＲ瀬戸大橋線の西。
     - name: 西畦
       yomi: にしうね
+      machiaza_id: 331040-0046000
     - name: 西野山町
       yomi: にしのやまちょう
+      machiaza_id: 331015-0207000
     - name: 沼
       yomi: ぬま
+      machiaza_id: 331031-0094000
     - name: 東畦
       yomi: ひがしうね
+      machiaza_id: 331040-0052000
     - name: 東野山町
       yomi: ひがしのやまちょう
+      machiaza_id: 331015-0233000
     - name: 万倍
       yomi: まんばい
+      machiaza_id: 331040-0067000
       note: 洲崎米倉線より南
     - name: 箕島
       yomi: みしま
+      machiaza_id: 331040-0068000
     - name: 百枝月
       yomi: ももえづき
+      machiaza_id: 331031-0114000
     - name: 矢坂西町
       yomi: やさかにしまち
+      machiaza_id: 331015-0298000
     - name: 矢坂東町
       yomi: やさかひがしまち
+      machiaza_id: 331015-0299000
     - name: 矢坂本町
       yomi: やさかほんまち
+      machiaza_id: 331015-0300000
     - name: 米倉
       yomi: よねぐら
+      machiaza_id: 331040-0072000
       note: 県道岡山児島線の東・・・ＪＲ瀬戸大橋線の西。
   year: 2026
   fiscal_year_ja: 令和8年度

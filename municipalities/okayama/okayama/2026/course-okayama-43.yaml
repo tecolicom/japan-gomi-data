@@ -5,19 +5,26 @@ metadata:
   areas:
     - name: 金田
       yomi: かなだ
+      machiaza_id: 331031-0012000
       note: 「川北町内会以外」
     - name: 君津
       yomi: きみつ
+      machiaza_id: 331031-0016000
     - name: 九蟠
       yomi: くばん
+      machiaza_id: 331031-0019000
     - name: 光津
       yomi: こうつ
+      machiaza_id: 331031-0023000
     - name: 豊田
       yomi: とよた
+      machiaza_id: 331031-0085000
     - name: 政津
       yomi: まさつ
+      machiaza_id: 331031-0106000
     - name: 升田
       yomi: ますだ
+      machiaza_id: 331031-0107000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

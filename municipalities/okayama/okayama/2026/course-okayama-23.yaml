@@ -5,24 +5,32 @@ metadata:
   areas:
     - name: 伊福町１丁目
       yomi: いふくちょう
+      machiaza_id: 331015-0017001
     - name: 駅元町
       yomi: えきもとまち
+      machiaza_id: 331015-0027000
     - name: 大元駅前
       yomi: おおもとえきまえ
+      machiaza_id: 331015-0034000
       note: 大元駅前・二日市町線以北
     - name: 春日町
       yomi: かすがちょう
+      machiaza_id: 331015-0047000
     - name: 厚生町１丁目
       yomi: こうせいちょう
+      machiaza_id: 331015-0070001
       note: 旧国道２号線の南
     - name: 厚生町２丁目
       yomi: こうせいちょう
+      machiaza_id: 331015-0070002
       note: 旧国道２号線の南
     - name: 厚生町３丁目
       yomi: こうせいちょう
+      machiaza_id: 331015-0070003
       note: 旧国道２号線の南
     - name: 寿町
       yomi: ことぶきちょう
+      machiaza_id: 331015-0077000
     - name: さい
       yomi: さい
       note: 山陽本線より南
@@ -30,65 +38,93 @@ metadata:
     - name: さい東町二丁目
     - name: 鹿田町１丁目
       yomi: しかたちょう
+      machiaza_id: 331015-0081001
     - name: 鹿田町２丁目
       yomi: しかたちょう
+      machiaza_id: 331015-0081002
     - name: 鹿田本町
       yomi: しかたほんまち
+      machiaza_id: 331015-0082000
     - name: 島田本町１丁目
       yomi: しまだほんまち
+      machiaza_id: 331015-0083001
       note: 青江・津島線島田地下道以東
     - name: 昭和町
       yomi: しょうわちょう
+      machiaza_id: 331015-0098000
     - name: 大学町
       yomi: だいがくちょう
+      machiaza_id: 331015-0117000
     - name: 大供１丁目
       yomi: だいく
+      machiaza_id: 331015-0118001
     - name: 大供２丁目
       yomi: だいく
+      machiaza_id: 331015-0118002
       note: 資源（旧２号線より南２．４金）大供第２公園は１．３金
     - name: 大供表町
       yomi: だいくおもてまち
+      machiaza_id: 331015-0119000
     - name: 大供本町
       yomi: だいくほんまち
+      machiaza_id: 331015-0120000
     - name: 竹田
       yomi: たけだ
+      machiaza_id: 331023-0048000
     - name: 西川原
       yomi: にしがわら
+      machiaza_id: 331023-0058000
     - name: 西川原一丁目
       yomi: にしがわら
+      machiaza_id: 331023-0058001
     - name: 西古松
       yomi: にしふるまつ
+      machiaza_id: 331015-0210000
       note: ＪＲ瀬戸大橋線の東。
     - name: 浜
       yomi: はま
+      machiaza_id: 331023-0061000
     - name: 浜一丁目
       yomi: はま
+      machiaza_id: 331023-0061001
       note: 「6-8岡山製紙社宅とその北東、6-29」の不燃は1の金
     - name: 浜二丁目
       yomi: はま
+      machiaza_id: 331023-0061002
       note: 「1-10,1-17,1-35,（2はマンション専用）,3-10,3-15,3-18,4-1」の不燃は2の金
     - name: 浜三丁目
       yomi: はま
+      machiaza_id: 331023-0061003
     - name: 原尾島
       yomi: はらおしま
+      machiaza_id: 331023-0063000
     - name: 原尾島一丁目
       yomi: はらおしま
+      machiaza_id: 331023-0063001
     - name: 原尾島二丁目
       yomi: はらおしま
+      machiaza_id: 331023-0063002
     - name: 原尾島三丁目
       yomi: はらおしま
+      machiaza_id: 331023-0063003
     - name: 原尾島四丁目
       yomi: はらおしま
+      machiaza_id: 331023-0063004
     - name: 東川原
       yomi: ひがしがわら
+      machiaza_id: 331023-0064000
     - name: 東古松２丁目
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236002
     - name: 奉還町１丁目
       yomi: ほうかんちょう
+      machiaza_id: 331015-0252001
     - name: 奉還町２丁目
       yomi: ほうかんちょう
+      machiaza_id: 331015-0252002
     - name: 奉還町３丁目
       yomi: ほうかんちょう
+      machiaza_id: 331015-0252003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

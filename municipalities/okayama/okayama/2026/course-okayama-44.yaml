@@ -5,28 +5,40 @@ metadata:
   areas:
     - name: 金山寺
       yomi: かなやまじ
+      machiaza_id: 331015-0048000
     - name: 高野尻
       yomi: こうやじり
+      machiaza_id: 331015-0073000
     - name: 下牧
       yomi: しもまき
+      machiaza_id: 331015-0094000
     - name: 宿
       yomi: しゅく
+      machiaza_id: 331015-0316000
     - name: 宿本町
       yomi: しゅくほんまち
+      machiaza_id: 331015-0096000
     - name: 玉柏
       yomi: たまがし
+      machiaza_id: 331015-0156000
     - name: 中原
       yomi: なかはら
+      machiaza_id: 331015-0323000
     - name: 中牧
       yomi: なかまき
+      machiaza_id: 331015-0325000
     - name: 畑鮎
       yomi: はたあゆ
+      machiaza_id: 331015-0331000
     - name: 原
       yomi: はら
+      machiaza_id: 331015-0315000
     - name: 三野本町
       yomi: みのほんまち
+      machiaza_id: 331015-0295000
     - name: 牟佐
       yomi: むさ
+      machiaza_id: 331015-0334000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

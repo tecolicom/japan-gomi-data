@@ -5,38 +5,52 @@ metadata:
   areas:
     - name: 浅越
       yomi: あさごえ
+      machiaza_id: 331031-0002000
       note: 砂川以西
     - name: 大多羅町
       yomi: おおだらちょう
+      machiaza_id: 331031-0006000
     - name: 可知三丁目
       yomi: かち
+      machiaza_id: 331031-0009003
       note: 4番～7番、13番～17番
     - name: 可知五丁目
       yomi: かち
+      machiaza_id: 331031-0009005
     - name: 金田
       yomi: かなだ
+      machiaza_id: 331031-0012000
       note: 「川北町内会」
     - name: 西大寺中野
       yomi: さいだいじなかの
+      machiaza_id: 331031-0039000
       note: 898番地～960番地
     - name: 西大寺松崎
       yomi: さいだいじまつざき
+      machiaza_id: 331031-0043000
     - name: 富崎
       yomi: とみさき
+      machiaza_id: 331031-0084000
       note: 砂川より西
     - name: 西庄
       yomi: にししょう
+      machiaza_id: 331031-0092000
     - name: 広谷
       yomi: ひろたに
+      machiaza_id: 331031-0144000
     - name: 福治
       yomi: ふくじ
+      machiaza_id: 331031-0101000
       note: 砂川から西
     - name: 富士見町一丁目
       yomi: ふじみちょう
+      machiaza_id: 331031-0103001
     - name: 松新町
       yomi: まつしんちょう
+      machiaza_id: 331031-0109000
     - name: 吉原
       yomi: よしわら
+      machiaza_id: 331031-0118000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

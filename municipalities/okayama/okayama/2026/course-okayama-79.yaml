@@ -5,12 +5,15 @@ metadata:
   areas:
     - name: 御津鹿瀬
       yomi: みつかせ
+      machiaza_id: 331015-0267000
       note: 鹿瀬
     - name: 御津金川
       yomi: みつかながわ
+      machiaza_id: 331015-0269000
       note: 金川
     - name: 御津草生
       yomi: みつくそう
+      machiaza_id: 331015-0272000
       note: 草生
   year: 2026
   fiscal_year_ja: 令和8年度

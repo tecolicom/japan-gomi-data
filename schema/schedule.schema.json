@@ -50,6 +50,11 @@
               "note": {
                 "type": "string",
                 "minLength": 1
+              },
+              "machiaza_id": {
+                "type": "string",
+                "pattern": "^[0-9]{6}-[0-9]{7}$",
+                "description": "アドレス・ベース・レジストリの町字ID (lg_code 6桁-machiaza_id 7桁)。町字レベルの正規キー"
               }
             }
           }

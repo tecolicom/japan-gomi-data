@@ -5,10 +5,13 @@ metadata:
   areas:
     - name: 平井
       yomi: ひらい
+      machiaza_id: 331023-0068000
     - name: 平井六丁目
       yomi: ひらい
+      machiaza_id: 331023-0068006
     - name: 平井七丁目
       yomi: ひらい
+      machiaza_id: 331023-0068007
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

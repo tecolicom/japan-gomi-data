@@ -5,60 +5,88 @@ metadata:
   areas:
     - name: 邑久郷
       yomi: おくのごう
+      machiaza_id: 331031-0146000
     - name: 乙子
       yomi: おとご
+      machiaza_id: 331031-0008000
     - name: 上阿知
       yomi: かみあち
+      machiaza_id: 331031-0013000
     - name: 神崎町
       yomi: かんざきちょう
+      machiaza_id: 331031-0014000
     - name: 北幸田
       yomi: きたこうだ
+      machiaza_id: 331031-0015000
     - name: 久々井
       yomi: くぐい
+      machiaza_id: 331031-0017000
     - name: 幸地崎町
       yomi: こうちざきちょう
+      machiaza_id: 331031-0022000
     - name: 西大寺射越
       yomi: さいだいじいこし
+      machiaza_id: 331031-0029000
     - name: 西大寺一宮
       yomi: さいだいじいちのみや
+      machiaza_id: 331031-0030000
     - name: 西大寺川口
       yomi: さいだいじかわぐち
+      machiaza_id: 331031-0033000
     - name: 西大寺五明
       yomi: さいだいじごみょう
+      machiaza_id: 331031-0035000
     - name: 西大寺新
       yomi: さいだいじしん
+      machiaza_id: 331031-0036000
     - name: 西大寺新地
       yomi: さいだいじしんち
+      machiaza_id: 331031-0037000
     - name: 西大寺浜
       yomi: さいだいじはま
+      machiaza_id: 331031-0041000
     - name: 西大寺門前
       yomi: さいだいじもんぜん
+      machiaza_id: 331031-0045000
     - name: 下阿知
       yomi: しもあち
+      machiaza_id: 331031-0048000
     - name: 宿毛
       yomi: しゅくも
+      machiaza_id: 331031-0049000
     - name: 水門町
       yomi: すいもんちょう
+      machiaza_id: 331031-0145000
     - name: 千手
       yomi: せんじゅ
+      machiaza_id: 331031-0080000
     - name: 長沼
       yomi: ながぬま
+      machiaza_id: 331031-0088000
     - name: 西片岡
       yomi: にしかたおか
+      machiaza_id: 331031-0090000
     - name: 西幸西
       yomi: にしこうざい
+      machiaza_id: 331031-0091000
     - name: 東片岡
       yomi: ひがしかたおか
+      machiaza_id: 331031-0095000
     - name: 東幸西
       yomi: ひがしこうざい
+      machiaza_id: 331031-0096000
     - name: 東幸崎
       yomi: ひがしこうざき
+      machiaza_id: 331031-0097000
     - name: 宝伝
       yomi: ほうでん
+      machiaza_id: 331031-0104000
     - name: 正儀
       yomi: まさき
+      machiaza_id: 331031-0105000
     - name: 南水門町
       yomi: みなみすいもんちょう
+      machiaza_id: 331031-0111000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

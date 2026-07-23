@@ -5,57 +5,81 @@ metadata:
   areas:
     - name: 岩田町
       yomi: いわたちょう
+      machiaza_id: 331015-0024000
     - name: 駅前町１丁目
       yomi: えきまえちょう
+      machiaza_id: 331015-0026001
     - name: 駅前町２丁目
       yomi: えきまえちょう
+      machiaza_id: 331015-0026002
     - name: 桑田町
       yomi: くわだちょう
+      machiaza_id: 331015-0069000
     - name: 厚生町１丁目
       yomi: こうせいちょう
+      machiaza_id: 331015-0070001
       note: 旧国道２号線の北
     - name: 厚生町２丁目
       yomi: こうせいちょう
+      machiaza_id: 331015-0070002
       note: 旧国道２号線の北
     - name: 厚生町３丁目
       yomi: こうせいちょう
+      machiaza_id: 331015-0070003
       note: 旧国道２号線の北
     - name: 幸町
       yomi: さいわいちょう
+      machiaza_id: 331015-0079000
     - name: 下石井１丁目
       yomi: しもいしい
+      machiaza_id: 331015-0085001
     - name: 下石井２丁目
       yomi: しもいしい
+      machiaza_id: 331015-0085002
     - name: 大供３丁目
       yomi: だいく
+      machiaza_id: 331015-0118003
       note: 資源（旧２号線より南は２．４金）
     - name: 津島桑の木町
       yomi: つしまくわのきちょう
+      machiaza_id: 331015-0163000
     - name: 津島中１丁目
       yomi: つしまなか
+      machiaza_id: 331015-0165001
     - name: 津島新野１丁目
       yomi: つしまにいの
+      machiaza_id: 331015-0166001
     - name: 津島新野２丁目
       yomi: つしまにいの
+      machiaza_id: 331015-0166002
     - name: 津島南１丁目
       yomi: つしまみなみ
+      machiaza_id: 331015-0171001
       note: 津島新野町内会分は不燃4回目の金曜日
     - name: 中島田町１丁目
       yomi: なかしまだちょう
+      machiaza_id: 331015-0188001
     - name: 中島田町２丁目
       yomi: なかしまだちょう
+      machiaza_id: 331015-0188002
     - name: 錦町
       yomi: にしきまち
+      machiaza_id: 331015-0201000
     - name: 東島田町１丁目
       yomi: ひがししまだちょう
+      machiaza_id: 331015-0231001
     - name: 東島田町２丁目
       yomi: ひがししまだちょう
+      machiaza_id: 331015-0231002
     - name: 本町
       yomi: ほんまち
+      machiaza_id: 331015-0352000
     - name: 柳町１丁目
       yomi: やなぎまち
+      machiaza_id: 331015-0301001
     - name: 柳町２丁目
       yomi: やなぎまち
+      machiaza_id: 331015-0301002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

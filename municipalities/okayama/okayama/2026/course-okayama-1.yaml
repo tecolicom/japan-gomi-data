@@ -5,29 +5,41 @@ metadata:
   areas:
     - name: 葵町
       yomi: あおいちょう
+      machiaza_id: 331015-0001000
     - name: 岩井１丁目
       yomi: いわい
+      machiaza_id: 331015-0022001
     - name: 岩井２丁目
       yomi: いわい
+      machiaza_id: 331015-0022002
     - name: 岩井宮裏
       yomi: いわいみやうら
+      machiaza_id: 331015-0023000
     - name: 関西町
       yomi: かんぜいちょう
+      machiaza_id: 331015-0056000
     - name: 谷万成１丁目
       yomi: たにまんなり
+      machiaza_id: 331015-0154001
     - name: 谷万成２丁目
       yomi: たにまんなり
+      machiaza_id: 331015-0154002
       note: Ｒ１８０－Ｒ５３より南
     - name: 万成西町
       yomi: まんなりにしまち
+      machiaza_id: 331015-0258000
     - name: 万成東町
       yomi: まんなりひがしまち
+      machiaza_id: 331015-0259000
     - name: 三門中町
       yomi: みかどなかまち
+      machiaza_id: 331015-0260000
     - name: 三門西町
       yomi: みかどにしまち
+      machiaza_id: 331015-0261000
     - name: 三門東町
       yomi: みかどひがしまち
+      machiaza_id: 331015-0262000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

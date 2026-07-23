@@ -5,24 +5,31 @@ metadata:
   areas:
     - name: 大内田
       yomi: おおうちだ
+      machiaza_id: 331015-0030000
       note: 朝7時30分までにお出しください。
     - name: 川入
       yomi: かわいり
+      machiaza_id: 331015-0319000
       note: 朝7時30分までにお出しください。
     - name: 中撫川
       yomi: なかなつかわ
+      machiaza_id: 331015-0324000
       note: 朝7時30分までにお出しください。
     - name: 撫川
       yomi: なつかわ
+      machiaza_id: 331015-0195000
       note: 朝7時30分までにお出しください。
     - name: 庭瀬
       yomi: にわせ
+      machiaza_id: 331015-0327000
       note: JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以西 及びJR山陽本線以南（朝7時30分までにお出しください。）
     - name: 納所
       yomi: のうそ
+      machiaza_id: 331015-0215000
       note: 朝7時30分までにお出しください。
     - name: 平野
       yomi: ひらの
+      machiaza_id: 331015-0333000
       note: JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以西  （朝7時30分までにお出しください。）
   year: 2026
   fiscal_year_ja: 令和8年度

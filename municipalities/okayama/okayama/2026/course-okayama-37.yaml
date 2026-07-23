@@ -5,38 +5,54 @@ metadata:
   areas:
     - name: 奥迫川
       yomi: おくはざかわ
+      machiaza_id: 331040-0013000
     - name: 御舟入町
       yomi: おふないりちょう
+      machiaza_id: 331015-0042000
       note: 御舟入町町内会の３水は当面古紙古布ペットボトルのみ、七日市町内会の１水は当面古紙古布ペットボトルのみ
     - name: 北七区
       yomi: きたななく
+      machiaza_id: 331040-0018000
     - name: 十日市中町
       yomi: とうかいちなかまち
+      machiaza_id: 331015-0177000
       note: カウルのプラ資源は火曜日
     - name: 十日市東町
       yomi: とうかいちひがしまち
+      machiaza_id: 331015-0179000
     - name: 豊浜町
       yomi: とよはまちょう
+      machiaza_id: 331040-0041000
     - name: 西紅陽台一丁目
       yomi: にしこうようだい
+      machiaza_id: 331040-0047001
     - name: 西紅陽台二丁目
       yomi: にしこうようだい
+      machiaza_id: 331040-0047002
     - name: 西紅陽台三丁目
       yomi: にしこうようだい
+      machiaza_id: 331040-0047003
     - name: 西高崎
       yomi: にしたかさき
+      machiaza_id: 331040-0048000
     - name: 西七区
       yomi: にしななく
+      machiaza_id: 331040-0049000
     - name: 迫川
       yomi: はざかわ
+      machiaza_id: 331040-0050000
     - name: 浜野１丁目
       yomi: はまの
+      machiaza_id: 331040-0051001
     - name: 浜野２丁目
       yomi: はまの
+      machiaza_id: 331040-0051002
     - name: 浜野３丁目
       yomi: はまの
+      machiaza_id: 331040-0051003
     - name: 浜野４丁目
       yomi: はまの
+      machiaza_id: 331040-0051004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -5,72 +5,102 @@ metadata:
   areas:
     - name: 今２丁目
       yomi: いま
+      machiaza_id: 331015-0018002
     - name: 今２丁目
       yomi: いま
+      machiaza_id: 331015-0018002
     - name: 今３丁目
       yomi: いま
+      machiaza_id: 331015-0018003
     - name: 今４丁目
       yomi: いま
+      machiaza_id: 331015-0018004
     - name: 今５丁目
       yomi: いま
+      machiaza_id: 331015-0018005
     - name: 今６丁目
       yomi: いま
+      machiaza_id: 331015-0018006
     - name: 今７丁目
       yomi: いま
+      machiaza_id: 331015-0018007
     - name: 今８丁目
       yomi: いま
+      machiaza_id: 331015-0018008
     - name: 今村
       yomi: いまむら
+      machiaza_id: 331015-0021000
     - name: 大元上町
       yomi: おおもとかみまち
+      machiaza_id: 331015-0035000
     - name: 金岡西町
       yomi: かなおかにしまち
+      machiaza_id: 331031-0010000
     - name: 金岡東町一丁目
       yomi: かなおかひがしまち
+      machiaza_id: 331031-0011001
       note: 1番15号～30号以外
     - name: 金岡東町二丁目
       yomi: かなおかひがしまち
+      machiaza_id: 331031-0011002
     - name: 金岡東町三丁目
       yomi: かなおかひがしまち
+      machiaza_id: 331031-0011003
     - name: 上中野１丁目
       yomi: かみなかの
+      machiaza_id: 331015-0051001
     - name: 上中野２丁目
       yomi: かみなかの
+      machiaza_id: 331015-0051002
     - name: 北長瀬表町１丁目
       yomi: きたながせおもてまち
+      machiaza_id: 331015-0061001
     - name: 北長瀬表町２丁目
       yomi: きたながせおもてまち
+      machiaza_id: 331015-0061002
     - name: 西大寺金岡
       yomi: さいだいじかなおか
+      machiaza_id: 331031-0031000
     - name: 下中野（北区）
       yomi: しもなかの
+      machiaza_id: 331015-0093000
       note: ＪＲ貨物西岡山駅からの南北道路の西。
     - name: 辰巳
       yomi: たつみ
+      machiaza_id: 331015-0152000
       note: 辰巳西公園北側の道路の南
     - name: 辰巳
       yomi: たつみ
+      machiaza_id: 331015-0152000
       note: 辰巳西公園北側の道路の北
     - name: 田中
       yomi: たなか
+      machiaza_id: 331015-0329000
       note: 岡山西バイパスの東。辰巳西公園北側の道路の南
     - name: 田中
       yomi: たなか
+      machiaza_id: 331015-0329000
       note: 岡山西バイパスの西。
     - name: 田中
       yomi: たなか
+      machiaza_id: 331015-0329000
       note: 辰巳西公園北東の角、プレステージ難波　北区田中１０９－１０１
     - name: 問屋町
       yomi: といやちょう
+      machiaza_id: 331015-0176000
     - name: 中仙道
       yomi: なかせんどう
+      machiaza_id: 331015-0190000
     - name: 中仙道１丁目
       yomi: なかせんどう
+      machiaza_id: 331015-0190001
     - name: 平田
       yomi: ひらた
+      machiaza_id: 331015-0241000
       note: 岡山西バイパスの東
     - name: 平田
       yomi: ひらた
+      machiaza_id: 331015-0241000
       note: 岡山西バイパスの西
   year: 2026
   fiscal_year_ja: 令和8年度

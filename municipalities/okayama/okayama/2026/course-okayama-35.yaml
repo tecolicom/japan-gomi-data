@@ -5,34 +5,48 @@ metadata:
   areas:
     - name: 大元駅前
       yomi: おおもとえきまえ
+      machiaza_id: 331015-0034000
       note: 大元駅前・二日市町線以南
     - name: 奥田１丁目
       yomi: おくだ
+      machiaza_id: 331015-0037001
     - name: 奥田２丁目
       yomi: おくだ
+      machiaza_id: 331015-0037002
     - name: 奥田西町
       yomi: おくだにしまち
+      machiaza_id: 331015-0038000
     - name: 奥田本町
       yomi: おくだほんまち
+      machiaza_id: 331015-0039000
     - name: 奥田南町
       yomi: おくだみなみまち
+      machiaza_id: 331015-0040000
     - name: 神田町１丁目
       yomi: かんだちょう
+      machiaza_id: 331015-0057001
     - name: 神田町２丁目
       yomi: かんだちょう
+      machiaza_id: 331015-0057002
     - name: 東古松１丁目
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236001
     - name: 東古松３丁目
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236003
     - name: 東古松４丁目
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236004
     - name: 東古松５丁目
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236005
     - name: 東古松A
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236000
       note: 東古松209～241番地
     - name: 東古松南町
       yomi: ひがしふるまつみなみまち
+      machiaza_id: 331015-0237000
       note: 青江津島線の東
   year: 2026
   fiscal_year_ja: 令和8年度

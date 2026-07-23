@@ -5,34 +5,48 @@ metadata:
   areas:
     - name: 海岸通１丁目
       yomi: かいがんどおり
+      machiaza_id: 331040-0014001
     - name: 海岸通２丁目
       yomi: かいがんどおり
+      machiaza_id: 331040-0014002
     - name: 洲崎１丁目
       yomi: すざき
+      machiaza_id: 331040-0026001
     - name: 洲崎２丁目
       yomi: すざき
+      machiaza_id: 331040-0026002
     - name: 洲崎３丁目
       yomi: すざき
+      machiaza_id: 331040-0026003
     - name: 築港元町
       yomi: ちっこうもとまち
+      machiaza_id: 331040-0036000
       note: 資源化物は当面の間２回目の月曜日のみ
     - name: 富浜町
       yomi: とみはまちょう
+      machiaza_id: 331040-0039000
     - name: 平福１丁目
       yomi: ひらふく
+      machiaza_id: 331040-0054001
     - name: 平福２丁目
       yomi: ひらふく
+      machiaza_id: 331040-0054002
     - name: 福島１丁目
       yomi: ふくしま
+      machiaza_id: 331040-0055001
       note: ２の月は当面古紙古布ペットボトルのみ
     - name: 福島２丁目
       yomi: ふくしま
+      machiaza_id: 331040-0055002
     - name: 福島３丁目
       yomi: ふくしま
+      machiaza_id: 331040-0055003
     - name: 福島４丁目
       yomi: ふくしま
+      machiaza_id: 331040-0055004
     - name: 福吉町
       yomi: ふくよしちょう
+      machiaza_id: 331040-0063000
       note: 福吉町町内会の４の月は当面古紙古布ペットボトルのみ
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -5,110 +5,158 @@ metadata:
   areas:
     - name: 赤田
       yomi: あこだ
+      machiaza_id: 331023-0004000
     - name: 浅川
       yomi: あさかわ
+      machiaza_id: 331031-0001000
     - name: 伊島北町
       yomi: いしまきたまち
+      machiaza_id: 331015-0011000
     - name: 今谷
       yomi: いまだに
+      machiaza_id: 331023-0007000
     - name: 浦間
       yomi: うらま
+      machiaza_id: 331031-0119000
       note: 御休学区（浦間 484番地～1214番地）
     - name: 浦間
       yomi: うらま
+      machiaza_id: 331031-0119000
       note: 平島学区（浦間 484番地～1214番地以外）
     - name: 兼基
       yomi: かねもと
+      machiaza_id: 331023-0019000
     - name: 久保
       yomi: くぼ
+      machiaza_id: 331031-0142000
       note: ※一部地域のみ、収集曜日が異なります。ステーション看板をご確認ください。
     - name: 河本町
       yomi: こうもとちょう
+      machiaza_id: 331031-0024000
     - name: 西大寺東二丁目
       yomi: さいだいじひがし
+      machiaza_id: 331031-0042002
     - name: 西大寺東三丁目
       yomi: さいだいじひがし
+      machiaza_id: 331031-0042003
     - name: 西隆寺
       yomi: さいりゅうじ
+      machiaza_id: 331031-0046000
     - name: 沢田
       yomi: さわだ
+      machiaza_id: 331023-0035000
     - name: 清水
       yomi: しみず
+      machiaza_id: 331023-0038000
       note: JR山陽本線以南
     - name: 清水一丁目
       yomi: しみず
+      machiaza_id: 331023-0038001
     - name: 清水二丁目
       yomi: しみず
+      machiaza_id: 331023-0038002
     - name: 砂場
       yomi: すなば
+      machiaza_id: 331031-0055000
     - name: 西祖
       yomi: せいそ
+      machiaza_id: 331031-0121000
     - name: 関
       yomi: せき
+      machiaza_id: 331023-0044000
     - name: 妹尾
       yomi: せのお
+      machiaza_id: 331040-0027000
     - name: 高屋
       yomi: たかや
+      machiaza_id: 331023-0047000
     - name: 谷万成２丁目
       yomi: たにまんなり
+      machiaza_id: 331015-0154002
       note: Ｒ１８０－Ｒ５３より北
     - name: 津島京町１丁目
       yomi: つしまきょうまち
+      machiaza_id: 331015-0162001
     - name: 津島京町２丁目
       yomi: つしまきょうまち
+      machiaza_id: 331015-0162002
     - name: 津島京町３丁目
       yomi: つしまきょうまち
+      machiaza_id: 331015-0162003
     - name: 津島笹が瀬
       yomi: つしまささがせ
+      machiaza_id: 331015-0164000
     - name: 津島西坂１丁目
       yomi: つしまにしざか
+      machiaza_id: 331015-0167001
       note: ディアコート津島分の不燃ごみは1回目の金曜日
     - name: 津島西坂２丁目
       yomi: つしまにしざか
+      machiaza_id: 331015-0167002
     - name: 津島西坂３丁目
       yomi: つしまにしざか
+      machiaza_id: 331015-0167003
     - name: 津島本町
       yomi: つしまほんまち
+      machiaza_id: 331015-0170000
       note: 津島西坂町内会分は不燃3回目の金曜日
     - name: 津島南２丁目
       yomi: つしまみなみ
+      machiaza_id: 331015-0171002
       note: 津島西坂町内会分は不燃3回目の金曜日
     - name: 寺山
       yomi: てらやま
+      machiaza_id: 331031-0083000
     - name: 富崎
       yomi: とみさき
+      machiaza_id: 331031-0084000
       note: 砂川より東
     - name: 楢原
       yomi: ならばら
+      machiaza_id: 331031-0089000
     - name: 西平島
       yomi: にしひらじま
+      machiaza_id: 331031-0093000
     - name: 東平島
       yomi: ひがしひらじま
+      machiaza_id: 331031-0098000
     - name: 一日市
       yomi: ひといち
+      machiaza_id: 331031-0099000
     - name: 福治
       yomi: ふくじ
+      machiaza_id: 331031-0101000
       note: 砂川から東
     - name: 藤田
       yomi: ふじた
+      machiaza_id: 331040-0064000
     - name: 藤原
       yomi: ふじわら
+      machiaza_id: 331023-0071000
     - name: 藤原西町一丁目
       yomi: ふじわらにしまち
+      machiaza_id: 331023-0072001
     - name: 藤原西町二丁目
       yomi: ふじわらにしまち
+      machiaza_id: 331023-0072002
     - name: 藤原光町一丁目
       yomi: ふじわらひかりまち
+      machiaza_id: 331023-0073001
     - name: 藤原光町二丁目
       yomi: ふじわらひかりまち
+      machiaza_id: 331023-0073002
     - name: 藤原光町三丁目
       yomi: ふじわらひかりまち
+      machiaza_id: 331023-0073003
     - name: 南古都
       yomi: みなみこず
+      machiaza_id: 331031-0110000
     - name: 矢井
       yomi: やい
+      machiaza_id: 331031-0115000
     - name: 吉井
       yomi: よしい
+      machiaza_id: 331031-0117000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

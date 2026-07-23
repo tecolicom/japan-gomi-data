@@ -5,34 +5,48 @@ metadata:
   areas:
     - name: 浅越
       yomi: あさごえ
+      machiaza_id: 331031-0002000
       note: 砂川以東
     - name: 金岡東町一丁目
       yomi: かなおかひがしまち
+      machiaza_id: 331031-0011001
       note: 1番15号～30号
     - name: 西大寺
       yomi: さいだいじ
+      machiaza_id: 331031-0028000
     - name: 西大寺上一丁目
       yomi: さいだいじかみ
+      machiaza_id: 331031-0032001
     - name: 西大寺上二丁目
       yomi: さいだいじかみ
+      machiaza_id: 331031-0032002
     - name: 西大寺上三丁目
       yomi: さいだいじかみ
+      machiaza_id: 331031-0032003
     - name: 西大寺北
       yomi: さいだいじきた
+      machiaza_id: 331031-0034000
     - name: 西大寺中一丁目
       yomi: さいだいじなか
+      machiaza_id: 331031-0038001
     - name: 西大寺中二丁目
       yomi: さいだいじなか
+      machiaza_id: 331031-0038002
     - name: 西大寺中三丁目
       yomi: さいだいじなか
+      machiaza_id: 331031-0038003
     - name: 西大寺東一丁目
       yomi: さいだいじひがし
+      machiaza_id: 331031-0042001
     - name: 西大寺南一丁目
       yomi: さいだいじみなみ
+      machiaza_id: 331031-0044001
     - name: 西大寺南二丁目
       yomi: さいだいじみなみ
+      machiaza_id: 331031-0044002
     - name: 向州
       yomi: むこうす
+      machiaza_id: 331031-0112000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

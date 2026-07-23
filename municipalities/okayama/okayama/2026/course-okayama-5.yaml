@@ -5,59 +5,86 @@ metadata:
   areas:
     - name: 飽浦
       yomi: あくら
+      machiaza_id: 331040-0080000
     - name: 阿津
       yomi: あつ
+      machiaza_id: 331040-0074000
     - name: 今保
       yomi: いまぼう
+      machiaza_id: 331015-0020000
     - name: 植松
       yomi: うえまつ
+      machiaza_id: 331040-0007000
     - name: 片岡
       yomi: かたおか
+      machiaza_id: 331040-0015000
     - name: 川張
       yomi: かわはり
+      machiaza_id: 331040-0016000
     - name: 北浦
       yomi: きたうら
+      machiaza_id: 331040-0017000
     - name: 北長瀬
       yomi: きたながせ
+      machiaza_id: 331015-0060000
     - name: 北長瀬表町３丁目
       yomi: きたながせおもてまち
+      machiaza_id: 331015-0061003
     - name: 北長瀬本町
       yomi: きたながせほんまち
+      machiaza_id: 331015-0062000
     - name: 久米
       yomi: くめ
+      machiaza_id: 331015-0068000
     - name: 郡
       yomi: こおり
+      machiaza_id: 331040-0075000
     - name: 小串
       yomi: こぐし
+      machiaza_id: 331040-0077000
     - name: 白石
       yomi: しらいし
+      machiaza_id: 331015-0330000
     - name: 白石西新町
       yomi: しらいしにししんまち
+      machiaza_id: 331015-0100000
     - name: 白石東新町
       yomi: しらいしひがししんまち
+      machiaza_id: 331015-0101000
     - name: 宗津
       yomi: そうづ
+      machiaza_id: 331040-0029000
     - name: 田中
       yomi: たなか
+      machiaza_id: 331015-0329000
       note: 西長瀬町内会管理　北区田中１７３－１０２附近
     - name: 中仙道２丁目
       yomi: なかせんどう
+      machiaza_id: 331015-0190002
     - name: 西長瀬
       yomi: にしながせ
+      machiaza_id: 331015-0205000
     - name: 花尻
       yomi: はなじり
+      machiaza_id: 331015-0223000
     - name: 花尻あかね町
       yomi: はなじりあかねまち
+      machiaza_id: 331015-0224000
     - name: 花尻ききょう町
       yomi: はなじりききょうまち
+      machiaza_id: 331015-0225000
     - name: 花尻みどり町
       yomi: はなじりみどりまち
+      machiaza_id: 331015-0226000
     - name: 彦崎
       yomi: ひこさき
+      machiaza_id: 331040-0053000
     - name: 日吉町
       yomi: ひよしちょう
+      machiaza_id: 331015-0240000
     - name: 宮浦
       yomi: みやうら
+      machiaza_id: 331040-0070000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

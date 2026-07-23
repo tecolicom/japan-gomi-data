@@ -65,29 +65,68 @@ function toRules(rec) {
 // (fetch-yomi.mjs → cache/abr-town-kana.json、ひらがな化済み)。ベース町名 (丁目・区注記・
 // 記号サフィクスを除去) で引き、無ければ ①ひらがな/カタカナのみの町名は自身を読みとする
 // (表記=読み。推測ではない)、②それ以外は yomi を付けない (推測でカナを作らない)。
-let abrKana = {};
-try { abrKana = JSON.parse(readFileSync(join(HERE, 'cache', 'abr-town-kana.json'), 'utf8')); }
-catch { throw new Error('cache/abr-town-kana.json がありません。node fetch-yomi.mjs を先に実行'); }
+let ABR = null;
+try { ABR = JSON.parse(readFileSync(join(HERE, 'cache', 'abr-town.json'), 'utf8')).towns; }
+catch { throw new Error('cache/abr-town.json がありません。node fetch-yomi.mjs を先に実行'); }
 const nfkc = (s) => s.normalize('NFKC');
-const baseTown = (t) => nfkc(t)
-  .replace(/[（(][^）)]*[）)]/g, '')   // 区注記・※ 等 (NFKC で括弧が半角化されるため両対応)
-  .replace(/\s+/g, '')
-  .replace(/[0-9一二三四五六七八九十]+丁目.*$/, '')
-  .replace(/[0-9A-Za-z]+$/, '');      // 福田①→(NFKC)福田1・東古松A 等の記号サフィクス
-const yomiOf = (town) => {
-  const b = baseTown(town);
-  const hit = abrKana[b] ?? abrKana[b.replace(/ケ/g, 'ヶ')] ?? abrKana[b.replace(/ヶ/g, 'ケ')];
-  if (hit) return hit;
-  if (/^[ぁ-んァ-ヶー]+$/.test(b)) return b.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
-  return undefined;
+const eqOaza = (a, b) => a === b || a.replace(/ケ/g, 'ヶ') === b || a.replace(/ヶ/g, 'ケ') === b;
+// kViewer 町名 → { base(大字), chome(丁目番号|null), ward(区注記|null) } へ正規化
+const parseTown = (t) => {
+  let s = nfkc(t).replace(/\s+/g, '');
+  let ward = null;
+  s = s.replace(/[（(]([^）)]*)[）)]/g, (_, inner) => {
+    const m = inner.match(/^(北|中|東|南)区$/);
+    if (m) ward = `${m[1]}区`;
+    return '';
+  });
+  let chome = null;
+  s = s.replace(/([0-9]+)丁目.*$/, (_, n) => { chome = Number(n); return ''; });
+  s = s.replace(/[一二三四五六七八九十]+丁目.*$/, (m0) => {
+    const K = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+    chome = K[m0[0]] ?? null; return '';
+  });
+  s = s.replace(/[0-9A-Za-z]+$/, ''); // 福田①→(NFKC)福田1・東古松A 等の記号サフィクス
+  return { base: s, chome, ward };
+};
+// ABR 照合: 丁目まで一致する町字行 → { yomi, machiazaId }。丁目行が無ければ大字行。
+const abrOf = (town) => {
+  const { base, chome, ward } = parseTown(town);
+  let cands = ABR.filter((t) => eqOaza(t.oaza, base));
+  if (ward) cands = cands.filter((t) => t.ward === ward);
+  const exact = chome !== null
+    ? cands.filter((t) => t.chome_number === chome)
+    : cands.filter((t) => t.chome_number === null);
+  let pick = exact.length ? exact : cands.filter((t) => t.chome_number === null);
+  // ABR は同一町字が複数行になることがある (小字違い等)。ID でユニーク化してから判定
+  const uniq = new Map(pick.map((t) => [`${t.lg}-${t.id}`, t]));
+  pick = [...uniq.values()];
+  if (pick.length === 1) {
+    const t = pick[0];
+    return { yomi: t.kana ?? undefined, machiazaId: `${t.lg}-${t.id}` };
+  }
+  if (pick.length > 1) {
+    // 区をまたぐ同名町 (例 西市=北区/南区) で kViewer 側に区注記が無い場合は一意化できない。
+    // 誤った ID を付けるより付けない (yomi はカナが同一なら採用できる)。
+    ambiguous.push(`${town}→${pick.map((t) => `${t.lg}-${t.id}`).join('/')}`);
+    const kanas = new Set(pick.map((t) => t.kana));
+    return { yomi: kanas.size === 1 ? pick[0].kana : undefined, machiazaId: undefined };
+  }
+  // ABR に無い: ひらがな/カタカナのみの町名は表記=読み (ID は付けない)
+  if (/^[ぁ-んァ-ヶー]+$/.test(base))
+    return { yomi: base.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60)), machiazaId: undefined };
+  return { yomi: undefined, machiazaId: undefined };
 };
 let yomiMissing = [];
+let idMissing = [];
+const ambiguous = [];
 const rowArea = (r) => {
-  const yomi = yomiOf(r.town);
+  const { yomi, machiazaId } = abrOf(r.town);
   if (!yomi) yomiMissing.push(r.town);
+  if (!machiazaId) idMissing.push(r.town);
   return {
     name: r.town,
     ...(yomi ? { yomi } : {}),
+    ...(machiazaId ? { machiaza_id: machiazaId } : {}),
     ...(r.note && r.note.trim() ? { note: r.note.trim() } : {}),
   };
 };
@@ -150,3 +189,6 @@ const n = writeCourses(OUTDIR, YEAR, docs);
 console.log(`wrote ${n} courses (from ${records.length} rows) -> ${OUTDIR}/${YEAR}/`);
 const uniqMissing = [...new Set(yomiMissing)];
 console.log(`yomi: ${records.length - yomiMissing.length}/${records.length} 行に付与 (未付与 町名: ${uniqMissing.join('、') || 'なし'})`);
+const uniqIdMissing = [...new Set(idMissing)];
+console.log(`machiaza_id: ${records.length - idMissing.length}/${records.length} 行に付与 (未付与 町名: ${uniqIdMissing.join('、') || 'なし'})`);
+if (ambiguous.length) console.log(`  うち区またぎ同名で曖昧 (ID未付与): ${[...new Set(ambiguous)].join('、')}`);

@@ -5,16 +5,21 @@ metadata:
   areas:
     - name: 石妻
       yomi: いしづま
+      machiaza_id: 331015-0010000
     - name: 上高田
       yomi: かみたかだ
+      machiaza_id: 331015-0049000
       note: 元信・尾崎
     - name: 杉谷
       yomi: すぎたに
+      machiaza_id: 331015-0107000
     - name: 日近
       yomi: ひぢかい
+      machiaza_id: 331015-0239000
       note: 下日近（弥高・美和）
     - name: 山上
       yomi: やまのうえ
+      machiaza_id: 331015-0304000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

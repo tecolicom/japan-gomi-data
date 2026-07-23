@@ -5,9 +5,11 @@ metadata:
   areas:
     - name: 辛川市場
       yomi: からかわいちば
+      machiaza_id: 331015-0053000
       note: 辛川市場の一部　(資源化物の収集日が第1回目の木曜日の地区)
     - name: 西辛川
       yomi: にしからかわ
+      machiaza_id: 331015-0200000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -5,22 +5,30 @@ metadata:
   areas:
     - name: 平井一丁目
       yomi: ひらい
+      machiaza_id: 331023-0068001
     - name: 平井二丁目
       yomi: ひらい
+      machiaza_id: 331023-0068002
     - name: 平井三丁目
       yomi: ひらい
+      machiaza_id: 331023-0068003
     - name: 平井四丁目
       yomi: ひらい
+      machiaza_id: 331023-0068004
     - name: 平井五丁目
       yomi: ひらい
+      machiaza_id: 331023-0068005
     - name: 湊
       yomi: みなと
+      machiaza_id: 331023-0076000
       note: 「池の内団地町内会」（旭操学区）
     - name: 湊
       yomi: みなと
+      machiaza_id: 331023-0076000
       note: 「操陽南山を含む」（平井学区）
     - name: 山崎
       yomi: やまさき
+      machiaza_id: 331023-0082000
       note: 「山崎西町内会」（旭操学区）
   year: 2026
   fiscal_year_ja: 令和8年度

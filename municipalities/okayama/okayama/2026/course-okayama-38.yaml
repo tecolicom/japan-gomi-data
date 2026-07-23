@@ -5,16 +5,22 @@ metadata:
   areas:
     - name: 乙多見
       yomi: おたみ
+      machiaza_id: 331023-0012000
     - name: 神下
       yomi: こうした
+      machiaza_id: 331023-0028000
     - name: 下
       yomi: しも
+      machiaza_id: 331023-0039000
     - name: 長岡
       yomi: ながおか
+      machiaza_id: 331023-0054000
     - name: 長利
       yomi: ながとし
+      machiaza_id: 331023-0056000
     - name: 米田
       yomi: よねだ
+      machiaza_id: 331023-0084000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

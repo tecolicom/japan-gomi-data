@@ -5,15 +5,19 @@ metadata:
   areas:
     - name: 上高田
       yomi: かみたかだ
+      machiaza_id: 331015-0049000
       note: 草谷下・張木・岩見・共和・森川下
     - name: 下高田
       yomi: しもたかだ
+      machiaza_id: 331015-0091000
       note: 鯨
     - name: 日近
       yomi: ひぢかい
+      machiaza_id: 331015-0239000
       note: 上日近・下日近（弥高・美和を除く地区）
     - name: 吉
       yomi: よし
+      machiaza_id: 331015-0308000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

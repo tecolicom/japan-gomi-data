@@ -5,24 +5,32 @@ metadata:
   areas:
     - name: 今岡
       yomi: いまおか
+      machiaza_id: 331015-0019000
       note: 上今岡
     - name: 大窪
       yomi: おおくぼ
+      machiaza_id: 331015-0322000
       note: 馬屋下学区
     - name: 辛川市場
       yomi: からかわいちば
+      machiaza_id: 331015-0053000
       note: 辛川市場　(資源化物の収集日が第1回目の木曜日の地区を除く)
     - name: 長野
       yomi: ながの
+      machiaza_id: 331015-0326000
     - name: 芳賀
       yomi: はが
+      machiaza_id: 331015-0221000
       note: 上芳賀  下芳賀
     - name: 福谷
       yomi: ふくたに
+      machiaza_id: 331015-0246000
     - name: 松尾
       yomi: まつお
+      machiaza_id: 331015-0255000
     - name: 横尾
       yomi: よこお
+      machiaza_id: 331015-0314000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

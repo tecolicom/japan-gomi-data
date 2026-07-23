@@ -5,10 +5,13 @@ metadata:
   areas:
     - name: 古新田
       yomi: こしんでん
+      machiaza_id: 331040-0021000
     - name: 妹尾崎
       yomi: せのおざき
+      machiaza_id: 331040-0028000
     - name: 山田
       yomi: やまだ
+      machiaza_id: 331040-0076000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

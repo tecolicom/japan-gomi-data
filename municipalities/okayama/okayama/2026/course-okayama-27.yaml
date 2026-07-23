@@ -5,32 +5,44 @@ metadata:
   areas:
     - name: 今在家
       yomi: いまざいけ
+      machiaza_id: 331023-0006000
       note: ３金は当面古紙古布ペットボトルのみ
     - name: 雄町
       yomi: おまち
+      machiaza_id: 331023-0014000
     - name: 祇園
       yomi: ぎおん
     - name: 国府市場
       yomi: こくふいちば
+      machiaza_id: 331023-0029000
     - name: 清水
       yomi: しみず
+      machiaza_id: 331023-0038000
       note: JR山陽本線以北
     - name: 賞田
       yomi: しょうだ
+      machiaza_id: 331023-0040000
     - name: 高島新屋敷
       yomi: たかしましんやしき
+      machiaza_id: 331023-0046000
     - name: 中井
       yomi: なかい
+      machiaza_id: 331023-0053000
     - name: 中井１丁目
       yomi: なかい
+      machiaza_id: 331023-0053001
     - name: 中井２丁目
       yomi: なかい
+      machiaza_id: 331023-0053002
     - name: 中井３丁目
       yomi: なかい
+      machiaza_id: 331023-0053003
     - name: 中井４丁目
       yomi: なかい
+      machiaza_id: 331023-0053004
     - name: 湯迫
       yomi: ゆば
+      machiaza_id: 331023-0083000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

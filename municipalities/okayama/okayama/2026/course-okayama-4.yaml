@@ -5,54 +5,79 @@ metadata:
   areas:
     - name: 赤坂台
       yomi: あかさかだい
+      machiaza_id: 331023-0001000
     - name: 赤坂本町
       yomi: あかさかほんまち
+      machiaza_id: 331023-0002000
     - name: 赤坂南新町
       yomi: あかさかみなみしんまち
+      machiaza_id: 331023-0003000
     - name: 網浜
       yomi: あみのはま
+      machiaza_id: 331023-0005000
     - name: 門田屋敷二丁目
       yomi: かどたやしき
+      machiaza_id: 331023-0017002
     - name: 門田屋敷三丁目
       yomi: かどたやしき
+      machiaza_id: 331023-0017003
     - name: 門田屋敷四丁目
       yomi: かどたやしき
+      machiaza_id: 331023-0017004
     - name: 門田屋敷本町
       yomi: かどたやしきほんまち
+      machiaza_id: 331023-0018000
     - name: 旭東町一丁目
       yomi: きょくとうちょう
+      machiaza_id: 331023-0021001
     - name: 旭東町二丁目
       yomi: きょくとうちょう
+      machiaza_id: 331023-0021002
     - name: 旭東町三丁目
       yomi: きょくとうちょう
+      machiaza_id: 331023-0021003
     - name: 小橋町二丁目
       yomi: こばしちょう
+      machiaza_id: 331023-0030002
     - name: さくら住座
       yomi: さくらじゅうざ
+      machiaza_id: 331023-0033000
     - name: 桜橋一丁目
       yomi: さくらばし
+      machiaza_id: 331023-0034001
     - name: 桜橋二丁目
       yomi: さくらばし
+      machiaza_id: 331023-0034002
     - name: 桜橋三丁目
       yomi: さくらばし
+      machiaza_id: 331023-0034003
     - name: 桜橋四丁目
       yomi: さくらばし
+      machiaza_id: 331023-0034004
     - name: 新京橋一丁目
       yomi: しんきょうばし
+      machiaza_id: 331023-0041001
     - name: 新京橋二丁目
       yomi: しんきょうばし
+      machiaza_id: 331023-0041002
     - name: 新京橋三丁目
       yomi: しんきょうばし
+      machiaza_id: 331023-0041003
     - name: 西中島町
       yomi: にしなかじまちょう
+      machiaza_id: 331023-0059000
     - name: 東中島町
       yomi: ひがしなかじまちょう
+      machiaza_id: 331023-0065000
     - name: 東山三丁目
       yomi: ひがしやま
+      machiaza_id: 331023-0066003
     - name: 東山四丁目
       yomi: ひがしやま
+      machiaza_id: 331023-0066004
     - name: 御幸町
       yomi: みゆきちょう
+      machiaza_id: 331023-0077000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

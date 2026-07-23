@@ -5,18 +5,25 @@ metadata:
   areas:
     - name: 瀬戸町鍛冶屋
       yomi: せとちょうかじや
+      machiaza_id: 331031-0061000
     - name: 瀬戸町塩納
       yomi: せとちょうしおのう
+      machiaza_id: 331031-0068000
     - name: 瀬戸町大井
       yomi: せとちょうだいい
+      machiaza_id: 331031-0073000
     - name: 瀬戸町二日市
       yomi: せとちょうふつかいち
+      machiaza_id: 331031-0075000
     - name: 瀬戸町万富
       yomi: せとちょうまんとみ
+      machiaza_id: 331031-0076000
     - name: 瀬戸町南方
       yomi: せとちょうみなみがた
+      machiaza_id: 331031-0077000
     - name: 瀬戸町弓削
       yomi: せとちょうゆげ
+      machiaza_id: 331031-0079000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

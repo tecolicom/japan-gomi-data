@@ -5,25 +5,34 @@ metadata:
   areas:
     - name: "泉田１丁目 "
       yomi: いずみだ
+      machiaza_id: 331040-0006001
     - name: 泉田２丁目
       yomi: いずみだ
+      machiaza_id: 331040-0006002
     - name: 泉田３丁目　
       yomi: いずみだ
+      machiaza_id: 331040-0006003
     - name: 泉田４丁目
       yomi: いずみだ
+      machiaza_id: 331040-0006004
     - name: 大井
       yomi: おおい
+      machiaza_id: 331015-0321000
       note: 「新町・本町中・本町三丁目（橋本町）」
     - name: 福田①
       yomi: ふくだ
+      machiaza_id: 331040-0079000
       note: 一部地域を除く（726.730から736.741.742番地は<福田②>をご覧ください。）
     - name: 福富西２丁目
       yomi: ふくとみにし
+      machiaza_id: 331040-0058002
       note: 福田町内会
     - name: 芳泉３丁目
       yomi: ほうせん
+      machiaza_id: 331040-0065003
     - name: 芳泉４丁目
       yomi: ほうせん
+      machiaza_id: 331040-0065004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -5,20 +5,28 @@ metadata:
   areas:
     - name: 青江２丁目
       yomi: あおえ
+      machiaza_id: 331015-0002002
     - name: 青江３丁目
       yomi: あおえ
+      machiaza_id: 331015-0002003
     - name: 青江４丁目
       yomi: あおえ
+      machiaza_id: 331015-0002004
     - name: 青江５丁目
       yomi: あおえ
+      machiaza_id: 331015-0002005
     - name: 青江６丁目
       yomi: あおえ
+      machiaza_id: 331040-0001006
     - name: 十日市西町
       yomi: とうかいちにしまち
+      machiaza_id: 331015-0178000
     - name: 豊成１丁目
       yomi: とよなり
+      machiaza_id: 331040-0040001
     - name: 豊成２丁目
       yomi: とよなり
+      machiaza_id: 331040-0040002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

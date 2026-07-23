@@ -5,42 +5,58 @@ metadata:
   areas:
     - name: 島田本町１丁目
       yomi: しまだほんまち
+      machiaza_id: 331015-0083001
       note: 青江・津島線島田地下道以西
     - name: 島田本町２丁目
       yomi: しまだほんまち
+      machiaza_id: 331015-0083002
     - name: 下伊福１丁目
       yomi: しもいふく
+      machiaza_id: 331015-0086001
       note: 下伊福東町町内会の資源化物は、ステーションによってルールが違うので、町内会へご確認ください。
     - name: 下伊福２丁目
       yomi: しもいふく
+      machiaza_id: 331015-0086002
       note: 下伊福東町町内会の資源化物は、ステーションによってルールが違うので、町内会へご確認ください。
     - name: 下伊福上町
       yomi: しもいふくかみまち
+      machiaza_id: 331015-0087000
     - name: 下伊福西町
       yomi: しもいふくにしまち
+      machiaza_id: 331015-0088000
     - name: 下伊福本町
       yomi: しもいふくほんまち
+      machiaza_id: 331015-0089000
       note: 県道川入・巌井以南・北共
     - name: 高柳東町
       yomi: たかやなぎひがしまち
+      machiaza_id: 331015-0128000
     - name: 富町１丁目
       yomi: とみまち
+      machiaza_id: 331015-0183001
     - name: 富町２丁目
       yomi: とみまち
+      machiaza_id: 331015-0183002
       note: 県道川入・巌井以南・北共
     - name: 福泊
       yomi: ふくどまり
+      machiaza_id: 331023-0069000
     - name: 奉還町４丁目
       yomi: ほうかんちょう
+      machiaza_id: 331015-0252004
     - name: 円山
       yomi: まるやま
+      machiaza_id: 331023-0085000
     - name: 湊
       yomi: みなと
+      machiaza_id: 331023-0076000
       note: 「湊池の内町内会」（富山学区）
     - name: 海吉
       yomi: みよし
+      machiaza_id: 331023-0078000
     - name: 山崎
       yomi: やまさき
+      machiaza_id: 331023-0082000
       note: 「山崎本町町内会」（富山学区）
   year: 2026
   fiscal_year_ja: 令和8年度

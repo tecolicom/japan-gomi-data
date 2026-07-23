@@ -5,73 +5,106 @@ metadata:
   areas:
     - name: 今１丁目
       yomi: いま
+      machiaza_id: 331015-0018001
     - name: 奥市
       yomi: おくいち
+      machiaza_id: 331023-0011000
     - name: 御成町
       yomi: おなりちょう
+      machiaza_id: 331023-0013000
     - name: 門田文化町一丁目
       yomi: かどたぶんかまち
+      machiaza_id: 331023-0015001
     - name: 門田文化町二丁目
       yomi: かどたぶんかまち
+      machiaza_id: 331023-0015002
     - name: 門田文化町三丁目
       yomi: かどたぶんかまち
+      machiaza_id: 331023-0015003
     - name: 門田本町一丁目
       yomi: かどたほんまち
+      machiaza_id: 331023-0016001
     - name: 門田本町二丁目
       yomi: かどたほんまち
+      machiaza_id: 331023-0016002
       note: 東山斎場へ続く道路沿いで例外あり
     - name: 門田本町三丁目
       yomi: かどたほんまち
+      machiaza_id: 331023-0016003
     - name: 門田本町四丁目
       yomi: かどたほんまち
+      machiaza_id: 331023-0016004
     - name: 門田屋敷一丁目
       yomi: かどたやしき
+      machiaza_id: 331023-0017001
     - name: 門田屋敷五丁目
       yomi: かどたやしき
+      machiaza_id: 331023-0017005
     - name: 国富
       yomi: くにとみ
+      machiaza_id: 331023-0023000
     - name: 国富一丁目
       yomi: くにとみ
+      machiaza_id: 331023-0023001
     - name: 国富二丁目
       yomi: くにとみ
+      machiaza_id: 331023-0023002
     - name: 国富三丁目
       yomi: くにとみ
+      machiaza_id: 331023-0023003
     - name: 国富四丁目
       yomi: くにとみ
+      machiaza_id: 331023-0023004
     - name: 倉富
       yomi: くらとみ
+      machiaza_id: 331023-0025000
       note: 国道2号線バイパス以北
     - name: 倉益
       yomi: くらます
+      machiaza_id: 331023-0026000
       note: 国道2号線バイパス以北
     - name: 小橋町一丁目
       yomi: こばしちょう
+      machiaza_id: 331023-0030001
     - name: 住吉町一丁目
       yomi: すみよしちょう
+      machiaza_id: 331023-0043001
     - name: 住吉町二丁目
       yomi: すみよしちょう
+      machiaza_id: 331023-0043002
     - name: 中納言町
       yomi: ちゅうなごんちょう
+      machiaza_id: 331023-0049000
     - name: 徳吉町一丁目
       yomi: とくよしちょう
+      machiaza_id: 331023-0051001
     - name: 徳吉町二丁目
       yomi: とくよしちょう
+      machiaza_id: 331023-0051002
     - name: 野田３丁目
       yomi: のだ
+      machiaza_id: 331015-0216003
     - name: 野田４丁目
       yomi: のだ
+      machiaza_id: 331015-0216004
     - name: 東山一丁目
       yomi: ひがしやま
+      machiaza_id: 331023-0066001
     - name: 東山二丁目
       yomi: ひがしやま
+      machiaza_id: 331023-0066002
     - name: 古京町一丁目
       yomi: ふるぎょうちょう
+      machiaza_id: 331023-0074001
     - name: 古京町二丁目
       yomi: ふるぎょうちょう
+      machiaza_id: 331023-0074002
     - name: 森下町
       yomi: もりしたちょう
+      machiaza_id: 331023-0079000
     - name: 山崎
       yomi: やまさき
+      machiaza_id: 331023-0082000
       note: 「山崎東・山崎南・ハイライフ山崎・倉益中・垣原町内会」（旭操学区）
   year: 2026
   fiscal_year_ja: 令和8年度

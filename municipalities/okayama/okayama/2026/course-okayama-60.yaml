@@ -5,22 +5,31 @@ metadata:
   areas:
     - name: 新屋敷町１丁目
       yomi: しんやしきちょう
+      machiaza_id: 331015-0105001
     - name: 新屋敷町２丁目
       yomi: しんやしきちょう
+      machiaza_id: 331015-0105002
     - name: 新屋敷町３丁目
       yomi: しんやしきちょう
+      machiaza_id: 331015-0105003
     - name: 西島田町
       yomi: にししまだちょう
+      machiaza_id: 331015-0204000
     - name: 西之町
       yomi: にしのちょう
+      machiaza_id: 331015-0206000
     - name: 西古松１丁目
       yomi: にしふるまつ
+      machiaza_id: 331015-0210001
     - name: 野田１丁目
       yomi: のだ
+      machiaza_id: 331015-0216001
     - name: 野田２丁目
       yomi: のだ
+      machiaza_id: 331015-0216002
     - name: 野田５丁目
       yomi: のだ
+      machiaza_id: 331015-0216005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

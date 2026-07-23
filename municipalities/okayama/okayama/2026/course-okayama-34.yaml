@@ -5,18 +5,24 @@ metadata:
   areas:
     - name: 大元１丁目
       yomi: おおもと
+      machiaza_id: 331015-0033001
     - name: 大元２丁目
       yomi: おおもと
+      machiaza_id: 331015-0033002
     - name: 下中野（北区）
       yomi: しもなかの
+      machiaza_id: 331015-0093000
       note: ＪＲ瀬戸大橋線の西。岡山児島線の東。
     - name: 西古松
       yomi: にしふるまつ
+      machiaza_id: 331015-0210000
       note: ＪＲ瀬戸大橋線の西。
     - name: 西古松２丁目
       yomi: にしふるまつ
+      machiaza_id: 331015-0210002
     - name: 西古松西町
       yomi: にしふるまつにしまち
+      machiaza_id: 331015-0211000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

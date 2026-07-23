@@ -5,19 +5,26 @@ metadata:
   areas:
     - name: 新福１丁目
       yomi: しんぷく
+      machiaza_id: 331040-0024001
     - name: 新福２丁目
       yomi: しんぷく
+      machiaza_id: 331040-0024002
     - name: 豊成３丁目
       yomi: とよなり
+      machiaza_id: 331040-0040003
     - name: 福富中１丁目
       yomi: ふくとみなか
+      machiaza_id: 331040-0057001
     - name: 福富西１丁目
       yomi: ふくとみにし
+      machiaza_id: 331040-0058001
     - name: 福富西２丁目
       yomi: ふくとみにし
+      machiaza_id: 331040-0058002
       note: 福富西町内会
     - name: 福富西３丁目
       yomi: ふくとみにし
+      machiaza_id: 331040-0058003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

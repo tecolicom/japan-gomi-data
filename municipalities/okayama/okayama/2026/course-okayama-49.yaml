@@ -5,55 +5,78 @@ metadata:
   areas:
     - name: 北方１丁目
       yomi: きたがた
+      machiaza_id: 331015-0059001
       note: 北方東本町町内会の１火は当面古紙古布ペットボトルのみ
     - name: 北方２丁目
       yomi: きたがた
+      machiaza_id: 331015-0059002
       note: 北方東本町町内会の１火は当面古紙古布ペットボトルのみ
     - name: 北方３丁目
       yomi: きたがた
+      machiaza_id: 331015-0059003
       note: 北方東本町町内会の１火は当面古紙古布ペットボトルのみ
     - name: 北方４丁目
       yomi: きたがた
+      machiaza_id: 331015-0059004
     - name: 津島中２丁目
       yomi: つしまなか
+      machiaza_id: 331015-0165002
     - name: 津島中３丁目
       yomi: つしまなか
+      machiaza_id: 331015-0165003
     - name: 津島東１丁目
       yomi: つしまひがし
+      machiaza_id: 331015-0168001
     - name: 津島東２丁目
       yomi: つしまひがし
+      machiaza_id: 331015-0168002
     - name: 津島東３丁目
       yomi: つしまひがし
+      machiaza_id: 331015-0168003
     - name: 津島東４丁目
       yomi: つしまひがし
+      machiaza_id: 331015-0168004
     - name: 津島福居1丁目
       yomi: つしまふくい
+      machiaza_id: 331015-0169001
     - name: 津島福居２丁目
       yomi: つしまふくい
+      machiaza_id: 331015-0169002
     - name: 中井町１丁目
       yomi: なかいちょう
+      machiaza_id: 331015-0186001
     - name: 中井町２丁目
       yomi: なかいちょう
+      machiaza_id: 331015-0186002
     - name: 半田町
       yomi: はんだちょう
+      machiaza_id: 331015-0229000
     - name: 法界院
       yomi: ほうかいいん
+      machiaza_id: 331015-0251000
     - name: 南方４丁目
       yomi: みなみがた
+      machiaza_id: 331015-0292004
       note: 南方長泉寺町内会の３金は当面古紙古布ペットボトルのみ
     - name: 三野１丁目
       yomi: みの
+      machiaza_id: 331015-0294001
       note: 1月は当面古紙古布ペットボトルのみ
     - name: 三野２丁目
       yomi: みの
+      machiaza_id: 331015-0294002
     - name: 三野３丁目
       yomi: みの
+      machiaza_id: 331015-0294003
     - name: 大和町１丁目
       yomi: やまとまち
+      machiaza_id: 331015-0303001
     - name: 大和町２丁目
       yomi: やまとまち
+      machiaza_id: 331015-0303002
     - name: 理大町
       yomi: りだいちょう
+      machiaza_id: 331015-0310000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

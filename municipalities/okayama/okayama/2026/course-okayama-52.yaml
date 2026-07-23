@@ -5,16 +5,22 @@ metadata:
   areas:
     - name: 鉄
       yomi: くろがね
+      machiaza_id: 331031-0021000
     - name: 古都宿
       yomi: こずしゅく
+      machiaza_id: 331031-0143000
     - name: 古都南方
       yomi: こずみなみがた
+      machiaza_id: 331031-0026000
     - name: 宍甘
       yomi: しじかい
+      machiaza_id: 331031-0047000
     - name: 藤井
       yomi: ふじい
+      machiaza_id: 331031-0102000
     - name: 矢津
       yomi: やづ
+      machiaza_id: 331031-0116000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

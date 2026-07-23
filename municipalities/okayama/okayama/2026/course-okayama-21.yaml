@@ -5,18 +5,25 @@ metadata:
   areas:
     - name: いずみ町
       yomi: いずみちょう
+      machiaza_id: 331015-0014000
     - name: 伊福町２丁目
       yomi: いふくちょう
+      machiaza_id: 331015-0017002
     - name: 伊福町３丁目
       yomi: いふくちょう
+      machiaza_id: 331015-0017003
     - name: 絵図町
       yomi: えずちょう
+      machiaza_id: 331015-0028000
     - name: 国体町
       yomi: こくたいちょう
+      machiaza_id: 331015-0075000
     - name: 清心町
       yomi: せいしんちょう
+      machiaza_id: 331015-0110000
     - name: 東古松B
       yomi: ひがしふるまつ
+      machiaza_id: 331015-0236000
       note: 東古松484～513番地
   year: 2026
   fiscal_year_ja: 令和8年度
