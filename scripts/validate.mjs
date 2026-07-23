@@ -18,6 +18,7 @@ const loadYaml = (p) => yamlParse(readFileSync(p, 'utf8'), {
 
 const scheduleV = ajv.compile(loadJson('schema/schedule.schema.json'));
 const taxonomyV = ajv.compile(loadJson('schema/taxonomy.schema.json'));
+const factsV = ajv.compile(loadJson('schema/facts.schema.json'));
 const metaV = ajv.compile(loadJson('schema/meta.schema.json'));
 const vocab = new Set(Object.keys(loadYaml(join(ROOT, 'schema/categories.yaml')).categories));
 
@@ -74,6 +75,20 @@ for (const { handle, dir } of handles) {
         for (const m of g.members ?? []) {
           if (!taxCats.has(m)) fail(`${handle}/taxonomy.yaml`, `groups "${g.label}" の member "${m}" が categories に無い`);
         }
+      }
+    }
+  }
+
+  // facts (任意。読み物断片 — schema 検証 + id 一意)
+  const factsPath = join(dir, 'facts.yaml');
+  if (existsSync(factsPath)) {
+    const facts = loadYaml(factsPath);
+    if (!factsV(facts)) fail(`${handle}/facts.yaml`, ajv.errorsText(factsV.errors));
+    else {
+      const ids = new Set();
+      for (const f of facts.facts) {
+        if (ids.has(f.id)) fail(`${handle}/facts.yaml`, `fact id 重複 "${f.id}"`);
+        ids.add(f.id);
       }
     }
   }

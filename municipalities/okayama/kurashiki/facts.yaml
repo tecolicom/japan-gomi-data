@@ -1,0 +1,61 @@
+# 倉敷市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: shigen-monthly-once
+    title: 資源ごみの回収は月に 1 回だけ
+    body: >-
+      倉敷市の「資源ごみ」は、びん・缶・ペットボトル・古紙・古布の 5 品目を同じ日にまとめて出す方式で、
+      回収は月 1 回しかありません。資源を週 1 回収集する自治体 (品川区・横浜市など) と比べるとかなり
+      低頻度で、出しそびれると 1 か月待つことになります。
+    tags: [資源の中身, 収集頻度]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (各地区収集日一覧)
+      - municipalities/okayama/kurashiki/meta.yaml
+  - id: mabi-different-system
+    title: 真備地区だけ分別のしくみが違う
+    body: >-
+      旧真備町域 (2005 年に倉敷市へ編入) では、ごみの分け方が市内の他地区と異なります。
+      資源が「ペットボトル・白色トレイ・古布」「缶」「びん・古紙」の 3 グループに分かれて別々の日に
+      回収され、廃体温計・乾電池を出す「有害ごみ」の日も設けられています。合併から 20 年たった今も、
+      収集体系に旧町の姿が残っている例です。
+    scope: city
+    tags: [合併の痕跡, 分別体系]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (真備地区 ごみ収集日一覧表)
+      - municipalities/okayama/kurashiki/meta.yaml
+  - id: sue-yataka-monthly-burnable
+    title: 可燃ごみが月 2 回だけの地区がある
+    body: >-
+      玉島地区の陶 (すえ) の弥高では、可燃ごみの収集が第 2・第 4 水曜の月 2 回だけです
+      (対象は特定のごみステーション 2 か所のみ)。可燃ごみは週 2 回が当たり前と思われがちですが、
+      山あいの小さな集落では収集の形も変わります。
+    scope: "course:tamashima-2"
+    tags: [収集頻度, 地形と収集]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (玉島・船穂地区 ごみ収集日一覧表)
+  - id: chayamachi-jr-split
+    title: 茶屋町は JR の東西で収集日が違う
+    body: >-
+      茶屋町地区では、JR 瀬戸大橋線の東側と西側で収集日程が分かれています。
+      同じ町名でも線路のどちら側に住んでいるかで「ごみの日」が変わる例で、
+      市の一覧表にも「ＪＲ東」「ＪＲ西」と町内会名で区分が示されています。
+    tags: [町内の違い, 境界線]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (倉敷地区 ごみ収集日一覧表)
+  - id: two-kurosakis
+    title: 市内に「黒崎」が 2 つある
+    body: >-
+      倉敷市には中庄学区の黒崎と玉島の黒崎という、別の場所の同名地名があり、収集日程もそれぞれ別です。
+      服部も真備と玉島の 2 か所にあります。同名の町名は住所のうえでは区別されていますが、
+      ごみカレンダーを調べるときは自分の地区のほうを見る必要があります。
+    tags: [同名地名]
+    sources:
+      - municipalities/okayama/kurashiki/meta.yaml
+  - id: utouma-ruby
+    title: 市のカレンダーが難読地名にふりがなを振っている
+    body: >-
+      倉敷市の収集日一覧表は、宇頭間 (うとうま)・中庄 (なかんじょう)・上城 (うげんじょう) など
+      読みの難しい地名にふりがなを添えています。全部で 13 地名にルビがあり、
+      地元の呼び名が公式資料に残る形になっています。
+    tags: [地名の読み]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (各地区収集日一覧)

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tecolicom/japan-gomi-data/main/schema/facts.schema.json",
+  "title": "自治体別ごみ収集の読み物断片 (facts)",
+  "description": "利用者向け読み物コンテンツの素材。各 fact は出典必須の事実ベース断片で、アプリの「自分の街」表示や全国横断ページが消費する",
+  "type": "object",
+  "required": ["facts"],
+  "additionalProperties": false,
+  "properties": {
+    "facts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "body", "sources"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "自治体内で一意の slug"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60,
+            "description": "見出し (60字以内)"
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1,
+            "description": "本文 2〜5 文程度。事実と出典に基づく (演出的な誇張をしない)"
+          },
+          "scope": {
+            "type": "string",
+            "description": "表示文脈の絞り込み (任意): 'city' (既定) / 'course:<course>' / 'area:<name>'。コース・町ページで優先表示するために使う"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "description": "横断テーマの束ね用 (例: 合併の痕跡, 資源の中身, 年末年始, 地形と収集)"
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 },
+            "description": "出典 (URL または本リポジトリ内の meta.yaml 等への参照)。全 fact で必須"
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
 **収集日程**(コース×地区、収集ルール)と、それを解釈する**種別定義**を収録する。
 
 - ライセンス: CC BY 4.0(出典を明記すれば自由に利用可)
-- 収録範囲: 収集日程 + 種別定義。品目→種別の分別辞書は対象外。
+- 収録範囲: 収集日程 + 種別定義 + **facts (読み物断片)**。品目→種別の分別辞書は対象外。
 - 自治体キー: **handle**(lg.jp ドメインのラベルに準拠、全国一意。規則は下記)。
   ディレクトリは都道府県で束ねる: `municipalities/<都道府県>/<handle>/`
 
@@ -29,7 +29,8 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 - `docs/playbook.md` — **新自治体の収録手順書** (ソース探索の優先順・実装規約・照合とサンプリング・エージェント並行運用)
 - `schema/` — JSON Schema と全国共通の種別語彙(`categories.yaml`)。course の `areas` は `{name, yomi?, machiaza_id?, note?}` (1 area = 1 町名。yomi/町字ID はデジタル庁アドレス・ベース・レジストリ由来、割れ町は「町名（判別子）」で name 単独特定可。作り方は playbook §2)
 - `municipalities/<都道府県>/<handle>/` — `survey.yaml`(収集日データの**公開状況サーベイ**。調査済みなら未収録でも置く) /
-  `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml`
+  `meta.yaml`(自治体メタ + 更新に必要な情報源・運用ルール) / `taxonomy.yaml` / `<年度>/course-*.yaml` /
+  `facts.yaml`(任意。**利用者向け読み物断片** — その街のごみ収集の特徴を出典つき事実で 2〜4 文にまとめたもの。真備だけ分別が違う・可燃が月2回の集落がある 等。全国横断の比較統計は `build:stats` が `ics/stats.json` に機械導出する)
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
   - handle は leaf 名で全国一意。ツール(validate/build-ics/ダウンストリーム)は leaf を都市キーとして使う。
 - `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)

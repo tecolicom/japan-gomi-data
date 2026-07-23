@@ -8,7 +8,8 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "test": "node scripts/validate.mjs && node --test tools/_lib/lib.test.mjs",
-    "build:ics": "node scripts/build-ics.mjs"
+    "build:ics": "node scripts/build-ics.mjs && node scripts/build-stats.mjs",
+    "build:stats": "node scripts/build-stats.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
