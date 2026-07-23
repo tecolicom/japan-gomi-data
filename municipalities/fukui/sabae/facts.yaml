@@ -1,0 +1,50 @@
+# 鯖江市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: prefectural-opendata-source
+    title: 収集日データの出どころは福井県のオープンデータ
+    body: >-
+      鯖江市の収集日データは、市ではなく福井県が公開するオープンデータ CSV を出典にしています。
+      この CSV には曜日の情報しかなく、市公式の日付入りカレンダーと突き合わせた検証はできていません。
+      収録データのなかでも、県のオープンデータが元になっている珍しい成り立ちです。
+    tags: [出典データ, 未検証]
+    sources:
+      - https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
+      - municipalities/fukui/sabae/meta.yaml
+  - id: resources-one-day
+    title: 資源はすべて同じ「資源の日」に一括で出す
+    body: >-
+      鯖江市では、缶・びん・ペットボトル・古紙・古布・その他プラ・危険物といった資源を
+      すべて同じ資源収集日にまとめて出します。品目ごとに別の日を設けず、
+      週 1 回の資源の日に一括で出す方式です。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
+      - municipalities/fukui/sabae/2026/course-1.yaml
+  - id: burnable-vs-resource-holiday
+    title: 可燃は祝日も収集、資源は祝日は休み
+    body: >-
+      鯖江市では可燃ごみは祝日でも収集しますが、資源系の収集は祝日はお休みです。
+      同じ市内でも、品目によって祝日の扱いが分かれています。
+    tags: [祝日運用]
+    sources:
+      - municipalities/fukui/sabae/meta.yaml
+      - https://www.city.sabae.fukui.jp/kurashi_tetsuduki/gomi_risaikuru/kateigomi/index.html
+  - id: golden-week-special-collection
+    title: 連休で資源日が続けて祝日になると特別収集
+    body: >-
+      ゴールデンウィークなどで資源の収集日が 2 週続けて祝日にあたるコースには、特別収集日が設けられます。
+      2026 年度はコース 4 (水曜) に 5 月 6 日の特別収集があり、この日は資源も収集されます。
+    tags: [祝日運用]
+    sources:
+      - municipalities/fukui/sabae/meta.yaml
+      - https://www.ecoplaza-sabae.jp/_files/ugd/622687_af9f8871cc87414789446ad8caf412fc.pdf
+  - id: hard-to-read-place-names
+    title: 難読な町名の読みもデータに残る
+    body: >-
+      鯖江市のデータには、乙坂今北町 (おっさかこんぼくちょう)・二丁掛町 (にちょうがけちょう)・
+      冬島町 (ふじまちょう) など、読みの難しい町名の読み仮名がそのまま収録されています。
+      福井県のオープンデータに付いている読み仮名がもとになっています。
+    tags: [地名の読み]
+    sources:
+      - municipalities/fukui/sabae/2026/course-1.yaml
+      - https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv

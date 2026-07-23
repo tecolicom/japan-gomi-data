@@ -1,0 +1,41 @@
+# 杉並区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: resource-plastic-2026-start
+    title: 2026 年 4 月に資源プラスチックの収集が始まった
+    body: >-
+      杉並区では令和 8 年度 (2026 年 4 月) から「資源プラスチック」の収集が始まり、収集区分が 4 つになりました。
+      プラスチックを新たに資源として集める、制度の変わり目にあたる区分です。本データも令和 8 年度版に対応しています。
+    tags: [移行期, 分別体系]
+    sources:
+      - municipalities/tokyo/suginami/taxonomy.yaml
+      - municipalities/tokyo/suginami/meta.yaml
+      - https://www.city.suginami.tokyo.jp/kurashi/gomi/seisougomi/index.html
+  - id: two-same-day-groups
+    title: 資源は「3 品目同日」と「2 品目同日」の 2 グループ
+    body: >-
+      杉並区の資源収集は、「びん・かん・資源プラスチック」の 3 品目を同じ日に、
+      「古紙・ペットボトル」の 2 品目を別の日にまとめて出す、2 つの括りになっています。
+      品目ごとにばらばらの日ではなく、決まった組み合わせでまとめて出せるのが特徴です。
+    tags: [分別体系, 資源の中身]
+    sources:
+      - municipalities/tokyo/suginami/taxonomy.yaml
+      - https://www.city.suginami.tokyo.jp/kurashi/gomi/seisougomi/index.html
+  - id: holidays-obon-collected
+    title: 祝日もお盆も収集、休みは日曜と年末年始
+    body: >-
+      杉並区は祝日 (振替休日を含む) もお盆も通常どおり収集します。
+      休みは日曜と、12/31〜1/3 の年末年始だけです。
+      年末年始の休止期間が変わる年は、12 月に区の広報・区 HP で知らせがあります。
+    tags: [祝日運用, 年末年始]
+    sources:
+      - municipalities/tokyo/suginami/meta.yaml
+      - https://www.city.suginami.tokyo.jp/s104/715.html
+  - id: non-burnable-monthly-twice
+    title: 不燃ごみは月 2 回、「第 2・第 4」の曜日
+    body: >-
+      杉並区の不燃ごみは月 2 回で、決まった曜日のその月 2 回目と 4 回目 (たとえば水曜なら第 2・第 4 水曜) に収集します。
+      可燃ごみが週 2 回なのに対し、不燃はぐっと少ない頻度です。
+    tags: [収集頻度]
+    sources:
+      - municipalities/tokyo/suginami/meta.yaml
+      - https://www.city.suginami.tokyo.jp/kurashi/gomi/seisougomi/index.html

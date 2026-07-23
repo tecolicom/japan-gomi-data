@@ -1,0 +1,62 @@
+# 品川区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: shigen-weekly-six
+    title: 「資源」は 6 品目を週 1 回まとめてステーションで回収
+    body: >-
+      品川区の「資源」は、資源プラスチック・ペットボトル・びん・缶・古紙・蛍光灯電池類の 6 品目を
+      同じ曜日に「資源回収ステーション」でまとめて回収する区分で、週 1 回あります。
+      月 1〜2 回の自治体が多いなか資源が週 1 回とこまめで、品目ごとの個別の日はありません。
+    tags: [資源の中身, 分別体系, 収集頻度]
+    sources:
+      - https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-gomi/gomi-kateigomi/wastedayslist/index.html
+      - municipalities/tokyo/shinagawa/taxonomy.yaml
+  - id: holiday-collection
+    title: 祝日も収集、成人の日にもごみが出せる
+    body: >-
+      品川区は祝日や振替休日も通常どおり収集します。区のオープンデータでも全区分・全地区で「祝日の収集」が
+      ○ になっており、令和8年版のごみリサイクルカレンダーは「陶器・ガラス・金属ごみ 第2・4月曜」地区の
+      年始最初の収集日を成人の日 (1月12日) と記載しています。祝日を休みにする自治体とは逆の運用です。
+    tags: [祝日運用]
+    sources:
+      - municipalities/tokyo/shinagawa/meta.yaml
+      - http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+  - id: tokiga-kin
+    title: 月 2 回のごみは「陶器・ガラス・金属ごみ」という呼び名
+    body: >-
+      多くの自治体が「不燃ごみ」と呼ぶ月 2 回のごみを、品川区は「陶器・ガラス・金属ごみ」と
+      中身そのままの名前で呼びます。「第2・第4月曜」のように月に何回目の曜日かで収集日が決まり、
+      5 回目の曜日には収集がありません。
+    tags: [分別体系]
+    sources:
+      - https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-gomi/gomi-kateigomi/wastedayslist/index.html
+      - municipalities/tokyo/shinagawa/taxonomy.yaml
+  - id: ebara-area-split
+    title: 同じ丁目が「品川エリア」と「荏原エリア」に割れる
+    body: >-
+      西大井1丁目や西大井6丁目、西品川1丁目では、同じ丁目のなかが「品川エリア」と「荏原エリア」に
+      分かれ、番地によって収集日が変わります。たとえば西大井6丁目は 1 番だけが荏原エリアで、
+      それ以外は品川エリアです。旧品川区と旧荏原区が 1947 年に合併した区で、境目が住所の中に残っています。
+    tags: [町内の違い, 境界線, 合併の痕跡]
+    sources:
+      - municipalities/tokyo/shinagawa/meta.yaml
+      - https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-gomi/gomi-kateigomi/wastedayslist/index.html
+  - id: yashio-danchi-burnable
+    title: 八潮の大団地は燃やすごみが週 3 回
+    body: >-
+      埋立地に建つ八潮パークタウン (八潮5丁目) など一部の大規模住宅では、燃やすごみの収集が
+      週 3 回あります。区の大半は燃やすごみ週 2 回なので、世帯が集中する大団地だけ 1 回多い形です。
+    scope: "course:13"
+    tags: [収集頻度, 町内の違い]
+    sources:
+      - municipalities/tokyo/shinagawa/2026/course-13.yaml
+      - municipalities/tokyo/shinagawa/2026/course-25.yaml
+  - id: csv-rdf-open-data
+    title: 収集日データを CSV と RDF で二重公開している
+    body: >-
+      品川区は収集日データを、表計算で開ける CSV と、機械可読の RDF/XML の 2 つの形式で公開しています。
+      同じ内容を独立した 2 表現で出しているため互いに検証でき、「祝日の収集」「特別に収集する日/しない日」
+      といった運用ルールの列まで揃った、収集日オープンデータの優等生です。
+    tags: [オープンデータ]
+    sources:
+      - http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+      - http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.rdf

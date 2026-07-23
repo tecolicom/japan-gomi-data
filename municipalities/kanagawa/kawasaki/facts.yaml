@@ -1,0 +1,58 @@
+# 川崎市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: futsuu-gomi-name
+    title: 可燃ごみを「普通ごみ」と呼ぶ
+    body: >-
+      川崎市では、いわゆる燃やすごみにあたる区分を「普通ごみ」と呼びます。
+      収録している 19 市区町村のなかでこの呼び名を使うのは川崎市だけで、週 2 回収集されます。
+    tags: [分別体系]
+    sources:
+      - https://www.city.kawasaki.jp/300/page/0000012570.html
+      - municipalities/kanagawa/kawasaki/taxonomy.yaml
+      - ics/stats.json
+  - id: mixed-paper-name
+    title: 雑がみは「ミックスペーパー」
+    body: >-
+      川崎市では、新聞・雑誌・段ボール以外の雑がみを「ミックスペーパー」という区分で週 1 回集めます。
+      この呼び名も、収録都市のなかでは川崎市だけのものです。
+    tags: [分別体系]
+    sources:
+      - https://www.city.kawasaki.jp/300/page/0000012570.html
+      - municipalities/kanagawa/kawasaki/taxonomy.yaml
+      - ics/stats.json
+  - id: four-items-same-day
+    title: 缶・ペット・びん・乾電池を同じ日に
+    body: >-
+      川崎市では「空き缶・ペットボトル・空きびん・使用済み乾電池」の 4 品目を同じ日に週 1 回収集します。
+      乾電池のような有害ごみを、缶やびんと同じ資源の日に一緒に出せるのが特徴です。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - https://www.city.kawasaki.jp/300/page/0000012570.html
+      - municipalities/kanagawa/kawasaki/meta.yaml
+  - id: yearend-one-day-longer
+    title: お盆も収集、12 月 31 日まで収集する
+    body: >-
+      川崎市は祝日・大型連休・お盆も通常どおり収集し、休みは日曜と 1 月 1〜3 日だけです。
+      12 月 31 日も収集するため、年末に収集が続く期間が東京 23 区より 1 日長くなっています。
+    tags: [祝日運用, 年末年始]
+    sources:
+      - https://www.city.kawasaki.jp/templates/faq/300/0000125241.html
+      - municipalities/kanagawa/kawasaki/meta.yaml
+  - id: komono-kinzoku-with-oversized
+    title: 小物金属だけ月 2 回で粗大ごみと同じ日
+    body: >-
+      週 1 回で回る品目が多いなか、小物金属は第 2・第 4 のように月 2 回の収集です。
+      しかも申込制の粗大ごみと同じ日に設定されており、公式一覧でも小物金属と粗大ごみが同じ欄に載っています。
+    tags: [収集頻度, 資源の中身]
+    sources:
+      - https://www.city.kawasaki.jp/300/page/0000012570.html
+      - municipalities/kanagawa/kawasaki/meta.yaml
+  - id: crossing-ward-kajigaya
+    title: 梶ヶ谷は高津区と宮前区の両方にある
+    body: >-
+      川崎市には、高津区と宮前区の両方に「梶ヶ谷」という同じ町名があります。
+      区が違えば収集を担う生活環境事業所もコースも別になるため、
+      公式データでは「梶ヶ谷（高津区）」のように区名を添えて区別しています。
+    tags: [同名地名, 区割り]
+    sources:
+      - municipalities/kanagawa/kawasaki/meta.yaml

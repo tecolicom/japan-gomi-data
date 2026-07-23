@@ -1,0 +1,50 @@
+# 調布市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: holidays-obon-collected
+    title: 祝日もお盆も収集、休みは日曜と年末年始だけ
+    body: >-
+      調布市のごみ収集は、祝日 (振替休日を含む) もお盆の時期も通常どおり行われます。
+      収集が完全に休みになるのは日曜と、年末年始の 12/31・1/1 だけです。
+      祝日を休みにする自治体も多いなか、暦にほとんど左右されないのが特徴です。
+    tags: [祝日運用, 収集頻度]
+    sources:
+      - https://www.city.chofu.lg.jp/kurashi/gomirecycle/index.html
+      - municipalities/tokyo/chofu/meta.yaml
+  - id: summer-schedule-non-burnable
+    title: 燃やせない・有害ごみは夏だけ収集が減る
+    body: >-
+      燃やせないごみと有害ごみ (この 2 種は常に同じ日) は、ふだん 4 週に 2 回の収集ですが、
+      7〜9 月だけ 4 週に 1 回へ減ります。夏に品目ごとの頻度を組み替える「夏季ダイヤ」で、
+      市のカレンダーにも実際の日付で反映されています。
+    tags: [収集頻度]
+    sources:
+      - https://www.city.chofu.lg.jp/070030/p041249.html
+      - municipalities/tokyo/chofu/meta.yaml
+  - id: summer-schedule-pet-bottle
+    title: 逆にペットボトルは夏に収集が増える
+    body: >-
+      減る品目がある一方、ペットボトルは通常 4 週に 2 回の収集が、7〜9 月は 4 週に 3 回へ増えます。
+      飲み物の消費が増える夏に合わせた増便とみられ、同じ季節に「減る品目」と「増える品目」が共存します。
+    tags: [収集頻度, 資源の中身]
+    sources:
+      - https://www.city.chofu.lg.jp/070030/p041249.html
+      - municipalities/tokyo/chofu/meta.yaml
+  - id: shredder-paper-category
+    title: 「シュレッダー紙」がビンと同じ日の独立区分
+    body: >-
+      調布市には「シュレッダー紙」という区分があり、シュレッダーにかけた紙はビンと同じ日に週 1 回出します。
+      新聞・雑誌などの「古紙・古布」は別の日に週 1 回の収集で、同じ紙でも区分と収集日が分かれています。
+    tags: [分別体系, 資源の中身]
+    sources:
+      - municipalities/tokyo/chofu/taxonomy.yaml
+      - https://www.city.chofu.lg.jp/kurashi/gomirecycle/index.html
+  - id: yearend-shift-example
+    title: 年末は収集日が前倒しになる品目がある
+    body: >-
+      年末年始で完全に休みなのは 12/31 と 1/1 だけで、その前後は品目を絞って収集します。
+      たとえば第 1 地区では、ふだん木曜の容器包装プラスチックが、年末は 12/31 (木) を避けて
+      12/30 (水) へ前倒しされます。市のカレンダーに実際の日付で示されています。
+    tags: [年末年始]
+    sources:
+      - municipalities/tokyo/chofu/2026/course-1.yaml
+      - municipalities/tokyo/chofu/meta.yaml

@@ -1,0 +1,61 @@
+# 川口市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: calendar-year-schedule
+    title: 収集カレンダーが年度でなく暦年 (1〜12 月)
+    body: >-
+      多くの自治体が 4 月から翌 3 月の年度でごみカレンダーを組む中、川口市は
+      1 月から 12 月までの暦年でカレンダーを作ります。学校や役所の「年度」ではなく
+      ふつうの 1 年で日程が並ぶ、少し珍しい区切り方です。
+    tags: [カレンダーの形]
+    sources:
+      - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
+      - municipalities/saitama/kawaguchi/meta.yaml
+  - id: ippan-hazardous-same-day
+    title: 一般ごみと有害ごみが同じ日
+    body: >-
+      川口市では週 2 回の一般ごみ (可燃にあたる家庭ごみ) の日に、有害ごみも一緒に出します。
+      乾電池や蛍光管などの有害ごみに独立した収集日を設けず、一般ごみと同じ曜日にまとめる方式です。
+    tags: [分別体系, 収集頻度]
+    sources:
+      - municipalities/saitama/kawaguchi/2026/course-1.yaml
+      - municipalities/saitama/kawaguchi/taxonomy.yaml
+  - id: ippan-gomi-name
+    title: 家庭ごみを「一般ごみ」と呼ぶのは川口市だけ
+    body: >-
+      可燃にあたる家庭ごみの呼び名は自治体でさまざまで、本データに収録した各地の呼称は
+      「可燃ごみ」「普通ごみ」「燃やすごみ」「燃やせるごみ」「一般ごみ」の 5 通りに分かれます。
+      このうち「一般ごみ」と呼ぶのは、収録した中では川口市だけです。
+    tags: [分別体系]
+    sources:
+      - ics/stats.json
+      - municipalities/saitama/kawaguchi/taxonomy.yaml
+  - id: eighteen-numbered-districts
+    title: 18 地区に丸番号①〜⑱がふられている
+    body: >-
+      川口市は市内を 18 の地区に分け、公式カレンダーで①から⑱までの丸番号をふっています。
+      本データのコース番号もこの①〜⑱にそのまま 1 対 1 で対応していて、
+      自分の地区番号がそのまま収集日程の見出しになります。
+    tags: [町内の違い]
+    sources:
+      - municipalities/saitama/kawaguchi/meta.yaml
+      - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
+  - id: resource-pairs
+    title: 資源は 4 つのペアに組んで別々の日に
+    body: >-
+      川口市の資源は「びんと飲料かん」「金属類と紙類」「ペットボトルと繊維類」の 3 組を
+      それぞれ別の日に、月 2 回ずつ回収します。一般ごみと有害ごみの組も合わせると、
+      種類の違う品目を 2 つずつ組にして出す仕組みです。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - municipalities/saitama/kawaguchi/2026/course-1.yaml
+      - municipalities/saitama/kawaguchi/taxonomy.yaml
+  - id: yearend-separate-notice
+    title: 年末年始の日程は毎年 12 月に別途告知
+    body: >-
+      本体のカレンダーは 12 月 29〜31 日と 1 月 1〜2 日を空欄 (収集なし) にしていますが、
+      確定した年末年始の日程は市が毎年 12 月に「年末・年始ごみ収集のお知らせ」として別に告知します。
+      年末年始だけはカレンダーとは別の案内を確認する必要があります。
+    tags: [年末年始]
+    sources:
+      - https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---1.pdf
+      - municipalities/saitama/kawaguchi/meta.yaml

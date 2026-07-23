@@ -1,0 +1,73 @@
+# 横浜市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: weekly-only-no-monthly
+    title: 370 万人の街を週の曜日だけで回す
+    body: >-
+      横浜市のごみと資源は全 9 区分がすべて「週何回」で決まり、「第何週」のような
+      月ごとの規則を持つ品目がひとつもありません。燃やすごみが週 2 回、
+      缶・びん・ペットボトルとプラスチック資源が各週 1 回という 3 つの曜日スロットだけで、
+      370 万人・1,000 を超える町丁の収集が組まれています。
+    tags: [収集頻度, 分別体系]
+    sources:
+      - https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/
+      - municipalities/kanagawa/yokohama/meta.yaml
+  - id: holidays-and-obon-collected
+    title: 祝日もお盆も収集、休みは日曜と年末年始だけ
+    body: >-
+      横浜市は祝日や振替休日、大型連休やお盆も通常どおりごみを収集します。
+      収集が休みになるのは日曜日と年末年始だけで、「月曜が祝日でもいつもどおり出せる」のが基本です。
+      平日だけ収集する岡山市とは逆の組み合わせで、地域によって当たり前が違うところです。
+    tags: [祝日運用, 年末年始]
+    sources:
+      - https://www.city.yokohama.lg.jp/faq/kukyoku/shigen/shigen-gyomu/20211020165625087.html
+      - municipalities/kanagawa/yokohama/meta.yaml
+  - id: same-day-different-bags
+    title: 燃やすごみの日に電池もスプレー缶も一緒に出せる
+    body: >-
+      横浜市では、燃やすごみの収集日に、燃えないごみ・電池類・スプレー缶を別々の袋にして
+      同じ日に出せます。同じように、缶・びん・ペットボトルの日には小さな金属類も別袋で一緒に出せます。
+      品目ごとに別の収集日を待たなくてよい仕組みです。
+    tags: [分別体系, 収集頻度]
+    sources:
+      - https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/
+      - municipalities/kanagawa/yokohama/meta.yaml
+  - id: plastic-2025-product-included
+    title: 2025 年 4 月からプラスチックは容器も製品も一括
+    body: >-
+      横浜市では令和 7 (2025) 年 4 月から、プラスチック製容器包装に加えて
+      プラスチックだけでできた製品も「プラスチック資源」としてまとめて出せるようになり、
+      全 18 区で実施されています。歯ブラシやバケツ、ちりとりなど一番長い辺が 50cm 未満の
+      プラ製品が対象で、収集は週 1 回です。
+    tags: [資源の中身, 移行期]
+    sources:
+      - https://www.city.yokohama.lg.jp/faq/kukyoku/shigen/shigen-gyomu/plashigen08.html
+      - municipalities/kanagawa/yokohama/meta.yaml
+  - id: hiraku-nonpublic
+    title: 南区平楽だけ収集曜日が公表されていない
+    body: >-
+      横浜市の公式一覧で、南区の平楽だけは収集曜日が書かれておらず
+      「南事務所にお問合せください。」とだけ案内されています。
+      市内のほかの全町丁は曜日が一覧化されているなかで、ここだけ個別の問い合わせが必要な区域です。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/
+      - municipalities/kanagawa/yokohama/meta.yaml
+  - id: kamigo-two-patterns
+    title: 同じ「上郷町 1〜199 の一部」が 2 つの収集日に分かれる
+    body: >-
+      栄区の「上郷町 1〜199 の一部」は、公式一覧に同じ表記のまま 2 つの収集パターンで掲載されており、
+      住所の表記だけではどちらの曜日になるか判別できません。
+      実際にどちらで出すかは、集積場所に貼られたシールで確認する運用になっています。
+    scope: "area:上郷町1〜199の一部"
+    tags: [町内の違い, 境界線]
+    sources:
+      - municipalities/kanagawa/yokohama/meta.yaml
+  - id: crossing-ward-same-name
+    title: 区をまたいで同じ町名が 2 つある
+    body: >-
+      横浜市には、中区と戸塚区の両方にある「吉田町」、旭区と保土ケ谷区の両方にある「川島町」のように、
+      別の区に同じ町名が存在する例があります。区が違えば収集コースも別なので、
+      公式データでも「吉田町（中区）」のように区名を添えて区別しています。
+    tags: [同名地名, 区割り]
+    sources:
+      - municipalities/kanagawa/yokohama/meta.yaml

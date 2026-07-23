@@ -1,0 +1,42 @@
+# 上富良野町の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: kitchen-waste-separated
+    title: 生ごみを独立して分別する
+    body: >-
+      上富良野町は、燃やせるごみとは別に「生ごみ」を独立した区分として収集します。
+      この生ごみの分別は、japan-gomi-data に収録された 19 市区町村のなかで上富良野町だけに見られる分け方です。
+    tags: [分別体系, 資源の中身]
+    sources:
+      - municipalities/hokkaido/kamifurano-town/taxonomy.yaml
+      - ics/stats.json
+      - https://www.town.kamifurano.hokkaido.jp/index.php?id=333
+  - id: kitchen-more-than-burnable
+    title: 市街地では生ごみのほうを多く集める
+    body: >-
+      市街地の 3 コースでは、生ごみが週 2 回、燃やせるごみが週 1 回の収集です。
+      多くの自治体では燃やすごみが最も高い頻度で集められますが、
+      上富良野町の市街地では生ごみのほうが収集回数が多くなっています。
+    scope: "course:aka"
+    tags: [収集頻度]
+    sources:
+      - municipalities/hokkaido/kamifurano-town/2026/course-aka.yaml
+      - ics/stats.json
+  - id: urban-rural-different-system
+    title: 市街地と農村部でごみの分け方が違う
+    body: >-
+      上富良野町は市街地 3 コースと農村 2 コースで収集体系が異なります。
+      農村コースには生ごみの分別が無く、缶とびんを同じ日にまとめて収集するなど、
+      同じ町でも住む地域によって分け方が変わります。
+    tags: [分別体系, 町内の違い]
+    sources:
+      - municipalities/hokkaido/kamifurano-town/2026/course-noson-higashi.yaml
+      - municipalities/hokkaido/kamifurano-town/2026/course-aka.yaml
+  - id: oversized-scheduled-days
+    title: 粗大ごみにも月 2 回の決まった収集日がある
+    body: >-
+      上富良野町の収集カレンダーには、粗大ごみの収集日が月 2 回ほど定期的に組み込まれています。
+      横浜市や川崎市では粗大ごみが事前申込制であるのに対し、決まった日付に合わせて出せる形になっています。
+    tags: [収集頻度]
+    sources:
+      - municipalities/hokkaido/kamifurano-town/2026/course-aka.yaml
+      - municipalities/kanagawa/yokohama/meta.yaml

@@ -1,0 +1,60 @@
+# 世田谷区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: largest-ward-37-districts
+    title: 23 区最多の人口を 37 の「対象地区」で回している
+    body: >-
+      世田谷区は人口が約 93 万人と 23 区で最も多く、収集は 37 の「対象地区」に整理されています。
+      この番号は区が町丁目別に配る「資源とごみの収集カレンダー」の対象地区 1〜37 とそのまま 1 対 1 に対応し、
+      自分の地区番号のカレンダーを見れば収集日が分かるようになっています。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.setagaya.lg.jp/02241/27859.html
+      - municipalities/tokyo/setagaya/meta.yaml
+  - id: schedule-revision-2026
+    title: 令和8年11月に収集曜日が全面的に変わる予定
+    body: >-
+      世田谷区は、令和8年12月から令和9年12月までの収集曜日を令和8年11月に更新すると告知しています。
+      地区によっては長年の「ごみの日」が変わる可能性があり、区は新しい町丁目別カレンダーで確認するよう
+      呼びかけています。制度の変わり目にあたる時期です。
+    tags: [移行期]
+    sources:
+      - https://www.city.setagaya.lg.jp/02241/27859.html
+      - municipalities/tokyo/setagaya/meta.yaml
+  - id: shigen-weekly-pet-separate
+    title: 「資源」は週 1 回、ペットボトルだけは別で月 2 回
+    body: >-
+      世田谷区の「資源」は、古紙 (新聞・雑誌・紙パック・段ボール)・ガラスびん・缶を同じ日にまとめて出す
+      週 1 回の区分です。いっぽうペットボトルは資源には含まれず、別枠の月 2 回で回収されます。
+      同じ「資源っぽいもの」でも、ペットボトルだけ出す日が違うので注意が要ります。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - https://www.city.setagaya.lg.jp/documents/416/27-08-26.csv
+      - municipalities/tokyo/setagaya/taxonomy.yaml
+  - id: yearend-30th-collected
+    title: 12 月 30 日まで通常収集、休みは大みそかから
+    body: >-
+      令和8年版の収集カレンダーで「収集はありません」と明示されている年末の休止日は 12月31日だけで、
+      12月30日までは通常どおり収集があります。地区によっては 12月30日 (水曜) に可燃ごみの収集があり、
+      年内ぎりぎりまでごみを出せる形です。
+    tags: [年末年始]
+    sources:
+      - https://www.city.setagaya.lg.jp/02241/27859.html
+      - municipalities/tokyo/setagaya/meta.yaml
+  - id: morning-seven-stations
+    title: 三軒茶屋・下北沢の一部は朝 7 時までに出す
+    body: >-
+      世田谷区のごみ出しは朝 8 時までが原則ですが、三軒茶屋駅・下北沢駅周辺の一部地域だけは
+      排出時刻が朝 7 時までと 1 時間早くなっています。収集日そのものは変わりませんが、
+      繁華街では早い時間に集める事情がうかがえます。
+    tags: [排出時刻, 町内の違い]
+    sources:
+      - municipalities/tokyo/setagaya/meta.yaml
+  - id: large-housing-separate
+    title: 大規模団地 12 件は町丁目とは別の日程
+    body: >-
+      東京テラスや希望ヶ丘団地、都営アパートなどの大規模集合住宅 12 件 (対象地区 38〜41) は、
+      町丁目ごとの収集日とは別に個別の日程が組まれています。区のオープンデータの町丁目一覧には
+      現れず、こうした団地は建物単位で収集日が決まっています。
+    tags: [町内の違い]
+    sources:
+      - municipalities/tokyo/setagaya/meta.yaml

@@ -1,0 +1,50 @@
+# 台東区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: plastic-same-day-as-shigen
+    title: プラスチックは別区分なのに収集日は「資源」と同じ
+    body: >-
+      台東区は令和7年4月からプラスチックを区内全域で分別回収していますが、その収集曜日は「資源」の日と
+      同じに設定されています。ただし出す場所は資源の集積所ではなく、燃やすごみ・燃やさないごみと同じ場所です。
+      新しい区分なのに既存の資源の日に合わせた、移行しやすいしくみになっています。
+    tags: [移行期, 分別体系]
+    sources:
+      - https://www.city.taito.lg.jp/kurashi/gomi/wakekata/index.html
+      - municipalities/tokyo/taito/meta.yaml
+  - id: seiri-bango-1-to-12
+    title: 収集コースは区の整理番号 1〜12 とぴったり対応
+    body: >-
+      台東区の収集は 12 のコースに分かれ、その番号は区が配る令和8年度「資源とごみ出しカレンダー」の
+      地域別整理番号 1〜12 とそのまま 1 対 1 に対応します。浅草・雷門・蔵前・入谷といった町ごとに、
+      どの整理番号のカレンダーを見ればよいかが決まっています。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.taito.lg.jp/kurashi/gomi/keikaku/kakusyupanfuretto/R8gomidasikarennda-.html
+      - municipalities/tokyo/taito/meta.yaml
+  - id: shigen-four-items
+    title: 「資源」は古紙・びん・缶・ペットボトルを同じ日に回収
+    body: >-
+      台東区の「資源」は、古紙類 (新聞・雑誌雑がみ・段ボール・紙パック) とびん・缶・ペットボトルを
+      同じ日に集積所で回収する総称です。4 品目に個別の日はなく、資源の日にまとめて出します。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - https://www.city.taito.lg.jp/kurashi/gomi/wakekata/gomiinfo/shushubi/shushubi_zentai.html
+      - municipalities/tokyo/taito/taxonomy.yaml
+  - id: futekabutsu-newyear-extra
+    title: 燃やさないごみは月 2 回、正月明けに臨時収集がある
+    body: >-
+      燃やさないごみは月 2 回で、「その月の1回目・3回目」または「2回目・4回目」の曜日に収集されます。
+      年末年始で収集日が飛ぶ地域には、年明けに臨時の収集日が設けられることがあり、
+      令和8年度のごみ出しカレンダーにも「〇は燃やさないごみ臨時収集日」という凡例があります。
+    tags: [年末年始, 収集頻度]
+    sources:
+      - https://www.city.taito.lg.jp/kurashi/gomi/keikaku/kakusyupanfuretto/R8gomidasikarennda-.html
+      - municipalities/tokyo/taito/meta.yaml
+  - id: lithium-battery-2026
+    title: 令和8年7月から充電式電池を燃やさないごみの日に回収
+    body: >-
+      台東区は令和8年7月から、リチウムイオン電池などの小型充電式電池を燃やさないごみの日に回収するように
+      なりました。発火事故を防ぐための変更で、収集する曜日そのものは変わっていません。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - https://www.city.taito.lg.jp/kurashi/gomi/wakekata/index.html
+      - municipalities/tokyo/taito/meta.yaml

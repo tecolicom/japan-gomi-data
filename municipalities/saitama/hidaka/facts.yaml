@@ -1,0 +1,49 @@
+# 日高市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: hazardous-four-times
+    title: 有害ごみは 1 年に 4 回だけ
+    body: >-
+      日高市の有害ごみ (蛍光管・乾電池・体温計など) は、年 4 回しか収集がありません。
+      おおむね四半期に 1 度 (5 月・8 月・11 月・2 月ごろ) のペースで、全 20 コース共通です。
+      出しそびれると次は 3 か月後になる、かなり低頻度の品目です。
+    tags: [収集頻度]
+    sources:
+      - municipalities/saitama/hidaka/2026/course-1.yaml
+      - https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
+  - id: oversized-metal-bimonthly
+    title: 粗大ごみと金属ごみは隔月で年 6 回
+    body: >-
+      日高市では粗大ごみと金属ごみが隔月収集で、1 年に 6 回だけです。
+      同じ隔月でも、収集が偶数月に来るコースと奇数月に来るコースがあり、
+      地区によってどの月に回ってくるかが分かれています。
+    tags: [収集頻度]
+    sources:
+      - municipalities/saitama/hidaka/2026/course-1.yaml
+      - municipalities/saitama/hidaka/2026/course-5.yaml
+  - id: bin-can-summer-boost
+    title: びん・缶は夏だけ収集が増える
+    body: >-
+      日高市のびん・缶は月 1 回が基本ですが、7〜9 月だけは月 2 回に増えます。
+      飲みものの容器が増える夏場に合わせた季節限定の増便で、
+      同じ品目でも夏と冬で収集回数が変わります。
+    tags: [収集頻度, 資源の中身]
+    sources:
+      - municipalities/saitama/hidaka/2026/course-1.yaml
+  - id: pet-more-than-bin-can
+    title: ペットボトルはびん・缶より収集回数が多い
+    body: >-
+      同じ資源でも、日高市ではペットボトルがおおむね隔週 (年 24 回前後) と多いのに対し、
+      びん・缶は月 1 回 (夏季のみ月 2 回) にとどまります。
+      資源の中でも品目によって収集回数の差が大きいのが特徴です。
+    tags: [資源の中身, 収集頻度]
+    sources:
+      - municipalities/saitama/hidaka/2026/course-1.yaml
+  - id: one-sheet-timetable
+    title: 全 20 コースの年間日程が 1 枚の表に
+    body: >-
+      日高市の収集日程は、全 20 コースの 1 年分をまとめた年間日程表 PDF が全戸に配られる形です。
+      町別に何十枚もカレンダーを分ける市もある中で、市全体を 1 枚の表で見渡せます。
+    tags: [データ公開]
+    sources:
+      - https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
+      - municipalities/saitama/hidaka/survey.yaml

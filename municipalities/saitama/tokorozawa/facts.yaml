@@ -1,0 +1,49 @@
+# 所沢市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: eighty-six-town-pdfs
+    title: 町別の収集カレンダーが 86 枚
+    body: >-
+      所沢市は町ごとに収集カレンダーの PDF を用意しており、頭文字別の 8 ページに
+      全 86 枚が並びます。日程が同じ町をまとめると 38 のコースになりますが、
+      案内は町名の数だけ細かく分かれている形です。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/index.html
+      - municipalities/saitama/tokorozawa/meta.yaml
+  - id: bin-kan-spray-same-day
+    title: びん・かん・スプレー缶を同じ日に
+    body: >-
+      所沢市の資源の日は、びんと「かん」を同じ日に回収し、スプレー缶もこの「かん」に含めて
+      一緒に出します。分けて出す市もある中で、びん・かん・スプレー缶が 1 日にまとまるのが特徴です。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/taxonomy.yaml
+  - id: kaden-furugi-same-day
+    title: 小型家電と古着・古布を同じ日に
+    body: >-
+      月 1 回の資源の日には、小型家電製品と古着・古布をまとめて回収します。
+      性質の違う品目ですが、所沢市では同じ日に出す組み合わせになっています。
+    tags: [資源の中身]
+    sources:
+      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/taxonomy.yaml
+  - id: january-schedule-shift
+    title: 1 月だけ日程が例月とずれる
+    body: >-
+      元日の休みの影響で、所沢市は 1 月だけ品目のサイクルが 1 週ほどずれます。
+      カレンダーにも「1 月は収集日程が例月と異なります」と注記があり、
+      1 月分はこの表の実日付どおりに収集されます。
+    tags: [年末年始]
+    sources:
+      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/meta.yaml
+  - id: holiday-obon-normal
+    title: 祝日もお盆も通常どおり収集
+    body: >-
+      所沢市は祝日・振替休日もお盆も、休まず通常どおり収集します。
+      5 月 5 日や 11 月 3 日などの祝日も全町で収集が確認でき、規則からずれるのは年末年始だけです。
+    tags: [祝日運用]
+    sources:
+      - municipalities/saitama/tokorozawa/meta.yaml
+      - municipalities/saitama/tokorozawa/2026/course-1.yaml

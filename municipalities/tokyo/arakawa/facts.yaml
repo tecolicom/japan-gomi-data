@@ -1,0 +1,51 @@
+# 荒川区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: banchi-level-csv
+    title: 収集日データが番地・号の単位まで刻まれている
+    body: >-
+      荒川区が配る収集日 CSV は「地区・丁目・番地/号」単位で 2,250 行もあり、番地レベルまで収集日が分かる
+      とても細かいデータです。マンション 1 棟だけを対象にした「荒川7丁目9番12号」のような日程まで
+      収録されていて、同じ丁目でも番地が違えば収集日が変わることがあります。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+      - municipalities/tokyo/arakawa/2026/course-48.yaml
+  - id: yearend-one-day-gap
+    title: 年末年始の休みがごみと資源で 1 日ずれる
+    body: >-
+      荒川区の年末年始は、燃やすごみ・燃やさないごみ・プラスチックが 1月1日〜1月3日の 3 日間、
+      びん・缶・古紙・ペットボトル・古布などの資源が 12月31日〜1月3日の 4 日間休みになります。
+      資源だけ大みそかから休みに入るため、品目によって年内最後に出せる日が 1 日ずれます。
+    tags: [年末年始, 資源の中身]
+    sources:
+      - https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+      - https://www.city.arakawa.tokyo.jp/a025/recycle/shuushuubi/syusyubi.html
+  - id: large-housing-30
+    title: 大規模集合住宅 30 物件は別表で管理
+    body: >-
+      荒川区では、大規模な集合住宅 30 物件が番地の一覧とは別の表で管理され、建物ごとに収集日が決まっています。
+      戸数の多いマンションはごみの量も出方も違うため、周りの番地とは別枠で日程が組まれています。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.arakawa.tokyo.jp/a025/recycle/shuushuubi/syusyubi.html
+      - municipalities/tokyo/arakawa/meta.yaml
+  - id: bin-kan-koshi-one-column
+    title: びん・缶・古紙は同じ日、ペットボトルは食品トレイと同じ枠
+    body: >-
+      荒川区の資源は、びん・缶・古紙を同じ日に回収し、ペットボトルは発泡スチロール製の食品用トレイと
+      同じ日に集めます。古着・古布も集積所で資源として回収されます。品目のまとめ方に区ごとの個性が出るところで、
+      びん・缶・古紙をひとまとめにするのが荒川区のやり方です。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+      - municipalities/tokyo/arakawa/taxonomy.yaml
+  - id: holiday-collection
+    title: 祝日も通常収集、ただし時間が早まることがある
+    body: >-
+      荒川区は祝日 (振替休日を含む) も通常どおり収集します。区は「収集・回収日が祝日にあたる場合は、
+      道路事情により収集・回収時間が早まる場合があります」と案内しており、休みは日曜と年末年始だけです。
+      祝日でも普段の時間より早く来ることがあるので、早めに出しておくと安心です。
+    tags: [祝日運用]
+    sources:
+      - https://www.city.arakawa.tokyo.jp/a025/recycle/shuushuubi/syusyubi.html
+      - municipalities/tokyo/arakawa/meta.yaml

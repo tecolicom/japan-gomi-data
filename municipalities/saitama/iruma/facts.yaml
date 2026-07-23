@@ -1,0 +1,40 @@
+# 入間市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: opendata-dated-csv
+    title: 県のオープンデータに日付入りの収集カレンダー
+    body: >-
+      入間市の収集日程は、埼玉県オープンデータポータルに CSV で公開されており、
+      2026 年度の全収集日が実日付で並んでいます。多くの市が PDF のカレンダーで日程を配る中、
+      機械で読めるデータとして日付ごと公開している、データ公開の進んだ例です。
+    tags: [データ公開]
+    sources:
+      - https://opendata.pref.saitama.lg.jp/resource_download/1494
+      - municipalities/saitama/iruma/meta.yaml
+  - id: four-items-same-day
+    title: ビン・缶・ペットボトル・有害ごみを同じ日に
+    body: >-
+      入間市では隔週の資源の日に、ビン・缶・ペットボトル・有害ごみの 4 品目を
+      まとめて出します。品目ごとに別の日を設けず、1 日に 4 種類を一度に回収する方式です。
+    tags: [資源の中身, 分別体系]
+    sources:
+      - municipalities/saitama/iruma/2026/course-1.yaml
+      - https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf
+  - id: burnable-three-times
+    title: 可燃ごみは週 3 回
+    body: >-
+      入間市の可燃ごみは週 3 回収集され、地区により月・水・金か、火・木・土のどちらかです。
+      週 2 回の市が多い中で回数が多く、生ごみをためこみにくい頻度になっています。
+    tags: [収集頻度]
+    sources:
+      - municipalities/saitama/iruma/2026/course-1.yaml
+      - municipalities/saitama/iruma/2026/course-7.yaml
+  - id: yearend-as-missing-data
+    title: 年末年始の休みは「データの空き」で表す
+    body: >-
+      日付入りの CSV で日程を公開しているため、入間市では年末年始の休みが
+      「その日のデータが無い」という形で表現されます。地区により 12 月 29 日〜1 月 2 日あたりが
+      収集なしで、市の分け出し表 PDF にも休止期間が明記されています。
+    tags: [年末年始, データ公開]
+    sources:
+      - municipalities/saitama/iruma/meta.yaml
+      - municipalities/saitama/iruma/2026/course-1.yaml

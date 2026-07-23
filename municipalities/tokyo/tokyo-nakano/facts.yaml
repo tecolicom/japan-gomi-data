@@ -1,0 +1,50 @@
+# 中野区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: daily-collection-area
+    title: 駅前には毎日収集の地域がある
+    body: >-
+      中野区の中野二・三・五丁目には、駅前の商業地区を対象にした「毎日収集地域」があります。
+      曜日制の一般の地域とは別扱いで、区公式の収集曜日一覧からも除外されています。
+      ごみの多い繁華街ならではの運用です。
+    tags: [毎日収集, 収集頻度]
+    sources:
+      - municipalities/tokyo/tokyo-nakano/meta.yaml
+      - https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/syusyuyobi/nakanoku.html
+  - id: touki-glass-metal
+    title: 不燃ごみの区分名は「陶器・ガラス・金属ごみ」
+    body: >-
+      中野区では燃やさないごみを「陶器・ガラス・金属ごみ」と呼びます。
+      何を出す日なのかが名前でわかる具体的な区分名で、同じ呼び方をするのは本データの範囲では品川区くらいです。
+    tags: [分別体系]
+    sources:
+      - municipalities/tokyo/tokyo-nakano/taxonomy.yaml
+      - ics/stats.json
+  - id: paper-cloth-group-collection
+    title: 古紙・古着・古布は区の収集ではなく集団回収
+    body: >-
+      中野区では、古紙 (新聞・雑誌・雑がみ・段ボール) や古着・古布は区が収集せず、
+      町会などの集団回収に委ねられています。回収日は団体ごとに異なるため、
+      住んでいる地域の集団回収の予定を確認する必要があります。
+    tags: [分別体系, 資源の中身]
+    sources:
+      - municipalities/tokyo/tokyo-nakano/meta.yaml
+      - https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
+  - id: bin-can-pet-same-day
+    title: びん・缶・ペットボトルは同じ日に収集
+    body: >-
+      中野区ではびん・缶・ペットボトルの 3 品目を同じ日にまとめて収集します。
+      「びん缶ペット」とひとまとめに案内されることもあり、資源を出す日を覚えやすい区分です。
+    tags: [分別体系, 資源の中身]
+    sources:
+      - municipalities/tokyo/tokyo-nakano/taxonomy.yaml
+      - https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
+  - id: holidays-collected
+    title: 祝日も収集、休みは日曜と年末年始だけ
+    body: >-
+      中野区は祝日 (振替休日を含む) も通常どおり収集します。
+      休みは日曜と、12/31〜1/3 の年末年始だけです。
+      年末年始の確定した日程は、毎年 12 月ごろに区が知らせます。
+    tags: [祝日運用, 年末年始]
+    sources:
+      - municipalities/tokyo/tokyo-nakano/meta.yaml
+      - https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/syusyuyobi/index.html

@@ -1,0 +1,38 @@
+# 練馬区の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: fifty-seven-courses
+    title: 区内を 57 の収集コースに分けている
+    body: >-
+      練馬区は区内を 57 の収集コースに分けており、本リポジトリに収録した東京 23 区の中でも多いほうです。
+      同じ区内でも町丁目によって収集曜日が細かく異なるため、引っ越すと「ごみの日」が変わることがあります。
+    tags: [町内の違い, 収集頻度]
+    sources:
+      - ics/stats.json
+      - https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+  - id: yearend-by-postal-code
+    title: 年末年始の収集日は郵便番号で変わることがある
+    body: >-
+      練馬区の年末年始は 12/31〜1/3 が休みで、1/4 から通常運用に戻ります (振替収集はありません)。
+      最終日や再開日の細かい日取りは、その年や郵便番号 (176〜179) によって変わることがあり、
+      詳しくは 12 月に出る区の案内で確認します。
+    tags: [年末年始, 境界線]
+    sources:
+      - municipalities/tokyo/nerima/meta.yaml
+      - https://www.city.nerima.tokyo.jp/kusei/koho/oshirase/nenmatsu_nenshi.html
+  - id: holidays-collected
+    title: 祝日も通常どおり収集する
+    body: >-
+      練馬区は祝日でも通常どおりごみ収集を行います (年末年始を除く)。
+      祝日を休みにする自治体もあるなか、暦に関わらず収集がある点は覚えておくと便利です。
+    tags: [祝日運用]
+    sources:
+      - municipalities/tokyo/nerima/meta.yaml
+      - https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/index.html
+  - id: same-day-groupings
+    title: プラと古紙が同じ日、びんと缶が同じ日
+    body: >-
+      練馬区では容器包装プラスチックと古紙が同じ日に、びんと缶が同じ日に収集されます。
+      それぞれ別の区分ですが収集日をそろえているため、資源を出す日をまとめて覚えられます。
+    tags: [分別体系]
+    sources:
+      - municipalities/tokyo/nerima/meta.yaml
