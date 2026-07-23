@@ -1,18 +1,52 @@
 metadata:
   city: kurashiki
   course: kojima-8
-  course_name_ja: "児島地区: 味野4丁目，5丁目・味野6丁目3番～5番，6番の一部・味野山田町・菰池3丁目・赤崎1丁目，3丁目・赤崎2丁目8番，9番，10番・通生1276～1432"
+  course_name_ja: "児島地区: 味野／味野山田町／菰池／赤崎／通生"
   areas:
-    - name: 味野4丁目，5丁目・味野6丁目3番～5番，6番の一部・味野山田町・菰池3丁目・赤崎1丁目，3丁目・赤崎2丁目8番，9番，10番・通生1276～1432
+    - name: 味野4丁目
+      yomi: あじの
+      machiaza_id: 332020-0040004
       note: 味野4丁目，5丁目・菰池3丁目・赤崎
+    - name: 味野5丁目
+      yomi: あじの
+      machiaza_id: 332020-0040005
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎
+    - name: 味野6丁目
+      yomi: あじの
+      machiaza_id: 332020-0040006
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎、3番～5番、6番の一部
+    - name: 味野山田町
+      yomi: あじのやまだちょう
+      machiaza_id: 332020-0044000
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎
+    - name: 菰池3丁目
+      yomi: こもいけ
+      machiaza_id: 332020-0067003
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎
+    - name: 赤崎1丁目
+      yomi: あかさき
+      machiaza_id: 332020-0038001
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎
+    - name: 赤崎3丁目
+      yomi: あかさき
+      machiaza_id: 332020-0038003
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎
+    - name: 赤崎2丁目
+      yomi: あかさき
+      machiaza_id: 332020-0038002
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎、8番、9番、10番
+    - name: 通生
+      yomi: かよう
+      machiaza_id: 332020-0052000
+      note: 味野4丁目，5丁目・菰池3丁目・赤崎、1276～1432
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kojima.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly

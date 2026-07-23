@@ -1,17 +1,52 @@
 metadata:
   city: kurashiki
   course: mizushima-9
-  course_name_ja: "水島地区: 海岸通り2丁目，福崎町，東西千鳥町，東西常盤町，東西栄町，東西弥生町，東西・寿町"
+  course_name_ja: "水島地区: 海岸通り／福崎町／東千鳥町／西千鳥町／東常盤町／西常盤町／東栄町／西栄町／東弥生町／西弥生町／東寿町／西寿町"
   areas:
-    - name: 海岸通り2丁目，福崎町，東西千鳥町，東西常盤町，東西栄町，東西弥生町，東西・寿町
+    - name: 海岸通り2丁目
+      yomi: かいがんどおり
+      machiaza_id: 332020-0191002
+    - name: 福崎町
+      yomi: ふくさきちょう
+      machiaza_id: 332020-0212000
+    - name: 東千鳥町
+      yomi: ひがしちどりちょう
+      machiaza_id: 332020-0209000
+    - name: 西千鳥町
+      yomi: にしちどりちょう
+      machiaza_id: 332020-0202000
+    - name: 東常盤町
+      yomi: ひがしときわちょう
+      machiaza_id: 332020-0210000
+    - name: 西常盤町
+      yomi: にしときわちょう
+      machiaza_id: 332020-0204000
+    - name: 東栄町
+      yomi: ひがしさかえまち
+      machiaza_id: 332020-0208000
+    - name: 西栄町
+      yomi: にしさかえまち
+      machiaza_id: 332020-0201000
+    - name: 東弥生町
+      yomi: ひがしやよいちょう
+      machiaza_id: 332020-0211000
+    - name: 西弥生町
+      yomi: にしやよいちょう
+      machiaza_id: 332020-0205000
+    - name: 東寿町
+      yomi: ひがしことぶきちょう
+      machiaza_id: 332020-0207000
+    - name: 西寿町
+      yomi: にしことぶきちょう
+      machiaza_id: 332020-0200000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/mizushima.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly

@@ -1,17 +1,52 @@
 metadata:
   city: kurashiki
   course: mizushima-8
-  course_name_ja: "水島地区: 高砂町，青葉町，南北幸町，南北春日町，南北緑町，南北瑞穂町，東川町・連島142番地"
+  course_name_ja: "水島地区: 高砂町／青葉町／南幸町／北幸町／南春日町／北春日町／南緑町／北緑町／南瑞穂町／北瑞穂町／東川町／連島"
   areas:
-    - name: 高砂町，青葉町，南北幸町，南北春日町，南北緑町，南北瑞穂町，東川町・連島142番地
+    - name: 高砂町
+      yomi: たかさごちょう
+      machiaza_id: 332020-0198000
+    - name: 青葉町
+      yomi: あおばちょう
+      machiaza_id: 332020-0190000
+    - name: 南幸町
+      yomi: みなみさいわいちょう
+      machiaza_id: 332020-0215000
+    - name: 北幸町
+      yomi: きたさいわいちょう
+      machiaza_id: 332020-0195000
+    - name: 南春日町
+      yomi: みなみかすがちょう
+      machiaza_id: 332020-0213000
+    - name: 北春日町
+      yomi: きたかすがちょう
+      machiaza_id: 332020-0193000
+    - name: 南緑町
+      yomi: みなみみどりまち
+      machiaza_id: 332020-0217000
+    - name: 北緑町
+      yomi: きたみどりまち
+      machiaza_id: 332020-0197000
+    - name: 南瑞穂町
+      yomi: みなみみずほちょう
+      machiaza_id: 332020-0216000
+    - name: 北瑞穂町
+      yomi: きたみずほちょう
+      machiaza_id: 332020-0196000
+    - name: 東川町
+      yomi: ひがしかわちょう
+      machiaza_id: 332020-0206000
+    - name: 連島
+      yomi: つらじま
+      note: 142番地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/mizushima.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly

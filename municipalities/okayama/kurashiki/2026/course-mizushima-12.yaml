@@ -1,17 +1,75 @@
 metadata:
   city: kurashiki
   course: mizushima-12
-  course_name_ja: "水島地区: 南畝1～7丁目，中畝1,6丁目，松江1～4丁目・東塚1丁目（国道430号線以南），東塚7丁目（国道430号線以南）・呼松1～3丁目，広江1丁目"
+  course_name_ja: "水島地区: 南畝／中畝／松江／東塚／呼松／広江"
   areas:
-    - name: 南畝1～7丁目，中畝1,6丁目，松江1～4丁目・東塚1丁目（国道430号線以南），東塚7丁目（国道430号線以南）・呼松1～3丁目，広江1丁目
+    - name: 南畝1丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220001
+    - name: 南畝2丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220002
+    - name: 南畝3丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220003
+    - name: 南畝4丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220004
+    - name: 南畝5丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220005
+    - name: 南畝6丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220006
+    - name: 南畝7丁目
+      yomi: みなみせ
+      machiaza_id: 332020-0220007
+    - name: 中畝1丁目
+      yomi: なかせ
+      machiaza_id: 332020-0128001
+    - name: 中畝6丁目
+      yomi: なかせ
+      machiaza_id: 332020-0128006
+    - name: 松江1丁目
+      yomi: まつえ
+      machiaza_id: 332020-0175001
+    - name: 松江2丁目
+      yomi: まつえ
+      machiaza_id: 332020-0175002
+    - name: 松江3丁目
+      yomi: まつえ
+      machiaza_id: 332020-0175003
+    - name: 松江4丁目
+      yomi: まつえ
+      machiaza_id: 332020-0175004
+    - name: 東塚1丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147001
+      note: 国道430号線以南
+    - name: 東塚7丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147007
+      note: 国道430号線以南
+    - name: 呼松1丁目
+      yomi: よびまつ
+      machiaza_id: 332020-0229001
+    - name: 呼松2丁目
+      yomi: よびまつ
+      machiaza_id: 332020-0229002
+    - name: 呼松3丁目
+      yomi: よびまつ
+      machiaza_id: 332020-0229003
+    - name: 広江1丁目
+      yomi: ひろえ
+      machiaza_id: 332020-0155001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/mizushima.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly

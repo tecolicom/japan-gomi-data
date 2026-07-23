@@ -1,18 +1,44 @@
 metadata:
   city: kurashiki
   course: kojima-15
-  course_name_ja: "児島地区: 上の町1丁目11番～14番・上の町2丁目～4丁目・由加35～3285・白尾平野1236～1351・白尾下 505～2227・田の口1914～2999"
+  course_name_ja: "児島地区: 上の町／由加／白尾平野／白尾下／田の口"
   areas:
-    - name: 上の町1丁目11番～14番・上の町2丁目～4丁目・由加35～3285・白尾平野1236～1351・白尾下 505～2227・田の口1914～2999
+    - name: 上の町1丁目
+      yomi: かみのちょう
+      machiaza_id: 332020-0051001
+      note: 上の町・由加・白尾・峠、11番～14番
+    - name: 上の町2丁目
+      yomi: かみのちょう
+      machiaza_id: 332020-0051002
       note: 上の町・由加・白尾・峠
+    - name: 上の町3丁目
+      yomi: かみのちょう
+      machiaza_id: 332020-0051003
+      note: 上の町・由加・白尾・峠
+    - name: 上の町4丁目
+      yomi: かみのちょう
+      machiaza_id: 332020-0051004
+      note: 上の町・由加・白尾・峠
+    - name: 由加
+      yomi: ゆが
+      machiaza_id: 332020-0064000
+      note: 上の町・由加・白尾・峠、35～3285
+    - name: 白尾平野
+      note: 上の町・由加・白尾・峠、1236～1351
+    - name: 白尾下
+      note: 上の町・由加・白尾・峠、505～2227
+    - name: 田の口
+      yomi: たのくち
+      machiaza_id: 332020-0060000
+      note: 上の町・由加・白尾・峠、1914～2999
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kojima.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly

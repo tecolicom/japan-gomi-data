@@ -1,17 +1,48 @@
 metadata:
   city: kurashiki
   course: mizushima-13
-  course_name_ja: "水島地区: 中畝2,3,7,8丁目，東塚1丁目（国道430号線以北），東塚2・3丁目・東塚5・6丁目，東塚7丁目（国道430号線以北）"
+  course_name_ja: "水島地区: 中畝／東塚"
   areas:
-    - name: 中畝2,3,7,8丁目，東塚1丁目（国道430号線以北），東塚2・3丁目・東塚5・6丁目，東塚7丁目（国道430号線以北）
+    - name: 中畝2丁目
+      yomi: なかせ
+      machiaza_id: 332020-0128002
+    - name: 中畝3丁目
+      yomi: なかせ
+      machiaza_id: 332020-0128003
+    - name: 中畝7丁目
+      yomi: なかせ
+      machiaza_id: 332020-0128007
+    - name: 中畝8丁目
+      yomi: なかせ
+      machiaza_id: 332020-0128008
+    - name: 東塚1丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147001
+      note: 国道430号線以北
+    - name: 東塚2丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147002
+    - name: 東塚3丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147003
+    - name: 東塚5丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147005
+    - name: 東塚6丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147006
+    - name: 東塚7丁目
+      yomi: ひがしづか
+      machiaza_id: 332020-0147007
+      note: 国道430号線以北
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/mizushima.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly

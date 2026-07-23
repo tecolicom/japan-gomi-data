@@ -1,17 +1,37 @@
 metadata:
   city: kurashiki
   course: kurashiki-1
-  course_name_ja: "倉敷地区: 庄／矢部・日畑・庄新町・西尾・山地・松島・二子"
+  course_name_ja: "倉敷地区: 庄(矢部／日畑／庄新町／西尾／山地／松島／二子)"
   areas:
-    - name: 庄／矢部・日畑・庄新町・西尾・山地・松島・二子
+    - name: 矢部
+      yomi: やべ
+      machiaza_id: 332020-0249000
+    - name: 日畑
+      yomi: ひばた
+      machiaza_id: 332020-0152000
+    - name: 庄新町
+      yomi: しょうしんまち
+      machiaza_id: 332020-0079000
+    - name: 西尾
+      yomi: にしお
+      machiaza_id: 332020-0132000
+    - name: 山地
+      yomi: やまじ
+      machiaza_id: 332020-0235000
+    - name: 松島
+      yomi: まつしま
+      machiaza_id: 332020-0237000
+    - name: 二子
+      yomi: ふたご
+      machiaza_id: 332020-0167000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
     pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kurashiki.pdf
-    extracted_at: 2026-07-21
+    extracted_at: 2026-07-23
     extracted_by: claude-opus-4-8
-    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
 rules:
   - category: burnable
     pattern: weekly
