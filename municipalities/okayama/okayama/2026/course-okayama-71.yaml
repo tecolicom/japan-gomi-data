@@ -23,7 +23,7 @@ metadata:
     - name: 平野
       yomi: ひらの
       machiaza_id: 331015-0333000
-      note: JR山陽本線以南（JR山陽本線以南は，町内会によって収集曜日が異なるため注意）
+      note: JR山陽本線以南
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
