@@ -103,6 +103,15 @@ for (const { handle, dir } of handles) {
       const doc = loadYaml(join(yearDir, f));
       if (!scheduleV(doc)) { fail(rel, ajv.errorsText(scheduleV.errors)); continue; }
       if (doc.metadata.city !== handle) fail(rel, `metadata.city "${doc.metadata.city}" != "${handle}"`);
+      // areas の name/note の括弧バランス (全角・半角を別々に検査。抽出の削り残し検出)
+      for (const a of doc.metadata.areas ?? []) {
+        for (const v of [a.name, a.note]) {
+          if (!v) continue;
+          const c = (str, ch) => str.split(ch).length - 1;
+          if (c(v, '（') !== c(v, '）') || c(v, '(') !== c(v, ')'))
+            fail(rel, `括弧が不整合: "${v}"`);
+        }
+      }
       for (const r of doc.rules ?? []) {
         if (!taxCats.has(r.category)) fail(rel, `rule category "${r.category}" が taxonomy に無い`);
       }
