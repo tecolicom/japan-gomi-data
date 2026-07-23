@@ -16,3 +16,9 @@ overrides:
   paper: { label: ミックスペーパー, short: ミックス }
   plastic: { label: プラスチック資源, short: プラ }
   metal: { label: 小物金属, short: 小物金属 }
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 空き缶・ペットボトル・空きびん・使用済み乾電池
+    short: 空き缶等
+    members: [beverage_can, pet_bottle, glass_bottle, hazardous]

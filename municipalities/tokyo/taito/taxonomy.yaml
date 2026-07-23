@@ -17,3 +17,9 @@ overrides:
   burnable: { label: 燃やすごみ }
   non_burnable: { label: 燃やさないごみ }
   paper: { label: 古紙類, short: 古紙 }
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源
+    members: [paper, glass_bottle, beverage_can, pet_bottle]
+    note: プラスチック (plastic) は別区分だが回収曜日は資源と同じ (区公式の明記)

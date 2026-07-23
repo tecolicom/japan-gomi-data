@@ -41,3 +41,16 @@ overrides:
   cloth:
     label: 古着・古布
     short: 古布
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 破砕ごみ類・有害ごみ
+    short: 破砕・有害
+    members: [non_burnable, hazardous]
+  - label: びん・かん・スプレー缶
+    short: びん・かん
+    members: [glass_bottle, beverage_can]
+    note: スプレー缶は beverage_can (かん・スプレー缶) に統合済み
+  - label: 小型家電製品・古着古布
+    short: 家電・古布
+    members: [metal, cloth]

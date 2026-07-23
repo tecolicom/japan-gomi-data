@@ -45,3 +45,9 @@ overrides:
   cloth:
     label: 古布
     short: 古布
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: びん・缶、古紙
+    members: [glass_bottle, beverage_can, paper]
+    note: 大規模集合住宅の個別日程コース (course-48 荒川7丁目9番12号) ではびん・缶と古紙が別日で、この括りは適用されない

@@ -13,3 +13,10 @@ categories:
 overrides:
   plastic: { label: 資源プラスチック }
   beverage_can: { label: かん, short: かん }
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: びん・かん・資源プラスチック
+    members: [glass_bottle, beverage_can, plastic]
+  - label: 古紙・ペットボトル
+    members: [paper, pet_bottle]

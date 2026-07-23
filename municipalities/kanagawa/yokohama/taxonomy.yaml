@@ -18,3 +18,10 @@ overrides:
   beverage_can: { label: 缶, short: 缶 }
   metal: { label: 小さな金属類, short: 金属 }
   plastic: { label: プラスチック資源 }
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 缶・びん・ペットボトル
+    short: 缶びんペット
+    members: [beverage_can, glass_bottle, pet_bottle]
+    note: 小さな金属類 (metal) は同じ曜日に別袋の独立区分 (括りには含まれない)

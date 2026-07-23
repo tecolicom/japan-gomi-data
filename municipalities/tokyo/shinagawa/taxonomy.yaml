@@ -25,3 +25,9 @@ overrides:
   plastic: { label: 資源プラスチック, short: 資源プラ }
   paper: { label: 古紙 }
   hazardous: { label: 蛍光灯・電池類, short: 蛍光灯電池 }
+
+# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源
+    members: [plastic, pet_bottle, glass_bottle, beverage_can, paper, hazardous]
+    note: 資源回収ステーションで同日回収する区の総称
