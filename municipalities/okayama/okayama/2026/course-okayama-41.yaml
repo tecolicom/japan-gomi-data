@@ -3,17 +3,15 @@ metadata:
   course: okayama-41
   course_name_ja: "野谷: 栢谷／吉宗 ｜ 横井: 横井上"
   areas:
-    - name: 栢谷
+    - name: 栢谷（「栢谷・香橋団地」）
       yomi: かいだに
       machiaza_id: 331015-0044000
-      note: 「栢谷・香橋団地」
     - name: 横井上（「猿場町内会・猿場自治会の一部」）
       yomi: よこいかみ
       machiaza_id: 331015-0306000
-    - name: 吉宗
+    - name: 吉宗（「吉宗・苫田団地」）
       yomi: よしむね
       machiaza_id: 331015-0309000
-      note: 「吉宗・苫田団地」
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

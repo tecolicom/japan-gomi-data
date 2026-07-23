@@ -156,7 +156,20 @@ const rowArea = (r) => {
   const note = r.note && r.note.trim() ? stripTimeNote(r.note) : '';
   const isSplit = splitCount.get(splitKey(r.town)) > 1;
   if (isSplit && !note) splitNoNote.push(r.town);
-  if (isSplit && note) {
+  // 地域情報の一貫化: note のうち「地域範囲・区別」の情報 (割れ町の判別子、非割れ町の
+  // 対象集落列挙・学区・境界) は name に含め、「運用情報」(町内会単位の当面系例外・
+  // 個別上書き・限定条件の注意書き) だけを note に残す。
+  const OPERATIONAL = /当面|町内会|互助会|民生会|親交会|※|例外|異なり|ルールが違う|不燃|資源化物|資源（|プラ資源|分は/;
+  const isRegional = note && !OPERATIONAL.test(note);
+  if (note && (isSplit || isRegional)) {
+    // name と重複する冗長な範囲説明 (御津中山 | 中山 等) は昇格せず note ごと落とす
+    if (r.town.includes(note)) {
+      return {
+        name: r.town,
+        ...(yomi ? { yomi } : {}),
+        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+      };
+    }
     return {
       name: `${r.town}（${note}）`,
       ...(yomi ? { yomi } : {}),

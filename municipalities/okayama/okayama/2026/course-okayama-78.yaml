@@ -3,34 +3,27 @@ metadata:
   course: okayama-78
   course_name_ja: "御津・御津南: 御津宇垣 ｜ 御津南: 御津北野／御津河内／御津中牧／御津中山／御津野々口／御津吉尾"
   areas:
-    - name: 御津宇垣
+    - name: 御津宇垣（山条・宇垣原・富谷）
       yomi: みつうがき
       machiaza_id: 331015-0266000
-      note: 山条・宇垣原・富谷
-    - name: 御津北野
+    - name: 御津北野（大坪・大月）
       yomi: みつきたの
       machiaza_id: 331015-0271000
-      note: 大坪・大月
-    - name: 御津河内
+    - name: 御津河内（小田・河内・母谷）
       yomi: みつこうち
       machiaza_id: 331015-0274000
-      note: 小田・河内・母谷
-    - name: 御津中牧
+    - name: 御津中牧（十谷・湯須）
       yomi: みつなかまき
       machiaza_id: 331015-0282000
-      note: 十谷・湯須
     - name: 御津中山
       yomi: みつなかやま
       machiaza_id: 331015-0283000
-      note: 中山
-    - name: 御津野々口
+    - name: 御津野々口（野々口・小山）
       yomi: みつののくち
       machiaza_id: 331015-0284000
-      note: 野々口・小山
     - name: 御津吉尾
       yomi: みつよしお
       machiaza_id: 331015-0288000
-      note: 吉尾
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

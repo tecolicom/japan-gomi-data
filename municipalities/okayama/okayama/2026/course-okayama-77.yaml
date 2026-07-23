@@ -3,34 +3,27 @@ metadata:
   course: okayama-77
   course_name_ja: "御津: 御津宇甘／御津勝尾／御津虎倉／御津紙工／御津下田／御津高津／御津中泉"
   areas:
-    - name: 御津宇甘
+    - name: 御津宇甘（上村・九谷）
       yomi: みつうかい
       machiaza_id: 331015-0265000
-      note: 上村・九谷
     - name: 御津勝尾
       yomi: みつかつお
       machiaza_id: 331015-0268000
-      note: 勝尾
-    - name: 御津虎倉
+    - name: 御津虎倉（市場・三谷・大野・宿・鼓田）
       yomi: みつこぐら
       machiaza_id: 331015-0275000
-      note: 市場・三谷・大野・宿・鼓田
-    - name: 御津紙工
+    - name: 御津紙工（天満・久保・紙工河内・星原・宮脇・石原）
       yomi: みつしとり
       machiaza_id: 331015-0276000
-      note: 天満・久保・紙工河内・星原・宮脇・石原
     - name: 御津下田
       yomi: みつしもだ
       machiaza_id: 331015-0277000
-      note: 下田
-    - name: 御津高津
+    - name: 御津高津（菅・下畑・大谷）
       yomi: みつたかづ
       machiaza_id: 331015-0279000
-      note: 菅・下畑・大谷
     - name: 御津中泉
       yomi: みつなかいずみ
       machiaza_id: 331015-0280000
-      note: 中泉
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

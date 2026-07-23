@@ -3,18 +3,15 @@ metadata:
   course: okayama-80
   course_name_ja: "御津・御津南: 御津川高 ｜ 御津南: 御津国ケ原／御津芳谷"
   areas:
-    - name: 御津川高
+    - name: 御津川高（川高・大曽根）
       yomi: みつかわたか
       machiaza_id: 331015-0270000
-      note: 川高・大曽根
-    - name: 御津国ケ原
+    - name: 御津国ケ原（国ヶ原）
       yomi: みつくにがはら
       machiaza_id: 331015-0273000
-      note: 国ヶ原
-    - name: 御津芳谷
+    - name: 御津芳谷（田土・大鹿・鍋谷・河瀬）
       yomi: みつよしたに
       machiaza_id: 331015-0289000
-      note: 田土・大鹿・鍋谷・河瀬
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

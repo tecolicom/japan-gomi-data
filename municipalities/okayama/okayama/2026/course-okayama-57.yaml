@@ -23,20 +23,18 @@ metadata:
     - name: 下伊福西町
       yomi: しもいふくにしまち
       machiaza_id: 331015-0088000
-    - name: 下伊福本町
+    - name: 下伊福本町（県道川入・巌井以南・北共）
       yomi: しもいふくほんまち
       machiaza_id: 331015-0089000
-      note: 県道川入・巌井以南・北共
     - name: 高柳東町
       yomi: たかやなぎひがしまち
       machiaza_id: 331015-0128000
     - name: 富町１丁目
       yomi: とみまち
       machiaza_id: 331015-0183001
-    - name: 富町２丁目
+    - name: 富町２丁目（県道川入・巌井以南・北共）
       yomi: とみまち
       machiaza_id: 331015-0183002
-      note: 県道川入・巌井以南・北共
     - name: 福泊
       yomi: ふくどまり
       machiaza_id: 331023-0069000
