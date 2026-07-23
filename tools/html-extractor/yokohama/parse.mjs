@@ -1,6 +1,11 @@
 import { parse as parseHtml } from 'node-html-parser';
 
 const DOW = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA']; // 表の曜日列順 (月〜土。日曜列は無い=収集なし)
+// 市公式 HTML 自体の明白な脱字の補修 (対になる隣接行から機械的に確定できるもののみ)。
+// 中区 麦田町4丁目「…（本牧通り沿い」は閉じ括弧欠け (隣の「（商店街通り沿い）」は閉じている)。
+const SOURCE_TYPO_FIXES = new Map([
+  ['麦田町4丁目本牧通りから山手駅側(本牧通り沿い', '麦田町4丁目本牧通りから山手駅側(本牧通り沿い)'],
+]);
 // NFKC は波ダッシュ (〜) をチルダにするため町名表記用に戻す
 const norm = (s) => (s || '').normalize('NFKC').replace(/[\s ]+/g, '').replace(/~/g, '〜').trim();
 
@@ -24,7 +29,8 @@ export function parsePage(html) {
       if (tds.length < 2) continue;
       const mk = tds[0];
       if (mk) kana = mk;
-      const town = tds[1];
+      let town = tds[1];
+      if (SOURCE_TYPO_FIXES.has(town)) town = SOURCE_TYPO_FIXES.get(town);
       if (!town) continue;
       if (tds.length !== 8) { excluded.push({ town, reason: `セル数 ${tds.length}` }); continue; }
       const cells = tds.slice(2, 8);

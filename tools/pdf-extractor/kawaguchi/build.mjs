@@ -14,9 +14,11 @@ const YEAR = 2026;
 const EXTRACTED_AT = process.env.EXTRACTED_AT;
 if (!EXTRACTED_AT) throw new Error('set EXTRACTED_AT=YYYY-MM-DD');
 
-const rulesJson = JSON.parse(readFileSync(join(HERE, 'cache', 'rules.json'), 'utf8'));
-const areasJson = JSON.parse(readFileSync(join(HERE, 'cache', 'areas.json'), 'utf8'));
-const gridJson = JSON.parse(readFileSync(join(HERE, 'cache', 'grid.json'), 'utf8'));
+// 語彙移行 (paper_cloth→cloth, 2026-07-22) 前に生成された cache を読み替える
+const readCache = (name) => JSON.parse(readFileSync(join(HERE, 'cache', name), 'utf8').replaceAll('"paper_cloth"', '"cloth"'));
+const rulesJson = readCache('rules.json');
+const areasJson = readCache('areas.json');
+const gridJson = readCache('grid.json');
 const yomiMap = yamlParse(readFileSync(join(HERE, 'yomi.yaml'), 'utf8'));
 
 // 種別の並び (taxonomy 宣言順)
@@ -39,7 +41,7 @@ function baseTown(name) {
 function toAreas(townList) {
   return townList
     .map((raw) => {
-      const name = zenkaku(raw);
+      const name = zenkaku(raw).replace(/\(/g, '（').replace(/\)/g, '）');
       const base = baseTown(raw);
       const yomi = yomiMap[base];
       if (!yomi) throw new Error(`yomi 不明: "${name}" (base="${base}") — yomi.yaml に追加のこと`);

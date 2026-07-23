@@ -34,7 +34,7 @@ metadata:
     - name: 岡南町２丁目
       yomi: こうなんちょう
       machiaza_id: 331015-0071002
-    - name: 佐山（(E69ステーション利用地区以外)）
+    - name: 佐山（（E69ステーション利用地区以外））
       yomi: さやま
       machiaza_id: 331015-0351000
     - name: 下内田町

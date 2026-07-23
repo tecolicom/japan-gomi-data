@@ -69,6 +69,8 @@ let ABR = null;
 try { ABR = JSON.parse(readFileSync(join(HERE, 'cache', 'abr-town.json'), 'utf8')).towns; }
 catch { throw new Error('cache/abr-town.json がありません。node fetch-yomi.mjs を先に実行'); }
 const nfkc = (s) => s.normalize('NFKC');
+// 原文の丸括弧は全角/半角が混在する (（…) 等) ため出力時に全角へ正規化する
+const zenParen = (s) => s.replace(/\(/g, '（').replace(/\)/g, '）');
 const eqOaza = (a, b) => a === b || a.replace(/ケ/g, 'ヶ') === b || a.replace(/ヶ/g, 'ケ') === b;
 // kViewer 町名 → { base(大字), chome(丁目番号|null), ward(区注記|null) } へ正規化
 const parseTown = (t) => {
@@ -153,7 +155,7 @@ const rowArea = (r) => {
   const { yomi, machiazaId } = abrOf(r.town);
   if (!yomi) yomiMissing.push(r.town);
   if (!machiazaId) idMissing.push(r.town);
-  const note = r.note && r.note.trim() ? stripTimeNote(r.note) : '';
+  const note = r.note && r.note.trim() ? zenParen(stripTimeNote(r.note)) : '';
   const isSplit = splitCount.get(splitKey(r.town)) > 1;
   if (isSplit && !note) splitNoNote.push(r.town);
   // 地域情報の一貫化: note のうち「地域範囲・区別」の情報 (割れ町の判別子、非割れ町の
@@ -170,8 +172,13 @@ const rowArea = (r) => {
         ...(machiazaId ? { machiaza_id: machiazaId } : {}),
       };
     }
+    // town が既に区注記括弧を持つ場合 (下中野（北区）等) は二重括弧にせず単一括弧へ統合。
+    // note 末尾の句点は括弧内では除去する。
+    const noteClean = note.replace(/。$/, '');
+    const wm = r.town.match(/^(.+?)（([^）]+)）\s*$/);
+    const name = wm ? `${wm[1]}（${wm[2]}・${noteClean}）` : `${r.town}（${noteClean}）`;
     return {
-      name: `${r.town}（${note}）`,
+      name: zenParen(name),
       ...(yomi ? { yomi } : {}),
       ...(machiazaId ? { machiaza_id: machiazaId } : {}),
     };
