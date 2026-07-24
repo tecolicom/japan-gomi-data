@@ -10,7 +10,7 @@ source:
   # 年末年始の確定 (特に小物金属・粗大の休止期間) は毎年12月頃に市 HP・広報で告知。
   yearend_url: https://www.city.kawasaki.jp/templates/faq/300/0000125241.html
 notes:
-  - 政令指定都市。コースは区ごとにグルーピングし course slug = <区romaji>-<n> (例 course-saiwai-3)。区romaji= 川崎区:kawasaki / 幸区:saiwai / 中原区:nakahara / 高津区:takatsu / 宮前区:miyamae / 多摩区:tama / 麻生区:asao。areas の name は公式表の町名表記そのまま。区をまたぐ同名町名 (2026年度は梶ヶ谷=高津区・宮前区の1件) のみ「<町名>（<区名>）」で曖昧性解消。 areas の yomi・machiaza_id はデジタル庁 ABR 町字マスター(フルセット)神奈川県版 + 日本郵便 ken_all 由来 (fetch-yomi.mjs、横浜と同方式): 完全読み 98%(255/260)・machiaza_id 52%。丁目まとめ2件 (古市場1・2丁目・小倉1〜5丁目) は個別丁目へ展開。ken_all は cache/utf_ken_all.zip 手動配置 (README 参照)。
+  - "政令指定都市。コースは区ごとにグルーピングし course slug = <区romaji>-<n> (例 course-saiwai-3)。区romaji= 川崎区:kawasaki / 幸区:saiwai / 中原区:nakahara / 高津区:takatsu / 宮前区:miyamae / 多摩区:tama / 麻生区:asao。areas の name は公式表の町名表記そのまま。区をまたぐ同名町名 (2026年度は梶ヶ谷=高津区・宮前区の1件) のみ「<町名>（<区名>）」で曖昧性解消。 areas の yomi・machiaza_id はデジタル庁 ABR 町字マスター(フルセット)神奈川県版 + 日本郵便 ken_all 由来 (fetch-yomi.mjs、横浜と同方式): 完全読み 98%(255/260)・machiaza_id 52%。丁目まとめ2件 (古市場1・2丁目・小倉1〜5丁目) は個別丁目へ展開。ken_all は cache/utf_ken_all.zip 手動配置 (README 参照)。"
   - 収集体制は4生活環境事業所。管轄は 川崎生活環境事業所=川崎区 / 中原=幸区・中原区 / 宮前=高津区・宮前区 / 多摩=多摩区・麻生区。
   - 祝日・大型連休・お盆も通常収集する。休みは日曜と 1/1〜1/3 のみ (12/31 は収集する。23区より年末が1日長い)。本データの overrides はこの 1/1〜1/3 のうち各コースの収集曜日に当たる日の休止のみ反映。
   - 小物金属・粗大ごみ (申込制) は年末年始が別ルールで、休止期間は年により変動し毎年12月に市が確定・告知する。2025年度実績は 12/27〜1/4 休止 (受付は 12/30 まで)。**12月に yearend_url で要確認・要更新**。本データの metal 規則には 1/1〜1/3 の休止のみ反映しており、12/27〜12/30・1/4 の追加休止は未反映 (この期間に monthly_nth が当たるコースは実際には収集されないことがある)。

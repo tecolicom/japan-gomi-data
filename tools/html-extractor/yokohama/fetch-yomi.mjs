@@ -62,7 +62,7 @@ if (existsSync(kenZip)) {
   const csvKen = readFileSync(join(HERE, 'cache', 'utf_ken_all.csv'), 'utf8');
   for (const line of csvKen.split('\n')) {
     const c = line.split(',').map((x) => x.replace(/^"|"$/g, ''));
-    if (c.length < 9 || !c[0].startsWith('141')) continue; // 横浜市
+    if (c.length < 9 || !/^(1410|1411)/.test(c[0])) continue; // 横浜市 (18区は 1410*/1411*)
     let town = c[8].replace(/（.*/, '');
     if (!town || town.includes('以下に掲載がない')) continue;
     if (!(town in ken)) ken[town] = han2hira(c[5]);
