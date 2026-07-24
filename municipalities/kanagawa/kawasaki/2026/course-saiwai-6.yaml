@@ -3,9 +3,10 @@ metadata:
   course: saiwai-6
   areas:
     - name: 新塚越
-      yomi: し
+      yomi: しんつかごし
+      machiaza_id: 141321-0004000
     - name: 戸手本町
-      yomi: と
+      yomi: とてほんまち
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

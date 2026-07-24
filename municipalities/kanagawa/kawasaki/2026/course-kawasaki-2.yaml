@@ -3,11 +3,12 @@ metadata:
   course: kawasaki-2
   areas:
     - name: 京町
-      yomi: き
+      yomi: きょうまち
     - name: 渡田山王町
-      yomi: わ
+      yomi: わたりださんのうちょう
+      machiaza_id: 141313-0040000
     - name: 渡田新町
-      yomi: わ
+      yomi: わたりだしんちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

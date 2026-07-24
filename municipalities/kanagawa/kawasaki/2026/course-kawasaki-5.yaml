@@ -3,11 +3,13 @@ metadata:
   course: kawasaki-5
   areas:
     - name: 池田
-      yomi: い
+      yomi: いけだ
     - name: 下並木
-      yomi: し
+      yomi: しもなみき
+      machiaza_id: 141313-0043000
     - name: 堤根
-      yomi: つ
+      yomi: つつみね
+      machiaza_id: 141313-0074000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

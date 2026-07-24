@@ -3,9 +3,11 @@ metadata:
   course: tama-9
   areas:
     - name: 和泉
-      yomi: い
+      yomi: いずみ
+      machiaza_id: 141356-0016000
     - name: 登戸
-      yomi: の
+      yomi: のぼりと
+      machiaza_id: 141356-0023000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

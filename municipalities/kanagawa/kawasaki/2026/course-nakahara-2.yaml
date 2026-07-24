@@ -3,13 +3,15 @@ metadata:
   course: nakahara-2
   areas:
     - name: 上新城
-      yomi: か
+      yomi: かみしんじょう
     - name: 下新城
-      yomi: し
+      yomi: しもしんじょう
     - name: 新城
-      yomi: し
+      yomi: しんじょう
+      machiaza_id: 141330-0006000
     - name: 新城中町
-      yomi: し
+      yomi: しんじょうなかちょう
+      machiaza_id: 141330-0038000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

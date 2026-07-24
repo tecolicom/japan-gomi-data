@@ -3,15 +3,18 @@ metadata:
   course: kawasaki-1
   areas:
     - name: 浅田
-      yomi: あ
+      yomi: あさだ
     - name: 大川町
-      yomi: お
+      yomi: おおかわちょう
+      machiaza_id: 141313-0013000
     - name: 小田
-      yomi: お
+      yomi: おだ
     - name: 白石町
-      yomi: し
+      yomi: しらいしちょう
+      machiaza_id: 141313-0009000
     - name: 田辺新田
-      yomi: た
+      yomi: たなべしんでん
+      machiaza_id: 141313-0010000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

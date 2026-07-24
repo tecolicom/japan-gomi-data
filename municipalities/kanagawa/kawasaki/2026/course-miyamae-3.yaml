@@ -3,9 +3,10 @@ metadata:
   course: miyamae-3
   areas:
     - name: 宮崎
-      yomi: み
+      yomi: みやざき
+      machiaza_id: 141364-0001000
     - name: 宮前平
-      yomi: み
+      yomi: みやまえだいら
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

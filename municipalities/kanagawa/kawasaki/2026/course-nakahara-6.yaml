@@ -3,13 +3,16 @@ metadata:
   course: nakahara-6
   areas:
     - name: 上丸子
-      yomi: か
+      yomi: かみまるこ
+      machiaza_id: 141330-0020000
     - name: 上丸子山王町
-      yomi: か
+      yomi: かみまるこさんのうちょう
     - name: 下沼部
-      yomi: し
+      yomi: しもぬまべ
+      machiaza_id: 141330-0022000
     - name: 中丸子
-      yomi: な
+      yomi: なかまるこ
+      machiaza_id: 141330-0025000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

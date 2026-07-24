@@ -3,15 +3,18 @@ metadata:
   course: asao-3
   areas:
     - name: 王禅寺
-      yomi: お
+      yomi: おうぜんじ
+      machiaza_id: 141372-0003000
     - name: 王禅寺東
-      yomi: お
+      yomi: おうぜんじひがし
     - name: 岡上
-      yomi: お
+      yomi: おかがみ
+      machiaza_id: 141372-0016000
     - name: 虹ヶ丘
-      yomi: に
+      yomi: にじがおか
     - name: 早野
-      yomi: は
+      yomi: はやの
+      machiaza_id: 141372-0015000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

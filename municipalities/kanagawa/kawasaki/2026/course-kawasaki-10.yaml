@@ -3,11 +3,12 @@ metadata:
   course: kawasaki-10
   areas:
     - name: 池上町
-      yomi: い
+      yomi: いけがみちょう
+      machiaza_id: 141313-0028000
     - name: 池上新町
-      yomi: い
+      yomi: いけがみしんちょう
     - name: 桜本
-      yomi: さ
+      yomi: さくらもと
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

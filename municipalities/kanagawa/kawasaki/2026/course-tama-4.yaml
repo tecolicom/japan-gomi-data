@@ -3,19 +3,21 @@ metadata:
   course: tama-4
   areas:
     - name: 菅
-      yomi: す
+      yomi: すげ
     - name: 菅稲田堤
-      yomi: す
+      yomi: すげいなだづつみ
     - name: 菅北浦
-      yomi: す
+      yomi: すげきたうら
     - name: 菅城下
-      yomi: す
+      yomi: すげしろした
+      machiaza_id: 141356-0025000
     - name: 菅仙谷
-      yomi: す
+      yomi: すげせんごく
     - name: 菅野戸呂
-      yomi: す
+      yomi: すげのとろ
+      machiaza_id: 141356-0026000
     - name: 菅馬場
-      yomi: す
+      yomi: すげばんば
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

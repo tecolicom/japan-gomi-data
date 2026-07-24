@@ -3,19 +3,23 @@ metadata:
   course: kawasaki-11
   areas:
     - name: 昭和
-      yomi: し
+      yomi: しょうわ
     - name: 大師町
-      yomi: だ
+      yomi: だいしまち
+      machiaza_id: 141313-0053000
     - name: 大師駅前
-      yomi: だ
+      yomi: だいしえきまえ
     - name: 大師本町
-      yomi: だ
+      yomi: だいしほんちょう
+      machiaza_id: 141313-0050000
     - name: 台町
-      yomi: だ
+      yomi: だいまち
+      machiaza_id: 141313-0055000
     - name: 出来野
-      yomi: で
+      yomi: できの
+      machiaza_id: 141313-0045000
     - name: 東門前
-      yomi: ひ
+      yomi: ひがしもんぜん
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,17 +3,20 @@ metadata:
   course: kawasaki-13
   areas:
     - name: 旭町
-      yomi: あ
+      yomi: あさひちょう
     - name: 伊勢町
-      yomi: い
+      yomi: いせちょう
+      machiaza_id: 141313-0060000
     - name: 鈴木町
-      yomi: す
+      yomi: すずきちょう
+      machiaza_id: 141313-0059000
     - name: 中島
-      yomi: な
+      yomi: なかじま
     - name: 藤崎
-      yomi: ふ
+      yomi: ふじさき
     - name: 港町
-      yomi: み
+      yomi: みなとちょう
+      machiaza_id: 141313-0062000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

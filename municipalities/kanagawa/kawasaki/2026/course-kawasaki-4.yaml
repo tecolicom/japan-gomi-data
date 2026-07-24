@@ -3,23 +3,30 @@ metadata:
   course: kawasaki-4
   areas:
     - name: 砂子
-      yomi: い
+      yomi: いさご
     - name: 駅前本町
-      yomi: え
+      yomi: えきまえほんちょう
+      machiaza_id: 141313-0073000
     - name: 小川町
-      yomi: お
+      yomi: おがわちょう
+      machiaza_id: 141313-0061000
     - name: 日進町
-      yomi: に
+      yomi: にっしんちょう
+      machiaza_id: 141313-0075000
     - name: 東田町
-      yomi: ひ
+      yomi: ひがしだちょう
+      machiaza_id: 141313-0070000
     - name: 堀之内町
-      yomi: ほ
+      yomi: ほりのうちちょう
+      machiaza_id: 141313-0066000
     - name: 本町
-      yomi: ほ
+      yomi: ほんちょう
     - name: 南町
-      yomi: み
+      yomi: みなみまち
+      machiaza_id: 141313-0069000
     - name: 宮本町
-      yomi: み
+      yomi: みやもとちょう
+      machiaza_id: 141313-0065000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

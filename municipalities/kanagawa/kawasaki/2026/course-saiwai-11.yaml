@@ -3,11 +3,17 @@ metadata:
   course: saiwai-11
   areas:
     - name: 東古市場
-      yomi: ひ
+      yomi: ひがしふるいちば
+      machiaza_id: 141321-0030000
     - name: 古市場
-      yomi: ふ
-    - name: 古市場1・2丁目
-      yomi: ふ
+      yomi: ふるいちば
+      machiaza_id: 141321-0032000
+    - name: 古市場1丁目
+      yomi: ふるいちば
+      machiaza_id: 141321-0032001
+    - name: 古市場2丁目
+      yomi: ふるいちば
+      machiaza_id: 141321-0032002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

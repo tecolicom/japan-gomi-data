@@ -3,17 +3,21 @@ metadata:
   course: kawasaki-9
   areas:
     - name: 榎町
-      yomi: え
+      yomi: えのきちょう
+      machiaza_id: 141313-0067000
     - name: 大島
-      yomi: お
+      yomi: おおしま
     - name: 境町
-      yomi: さ
+      yomi: さかいちょう
+      machiaza_id: 141313-0033000
     - name: 新川通
-      yomi: し
+      yomi: しんかわどおり
+      machiaza_id: 141313-0039000
     - name: 富士見
-      yomi: ふ
+      yomi: ふじみ
     - name: 宮前町
-      yomi: み
+      yomi: みやまえちょう
+      machiaza_id: 141313-0068000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

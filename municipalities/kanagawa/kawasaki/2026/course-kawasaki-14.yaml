@@ -3,9 +3,10 @@ metadata:
   course: kawasaki-14
   areas:
     - name: 川中島
-      yomi: か
+      yomi: かわなかじま
     - name: 大師公園
-      yomi: だ
+      yomi: だいしこうえん
+      machiaza_id: 141313-0054000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,9 +3,10 @@ metadata:
   course: saiwai-4
   areas:
     - name: 紺屋町
-      yomi: こ
+      yomi: こんやまち
+      machiaza_id: 141321-0017000
     - name: 神明町
-      yomi: し
+      yomi: しんめいちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,15 +3,20 @@ metadata:
   course: nakahara-13
   areas:
     - name: 市ノ坪
-      yomi: い
+      yomi: いちのつぼ
+      machiaza_id: 141330-0019000
     - name: 今井上町
-      yomi: い
+      yomi: いまいかみちょう
+      machiaza_id: 141330-0048000
     - name: 今井仲町
-      yomi: い
+      yomi: いまいなかまち
+      machiaza_id: 141330-0049000
     - name: 今井西町
-      yomi: い
+      yomi: いまいにしまち
+      machiaza_id: 141330-0051000
     - name: 今井南町
-      yomi: い
+      yomi: いまいみなみちょう
+      machiaza_id: 141330-0050000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

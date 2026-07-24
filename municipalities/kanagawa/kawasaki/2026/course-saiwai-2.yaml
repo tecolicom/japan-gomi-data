@@ -3,13 +3,15 @@ metadata:
   course: saiwai-2
   areas:
     - name: 大宮町
-      yomi: お
+      yomi: おおみやちょう
+      machiaza_id: 141321-0007000
     - name: 幸町
-      yomi: さ
+      yomi: さいわいちょう
     - name: 中幸町
-      yomi: な
+      yomi: なかさいわいちょう
     - name: 堀川町
-      yomi: ほ
+      yomi: ほりかわちょう
+      machiaza_id: 141321-0008000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

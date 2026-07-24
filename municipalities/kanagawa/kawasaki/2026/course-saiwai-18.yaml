@@ -3,9 +3,10 @@ metadata:
   course: saiwai-18
   areas:
     - name: 北加瀬
-      yomi: き
+      yomi: きたかせ
     - name: 矢上
-      yomi: や
+      yomi: やがみ
+      machiaza_id: 141321-0034000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

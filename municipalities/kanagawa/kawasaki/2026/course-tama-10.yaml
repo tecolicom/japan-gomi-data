@@ -3,11 +3,12 @@ metadata:
   course: tama-10
   areas:
     - name: 宿河原
-      yomi: し
+      yomi: しゅくがわら
     - name: 堰
-      yomi: せ
+      yomi: せき
     - name: 登戸新町
-      yomi: の
+      yomi: のぼりとしんまち
+      machiaza_id: 141356-0013000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

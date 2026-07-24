@@ -3,7 +3,8 @@ metadata:
   course: nakahara-7
   areas:
     - name: 上丸子八幡町
-      yomi: か
+      yomi: かみまるこはちまんちょう
+      machiaza_id: 141330-0007000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

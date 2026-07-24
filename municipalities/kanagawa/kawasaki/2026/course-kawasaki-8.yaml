@@ -3,13 +3,15 @@ metadata:
   course: kawasaki-8
   areas:
     - name: 大島上町
-      yomi: お
+      yomi: おおしまかみちょう
+      machiaza_id: 141313-0031000
     - name: 貝塚
-      yomi: か
+      yomi: かいづか
     - name: 渡田
-      yomi: わ
+      yomi: わたりだ
     - name: 渡田東町
-      yomi: わ
+      yomi: わたりだひがしちょう
+      machiaza_id: 141313-0034000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

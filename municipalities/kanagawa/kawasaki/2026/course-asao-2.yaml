@@ -3,15 +3,16 @@ metadata:
   course: asao-2
   areas:
     - name: 金程
-      yomi: か
+      yomi: かなほど
     - name: 多摩美
-      yomi: た
+      yomi: たまみ
     - name: 千代ヶ丘
-      yomi: ち
+      yomi: ちよがおか
     - name: 細山
-      yomi: ほ
+      yomi: ほそやま
+      machiaza_id: 141372-0024000
     - name: 向原
-      yomi: む
+      yomi: むかいばら
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

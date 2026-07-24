@@ -3,11 +3,13 @@ metadata:
   course: saiwai-1
   areas:
     - name: 南幸町
-      yomi: み
+      yomi: みなみさいわいちょう
     - name: 都町
-      yomi: み
+      yomi: みやこちょう
+      machiaza_id: 141321-0012000
     - name: 柳町
-      yomi: や
+      yomi: やなぎちょう
+      machiaza_id: 141321-0020000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,33 +3,40 @@ metadata:
   course: kawasaki-12
   areas:
     - name: 浮島町
-      yomi: う
+      yomi: うきしまちょう
+      machiaza_id: 141313-0015000
     - name: 江川
-      yomi: え
+      yomi: えがわ
     - name: 扇島
-      yomi: お
+      yomi: おおぎしま
+      machiaza_id: 141313-0014000
     - name: 小島町
-      yomi: こ
+      yomi: こじまちょう
+      machiaza_id: 141313-0016000
     - name: 塩浜
-      yomi: し
+      yomi: しおはま
     - name: 大師河原
-      yomi: だ
+      yomi: だいしがわら
+      machiaza_id: 141313-0049000
     - name: 田町
-      yomi: た
+      yomi: たまち
     - name: 千鳥町
-      yomi: ち
+      yomi: ちどりちょう
+      machiaza_id: 141313-0005000
     - name: 殿町
-      yomi: と
+      yomi: とのまち
     - name: 中瀬
-      yomi: な
+      yomi: なかぜ
     - name: 東扇島
-      yomi: ひ
+      yomi: ひがしおおぎしま
+      machiaza_id: 141313-0001000
     - name: 日ノ出
-      yomi: ひ
+      yomi: ひので
     - name: 水江町
-      yomi: み
+      yomi: みずえちょう
+      machiaza_id: 141313-0002000
     - name: 夜光
-      yomi: や
+      yomi: やこう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

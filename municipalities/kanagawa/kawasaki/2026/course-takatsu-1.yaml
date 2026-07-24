@@ -3,9 +3,10 @@ metadata:
   course: takatsu-1
   areas:
     - name: 北野川
-      yomi: き
+      yomi: きたのがわ
+      machiaza_id: 141348-0028000
     - name: 東野川
-      yomi: ひ
+      yomi: ひがしのがわ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,17 +3,19 @@ metadata:
   course: miyamae-7
   areas:
     - name: 犬蔵
-      yomi: い
+      yomi: いぬくら
     - name: 潮見台
-      yomi: し
+      yomi: しおみだい
+      machiaza_id: 141364-0022000
     - name: 菅生
-      yomi: す
+      yomi: すがお
     - name: 菅生ヶ丘
-      yomi: す
+      yomi: すがおがおか
+      machiaza_id: 141364-0021000
     - name: 初山
-      yomi: は
+      yomi: はつやま
     - name: 水沢
-      yomi: み
+      yomi: みずさわ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

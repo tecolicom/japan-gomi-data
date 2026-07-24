@@ -3,21 +3,26 @@ metadata:
   course: kawasaki-7
   areas:
     - name: 浅野町
-      yomi: あ
+      yomi: あさのちょう
+      machiaza_id: 141313-0027000
     - name: 追分町
-      yomi: お
+      yomi: おいわけちょう
+      machiaza_id: 141313-0029000
     - name: 扇町
-      yomi: お
+      yomi: おうぎまち
+      machiaza_id: 141313-0003000
     - name: 小田栄
-      yomi: お
+      yomi: おださかえ
     - name: 鋼管通
-      yomi: こ
+      yomi: こうかんどおり
     - name: 田島町
-      yomi: た
+      yomi: たじまちょう
+      machiaza_id: 141313-0032000
     - name: 浜町
-      yomi: は
+      yomi: はまちょう
     - name: 南渡田町
-      yomi: み
+      yomi: みなみわたりだちょう
+      machiaza_id: 141313-0020000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

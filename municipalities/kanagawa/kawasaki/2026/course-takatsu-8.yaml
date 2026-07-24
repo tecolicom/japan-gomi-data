@@ -3,19 +3,25 @@ metadata:
   course: takatsu-8
   areas:
     - name: 明津
-      yomi: あ
+      yomi: あくつ
+      machiaza_id: 141348-0009000
     - name: 蟹ヶ谷
-      yomi: か
+      yomi: かにがや
+      machiaza_id: 141348-0010000
     - name: 子母口
-      yomi: し
+      yomi: しぼくち
+      machiaza_id: 141348-0011000
     - name: 子母口富士見台
-      yomi: し
+      yomi: しぼくちふじみだい
+      machiaza_id: 141348-0013000
     - name: 新作
-      yomi: し
+      yomi: しんさく
     - name: 千年
-      yomi: ち
+      yomi: ちとせ
+      machiaza_id: 141348-0005000
     - name: 千年新町
-      yomi: ち
+      yomi: ちとせしんちょう
+      machiaza_id: 141348-0012000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

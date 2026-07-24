@@ -3,11 +3,13 @@ metadata:
   course: saiwai-10
   areas:
     - name: 小向町
-      yomi: こ
+      yomi: こむかいちょう
+      machiaza_id: 141321-0015000
     - name: 小向仲野町
-      yomi: こ
+      yomi: こむかいなかのちょう
+      machiaza_id: 141321-0027000
     - name: 小向西町
-      yomi: こ
+      yomi: こむかいにしまち
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

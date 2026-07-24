@@ -3,13 +3,17 @@ metadata:
   course: nakahara-12
   areas:
     - name: 大倉町
-      yomi: お
+      yomi: おおくらちょう
+      machiaza_id: 141330-0015000
     - name: 苅宿
-      yomi: か
+      yomi: かりやど
+      machiaza_id: 141330-0018000
     - name: 木月住吉町
-      yomi: き
+      yomi: きづきすみよしちょう
+      machiaza_id: 141330-0053000
     - name: 西加瀬
-      yomi: に
+      yomi: にしかせ
+      machiaza_id: 141330-0056000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

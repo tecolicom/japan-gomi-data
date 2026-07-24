@@ -3,7 +3,8 @@ metadata:
   course: saiwai-13
   areas:
     - name: 新川崎
-      yomi: し
+      yomi: しんかわさき
+      machiaza_id: 141321-0033000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

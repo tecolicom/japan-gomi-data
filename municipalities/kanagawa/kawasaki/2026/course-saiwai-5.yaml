@@ -3,9 +3,11 @@ metadata:
   course: saiwai-5
   areas:
     - name: 遠藤町
-      yomi: え
+      yomi: えんどうまち
+      machiaza_id: 141321-0018000
     - name: 河原町
-      yomi: か
+      yomi: かわらまち
+      machiaza_id: 141321-0013000
     - name: 河原町団地1～3号棟
       yomi: か
   year: 2026

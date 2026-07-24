@@ -3,11 +3,14 @@ metadata:
   course: nakahara-5
   areas:
     - name: 上平間
-      yomi: か
+      yomi: かみひらま
+      machiaza_id: 141330-0026000
     - name: 北谷町
-      yomi: き
+      yomi: きたやちょう
+      machiaza_id: 141330-0014000
     - name: 田尻町
-      yomi: た
+      yomi: たじりちょう
+      machiaza_id: 141330-0013000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

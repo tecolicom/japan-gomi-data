@@ -3,9 +3,11 @@ metadata:
   course: tama-7
   areas:
     - name: 中野島
-      yomi: な
+      yomi: なかのしま
+      machiaza_id: 141356-0001000
     - name: 布田
-      yomi: ふ
+      yomi: ふだ
+      machiaza_id: 141356-0002000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

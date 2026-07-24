@@ -3,7 +3,8 @@ metadata:
   course: kawasaki-3
   areas:
     - name: 渡田向町
-      yomi: わ
+      yomi: わたりだむかいちょう
+      machiaza_id: 141313-0041000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

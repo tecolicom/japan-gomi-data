@@ -3,13 +3,14 @@ metadata:
   course: miyamae-4
   areas:
     - name: 有馬
-      yomi: あ
+      yomi: ありま
     - name: 梶ヶ谷（宮前区）
-      yomi: か
+      yomi: かじがや
+      machiaza_id: 141364-0007000
     - name: 東有馬
-      yomi: ひ
+      yomi: ひがしありま
     - name: 馬絹
-      yomi: ま
+      yomi: まぎぬ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

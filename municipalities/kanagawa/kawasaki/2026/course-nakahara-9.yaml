@@ -3,13 +3,15 @@ metadata:
   course: nakahara-9
   areas:
     - name: 上丸子天神町
-      yomi: か
+      yomi: かみまるこてんじんちょう
+      machiaza_id: 141330-0005000
     - name: 新丸子町
-      yomi: し
+      yomi: しんまるこまち
+      machiaza_id: 141330-0028000
     - name: 新丸子東
-      yomi: し
+      yomi: しんまるこひがし
     - name: 丸子通
-      yomi: ま
+      yomi: まるこどおり
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

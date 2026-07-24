@@ -3,17 +3,19 @@ metadata:
   course: miyamae-6
   areas:
     - name: けやき平
-      yomi: け
+      yomi: けやきだいら
+      machiaza_id: 141364-0015000
     - name: 五所塚
-      yomi: ご
+      yomi: ごしょづか
     - name: 神木本町
-      yomi: し
+      yomi: しぼくほんちょう
     - name: 白幡台
-      yomi: し
+      yomi: しらはただい
     - name: 平
-      yomi: た
+      yomi: たいら
     - name: 南平台
-      yomi: な
+      yomi: なんぺいだい
+      machiaza_id: 141364-0018000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

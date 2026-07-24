@@ -3,11 +3,13 @@ metadata:
   course: kawasaki-15
   areas:
     - name: 観音
-      yomi: か
+      yomi: かんのん
     - name: 四谷上町
-      yomi: よ
+      yomi: よつやかみちょう
+      machiaza_id: 141313-0046000
     - name: 四谷下町
-      yomi: よ
+      yomi: よつやしもちょう
+      machiaza_id: 141313-0022000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

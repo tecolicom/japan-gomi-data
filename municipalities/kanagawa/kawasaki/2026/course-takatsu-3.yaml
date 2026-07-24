@@ -3,15 +3,15 @@ metadata:
   course: takatsu-3
   areas:
     - name: 北見方
-      yomi: き
+      yomi: きたみがた
     - name: 下野毛
-      yomi: し
+      yomi: しものげ
     - name: 諏訪
-      yomi: す
+      yomi: すわ
     - name: 瀬田
-      yomi: せ
+      yomi: せた
     - name: 二子
-      yomi: ふ
+      yomi: ふたご
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

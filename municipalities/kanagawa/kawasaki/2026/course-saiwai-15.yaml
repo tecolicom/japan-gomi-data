@@ -3,9 +3,11 @@ metadata:
   course: saiwai-15
   areas:
     - name: 小倉
-      yomi: お
+      yomi: おぐら
+      machiaza_id: 141321-0002000
     - name: 東小倉
-      yomi: ひ
+      yomi: ひがしおぐら
+      machiaza_id: 141321-0016000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

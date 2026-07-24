@@ -3,13 +3,14 @@ metadata:
   course: nakahara-8
   areas:
     - name: 小杉御殿町
-      yomi: こ
+      yomi: こすぎごてんちょう
     - name: 小杉陣屋町
-      yomi: こ
+      yomi: こすぎじんやちょう
     - name: 小杉町
-      yomi: こ
+      yomi: こすぎまち
     - name: 等々力
-      yomi: と
+      yomi: とどろき
+      machiaza_id: 141330-0055000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

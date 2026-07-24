@@ -3,23 +3,28 @@ metadata:
   course: asao-7
   areas:
     - name: 片平
-      yomi: か
+      yomi: かたひら
+      machiaza_id: 141372-0006000
     - name: 栗木
-      yomi: く
+      yomi: くりぎ
+      machiaza_id: 141372-0027000
     - name: 栗木台
-      yomi: く
+      yomi: くりぎだい
     - name: 栗平
-      yomi: く
+      yomi: くりひら
     - name: 黒川
-      yomi: く
+      yomi: くろかわ
+      machiaza_id: 141372-0035000
     - name: 五力田
-      yomi: ご
+      yomi: ごりきだ
+      machiaza_id: 141372-0009000
     - name: 白鳥
-      yomi: し
+      yomi: しらとり
     - name: はるひ野
-      yomi: は
+      yomi: はるひの
     - name: 南黒川
-      yomi: み
+      yomi: みなみくろかわ
+      machiaza_id: 141372-0034000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,9 +3,10 @@ metadata:
   course: saiwai-8
   areas:
     - name: 下平間
-      yomi: し
+      yomi: しもひらま
+      machiaza_id: 141321-0031000
     - name: 塚越
-      yomi: つ
+      yomi: つかごし
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

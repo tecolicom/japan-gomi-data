@@ -79,8 +79,53 @@ function yearEndOverrides(rules) {
 }
 
 // 1) 全行を区ごとに収集し、区またぎ同名を検出
+// ABR 町字マスター (fetch-yomi.mjs で取得) で yomi・machiaza_id を付与 (横浜と同型)。
+let ABR = null;
+try { ABR = JSON.parse(readFileSync(join(HERE, 'cache', 'abr-town.json'), 'utf8')).towns; }
+catch { throw new Error('cache/abr-town.json がありません。node fetch-yomi.mjs を先に実行'); }
+const abrByOaza = new Map();
+for (const t of ABR) {
+  for (const k of [t.oaza, t.oaza.replace(/ケ/g, 'ヶ'), t.oaza.replace(/ヶ/g, 'ケ'), t.oaza.replace(/が/g, 'ヶ')]) {
+    if (!abrByOaza.has(k)) abrByOaza.set(k, []);
+    abrByOaza.get(k).push(t);
+  }
+}
+let KENALL = {};
+try { KENALL = JSON.parse(readFileSync(join(HERE, 'cache', 'kenall-town.json'), 'utf8')); } catch { /* 未配置は許容 */ }
+function abrOf(base, chome, wardJa) {
+  const b = base.normalize('NFKC');
+  let rows = abrByOaza.get(b) ?? abrByOaza.get(b.replace(/ケ/g, 'ヶ')) ?? abrByOaza.get(b.replace(/が/g, 'ヶ')) ?? [];
+  rows = rows.filter((t) => t.ward === wardJa);
+  rows = [...new Map(rows.map((t) => [`${t.lg}-${t.id}`, t])).values()];
+  const pick = chome !== null ? rows.filter((t) => t.chome_number === chome) : rows.filter((t) => t.chome_number === null);
+  if (pick.length === 1) return { yomi: pick[0].kana ?? undefined, machiazaId: `${pick[0].lg}-${pick[0].id}` };
+  const oaza = rows.filter((t) => t.chome_number === null);
+  const kanas = new Set(oaza.map((t) => t.kana).filter(Boolean));
+  if (kanas.size === 1) return { yomi: [...kanas][0], machiazaId: undefined };
+  const kk = KENALL[base] ?? KENALL[base.replace(/ヶ/g, 'ケ')] ?? KENALL[base.replace(/ケ/g, 'ヶ')];
+  if (kk) return { yomi: kk, machiazaId: undefined };
+  return {};
+}
+// 町名セル → [{name, base, chome}]。川崎は素の町名主体で、丁目まとめ (古市場1・2丁目・小倉1〜5丁目) のみ展開。
+function expandTown(town) {
+  const s = town.normalize('NFKC').replace(/~/g, '〜');
+  const m = s.match(/^(.+?)(\d+(?:[・〜]\d+)+)丁目$/);
+  if (m) {
+    const cs = [];
+    for (const p of m[2].split('・')) {
+      const r = p.match(/^(\d+)〜(\d+)$/);
+      if (r) { for (let x = +r[1]; x <= +r[2]; x++) cs.push(x); } else cs.push(+p);
+    }
+    return cs.map((c) => ({ name: `${m[1]}${c}丁目`, base: m[1], chome: c }));
+  }
+  const s1 = s.match(/^(.+?)(\d+)丁目$/);
+  if (s1) return [{ name: town, base: s1[1], chome: +s1[2] }];
+  return [{ name: town, base: s.replace(/（.*/, ''), chome: null }];
+}
+const yomiStat = { total: 0, abr: 0, id: 0 };
+
 const wardRows = []; // { ward, url, rows:[{row, town}] }
-const townWards = new Map(); // town -> Set(ward.ja)
+const townWards = new Map(); // base -> Set(ward.ja)
 for (const page of PAGES) {
   const tables = parseTables(readFileSync(join(HERE, 'cache', page.file), 'utf8'));
   if (tables.length !== page.wards.length)
@@ -89,12 +134,13 @@ for (const page of PAGES) {
     const rows = tables[i];
     wardRows.push({ ward, url: page.url, rows });
     for (const r of rows) {
-      if (!townWards.has(r.town)) townWards.set(r.town, new Set());
-      townWards.get(r.town).add(ward.ja);
+      const base = expandTown(r.town)[0].base;
+      if (!townWards.has(base)) townWards.set(base, new Set());
+      townWards.get(base).add(ward.ja);
     }
   });
 }
-const isDup = (town) => townWards.get(town).size > 1; // 区をまたぐ同名のみ曖昧性解消
+const isDup = (base) => (townWards.get(base)?.size ?? 0) > 1; // 区をまたぐ同名のみ曖昧性解消
 
 // 2) 区ごとにシグネチャで畳み込み → コース
 rmSync(join(OUT, '2026'), { recursive: true, force: true });
@@ -107,9 +153,21 @@ for (const { ward, url, rows } of wardRows) {
     const rules = rowToRules(row);
     const sig = signatureKey(rules);
     if (!bySig.has(sig)) bySig.set(sig, { rules, areas: [] });
-    const name = isDup(row.town) ? `${row.town}（${ward.ja}）` : row.town;
-    bySig.get(sig).areas.push({ name, yomi: row.kana }); // yomi は公式表の五十音マーカ (初字)
+    for (const a of expandTown(row.town)) {
+      const name = isDup(a.base) ? `${a.name}（${ward.ja}）` : a.name;
+      const { yomi, machiazaId } = abrOf(a.base, a.chome, ward.ja);
+      yomiStat.total++;
+      if (yomi) yomiStat.abr++;
+      if (machiazaId) yomiStat.id++;
+      bySig.get(sig).areas.push({
+        name,
+        yomi: yomi ?? row.kana, // ABR/ken_all に無ければ公式表の五十音マーカ (初字)
+        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+      });
+    }
   }
+  for (const v of bySig.values())
+    v.areas = [...new Map(v.areas.map((a) => [a.name, a])).values()];
   const sigs = [...bySig.keys()].sort();
   sigs.forEach((sig, i) => {
     const n = i + 1;

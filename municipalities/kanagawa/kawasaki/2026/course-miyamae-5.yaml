@@ -3,15 +3,15 @@ metadata:
   course: miyamae-5
   areas:
     - name: 西野川
-      yomi: に
+      yomi: にしのがわ
     - name: 野川
       yomi: の
     - name: 野川本町
-      yomi: の
+      yomi: のがわほんちょう
     - name: 野川台
-      yomi: の
+      yomi: のがわだい
     - name: 南野川
-      yomi: み
+      yomi: みなみのがわ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
