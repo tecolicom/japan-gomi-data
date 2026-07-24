@@ -2,22 +2,66 @@ metadata:
   city: yokohama
   course: nishi-5
   areas:
-    - name: 桜木町4〜7丁目
-      yomi: さ
-    - name: 中央1丁目
-      yomi: ち
-    - name: 戸部町1〜7丁目
-      yomi: と
+    - name: 桜木町4丁目（西区）
+      yomi: さくらぎちょう
+      machiaza_id: 141038-0039004
+    - name: 桜木町5丁目（西区）
+      yomi: さくらぎちょう
+      machiaza_id: 141038-0039005
+    - name: 桜木町6丁目（西区）
+      yomi: さくらぎちょう
+      machiaza_id: 141038-0039006
+    - name: 桜木町7丁目（西区）
+      yomi: さくらぎちょう
+      machiaza_id: 141038-0039007
+    - name: 中央1丁目（西区）
+      yomi: ちゅうおう
+      machiaza_id: 141038-0026001
+    - name: 戸部町1丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038001
+    - name: 戸部町2丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038002
+    - name: 戸部町3丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038003
+    - name: 戸部町4丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038004
+    - name: 戸部町5丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038005
+    - name: 戸部町6丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038006
+    - name: 戸部町7丁目
+      yomi: とべちょう
+      machiaza_id: 141038-0038007
     - name: 戸部本町
-      yomi: と
+      yomi: とべほんちょう
+      machiaza_id: 141038-0008000
     - name: 西前町2丁目
-      yomi: に
-    - name: 花咲町4〜7丁目
-      yomi: は
+      yomi: にしまえちょう
+      machiaza_id: 141038-0041002
+    - name: 花咲町4丁目（西区）
+      yomi: はなさきちょう
+      machiaza_id: 141038-0037004
+    - name: 花咲町5丁目（西区）
+      yomi: はなさきちょう
+      machiaza_id: 141038-0037005
+    - name: 花咲町6丁目（西区）
+      yomi: はなさきちょう
+      machiaza_id: 141038-0037006
+    - name: 花咲町7丁目（西区）
+      yomi: はなさきちょう
+      machiaza_id: 141038-0037007
     - name: 宮崎町
-      yomi: み
+      yomi: みやざきちょう
+      machiaza_id: 141038-0016000
     - name: 紅葉ヶ丘
-      yomi: も
+      yomi: もみじがおか
+      machiaza_id: 141038-0017000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

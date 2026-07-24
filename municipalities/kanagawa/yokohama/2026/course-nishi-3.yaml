@@ -3,23 +3,38 @@ metadata:
   course: nishi-3
   areas:
     - name: 岡野1丁目
-      yomi: お
+      yomi: おかの
+      machiaza_id: 141038-0021001
     - name: 北軽井沢
-      yomi: き
-    - name: 北幸1〜2丁目
-      yomi: き
+      yomi: きたかるいざわ
+      machiaza_id: 141038-0033000
+    - name: 北幸1丁目
+      yomi: きたさいわい
+      machiaza_id: 141038-0001001
+    - name: 北幸2丁目
+      yomi: きたさいわい
+      machiaza_id: 141038-0001002
     - name: 楠町
-      yomi: く
+      yomi: くすのきちょう
+      machiaza_id: 141038-0035000
     - name: 浅間台
-      yomi: せ
+      yomi: せんげんだい
+      machiaza_id: 141038-0031000
     - name: 浅間町1丁目
-      yomi: せ
+      yomi: せんげんちょう
+      machiaza_id: 141038-0043001
     - name: 南軽井沢
-      yomi: み
-    - name: 南幸1〜2丁目
-      yomi: み
+      yomi: みなみかるいざわ
+      machiaza_id: 141038-0034000
+    - name: 南幸1丁目
+      yomi: みなみさいわい
+      machiaza_id: 141038-0010001
+    - name: 南幸2丁目
+      yomi: みなみさいわい
+      machiaza_id: 141038-0010002
     - name: 宮ヶ谷
-      yomi: み
+      yomi: みやがや
+      machiaza_id: 141038-0032000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

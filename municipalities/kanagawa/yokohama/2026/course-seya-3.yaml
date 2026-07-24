@@ -2,7 +2,13 @@ metadata:
   city: yokohama
   course: seya-3
   areas:
-    - name: 相沢2・5〜7丁目
+    - name: 相沢2丁目
+      yomi: あ
+    - name: 相沢5丁目
+      yomi: あ
+    - name: 相沢6丁目
+      yomi: あ
+    - name: 相沢7丁目
       yomi: あ
     - name: 東野
       yomi: あ
@@ -10,11 +16,15 @@ metadata:
       yomi: あ
     - name: 瀬谷町
       yomi: せ
-    - name: 中屋敷2・3丁目
+    - name: 中屋敷2丁目
+      yomi: な
+    - name: 中屋敷3丁目
       yomi: な
     - name: 二ツ橋町387〜537番地
       yomi: ふ
-    - name: 本郷2・4丁目
+    - name: 本郷2丁目
+      yomi: ほ
+    - name: 本郷4丁目
       yomi: ほ
   year: 2026
   fiscal_year_ja: 令和8年度

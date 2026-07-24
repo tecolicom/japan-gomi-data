@@ -2,15 +2,31 @@ metadata:
   city: yokohama
   course: konan-2
   areas:
-    - name: 大久保1〜3丁目
+    - name: 大久保1丁目
       yomi: お
-    - name: 上大岡西1〜3丁目
+    - name: 大久保2丁目
+      yomi: お
+    - name: 大久保3丁目
+      yomi: お
+    - name: 上大岡西1丁目
       yomi: か
-    - name: 上大岡東1〜3丁目(上大岡東3丁目11の一部を除く)
+    - name: 上大岡西2丁目
       yomi: か
-    - name: 最戸1・2丁目
+    - name: 上大岡西3丁目
+      yomi: か
+    - name: 上大岡東1丁目（上大岡東3丁目11の一部を除く）
+      yomi: か
+    - name: 上大岡東2丁目（上大岡東3丁目11の一部を除く）
+      yomi: か
+    - name: 上大岡東3丁目（上大岡東3丁目11の一部を除く）
+      yomi: か
+    - name: 最戸1丁目
       yomi: さ
-    - name: 笹下1・2丁目笹下1丁目10の一部と笹下2丁目30の一部を除く
+    - name: 最戸2丁目
+      yomi: さ
+    - name: 笹下1丁目笹下1丁目10の一部と笹下2丁目30の一部を除く
+      yomi: さ
+    - name: 笹下2丁目笹下1丁目10の一部と笹下2丁目30の一部を除く
       yomi: さ
   year: 2026
   fiscal_year_ja: 令和8年度

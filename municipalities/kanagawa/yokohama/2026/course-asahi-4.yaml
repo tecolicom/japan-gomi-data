@@ -12,15 +12,21 @@ metadata:
       yomi: い
     - name: 上白根1丁目
       yomi: か
-    - name: さちが丘(相鉄本線より北側)
+    - name: さちが丘（相鉄本線より北側）
       yomi: さ
     - name: 四季美台
       yomi: し
-    - name: 白根4・5丁目
+    - name: 白根4丁目
       yomi: し
-    - name: 鶴ケ峰1丁目(5〜9番地付近)
+    - name: 白根5丁目
+      yomi: し
+    - name: 鶴ケ峰1丁目（5〜9番地付近）
       yomi: つ
-    - name: 鶴ケ峰本町1〜3丁目
+    - name: 鶴ケ峰本町1丁目
+      yomi: つ
+    - name: 鶴ケ峰本町2丁目
+      yomi: つ
+    - name: 鶴ケ峰本町3丁目
       yomi: つ
     - name: 二俣川1丁目
       yomi: ふ

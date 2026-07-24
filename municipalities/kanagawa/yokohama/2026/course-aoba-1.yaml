@@ -4,15 +4,33 @@ metadata:
   areas:
     - name: あざみ野2丁目
       yomi: あ
-    - name: あざみ野南1〜4丁目
+    - name: あざみ野南1丁目
+      yomi: あ
+    - name: あざみ野南2丁目
+      yomi: あ
+    - name: あざみ野南3丁目
+      yomi: あ
+    - name: あざみ野南4丁目
       yomi: あ
     - name: 市ケ尾町
       yomi: い
-    - name: 荏田北1〜3丁目
+    - name: 荏田北1丁目
+      yomi: え
+    - name: 荏田北2丁目
+      yomi: え
+    - name: 荏田北3丁目
       yomi: え
     - name: 荏田町
       yomi: え
-    - name: 荏田西1〜5丁目
+    - name: 荏田西1丁目
+      yomi: え
+    - name: 荏田西2丁目
+      yomi: え
+    - name: 荏田西3丁目
+      yomi: え
+    - name: 荏田西4丁目
+      yomi: え
+    - name: 荏田西5丁目
       yomi: え
   year: 2026
   fiscal_year_ja: 令和8年度

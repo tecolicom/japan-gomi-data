@@ -8,11 +8,42 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { parsePage, cellsToSchedule } from './parse.mjs';
+import { expandTown } from './areas.mjs';
 import { WARDS, BASE } from './wards.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '../../../municipalities/kanagawa/yokohama');
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-20'; // Date.now() 不使用
+
+// ABR 町字マスター (fetch-yomi.mjs で取得) で yomi・machiaza_id を付与する。
+// ベース町名 (expandTown の base) + 丁目番号で照合。区またぎ同名は ABR の区でも一意化する。
+let ABR = null;
+try { ABR = JSON.parse(readFileSync(join(HERE, 'cache', 'abr-town.json'), 'utf8')).towns; }
+catch { throw new Error('cache/abr-town.json がありません。node fetch-yomi.mjs を先に実行'); }
+const abrByOaza = new Map();
+for (const t of ABR) {
+  for (const k of [t.oaza, t.oaza.replace(/ケ/g, 'ヶ'), t.oaza.replace(/ヶ/g, 'ケ'), t.oaza.replace(/が/g, 'ヶ')]) {
+    if (!abrByOaza.has(k)) abrByOaza.set(k, []);
+    abrByOaza.get(k).push(t);
+  }
+}
+// base(大字) + chome(番号|null) + wardJa(区名) → { yomi, machiazaId } | {}
+function abrOf(base, chome, wardJa) {
+  const b = base.normalize('NFKC');
+  let rows = abrByOaza.get(b) ?? abrByOaza.get(b.replace(/ケ/g, 'ヶ')) ?? abrByOaza.get(b.replace(/が/g, 'ヶ')) ?? [];
+  rows = rows.filter((t) => t.ward === wardJa);
+  const uniq = new Map(rows.map((t) => [`${t.lg}-${t.id}`, t]));
+  rows = [...uniq.values()];
+  const pick = chome !== null
+    ? rows.filter((t) => t.chome_number === chome)
+    : rows.filter((t) => t.chome_number === null);
+  if (pick.length === 1) return { yomi: pick[0].kana ?? undefined, machiazaId: `${pick[0].lg}-${pick[0].id}` };
+  // 丁目行が無い/複数の場合: 大字読みだけでも付ける (ID は一意でないと付けない)
+  const oaza = rows.filter((t) => t.chome_number === null);
+  const kanas = new Set(oaza.map((t) => t.kana).filter(Boolean));
+  if (kanas.size === 1) return { yomi: [...kanas][0], machiazaId: undefined };
+  return {};
+}
 
 // 収集曜日が非公開の町 (表に「◯◯事務所にお問合せください」とだけある行)。検出したら既知リストと突合。
 const KNOWN_UNPUBLISHED = new Set(['平楽']); // 南区
@@ -48,8 +79,9 @@ for (const ward of WARDS) {
   }
   wardRows.push({ ward, rows });
   for (const r of rows) {
-    if (!townWards.has(r.town)) townWards.set(r.town, new Set());
-    townWards.get(r.town).add(ward.ja);
+    const base = expandTown(r.town)[0].base; // 区またぎ判定は大字ベースで
+    if (!townWards.has(base)) townWards.set(base, new Set());
+    townWards.get(base).add(ward.ja);
   }
 }
 for (const e of allExcluded) {
@@ -57,7 +89,8 @@ for (const e of allExcluded) {
     throw new Error(`未知の除外行: ${e.ward} ${e.town} (${e.reason})`);
   console.log(`excluded (収集曜日非公開): ${e.ward} ${e.town}`);
 }
-const isDup = (town) => townWards.get(town).size > 1; // 区をまたぐ同名のみ曖昧性解消
+const isDup = (base) => (townWards.get(base)?.size ?? 0) > 1; // 区をまたぐ同名のみ曖昧性解消
+const yomiStat = { total: 0, abr: 0, id: 0 };
 
 // 2) 区ごとにスケジュールシグネチャで畳み込み → コース
 rmSync(join(OUT, '2026'), { recursive: true, force: true });
@@ -70,13 +103,29 @@ for (const { ward, rows } of wardRows) {
     const sched = cellsToSchedule(row.cells);
     const sig = `${sched.burnable.join('')}|${sched.can}|${sched.plastic}`;
     if (!bySig.has(sig)) bySig.set(sig, { sched, areas: [] });
-    const name = isDup(row.town) ? `${row.town}（${ward.ja}）` : row.town;
-    bySig.get(sig).areas.push({ name, yomi: row.kana }); // yomi は公式表の五十音マーカ (初字)
+    // 町名セルを 1 町名 (丁目単位) へ展開し、ABR で yomi・machiaza_id を付与
+    for (const a of expandTown(row.town)) {
+      const dup = isDup(a.base);
+      const name = dup ? `${a.name}（${ward.ja}）` : a.name;
+      const { yomi, machiazaId } = abrOf(a.base, a.chome, ward.ja);
+      yomiStat.total++;
+      if (yomi) yomiStat.abr++;
+      if (machiazaId) yomiStat.id++;
+      bySig.get(sig).areas.push({
+        name,
+        yomi: yomi ?? row.kana, // ABR に無ければ公式表の五十音マーカ (初字) にフォールバック
+        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+        ...(a.note ? { note: a.note } : {}),
+      });
+    }
   }
-  // areas はサブページ読み込み順 (ファイル名 sort) のため、公式の五十音順に並べ直す
-  const KANA = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわ';
+  // 同一 name+note の重複 (丁目展開が既存の単一丁目と衝突) を除去
+  for (const v of bySig.values()) {
+    v.areas = [...new Map(v.areas.map((a) => [`${a.name}${a.note ?? ''}`, a])).values()];
+  }
+  // 公式表の五十音順に並べ直す (yomi は ABR 由来の完全読み優先)
   for (const { areas } of bySig.values())
-    areas.sort((a, b) => KANA.indexOf(a.yomi) - KANA.indexOf(b.yomi));
+    areas.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja'));
   // 番号は 燃やすごみ初日 → 缶等 → プラ の曜日順で安定させる
   const sigs = [...bySig.keys()].sort((a, b) => {
     const k = (s) => s.split('|').flatMap((p) => p.match(/../g)).map((d) => DAY_TO_INDEX[d]);
@@ -126,3 +175,4 @@ for (const { ward, rows } of wardRows) {
   console.log(`${ward.ja} (${ward.romaji}): ${rows.length}町名 → ${sigs.length}コース`);
 }
 console.log(`generated ${totalCourses} courses, ${totalTowns} towns (18区)`);
+console.log(`yomi: ${yomiStat.abr}/${yomiStat.total} (ABR) + フォールバック${yomiStat.total-yomiStat.abr} / machiaza_id: ${yomiStat.id} (${(100*yomiStat.id/yomiStat.total).toFixed(1)}%)`);

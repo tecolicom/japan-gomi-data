@@ -3,29 +3,47 @@ metadata:
   course: naka-1
   areas:
     - name: 大芝台
-      yomi: お
+      yomi: おおしばだい
+      machiaza_id: 141046-0068000
     - name: 大平町
-      yomi: お
+      yomi: おおひらちょう
+      machiaza_id: 141046-0045000
     - name: 滝之上
-      yomi: た
+      yomi: たきのうえ
+      machiaza_id: 141046-0009000
     - name: 塚越
       yomi: つ
     - name: 寺久保
-      yomi: て
+      yomi: てらくぼ
+      machiaza_id: 141046-0007000
     - name: 仲尾台ユーロハイツ付近
       yomi: な
     - name: 西竹之丸
-      yomi: に
+      yomi: にしたけのまる
+      machiaza_id: 141046-0049000
     - name: 根岸旭台
-      yomi: ね
+      yomi: ねぎしあさひだい
+      machiaza_id: 141046-0006000
     - name: 根岸町
-      yomi: ね
+      yomi: ねぎしちょう
+      machiaza_id: 141046-0118000
     - name: 蓑沢
       yomi: み
     - name: 山下町
-      yomi: や
-    - name: 山元町2〜5丁目
-      yomi: や
+      yomi: やましたちょう
+      machiaza_id: 141046-0056000
+    - name: 山元町2丁目
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120002
+    - name: 山元町3丁目
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120003
+    - name: 山元町4丁目
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120004
+    - name: 山元町5丁目
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

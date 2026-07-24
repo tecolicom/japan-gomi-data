@@ -2,11 +2,17 @@ metadata:
   city: yokohama
   course: tsuzuki-1
   areas:
-    - name: 荏田南1〜3丁目
+    - name: 荏田南1丁目
+      yomi: え
+    - name: 荏田南2丁目
+      yomi: え
+    - name: 荏田南3丁目
       yomi: え
     - name: 大丸
       yomi: お
-    - name: 加賀原1・2丁目
+    - name: 加賀原1丁目
+      yomi: か
+    - name: 加賀原2丁目
       yomi: か
     - name: 川和台
       yomi: か

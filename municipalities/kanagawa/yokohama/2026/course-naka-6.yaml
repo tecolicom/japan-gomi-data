@@ -2,46 +2,82 @@ metadata:
   city: yokohama
   course: naka-6
   areas:
-    - name: 赤門町1丁目
-      yomi: あ
+    - name: 赤門町1丁目（中区）
+      yomi: あかもんちょう
+      machiaza_id: 141046-0132001
     - name: 黄金町
-      yomi: こ
+      yomi: こがねちょう
+      machiaza_id: 141046-0110000
     - name: 小港町1丁目磯子線から本牧町側
-      yomi: こ
+      yomi: こみなとちょう
+      machiaza_id: 141046-0125001
     - name: 小港町1丁目磯子線からビューコート小港側
-      yomi: こ
+      yomi: こみなとちょう
+      machiaza_id: 141046-0125001
     - name: 小港町2丁目
-      yomi: こ
-    - name: 桜木町
-      yomi: さ
+      yomi: こみなとちょう
+      machiaza_id: 141046-0125002
+    - name: 桜木町（中区）
+      yomi: さくらぎちょう
+      machiaza_id: 141046-0119000
     - name: 新山下
       yomi: し
     - name: 錦町
-      yomi: に
-    - name: 野毛町1〜4丁目
-      yomi: の
+      yomi: にしきちょう
+      machiaza_id: 141046-0001000
+    - name: 野毛町1丁目
+      yomi: のげちょう
+      machiaza_id: 141046-0153001
+    - name: 野毛町2丁目
+      yomi: のげちょう
+      machiaza_id: 141046-0153002
+    - name: 野毛町3丁目
+      yomi: のげちょう
+      machiaza_id: 141046-0153003
+    - name: 野毛町4丁目
+      yomi: のげちょう
+      machiaza_id: 141046-0153004
     - name: 初音町
-      yomi: は
-    - name: 花咲町
-      yomi: は
+      yomi: はつねちょう
+      machiaza_id: 141046-0124000
+    - name: 花咲町（中区）
+      yomi: はなさきちょう
+      machiaza_id: 141046-0111000
     - name: 英町
-      yomi: は
-    - name: 日ノ出町1・2丁目
-      yomi: ひ
-    - name: 本牧十二天
-      yomi: ほ
-    - name: 本牧町1丁目大鳥小学校周辺
-      yomi: ほ
-    - name: 本牧ふ頭
-      yomi: ほ
+      yomi: はなぶさちょう
+      machiaza_id: 141046-0092000
+    - name: 日ノ出町1丁目
+      yomi: ひのでちょう
+      machiaza_id: 141046-0140001
+    - name: 日ノ出町2丁目
+      yomi: ひのでちょう
+      machiaza_id: 141046-0140002
     - name: 本牧満坂大鳥小学校周辺
       yomi: ほ
+    - name: 本牧十二天
+      yomi: ほんもくじゅうにてん
+      machiaza_id: 141046-0095000
+    - name: 本牧町1丁目大鳥小学校周辺
+      yomi: ほんもくちょう
+      machiaza_id: 141046-0149001
+    - name: 本牧ふ頭
+      yomi: ほんもくふとう
+      machiaza_id: 141046-0027000
     - name: 本牧宮原
-      yomi: ほ
-    - name: 宮川町1〜3丁目
-      yomi: み
+      yomi: ほんもくみやばら
+      machiaza_id: 141046-0094000
+    - name: 宮川町1丁目
+      yomi: みやがわちょう
+      machiaza_id: 141046-0113001
+    - name: 宮川町2丁目
+      yomi: みやがわちょう
+      machiaza_id: 141046-0113002
+    - name: 宮川町3丁目
+      yomi: みやがわちょう
+      machiaza_id: 141046-0113003
     - name: 和田山
-      yomi: わ
+      yomi: わだやま
+      machiaza_id: 141046-0031000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

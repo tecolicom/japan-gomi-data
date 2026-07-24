@@ -16,7 +16,13 @@ metadata:
       yomi: つ
     - name: 矢指町
       yomi: や
-    - name: 若葉台1〜4丁目
+    - name: 若葉台1丁目
+      yomi: わ
+    - name: 若葉台2丁目
+      yomi: わ
+    - name: 若葉台3丁目
+      yomi: わ
+    - name: 若葉台4丁目
       yomi: わ
   year: 2026
   fiscal_year_ja: 令和8年度

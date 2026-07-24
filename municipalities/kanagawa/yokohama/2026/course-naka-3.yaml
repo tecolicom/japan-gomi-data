@@ -3,69 +3,119 @@ metadata:
   course: naka-3
   areas:
     - name: 池袋
-      yomi: い
-    - name: 上野町1・2丁目西之谷町側
-      yomi: う
-    - name: 翁町
-      yomi: お
+      yomi: いけぶくろ
+      machiaza_id: 141046-0005000
+    - name: 上野町1丁目西之谷町側
+      yomi: うえのちょう
+      machiaza_id: 141046-0127001
+    - name: 上野町2丁目西之谷町側
+      yomi: うえのちょう
+      machiaza_id: 141046-0127002
     - name: 扇町1丁目
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134001
     - name: 扇町2丁目
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134002
     - name: 扇町3丁目
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134003
+    - name: 翁町
+      yomi: おきなちょう
+      machiaza_id: 141046-0109000
     - name: 鷺山ベイサイドヒル付近
       yomi: さ
     - name: 立野
-      yomi: た
-    - name: 長者町2〜4丁目
-      yomi: ち
+      yomi: たての
+      machiaza_id: 141046-0044000
+    - name: 長者町2丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138002
+    - name: 長者町3丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138003
+    - name: 長者町4丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138004
     - name: 長者町5丁目根岸道路より関内駅側
-      yomi: ち
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138005
     - name: 西之谷町
-      yomi: に
-    - name: 羽衣町1〜3丁目
-      yomi: は
+      yomi: にしのやちょう
+      machiaza_id: 141046-0048000
+    - name: 羽衣町1丁目
+      yomi: はごろもちょう
+      machiaza_id: 141046-0108001
+    - name: 羽衣町2丁目
+      yomi: はごろもちょう
+      machiaza_id: 141046-0108002
+    - name: 羽衣町3丁目
+      yomi: はごろもちょう
+      machiaza_id: 141046-0108003
     - name: 万代町
-      yomi: は
+      yomi: ばんだいちょう
+      machiaza_id: 141046-0152000
     - name: 富士見町
-      yomi: ふ
+      yomi: ふじみちょう
+      machiaza_id: 141046-0084000
     - name: 不老町
-      yomi: ふ
-    - name: 蓬莱町
-      yomi: ほ
-    - name: 本郷町1・2・3丁目
-      yomi: ほ
-    - name: 本牧荒井
-      yomi: ほ
-    - name: 本牧町1丁目
-      yomi: ほ
-    - name: 本牧町2丁目
-      yomi: ほ
-    - name: 本牧原16-1
-      yomi: ほ
+      yomi: ふろうちょう
+      machiaza_id: 141046-0143000
     - name: 本牧間門本牧通りから本牧荒井側
       yomi: ほ
+    - name: 蓬莱町
+      yomi: ほうらいちょう
+      machiaza_id: 141046-0064000
+    - name: 本郷町1丁目
+      yomi: ほんごうちょう
+      machiaza_id: 141046-0147001
+    - name: 本郷町2丁目
+      yomi: ほんごうちょう
+      machiaza_id: 141046-0147002
+    - name: 本郷町3丁目
+      yomi: ほんごうちょう
+      machiaza_id: 141046-0147003
+    - name: 本牧荒井
+      yomi: ほんもくあらい
+      machiaza_id: 141046-0030000
+    - name: 本牧町1丁目
+      yomi: ほんもくちょう
+      machiaza_id: 141046-0149001
+    - name: 本牧町2丁目
+      yomi: ほんもくちょう
+      machiaza_id: 141046-0149002
+    - name: 本牧原16-1
+      yomi: ほんもくはら
+      machiaza_id: 141046-0033000
     - name: 本牧満坂
-      yomi: ほ
+      yomi: ほんもくまんざか
+      machiaza_id: 141046-0077000
     - name: 本牧緑ヶ丘
-      yomi: ほ
+      yomi: ほんもくみどりがおか
+      machiaza_id: 141046-0076000
     - name: 本牧宮原8〜10番地
-      yomi: ほ
+      yomi: ほんもくみやばら
+      machiaza_id: 141046-0094000
     - name: 本牧和田
-      yomi: ほ
+      yomi: ほんもくわだ
+      machiaza_id: 141046-0028000
     - name: 豆口台第4公園周辺
       yomi: ま
-    - name: 麦田町4丁目本牧通りから山手駅側(商店街通り沿い)
-      yomi: む
+    - name: 麦田町4丁目本牧通りから山手駅側（商店街通り沿い）
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141004
     - name: 矢口台
-      yomi: や
+      yomi: やぐちだい
+      machiaza_id: 141046-0037000
     - name: 山田町
-      yomi: や
+      yomi: やまだちょう
+      machiaza_id: 141046-0083000
     - name: 大和町
-      yomi: や
+      yomi: やまとちょう
+      machiaza_id: 141046-0137000
     - name: 山吹町
-      yomi: や
+      yomi: やまぶきちょう
+      machiaza_id: 141046-0080000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

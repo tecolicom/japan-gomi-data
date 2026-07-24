@@ -3,7 +3,8 @@ metadata:
   course: kanagawa-5
   areas:
     - name: 西寺尾1丁目27・30・31番地の一部
-      yomi: に
+      yomi: にしてらお
+      machiaza_id: 141020-0012001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

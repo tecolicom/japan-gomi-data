@@ -2,7 +2,9 @@ metadata:
   city: yokohama
   course: aoba-6
   areas:
-    - name: 青葉台1・2丁目
+    - name: 青葉台1丁目
+      yomi: あ
+    - name: 青葉台2丁目
       yomi: あ
     - name: 柿の木台
       yomi: か
@@ -14,7 +16,9 @@ metadata:
       yomi: さ
     - name: 寺家町
       yomi: し
-    - name: たちばな台1・2丁目
+    - name: たちばな台1丁目
+      yomi: た
+    - name: たちばな台2丁目
       yomi: た
     - name: 成合町
       yomi: な

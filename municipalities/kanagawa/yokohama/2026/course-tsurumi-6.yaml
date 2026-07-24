@@ -2,38 +2,78 @@ metadata:
   city: yokohama
   course: tsurumi-6
   areas:
-    - name: 朝日町1・2丁目
-      yomi: あ
+    - name: 朝日町1丁目
+      yomi: あさひちょう
+      machiaza_id: 141011-0058001
+    - name: 朝日町2丁目
+      yomi: あさひちょう
+      machiaza_id: 141011-0058002
     - name: 梶山2丁目9番地の一部
-      yomi: か
+      yomi: かじやま
+      machiaza_id: 141011-0050002
     - name: 北寺尾7丁目
-      yomi: き
-    - name: 駒岡1〜3丁目
-      yomi: こ
-    - name: 汐入町2・3丁目
-      yomi: し
-    - name: 獅子ヶ谷2・3丁目
-      yomi: し
+      yomi: きたてらお
+      machiaza_id: 141011-0045007
+    - name: 駒岡1丁目
+      yomi: こまおか
+      machiaza_id: 141011-0024001
+    - name: 駒岡2丁目
+      yomi: こまおか
+      machiaza_id: 141011-0024002
+    - name: 駒岡3丁目
+      yomi: こまおか
+      machiaza_id: 141011-0024003
+    - name: 汐入町2丁目
+      yomi: しおいりちょう
+      machiaza_id: 141011-0056002
+    - name: 汐入町3丁目
+      yomi: しおいりちょう
+      machiaza_id: 141011-0056003
+    - name: 獅子ヶ谷2丁目
+      yomi: ししがや
+      machiaza_id: 141011-0047002
+    - name: 獅子ヶ谷3丁目
+      yomi: ししがや
+      machiaza_id: 141011-0047003
     - name: 大東町
-      yomi: た
+      yomi: だいとうちょう
+      machiaza_id: 141011-0005000
     - name: 鶴見2丁目
-      yomi: つ
-    - name: 寺谷1・2丁目
-      yomi: て
+      yomi: つるみ
+      machiaza_id: 141011-0010002
+    - name: 寺谷1丁目
+      yomi: てらや
+      machiaza_id: 141011-0040001
+    - name: 寺谷2丁目
+      yomi: てらや
+      machiaza_id: 141011-0040002
     - name: 豊岡町
-      yomi: と
-    - name: 仲通2・3丁目
-      yomi: な
-    - name: 浜町1・2丁目
-      yomi: は
+      yomi: とよおかちょう
+      machiaza_id: 141011-0041000
+    - name: 仲通2丁目
+      yomi: なかどおり
+      machiaza_id: 141011-0057002
+    - name: 仲通3丁目
+      yomi: なかどおり
+      machiaza_id: 141011-0057003
+    - name: 浜町1丁目
+      yomi: はまちょう
+      machiaza_id: 141011-0060001
+    - name: 浜町2丁目
+      yomi: はまちょう
+      machiaza_id: 141011-0060002
     - name: 東寺尾北台
-      yomi: ひ
+      yomi: ひがしてらおきただい
+      machiaza_id: 141011-0043000
     - name: 東寺尾中台
-      yomi: ひ
+      yomi: ひがしてらおなかだい
+      machiaza_id: 141011-0026000
     - name: 東寺尾東台8番地の一部
-      yomi: ひ
+      yomi: ひがしてらおひがしだい
+      machiaza_id: 141011-0004000
     - name: 平安町2丁目
-      yomi: へ
+      yomi: へいあんちょう
+      machiaza_id: 141011-0028002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

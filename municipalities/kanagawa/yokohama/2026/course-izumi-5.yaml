@@ -2,23 +2,43 @@ metadata:
   city: yokohama
   course: izumi-5
   areas:
-    - name: 和泉が丘1〜3丁目
+    - name: 和泉が丘1丁目
       yomi: い
-    - name: 和泉中央南1〜4丁目
+    - name: 和泉が丘2丁目
+      yomi: い
+    - name: 和泉が丘3丁目
+      yomi: い
+    - name: 和泉中央南1丁目
+      yomi: い
+    - name: 和泉中央南2丁目
+      yomi: い
+    - name: 和泉中央南3丁目
+      yomi: い
+    - name: 和泉中央南4丁目
       yomi: い
     - name: 和泉中央南5丁目20〜23、29〜31、19と28の一部
       yomi: い
-    - name: 和泉町1〜999番地※一部異なる地域あり
+    - name: 和泉町1〜999番地
       yomi: い
+      note: 一部異なる地域あり
     - name: 和泉町1000〜1500台
       yomi: い
     - name: 和泉町1600〜3298番地台
       yomi: い
-    - name: 和泉町3347〜3355番地台(和泉川寄りを除く)
+    - name: 和泉町3347〜3355番地台（和泉川寄りを除く）
       yomi: い
-    - name: 和泉町3600〜4000番地台※一部異なる地域あり
+    - name: 和泉町3600〜4000番地台
       yomi: い
-    - name: 下和泉1〜5丁目
+      note: 一部異なる地域あり
+    - name: 下和泉1丁目
+      yomi: し
+    - name: 下和泉2丁目
+      yomi: し
+    - name: 下和泉3丁目
+      yomi: し
+    - name: 下和泉4丁目
+      yomi: し
+    - name: 下和泉5丁目
       yomi: し
     - name: ゆめが丘1〜7番地
       yomi: ゆ

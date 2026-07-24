@@ -3,35 +3,68 @@ metadata:
   course: kanagawa-4
   areas:
     - name: 入江1丁目29〜34番地
-      yomi: い
+      yomi: いりえ
+      machiaza_id: 141020-0046001
     - name: 入江2丁目
-      yomi: い
+      yomi: いりえ
+      machiaza_id: 141020-0046002
     - name: 大口通1〜17番地
-      yomi: お
+      yomi: おおぐちどおり
+      machiaza_id: 141020-0062000
     - name: 大口通27〜199番地
-      yomi: お
+      yomi: おおぐちどおり
+      machiaza_id: 141020-0062000
     - name: 大口仲町10〜37番地
-      yomi: お
+      yomi: おおぐちなかまち
+      machiaza_id: 141020-0054000
     - name: 大口仲町51〜130番地
-      yomi: お
+      yomi: おおぐちなかまち
+      machiaza_id: 141020-0054000
     - name: 大口仲町150〜470番地
-      yomi: お
+      yomi: おおぐちなかまち
+      machiaza_id: 141020-0054000
     - name: 神之木台
-      yomi: か
+      yomi: かみのきだい
+      machiaza_id: 141020-0049000
     - name: 神之木町
-      yomi: か
+      yomi: かみのきちょう
+      machiaza_id: 141020-0063000
     - name: 子安台2丁目
-      yomi: こ
+      yomi: こやすだい
+      machiaza_id: 141020-0048002
     - name: 新子安1丁目18番地
-      yomi: し
+      yomi: しんこやす
+      machiaza_id: 141020-0047001
     - name: 新子安2丁目
-      yomi: し
+      yomi: しんこやす
+      machiaza_id: 141020-0047002
     - name: 七島町147〜163番地
-      yomi: な
-    - name: 西寺尾1〜4丁目
-      yomi: に
-    - name: 松見町1〜4丁目
-      yomi: ま
+      yomi: ななしまちょう
+      machiaza_id: 141020-0053000
+    - name: 西寺尾1丁目
+      yomi: にしてらお
+      machiaza_id: 141020-0012001
+    - name: 西寺尾2丁目
+      yomi: にしてらお
+      machiaza_id: 141020-0012002
+    - name: 西寺尾3丁目
+      yomi: にしてらお
+      machiaza_id: 141020-0012003
+    - name: 西寺尾4丁目
+      yomi: にしてらお
+      machiaza_id: 141020-0012004
+    - name: 松見町1丁目
+      yomi: まつみちょう
+      machiaza_id: 141020-0011001
+    - name: 松見町2丁目
+      yomi: まつみちょう
+      machiaza_id: 141020-0011002
+    - name: 松見町3丁目
+      yomi: まつみちょう
+      machiaza_id: 141020-0011003
+    - name: 松見町4丁目
+      yomi: まつみちょう
+      machiaza_id: 141020-0011004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

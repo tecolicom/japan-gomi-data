@@ -3,41 +3,89 @@ metadata:
   course: kanagawa-2
   areas:
     - name: 旭ヶ丘
-      yomi: あ
-    - name: 上反町1・2丁目
-      yomi: か
-    - name: 神大寺1・2丁目
-      yomi: か
+      yomi: あさひがおか
+      machiaza_id: 141020-0044000
+    - name: 上反町1丁目
+      yomi: かみたんまち
+      machiaza_id: 141020-0082001
+    - name: 上反町2丁目
+      yomi: かみたんまち
+      machiaza_id: 141020-0082002
+    - name: 神大寺1丁目
+      yomi: かんだいじ
+      machiaza_id: 141020-0076001
+    - name: 神大寺2丁目
+      yomi: かんだいじ
+      machiaza_id: 141020-0076002
     - name: 桐畑
-      yomi: き
+      yomi: きりばたけ
+      machiaza_id: 141020-0028000
     - name: 栗田谷
-      yomi: く
+      yomi: くりたや
+      machiaza_id: 141020-0008000
     - name: 斎藤分町49・50番地周辺
-      yomi: さ
-    - name: 反町1〜4丁目
-      yomi: た
+      yomi: さいとうぶんちょう
+      machiaza_id: 141020-0003000
+    - name: 反町1丁目
+      yomi: たんまち
+      machiaza_id: 141020-0085001
+    - name: 反町2丁目
+      yomi: たんまち
+      machiaza_id: 141020-0085002
+    - name: 反町3丁目
+      yomi: たんまち
+      machiaza_id: 141020-0085003
+    - name: 反町4丁目
+      yomi: たんまち
+      machiaza_id: 141020-0085004
     - name: 平川町1・2番地付近
-      yomi: ひ
-    - name: 松本町1〜6丁目
-      yomi: ま
+      yomi: ひらかわちょう
+      machiaza_id: 141020-0042000
+    - name: 松本町1丁目
+      yomi: まつもとちょう
+      machiaza_id: 141020-0081001
+    - name: 松本町2丁目
+      yomi: まつもとちょう
+      machiaza_id: 141020-0081002
+    - name: 松本町3丁目
+      yomi: まつもとちょう
+      machiaza_id: 141020-0081003
+    - name: 松本町4丁目
+      yomi: まつもとちょう
+      machiaza_id: 141020-0081004
+    - name: 松本町5丁目
+      yomi: まつもとちょう
+      machiaza_id: 141020-0081005
+    - name: 松本町6丁目
+      yomi: まつもとちょう
+      machiaza_id: 141020-0081006
     - name: 三ツ沢上町
-      yomi: み
+      yomi: みつざわかみまち
+      machiaza_id: 141020-0073000
     - name: 三ツ沢下町
-      yomi: み
+      yomi: みつざわしもまち
+      machiaza_id: 141020-0069000
     - name: 三ツ沢中町
-      yomi: み
+      yomi: みつざわなかまち
+      machiaza_id: 141020-0075000
     - name: 三ツ沢西町
-      yomi: み
+      yomi: みつざわにしまち
+      machiaza_id: 141020-0070000
     - name: 三ツ沢東町
-      yomi: み
+      yomi: みつざわひがしまち
+      machiaza_id: 141020-0072000
     - name: 三ツ沢南町
-      yomi: み
+      yomi: みつざわみなみまち
+      machiaza_id: 141020-0071000
     - name: 六角橋2丁目4〜6番地一部
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006002
     - name: 六角橋3丁目2〜18番地
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006003
     - name: 六角橋4丁目
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

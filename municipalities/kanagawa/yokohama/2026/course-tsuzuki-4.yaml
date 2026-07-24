@@ -6,9 +6,27 @@ metadata:
       yomi: う
     - name: 牛久保西1丁目
       yomi: う
-    - name: 北山田1〜7丁目
+    - name: 北山田1丁目
       yomi: き
-    - name: 東山田1〜4丁目
+    - name: 北山田2丁目
+      yomi: き
+    - name: 北山田3丁目
+      yomi: き
+    - name: 北山田4丁目
+      yomi: き
+    - name: 北山田5丁目
+      yomi: き
+    - name: 北山田6丁目
+      yomi: き
+    - name: 北山田7丁目
+      yomi: き
+    - name: 東山田1丁目
+      yomi: ひ
+    - name: 東山田2丁目
+      yomi: ひ
+    - name: 東山田3丁目
+      yomi: ひ
+    - name: 東山田4丁目
       yomi: ひ
     - name: 東山田町
       yomi: ひ

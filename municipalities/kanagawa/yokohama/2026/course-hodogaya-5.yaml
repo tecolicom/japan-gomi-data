@@ -3,23 +3,34 @@ metadata:
   course: hodogaya-5
   areas:
     - name: 釜台町
-      yomi: か
-    - name: 上星川1〜3丁目
-      yomi: か
+      yomi: かまだいちょう
+      machiaza_id: 141062-0039000
+    - name: 上星川1丁目
+      yomi: かみほしかわ
+      machiaza_id: 141062-0031001
+    - name: 上星川2丁目
+      yomi: かみほしかわ
+      machiaza_id: 141062-0031002
+    - name: 上星川3丁目
+      yomi: かみほしかわ
+      machiaza_id: 141062-0031003
     - name: 川島町（保土ケ谷区）
-      yomi: か
+      yomi: かわしまちょう
     - name: 坂本町
-      yomi: さ
+      yomi: さかもとちょう
     - name: 常盤台【横浜新道西側】
       yomi: と
     - name: 仏向町【サンシティ付近】
       yomi: ふ
     - name: 仏向西
-      yomi: ふ
+      yomi: ぶっこうにし
+      machiaza_id: 141062-0001000
     - name: 峰岡町3丁目【桜道橋付近】
-      yomi: み
+      yomi: みねおかちよう
+      machiaza_id: 141062-0048003
     - name: 和田2丁目【常盤台公園付近】
-      yomi: わ
+      yomi: わだ
+      machiaza_id: 141062-0030002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

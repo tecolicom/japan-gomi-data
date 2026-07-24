@@ -3,20 +3,60 @@ metadata:
   course: kohoku-2
   areas:
     - name: 大曽根1丁目25・26の一部
-      yomi: お
-    - name: 樽町1〜4丁目
-      yomi: た
-    - name: 綱島東1〜6丁目
-      yomi: つ
+      yomi: おおそね
+      machiaza_id: 141097-0025001
+    - name: 樽町1丁目
+      yomi: たるまち
+      machiaza_id: 141097-0021001
+    - name: 樽町2丁目
+      yomi: たるまち
+      machiaza_id: 141097-0021002
+    - name: 樽町3丁目
+      yomi: たるまち
+      machiaza_id: 141097-0021003
+    - name: 樽町4丁目
+      yomi: たるまち
+      machiaza_id: 141097-0021004
+    - name: 綱島東1丁目
+      yomi: つなしまひがし
+      machiaza_id: 141097-0023001
+    - name: 綱島東2丁目
+      yomi: つなしまひがし
+      machiaza_id: 141097-0023002
+    - name: 綱島東3丁目
+      yomi: つなしまひがし
+      machiaza_id: 141097-0023003
+    - name: 綱島東4丁目
+      yomi: つなしまひがし
+      machiaza_id: 141097-0023004
+    - name: 綱島東5丁目
+      yomi: つなしまひがし
+      machiaza_id: 141097-0023005
+    - name: 綱島東6丁目
+      yomi: つなしまひがし
+      machiaza_id: 141097-0023006
     - name: 日吉3丁目4〜23番地
-      yomi: ひ
+      yomi: ひよし
+      machiaza_id: 141097-0022003
     - name: 日吉4丁目1・4〜21番地
-      yomi: ひ
-    - name: 日吉5〜7丁目
-      yomi: ひ
-    - name: 箕輪町1・2丁目
-      yomi: み
-    - name: 師岡町環状線北側(師岡南町内会地域を除く)
+      yomi: ひよし
+      machiaza_id: 141097-0022004
+    - name: 日吉5丁目
+      yomi: ひよし
+      machiaza_id: 141097-0022005
+    - name: 日吉6丁目
+      yomi: ひよし
+      machiaza_id: 141097-0022006
+    - name: 日吉7丁目
+      yomi: ひよし
+      machiaza_id: 141097-0022007
+    - name: 箕輪町1丁目
+      yomi: みのわちょう
+      machiaza_id: 141097-0029001
+    - name: 箕輪町2丁目
+      yomi: みのわちょう
+      machiaza_id: 141097-0029002
+    - name: 師岡町環状線北側（師岡南町内会地域を除く）
       yomi: も
   year: 2026
   fiscal_year_ja: 令和8年度

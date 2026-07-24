@@ -3,7 +3,8 @@ metadata:
   course: kanazawa-4
   areas:
     - name: 能見台通
-      yomi: の
+      yomi: のうけんだいどおり
+      machiaza_id: 141089-0044000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

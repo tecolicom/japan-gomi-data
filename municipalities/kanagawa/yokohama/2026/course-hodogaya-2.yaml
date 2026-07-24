@@ -3,25 +3,51 @@ metadata:
   course: hodogaya-2
   areas:
     - name: 岡沢町
-      yomi: お
+      yomi: おかざわちょう
+      machiaza_id: 141062-0034000
     - name: 鎌谷町
-      yomi: か
+      yomi: かまやちょう
+      machiaza_id: 141062-0020000
     - name: 川辺町
-      yomi: か
+      yomi: かわべちょう
+      machiaza_id: 141062-0027000
     - name: 常盤台【横浜新道東側】
       yomi: と
     - name: 仏向町【和田町駅北側】
       yomi: ふ
-    - name: 星川2・3丁目
-      yomi: ほ
-    - name: 峰岡町1〜3丁目
-      yomi: み
+    - name: 星川2丁目
+      yomi: ほしかわ
+      machiaza_id: 141062-0018002
+    - name: 星川3丁目
+      yomi: ほしかわ
+      machiaza_id: 141062-0018003
+    - name: 峰岡町1丁目
+      yomi: みねおかちよう
+      machiaza_id: 141062-0048001
+    - name: 峰岡町2丁目
+      yomi: みねおかちよう
+      machiaza_id: 141062-0048002
+    - name: 峰岡町3丁目
+      yomi: みねおかちよう
+      machiaza_id: 141062-0048003
     - name: 峰沢町
-      yomi: み
-    - name: 宮田町1〜3丁目
-      yomi: み
-    - name: 和田1・2丁目
-      yomi: わ
+      yomi: みねざわちょう
+      machiaza_id: 141062-0035000
+    - name: 宮田町1丁目
+      yomi: みやたちよう
+      machiaza_id: 141062-0044001
+    - name: 宮田町2丁目
+      yomi: みやたちよう
+      machiaza_id: 141062-0044002
+    - name: 宮田町3丁目
+      yomi: みやたちよう
+      machiaza_id: 141062-0044003
+    - name: 和田1丁目
+      yomi: わだ
+      machiaza_id: 141062-0030001
+    - name: 和田2丁目
+      yomi: わだ
+      machiaza_id: 141062-0030002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

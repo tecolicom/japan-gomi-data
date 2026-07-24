@@ -2,14 +2,33 @@ metadata:
   city: yokohama
   course: nishi-6
   areas:
-    - name: 桜木町7丁目48
-      yomi: さ
-    - name: 高島1〜2丁目
-      yomi: た
-    - name: 平沼1・2丁目
-      yomi: ひ
-    - name: みなとみらい3〜6丁目
-      yomi: み
+    - name: 桜木町7丁目48（西区）
+      yomi: さくらぎちょう
+      machiaza_id: 141038-0039007
+    - name: 高島1丁目
+      yomi: たかしま
+      machiaza_id: 141038-0011001
+    - name: 高島2丁目
+      yomi: たかしま
+      machiaza_id: 141038-0011002
+    - name: 平沼1丁目
+      yomi: ひらぬま
+      machiaza_id: 141038-0012001
+    - name: 平沼2丁目
+      yomi: ひらぬま
+      machiaza_id: 141038-0012002
+    - name: みなとみらい3丁目
+      yomi: みなとみらい
+      machiaza_id: 141038-0013003
+    - name: みなとみらい4丁目
+      yomi: みなとみらい
+      machiaza_id: 141038-0013004
+    - name: みなとみらい5丁目
+      yomi: みなとみらい
+      machiaza_id: 141038-0013005
+    - name: みなとみらい6丁目
+      yomi: みなとみらい
+      machiaza_id: 141038-0013006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

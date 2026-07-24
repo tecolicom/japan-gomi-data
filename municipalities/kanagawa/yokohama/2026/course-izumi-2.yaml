@@ -2,25 +2,47 @@ metadata:
   city: yokohama
   course: izumi-2
   areas:
-    - name: 岡津町1〜300番地※240〜242番を除く
+    - name: 岡津町1〜300番地
       yomi: お
+      note: 240〜242番を除く
     - name: 岡津町500〜600番地
       yomi: お
-    - name: 岡津町1000〜1400台※1200と1400一部除く
+    - name: 岡津町1000〜1400台
       yomi: お
+      note: 1200と1400一部除く
     - name: 白百合全域
       yomi: し
-    - name: 新橋町500〜700番地の一部(弥生台側集積場所利用者)
+    - name: 新橋町500〜700番地の一部（弥生台側集積場所利用者）
       yomi: し
-    - name: 中田北3丁目※富士見が丘町内会地域
+    - name: 中田北3丁目
       yomi: な
-    - name: 中田東1〜4丁目
+      note: 富士見が丘町内会地域
+    - name: 中田東1丁目
       yomi: な
-    - name: 西が岡1〜3丁目※1丁目28〜32を除く
+    - name: 中田東2丁目
+      yomi: な
+    - name: 中田東3丁目
+      yomi: な
+    - name: 中田東4丁目
+      yomi: な
+    - name: 西が岡1丁目
       yomi: に
+      note: 1丁目28〜32を除く
+    - name: 西が岡2丁目
+      yomi: に
+      note: 1丁目28〜32を除く
+    - name: 西が岡3丁目
+      yomi: に
+      note: 1丁目28〜32を除く
     - name: 弥生台1〜37番地
       yomi: や
-    - name: 領家1〜4丁目
+    - name: 領家1丁目
+      yomi: り
+    - name: 領家2丁目
+      yomi: り
+    - name: 領家3丁目
+      yomi: り
+    - name: 領家4丁目
       yomi: り
   year: 2026
   fiscal_year_ja: 令和8年度

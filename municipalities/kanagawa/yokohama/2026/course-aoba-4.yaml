@@ -18,7 +18,9 @@ metadata:
       yomi: ち
     - name: つつじが丘
       yomi: つ
-    - name: 藤が丘1・2丁目
+    - name: 藤が丘1丁目
+      yomi: ふ
+    - name: 藤が丘2丁目
       yomi: ふ
   year: 2026
   fiscal_year_ja: 令和8年度

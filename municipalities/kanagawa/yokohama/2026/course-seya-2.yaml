@@ -2,13 +2,21 @@ metadata:
   city: yokohama
   course: seya-2
   areas:
-    - name: 相沢1・3・4丁目
+    - name: 相沢1丁目
+      yomi: あ
+    - name: 相沢3丁目
+      yomi: あ
+    - name: 相沢4丁目
       yomi: あ
     - name: 瀬谷1丁目1〜22番地
       yomi: せ
-    - name: 瀬谷2〜4丁目
+    - name: 瀬谷2丁目
       yomi: せ
-    - name: 中央
+    - name: 瀬谷3丁目
+      yomi: せ
+    - name: 瀬谷4丁目
+      yomi: せ
+    - name: 中央（瀬谷区）
       yomi: ち
     - name: 橋戸1丁目
       yomi: は

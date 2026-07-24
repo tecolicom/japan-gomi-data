@@ -2,20 +2,39 @@ metadata:
   city: yokohama
   course: nishi-4
   areas:
-    - name: 赤門町2丁目
-      yomi: あ
+    - name: 赤門町2丁目（西区）
+      yomi: あかもんちょう
+      machiaza_id: 141038-0042002
     - name: 東ヶ丘
-      yomi: あ
-    - name: 伊勢町1〜3丁目
-      yomi: い
+      yomi: あずまがおか
+      machiaza_id: 141038-0003000
+    - name: 伊勢町1丁目
+      yomi: いせちょう
+      machiaza_id: 141038-0036001
+    - name: 伊勢町2丁目
+      yomi: いせちょう
+      machiaza_id: 141038-0036002
+    - name: 伊勢町3丁目
+      yomi: いせちょう
+      machiaza_id: 141038-0036003
     - name: 老松町
-      yomi: お
+      yomi: おいまつちょう
+      machiaza_id: 141038-0007000
     - name: 霞ヶ丘
-      yomi: か
+      yomi: かすみがおか
+      machiaza_id: 141038-0018000
     - name: 御所山町
-      yomi: こ
-    - name: 西戸部町1〜3丁目
-      yomi: に
+      yomi: ごしょやまちょう
+      machiaza_id: 141038-0005000
+    - name: 西戸部町1丁目
+      yomi: にしとべちょう
+      machiaza_id: 141038-0040001
+    - name: 西戸部町2丁目
+      yomi: にしとべちょう
+      machiaza_id: 141038-0040002
+    - name: 西戸部町3丁目
+      yomi: にしとべちょう
+      machiaza_id: 141038-0040003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,15 +4,30 @@ metadata:
   areas:
     - name: 中田北1丁目全域
       yomi: な
-    - name: 中田北2丁目(中田東側集積場所利用者除く)
+    - name: 中田北2丁目（中田東側集積場所利用者除く）
       yomi: な
-    - name: 中田北3丁目※富士見丘町内会を除く
+    - name: 中田北3丁目
       yomi: な
+      note: 富士見丘町内会を除く
     - name: 中田町2700番台〜3400番台
       yomi: な
-    - name: 中田西1〜4丁目
+    - name: 中田西1丁目
       yomi: な
-    - name: 中田南1〜5丁目
+    - name: 中田西2丁目
+      yomi: な
+    - name: 中田西3丁目
+      yomi: な
+    - name: 中田西4丁目
+      yomi: な
+    - name: 中田南1丁目
+      yomi: な
+    - name: 中田南2丁目
+      yomi: な
+    - name: 中田南3丁目
+      yomi: な
+    - name: 中田南4丁目
+      yomi: な
+    - name: 中田南5丁目
       yomi: な
     - name: 西が岡1丁目28〜32番地
       yomi: に

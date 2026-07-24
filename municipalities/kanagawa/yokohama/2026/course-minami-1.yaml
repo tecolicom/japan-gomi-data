@@ -3,39 +3,70 @@ metadata:
   course: minami-1
   areas:
     - name: 浦舟町
-      yomi: う
+      yomi: うらふねちょう
+      machiaza_id: 141054-0056000
     - name: 永楽町
-      yomi: え
+      yomi: えいらくちょう
+      machiaza_id: 141054-0057000
     - name: 榎町
-      yomi: え
+      yomi: えのきちょう
+      machiaza_id: 141054-0058000
     - name: 唐沢
-      yomi: か
-    - name: 共進町1〜3丁目
-      yomi: き
+      yomi: からさわ
+      machiaza_id: 141054-0019000
+    - name: 共進町1丁目
+      yomi: きょうしんちょう
+      machiaza_id: 141054-0062001
+    - name: 共進町2丁目
+      yomi: きょうしんちょう
+      machiaza_id: 141054-0062002
+    - name: 共進町3丁目
+      yomi: きょうしんちょう
+      machiaza_id: 141054-0062003
     - name: 宿町
-      yomi: し
+      yomi: しゅくちょう
+      machiaza_id: 141054-0067000
     - name: 白妙町
-      yomi: し
+      yomi: しろたえちょう
+      machiaza_id: 141054-0081000
     - name: 高根町
-      yomi: た
-    - name: 通町1・2丁目
-      yomi: と
-    - name: 中島町1・2丁目
-      yomi: な
+      yomi: たかねちょう
+      machiaza_id: 141054-0063000
+    - name: 通町1丁目
+      yomi: とおりちょう
+      machiaza_id: 141054-0075001
+    - name: 通町2丁目
+      yomi: とおりちょう
+      machiaza_id: 141054-0075002
+    - name: 中島町1丁目
+      yomi: なかじまちょう
+      machiaza_id: 141054-0074001
+    - name: 中島町2丁目
+      yomi: なかじまちょう
+      machiaza_id: 141054-0074002
     - name: 花ノ木町
       yomi: は
     - name: 東蒔田町
-      yomi: ひ
+      yomi: ひがしまいたまち
+      machiaza_id: 141054-0035000
     - name: 堀ノ内町
-      yomi: ほ
+      yomi: ほりのうちちょう
+      machiaza_id: 141054-0083000
     - name: 真金町
-      yomi: ま
+      yomi: まがねちょう
+      machiaza_id: 141054-0069000
     - name: 万世町
-      yomi: ま
+      yomi: まんせいちょう
+      machiaza_id: 141054-0084000
     - name: 宮元町
-      yomi: み
-    - name: 睦町1・2丁目
-      yomi: む
+      yomi: みやもとちょう
+      machiaza_id: 141054-0061000
+    - name: 睦町1丁目
+      yomi: むつみちょう
+      machiaza_id: 141054-0082001
+    - name: 睦町2丁目
+      yomi: むつみちょう
+      machiaza_id: 141054-0082002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

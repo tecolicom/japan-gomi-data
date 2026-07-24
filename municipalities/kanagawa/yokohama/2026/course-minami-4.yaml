@@ -2,40 +2,113 @@ metadata:
   city: yokohama
   course: minami-4
   areas:
-    - name: 庚台
-      yomi: か
     - name: 唐沢バス通り周辺
       yomi: か
-    - name: 山王町1〜5丁目
-      yomi: さ
+    - name: 庚台
+      yomi: かのえだい
+      machiaza_id: 141054-0052000
+    - name: 山王町1丁目
+      yomi: さんのうちょう
+      machiaza_id: 141054-0065001
+    - name: 山王町2丁目
+      yomi: さんのうちょう
+      machiaza_id: 141054-0065002
+    - name: 山王町3丁目
+      yomi: さんのうちょう
+      machiaza_id: 141054-0065003
+    - name: 山王町4丁目
+      yomi: さんのうちょう
+      machiaza_id: 141054-0065004
+    - name: 山王町5丁目
+      yomi: さんのうちょう
+      machiaza_id: 141054-0065005
     - name: 山谷
-      yomi: さ
+      yomi: さんや
+      machiaza_id: 141054-0023000
     - name: 白金町
-      yomi: し
+      yomi: しろがねちょう
+      machiaza_id: 141054-0080000
     - name: 新川町
-      yomi: し
+      yomi: しんかわちょう
+      machiaza_id: 141054-0068000
     - name: 高砂町
-      yomi: た
+      yomi: たかさごちょう
+      machiaza_id: 141054-0064000
     - name: 中村町
-      yomi: な
+      yomi: なかむらちょう
+      machiaza_id: 141054-0073000
     - name: 西中町
-      yomi: に
+      yomi: にしなかちょう
+      machiaza_id: 141054-0070000
     - name: 八幡町
-      yomi: は
-    - name: 日枝町1〜5丁目
-      yomi: ひ
+      yomi: はちまんちょう
+      machiaza_id: 141054-0021000
+    - name: 日枝町1丁目
+      yomi: ひえちょう
+      machiaza_id: 141054-0079001
+    - name: 日枝町2丁目
+      yomi: ひえちょう
+      machiaza_id: 141054-0079002
+    - name: 日枝町3丁目
+      yomi: ひえちょう
+      machiaza_id: 141054-0079003
+    - name: 日枝町4丁目
+      yomi: ひえちょう
+      machiaza_id: 141054-0079004
+    - name: 日枝町5丁目
+      yomi: ひえちょう
+      machiaza_id: 141054-0079005
     - name: 伏見町
-      yomi: ふ
+      yomi: ふしみちょう
+      machiaza_id: 141054-0045000
     - name: 二葉町
-      yomi: ふ
-    - name: 前里町1〜4丁目
-      yomi: ま
-    - name: 南吉田町1〜5丁目
-      yomi: み
+      yomi: ふたばちょう
+      machiaza_id: 141054-0078000
+    - name: 前里町1丁目
+      yomi: まえさとちょう
+      machiaza_id: 141054-0071001
+    - name: 前里町2丁目
+      yomi: まえさとちょう
+      machiaza_id: 141054-0071002
+    - name: 前里町3丁目
+      yomi: まえさとちょう
+      machiaza_id: 141054-0071003
+    - name: 前里町4丁目
+      yomi: まえさとちょう
+      machiaza_id: 141054-0071004
+    - name: 南吉田町1丁目
+      yomi: みなみよしだちょう
+      machiaza_id: 141054-0076001
+    - name: 南吉田町2丁目
+      yomi: みなみよしだちょう
+      machiaza_id: 141054-0076002
+    - name: 南吉田町3丁目
+      yomi: みなみよしだちょう
+      machiaza_id: 141054-0076003
+    - name: 南吉田町4丁目
+      yomi: みなみよしだちょう
+      machiaza_id: 141054-0076004
+    - name: 南吉田町5丁目
+      yomi: みなみよしだちょう
+      machiaza_id: 141054-0076005
     - name: 三春台
-      yomi: み
-    - name: 吉野町1〜5丁目
-      yomi: よ
+      yomi: みはるだい
+      machiaza_id: 141054-0044000
+    - name: 吉野町1丁目
+      yomi: よしのちょう
+      machiaza_id: 141054-0060001
+    - name: 吉野町2丁目
+      yomi: よしのちょう
+      machiaza_id: 141054-0060002
+    - name: 吉野町3丁目
+      yomi: よしのちょう
+      machiaza_id: 141054-0060003
+    - name: 吉野町4丁目
+      yomi: よしのちょう
+      machiaza_id: 141054-0060004
+    - name: 吉野町5丁目
+      yomi: よしのちょう
+      machiaza_id: 141054-0060005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

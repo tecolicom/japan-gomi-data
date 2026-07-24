@@ -3,15 +3,50 @@ metadata:
   course: kanazawa-3
   areas:
     - name: 昭和町
-      yomi: し
-    - name: 富岡西1〜7丁目
-      yomi: と
-    - name: 富岡東1〜5丁目
-      yomi: と
+      yomi: しょうわまち
+      machiaza_id: 141089-0031000
+    - name: 富岡西1丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019001
+    - name: 富岡西2丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019002
+    - name: 富岡西3丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019003
+    - name: 富岡西4丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019004
+    - name: 富岡西5丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019005
+    - name: 富岡西6丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019006
+    - name: 富岡西7丁目
+      yomi: とみおかにし
+      machiaza_id: 141089-0019007
+    - name: 富岡東1丁目
+      yomi: とみおかひがし
+      machiaza_id: 141089-0017001
+    - name: 富岡東2丁目
+      yomi: とみおかひがし
+      machiaza_id: 141089-0017002
+    - name: 富岡東3丁目
+      yomi: とみおかひがし
+      machiaza_id: 141089-0017003
+    - name: 富岡東4丁目
+      yomi: とみおかひがし
+      machiaza_id: 141089-0017004
+    - name: 富岡東5丁目
+      yomi: とみおかひがし
+      machiaza_id: 141089-0017005
     - name: 鳥浜町
-      yomi: と
+      yomi: とりはまちょう
+      machiaza_id: 141089-0043000
     - name: 並木1丁目
-      yomi: な
+      yomi: なみき
+      machiaza_id: 141089-0042001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

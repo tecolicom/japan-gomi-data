@@ -3,67 +3,102 @@ metadata:
   course: kanagawa-6
   areas:
     - name: 浦島丘
-      yomi: う
+      yomi: うらしまおか
+      machiaza_id: 141020-0057000
     - name: 大口仲町1〜9番地
-      yomi: お
+      yomi: おおぐちなかまち
+      machiaza_id: 141020-0054000
     - name: 大口仲町38〜50番地
-      yomi: お
+      yomi: おおぐちなかまち
+      machiaza_id: 141020-0054000
     - name: 大口仲町136〜138番地
-      yomi: お
-    - name: 斎藤分町
-      yomi: さ
+      yomi: おおぐちなかまち
+      machiaza_id: 141020-0054000
     - name: サンハロー東神奈川駅前
       yomi: さ
+    - name: 斎藤分町
+      yomi: さいとうぶんちょう
+      machiaza_id: 141020-0003000
     - name: 白幡上町
-      yomi: し
+      yomi: しらはたかみちょう
+      machiaza_id: 141020-0052000
     - name: 白幡町
-      yomi: し
+      yomi: しらはたちょう
+      machiaza_id: 141020-0060000
     - name: 白幡仲町
-      yomi: し
+      yomi: しらはたなかちょう
+      machiaza_id: 141020-0065000
     - name: 白幡西町
-      yomi: し
+      yomi: しらはたにしちょう
+      machiaza_id: 141020-0050000
     - name: 白幡東町
-      yomi: し
+      yomi: しらはたひがしちょう
+      machiaza_id: 141020-0051000
     - name: 白幡南町
-      yomi: し
+      yomi: しらはたみなみちょう
+      machiaza_id: 141020-0064000
     - name: 白幡向町
-      yomi: し
+      yomi: しらはたむかいちょう
+      machiaza_id: 141020-0061000
     - name: 立町
-      yomi: た
+      yomi: たてまち
+      machiaza_id: 141020-0041000
     - name: 富家町
-      yomi: と
+      yomi: とみやちょう
+      machiaza_id: 141020-0039000
     - name: 鳥越
-      yomi: と
+      yomi: とりごえ
+      machiaza_id: 141020-0056000
     - name: 中丸
-      yomi: な
+      yomi: なかまる
+      machiaza_id: 141020-0009000
     - name: 七島町1〜110番地
-      yomi: な
+      yomi: ななしまちょう
+      machiaza_id: 141020-0053000
     - name: 西大口
-      yomi: に
-    - name: 西神奈川1〜3丁目
-      yomi: に
+      yomi: にしおおぐち
+      machiaza_id: 141020-0059000
+    - name: 西神奈川1丁目
+      yomi: にしかながわ
+      machiaza_id: 141020-0024001
+    - name: 西神奈川2丁目
+      yomi: にしかながわ
+      machiaza_id: 141020-0024002
+    - name: 西神奈川3丁目
+      yomi: にしかながわ
+      machiaza_id: 141020-0024003
     - name: 二本榎
-      yomi: に
-    - name: 白楽
-      yomi: は
+      yomi: にほんえのき
+      machiaza_id: 141020-0043000
     - name: パティオ白楽東
       yomi: は
+    - name: 白楽
+      yomi: はくらく
+      machiaza_id: 141020-0055000
     - name: 東神奈川1丁目14
-      yomi: ひ
+      yomi: ひがしかながわ
+      machiaza_id: 141020-0035001
     - name: 平川町
-      yomi: ひ
+      yomi: ひらかわちょう
+      machiaza_id: 141020-0042000
     - name: 広台太田町
-      yomi: ひ
+      yomi: ひろだいおおたまち
+      machiaza_id: 141020-0040000
     - name: 二ツ谷町
-      yomi: ふ
+      yomi: ふたつやちょう
+      machiaza_id: 141020-0036000
     - name: 六角橋1丁目
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006001
     - name: 六角橋2丁目1〜3・7〜34番地・4〜6番地一部
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006002
     - name: 六角橋3丁目1・19〜27番地
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006003
     - name: 六角橋5丁目一部
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

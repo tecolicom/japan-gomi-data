@@ -3,7 +3,8 @@ metadata:
   course: naka-5
   areas:
     - name: 本牧町2丁目大鳥小学校周辺
-      yomi: ほ
+      yomi: ほんもくちょう
+      machiaza_id: 141046-0149002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

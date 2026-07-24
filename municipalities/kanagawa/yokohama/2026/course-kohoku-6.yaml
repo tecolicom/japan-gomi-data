@@ -3,27 +3,58 @@ metadata:
   course: kohoku-6
   areas:
     - name: 大倉山1丁目1〜29番地
-      yomi: お
-    - name: 大倉山2・3丁目
-      yomi: お
+      yomi: おおくらやま
+      machiaza_id: 141097-0001001
+    - name: 大倉山2丁目
+      yomi: おおくらやま
+      machiaza_id: 141097-0001002
+    - name: 大倉山3丁目
+      yomi: おおくらやま
+      machiaza_id: 141097-0001003
     - name: 大倉山4丁目上記以外の地域
-      yomi: お
-    - name: 大倉山5〜7丁目
-      yomi: お
-    - name: 大曽根1〜3丁目
-      yomi: お
+      yomi: おおくらやま
+      machiaza_id: 141097-0001004
+    - name: 大倉山5丁目
+      yomi: おおくらやま
+      machiaza_id: 141097-0001005
+    - name: 大倉山6丁目
+      yomi: おおくらやま
+      machiaza_id: 141097-0001006
+    - name: 大倉山7丁目
+      yomi: おおくらやま
+      machiaza_id: 141097-0001007
+    - name: 大曽根1丁目
+      yomi: おおそね
+      machiaza_id: 141097-0025001
+    - name: 大曽根2丁目
+      yomi: おおそね
+      machiaza_id: 141097-0025002
+    - name: 大曽根3丁目
+      yomi: おおそね
+      machiaza_id: 141097-0025003
     - name: 大曽根台
-      yomi: お
-    - name: 北新横浜1・2丁目
-      yomi: き
+      yomi: おおそねだい
+      machiaza_id: 141097-0027000
+    - name: 北新横浜1丁目
+      yomi: きたしんよこはま
+      machiaza_id: 141097-0033001
+    - name: 北新横浜2丁目
+      yomi: きたしんよこはま
+      machiaza_id: 141097-0033002
     - name: 新吉田町
-      yomi: し
-    - name: 新吉田東7・8丁目
-      yomi: し
+      yomi: しんよしだちょう
+    - name: 新吉田東7丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007007
+    - name: 新吉田東8丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007008
     - name: 樽町1丁目30の一部
-      yomi: た
+      yomi: たるまち
+      machiaza_id: 141097-0021001
     - name: 樽町2丁目13の一部
-      yomi: た
+      yomi: たるまち
+      machiaza_id: 141097-0021002
     - name: 新羽町
       yomi: に
   year: 2026

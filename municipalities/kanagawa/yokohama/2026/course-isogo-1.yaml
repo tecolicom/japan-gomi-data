@@ -3,17 +3,47 @@ metadata:
   course: isogo-1
   areas:
     - name: 磯子8丁目
-      yomi: い
-    - name: 岡村1〜6丁目
-      yomi: お
+      yomi: いそご
+      machiaza_id: 141071-0003008
+    - name: 岡村1丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012001
+    - name: 岡村2丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012002
+    - name: 岡村3丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012003
+    - name: 岡村4丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012004
+    - name: 岡村5丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012005
+    - name: 岡村6丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012006
     - name: 岡村7丁目1〜3番の一部
-      yomi: お
-    - name: 滝頭1・2・3丁目
-      yomi: た
+      yomi: おかむら
+      machiaza_id: 141071-0012007
+    - name: 滝頭1丁目
+      yomi: たきがしら
+      machiaza_id: 141071-0001001
+    - name: 滝頭2丁目
+      yomi: たきがしら
+      machiaza_id: 141071-0001002
+    - name: 滝頭3丁目
+      yomi: たきがしら
+      machiaza_id: 141071-0001003
     - name: 広地町
-      yomi: ひ
-    - name: 丸山1・2丁目
-      yomi: ま
+      yomi: ひろちちょう
+      machiaza_id: 141071-0005000
+    - name: 丸山1丁目
+      yomi: まるやま
+      machiaza_id: 141071-0011001
+    - name: 丸山2丁目
+      yomi: まるやま
+      machiaza_id: 141071-0011002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

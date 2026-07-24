@@ -2,7 +2,13 @@ metadata:
   city: yokohama
   course: midori-2
   areas:
-    - name: 鴨居1〜4丁目
+    - name: 鴨居1丁目
+      yomi: か
+    - name: 鴨居2丁目
+      yomi: か
+    - name: 鴨居3丁目
+      yomi: か
+    - name: 鴨居4丁目
       yomi: か
     - name: 鴨居町200〜399番地
       yomi: か
@@ -10,7 +16,17 @@ metadata:
       yomi: か
     - name: 白山1丁目
       yomi: は
-    - name: 東本郷1〜6丁目
+    - name: 東本郷1丁目
+      yomi: ひ
+    - name: 東本郷2丁目
+      yomi: ひ
+    - name: 東本郷3丁目
+      yomi: ひ
+    - name: 東本郷4丁目
+      yomi: ひ
+    - name: 東本郷5丁目
+      yomi: ひ
+    - name: 東本郷6丁目
       yomi: ひ
     - name: 東本郷町
       yomi: ひ

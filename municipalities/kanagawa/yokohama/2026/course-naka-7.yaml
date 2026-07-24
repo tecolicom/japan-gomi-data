@@ -2,72 +2,251 @@ metadata:
   city: yokohama
   course: naka-7
   areas:
-    - name: 相生町1〜6丁目
-      yomi: あ
-    - name: 石川町1・2丁目
-      yomi: い
-    - name: 上野町1・2丁目
-      yomi: う
-    - name: 上野町3・4丁目
-      yomi: う
-    - name: 太田町1〜6丁目
-      yomi: お
-    - name: 尾上町1〜6丁目
-      yomi: お
-    - name: 海岸通
-      yomi: か
+    - name: 相生町1丁目
+      yomi: あいおいちょう
+      machiaza_id: 141046-0135001
+    - name: 相生町2丁目
+      yomi: あいおいちょう
+      machiaza_id: 141046-0135002
+    - name: 相生町3丁目
+      yomi: あいおいちょう
+      machiaza_id: 141046-0135003
+    - name: 相生町4丁目
+      yomi: あいおいちょう
+      machiaza_id: 141046-0135004
+    - name: 相生町5丁目
+      yomi: あいおいちょう
+      machiaza_id: 141046-0135005
+    - name: 相生町6丁目
+      yomi: あいおいちょう
+      machiaza_id: 141046-0135006
+    - name: 石川町1丁目
+      yomi: いしかわちょう
+      machiaza_id: 141046-0131001
+    - name: 石川町2丁目
+      yomi: いしかわちょう
+      machiaza_id: 141046-0131002
+    - name: 上野町1丁目
+      yomi: うえのちょう
+      machiaza_id: 141046-0127001
+    - name: 上野町2丁目
+      yomi: うえのちょう
+      machiaza_id: 141046-0127002
+    - name: 上野町3丁目
+      yomi: うえのちょう
+      machiaza_id: 141046-0127003
+    - name: 上野町4丁目
+      yomi: うえのちょう
+      machiaza_id: 141046-0127004
+    - name: 太田町1丁目
+      yomi: おおたまち
+      machiaza_id: 141046-0136001
+    - name: 太田町2丁目
+      yomi: おおたまち
+      machiaza_id: 141046-0136002
+    - name: 太田町3丁目
+      yomi: おおたまち
+      machiaza_id: 141046-0136003
+    - name: 太田町4丁目
+      yomi: おおたまち
+      machiaza_id: 141046-0136004
+    - name: 太田町5丁目
+      yomi: おおたまち
+      machiaza_id: 141046-0136005
+    - name: 太田町6丁目
+      yomi: おおたまち
+      machiaza_id: 141046-0136006
+    - name: 尾上町1丁目
+      yomi: おのえちょう
+      machiaza_id: 141046-0142001
+    - name: 尾上町2丁目
+      yomi: おのえちょう
+      machiaza_id: 141046-0142002
+    - name: 尾上町3丁目
+      yomi: おのえちょう
+      machiaza_id: 141046-0142003
+    - name: 尾上町4丁目
+      yomi: おのえちょう
+      machiaza_id: 141046-0142004
+    - name: 尾上町5丁目
+      yomi: おのえちょう
+      machiaza_id: 141046-0142005
+    - name: 尾上町6丁目
+      yomi: おのえちょう
+      machiaza_id: 141046-0142006
     - name: 柏葉桜道沿集積場
       yomi: か
+    - name: 海岸通
+      yomi: かいがんどおり
+      machiaza_id: 141046-0112000
     - name: 北方町
-      yomi: き
+      yomi: きたがたちょう
+      machiaza_id: 141046-0146000
     - name: 北仲通
-      yomi: き
+      yomi: きたなかどおり
+      machiaza_id: 141046-0145000
     - name: 小港町1丁目
-      yomi: こ
+      yomi: こみなとちょう
+      machiaza_id: 141046-0125001
     - name: 小港町2丁目関東財務局小港住宅
-      yomi: こ
+      yomi: こみなとちょう
+      machiaza_id: 141046-0125002
     - name: 小港町3丁目
-      yomi: こ
-    - name: 住吉町1〜6丁目
-      yomi: す
+      yomi: こみなとちょう
+      machiaza_id: 141046-0125003
+    - name: 住吉町1丁目
+      yomi: すみよしちょう
+      machiaza_id: 141046-0123001
+    - name: 住吉町2丁目
+      yomi: すみよしちょう
+      machiaza_id: 141046-0123002
+    - name: 住吉町3丁目
+      yomi: すみよしちょう
+      machiaza_id: 141046-0123003
+    - name: 住吉町4丁目
+      yomi: すみよしちょう
+      machiaza_id: 141046-0123004
+    - name: 住吉町5丁目
+      yomi: すみよしちょう
+      machiaza_id: 141046-0123005
+    - name: 住吉町6丁目
+      yomi: すみよしちょう
+      machiaza_id: 141046-0123006
     - name: 諏訪町
-      yomi: す
+      yomi: すわちょう
+      machiaza_id: 141046-0054000
     - name: 千代崎町
-      yomi: ち
-    - name: 常盤町1〜6丁目
-      yomi: と
+      yomi: ちよざきちょう
+      machiaza_id: 141046-0133000
+    - name: 常盤町1丁目
+      yomi: ときわちょう
+      machiaza_id: 141046-0128001
+    - name: 常盤町2丁目
+      yomi: ときわちょう
+      machiaza_id: 141046-0128002
+    - name: 常盤町3丁目
+      yomi: ときわちょう
+      machiaza_id: 141046-0128003
+    - name: 常盤町4丁目
+      yomi: ときわちょう
+      machiaza_id: 141046-0128004
+    - name: 常盤町5丁目
+      yomi: ときわちょう
+      machiaza_id: 141046-0128005
+    - name: 常盤町6丁目
+      yomi: ときわちょう
+      machiaza_id: 141046-0128006
     - name: 日本大通
-      yomi: に
-    - name: 弁天通1〜6丁目
-      yomi: へ
-    - name: 本郷町1・2丁目本牧通りから千代町側
-      yomi: ほ
-    - name: 本町1〜6丁目
-      yomi: ほ
+      yomi: にほんおおどおり
+      machiaza_id: 141046-0096000
+    - name: 弁天通1丁目
+      yomi: べんてんどおり
+      machiaza_id: 141046-0144001
+    - name: 弁天通2丁目
+      yomi: べんてんどおり
+      machiaza_id: 141046-0144002
+    - name: 弁天通3丁目
+      yomi: べんてんどおり
+      machiaza_id: 141046-0144003
+    - name: 弁天通4丁目
+      yomi: べんてんどおり
+      machiaza_id: 141046-0144004
+    - name: 弁天通5丁目
+      yomi: べんてんどおり
+      machiaza_id: 141046-0144005
+    - name: 弁天通6丁目
+      yomi: べんてんどおり
+      machiaza_id: 141046-0144006
+    - name: 本郷町1丁目本牧通りから千代町側
+      yomi: ほんごうちょう
+      machiaza_id: 141046-0147001
+    - name: 本郷町2丁目本牧通りから千代町側
+      yomi: ほんごうちょう
+      machiaza_id: 141046-0147002
+    - name: 本町1丁目
+      yomi: ほんちょう
+      machiaza_id: 141046-0148001
+    - name: 本町2丁目
+      yomi: ほんちょう
+      machiaza_id: 141046-0148002
+    - name: 本町3丁目
+      yomi: ほんちょう
+      machiaza_id: 141046-0148003
+    - name: 本町4丁目
+      yomi: ほんちょう
+      machiaza_id: 141046-0148004
+    - name: 本町5丁目
+      yomi: ほんちょう
+      machiaza_id: 141046-0148005
+    - name: 本町6丁目
+      yomi: ほんちょう
+      machiaza_id: 141046-0148006
     - name: 本牧町1丁目見晴らしトンネル側
-      yomi: ほ
+      yomi: ほんもくちょう
+      machiaza_id: 141046-0149001
     - name: 本牧町2丁目本牧通りから北方町側
-      yomi: ほ
-    - name: 港町1〜6丁目
-      yomi: み
-    - name: 南仲通1〜5丁目
-      yomi: み
+      yomi: ほんもくちょう
+      machiaza_id: 141046-0149002
+    - name: 港町1丁目
+      yomi: みなとちょう
+      machiaza_id: 141046-0116001
+    - name: 港町2丁目
+      yomi: みなとちょう
+      machiaza_id: 141046-0116002
+    - name: 港町3丁目
+      yomi: みなとちょう
+      machiaza_id: 141046-0116003
+    - name: 港町4丁目
+      yomi: みなとちょう
+      machiaza_id: 141046-0116004
+    - name: 港町5丁目
+      yomi: みなとちょう
+      machiaza_id: 141046-0116005
+    - name: 港町6丁目
+      yomi: みなとちょう
+      machiaza_id: 141046-0116006
+    - name: 南仲通1丁目
+      yomi: みなみなかどおり
+      machiaza_id: 141046-0139001
+    - name: 南仲通2丁目
+      yomi: みなみなかどおり
+      machiaza_id: 141046-0139002
+    - name: 南仲通3丁目
+      yomi: みなみなかどおり
+      machiaza_id: 141046-0139003
+    - name: 南仲通4丁目
+      yomi: みなみなかどおり
+      machiaza_id: 141046-0139004
+    - name: 南仲通5丁目
+      yomi: みなみなかどおり
+      machiaza_id: 141046-0139005
     - name: 妙香寺台
-      yomi: み
-    - name: 麦田町1・2丁目本牧通りから山手公園側
-      yomi: む
+      yomi: みょうこうじだい
+      machiaza_id: 141046-0043000
+    - name: 麦田町1丁目本牧通りから山手公園側
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141001
+    - name: 麦田町2丁目本牧通りから山手公園側
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141002
     - name: 麦田町3丁目
-      yomi: む
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141003
     - name: 麦田町4丁目本牧通りから妙香寺台側
-      yomi: む
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141004
     - name: 元浜町
-      yomi: も
+      yomi: もとはまちょう
+      machiaza_id: 141046-0115000
     - name: 元町
-      yomi: も
+      yomi: もとまち
+      machiaza_id: 141046-0114000
     - name: 山手町
-      yomi: や
+      yomi: やまてちょう
+      machiaza_id: 141046-0072000
     - name: 山元町1丁目1〜7番地
-      yomi: や
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

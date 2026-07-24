@@ -2,24 +2,57 @@ metadata:
   city: yokohama
   course: minami-2
   areas:
-    - name: 大岡1〜5丁目
-      yomi: お
+    - name: 大岡1丁目
+      yomi: おおおか
+      machiaza_id: 141054-0012001
+    - name: 大岡2丁目
+      yomi: おおおか
+      machiaza_id: 141054-0012002
+    - name: 大岡3丁目
+      yomi: おおおか
+      machiaza_id: 141054-0012003
+    - name: 大岡4丁目
+      yomi: おおおか
+      machiaza_id: 141054-0012004
+    - name: 大岡5丁目
+      yomi: おおおか
+      machiaza_id: 141054-0012005
     - name: 大橋町
-      yomi: お
+      yomi: おおはしちょう
+      machiaza_id: 141054-0072000
     - name: 唐沢平楽境
       yomi: か
     - name: 弘明寺町
-      yomi: く
-    - name: 通町3・4丁目
-      yomi: と
+      yomi: ぐみょうじちょう
+    - name: 通町3丁目
+      yomi: とおりちょう
+      machiaza_id: 141054-0075003
+    - name: 通町4丁目
+      yomi: とおりちょう
+      machiaza_id: 141054-0075004
     - name: 中里町
-      yomi: な
-    - name: 中島町3・4丁目
-      yomi: な
+      yomi: なかざとちょう
+      machiaza_id: 141054-0033000
+    - name: 中島町3丁目
+      yomi: なかじまちょう
+      machiaza_id: 141054-0074003
+    - name: 中島町4丁目
+      yomi: なかじまちょう
+      machiaza_id: 141054-0074004
     - name: 蒔田町
-      yomi: ま
-    - name: 若宮町1〜4丁目
-      yomi: わ
+      yomi: まいたちょう
+    - name: 若宮町1丁目
+      yomi: わかみやちょう
+      machiaza_id: 141054-0066001
+    - name: 若宮町2丁目
+      yomi: わかみやちょう
+      machiaza_id: 141054-0066002
+    - name: 若宮町3丁目
+      yomi: わかみやちょう
+      machiaza_id: 141054-0066003
+    - name: 若宮町4丁目
+      yomi: わかみやちょう
+      machiaza_id: 141054-0066004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

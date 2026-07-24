@@ -2,38 +2,66 @@ metadata:
   city: yokohama
   course: isogo-2
   areas:
-    - name: 磯子3丁目13番(ブリリア磯子)
-      yomi: い
+    - name: 磯子3丁目13番（ブリリア磯子）
+      yomi: いそご
+      machiaza_id: 141071-0003003
     - name: 磯子6丁目
-      yomi: い
+      yomi: いそご
+      machiaza_id: 141071-0003006
     - name: 磯子7丁目
-      yomi: い
+      yomi: いそご
+      machiaza_id: 141071-0003007
     - name: 磯子8丁目一部:15〜19
-      yomi: い
-    - name: 磯子台27番(ブリリア磯子)
-      yomi: い
+      yomi: いそご
+      machiaza_id: 141071-0003008
+    - name: 磯子台27番（ブリリア磯子）
+      yomi: いそごだい
+      machiaza_id: 141071-0030000
     - name: 岡村1丁目一部:19〜21・25番
-      yomi: お
+      yomi: おかむら
+      machiaza_id: 141071-0012001
     - name: 岡村5丁目一部:19〜22番
-      yomi: お
+      yomi: おかむら
+      machiaza_id: 141071-0012005
     - name: 岡村6丁目一部:10〜13
-      yomi: お
-    - name: 岡村7・8丁目
-      yomi: お
-    - name: 汐見台1〜3丁目
-      yomi: し
+      yomi: おかむら
+      machiaza_id: 141071-0012006
+    - name: 岡村7丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012007
+    - name: 岡村8丁目
+      yomi: おかむら
+      machiaza_id: 141071-0012008
+    - name: 汐見台1丁目
+      yomi: しおみだい
+      machiaza_id: 141071-0029001
+    - name: 汐見台2丁目
+      yomi: しおみだい
+      machiaza_id: 141071-0029002
+    - name: 汐見台3丁目
+      yomi: しおみだい
+      machiaza_id: 141071-0029003
     - name: 中浜町
-      yomi: な
-    - name: 久木町(23の一部と24番を除く)
-      yomi: ひ
+      yomi: なかはまちょう
+      machiaza_id: 141071-0015000
+    - name: 久木町（23の一部と24番を除く）
+      yomi: ひさきちょう
+      machiaza_id: 141071-0009000
     - name: 森2丁目8番
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025002
     - name: 森4丁目
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025004
     - name: 森5丁目19番
-      yomi: も
-    - name: 森が丘1・2丁目
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025005
+    - name: 森が丘1丁目
+      yomi: もりがおか
+      machiaza_id: 141071-0028001
+    - name: 森が丘2丁目
+      yomi: もりがおか
+      machiaza_id: 141071-0028002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

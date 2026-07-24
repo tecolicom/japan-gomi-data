@@ -3,21 +3,38 @@ metadata:
   course: nishi-1
   areas:
     - name: 岡野2丁目
-      yomi: お
+      yomi: おかの
+      machiaza_id: 141038-0021002
     - name: 浅間台123・127〜129
-      yomi: せ
-    - name: 浅間町2〜5丁目
-      yomi: せ
-    - name: 中央2丁目
-      yomi: ち
+      yomi: せんげんだい
+      machiaza_id: 141038-0031000
+    - name: 浅間町2丁目
+      yomi: せんげんちょう
+      machiaza_id: 141038-0043002
+    - name: 浅間町3丁目
+      yomi: せんげんちょう
+      machiaza_id: 141038-0043003
+    - name: 浅間町4丁目
+      yomi: せんげんちょう
+      machiaza_id: 141038-0043004
+    - name: 浅間町5丁目
+      yomi: せんげんちょう
+      machiaza_id: 141038-0043005
+    - name: 中央2丁目（西区）
+      yomi: ちゅうおう
+      machiaza_id: 141038-0026002
     - name: 西平沼町
-      yomi: に
+      yomi: にしひらぬまちょう
+      machiaza_id: 141038-0028000
     - name: 西前町3丁目
-      yomi: に
+      yomi: にしまえちょう
+      machiaza_id: 141038-0041003
     - name: 藤棚町1丁目28〜50
-      yomi: ふ
+      yomi: ふじだなちょう
+      machiaza_id: 141038-0044001
     - name: 南浅間町
-      yomi: み
+      yomi: みなみせんげんちょう
+      machiaza_id: 141038-0030000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

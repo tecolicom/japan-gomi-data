@@ -7,17 +7,34 @@ metadata:
     - name: 鎌谷町【48〜51番地付近】
       yomi: か
     - name: 狩場町
-      yomi: か
-    - name: 権太坂1〜3丁目
-      yomi: こ
+      yomi: かりばちょう
+      machiaza_id: 141062-0028000
+    - name: 権太坂1丁目
+      yomi: ごんたざか
+      machiaza_id: 141062-0011001
+    - name: 権太坂2丁目
+      yomi: ごんたざか
+      machiaza_id: 141062-0011002
+    - name: 権太坂3丁目
+      yomi: ごんたざか
+      machiaza_id: 141062-0011003
     - name: 境木本町
-      yomi: さ
+      yomi: さかいぎほんちょう
+      machiaza_id: 141062-0005000
     - name: 瀬戸ケ谷町
-      yomi: せ
+      yomi: せとがやちょう
+      machiaza_id: 141062-0008000
     - name: 西久保町【JR線路から東側】
       yomi: に
-    - name: 保土ケ谷町1〜3丁目
-      yomi: ほ
+    - name: 保土ケ谷町1丁目
+      yomi: ほどがやちょう
+      machiaza_id: 141062-0009001
+    - name: 保土ケ谷町2丁目
+      yomi: ほどがやちょう
+      machiaza_id: 141062-0009002
+    - name: 保土ケ谷町3丁目
+      yomi: ほどがやちょう
+      machiaza_id: 141062-0009003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

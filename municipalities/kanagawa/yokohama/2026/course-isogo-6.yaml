@@ -2,28 +2,51 @@ metadata:
   city: yokohama
   course: isogo-6
   areas:
-    - name: 栗木1・2丁目
-      yomi: く
+    - name: 栗木1丁目
+      yomi: くりき
+      machiaza_id: 141071-0022001
+    - name: 栗木2丁目
+      yomi: くりき
+      machiaza_id: 141071-0022002
     - name: 栗木3丁目1〜8番の一部
-      yomi: く
-    - name: 杉田2・3丁目
-      yomi: す
+      yomi: くりき
+      machiaza_id: 141071-0022003
+    - name: 杉田2丁目
+      yomi: すぎた
+      machiaza_id: 141071-0002002
+    - name: 杉田3丁目
+      yomi: すぎた
+      machiaza_id: 141071-0002003
     - name: 杉田6丁目2・3番
-      yomi: す
+      yomi: すぎた
+      machiaza_id: 141071-0002006
     - name: 杉田坪呑10〜13番の一部
-      yomi: す
+      yomi: すぎたつぼのみ
+      machiaza_id: 141071-0019000
     - name: 田中2丁目
-      yomi: た
-    - name: 中原3・4丁目
-      yomi: な
+      yomi: たなか
+      machiaza_id: 141071-0027002
+    - name: 中原3丁目
+      yomi: なかはら
+      machiaza_id: 141071-0024003
+    - name: 中原4丁目
+      yomi: なかはら
+      machiaza_id: 141071-0024004
     - name: 洋光台1丁目13と14番の一部
-      yomi: よ
-    - name: 洋光台3・4丁目
-      yomi: よ
+      yomi: ようこうだい
+      machiaza_id: 141071-0026001
+    - name: 洋光台3丁目
+      yomi: ようこうだい
+      machiaza_id: 141071-0026003
+    - name: 洋光台4丁目
+      yomi: ようこうだい
+      machiaza_id: 141071-0026004
     - name: 洋光台5丁目4番
-      yomi: よ
+      yomi: ようこうだい
+      machiaza_id: 141071-0026005
     - name: 洋光台6丁目33〜43番
-      yomi: よ
+      yomi: ようこうだい
+      machiaza_id: 141071-0026006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,13 +4,16 @@ metadata:
   areas:
     - name: 上矢部町
       yomi: か
-    - name: 汲沢1・2丁目
+    - name: 汲沢1丁目
       yomi: く
-    - name: 戸塚町(ハローワーク戸塚(戸塚町3722番地)より北側)※一部異なる地域あり
+    - name: 汲沢2丁目
+      yomi: く
+    - name: 戸塚町（ハローワーク戸塚（戸塚町3722番地）より北側）
       yomi: と
+      note: 一部異なる地域あり
     - name: 鳥が丘
       yomi: と
-    - name: 矢部町(JR線路の西側)
+    - name: 矢部町（JR線路の西側）
       yomi: や
   year: 2026
   fiscal_year_ja: 令和8年度

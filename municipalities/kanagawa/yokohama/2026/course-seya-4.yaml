@@ -4,13 +4,19 @@ metadata:
   areas:
     - name: 北新
       yomi: き
-    - name: 下瀬谷1〜3丁目
+    - name: 下瀬谷1丁目
+      yomi: し
+    - name: 下瀬谷2丁目
+      yomi: し
+    - name: 下瀬谷3丁目
       yomi: し
     - name: 瀬谷1丁目23〜30番地
       yomi: せ
     - name: 橋戸3丁目51番地
       yomi: は
-    - name: 南瀬谷1・2丁目
+    - name: 南瀬谷1丁目
+      yomi: み
+    - name: 南瀬谷2丁目
       yomi: み
     - name: 南台1丁目1〜36番地
       yomi: み

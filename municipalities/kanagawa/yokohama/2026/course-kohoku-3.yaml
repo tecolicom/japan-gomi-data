@@ -3,21 +3,31 @@ metadata:
   course: kohoku-3
   areas:
     - name: 岸根町
-      yomi: き
+      yomi: きしねちょう
     - name: 小机町
-      yomi: こ
+      yomi: こづくえちょう
     - name: 篠原台町
-      yomi: し
+      yomi: しのはらだいまち
+      machiaza_id: 141097-0015000
     - name: 篠原町
-      yomi: し
+      yomi: しのはらちょう
     - name: 篠原西町
-      yomi: し
-    - name: 新横浜1〜3丁目
-      yomi: し
+      yomi: しのはらにしちょう
+      machiaza_id: 141097-0003000
+    - name: 新横浜1丁目
+      yomi: しんよこはま
+      machiaza_id: 141097-0012001
+    - name: 新横浜2丁目
+      yomi: しんよこはま
+      machiaza_id: 141097-0012002
+    - name: 新横浜3丁目
+      yomi: しんよこはま
+      machiaza_id: 141097-0012003
     - name: 鳥山町
-      yomi: と
+      yomi: とりやまちょう
     - name: 仲手原2丁目
-      yomi: な
+      yomi: なかてはら
+      machiaza_id: 141097-0016002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,22 +4,45 @@ metadata:
   areas:
     - name: 片吹京急線東側
       yomi: か
-    - name: 金沢町(城山地区除く)
-      yomi: か
+    - name: 金沢町（城山地区除く）
+      yomi: かなざわちょう
+      machiaza_id: 141089-0037000
     - name: 柴町
-      yomi: し
+      yomi: しばちょう
+      machiaza_id: 141089-0034000
     - name: 富岡東6丁目
-      yomi: と
+      yomi: とみおかひがし
+      machiaza_id: 141089-0017006
     - name: 長浜
-      yomi: な
-    - name: 長浜1・2丁目
-      yomi: な
-    - name: 並木2・3丁目
-      yomi: な
-    - name: 西柴1〜4丁目
-      yomi: に
+      yomi: ながはま
+      machiaza_id: 141089-0040000
+    - name: 長浜1丁目
+      yomi: ながはま
+      machiaza_id: 141089-0040001
+    - name: 長浜2丁目
+      yomi: ながはま
+      machiaza_id: 141089-0040002
+    - name: 並木2丁目
+      yomi: なみき
+      machiaza_id: 141089-0042002
+    - name: 並木3丁目
+      yomi: なみき
+      machiaza_id: 141089-0042003
+    - name: 西柴1丁目
+      yomi: にししば
+      machiaza_id: 141089-0035001
+    - name: 西柴2丁目
+      yomi: にししば
+      machiaza_id: 141089-0035002
+    - name: 西柴3丁目
+      yomi: にししば
+      machiaza_id: 141089-0035003
+    - name: 西柴4丁目
+      yomi: にししば
+      machiaza_id: 141089-0035004
     - name: 堀口
-      yomi: ほ
+      yomi: ほりぐち
+      machiaza_id: 141089-0038000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

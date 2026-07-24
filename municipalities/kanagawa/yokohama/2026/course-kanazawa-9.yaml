@@ -2,8 +2,12 @@ metadata:
   city: yokohama
   course: kanazawa-9
   areas:
-    - name: 六浦東2・3丁目
-      yomi: む
+    - name: 六浦東2丁目
+      yomi: むつうらひがし
+      machiaza_id: 141089-0002002
+    - name: 六浦東3丁目
+      yomi: むつうらひがし
+      machiaza_id: 141089-0002003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,18 +2,68 @@ metadata:
   city: yokohama
   course: kohoku-5
   areas:
-    - name: 新吉田東1〜6丁目
-      yomi: し
-    - name: 高田西1〜5丁目
-      yomi: た
-    - name: 高田東1・4丁目
-      yomi: た
+    - name: 新吉田東1丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007001
+    - name: 新吉田東2丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007002
+    - name: 新吉田東3丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007003
+    - name: 新吉田東4丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007004
+    - name: 新吉田東5丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007005
+    - name: 新吉田東6丁目
+      yomi: しんよしだひがし
+      machiaza_id: 141097-0007006
+    - name: 高田西1丁目
+      yomi: たかたにし
+      machiaza_id: 141097-0008001
+    - name: 高田西2丁目
+      yomi: たかたにし
+      machiaza_id: 141097-0008002
+    - name: 高田西3丁目
+      yomi: たかたにし
+      machiaza_id: 141097-0008003
+    - name: 高田西4丁目
+      yomi: たかたにし
+      machiaza_id: 141097-0008004
+    - name: 高田西5丁目
+      yomi: たかたにし
+      machiaza_id: 141097-0008005
+    - name: 高田東1丁目
+      yomi: たかたひがし
+      machiaza_id: 141097-0009001
+    - name: 高田東4丁目
+      yomi: たかたひがし
+      machiaza_id: 141097-0009004
     - name: 綱島上町
-      yomi: つ
+      yomi: つなしまかみちょう
     - name: 綱島台
-      yomi: つ
-    - name: 綱島西1〜6丁目
-      yomi: つ
+      yomi: つなしまだい
+      machiaza_id: 141097-0028000
+    - name: 綱島西1丁目
+      yomi: つなしまにし
+      machiaza_id: 141097-0024001
+    - name: 綱島西2丁目
+      yomi: つなしまにし
+      machiaza_id: 141097-0024002
+    - name: 綱島西3丁目
+      yomi: つなしまにし
+      machiaza_id: 141097-0024003
+    - name: 綱島西4丁目
+      yomi: つなしまにし
+      machiaza_id: 141097-0024004
+    - name: 綱島西5丁目
+      yomi: つなしまにし
+      machiaza_id: 141097-0024005
+    - name: 綱島西6丁目
+      yomi: つなしまにし
+      machiaza_id: 141097-0024006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

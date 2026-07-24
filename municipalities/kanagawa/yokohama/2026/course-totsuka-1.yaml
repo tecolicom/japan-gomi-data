@@ -2,15 +2,28 @@ metadata:
   city: yokohama
   course: totsuka-1
   areas:
-    - name: 汲沢3〜8丁目
+    - name: 汲沢3丁目
+      yomi: く
+    - name: 汲沢4丁目
+      yomi: く
+    - name: 汲沢5丁目
+      yomi: く
+    - name: 汲沢6丁目
+      yomi: く
+    - name: 汲沢7丁目
+      yomi: く
+    - name: 汲沢8丁目
       yomi: く
     - name: 汲沢町
       yomi: く
-    - name: 戸塚町(ハローワーク戸塚(戸塚町3722番地)より南側)※一部異なる地域あり
+    - name: 戸塚町（ハローワーク戸塚（戸塚町3722番地）より南側）
       yomi: と
-    - name: 原宿1・2丁目
+      note: 一部異なる地域あり
+    - name: 原宿1丁目
       yomi: は
-    - name: 深谷町(松竹台地区付近)
+    - name: 原宿2丁目
+      yomi: は
+    - name: 深谷町（松竹台地区付近）
       yomi: ふ
   year: 2026
   fiscal_year_ja: 令和8年度

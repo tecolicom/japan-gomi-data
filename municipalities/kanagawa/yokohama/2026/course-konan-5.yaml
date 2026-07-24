@@ -2,11 +2,17 @@ metadata:
   city: yokohama
   course: konan-5
   areas:
-    - name: 上永谷1・2丁目
+    - name: 上永谷1丁目
+      yomi: か
+    - name: 上永谷2丁目
       yomi: か
     - name: 上永谷3丁目2・4〜38番
       yomi: か
-    - name: 上永谷4〜6丁目
+    - name: 上永谷4丁目
+      yomi: か
+    - name: 上永谷5丁目
+      yomi: か
+    - name: 上永谷6丁目
       yomi: か
     - name: 下永谷2丁目の一部
       yomi: し
@@ -14,15 +20,29 @@ metadata:
       yomi: の
     - name: 東永谷3丁目46〜51・52番の一部
       yomi: ひ
-    - name: 日限山1〜4丁目
+    - name: 日限山1丁目
+      yomi: ひ
+    - name: 日限山2丁目
+      yomi: ひ
+    - name: 日限山3丁目
+      yomi: ひ
+    - name: 日限山4丁目
       yomi: ひ
     - name: 日野2丁目22の一部
       yomi: ひ
-    - name: 日野3・4丁目日野4丁目7の一部を除く
+    - name: 日野3丁目日野4丁目7の一部を除く
       yomi: ひ
-    - name: 日野6〜9丁目日野9丁目7の一部を除く
+    - name: 日野4丁目日野4丁目7の一部を除く
       yomi: ひ
-    - name: 丸山台3丁目(パレスTSKII)
+    - name: 日野6丁目日野9丁目7の一部を除く
+      yomi: ひ
+    - name: 日野7丁目日野9丁目7の一部を除く
+      yomi: ひ
+    - name: 日野8丁目日野9丁目7の一部を除く
+      yomi: ひ
+    - name: 日野9丁目日野9丁目7の一部を除く
+      yomi: ひ
+    - name: 丸山台3丁目（パレスTSKII）
       yomi: ま
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -2,11 +2,19 @@ metadata:
   city: yokohama
   course: tsuzuki-2
   areas:
-    - name: 荏田東1〜4丁目
+    - name: 荏田東1丁目
+      yomi: え
+    - name: 荏田東2丁目
+      yomi: え
+    - name: 荏田東3丁目
+      yomi: え
+    - name: 荏田東4丁目
       yomi: え
     - name: 荏田東町
       yomi: え
-    - name: 荏田南4・5丁目
+    - name: 荏田南4丁目
+      yomi: え
+    - name: 荏田南5丁目
       yomi: え
     - name: 荏田南町
       yomi: え
@@ -16,11 +24,25 @@ metadata:
       yomi: ち
     - name: 茅ケ崎町
       yomi: ち
-    - name: 茅ケ崎東1〜5丁目
+    - name: 茅ケ崎東1丁目
       yomi: ち
-    - name: 茅ケ崎南1〜3丁目
+    - name: 茅ケ崎東2丁目
       yomi: ち
-    - name: 茅ケ崎南4〜5丁目
+    - name: 茅ケ崎東3丁目
+      yomi: ち
+    - name: 茅ケ崎東4丁目
+      yomi: ち
+    - name: 茅ケ崎東5丁目
+      yomi: ち
+    - name: 茅ケ崎南1丁目
+      yomi: ち
+    - name: 茅ケ崎南2丁目
+      yomi: ち
+    - name: 茅ケ崎南3丁目
+      yomi: ち
+    - name: 茅ケ崎南4丁目
+      yomi: ち
+    - name: 茅ケ崎南5丁目
       yomi: ち
     - name: 長坂
       yomi: な

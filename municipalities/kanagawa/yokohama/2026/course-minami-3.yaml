@@ -3,23 +3,47 @@ metadata:
   course: minami-3
   areas:
     - name: 井土ケ谷上町
-      yomi: い
+      yomi: いどがやかみまち
+      machiaza_id: 141054-0036000
     - name: 井土ケ谷中町
-      yomi: い
-    - name: 中里1〜4丁目
-      yomi: な
+      yomi: いどがやなかまち
+      machiaza_id: 141054-0047000
+    - name: 中里1丁目
+      yomi: なかざと
+      machiaza_id: 141054-0005001
+    - name: 中里2丁目
+      yomi: なかざと
+      machiaza_id: 141054-0005002
+    - name: 中里3丁目
+      yomi: なかざと
+      machiaza_id: 141054-0005003
+    - name: 中里4丁目
+      yomi: なかざと
+      machiaza_id: 141054-0005004
     - name: 永田山王台
-      yomi: な
+      yomi: ながたさんのうだい
+      machiaza_id: 141054-0046000
     - name: 永田東1丁目
-      yomi: な
-    - name: 永田南1・2丁目
-      yomi: な
-    - name: 別所1・2丁目
-      yomi: へ
+      yomi: ながたひがし
+      machiaza_id: 141054-0051001
+    - name: 永田南1丁目
+      yomi: ながたみなみ
+      machiaza_id: 141054-0048001
+    - name: 永田南2丁目
+      yomi: ながたみなみ
+      machiaza_id: 141054-0048002
+    - name: 別所1丁目
+      yomi: べっしょ
+      machiaza_id: 141054-0010001
+    - name: 別所2丁目
+      yomi: べっしょ
+      machiaza_id: 141054-0010002
     - name: 別所3丁目ヒルズ上大岡ガーデニア
-      yomi: へ
+      yomi: べっしょ
+      machiaza_id: 141054-0010003
     - name: 六ツ川1丁目
-      yomi: む
+      yomi: むつかわ
+      machiaza_id: 141054-0013001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

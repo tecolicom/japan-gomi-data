@@ -2,58 +2,109 @@ metadata:
   city: yokohama
   course: naka-2
   areas:
-    - name: 石川町3〜5丁目
-      yomi: い
+    - name: 石川町3丁目
+      yomi: いしかわちょう
+      machiaza_id: 141046-0131003
+    - name: 石川町4丁目
+      yomi: いしかわちょう
+      machiaza_id: 141046-0131004
+    - name: 石川町5丁目
+      yomi: いしかわちょう
+      machiaza_id: 141046-0131005
     - name: 打越
-      yomi: う
+      yomi: うちこし
+      machiaza_id: 141046-0071000
     - name: 扇町1丁目2-1〜8番地
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134001
     - name: 扇町2丁目3ー1〜6番地・6〜6-15番地
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134002
     - name: 扇町3丁目7〜7-9番地・10〜10-5番地
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134003
     - name: 扇町4丁目
-      yomi: お
+      yomi: おうぎちょう
+      machiaza_id: 141046-0134004
     - name: 柏葉
-      yomi: か
-    - name: 寿町1〜4丁目
-      yomi: こ
+      yomi: かしわば
+      machiaza_id: 141046-0050000
+    - name: 寿町1丁目
+      yomi: ことぶきちょう
+      machiaza_id: 141046-0122001
+    - name: 寿町2丁目
+      yomi: ことぶきちょう
+      machiaza_id: 141046-0122002
+    - name: 寿町3丁目
+      yomi: ことぶきちょう
+      machiaza_id: 141046-0122003
+    - name: 寿町4丁目
+      yomi: ことぶきちょう
+      machiaza_id: 141046-0122004
     - name: 鷺山
-      yomi: さ
+      yomi: さぎやま
+      machiaza_id: 141046-0074000
     - name: 滝之上20〜21-1・聖光学院プール側
-      yomi: た
+      yomi: たきのうえ
+      machiaza_id: 141046-0009000
     - name: 竹之丸
-      yomi: た
+      yomi: たけのまる
+      machiaza_id: 141046-0073000
     - name: 千歳町
-      yomi: ち
+      yomi: ちとせちょう
+      machiaza_id: 141046-0078000
     - name: 長者町1丁目
-      yomi: ち
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138001
     - name: 仲尾台
-      yomi: な
+      yomi: なかおだい
+      machiaza_id: 141046-0082000
     - name: 西竹之丸柏葉公園通り側
       yomi: に
     - name: 根岸加曽台
-      yomi: ね
-    - name: 松影町1〜4丁目
-      yomi: ま
+      yomi: ねぎしかぞうだい
+      machiaza_id: 141046-0003000
+    - name: 松影町1丁目
+      yomi: まつかげちょう
+      machiaza_id: 141046-0126001
+    - name: 松影町2丁目
+      yomi: まつかげちょう
+      machiaza_id: 141046-0126002
+    - name: 松影町3丁目
+      yomi: まつかげちょう
+      machiaza_id: 141046-0126003
+    - name: 松影町4丁目
+      yomi: まつかげちょう
+      machiaza_id: 141046-0126004
     - name: 豆口台
-      yomi: ま
+      yomi: まめぐちだい
+      machiaza_id: 141046-0040000
     - name: 三吉町
-      yomi: み
-    - name: 麦田町1・2丁目
-      yomi: む
+      yomi: みよしちょう
+      machiaza_id: 141046-0086000
+    - name: 麦田町1丁目
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141001
+    - name: 麦田町2丁目
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141002
     - name: 麦田町3丁目本牧通りから鷺山側
-      yomi: む
-    - name: 麦田町4丁目本牧通りから山手駅側(本牧通り沿い)
-      yomi: む
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141003
+    - name: 麦田町4丁目本牧通りから山手駅側（本牧通り沿い）
+      yomi: むぎたちょう
+      machiaza_id: 141046-0141004
     - name: 山手町共立学園周辺
       yomi: や
     - name: 山元町1丁目
-      yomi: や
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120001
     - name: 山元町5丁目公園
-      yomi: や
+      yomi: やまもとちょう
+      machiaza_id: 141046-0120005
     - name: 吉浜町
-      yomi: よ
+      yomi: よしはまちょう
+      machiaza_id: 141046-0075000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

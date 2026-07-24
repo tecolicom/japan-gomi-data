@@ -3,15 +3,49 @@ metadata:
   course: kanazawa-8
   areas:
     - name: 朝比奈町
-      yomi: あ
-    - name: 大道1・2丁目
-      yomi: た
-    - name: 東朝比奈1〜3丁目
-      yomi: ひ
-    - name: 六浦2〜5丁目
-      yomi: む
-    - name: 六浦南1〜5丁目
-      yomi: む
+      yomi: あさひなちょう
+    - name: 大道1丁目
+      yomi: だいどう
+      machiaza_id: 141089-0027001
+    - name: 大道2丁目
+      yomi: だいどう
+      machiaza_id: 141089-0027002
+    - name: 東朝比奈1丁目
+      yomi: ひがしあさひな
+      machiaza_id: 141089-0028001
+    - name: 東朝比奈2丁目
+      yomi: ひがしあさひな
+      machiaza_id: 141089-0028002
+    - name: 東朝比奈3丁目
+      yomi: ひがしあさひな
+      machiaza_id: 141089-0028003
+    - name: 六浦2丁目
+      yomi: むつうら
+      machiaza_id: 141089-0003002
+    - name: 六浦3丁目
+      yomi: むつうら
+      machiaza_id: 141089-0003003
+    - name: 六浦4丁目
+      yomi: むつうら
+      machiaza_id: 141089-0003004
+    - name: 六浦5丁目
+      yomi: むつうら
+      machiaza_id: 141089-0003005
+    - name: 六浦南1丁目
+      yomi: むつうらみなみ
+      machiaza_id: 141089-0025001
+    - name: 六浦南2丁目
+      yomi: むつうらみなみ
+      machiaza_id: 141089-0025002
+    - name: 六浦南3丁目
+      yomi: むつうらみなみ
+      machiaza_id: 141089-0025003
+    - name: 六浦南4丁目
+      yomi: むつうらみなみ
+      machiaza_id: 141089-0025004
+    - name: 六浦南5丁目
+      yomi: むつうらみなみ
+      machiaza_id: 141089-0025005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,7 +2,11 @@ metadata:
   city: yokohama
   course: tsuzuki-5
   areas:
-    - name: 牛久保東1〜3丁目
+    - name: 牛久保東1丁目
+      yomi: う
+    - name: 牛久保東2丁目
+      yomi: う
+    - name: 牛久保東3丁目
       yomi: う
     - name: 大棚町
       yomi: お
@@ -10,13 +14,23 @@ metadata:
       yomi: お
     - name: 勝田町
       yomi: か
-    - name: 勝田南1・2丁目
+    - name: 勝田南1丁目
+      yomi: か
+    - name: 勝田南2丁目
       yomi: か
     - name: 新栄町
       yomi: し
-    - name: 早渕1〜3丁目
+    - name: 早渕1丁目
       yomi: は
-    - name: 南山田1〜3丁目
+    - name: 早渕2丁目
+      yomi: は
+    - name: 早渕3丁目
+      yomi: は
+    - name: 南山田1丁目
+      yomi: み
+    - name: 南山田2丁目
+      yomi: み
+    - name: 南山田3丁目
       yomi: み
     - name: 南山田町
       yomi: み

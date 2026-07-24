@@ -3,29 +3,62 @@ metadata:
   course: tsurumi-1
   areas:
     - name: 市場上町
-      yomi: い
+      yomi: いちばかみちょう
+      machiaza_id: 141011-0035000
     - name: 市場下町
-      yomi: い
+      yomi: いちばしもちょう
+      machiaza_id: 141011-0036000
     - name: 市場西中町
-      yomi: い
+      yomi: いちばにしなかちょう
+      machiaza_id: 141011-0037000
     - name: 市場東中町
-      yomi: い
+      yomi: いちばひがしなかちょう
+      machiaza_id: 141011-0031000
     - name: 市場富士見町
-      yomi: い
+      yomi: いちばふじみちょう
+      machiaza_id: 141011-0029000
     - name: 市場大和町
-      yomi: い
+      yomi: いちばやまとちょう
+      machiaza_id: 141011-0032000
     - name: 江ヶ崎町
-      yomi: え
+      yomi: えがさきちょう
+      machiaza_id: 141011-0062000
     - name: 栄町通4丁目
-      yomi: さ
-    - name: 尻手1〜3丁目
-      yomi: し
+      yomi: さかえちょうどおり
+      machiaza_id: 141011-0051004
+    - name: 尻手1丁目
+      yomi: しって
+      machiaza_id: 141011-0034001
+    - name: 尻手2丁目
+      yomi: しって
+      machiaza_id: 141011-0034002
+    - name: 尻手3丁目
+      yomi: しって
+      machiaza_id: 141011-0034003
     - name: 菅沢町
-      yomi: す
+      yomi: すがさわちょう
+      machiaza_id: 141011-0030000
     - name: 元宮1丁目
-      yomi: も
-    - name: 矢向1〜6丁目
-      yomi: や
+      yomi: もとみや
+      machiaza_id: 141011-0038001
+    - name: 矢向1丁目
+      yomi: やこう
+      machiaza_id: 141011-0049001
+    - name: 矢向2丁目
+      yomi: やこう
+      machiaza_id: 141011-0049002
+    - name: 矢向3丁目
+      yomi: やこう
+      machiaza_id: 141011-0049003
+    - name: 矢向4丁目
+      yomi: やこう
+      machiaza_id: 141011-0049004
+    - name: 矢向5丁目
+      yomi: やこう
+      machiaza_id: 141011-0049005
+    - name: 矢向6丁目
+      yomi: やこう
+      machiaza_id: 141011-0049006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,19 +4,39 @@ metadata:
   areas:
     - name: あゆみが丘
       yomi: あ
-    - name: 牛久保2・3丁目
+    - name: 牛久保2丁目
+      yomi: う
+    - name: 牛久保3丁目
       yomi: う
     - name: 牛久保町
       yomi: う
-    - name: 牛久保西2〜4丁目
+    - name: 牛久保西2丁目
+      yomi: う
+    - name: 牛久保西3丁目
+      yomi: う
+    - name: 牛久保西4丁目
       yomi: う
     - name: すみれが丘
       yomi: す
-    - name: 中川1・3〜8丁目
+    - name: 中川1丁目
+      yomi: な
+    - name: 中川3丁目
+      yomi: な
+    - name: 中川4丁目
+      yomi: な
+    - name: 中川5丁目
+      yomi: な
+    - name: 中川6丁目
+      yomi: な
+    - name: 中川7丁目
+      yomi: な
+    - name: 中川8丁目
       yomi: な
     - name: 中川2丁目
       yomi: な
-    - name: 中川中央1・2丁目
+    - name: 中川中央1丁目
+      yomi: な
+    - name: 中川中央2丁目
       yomi: な
   year: 2026
   fiscal_year_ja: 令和8年度

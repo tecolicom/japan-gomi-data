@@ -8,7 +8,13 @@ metadata:
       yomi: し
     - name: 舞岡町
       yomi: ま
-    - name: 南舞岡1〜4丁目
+    - name: 南舞岡1丁目
+      yomi: み
+    - name: 南舞岡2丁目
+      yomi: み
+    - name: 南舞岡3丁目
+      yomi: み
+    - name: 南舞岡4丁目
       yomi: み
   year: 2026
   fiscal_year_ja: 令和8年度

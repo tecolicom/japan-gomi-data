@@ -2,34 +2,78 @@ metadata:
   city: yokohama
   course: tsurumi-4
   areas:
-    - name: 安善町1・2丁目
-      yomi: あ
+    - name: 安善町1丁目
+      yomi: あんぜんちょう
+      machiaza_id: 141011-0016001
+    - name: 安善町2丁目
+      yomi: あんぜんちょう
+      machiaza_id: 141011-0016002
     - name: 寛政町
-      yomi: か
-    - name: 岸谷1〜4丁目
-      yomi: き
+      yomi: かんせいちょう
+      machiaza_id: 141011-0003000
+    - name: 岸谷1丁目
+      yomi: きしや
+      machiaza_id: 141011-0007001
+    - name: 岸谷2丁目
+      yomi: きしや
+      machiaza_id: 141011-0007002
+    - name: 岸谷3丁目
+      yomi: きしや
+      machiaza_id: 141011-0007003
+    - name: 岸谷4丁目
+      yomi: きしや
+      machiaza_id: 141011-0007004
     - name: 北寺尾5丁目7・11番地の一部
-      yomi: き
+      yomi: きたてらお
+      machiaza_id: 141011-0045005
     - name: 北寺尾6丁目
-      yomi: き
+      yomi: きたてらお
+      machiaza_id: 141011-0045006
     - name: 汐入町1丁目
-      yomi: し
-    - name: 下野谷町1〜4丁目
-      yomi: し
+      yomi: しおいりちょう
+      machiaza_id: 141011-0056001
+    - name: 下野谷町1丁目
+      yomi: したのやちょう
+      machiaza_id: 141011-0052001
+    - name: 下野谷町2丁目
+      yomi: したのやちょう
+      machiaza_id: 141011-0052002
+    - name: 下野谷町3丁目
+      yomi: したのやちょう
+      machiaza_id: 141011-0052003
+    - name: 下野谷町4丁目
+      yomi: したのやちょう
+      machiaza_id: 141011-0052004
     - name: 鶴見1丁目
-      yomi: つ
+      yomi: つるみ
+      machiaza_id: 141011-0010001
     - name: 鶴見中央1丁目
-      yomi: つ
-    - name: 鶴見中央4・5丁目
-      yomi: つ
-    - name: 馬場4〜6丁目
-      yomi: は
+      yomi: つるみちゅうおう
+      machiaza_id: 141011-0009001
+    - name: 鶴見中央4丁目
+      yomi: つるみちゅうおう
+      machiaza_id: 141011-0009004
+    - name: 鶴見中央5丁目
+      yomi: つるみちゅうおう
+      machiaza_id: 141011-0009005
+    - name: 馬場4丁目
+      yomi: ばば
+      machiaza_id: 141011-0011004
+    - name: 馬場5丁目
+      yomi: ばば
+      machiaza_id: 141011-0011005
+    - name: 馬場6丁目
+      yomi: ばば
+      machiaza_id: 141011-0011006
     - name: 東寺尾6丁目
-      yomi: ひ
+      yomi: ひがしてらお
+      machiaza_id: 141011-0006006
     - name: 東寺尾東台
-      yomi: ひ
+      yomi: ひがしてらおひがしだい
+      machiaza_id: 141011-0004000
     - name: 弁天町
-      yomi: へ
+      yomi: べんてんちょう
+      machiaza_id: 141011-0023000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

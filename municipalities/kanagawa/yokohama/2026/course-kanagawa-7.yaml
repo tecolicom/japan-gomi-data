@@ -3,15 +3,18 @@ metadata:
   course: kanagawa-7
   areas:
     - name: 片倉4丁目1〜3番地
-      yomi: か
+      yomi: かたくら
+      machiaza_id: 141020-0074004
     - name: 片倉5丁目
-      yomi: か
+      yomi: かたくら
+      machiaza_id: 141020-0074005
     - name: 神大寺4丁目
-      yomi: か
+      yomi: かんだいじ
+      machiaza_id: 141020-0076004
     - name: 三枚町1〜195番地
-      yomi: さ
+      yomi: さんまいちょう
     - name: 三枚町230〜260番地
-      yomi: さ
+      yomi: さんまいちょう
     - name: 菅田町1〜1300番地
       yomi: す
     - name: 菅田町1400〜2881番地
@@ -19,11 +22,13 @@ metadata:
     - name: 西菅田団地1〜3街区及び4街区1〜6号棟
       yomi: に
     - name: 羽沢町1560番地付近〜1965番地
-      yomi: は
+      yomi: はざわちょう
     - name: 六角橋5丁目
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006005
     - name: 六角橋6丁目
-      yomi: ろ
+      yomi: ろくかくばし
+      machiaza_id: 141020-0006006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

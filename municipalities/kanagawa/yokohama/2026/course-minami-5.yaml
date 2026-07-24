@@ -3,21 +3,47 @@ metadata:
   course: minami-5
   areas:
     - name: 井土ケ谷下町
-      yomi: い
+      yomi: いどがやしもまち
+      machiaza_id: 141054-0043000
     - name: 清水ヶ丘
-      yomi: し
-    - name: 永田北1〜3丁目
-      yomi: な
+      yomi: しみずがおか
+      machiaza_id: 141054-0050000
+    - name: 永田北1丁目
+      yomi: ながたきた
+      machiaza_id: 141054-0055001
+    - name: 永田北2丁目
+      yomi: ながたきた
+      machiaza_id: 141054-0055002
+    - name: 永田北3丁目
+      yomi: ながたきた
+      machiaza_id: 141054-0055003
     - name: 永田台
-      yomi: な
+      yomi: ながただい
+      machiaza_id: 141054-0053000
     - name: 永田東1丁目永田東2丁目境
-      yomi: な
-    - name: 永田東2・3丁目
-      yomi: な
+      yomi: ながたひがし
+      machiaza_id: 141054-0051001
+    - name: 永田東2丁目
+      yomi: ながたひがし
+      machiaza_id: 141054-0051002
+    - name: 永田東3丁目
+      yomi: ながたひがし
+      machiaza_id: 141054-0051003
     - name: 永田南2丁目永田東2丁目境
-      yomi: な
-    - name: 南太田1〜4丁目
-      yomi: み
+      yomi: ながたみなみ
+      machiaza_id: 141054-0048002
+    - name: 南太田1丁目
+      yomi: みなみおおた
+      machiaza_id: 141054-0042001
+    - name: 南太田2丁目
+      yomi: みなみおおた
+      machiaza_id: 141054-0042002
+    - name: 南太田3丁目
+      yomi: みなみおおた
+      machiaza_id: 141054-0042003
+    - name: 南太田4丁目
+      yomi: みなみおおた
+      machiaza_id: 141054-0042004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

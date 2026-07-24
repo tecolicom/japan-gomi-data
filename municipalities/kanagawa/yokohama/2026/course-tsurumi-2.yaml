@@ -3,31 +3,86 @@ metadata:
   course: tsurumi-2
   areas:
     - name: 潮田町2丁目
-      yomi: う
-    - name: 潮田町3・4丁目
-      yomi: う
-    - name: 梶山1・2丁目
-      yomi: か
-    - name: 上末吉1〜5丁目
-      yomi: か
+      yomi: うしおだちょう
+      machiaza_id: 141011-0059002
+    - name: 潮田町3丁目
+      yomi: うしおだちょう
+      machiaza_id: 141011-0059003
+    - name: 潮田町4丁目
+      yomi: うしおだちょう
+      machiaza_id: 141011-0059004
+    - name: 梶山1丁目
+      yomi: かじやま
+      machiaza_id: 141011-0050001
+    - name: 梶山2丁目
+      yomi: かじやま
+      machiaza_id: 141011-0050002
+    - name: 上末吉1丁目
+      yomi: かみすえよし
+      machiaza_id: 141011-0039001
+    - name: 上末吉2丁目
+      yomi: かみすえよし
+      machiaza_id: 141011-0039002
+    - name: 上末吉3丁目
+      yomi: かみすえよし
+      machiaza_id: 141011-0039003
+    - name: 上末吉4丁目
+      yomi: かみすえよし
+      machiaza_id: 141011-0039004
+    - name: 上末吉5丁目
+      yomi: かみすえよし
+      machiaza_id: 141011-0039005
     - name: 駒岡1丁目2番地の一部
-      yomi: こ
+      yomi: こまおか
+      machiaza_id: 141011-0024001
     - name: 駒岡3丁目3・4・24・25・26番地の一部
-      yomi: こ
-    - name: 駒岡4・5丁目
-      yomi: こ
-    - name: 栄町通1〜3丁目
-      yomi: さ
-    - name: 下末吉2〜4丁目
-      yomi: し
+      yomi: こまおか
+      machiaza_id: 141011-0024003
+    - name: 駒岡4丁目
+      yomi: こまおか
+      machiaza_id: 141011-0024004
+    - name: 駒岡5丁目
+      yomi: こまおか
+      machiaza_id: 141011-0024005
+    - name: 栄町通1丁目
+      yomi: さかえちょうどおり
+      machiaza_id: 141011-0051001
+    - name: 栄町通2丁目
+      yomi: さかえちょうどおり
+      machiaza_id: 141011-0051002
+    - name: 栄町通3丁目
+      yomi: さかえちょうどおり
+      machiaza_id: 141011-0051003
+    - name: 下末吉2丁目
+      yomi: しもすえよし
+      machiaza_id: 141011-0033002
+    - name: 下末吉3丁目
+      yomi: しもすえよし
+      machiaza_id: 141011-0033003
+    - name: 下末吉4丁目
+      yomi: しもすえよし
+      machiaza_id: 141011-0033004
     - name: 仲通1丁目
-      yomi: な
+      yomi: なかどおり
+      machiaza_id: 141011-0057001
     - name: 平安町1丁目
-      yomi: へ
-    - name: 向井町1・2・3・4丁目
-      yomi: む
+      yomi: へいあんちょう
+      machiaza_id: 141011-0028001
+    - name: 向井町1丁目
+      yomi: むかいちょう
+      machiaza_id: 141011-0054001
+    - name: 向井町2丁目
+      yomi: むかいちょう
+      machiaza_id: 141011-0054002
+    - name: 向井町3丁目
+      yomi: むかいちょう
+      machiaza_id: 141011-0054003
+    - name: 向井町4丁目
+      yomi: むかいちょう
+      machiaza_id: 141011-0054004
     - name: 元宮2丁目
-      yomi: も
+      yomi: もとみや
+      machiaza_id: 141011-0038002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

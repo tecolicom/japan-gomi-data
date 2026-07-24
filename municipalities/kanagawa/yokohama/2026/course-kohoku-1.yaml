@@ -3,27 +3,61 @@ metadata:
   course: kohoku-1
   areas:
     - name: 大倉山1丁目30〜35番地
-      yomi: お
+      yomi: おおくらやま
+      machiaza_id: 141097-0001001
     - name: 大倉山4丁目13〜15番地の一部
-      yomi: お
-    - name: 菊名1〜7丁目
-      yomi: き
-    - name: 篠原北1・2丁目
+      yomi: おおくらやま
+      machiaza_id: 141097-0001004
+    - name: 菊名1丁目
+      yomi: きくな
+      machiaza_id: 141097-0005001
+    - name: 菊名2丁目
+      yomi: きくな
+      machiaza_id: 141097-0005002
+    - name: 菊名3丁目
+      yomi: きくな
+      machiaza_id: 141097-0005003
+    - name: 菊名4丁目
+      yomi: きくな
+      machiaza_id: 141097-0005004
+    - name: 菊名5丁目
+      yomi: きくな
+      machiaza_id: 141097-0005005
+    - name: 菊名6丁目
+      yomi: きくな
+      machiaza_id: 141097-0005006
+    - name: 菊名7丁目
+      yomi: きくな
+      machiaza_id: 141097-0005007
+    - name: 篠原東町1丁目
       yomi: し
+    - name: 篠原東町2丁目
+      yomi: し
+    - name: 篠原東町3丁目
+      yomi: し
+    - name: 篠原北1丁目
+      yomi: しのはらきた
+      machiaza_id: 141097-0019001
+    - name: 篠原北2丁目
+      yomi: しのはらきた
+      machiaza_id: 141097-0019002
     - name: 篠原町2553・2557・2565・2735付近
-      yomi: し
-    - name: 篠原東町1〜3丁目
-      yomi: し
+      yomi: しのはらちょう
     - name: 仲手原1丁目
-      yomi: な
+      yomi: なかてはら
+      machiaza_id: 141097-0016001
     - name: 仲手原2丁目35・38・41の一部
-      yomi: な
+      yomi: なかてはら
+      machiaza_id: 141097-0016002
     - name: 錦が丘
-      yomi: に
-    - name: 富士塚1・2丁目
+      yomi: にしきがおか
+      machiaza_id: 141097-0018000
+    - name: 富士塚1丁目
+      yomi: ふ
+    - name: 富士塚2丁目
       yomi: ふ
     - name: 大豆戸町
-      yomi: ま
+      yomi: まめどちょう
     - name: 師岡町環状線南側および北側師岡南町会エリア
       yomi: も
   year: 2026

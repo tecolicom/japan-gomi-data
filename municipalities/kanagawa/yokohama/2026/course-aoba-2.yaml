@@ -4,9 +4,17 @@ metadata:
   areas:
     - name: あざみ野3丁目
       yomi: あ
-    - name: 美しが丘西1〜3丁目
+    - name: 美しが丘西1丁目
       yomi: う
-    - name: 荏子田1〜3丁目
+    - name: 美しが丘西2丁目
+      yomi: う
+    - name: 美しが丘西3丁目
+      yomi: う
+    - name: 荏子田1丁目
+      yomi: え
+    - name: 荏子田2丁目
+      yomi: え
+    - name: 荏子田3丁目
       yomi: え
     - name: 大場町
       yomi: お
@@ -14,7 +22,11 @@ metadata:
       yomi: く
     - name: 黒須田町
       yomi: く
-    - name: すすき野1〜3丁目
+    - name: すすき野1丁目
+      yomi: す
+    - name: すすき野2丁目
+      yomi: す
+    - name: すすき野3丁目
       yomi: す
     - name: みすずが丘
       yomi: み

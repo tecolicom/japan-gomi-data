@@ -3,33 +3,50 @@ metadata:
   course: isogo-3
   areas:
     - name: 上中里町
-      yomi: か
+      yomi: かみなかざとちょう
     - name: 栗木3丁目
-      yomi: く
+      yomi: くりき
+      machiaza_id: 141071-0022003
     - name: 杉田8丁目1番
-      yomi: す
+      yomi: すぎた
+      machiaza_id: 141071-0002008
     - name: 杉田9丁目1番50号
-      yomi: す
+      yomi: すぎた
+      machiaza_id: 141071-0002009
     - name: 田中1丁目
-      yomi: た
+      yomi: たなか
+      machiaza_id: 141071-0027001
     - name: 中原3丁目1〜4・14番
-      yomi: な
+      yomi: なかはら
+      machiaza_id: 141071-0024003
     - name: 氷取沢町
-      yomi: ひ
+      yomi: ひとりざわちょう
     - name: 峰町
-      yomi: み
+      yomi: みねちょう
     - name: 森3丁目21番の一部
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025003
     - name: 森5丁目
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025005
     - name: 森6丁目
-      yomi: も
-    - name: 洋光台1・2丁目
-      yomi: よ
+      yomi: もり
+      machiaza_id: 141071-0025006
+    - name: 洋光台1丁目
+      yomi: ようこうだい
+      machiaza_id: 141071-0026001
+    - name: 洋光台2丁目
+      yomi: ようこうだい
+      machiaza_id: 141071-0026002
     - name: 洋光台3丁目1〜10番
-      yomi: よ
-    - name: 洋光台5・6丁目
-      yomi: よ
+      yomi: ようこうだい
+      machiaza_id: 141071-0026003
+    - name: 洋光台5丁目
+      yomi: ようこうだい
+      machiaza_id: 141071-0026005
+    - name: 洋光台6丁目
+      yomi: ようこうだい
+      machiaza_id: 141071-0026006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

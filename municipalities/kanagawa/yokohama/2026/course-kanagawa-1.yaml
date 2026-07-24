@@ -3,69 +3,127 @@ metadata:
   course: kanagawa-1
   areas:
     - name: 青木町
-      yomi: あ
+      yomi: あおきちょう
+      machiaza_id: 141020-0026000
     - name: 泉町
-      yomi: い
+      yomi: いずみちょう
+      machiaza_id: 141020-0007000
     - name: 入江1丁目1〜28番地
-      yomi: い
+      yomi: いりえ
+      machiaza_id: 141020-0046001
     - name: 浦島丘3番地
-      yomi: う
+      yomi: うらしまおか
+      machiaza_id: 141020-0057000
     - name: 浦島町
-      yomi: う
+      yomi: うらしまちょう
+      machiaza_id: 141020-0032000
     - name: 恵比須町
-      yomi: え
+      yomi: えびすちょう
+      machiaza_id: 141020-0015000
     - name: 大口通18〜26番地
-      yomi: お
+      yomi: おおぐちどおり
+      machiaza_id: 141020-0062000
     - name: 大野町
-      yomi: お
-    - name: 神奈川1・2丁目
-      yomi: か
+      yomi: おおのちょう
+      machiaza_id: 141020-0025000
+    - name: 神奈川1丁目
+      yomi: かながわ
+      machiaza_id: 141020-0033001
+    - name: 神奈川2丁目
+      yomi: かながわ
+      machiaza_id: 141020-0033002
     - name: 神奈川本町
-      yomi: か
+      yomi: かながわほんちょう
+      machiaza_id: 141020-0037000
     - name: 亀住町
-      yomi: か
+      yomi: かめずみちょう
+      machiaza_id: 141020-0058000
     - name: 金港町
-      yomi: き
+      yomi: きんこうちょう
+      machiaza_id: 141020-0029000
     - name: 幸ヶ谷
-      yomi: こ
+      yomi: こうがや
+      machiaza_id: 141020-0038000
     - name: 子安台1丁目
-      yomi: こ
-    - name: 子安通1〜3丁目
-      yomi: こ
+      yomi: こやすだい
+      machiaza_id: 141020-0048001
+    - name: 子安通1丁目
+      yomi: こやすどおり
+      machiaza_id: 141020-0079001
+    - name: 子安通2丁目
+      yomi: こやすどおり
+      machiaza_id: 141020-0079002
+    - name: 子安通3丁目
+      yomi: こやすどおり
+      machiaza_id: 141020-0079003
     - name: 栄町
-      yomi: さ
+      yomi: さかえちょう
+      machiaza_id: 141020-0030000
     - name: 沢渡
-      yomi: さ
-    - name: 新浦島町1・2丁目
-      yomi: し
-    - name: 新子安1丁目(18番地を除く)
-      yomi: し
+      yomi: さわたり
+      machiaza_id: 141020-0068000
+    - name: 新浦島町1丁目
+      yomi: しんうらしまちょう
+      machiaza_id: 141020-0020001
+    - name: 新浦島町2丁目
+      yomi: しんうらしまちょう
+      machiaza_id: 141020-0020002
+    - name: 新子安1丁目（18番地を除く）
+      yomi: しんこやす
+      machiaza_id: 141020-0047001
     - name: 新町
-      yomi: し
-    - name: 高島台
-      yomi: た
-    - name: 宝町
-      yomi: た
+      yomi: しんまち
+      machiaza_id: 141020-0034000
     - name: 台町
-      yomi: た
-    - name: 千若町1〜3丁目
-      yomi: ち
-    - name: 鶴屋町1〜3丁目
-      yomi: つ
+      yomi: だいまち
+      machiaza_id: 141020-0004000
+    - name: 高島台
+      yomi: たかしまだい
+      machiaza_id: 141020-0010000
+    - name: 宝町
+      yomi: たからちょう
+      machiaza_id: 141020-0014000
+    - name: 千若町1丁目
+      yomi: ちわかちょう
+      machiaza_id: 141020-0016001
+    - name: 千若町2丁目
+      yomi: ちわかちょう
+      machiaza_id: 141020-0016002
+    - name: 千若町3丁目
+      yomi: ちわかちょう
+      machiaza_id: 141020-0016003
+    - name: 鶴屋町1丁目
+      yomi: つるやちょう
+      machiaza_id: 141020-0083001
+    - name: 鶴屋町2丁目
+      yomi: つるやちょう
+      machiaza_id: 141020-0083002
+    - name: 鶴屋町3丁目
+      yomi: つるやちょう
+      machiaza_id: 141020-0083003
     - name: 七島町112〜146番地
-      yomi: な
+      yomi: ななしまちょう
+      machiaza_id: 141020-0053000
     - name: 橋本町
-      yomi: は
-    - name: 東神奈川1・2丁目(東神奈川1丁目14を除く)
-      yomi: ひ
+      yomi: はしもとちょう
+      machiaza_id: 141020-0019000
+    - name: 東神奈川1丁目（東神奈川1丁目14を除く）
+      yomi: ひがしかながわ
+      machiaza_id: 141020-0035001
+    - name: 東神奈川2丁目（東神奈川1丁目14を除く）
+      yomi: ひがしかながわ
+      machiaza_id: 141020-0035002
     - name: 星野町
-      yomi: ほ
+      yomi: ほしのちょう
+      machiaza_id: 141020-0023000
     - name: 松ヶ丘
-      yomi: ま
+      yomi: まつがおか
+      machiaza_id: 141020-0067000
     - name: 三ツ沢東町の一部
       yomi: み
     - name: 守屋町
-      yomi: も
+      yomi: もりやちょう
+      machiaza_id: 141020-0080000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

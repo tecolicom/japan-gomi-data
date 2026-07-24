@@ -2,22 +2,65 @@ metadata:
   city: yokohama
   course: kohoku-4
   areas:
-    - name: 下田町1〜6丁目
-      yomi: し
+    - name: 下田町1丁目
+      yomi: しもだちょう
+      machiaza_id: 141097-0031001
+    - name: 下田町2丁目
+      yomi: しもだちょう
+      machiaza_id: 141097-0031002
+    - name: 下田町3丁目
+      yomi: しもだちょう
+      machiaza_id: 141097-0031003
+    - name: 下田町4丁目
+      yomi: しもだちょう
+      machiaza_id: 141097-0031004
+    - name: 下田町5丁目
+      yomi: しもだちょう
+      machiaza_id: 141097-0031005
+    - name: 下田町6丁目
+      yomi: しもだちょう
+      machiaza_id: 141097-0031006
     - name: 高田町
-      yomi: た
-    - name: 高田東2・3丁目
-      yomi: た
-    - name: 日吉1・2丁目
-      yomi: ひ
+      yomi: たかたちょう
+    - name: 高田東2丁目
+      yomi: たかたひがし
+      machiaza_id: 141097-0009002
+    - name: 高田東3丁目
+      yomi: たかたひがし
+      machiaza_id: 141097-0009003
+    - name: 日吉1丁目
+      yomi: ひよし
+      machiaza_id: 141097-0022001
+    - name: 日吉2丁目
+      yomi: ひよし
+      machiaza_id: 141097-0022002
     - name: 日吉3丁目1〜3番地
-      yomi: ひ
+      yomi: ひよし
+      machiaza_id: 141097-0022003
     - name: 日吉4丁目2〜3番地
-      yomi: ひ
-    - name: 日吉本町1〜6丁目
-      yomi: ひ
+      yomi: ひよし
+      machiaza_id: 141097-0022004
+    - name: 日吉本町1丁目
+      yomi: ひよしほんちょう
+      machiaza_id: 141097-0030001
+    - name: 日吉本町2丁目
+      yomi: ひよしほんちょう
+      machiaza_id: 141097-0030002
+    - name: 日吉本町3丁目
+      yomi: ひよしほんちょう
+      machiaza_id: 141097-0030003
+    - name: 日吉本町4丁目
+      yomi: ひよしほんちょう
+      machiaza_id: 141097-0030004
+    - name: 日吉本町5丁目
+      yomi: ひよしほんちょう
+      machiaza_id: 141097-0030005
+    - name: 日吉本町6丁目
+      yomi: ひよしほんちょう
+      machiaza_id: 141097-0030006
     - name: 箕輪町3丁目
-      yomi: み
+      yomi: みのわちょう
+      machiaza_id: 141097-0029003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,13 +3,20 @@ metadata:
   course: hodogaya-6
   areas:
     - name: 新井町
-      yomi: あ
+      yomi: あらいちょう
     - name: 上菅田町
-      yomi: か
-    - name: 西谷町・西谷1〜4丁目
+      yomi: かみすげだちょう
+    - name: 西谷町・西谷1丁目
+      yomi: に
+    - name: 西谷町・西谷2丁目
+      yomi: に
+    - name: 西谷町・西谷3丁目
+      yomi: に
+    - name: 西谷町・西谷4丁目
       yomi: に
     - name: 東川島町
-      yomi: ひ
+      yomi: ひがしかわしまちょう
+      machiaza_id: 141062-0038000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

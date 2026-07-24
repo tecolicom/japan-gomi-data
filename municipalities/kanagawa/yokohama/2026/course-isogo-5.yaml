@@ -2,40 +2,69 @@ metadata:
   city: yokohama
   course: isogo-5
   areas:
-    - name: 磯子1〜5丁目
-      yomi: い
+    - name: 磯子1丁目
+      yomi: いそご
+      machiaza_id: 141071-0003001
+    - name: 磯子2丁目
+      yomi: いそご
+      machiaza_id: 141071-0003002
+    - name: 磯子3丁目
+      yomi: いそご
+      machiaza_id: 141071-0003003
+    - name: 磯子4丁目
+      yomi: いそご
+      machiaza_id: 141071-0003004
+    - name: 磯子5丁目
+      yomi: いそご
+      machiaza_id: 141071-0003005
     - name: 磯子6丁目2〜3番の一部
-      yomi: い
+      yomi: いそご
+      machiaza_id: 141071-0003006
     - name: 磯子7丁目1・3・4の一部と16〜23番
-      yomi: い
+      yomi: いそご
+      machiaza_id: 141071-0003007
     - name: 磯子台
-      yomi: い
+      yomi: いそごだい
+      machiaza_id: 141071-0030000
     - name: 鳳町
-      yomi: お
+      yomi: おおとりちょう
+      machiaza_id: 141071-0013000
     - name: 上町
-      yomi: か
+      yomi: かみちょう
+      machiaza_id: 141071-0031000
     - name: 坂下町
-      yomi: さ
+      yomi: さかしたちょう
+      machiaza_id: 141071-0010000
     - name: 汐見台2丁目9-21・9-29・10・11番
-      yomi: し
+      yomi: しおみだい
+      machiaza_id: 141071-0029002
     - name: 下町
-      yomi: し
+      yomi: しもちょう
+      machiaza_id: 141071-0018000
     - name: 新磯子町
-      yomi: し
+      yomi: しんいそごちょう
+      machiaza_id: 141071-0008000
     - name: 西町
-      yomi: に
+      yomi: にしちょう
+      machiaza_id: 141071-0017000
     - name: 馬場町
-      yomi: は
+      yomi: ばばちょう
+      machiaza_id: 141071-0032000
     - name: 原町
-      yomi: は
+      yomi: はらまち
+      machiaza_id: 141071-0016000
     - name: 東町
-      yomi: ひ
+      yomi: ひがしちょう
+      machiaza_id: 141071-0014000
     - name: 久木町23の一部と24番
-      yomi: ひ
+      yomi: ひさきちょう
+      machiaza_id: 141071-0009000
     - name: 森2丁目
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025002
     - name: 森4丁目1〜3番
-      yomi: も
+      yomi: もり
+      machiaza_id: 141071-0025004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

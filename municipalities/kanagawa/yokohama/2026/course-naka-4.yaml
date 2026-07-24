@@ -2,40 +2,110 @@ metadata:
   city: yokohama
   course: naka-4
   areas:
-    - name: 曙町1〜5丁目
-      yomi: あ
-    - name: 伊勢佐木町1〜7丁目
-      yomi: い
+    - name: 曙町1丁目
+      yomi: あけぼのちょう
+      machiaza_id: 141046-0087001
+    - name: 曙町2丁目
+      yomi: あけぼのちょう
+      machiaza_id: 141046-0087002
+    - name: 曙町3丁目
+      yomi: あけぼのちょう
+      machiaza_id: 141046-0087003
+    - name: 曙町4丁目
+      yomi: あけぼのちょう
+      machiaza_id: 141046-0087004
+    - name: 曙町5丁目
+      yomi: あけぼのちょう
+      machiaza_id: 141046-0087005
+    - name: 伊勢佐木町1丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107001
+    - name: 伊勢佐木町2丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107002
+    - name: 伊勢佐木町3丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107003
+    - name: 伊勢佐木町4丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107004
+    - name: 伊勢佐木町5丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107005
+    - name: 伊勢佐木町6丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107006
+    - name: 伊勢佐木町7丁目
+      yomi: いせざきちょう
+      machiaza_id: 141046-0107007
     - name: かもめ町
-      yomi: か
+      yomi: かもめちょう
+      machiaza_id: 141046-0014000
     - name: 末広町
-      yomi: す
-    - name: 末吉町1〜4丁目
-      yomi: す
+      yomi: すえひろちょう
+      machiaza_id: 141046-0151000
+    - name: 末吉町1丁目
+      yomi: すえよしちょう
+      machiaza_id: 141046-0150001
+    - name: 末吉町2丁目
+      yomi: すえよしちょう
+      machiaza_id: 141046-0150002
+    - name: 末吉町3丁目
+      yomi: すえよしちょう
+      machiaza_id: 141046-0150003
+    - name: 末吉町4丁目
+      yomi: すえよしちょう
+      machiaza_id: 141046-0150004
     - name: 長者町5丁目
-      yomi: ち
-    - name: 長者町6〜9丁目
-      yomi: ち
-    - name: 羽衣町1〜3丁目国道16号線よりイセザキモール側
-      yomi: は
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138005
+    - name: 長者町6丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138006
+    - name: 長者町7丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138007
+    - name: 長者町8丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138008
+    - name: 長者町9丁目
+      yomi: ちょうじゃまち
+      machiaza_id: 141046-0138009
+    - name: 羽衣町1丁目国道16号線よりイセザキモール側
+      yomi: はごろもちょう
+      machiaza_id: 141046-0108001
+    - name: 羽衣町2丁目国道16号線よりイセザキモール側
+      yomi: はごろもちょう
+      machiaza_id: 141046-0108002
+    - name: 羽衣町3丁目国道16号線よりイセザキモール側
+      yomi: はごろもちょう
+      machiaza_id: 141046-0108003
     - name: 福富町仲通・西通・東通
       yomi: ふ
     - name: 本牧大里町
-      yomi: ほ
+      yomi: ほんもくおおさとちょう
+      machiaza_id: 141046-0012000
     - name: 本牧三之谷
-      yomi: ほ
+      yomi: ほんもくさんのたに
+      machiaza_id: 141046-0004000
     - name: 本牧原
-      yomi: ほ
+      yomi: ほんもくはら
+      machiaza_id: 141046-0033000
     - name: 本牧間門
-      yomi: ほ
+      yomi: ほんもくまかど
+      machiaza_id: 141046-0002000
     - name: 本牧元町
-      yomi: ほ
+      yomi: ほんもくもとまち
+      machiaza_id: 141046-0008000
     - name: 弥生町
-      yomi: や
+      yomi: やよいちょう
+      machiaza_id: 141046-0154000
     - name: 吉田町（中区）
-      yomi: よ
+      yomi: よしだまち
+      machiaza_id: 141046-0105000
     - name: 若葉町
-      yomi: わ
+      yomi: わかばちょう
+      machiaza_id: 141046-0121000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,7 +3,8 @@ metadata:
   course: kanazawa-6
   areas:
     - name: 寺前2丁目
-      yomi: て
+      yomi: てらまえ
+      machiaza_id: 141089-0032002
     - name: 谷津町称名寺一方通行側
       yomi: や
   year: 2026

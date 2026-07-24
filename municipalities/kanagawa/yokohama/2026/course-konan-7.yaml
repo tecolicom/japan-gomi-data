@@ -8,9 +8,21 @@ metadata:
       yomi: の
     - name: 日野9丁目7の一部
       yomi: ひ
-    - name: 日野南4〜7丁目
+    - name: 日野南4丁目
       yomi: ひ
-    - name: 丸山台1〜4丁目(3丁目パレスTSKIIを除く)
+    - name: 日野南5丁目
+      yomi: ひ
+    - name: 日野南6丁目
+      yomi: ひ
+    - name: 日野南7丁目
+      yomi: ひ
+    - name: 丸山台1丁目（3丁目パレスTSKIIを除く）
+      yomi: ま
+    - name: 丸山台2丁目（3丁目パレスTSKIIを除く）
+      yomi: ま
+    - name: 丸山台3丁目（3丁目パレスTSKIIを除く）
+      yomi: ま
+    - name: 丸山台4丁目（3丁目パレスTSKIIを除く）
       yomi: ま
   year: 2026
   fiscal_year_ja: 令和8年度

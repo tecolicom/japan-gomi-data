@@ -6,22 +6,34 @@ metadata:
       yomi: い
     - name: 岩崎町【市営岩崎住宅付近】
       yomi: い
-    - name: 境木町
-      yomi: さ
     - name: 境木本町【環状2号線沿い】
       yomi: さ
-    - name: 新桜ケ丘1・2丁目
-      yomi: し
+    - name: 境木町
+      yomi: さかいぎちょう
+      machiaza_id: 141062-0002000
+    - name: 新桜ケ丘1丁目
+      yomi: しんさくらがおか
+      machiaza_id: 141062-0003001
+    - name: 新桜ケ丘2丁目
+      yomi: しんさくらがおか
+      machiaza_id: 141062-0003002
     - name: 初音ケ丘
-      yomi: は
+      yomi: はつねがおか
+      machiaza_id: 141062-0029000
     - name: 藤塚町
-      yomi: ふ
+      yomi: ふじつかちょう
+      machiaza_id: 141062-0007000
     - name: 仏向町
-      yomi: ふ
-    - name: 法泉町1〜3丁目
-      yomi: ほ
+      yomi: ぶっこうちょう
+    - name: 法泉町1丁目
+      yomi: ほうせんちょう
+    - name: 法泉町2丁目
+      yomi: ほうせんちょう
+    - name: 法泉町3丁目
+      yomi: ほうせんちょう
     - name: 星川3丁目【8〜11番地付近】
-      yomi: ほ
+      yomi: ほしかわ
+      machiaza_id: 141062-0018003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

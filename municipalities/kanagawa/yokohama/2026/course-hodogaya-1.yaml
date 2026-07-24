@@ -5,31 +5,54 @@ metadata:
     - name: 岩井町【JR線路より西側】
       yomi: い
     - name: 岩崎町
-      yomi: い
-    - name: 岩間町1・2丁目
-      yomi: い
+      yomi: いわさきちょう
+      machiaza_id: 141062-0025000
+    - name: 岩間町1丁目
+      yomi: いわまちょう
+      machiaza_id: 141062-0043001
+    - name: 岩間町2丁目
+      yomi: いわまちょう
+      machiaza_id: 141062-0043002
     - name: 霞台
-      yomi: か
-    - name: 帷子町1・2丁目
-      yomi: か
+      yomi: かすみだい
+      machiaza_id: 141062-0024000
+    - name: 帷子町1丁目
+      yomi: かたびらちょう
+      machiaza_id: 141062-0049001
+    - name: 帷子町2丁目
+      yomi: かたびらちょう
+      machiaza_id: 141062-0049002
     - name: 神戸町
-      yomi: こ
-    - name: 桜ケ丘1・2丁目
-      yomi: さ
+      yomi: ごうどちょう
+      machiaza_id: 141062-0019000
+    - name: 桜ケ丘1丁目
+      yomi: さくらがおか
+      machiaza_id: 141062-0015001
+    - name: 桜ケ丘2丁目
+      yomi: さくらがおか
+      machiaza_id: 141062-0015002
     - name: 月見台
-      yomi: つ
-    - name: 天王町1・2丁目
-      yomi: て
+      yomi: つきみだい
+      machiaza_id: 141062-0017000
+    - name: 天王町1丁目
+      yomi: てんのうちょう
+      machiaza_id: 141062-0046001
+    - name: 天王町2丁目
+      yomi: てんのうちょう
+      machiaza_id: 141062-0046002
     - name: 西久保町【JR線路から西側】
       yomi: に
     - name: 初音ケ丘【4・8番地付近】
       yomi: は
     - name: 花見台
-      yomi: は
+      yomi: はなみだい
+      machiaza_id: 141062-0026000
     - name: 星川1丁目
-      yomi: ほ
+      yomi: ほしかわ
+      machiaza_id: 141062-0018001
     - name: 明神台
-      yomi: み
+      yomi: みょうじんだい
+      machiaza_id: 141062-0004000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

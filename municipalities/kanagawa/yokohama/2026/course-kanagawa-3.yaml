@@ -2,18 +2,28 @@ metadata:
   city: yokohama
   course: kanagawa-3
   areas:
-    - name: 片倉1・2・3丁目
-      yomi: か
+    - name: 片倉1丁目
+      yomi: かたくら
+      machiaza_id: 141020-0074001
+    - name: 片倉2丁目
+      yomi: かたくら
+      machiaza_id: 141020-0074002
+    - name: 片倉3丁目
+      yomi: かたくら
+      machiaza_id: 141020-0074003
     - name: 片倉4丁目4〜26番地
-      yomi: か
+      yomi: かたくら
+      machiaza_id: 141020-0074004
     - name: 片倉4丁目新横浜ミユキマンション
-      yomi: か
+      yomi: かたくら
+      machiaza_id: 141020-0074004
     - name: 神大寺3丁目
-      yomi: か
+      yomi: かんだいじ
+      machiaza_id: 141020-0076003
     - name: 三枚町198〜220番地
-      yomi: さ
+      yomi: さんまいちょう
     - name: 三枚町280〜800番地
-      yomi: さ
+      yomi: さんまいちょう
     - name: 菅田町15・107・670番地
       yomi: す
     - name: 菅田町2930・2973・2975番地
@@ -23,9 +33,19 @@ metadata:
     - name: 西菅田団地5〜7街区及び4街区7〜9号棟
       yomi: に
     - name: 羽沢町1〜1560番地付近
-      yomi: は
-    - name: 羽沢南1〜4丁目
-      yomi: は
+      yomi: はざわちょう
+    - name: 羽沢南1丁目
+      yomi: はざわみなみ
+      machiaza_id: 141020-0066001
+    - name: 羽沢南2丁目
+      yomi: はざわみなみ
+      machiaza_id: 141020-0066002
+    - name: 羽沢南3丁目
+      yomi: はざわみなみ
+      machiaza_id: 141020-0066003
+    - name: 羽沢南4丁目
+      yomi: はざわみなみ
+      machiaza_id: 141020-0066004
     - name: 宮向団地
       yomi: み
   year: 2026

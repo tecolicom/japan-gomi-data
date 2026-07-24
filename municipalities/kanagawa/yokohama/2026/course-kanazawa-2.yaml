@@ -2,20 +2,44 @@ metadata:
   city: yokohama
   course: kanazawa-2
   areas:
-    - name: 片吹57-62京急線西側狭路
-      yomi: か
     - name: 片吹京急線西側
       yomi: か
+    - name: 片吹57-62京急線西側狭路
+      yomi: かたぶき
+      machiaza_id: 141089-0018000
     - name: 釜利谷東1丁目
-      yomi: か
-    - name: 釜利谷東2丁目(一部を除く)
-      yomi: か
-    - name: 釜利谷東3〜4丁目
-      yomi: か
-    - name: 能見台1〜6丁目
-      yomi: の
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045001
+    - name: 釜利谷東2丁目（一部を除く）
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045002
+    - name: 釜利谷東3丁目
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045003
+    - name: 釜利谷東4丁目
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045004
+    - name: 能見台1丁目
+      yomi: のうけんだい
+      machiaza_id: 141089-0016001
+    - name: 能見台2丁目
+      yomi: のうけんだい
+      machiaza_id: 141089-0016002
+    - name: 能見台3丁目
+      yomi: のうけんだい
+      machiaza_id: 141089-0016003
+    - name: 能見台4丁目
+      yomi: のうけんだい
+      machiaza_id: 141089-0016004
+    - name: 能見台5丁目
+      yomi: のうけんだい
+      machiaza_id: 141089-0016005
+    - name: 能見台6丁目
+      yomi: のうけんだい
+      machiaza_id: 141089-0016006
     - name: 能見台東
-      yomi: の
+      yomi: のうけんだいひがし
+      machiaza_id: 141089-0039000
     - name: 谷津町京急線西側
       yomi: や
   year: 2026

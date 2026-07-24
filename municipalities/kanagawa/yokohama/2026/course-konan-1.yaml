@@ -2,13 +2,33 @@ metadata:
   city: yokohama
   course: konan-1
   areas:
-    - name: 港南1〜6丁目
+    - name: 港南1丁目
+      yomi: こ
+    - name: 港南2丁目
+      yomi: こ
+    - name: 港南3丁目
+      yomi: こ
+    - name: 港南4丁目
+      yomi: こ
+    - name: 港南5丁目
+      yomi: こ
+    - name: 港南6丁目
       yomi: こ
     - name: 港南中央通
       yomi: こ
-    - name: 笹下3〜7丁目
+    - name: 笹下3丁目
       yomi: さ
-    - name: 日野1・2丁目日野2丁目22の一部を除く
+    - name: 笹下4丁目
+      yomi: さ
+    - name: 笹下5丁目
+      yomi: さ
+    - name: 笹下6丁目
+      yomi: さ
+    - name: 笹下7丁目
+      yomi: さ
+    - name: 日野1丁目日野2丁目22の一部を除く
+      yomi: ひ
+    - name: 日野2丁目日野2丁目22の一部を除く
       yomi: ひ
     - name: 日野4丁目7の一部
       yomi: ひ
@@ -16,7 +36,7 @@ metadata:
       yomi: ひ
     - name: 日野中央1丁目
       yomi: ひ
-    - name: 日野中央2丁目(32〜34番の一部を除く)
+    - name: 日野中央2丁目（32〜34番の一部を除く）
       yomi: ひ
   year: 2026
   fiscal_year_ja: 令和8年度

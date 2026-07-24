@@ -10,9 +10,9 @@ metadata:
       yomi: せ
     - name: 中希望が丘
       yomi: な
-    - name: 東希望が丘(100番地付近)
+    - name: 東希望が丘（100番地付近）
       yomi: ひ
-    - name: 二俣川1丁目(2番地のうちの1か所のみ)
+    - name: 二俣川1丁目（2番地のうちの1か所のみ）
       yomi: ふ
     - name: 二俣川2丁目
       yomi: ふ
@@ -20,7 +20,7 @@ metadata:
       yomi: ま
     - name: 南希望が丘
       yomi: み
-    - name: 南本宿町(85番地付近)
+    - name: 南本宿町（85番地付近）
       yomi: み
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -3,17 +3,59 @@ metadata:
   course: kanazawa-5
   areas:
     - name: 大川
-      yomi: お
-    - name: 釜利谷西1〜6丁目
-      yomi: か
+      yomi: おおかわ
+      machiaza_id: 141089-0011000
+    - name: 釜利谷西1丁目
+      yomi: かまりやにし
+      machiaza_id: 141089-0010001
+    - name: 釜利谷西2丁目
+      yomi: かまりやにし
+      machiaza_id: 141089-0010002
+    - name: 釜利谷西3丁目
+      yomi: かまりやにし
+      machiaza_id: 141089-0010003
+    - name: 釜利谷西4丁目
+      yomi: かまりやにし
+      machiaza_id: 141089-0010004
+    - name: 釜利谷西5丁目
+      yomi: かまりやにし
+      machiaza_id: 141089-0010005
+    - name: 釜利谷西6丁目
+      yomi: かまりやにし
+      machiaza_id: 141089-0010006
     - name: 釜利谷東2丁目の一部
-      yomi: か
-    - name: 釜利谷東5〜8丁目
-      yomi: か
-    - name: 釜利谷南1〜4丁目
-      yomi: か
-    - name: 高舟台1・2丁目
-      yomi: た
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045002
+    - name: 釜利谷東5丁目
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045005
+    - name: 釜利谷東6丁目
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045006
+    - name: 釜利谷東7丁目
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045007
+    - name: 釜利谷東8丁目
+      yomi: かまりやひがし
+      machiaza_id: 141089-0045008
+    - name: 釜利谷南1丁目
+      yomi: かまりやみなみ
+      machiaza_id: 141089-0009001
+    - name: 釜利谷南2丁目
+      yomi: かまりやみなみ
+      machiaza_id: 141089-0009002
+    - name: 釜利谷南3丁目
+      yomi: かまりやみなみ
+      machiaza_id: 141089-0009003
+    - name: 釜利谷南4丁目
+      yomi: かまりやみなみ
+      machiaza_id: 141089-0009004
+    - name: 高舟台1丁目
+      yomi: たかふねだい
+      machiaza_id: 141089-0026001
+    - name: 高舟台2丁目
+      yomi: たかふねだい
+      machiaza_id: 141089-0026002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

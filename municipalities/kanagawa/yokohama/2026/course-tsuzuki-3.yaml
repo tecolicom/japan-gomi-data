@@ -12,7 +12,15 @@ metadata:
       yomi: か
     - name: 佐江戸町
       yomi: さ
-    - name: 仲町台1〜5丁目
+    - name: 仲町台1丁目
+      yomi: な
+    - name: 仲町台2丁目
+      yomi: な
+    - name: 仲町台3丁目
+      yomi: な
+    - name: 仲町台4丁目
+      yomi: な
+    - name: 仲町台5丁目
       yomi: な
     - name: 東方町
       yomi: ひ

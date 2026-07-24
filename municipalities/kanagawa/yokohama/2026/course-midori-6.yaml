@@ -2,7 +2,17 @@ metadata:
   city: yokohama
   course: midori-6
   areas:
-    - name: 霧が丘1〜6丁目
+    - name: 霧が丘1丁目
+      yomi: き
+    - name: 霧が丘2丁目
+      yomi: き
+    - name: 霧が丘3丁目
+      yomi: き
+    - name: 霧が丘4丁目
+      yomi: き
+    - name: 霧が丘5丁目
+      yomi: き
+    - name: 霧が丘6丁目
       yomi: き
     - name: 十日市場町
       yomi: と
