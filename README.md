@@ -38,6 +38,25 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
 - `tools/txt-extractor/` — 自治体配布のテキスト版カレンダー (日付入り通年) からの抽出パイプライン
 - `tools/_lib/` — extractor 共通部品 (曜日/第n回目パース・categoriesOn 正典展開・コース畳み込み・照合と rule of three・レジストリ)。build-ics も同じ展開を使う
 - `tools/_template/` — 新自治体 extractor の雛形 (コピーして使う)
+
+### areas の読み(yomi)・町字ID ソース
+
+areas の `yomi` / `machiaza_id` はデジタル庁 **アドレス・ベース・レジストリ (ABR) 町字マスター**
+由来 (政府標準利用規約)。各 extractor の `fetch-yomi.mjs` が県版 CSV を取得する
+(`https://data.address-br.digital.go.jp/mt_town_fullset/pref/mt_town_fullset_pref<NN>.csv.zip`)。
+
+ABR は住居表示ベースのため、横浜市の「戸塚町」「和泉町」のような**古い広域大字を持たない**ことがある。
+これを補うため **日本郵便 郵便番号データ (ken_all) を第2の yomi ソースに併用**する (横浜で導入)。
+ken_all の公式 zip は bot 対策でスクリプトから直接ダウンロードできない (UA 付きでも 404) ため、
+**手動配置運用**とする:
+
+1. [日本郵便の郵便番号データダウンロードページ](https://www.post.japanpost.jp/zipcode/dl/utf-zip.html)
+   をブラウザで開き「最新データのダウンロード (zip形式)」= `utf_ken_all.zip` を取得
+2. `tools/<extractor>/<handle>/cache/utf_ken_all.zip` に配置
+3. `node fetch-yomi.mjs` を実行 (zip があれば ken_all を読み込み、無ければ ABR のみで続行)
+
+ken_all は日本郵便が無償配布する正式データ。`machiaza_id` は ABR 専用 (ken_all に ID は無い) のため、
+ken_all で補完されるのは読みのみ。cache は `.gitignore` 対象なので zip はリポジトリに含めない。
 - `docs/opendata-sources.md` — ごみ収集オープンデータの調査記録(新自治体収録時の探索ガイド・自治体別メモ)
 - `docs/triage/` — **調査台帳データセット** (すべて生成物)。自治体ごとの収集日データ公開状況 (出典 URL・形式・粒度・
   ライセンス・「使いやすさスコア」) を集約した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 埼玉63+東京62=125 自治体。
