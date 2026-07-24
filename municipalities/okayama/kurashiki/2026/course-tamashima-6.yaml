@@ -3,7 +3,7 @@ metadata:
   course: tamashima-6
   course_name_ja: "玉島地区: 長尾／爪崎"
   areas:
-    - name: 長尾（長尾・爪崎）
+    - name: 長尾（・爪崎）
       yomi: ながお
       machiaza_id:
         - 332020-0101000

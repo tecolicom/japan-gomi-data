@@ -41,6 +41,7 @@ metadata:
       yomi: ひがしとみい
       machiaza_id:
         - 332020-0149000
+      note: 旭化成団地
     - name: 西富井
       yomi: にしとみい
       machiaza_id:
@@ -49,10 +50,6 @@ metadata:
       yomi: うらだ
       machiaza_id:
         - 332020-0011000
-    - name: 東富井（旭化成団地）
-      yomi: ひがしとみい
-      machiaza_id:
-        - 332020-0149000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

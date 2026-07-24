@@ -11,25 +11,13 @@ metadata:
       yomi: ひよせちょう
       machiaza_id:
         - 332020-0153000
-    - name: 老松1丁目
+    - name: 老松1～5丁目
       yomi: おいまつ
       machiaza_id:
         - 332020-0012001
-    - name: 老松2丁目
-      yomi: おいまつ
-      machiaza_id:
         - 332020-0012002
-    - name: 老松3丁目
-      yomi: おいまつ
-      machiaza_id:
         - 332020-0012003
-    - name: 老松4丁目
-      yomi: おいまつ
-      machiaza_id:
         - 332020-0012004
-    - name: 老松5丁目
-      yomi: おいまつ
-      machiaza_id:
         - 332020-0012005
     - name: 昭和1丁目
       yomi: しょうわ

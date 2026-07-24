@@ -3,13 +3,10 @@ metadata:
   course: mizushima-2
   course_name_ja: "水島地区: 鶴の浦／西之浦"
   areas:
-    - name: 鶴の浦1丁目
+    - name: 鶴の浦1・2丁目
       yomi: つるのうら
       machiaza_id:
         - 332020-0121001
-    - name: 鶴の浦2丁目
-      yomi: つるのうら
-      machiaza_id:
         - 332020-0121002
     - name: 西之浦（腕，弁財天）
       yomi: にしのうら

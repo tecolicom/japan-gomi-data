@@ -7,29 +7,13 @@ metadata:
       yomi: やしま
       machiaza_id:
         - 332020-0105000
-    - name: 阿賀崎1丁目
+    - name: 阿賀崎1～5丁目
       yomi: あがさき
       machiaza_id:
         - 332020-0091001
-      note: 玉島中央北・島地
-    - name: 阿賀崎2丁目
-      yomi: あがさき
-      machiaza_id:
         - 332020-0091002
-      note: 玉島中央北・島地
-    - name: 阿賀崎3丁目
-      yomi: あがさき
-      machiaza_id:
         - 332020-0091003
-      note: 玉島中央北・島地
-    - name: 阿賀崎4丁目
-      yomi: あがさき
-      machiaza_id:
         - 332020-0091004
-      note: 玉島中央北・島地
-    - name: 阿賀崎5丁目
-      yomi: あがさき
-      machiaza_id:
         - 332020-0091005
       note: 玉島中央北・島地
   year: 2026

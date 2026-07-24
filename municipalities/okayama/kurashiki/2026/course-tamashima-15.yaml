@@ -3,33 +3,17 @@ metadata:
   course: tamashima-15
   course_name_ja: "玉島地区: 柏島／柏台／勇崎"
   areas:
-    - name: 柏島（柏島南）
+    - name: 柏島（南）
       yomi: かしわじま
       machiaza_id:
         - 332020-0093000
-    - name: 柏台1丁目
+    - name: 柏台1～5丁目
       yomi: かしわだい
       machiaza_id:
         - 332020-0094001
-      note: 柏島南
-    - name: 柏台2丁目
-      yomi: かしわだい
-      machiaza_id:
         - 332020-0094002
-      note: 柏島南
-    - name: 柏台3丁目
-      yomi: かしわだい
-      machiaza_id:
         - 332020-0094003
-      note: 柏島南
-    - name: 柏台4丁目
-      yomi: かしわだい
-      machiaza_id:
         - 332020-0094004
-      note: 柏島南
-    - name: 柏台5丁目
-      yomi: かしわだい
-      machiaza_id:
         - 332020-0094005
       note: 柏島南
     - name: 勇崎（柏島南）

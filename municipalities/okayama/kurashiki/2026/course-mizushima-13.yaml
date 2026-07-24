@@ -3,46 +3,23 @@ metadata:
   course: mizushima-13
   course_name_ja: "水島地区: 中畝／東塚"
   areas:
-    - name: 中畝2丁目
+    - name: 中畝2・3・7・8丁目
       yomi: なかせ
       machiaza_id:
         - 332020-0128002
-    - name: 中畝3丁目
-      yomi: なかせ
-      machiaza_id:
         - 332020-0128003
-    - name: 中畝7丁目
-      yomi: なかせ
-      machiaza_id:
         - 332020-0128007
-    - name: 中畝8丁目
-      yomi: なかせ
-      machiaza_id:
         - 332020-0128008
-    - name: 東塚1丁目（国道430号線以北）
+    - name: 東塚1～3・5～7丁目
       yomi: ひがしづか
       machiaza_id:
         - 332020-0147001
-    - name: 東塚2丁目
-      yomi: ひがしづか
-      machiaza_id:
         - 332020-0147002
-    - name: 東塚3丁目
-      yomi: ひがしづか
-      machiaza_id:
         - 332020-0147003
-    - name: 東塚5丁目
-      yomi: ひがしづか
-      machiaza_id:
         - 332020-0147005
-    - name: 東塚6丁目
-      yomi: ひがしづか
-      machiaza_id:
         - 332020-0147006
-    - name: 東塚7丁目（国道430号線以北）
-      yomi: ひがしづか
-      machiaza_id:
         - 332020-0147007
+      note: 国道430号線以北
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

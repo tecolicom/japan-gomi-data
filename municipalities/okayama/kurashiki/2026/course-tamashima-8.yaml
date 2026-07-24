@@ -15,29 +15,13 @@ metadata:
       yomi: うわなり
       machiaza_id:
         - 332020-0092000
-    - name: 新倉敷駅前1丁目
+    - name: 新倉敷駅前1～5丁目
       yomi: しんくらしきえきまえ
       machiaza_id:
         - 332020-0081001
-      note: 駅南
-    - name: 新倉敷駅前2丁目
-      yomi: しんくらしきえきまえ
-      machiaza_id:
         - 332020-0081002
-      note: 駅南
-    - name: 新倉敷駅前3丁目
-      yomi: しんくらしきえきまえ
-      machiaza_id:
         - 332020-0081003
-      note: 駅南
-    - name: 新倉敷駅前4丁目
-      yomi: しんくらしきえきまえ
-      machiaza_id:
         - 332020-0081004
-      note: 駅南
-    - name: 新倉敷駅前5丁目
-      yomi: しんくらしきえきまえ
-      machiaza_id:
         - 332020-0081005
       note: 駅南
     - name: 玉島（駅南）

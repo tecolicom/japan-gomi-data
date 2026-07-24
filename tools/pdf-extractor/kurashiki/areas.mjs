@@ -1,19 +1,21 @@
 // 倉敷市: records.json の area 文字列 (PDF「地区」セル原文の地名列挙) を
-// 「1 area = 1 町名 (丁目単位)」へ分解する。分解規約は README.md「area 分解規約」に対応。
+// 「1 area = 1 町名」へ分解する。横浜方式 (2026-07-24): 丁目まとめ (N丁目～M丁目) は
+// 展開せず 1 area とし、構成丁目を chomes:[…] のリストで保持する (build が各丁目の
+// machiaza_id を配列で付与)。番地・条件・旧呼称は note へ (name には入れない)。
 //
 // 規約の要点:
 //  1. 前置グループラベル: 文字列先頭の Ｒ2南/北・ＪＲ東西南北 (直後の （…） を含む) は
 //     この行の全 area の note に前置する (町名ではない)。
 //  2. トップレベル区切り: 括弧の外の 「・」「，」半角「,」で「参照」へ分割する。
 //     (括弧内の区切りは分割しない = 条件/字/町内会の列挙を保護)。
-//  3. 参照の分類:
-//       - 数字始まりの参照 = 直前の町の継続 (丁目の追加列挙 or 番地)。
-//       - 日本語始まりの参照 = 新しい町。町名 = 先頭の非数字・非空白の連続。
-//  4. 丁目の展開: 「N丁目」「N」(裸,<100)「N～M丁目」「N丁目～M丁目」は個別丁目へ展開し
-//     それぞれ独立した area (name=「<町>N丁目」) にする。
-//  5. 展開しない情報 = note: 番地/号/番地レンジ (N番・N号・N～M・N番地)、道路/河川境界条件
+//  3. 参照の分類: 数字始まり = 直前の町の継続 (丁目の追加列挙 or 番地)。
+//     日本語始まり = 新しい町 (町名 = 先頭の非数字・非空白の連続)。
+//  4. 丁目まとめは展開しない: 「N丁目」「N」(裸,<100)「N～M丁目」「N丁目～M丁目」の丁目番号は
+//     その町の chomes リストへ集約する。同一行内の同名町はまとめて 1 area にする
+//     (name = <町>+丁目レンジ圧縮、chomes = 全構成丁目)。
+//  5. note (name に入れない): 番地/号/番地レンジ (N番・N号・N～M・N番地)、道路/河川境界条件
 //     (「◯◯線より東」「以南」等)、「◯◯を除く」「◯◯のみ」「◯◯の一部」、字/町内会補足、
-//     前置グループラベル、旧呼称 (kyu)。すべて該当 area の note に verbatim 保持。
+//     前置グループラベル、旧呼称 (kyu)。原文どおり verbatim 保持。
 //  6. 括弧 （…） は直前トークンの note。
 //  7. 想定外の表記は throw (黙って落とさない)。
 
@@ -57,6 +59,7 @@ function stripTrailingParen(token) {
 
 // spec 文字列 (町名を除いた残り、または継続トークンの base) を解釈。
 // 返り値 { chomes:number[], note:string|null }。chomes 空 = 丁目なし。
+// (丁目まとめは展開せず chomes に列挙する。)
 function parseSpec(spec) {
   const s = spec.trim();
   if (s === '') return { chomes: [], note: null };
@@ -78,8 +81,23 @@ function parseSpec(spec) {
   return { chomes: [], note: s };                          // 番/号/レンジ/字 = 番地・条件 note
 }
 
-// 1 レコード (records.json の 1 行) → 展開 area 配列。
-// 各 area: { name, note?, base } (base = yomi 照合用のベース町名。build 側で strip)。
+// 連続丁目を圧縮した表記: [3,4,5,6,7,8]→「3～8」/ [1,2,9,10]→「1・2・9・10」/ [1]→「1」。
+// 長さ3以上の連番は「a～b」、長さ1・2は「・」列挙。
+function compressChomes(chomes) {
+  const s = [...new Set(chomes)].sort((a, b) => a - b);
+  const runs = [];
+  let i = 0;
+  while (i < s.length) {
+    let j = i;
+    while (j + 1 < s.length && s[j + 1] === s[j] + 1) j++;
+    runs.push(j - i >= 2 ? `${s[i]}～${s[j]}` : s.slice(i, j + 1).join('・'));
+    i = j + 1;
+  }
+  return runs.join('・');
+}
+
+// 1 レコード (records.json の 1 行) → area 配列 (同名町は 1 area に集約)。
+// 各 area: { base, chomes:number[], note? }。build が name/yomi/machiaza_id を付与。
 export function expandRow(rec) {
   let body = rec.area;
   // 船穂町 <字> の空白は大字-字の連結 (町名の一部)。ＪＲ/Ｒ2 の空白と区別するため先に連結。
@@ -107,32 +125,22 @@ export function expandRow(rec) {
   const tokens = splitTop(body);
   if (!tokens.length) throw new Error(`area が空: ${JSON.stringify(rec.area)}`);
 
-  const groups = [];   // { town, units:[{chome, notes[]}], townNotes[], pendingBare[] }
-  let cur = null;
-
-  // chomes をユニット化して現在グループへ追加。
-  //  explicit = トークンが「丁目」語を持つ (= 列挙クラスタの確定)。
-  //  parenNote (後置括弧の条件) は「丁目」列挙クラスタ全体 (先行する裸数字 + 今回分) に付与。
-  //  specNote (「N丁目<番地>」の番地部) は今回のユニットのみに付与。
-  const addChomes = (chomes, explicit, specNote, parenNote) => {
-    const mine = chomes.map((c) => { const u = { chome: c, notes: [] }; cur.units.push(u); return u; });
-    if (specNote) for (const u of mine) u.notes.push(specNote);
-    if (explicit) {
-      const cluster = [...cur.pendingBare, ...mine];
-      cur.pendingBare = [];
-      if (parenNote) for (const u of cluster) u.notes.push(parenNote);
-    } else {
-      cur.pendingBare.push(...mine);
-      if (parenNote) for (const u of mine) u.notes.push(parenNote);
-    }
+  // 同名町を 1 group に集約 (出現順を保持)。
+  const order = [];                 // town name の出現順
+  const byTown = new Map();         // town -> { chomes:Set, notes:[] }
+  let cur = null;                   // 現在の継続対象 group
+  const townOf = (name) => {
+    if (!byTown.has(name)) { byTown.set(name, { town: name, chomes: new Set(), notes: [] }); order.push(name); }
+    return byTown.get(name);
   };
+  const addChomes = (g, chomes) => { for (const c of chomes) g.chomes.add(c); };
 
   for (const token of tokens) {
     const { base, parenNote } = stripTrailingParen(token);
     if (base === '') {
-      // 純粋な括弧のみ (直前ユニットへの後置注記)
-      if (!cur || !cur.units.length) throw new Error(`宙に浮いた括弧: ${JSON.stringify(token)}`);
-      cur.units[cur.units.length - 1].notes.push(parenNote);
+      // 純粋な括弧のみ (直前の町への後置注記)
+      if (!cur) throw new Error(`宙に浮いた括弧: ${JSON.stringify(token)}`);
+      if (parenNote) cur.notes.push(parenNote);
       continue;
     }
 
@@ -140,14 +148,10 @@ export function expandRow(rec) {
       // 継続 (直前の町の丁目 追加列挙 or 番地)
       if (!cur) throw new Error(`町名の無い継続トークン: ${JSON.stringify(token)} in ${JSON.stringify(rec.area)}`);
       const { chomes, note } = parseSpec(base);
-      if (chomes.length) {
-        addChomes(chomes, /丁目/.test(base), note, parenNote);
-      } else {
-        // 番地 note: 直前ユニットへ (無ければ町レベル)
-        const dst = cur.units.length ? cur.units[cur.units.length - 1].notes : cur.townNotes;
-        if (note) dst.push(note);
-        if (parenNote) dst.push(parenNote);
-      }
+      addChomes(cur, chomes);
+      // 丁目のみ (note 無し) は name へ集約するだけ。番地・条件を含むなら原文 base を note に残す。
+      if (note !== null || chomes.length === 0) cur.notes.push(base);
+      if (parenNote) cur.notes.push(parenNote);
       continue;
     }
 
@@ -181,37 +185,46 @@ export function expandRow(rec) {
     }
 
     for (const tn of townNames) {
-      cur = { town: tn, units: [], townNotes: [], pendingBare: [] };
-      groups.push(cur);
+      cur = townOf(tn);
       const { chomes, note } = parseSpec(rest);
-      if (chomes.length) {
-        addChomes(chomes, /丁目/.test(rest), note, parenNote);
-        if (condNote) for (const u of cur.units) u.notes.push(condNote);
-      } else {
-        if (note) cur.townNotes.push(note);
-        if (parenNote) cur.townNotes.push(parenNote);
-        if (condNote) cur.townNotes.push(condNote);
-      }
+      addChomes(cur, chomes);
+      // rest が番地・条件を含む (note あり) か、丁目でも何でもない補足なら note へ (原文 rest)。
+      if (rest !== '' && (note !== null || chomes.length === 0)) cur.notes.push(rest);
+      if (condNote) cur.notes.push(condNote);
+      if (parenNote) cur.notes.push(parenNote);
     }
   }
 
-  // グループ → area オブジェクト
-  const areas = [];
+  // group → area オブジェクト
   const rowNotes = [];               // 全 area 共通 (前置ラベル・旧呼称)
   if (groupNote) rowNotes.push(groupNote);
-  if (rec.kyu) rowNotes.push(rec.kyu);
+  // 旧呼称 (kyu): 丁目列挙の echo (「下の町3丁目～8丁目」等、name と重複) は落とし、旧地区名だけ残す。
+  if (rec.kyu) {
+    const olds = splitTop(rec.kyu).filter((t) => !/\d\s*丁目/.test(t));
+    if (olds.length) rowNotes.push(olds.join('・'));
+  }
 
-  for (const g of groups) {
-    if (g.units.length) {
-      for (const u of g.units) {
-        const name = `${g.town}${u.chome}丁目`;
-        const noteParts = [...rowNotes, ...g.townNotes, ...u.notes].filter(Boolean);
-        areas.push({ name, base: g.town, chome: u.chome, ...(noteParts.length ? { note: noteParts.join('、') } : {}) });
-      }
-    } else {
-      const noteParts = [...rowNotes, ...g.townNotes].filter(Boolean);
-      areas.push({ name: g.town, base: g.town, chome: null, ...(noteParts.length ? { note: noteParts.join('、') } : {}) });
+  const areas = [];
+  for (const name of order) {
+    const g = byTown.get(name);
+    const chomes = [...g.chomes].sort((a, b) => a - b);
+    // 単一丁目の note に残る冗長な「N丁目」接頭 (name と重複) は除去。
+    let notes = g.notes;
+    if (chomes.length === 1) {
+      const pre = new RegExp(`^${chomes[0]}丁目`);
+      notes = notes.map((n) => n.replace(pre, '').trim()).filter(Boolean);
     }
+    const noteParts = [...rowNotes, ...notes].filter(Boolean);
+    // note 内の重複を畳む (順序保持)
+    const seen = new Set();
+    const dedup = noteParts.filter((n) => (seen.has(n) ? false : (seen.add(n), true)));
+    areas.push({
+      base: g.town,
+      chomes,
+      ...(dedup.length ? { note: dedup.join('、') } : {}),
+    });
   }
   return areas;
 }
+
+export { compressChomes };

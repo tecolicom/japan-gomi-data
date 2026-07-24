@@ -11,24 +11,14 @@ metadata:
       yomi: かめじましんでん
       machiaza_id:
         - 332020-0115000
-    - name: 連島（茂浦）
-      yomi: つらじま
-    - name: 連島2丁目
+    - name: 連島2～5丁目
       yomi: つらじま
       machiaza_id:
         - 332020-0113002
-    - name: 連島3丁目
-      yomi: つらじま
-      machiaza_id:
         - 332020-0113003
-    - name: 連島4丁目
-      yomi: つらじま
-      machiaza_id:
         - 332020-0113004
-    - name: 連島5丁目
-      yomi: つらじま
-      machiaza_id:
         - 332020-0113005
+      note: 茂浦
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

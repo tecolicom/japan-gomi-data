@@ -10,7 +10,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
-import { expandRow } from './areas.mjs';
+import { expandRow, compressChomes } from './areas.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
@@ -96,8 +96,9 @@ const kata2hira = (s) => s.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.ch
 const normKana = (s) => s.replace(/ょ/g, 'よ').replace(/ゅ/g, 'ゆ').replace(/ゃ/g, 'や').replace(/っ/g, 'つ');
 const stripPre = (kana, pre) =>
   (pre && normKana(kana).startsWith(normKana(pre)) ? kana.slice(pre.length) : kana);
-// base(丁目除去済み町名) + chome(番号|null) + 管区 → { yomi, machiazaId, src }|null
-function abrOf(base, chome, distJa) {
+// base(丁目除去済み町名) + chomes(番号のリスト、丁目なしは []) + 管区
+//   → { yomi, machiazaIds, src }|null。丁目まとめは各構成丁目の ID を配列で返す (横浜方式)。
+function abrOf(base, chomes, distJa) {
   // 照合する oaza 候補: base 異形 ('' / +町 / り除去 / の→之) × 管区接頭辞
   const variants = [[base, null]];
   if (!/町$/.test(base)) variants.push([`${base}町`, 'cho']);   // 老松→老松町・船倉→船倉町
@@ -109,21 +110,30 @@ function abrOf(base, chome, distJa) {
       for (const oaza of [key, key.replace(/ケ/g, 'ヶ'), key.replace(/ヶ/g, 'ケ')]) {
         const rows = abrByOaza.get(oaza);
         if (!rows) continue;
-        // 丁目行を優先 (chome 一致)。無ければ大字行 (chome_number null)。それも無ければ全行
-        // (丁目のみ登録の町を丁目無しで参照した場合。yomi はカナ一致時のみ、ID は一意時のみ)。
-        const exact = chome !== null ? rows.filter((t) => t.chome_number === chome) : [];
+        // yomi: 大字読み (丁目まとめでも読みは大字を使う)。大字行 → 無ければ丁目行のカナから。
         const oazaLvl = rows.filter((t) => t.chome_number === null);
-        const pickRows = exact.length ? exact : (oazaLvl.length ? oazaLvl : rows);
-        const uniq = [...new Map(pickRows.map((t) => [`${t.lg}-${t.id}`, t])).values()];
-        if (!uniq.length) continue;
-        const kanas = new Set(uniq.map((t) => t.kana));
-        let y = kanas.size === 1 && uniq[0].kana ? stripPre(uniq[0].kana, PREFIX_YOMI[p]) : undefined; // 接頭辞ぶん除去
+        const yRows = oazaLvl.length ? oazaLvl : (chomes.length ? rows.filter((t) => chomes.includes(t.chome_number)) : rows);
+        const kanas = new Set(yRows.map((t) => t.kana).filter(Boolean));
+        let y = kanas.size === 1 ? stripPre([...kanas][0], PREFIX_YOMI[p]) : undefined; // 接頭辞ぶん除去
         if (y && vkind === 'cho') y = y.replace(/ち[ょよ]う$/, ''); // +町 異形は末尾「ちょう/ちよう」を除去
-        const machiazaId = uniq.length === 1 ? `${uniq[0].lg}-${uniq[0].id}` : undefined; // 一意な時のみ
-        return { yomi: y, machiazaId, src: 'abr' };
+        // machiaza_id: 丁目なしは大字行が一意な時のみ。丁目まとめは各丁目行が一意に取れた分を配列化。
+        let machiazaIds;
+        if (chomes.length === 0) {
+          const uniq = [...new Map(oazaLvl.map((t) => [`${t.lg}-${t.id}`, t])).values()];
+          if (uniq.length === 1) machiazaIds = [`${uniq[0].lg}-${uniq[0].id}`];
+        } else {
+          const ids = [];
+          for (const c of chomes) {
+            const uniq = [...new Map(rows.filter((t) => t.chome_number === c).map((t) => [`${t.lg}-${t.id}`, t])).values()];
+            if (uniq.length === 1) ids.push(`${uniq[0].lg}-${uniq[0].id}`);
+          }
+          if (ids.length) machiazaIds = ids;
+        }
+        if (y === undefined && machiazaIds === undefined) continue; // この候補は不発、次へ
+        return { yomi: y, machiazaIds, src: 'abr' };
       }
     }
-  if (/^[ぁ-んァ-ヶー]+$/.test(base)) return { yomi: kata2hira(base), machiazaId: undefined, src: 'kana' };
+  if (/^[ぁ-んァ-ヶー]+$/.test(base)) return { yomi: kata2hira(base), machiazaIds: undefined, src: 'kana' };
   return null;
 }
 
@@ -146,21 +156,22 @@ const stats = { total: 0, abr: 0, kana: 0, ruby: 0, none: 0, id: 0, missing: [] 
 const expandTable = [];
 function expandWithYomi(r) {
   const out = expandRow(r).map((a) => {
-    const name = stripRuby(a.name);
+    // name = 町名 + 丁目レンジ圧縮 (丁目なしは町名のみ)。横浜方式で丁目まとめは展開しない。
+    const name = stripRuby(a.chomes.length ? `${a.base}${compressChomes(a.chomes)}丁目` : a.base);
     const note = stripRuby(a.note);
-    const hit = abrOf(a.base, a.chome, r.district);
+    const hit = abrOf(a.base, a.chomes, r.district);
     let yomi = hit?.yomi;
     let src = hit?.src;
     if (!yomi) {
       const ruby = pdfYomi.get(name) ?? pdfYomi.get(a.base);
       if (ruby) { yomi = ruby; src = 'ruby'; }
     }
-    const machiazaId = hit?.machiazaId;
+    const machiazaIds = hit?.machiazaIds;
     stats.total++;
     if (yomi) stats[src]++; else { stats.none++; stats.missing.push(name); }
-    if (machiazaId) stats.id++;
+    if (machiazaIds) stats.id++;
     return { name, base: a.base, gakku: r.gakku || '',
-      ...(yomi ? { yomi } : {}), ...(machiazaId ? { machiaza_id: [machiazaId] } : {}), ...(note ? { note } : {}) };
+      ...(yomi ? { yomi } : {}), ...(machiazaIds ? { machiaza_id: machiazaIds } : {}), ...(note ? { note } : {}) };
   });
   expandTable.push({ district: r.district, gakku: r.gakku, kyu: r.kyu, area: r.area,
     expanded: out.map((a) => ({ name: a.name, ...(a.yomi ? { yomi: a.yomi } : {}),
@@ -231,17 +242,25 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
 {
   const nameCount = new Map();
   for (const d of docs) for (const a of d.metadata.areas) nameCount.set(a.name, (nameCount.get(a.name) || 0) + 1);
-  const noNote = new Set();
+  // 割れ name の note を判別子として name に昇格。note は整形する (二重括弧・入れ子を出さない):
+  // 外側括弧の除去・先頭の name 繰り返し除去 (横浜と統一)。
   for (const d of docs) {
     d.metadata.areas = d.metadata.areas.map((a) => {
-      if ((nameCount.get(a.name) || 0) > 1) {
-        if (a.note) { const { note, ...rest } = a; return { ...rest, name: `${a.name}（${note}）` }; }
-        noNote.add(a.name);
-      }
-      return a;
+      if (!((nameCount.get(a.name) || 0) > 1 && a.note)) return a;
+      const { note, ...rest } = a;
+      let nc = note.replace(/^（(.+)）$/, '$1').trim();
+      if (nc.startsWith(a.name)) nc = nc.slice(a.name.length).trim();
+      return { ...rest, name: nc ? `${a.name}（${nc}）` : a.name };
     });
   }
-  if (noNote.size) console.log(`  警告: 割れ area なのに判別 note が無い: ${[...noNote].join('、')}`);
+  // 昇格後も同一 name が複数コースに残る = 真に判別不能な割れのみ警告。
+  const after = new Map();
+  for (const d of docs) for (const a of d.metadata.areas) {
+    if (!after.has(a.name)) after.set(a.name, new Set());
+    after.get(a.name).add(d.metadata.course);
+  }
+  const dup = [...after].filter(([, cs]) => cs.size > 1).map(([n]) => n);
+  if (dup.length) console.log(`  警告: 昇格後も判別不能な割れ (原文に番地等の区別が無い): ${dup.join('、')}`);
 }
 const n = writeCourses(OUTDIR, YEAR, docs);
 writeFileSync(join(HERE, 'cache', 'area_expansion.json'),

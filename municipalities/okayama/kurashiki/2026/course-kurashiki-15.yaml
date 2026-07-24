@@ -5,14 +5,12 @@ metadata:
   areas:
     - name: 中央
       yomi: ちゅうおう
-    - name: 阿知2丁目（一部）
+    - name: 阿知2・3丁目
       yomi: あち
       machiaza_id:
         - 332020-0003002
-    - name: 阿知3丁目
-      yomi: あち
-      machiaza_id:
         - 332020-0003003
+      note: 一部
     - name: 船倉
       yomi: ふなぐら
       machiaza_id:

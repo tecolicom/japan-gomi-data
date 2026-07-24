@@ -3,19 +3,11 @@ metadata:
   course: kojima-10
   course_name_ja: "児島地区: 阿津／元浜町／赤崎／大畠"
   areas:
-    - name: 阿津1丁目
+    - name: 阿津1～3丁目
       yomi: あつ
       machiaza_id:
         - 332020-0045001
-      note: 阿津・元浜町・赤崎・大畠
-    - name: 阿津2丁目
-      yomi: あつ
-      machiaza_id:
         - 332020-0045002
-      note: 阿津・元浜町・赤崎・大畠
-    - name: 阿津3丁目
-      yomi: あつ
-      machiaza_id:
         - 332020-0045003
       note: 阿津・元浜町・赤崎・大畠
     - name: 元浜町
@@ -23,18 +15,15 @@ metadata:
       machiaza_id:
         - 332020-0062000
       note: 阿津・元浜町・赤崎・大畠
-    - name: 赤崎2丁目（阿津・元浜町・赤崎・大畠）
+    - name: 赤崎2丁目
       yomi: あかさき
       machiaza_id:
         - 332020-0038002
-    - name: 大畠1丁目
+      note: 阿津・元浜町・赤崎・大畠
+    - name: 大畠1・2丁目
       yomi: おおばたけ
       machiaza_id:
         - 332020-0016001
-      note: 阿津・元浜町・赤崎・大畠
-    - name: 大畠2丁目
-      yomi: おおばたけ
-      machiaza_id:
         - 332020-0016002
       note: 阿津・元浜町・赤崎・大畠
   year: 2026

@@ -3,34 +3,23 @@ metadata:
   course: kurashiki-14
   course_name_ja: "倉敷地区: 東(美和／鶴形／阿知／幸町／東町／昭和／本町)"
   areas:
-    - name: 美和1丁目
+    - name: 美和1・2丁目
       yomi: みわ
       machiaza_id:
         - 332020-0223001
-    - name: 美和2丁目
-      yomi: みわ
-      machiaza_id:
         - 332020-0223002
-    - name: 鶴形1丁目
+    - name: 鶴形1・2丁目
       yomi: つるがた
       machiaza_id:
         - 332020-0120001
-    - name: 鶴形2丁目
-      yomi: つるがた
-      machiaza_id:
         - 332020-0120002
-    - name: 阿知1丁目
+    - name: 阿知1～3丁目
       yomi: あち
       machiaza_id:
         - 332020-0003001
-    - name: 阿知2丁目
-      yomi: あち
-      machiaza_id:
         - 332020-0003002
-    - name: 阿知3丁目（一部）
-      yomi: あち
-      machiaza_id:
         - 332020-0003003
+      note: 一部
     - name: 幸町
       yomi: さいわいちょう
       machiaza_id:

@@ -11,29 +11,20 @@ metadata:
       yomi: にしどおり
       machiaza_id:
         - 332020-0203001
-    - name: 中通り1丁目
+    - name: 中通り1・2丁目
       yomi: なかどおり
       machiaza_id:
         - 332020-0199001
-    - name: 中通り2丁目
-      yomi: なかどおり
-      machiaza_id:
         - 332020-0199002
-    - name: 神田1丁目
+    - name: 神田1・2丁目
       yomi: かんだ
       machiaza_id:
         - 332020-0028001
-    - name: 神田2丁目
-      yomi: かんだ
-      machiaza_id:
         - 332020-0028002
-    - name: 亀島1丁目
+    - name: 亀島1・2丁目
       yomi: かめじま
       machiaza_id:
         - 332020-0024001
-    - name: 亀島2丁目
-      yomi: かめじま
-      machiaza_id:
         - 332020-0024002
     - name: 南亀島町
       yomi: みなみかめじまちょう
