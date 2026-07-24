@@ -18,9 +18,7 @@ metadata:
       yomi: ちぐさだい
     - name: つつじが丘
       yomi: つつじがおか
-    - name: 藤が丘1丁目
-      yomi: ふじがおか
-    - name: 藤が丘2丁目
+    - name: 藤が丘1・2丁目
       yomi: ふじがおか
   year: 2026
   fiscal_year_ja: 令和8年度

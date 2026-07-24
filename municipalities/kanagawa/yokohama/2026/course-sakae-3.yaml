@@ -2,9 +2,7 @@ metadata:
   city: yokohama
   course: sakae-3
   areas:
-    - name: 鍛冶ヶ谷1丁目
-      yomi: かじがや
-    - name: 鍛冶ヶ谷2丁目
+    - name: 鍛冶ヶ谷1・2丁目
       yomi: かじがや
     - name: 鍛冶ヶ谷町
       yomi: かじがやちょう
@@ -16,9 +14,7 @@ metadata:
       yomi: なかのちょう
     - name: 柏陽
       yomi: はくよう
-    - name: 元大橋1丁目
-      yomi: もとおおはし
-    - name: 元大橋2丁目
+    - name: 元大橋1・2丁目
       yomi: もとおおはし
   year: 2026
   fiscal_year_ja: 令和8年度

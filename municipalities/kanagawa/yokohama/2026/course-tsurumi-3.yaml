@@ -4,70 +4,66 @@ metadata:
   areas:
     - name: 潮田町1丁目
       yomi: うしおだちょう
-      machiaza_id: 141011-0059001
+      machiaza_id:
+        - 141011-0059001
     - name: 潮田町2丁目（一部の地域）
       yomi: うしおだちょう
-      machiaza_id: 141011-0059002
-    - name: 上末吉1丁目（1番地の一部）
+      machiaza_id:
+        - 141011-0059002
+    - name: 上末吉1丁目
       yomi: かみすえよし
-      machiaza_id: 141011-0039001
-    - name: 北寺尾1丁目
+      machiaza_id:
+        - 141011-0039001
+      note: 1番地の一部
+    - name: 北寺尾1〜5丁目
       yomi: きたてらお
-      machiaza_id: 141011-0045001
-    - name: 北寺尾2丁目
-      yomi: きたてらお
-      machiaza_id: 141011-0045002
-    - name: 北寺尾3丁目
-      yomi: きたてらお
-      machiaza_id: 141011-0045003
-    - name: 北寺尾4丁目
-      yomi: きたてらお
-      machiaza_id: 141011-0045004
-    - name: 北寺尾5丁目
-      yomi: きたてらお
-      machiaza_id: 141011-0045005
+      machiaza_id:
+        - 141011-0045001
+        - 141011-0045002
+        - 141011-0045003
+        - 141011-0045004
+        - 141011-0045005
     - name: 駒岡1丁目（3〜8・33・37番地の一部）
       yomi: こまおか
-      machiaza_id: 141011-0024001
+      machiaza_id:
+        - 141011-0024001
     - name: 獅子ヶ谷1丁目
       yomi: ししがや
-      machiaza_id: 141011-0047001
+      machiaza_id:
+        - 141011-0047001
     - name: 下末吉1丁目
       yomi: しもすえよし
-      machiaza_id: 141011-0033001
-    - name: 下末吉5丁目
+      machiaza_id:
+        - 141011-0033001
+    - name: 下末吉5・6丁目
       yomi: しもすえよし
-      machiaza_id: 141011-0033005
-    - name: 下末吉6丁目
-      yomi: しもすえよし
-      machiaza_id: 141011-0033006
+      machiaza_id:
+        - 141011-0033005
+        - 141011-0033006
     - name: 諏訪坂
       yomi: すわざか
-      machiaza_id: 141011-0042000
+      machiaza_id:
+        - 141011-0042000
     - name: 佃野町
       yomi: つくのちょう
-      machiaza_id: 141011-0044000
-    - name: 鶴見中央2丁目
+      machiaza_id:
+        - 141011-0044000
+    - name: 鶴見中央2・3丁目
       yomi: つるみちゅうおう
-      machiaza_id: 141011-0009002
-    - name: 鶴見中央3丁目
-      yomi: つるみちゅうおう
-      machiaza_id: 141011-0009003
+      machiaza_id:
+        - 141011-0009002
+        - 141011-0009003
     - name: 仲通1丁目（一部の地域）
       yomi: なかどおり
-      machiaza_id: 141011-0057001
-    - name: 本町通1丁目
+      machiaza_id:
+        - 141011-0057001
+    - name: 本町通1〜4丁目
       yomi: ほんちょうどおり
-      machiaza_id: 141011-0061001
-    - name: 本町通2丁目
-      yomi: ほんちょうどおり
-      machiaza_id: 141011-0061002
-    - name: 本町通3丁目
-      yomi: ほんちょうどおり
-      machiaza_id: 141011-0061003
-    - name: 本町通4丁目
-      yomi: ほんちょうどおり
-      machiaza_id: 141011-0061004
+      machiaza_id:
+        - 141011-0061001
+        - 141011-0061002
+        - 141011-0061003
+        - 141011-0061004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

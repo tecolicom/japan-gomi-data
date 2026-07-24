@@ -5,22 +5,28 @@ metadata:
   areas:
     - name: 菅野（西菅野・東菅野・辛香）
       yomi: すがの
-      machiaza_id: 331015-0106000
+      machiaza_id:
+        - 331015-0106000
     - name: 高野
       yomi: たかの
-      machiaza_id: 331015-0122000
+      machiaza_id:
+        - 331015-0122000
     - name: 田原
       yomi: たばら
-      machiaza_id: 331015-0328000
+      machiaza_id:
+        - 331015-0328000
     - name: 富吉
       yomi: とみよし
-      machiaza_id: 331015-0184000
+      machiaza_id:
+        - 331015-0184000
     - name: 日応寺
       yomi: にちおうじ
-      machiaza_id: 331015-0213000
+      machiaza_id:
+        - 331015-0213000
     - name: 三和
       yomi: みと
-      machiaza_id: 331015-0291000
+      machiaza_id:
+        - 331015-0291000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

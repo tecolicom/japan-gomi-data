@@ -5,13 +5,16 @@ metadata:
   areas:
     - name: 玉島1丁目（乙島中）
       yomi: たましま
-      machiaza_id: 332020-0089001
+      machiaza_id:
+        - 332020-0089001
     - name: 玉島2丁目（乙島中）
       yomi: たましま
-      machiaza_id: 332020-0089002
+      machiaza_id:
+        - 332020-0089002
     - name: 乙島（乙島中）
       yomi: おとしま
-      machiaza_id: 332020-0231000
+      machiaza_id:
+        - 332020-0231000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

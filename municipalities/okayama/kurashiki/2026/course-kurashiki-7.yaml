@@ -6,19 +6,24 @@ metadata:
     - name: 観音台
     - name: 五日市
       yomi: いつかいち
-      machiaza_id: 332020-0007000
+      machiaza_id:
+        - 332020-0007000
     - name: 中帯江
       yomi: なかおびえ
-      machiaza_id: 332020-0124000
+      machiaza_id:
+        - 332020-0124000
     - name: 西田
       yomi: にしだ
-      machiaza_id: 332020-0135000
+      machiaza_id:
+        - 332020-0135000
     - name: 早高
       yomi: はやたか
-      machiaza_id: 332020-0146000
+      machiaza_id:
+        - 332020-0146000
     - name: 高須賀
       yomi: たかすか
-      machiaza_id: 332020-0085000
+      machiaza_id:
+        - 332020-0085000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

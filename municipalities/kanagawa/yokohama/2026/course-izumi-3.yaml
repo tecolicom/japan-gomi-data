@@ -12,20 +12,7 @@ metadata:
       yomi: か
     - name: 新橋町全域
       yomi: し
-      note: 一部地域を除く
-    - name: 緑園1丁目
-      yomi: りょくえん
-    - name: 緑園2丁目
-      yomi: りょくえん
-    - name: 緑園3丁目
-      yomi: りょくえん
-    - name: 緑園4丁目
-      yomi: りょくえん
-    - name: 緑園5丁目
-      yomi: りょくえん
-    - name: 緑園6丁目
-      yomi: りょくえん
-    - name: 緑園7丁目
+    - name: 緑園1〜7丁目
       yomi: りょくえん
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -5,28 +5,36 @@ metadata:
   areas:
     - name: 神田3丁目
       yomi: かんだ
-      machiaza_id: 332020-0028003
+      machiaza_id:
+        - 332020-0028003
     - name: 神田4丁目
       yomi: かんだ
-      machiaza_id: 332020-0028004
+      machiaza_id:
+        - 332020-0028004
     - name: 連島1丁目
       yomi: つらじま
-      machiaza_id: 332020-0113001
+      machiaza_id:
+        - 332020-0113001
     - name: 連島中央1丁目
       yomi: つらじまちゅうおう
-      machiaza_id: 332020-0114001
+      machiaza_id:
+        - 332020-0114001
     - name: 連島中央2丁目
       yomi: つらじまちゅうおう
-      machiaza_id: 332020-0114002
+      machiaza_id:
+        - 332020-0114002
     - name: 連島中央3丁目
       yomi: つらじまちゅうおう
-      machiaza_id: 332020-0114003
+      machiaza_id:
+        - 332020-0114003
     - name: 連島中央4丁目
       yomi: つらじまちゅうおう
-      machiaza_id: 332020-0114004
+      machiaza_id:
+        - 332020-0114004
     - name: 連島中央5丁目
       yomi: つらじまちゅうおう
-      machiaza_id: 332020-0114005
+      machiaza_id:
+        - 332020-0114005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

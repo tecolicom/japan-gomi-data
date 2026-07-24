@@ -6,7 +6,8 @@ metadata:
       yomi: ありま
     - name: 梶ヶ谷（宮前区）
       yomi: かじがや
-      machiaza_id: 141364-0007000
+      machiaza_id:
+        - 141364-0007000
     - name: 東有馬
       yomi: ひがしありま
     - name: 馬絹

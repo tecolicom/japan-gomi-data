@@ -5,19 +5,24 @@ metadata:
   areas:
     - name: 西之浦（奥，双葉，栄町，大崎，中浜）
       yomi: にしのうら
-      machiaza_id: 332020-0118000
+      machiaza_id:
+        - 332020-0118000
     - name: 亀島新田（宝島寺入口交差点以西）
       yomi: かめじましんでん
-      machiaza_id: 332020-0115000
+      machiaza_id:
+        - 332020-0115000
     - name: 鶴新田（連島南中学校以北）
       yomi: つるしんでん
-      machiaza_id: 332020-0117000
+      machiaza_id:
+        - 332020-0117000
     - name: 鶴の浦3丁目
       yomi: つるのうら
-      machiaza_id: 332020-0121003
+      machiaza_id:
+        - 332020-0121003
     - name: 川崎通り1丁目（連島地区）
       yomi: かわさきどおり
-      machiaza_id: 332020-0192001
+      machiaza_id:
+        - 332020-0192001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

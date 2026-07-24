@@ -4,15 +4,18 @@ metadata:
   areas:
     - name: 上丸子
       yomi: かみまるこ
-      machiaza_id: 141330-0020000
+      machiaza_id:
+        - 141330-0020000
     - name: 上丸子山王町
       yomi: かみまるこさんのうちょう
     - name: 下沼部
       yomi: しもぬまべ
-      machiaza_id: 141330-0022000
+      machiaza_id:
+        - 141330-0022000
     - name: 中丸子
       yomi: なかまるこ
-      machiaza_id: 141330-0025000
+      machiaza_id:
+        - 141330-0025000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

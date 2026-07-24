@@ -6,10 +6,12 @@ metadata:
       yomi: おうぜんじにし
     - name: 上麻生
       yomi: かみあさお
-      machiaza_id: 141372-0001000
+      machiaza_id:
+        - 141372-0001000
     - name: 下麻生
       yomi: しもあさお
-      machiaza_id: 141372-0012000
+      machiaza_id:
+        - 141372-0012000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

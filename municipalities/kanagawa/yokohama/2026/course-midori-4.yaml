@@ -4,23 +4,14 @@ metadata:
   areas:
     - name: 青砥町
       yomi: あおとちょう
-    - name: 上山2丁目（3・4・5番地）
+    - name: 上山2丁目
       yomi: かみやま
+      note: 3・4・5番地
     - name: 北八朔町
       yomi: きたはっさくちょう
     - name: 小山町
       yomi: こやまちょう
-    - name: 中山1丁目
-      yomi: なかやま
-    - name: 中山2丁目
-      yomi: なかやま
-    - name: 中山3丁目
-      yomi: なかやま
-    - name: 中山4丁目
-      yomi: なかやま
-    - name: 中山5丁目
-      yomi: なかやま
-    - name: 中山6丁目
+    - name: 中山1〜6丁目
       yomi: なかやま
     - name: 西八朔町
       yomi: にしはっさくちょう

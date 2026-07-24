@@ -5,11 +5,13 @@ metadata:
   areas:
     - name: 羽島
       yomi: はしま
-      machiaza_id: 332020-0139000
+      machiaza_id:
+        - 332020-0139000
       note: Ｒ2北（倉敷ハイツ含む）
     - name: 二日市
       yomi: ふつかいち
-      machiaza_id: 332020-0168000
+      machiaza_id:
+        - 332020-0168000
       note: Ｒ2北（倉敷ハイツ含む）
   year: 2026
   fiscal_year_ja: 令和8年度

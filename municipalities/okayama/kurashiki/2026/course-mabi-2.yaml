@@ -5,10 +5,12 @@ metadata:
   areas:
     - name: 岡田
       yomi: おかだ
-      machiaza_id: 332020-0179000
+      machiaza_id:
+        - 332020-0179000
     - name: 辻田
       yomi: つじた
-      machiaza_id: 332020-0185000
+      machiaza_id:
+        - 332020-0185000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

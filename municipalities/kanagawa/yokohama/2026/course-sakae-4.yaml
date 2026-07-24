@@ -4,15 +4,7 @@ metadata:
   areas:
     - name: 笠間町
       yomi: か
-    - name: 笠間1丁目
-      yomi: かさま
-    - name: 笠間2丁目
-      yomi: かさま
-    - name: 笠間3丁目
-      yomi: かさま
-    - name: 笠間4丁目
-      yomi: かさま
-    - name: 笠間5丁目
+    - name: 笠間1〜5丁目
       yomi: かさま
     - name: 長尾台町
       yomi: ながおだいちょう

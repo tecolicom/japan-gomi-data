@@ -4,27 +4,32 @@ metadata:
   areas:
     - name: 片平
       yomi: かたひら
-      machiaza_id: 141372-0006000
+      machiaza_id:
+        - 141372-0006000
     - name: 栗木
       yomi: くりぎ
-      machiaza_id: 141372-0027000
+      machiaza_id:
+        - 141372-0027000
     - name: 栗木台
       yomi: くりぎだい
     - name: 栗平
       yomi: くりひら
     - name: 黒川
       yomi: くろかわ
-      machiaza_id: 141372-0035000
+      machiaza_id:
+        - 141372-0035000
     - name: 五力田
       yomi: ごりきだ
-      machiaza_id: 141372-0009000
+      machiaza_id:
+        - 141372-0009000
     - name: 白鳥
       yomi: しらとり
     - name: はるひ野
       yomi: はるひの
     - name: 南黒川
       yomi: みなみくろかわ
-      machiaza_id: 141372-0034000
+      machiaza_id:
+        - 141372-0034000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

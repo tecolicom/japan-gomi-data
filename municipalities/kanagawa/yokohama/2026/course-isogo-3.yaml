@@ -6,47 +6,57 @@ metadata:
       yomi: かみなかざとちょう
     - name: 栗木3丁目
       yomi: くりき
-      machiaza_id: 141071-0022003
-    - name: 杉田8丁目（1番）
+      machiaza_id:
+        - 141071-0022003
+    - name: 杉田8丁目
       yomi: すぎた
-      machiaza_id: 141071-0002008
+      machiaza_id:
+        - 141071-0002008
+      note: 1番
     - name: 杉田9丁目（1番50号）
       yomi: すぎた
-      machiaza_id: 141071-0002009
+      machiaza_id:
+        - 141071-0002009
     - name: 田中1丁目
       yomi: たなか
-      machiaza_id: 141071-0027001
-    - name: 中原3丁目（1〜4・14番）
+      machiaza_id:
+        - 141071-0027001
+    - name: 中原3丁目
       yomi: なかはら
-      machiaza_id: 141071-0024003
+      machiaza_id:
+        - 141071-0024003
+      note: 1〜4・14番
     - name: 氷取沢町
       yomi: ひとりざわちょう
     - name: 峰町
       yomi: みねちょう
     - name: 森3丁目（21番の一部）
       yomi: もり
-      machiaza_id: 141071-0025003
+      machiaza_id:
+        - 141071-0025003
     - name: 森5丁目
       yomi: もり
-      machiaza_id: 141071-0025005
+      machiaza_id:
+        - 141071-0025005
     - name: 森6丁目
       yomi: もり
-      machiaza_id: 141071-0025006
-    - name: 洋光台1丁目
+      machiaza_id:
+        - 141071-0025006
+    - name: 洋光台1・2丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026001
-    - name: 洋光台2丁目
+      machiaza_id:
+        - 141071-0026001
+        - 141071-0026002
+    - name: 洋光台3丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026002
-    - name: 洋光台3丁目（1〜10番）
+      machiaza_id:
+        - 141071-0026003
+      note: 1〜10番
+    - name: 洋光台5・6丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026003
-    - name: 洋光台5丁目
-      yomi: ようこうだい
-      machiaza_id: 141071-0026005
-    - name: 洋光台6丁目
-      yomi: ようこうだい
-      machiaza_id: 141071-0026006
+      machiaza_id:
+        - 141071-0026005
+        - 141071-0026006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

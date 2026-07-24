@@ -5,46 +5,60 @@ metadata:
   areas:
     - name: 浅越（砂川以西）
       yomi: あさごえ
-      machiaza_id: 331031-0002000
+      machiaza_id:
+        - 331031-0002000
     - name: 大多羅町
       yomi: おおだらちょう
-      machiaza_id: 331031-0006000
+      machiaza_id:
+        - 331031-0006000
     - name: 可知三丁目（4番～7番、13番～17番）
       yomi: かち
-      machiaza_id: 331031-0009003
+      machiaza_id:
+        - 331031-0009003
     - name: 可知五丁目
       yomi: かち
-      machiaza_id: 331031-0009005
+      machiaza_id:
+        - 331031-0009005
     - name: 金田（川北町内会）
       yomi: かなだ
-      machiaza_id: 331031-0012000
+      machiaza_id:
+        - 331031-0012000
     - name: 西大寺中野（898番地～960番地）
       yomi: さいだいじなかの
-      machiaza_id: 331031-0039000
+      machiaza_id:
+        - 331031-0039000
     - name: 西大寺松崎
       yomi: さいだいじまつざき
-      machiaza_id: 331031-0043000
+      machiaza_id:
+        - 331031-0043000
     - name: 富崎（砂川より西）
       yomi: とみさき
-      machiaza_id: 331031-0084000
+      machiaza_id:
+        - 331031-0084000
     - name: 西庄
       yomi: にししょう
-      machiaza_id: 331031-0092000
+      machiaza_id:
+        - 331031-0092000
     - name: 広谷
       yomi: ひろたに
-      machiaza_id: 331031-0144000
+      machiaza_id:
+        - 331031-0144000
     - name: 福治（砂川から西）
       yomi: ふくじ
-      machiaza_id: 331031-0101000
+      machiaza_id:
+        - 331031-0101000
     - name: 富士見町一丁目
       yomi: ふじみちょう
-      machiaza_id: 331031-0103001
+      machiaza_id:
+        - 331031-0103001
     - name: 松新町
       yomi: まつしんちょう
-      machiaza_id: 331031-0109000
+      machiaza_id:
+        - 331031-0109000
     - name: 吉原
       yomi: よしわら
-      machiaza_id: 331031-0118000
+      machiaza_id:
+        - 331031-0118000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

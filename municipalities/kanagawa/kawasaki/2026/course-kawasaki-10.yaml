@@ -4,7 +4,8 @@ metadata:
   areas:
     - name: 池上町
       yomi: いけがみちょう
-      machiaza_id: 141313-0028000
+      machiaza_id:
+        - 141313-0028000
     - name: 池上新町
       yomi: いけがみしんちょう
     - name: 桜本

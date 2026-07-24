@@ -6,7 +6,8 @@ metadata:
       yomi: きたかせ
     - name: 矢上
       yomi: やがみ
-      machiaza_id: 141321-0034000
+      machiaza_id:
+        - 141321-0034000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

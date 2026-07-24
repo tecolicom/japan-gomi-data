@@ -2,33 +2,11 @@ metadata:
   city: yokohama
   course: midori-1
   areas:
-    - name: 鴨居5丁目
+    - name: 鴨居5〜7丁目
       yomi: かもい
-    - name: 鴨居6丁目
-      yomi: かもい
-    - name: 鴨居7丁目
-      yomi: かもい
-    - name: 竹山1丁目
+    - name: 竹山1〜4丁目
       yomi: たけやま
-    - name: 竹山2丁目
-      yomi: たけやま
-    - name: 竹山3丁目
-      yomi: たけやま
-    - name: 竹山4丁目
-      yomi: たけやま
-    - name: 長津田1丁目
-      yomi: ながつた
-    - name: 長津田2丁目
-      yomi: ながつた
-    - name: 長津田3丁目
-      yomi: ながつた
-    - name: 長津田4丁目
-      yomi: ながつた
-    - name: 長津田5丁目
-      yomi: ながつた
-    - name: 長津田6丁目
-      yomi: ながつた
-    - name: 長津田7丁目
+    - name: 長津田1〜7丁目
       yomi: ながつた
   year: 2026
   fiscal_year_ja: 令和8年度

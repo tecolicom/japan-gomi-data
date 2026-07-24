@@ -4,37 +4,18 @@ metadata:
   areas:
     - name: いぶき野
       yomi: いぶきの
-    - name: 上山1丁目
-      yomi: かみやま
-      note: （2丁目の3〜5を除く）
-    - name: 上山2丁目（2丁目の3〜5を除く）
-      yomi: かみやま
-    - name: 上山3丁目
+    - name: 上山1〜3丁目
       yomi: かみやま
       note: （2丁目の3〜5を除く）
     - name: 長津田町
       yomi: ながつたちょう
-    - name: 長津田みなみ台1丁目
-      yomi: ながつたみなみだい
-    - name: 長津田みなみ台2丁目
-      yomi: ながつたみなみだい
-    - name: 長津田みなみ台3丁目
-      yomi: ながつたみなみだい
-    - name: 長津田みなみ台4丁目
-      yomi: ながつたみなみだい
-    - name: 長津田みなみ台5丁目
-      yomi: ながつたみなみだい
-    - name: 長津田みなみ台6丁目
+    - name: 長津田みなみ台1〜6丁目
       yomi: ながつたみなみだい
     - name: 長津田みなみ台7-1〜8・33番地
       yomi: ながつたみなみだい
     - name: 白山1丁目（23・24番地）
       yomi: はくさん
-    - name: 白山2丁目
-      yomi: はくさん
-    - name: 白山3丁目
-      yomi: はくさん
-    - name: 白山4丁目
+    - name: 白山2〜4丁目
       yomi: はくさん
   year: 2026
   fiscal_year_ja: 令和8年度

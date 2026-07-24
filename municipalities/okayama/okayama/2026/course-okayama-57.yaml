@@ -5,54 +5,70 @@ metadata:
   areas:
     - name: 島田本町１丁目（青江・津島線島田地下道以西）
       yomi: しまだほんまち
-      machiaza_id: 331015-0083001
+      machiaza_id:
+        - 331015-0083001
     - name: 島田本町２丁目
       yomi: しまだほんまち
-      machiaza_id: 331015-0083002
+      machiaza_id:
+        - 331015-0083002
     - name: 下伊福１丁目
       yomi: しもいふく
-      machiaza_id: 331015-0086001
+      machiaza_id:
+        - 331015-0086001
       note: 下伊福東町町内会の資源化物は、ステーションによってルールが違う。
     - name: 下伊福２丁目
       yomi: しもいふく
-      machiaza_id: 331015-0086002
+      machiaza_id:
+        - 331015-0086002
       note: 下伊福東町町内会の資源化物は、ステーションによってルールが違う。
     - name: 下伊福上町
       yomi: しもいふくかみまち
-      machiaza_id: 331015-0087000
+      machiaza_id:
+        - 331015-0087000
     - name: 下伊福西町
       yomi: しもいふくにしまち
-      machiaza_id: 331015-0088000
+      machiaza_id:
+        - 331015-0088000
     - name: 下伊福本町（県道川入・巌井以南・北共）
       yomi: しもいふくほんまち
-      machiaza_id: 331015-0089000
+      machiaza_id:
+        - 331015-0089000
     - name: 高柳東町
       yomi: たかやなぎひがしまち
-      machiaza_id: 331015-0128000
+      machiaza_id:
+        - 331015-0128000
     - name: 富町１丁目
       yomi: とみまち
-      machiaza_id: 331015-0183001
+      machiaza_id:
+        - 331015-0183001
     - name: 富町２丁目（県道川入・巌井以南・北共）
       yomi: とみまち
-      machiaza_id: 331015-0183002
+      machiaza_id:
+        - 331015-0183002
     - name: 福泊
       yomi: ふくどまり
-      machiaza_id: 331023-0069000
+      machiaza_id:
+        - 331023-0069000
     - name: 奉還町４丁目
       yomi: ほうかんちょう
-      machiaza_id: 331015-0252004
+      machiaza_id:
+        - 331015-0252004
     - name: 円山
       yomi: まるやま
-      machiaza_id: 331023-0085000
+      machiaza_id:
+        - 331023-0085000
     - name: 湊（湊池の内町内会（富山学区））
       yomi: みなと
-      machiaza_id: 331023-0076000
+      machiaza_id:
+        - 331023-0076000
     - name: 海吉
       yomi: みよし
-      machiaza_id: 331023-0078000
+      machiaza_id:
+        - 331023-0078000
     - name: 山崎（山崎本町町内会（富山学区））
       yomi: やまさき
-      machiaza_id: 331023-0082000
+      machiaza_id:
+        - 331023-0082000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

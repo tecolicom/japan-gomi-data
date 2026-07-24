@@ -169,7 +169,7 @@ const rowArea = (r) => {
       return {
         name: r.town,
         ...(yomi ? { yomi } : {}),
-        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+        ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
       };
     }
     // town が既に区注記括弧を持つ場合 (下中野（北区）等) は二重括弧にせず単一括弧へ統合。
@@ -185,7 +185,7 @@ const rowArea = (r) => {
       return {
         name: r.town,
         ...(yomi ? { yomi } : {}),
-        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+        ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
       };
     }
     const wm = r.town.match(/^(.+?)（([^）]+)）\s*$/);
@@ -193,13 +193,13 @@ const rowArea = (r) => {
     return {
       name: zenParen(name),
       ...(yomi ? { yomi } : {}),
-      ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+      ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
     };
   }
   return {
     name: r.town,
     ...(yomi ? { yomi } : {}),
-    ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+    ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
     ...(note ? { note } : {}),
   };
 };

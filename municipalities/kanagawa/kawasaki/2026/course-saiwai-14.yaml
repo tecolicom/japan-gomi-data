@@ -4,22 +4,28 @@ metadata:
   areas:
     - name: 小倉1丁目
       yomi: おぐら
-      machiaza_id: 141321-0002001
+      machiaza_id:
+        - 141321-0002001
     - name: 小倉2丁目
       yomi: おぐら
-      machiaza_id: 141321-0002002
+      machiaza_id:
+        - 141321-0002002
     - name: 小倉3丁目
       yomi: おぐら
-      machiaza_id: 141321-0002003
+      machiaza_id:
+        - 141321-0002003
     - name: 小倉4丁目
       yomi: おぐら
-      machiaza_id: 141321-0002004
+      machiaza_id:
+        - 141321-0002004
     - name: 小倉5丁目
       yomi: おぐら
-      machiaza_id: 141321-0002005
+      machiaza_id:
+        - 141321-0002005
     - name: 新小倉
       yomi: しんおぐら
-      machiaza_id: 141321-0003000
+      machiaza_id:
+        - 141321-0003000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -2,21 +2,11 @@ metadata:
   city: yokohama
   course: asahi-1
   areas:
-    - name: 上白根2丁目
+    - name: 上白根2・3丁目
       yomi: かみしらね
-    - name: 上白根3丁目
-      yomi: かみしらね
-    - name: 白根1丁目
+    - name: 白根1〜3丁目
       yomi: しらね
-    - name: 白根2丁目
-      yomi: しらね
-    - name: 白根3丁目
-      yomi: しらね
-    - name: 白根6丁目
-      yomi: しらね
-    - name: 白根7丁目
-      yomi: しらね
-    - name: 白根8丁目
+    - name: 白根6〜8丁目
       yomi: しらね
     - name: 白根町
       yomi: しらねちょう
@@ -24,13 +14,7 @@ metadata:
       yomi: つるがみね
     - name: 鶴ケ峰2丁目
       yomi: つるがみね
-    - name: 中白根1丁目
-      yomi: なかしらね
-    - name: 中白根2丁目
-      yomi: なかしらね
-    - name: 中白根3丁目
-      yomi: なかしらね
-    - name: 中白根4丁目
+    - name: 中白根1〜4丁目
       yomi: なかしらね
   year: 2026
   fiscal_year_ja: 令和8年度

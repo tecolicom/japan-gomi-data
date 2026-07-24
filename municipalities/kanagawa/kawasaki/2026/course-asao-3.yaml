@@ -4,17 +4,20 @@ metadata:
   areas:
     - name: 王禅寺
       yomi: おうぜんじ
-      machiaza_id: 141372-0003000
+      machiaza_id:
+        - 141372-0003000
     - name: 王禅寺東
       yomi: おうぜんじひがし
     - name: 岡上
       yomi: おかがみ
-      machiaza_id: 141372-0016000
+      machiaza_id:
+        - 141372-0016000
     - name: 虹ヶ丘
       yomi: にじがおか
     - name: 早野
       yomi: はやの
-      machiaza_id: 141372-0015000
+      machiaza_id:
+        - 141372-0015000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

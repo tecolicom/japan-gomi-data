@@ -4,17 +4,9 @@ metadata:
   areas:
     - name: あざみ野3丁目
       yomi: あざみの
-    - name: 美しが丘西1丁目
+    - name: 美しが丘西1〜3丁目
       yomi: うつくしがおかにし
-    - name: 美しが丘西2丁目
-      yomi: うつくしがおかにし
-    - name: 美しが丘西3丁目
-      yomi: うつくしがおかにし
-    - name: 荏子田1丁目
-      yomi: えこだ
-    - name: 荏子田2丁目
-      yomi: えこだ
-    - name: 荏子田3丁目
+    - name: 荏子田1〜3丁目
       yomi: えこだ
     - name: 大場町
       yomi: おおばちょう
@@ -22,11 +14,7 @@ metadata:
       yomi: く
     - name: 鉄町
       yomi: くろがねちょう
-    - name: すすき野1丁目
-      yomi: すすきの
-    - name: すすき野2丁目
-      yomi: すすきの
-    - name: すすき野3丁目
+    - name: すすき野1〜3丁目
       yomi: すすきの
     - name: みすずが丘
       yomi: みすずがおか

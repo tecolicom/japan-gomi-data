@@ -5,13 +5,16 @@ metadata:
   areas:
     - name: 御津川高（川高・大曽根）
       yomi: みつかわたか
-      machiaza_id: 331015-0270000
+      machiaza_id:
+        - 331015-0270000
     - name: 御津国ケ原（国ヶ原）
       yomi: みつくにがはら
-      machiaza_id: 331015-0273000
+      machiaza_id:
+        - 331015-0273000
     - name: 御津芳谷（田土・大鹿・鍋谷・河瀬）
       yomi: みつよしたに
-      machiaza_id: 331015-0289000
+      machiaza_id:
+        - 331015-0289000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

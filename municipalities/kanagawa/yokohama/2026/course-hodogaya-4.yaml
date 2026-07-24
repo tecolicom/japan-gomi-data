@@ -10,30 +10,30 @@ metadata:
       yomi: さ
     - name: 境木町
       yomi: さかいぎちょう
-      machiaza_id: 141062-0002000
-    - name: 新桜ケ丘1丁目
+      machiaza_id:
+        - 141062-0002000
+    - name: 新桜ケ丘1・2丁目
       yomi: しんさくらがおか
-      machiaza_id: 141062-0003001
-    - name: 新桜ケ丘2丁目
-      yomi: しんさくらがおか
-      machiaza_id: 141062-0003002
+      machiaza_id:
+        - 141062-0003001
+        - 141062-0003002
     - name: 初音ケ丘
       yomi: はつねがおか
-      machiaza_id: 141062-0029000
+      machiaza_id:
+        - 141062-0029000
     - name: 藤塚町
       yomi: ふじつかちょう
-      machiaza_id: 141062-0007000
+      machiaza_id:
+        - 141062-0007000
     - name: 仏向町
       yomi: ぶっこうちょう
-    - name: 法泉町1丁目
+    - name: 法泉町1〜3丁目
       yomi: ほうせんちょう
-    - name: 法泉町2丁目
-      yomi: ほうせんちょう
-    - name: 法泉町3丁目
-      yomi: ほうせんちょう
-    - name: 星川3丁目（【8〜11番地付近】）
+    - name: 星川3丁目
       yomi: ほしかわ
-      machiaza_id: 141062-0018003
+      machiaza_id:
+        - 141062-0018003
+      note: 【8〜11番地付近】
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

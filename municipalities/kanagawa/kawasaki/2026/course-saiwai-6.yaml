@@ -4,7 +4,8 @@ metadata:
   areas:
     - name: 新塚越
       yomi: しんつかごし
-      machiaza_id: 141321-0004000
+      machiaza_id:
+        - 141321-0004000
     - name: 戸手本町
       yomi: とてほんまち
   year: 2026

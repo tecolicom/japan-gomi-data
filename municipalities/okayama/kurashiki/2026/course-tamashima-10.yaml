@@ -5,10 +5,12 @@ metadata:
   areas:
     - name: 阿賀崎（柏島北）
       yomi: あがさき
-      machiaza_id: 332020-0091000
+      machiaza_id:
+        - 332020-0091000
     - name: 柏島（柏島北）
       yomi: かしわじま
-      machiaza_id: 332020-0093000
+      machiaza_id:
+        - 332020-0093000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

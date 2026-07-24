@@ -12,26 +12,13 @@ metadata:
       yomi: なかたきた
     - name: 中田町2700番台〜3400番台
       yomi: なかたちょう
-    - name: 中田西1丁目
+    - name: 中田西1〜4丁目
       yomi: なかたにし
-    - name: 中田西2丁目
-      yomi: なかたにし
-    - name: 中田西3丁目
-      yomi: なかたにし
-    - name: 中田西4丁目
-      yomi: なかたにし
-    - name: 中田南1丁目
+    - name: 中田南1〜5丁目
       yomi: なかたみなみ
-    - name: 中田南2丁目
-      yomi: なかたみなみ
-    - name: 中田南3丁目
-      yomi: なかたみなみ
-    - name: 中田南4丁目
-      yomi: なかたみなみ
-    - name: 中田南5丁目
-      yomi: なかたみなみ
-    - name: 西が岡1丁目（28〜32番地）
+    - name: 西が岡1丁目
       yomi: にしがおか
+      note: 28〜32番地
     - name: 弥生台44番地
       yomi: やよいだい
   year: 2026

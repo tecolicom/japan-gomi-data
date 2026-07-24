@@ -5,13 +5,16 @@ metadata:
   areas:
     - name: 安江
       yomi: やすえ
-      machiaza_id: 332020-0225000
+      machiaza_id:
+        - 332020-0225000
     - name: 八王寺町
       yomi: はちおうじちょう
-      machiaza_id: 332020-0140000
+      machiaza_id:
+        - 332020-0140000
     - name: 酒津
       yomi: さかづ
-      machiaza_id: 332020-0236000
+      machiaza_id:
+        - 332020-0236000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

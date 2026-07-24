@@ -5,46 +5,60 @@ metadata:
   areas:
     - name: 石見町
       yomi: いわみちょう
-      machiaza_id: 332020-0009000
+      machiaza_id:
+        - 332020-0009000
     - name: 日吉町
       yomi: ひよせちょう
-      machiaza_id: 332020-0153000
+      machiaza_id:
+        - 332020-0153000
     - name: 老松1丁目
       yomi: おいまつ
-      machiaza_id: 332020-0012001
+      machiaza_id:
+        - 332020-0012001
     - name: 老松2丁目
       yomi: おいまつ
-      machiaza_id: 332020-0012002
+      machiaza_id:
+        - 332020-0012002
     - name: 老松3丁目
       yomi: おいまつ
-      machiaza_id: 332020-0012003
+      machiaza_id:
+        - 332020-0012003
     - name: 老松4丁目
       yomi: おいまつ
-      machiaza_id: 332020-0012004
+      machiaza_id:
+        - 332020-0012004
     - name: 老松5丁目
       yomi: おいまつ
-      machiaza_id: 332020-0012005
+      machiaza_id:
+        - 332020-0012005
     - name: 昭和1丁目
       yomi: しょうわ
-      machiaza_id: 332020-0232001
+      machiaza_id:
+        - 332020-0232001
     - name: 浜ノ茶屋2丁目
       yomi: はまのちゃや
-      machiaza_id: 332020-0143002
+      machiaza_id:
+        - 332020-0143002
     - name: 大島（のうち山陽本線より北）
       yomi: おおじま
-      machiaza_id: 332020-0014000
+      machiaza_id:
+        - 332020-0014000
     - name: 平田（のうち山陽本線より北）
       yomi: ひらた
-      machiaza_id: 332020-0247000
+      machiaza_id:
+        - 332020-0247000
     - name: 福島
       yomi: ふくしま
-      machiaza_id: 332020-0158000
+      machiaza_id:
+        - 332020-0158000
     - name: 大島（のうち山陽本線より南）
       yomi: おおじま
-      machiaza_id: 332020-0014000
+      machiaza_id:
+        - 332020-0014000
     - name: 平田（のうち山陽本線より南）
       yomi: ひらた
-      machiaza_id: 332020-0247000
+      machiaza_id:
+        - 332020-0247000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

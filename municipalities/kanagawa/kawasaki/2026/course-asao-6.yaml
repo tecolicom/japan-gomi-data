@@ -4,10 +4,12 @@ metadata:
   areas:
     - name: 古沢
       yomi: ふるさわ
-      machiaza_id: 141372-0008000
+      machiaza_id:
+        - 141372-0008000
     - name: 万福寺
       yomi: まんぷくじ
-      machiaza_id: 141372-0017000
+      machiaza_id:
+        - 141372-0017000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

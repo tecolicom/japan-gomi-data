@@ -6,10 +6,12 @@ metadata:
       yomi: かんのん
     - name: 四谷上町
       yomi: よつやかみちょう
-      machiaza_id: 141313-0046000
+      machiaza_id:
+        - 141313-0046000
     - name: 四谷下町
       yomi: よつやしもちょう
-      machiaza_id: 141313-0022000
+      machiaza_id:
+        - 141313-0022000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

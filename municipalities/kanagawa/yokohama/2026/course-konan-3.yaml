@@ -2,10 +2,12 @@ metadata:
   city: yokohama
   course: konan-3
   areas:
-    - name: 上大岡東3丁目（11の一部）
+    - name: 上大岡東3丁目
       yomi: かみおおおかひがし
-    - name: 笹下1丁目（10の一部と笹下2丁目30の一部）
+      note: 11の一部
+    - name: 笹下1丁目
       yomi: ささげ
+      note: 10の一部と笹下2丁目30の一部
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

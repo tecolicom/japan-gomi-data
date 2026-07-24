@@ -4,37 +4,42 @@ metadata:
   areas:
     - name: 岡野1丁目
       yomi: おかの
-      machiaza_id: 141038-0021001
+      machiaza_id:
+        - 141038-0021001
     - name: 北軽井沢
       yomi: きたかるいざわ
-      machiaza_id: 141038-0033000
-    - name: 北幸1丁目
+      machiaza_id:
+        - 141038-0033000
+    - name: 北幸1〜2丁目
       yomi: きたさいわい
-      machiaza_id: 141038-0001001
-    - name: 北幸2丁目
-      yomi: きたさいわい
-      machiaza_id: 141038-0001002
+      machiaza_id:
+        - 141038-0001001
+        - 141038-0001002
     - name: 楠町
       yomi: くすのきちょう
-      machiaza_id: 141038-0035000
+      machiaza_id:
+        - 141038-0035000
     - name: 浅間台
       yomi: せんげんだい
-      machiaza_id: 141038-0031000
+      machiaza_id:
+        - 141038-0031000
     - name: 浅間町1丁目
       yomi: せんげんちょう
-      machiaza_id: 141038-0043001
+      machiaza_id:
+        - 141038-0043001
     - name: 南軽井沢
       yomi: みなみかるいざわ
-      machiaza_id: 141038-0034000
-    - name: 南幸1丁目
+      machiaza_id:
+        - 141038-0034000
+    - name: 南幸1〜2丁目
       yomi: みなみさいわい
-      machiaza_id: 141038-0010001
-    - name: 南幸2丁目
-      yomi: みなみさいわい
-      machiaza_id: 141038-0010002
+      machiaza_id:
+        - 141038-0010001
+        - 141038-0010002
     - name: 宮ヶ谷
       yomi: みやがや
-      machiaza_id: 141038-0032000
+      machiaza_id:
+        - 141038-0032000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

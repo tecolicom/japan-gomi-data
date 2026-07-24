@@ -5,16 +5,20 @@ metadata:
   areas:
     - name: 尾崎
       yomi: おさき
-      machiaza_id: 332020-0180000
+      machiaza_id:
+        - 332020-0180000
     - name: 妹
       yomi: せ
-      machiaza_id: 332020-0184000
+      machiaza_id:
+        - 332020-0184000
     - name: 服部
       yomi: はっとり
-      machiaza_id: 332020-0186000
+      machiaza_id:
+        - 332020-0186000
     - name: 箭田（所生・反古・遠田）
       yomi: やた
-      machiaza_id: 332020-0187000
+      machiaza_id:
+        - 332020-0187000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -6,10 +6,12 @@ metadata:
       yomi: いけだ
     - name: 下並木
       yomi: しもなみき
-      machiaza_id: 141313-0043000
+      machiaza_id:
+        - 141313-0043000
     - name: 堤根
       yomi: つつみね
-      machiaza_id: 141313-0074000
+      machiaza_id:
+        - 141313-0074000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

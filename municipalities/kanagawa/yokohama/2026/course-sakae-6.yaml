@@ -6,25 +6,11 @@ metadata:
       yomi: いいじまちょう
     - name: 小菅ヶ谷1丁目（6〜31）
       yomi: こすがや
-    - name: 小菅ヶ谷2丁目
+    - name: 小菅ヶ谷2〜4丁目
       yomi: こすがや
-    - name: 小菅ヶ谷3丁目
-      yomi: こすがや
-    - name: 小菅ヶ谷4丁目
-      yomi: こすがや
-    - name: 小山台1丁目
+    - name: 小山台1・2丁目
       yomi: こやまだい
-    - name: 小山台2丁目
-      yomi: こやまだい
-    - name: 本郷台1丁目
-      yomi: ほんごうだい
-    - name: 本郷台2丁目
-      yomi: ほんごうだい
-    - name: 本郷台3丁目
-      yomi: ほんごうだい
-    - name: 本郷台4丁目
-      yomi: ほんごうだい
-    - name: 本郷台5丁目
+    - name: 本郷台1〜5丁目
       yomi: ほんごうだい
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -4,10 +4,12 @@ metadata:
   areas:
     - name: 小倉
       yomi: おぐら
-      machiaza_id: 141321-0002000
+      machiaza_id:
+        - 141321-0002000
     - name: 東小倉
       yomi: ひがしおぐら
-      machiaza_id: 141321-0016000
+      machiaza_id:
+        - 141321-0016000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

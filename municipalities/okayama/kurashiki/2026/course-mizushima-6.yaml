@@ -5,37 +5,48 @@ metadata:
   areas:
     - name: 川崎通り1丁目（水島地区）
       yomi: かわさきどおり
-      machiaza_id: 332020-0192001
+      machiaza_id:
+        - 332020-0192001
     - name: 西通り1丁目
       yomi: にしどおり
-      machiaza_id: 332020-0203001
+      machiaza_id:
+        - 332020-0203001
     - name: 中通り1丁目
       yomi: なかどおり
-      machiaza_id: 332020-0199001
+      machiaza_id:
+        - 332020-0199001
     - name: 中通り2丁目
       yomi: なかどおり
-      machiaza_id: 332020-0199002
+      machiaza_id:
+        - 332020-0199002
     - name: 神田1丁目
       yomi: かんだ
-      machiaza_id: 332020-0028001
+      machiaza_id:
+        - 332020-0028001
     - name: 神田2丁目
       yomi: かんだ
-      machiaza_id: 332020-0028002
+      machiaza_id:
+        - 332020-0028002
     - name: 亀島1丁目
       yomi: かめじま
-      machiaza_id: 332020-0024001
+      machiaza_id:
+        - 332020-0024001
     - name: 亀島2丁目
       yomi: かめじま
-      machiaza_id: 332020-0024002
+      machiaza_id:
+        - 332020-0024002
     - name: 南亀島町
       yomi: みなみかめじまちょう
-      machiaza_id: 332020-0214000
+      machiaza_id:
+        - 332020-0214000
     - name: 北亀島町
       yomi: きたかめじまちょう
-      machiaza_id: 332020-0194000
+      machiaza_id:
+        - 332020-0194000
     - name: 明神町
       yomi: みょうじんちょう
-      machiaza_id: 332020-0218000
+      machiaza_id:
+        - 332020-0218000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

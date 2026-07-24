@@ -6,12 +6,14 @@ metadata:
       yomi: いぬくら
     - name: 潮見台
       yomi: しおみだい
-      machiaza_id: 141364-0022000
+      machiaza_id:
+        - 141364-0022000
     - name: 菅生
       yomi: すがお
     - name: 菅生ヶ丘
       yomi: すがおがおか
-      machiaza_id: 141364-0021000
+      machiaza_id:
+        - 141364-0021000
     - name: 初山
       yomi: はつやま
     - name: 水沢

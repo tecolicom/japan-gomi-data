@@ -4,33 +4,13 @@ metadata:
   areas:
     - name: 上永谷3丁目（1・3番）
       yomi: かみながや
-    - name: 下永谷1丁目
+    - name: 下永谷1〜6丁目
       yomi: しもながや
-    - name: 下永谷2丁目
-      yomi: しもながや
-    - name: 下永谷3丁目
-      yomi: しもながや
-    - name: 下永谷4丁目
-      yomi: しもながや
-    - name: 下永谷5丁目
-      yomi: しもながや
-    - name: 下永谷6丁目
-      yomi: しもながや
-    - name: 芹が谷1丁目
-      yomi: せりがや
-    - name: 芹が谷2丁目
-      yomi: せりがや
-    - name: 芹が谷3丁目
-      yomi: せりがや
-    - name: 芹が谷4丁目
-      yomi: せりがや
-    - name: 芹が谷5丁目
+    - name: 芹が谷1〜5丁目
       yomi: せりがや
     - name: 東芹が谷
       yomi: ひがしせりがや
-    - name: 東永谷1丁目
-      yomi: ひがしながや
-    - name: 東永谷2丁目
+    - name: 東永谷1・2丁目
       yomi: ひがしながや
     - name: 東永谷3丁目（1〜45・52番の一部・53〜63番）
       yomi: ひがしながや

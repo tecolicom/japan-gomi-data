@@ -4,37 +4,44 @@ metadata:
   areas:
     - name: 浮島町
       yomi: うきしまちょう
-      machiaza_id: 141313-0015000
+      machiaza_id:
+        - 141313-0015000
     - name: 江川
       yomi: えがわ
     - name: 扇島
       yomi: おおぎしま
-      machiaza_id: 141313-0014000
+      machiaza_id:
+        - 141313-0014000
     - name: 小島町
       yomi: こじまちょう
-      machiaza_id: 141313-0016000
+      machiaza_id:
+        - 141313-0016000
     - name: 塩浜
       yomi: しおはま
     - name: 大師河原
       yomi: だいしがわら
-      machiaza_id: 141313-0049000
+      machiaza_id:
+        - 141313-0049000
     - name: 田町
       yomi: たまち
     - name: 千鳥町
       yomi: ちどりちょう
-      machiaza_id: 141313-0005000
+      machiaza_id:
+        - 141313-0005000
     - name: 殿町
       yomi: とのまち
     - name: 中瀬
       yomi: なかぜ
     - name: 東扇島
       yomi: ひがしおおぎしま
-      machiaza_id: 141313-0001000
+      machiaza_id:
+        - 141313-0001000
     - name: 日ノ出
       yomi: ひので
     - name: 水江町
       yomi: みずえちょう
-      machiaza_id: 141313-0002000
+      machiaza_id:
+        - 141313-0002000
     - name: 夜光
       yomi: やこう
   year: 2026

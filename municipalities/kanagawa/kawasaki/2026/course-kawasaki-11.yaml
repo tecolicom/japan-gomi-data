@@ -6,18 +6,22 @@ metadata:
       yomi: しょうわ
     - name: 大師町
       yomi: だいしまち
-      machiaza_id: 141313-0053000
+      machiaza_id:
+        - 141313-0053000
     - name: 大師駅前
       yomi: だいしえきまえ
     - name: 大師本町
       yomi: だいしほんちょう
-      machiaza_id: 141313-0050000
+      machiaza_id:
+        - 141313-0050000
     - name: 台町
       yomi: だいまち
-      machiaza_id: 141313-0055000
+      machiaza_id:
+        - 141313-0055000
     - name: 出来野
       yomi: できの
-      machiaza_id: 141313-0045000
+      machiaza_id:
+        - 141313-0045000
     - name: 東門前
       yomi: ひがしもんぜん
   year: 2026

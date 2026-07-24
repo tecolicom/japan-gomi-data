@@ -5,36 +5,45 @@ metadata:
   areas:
     - name: 長尾（駅南）
       yomi: ながお
-      machiaza_id: 332020-0101000
+      machiaza_id:
+        - 332020-0101000
     - name: 爪崎（駅南）
       yomi: つまさき
-      machiaza_id: 332020-0099000
+      machiaza_id:
+        - 332020-0099000
     - name: 上成（駅南）
       yomi: うわなり
-      machiaza_id: 332020-0092000
+      machiaza_id:
+        - 332020-0092000
     - name: 新倉敷駅前1丁目
       yomi: しんくらしきえきまえ
-      machiaza_id: 332020-0081001
+      machiaza_id:
+        - 332020-0081001
       note: 駅南
     - name: 新倉敷駅前2丁目
       yomi: しんくらしきえきまえ
-      machiaza_id: 332020-0081002
+      machiaza_id:
+        - 332020-0081002
       note: 駅南
     - name: 新倉敷駅前3丁目
       yomi: しんくらしきえきまえ
-      machiaza_id: 332020-0081003
+      machiaza_id:
+        - 332020-0081003
       note: 駅南
     - name: 新倉敷駅前4丁目
       yomi: しんくらしきえきまえ
-      machiaza_id: 332020-0081004
+      machiaza_id:
+        - 332020-0081004
       note: 駅南
     - name: 新倉敷駅前5丁目
       yomi: しんくらしきえきまえ
-      machiaza_id: 332020-0081005
+      machiaza_id:
+        - 332020-0081005
       note: 駅南
     - name: 玉島（駅南）
       yomi: たましま
-      machiaza_id: 332020-0089000
+      machiaza_id:
+        - 332020-0089000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

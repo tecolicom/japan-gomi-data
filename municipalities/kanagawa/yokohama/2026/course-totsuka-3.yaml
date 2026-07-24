@@ -4,13 +4,10 @@ metadata:
   areas:
     - name: 上矢部町
       yomi: かみやべちょう
-    - name: 汲沢1丁目
-      yomi: ぐみざわ
-    - name: 汲沢2丁目
+    - name: 汲沢1・2丁目
       yomi: ぐみざわ
     - name: 戸塚町（ハローワーク戸塚（戸塚町3722番地）より北側）
       yomi: とつかちょう
-      note: 一部異なる地域あり
     - name: 鳥が丘
       yomi: とりがおか
     - name: 矢部町（JR線路の西側）

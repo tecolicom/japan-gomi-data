@@ -2,51 +2,58 @@ metadata:
   city: yokohama
   course: isogo-6
   areas:
-    - name: 栗木1丁目
+    - name: 栗木1・2丁目
       yomi: くりき
-      machiaza_id: 141071-0022001
-    - name: 栗木2丁目
-      yomi: くりき
-      machiaza_id: 141071-0022002
+      machiaza_id:
+        - 141071-0022001
+        - 141071-0022002
     - name: 栗木3丁目（1〜8番の一部）
       yomi: くりき
-      machiaza_id: 141071-0022003
-    - name: 杉田2丁目
+      machiaza_id:
+        - 141071-0022003
+    - name: 杉田2・3丁目
       yomi: すぎた
-      machiaza_id: 141071-0002002
-    - name: 杉田3丁目
+      machiaza_id:
+        - 141071-0002002
+        - 141071-0002003
+    - name: 杉田6丁目
       yomi: すぎた
-      machiaza_id: 141071-0002003
-    - name: 杉田6丁目（2・3番）
-      yomi: すぎた
-      machiaza_id: 141071-0002006
+      machiaza_id:
+        - 141071-0002006
+      note: 2・3番
     - name: 杉田坪呑10〜13番の一部
       yomi: すぎたつぼのみ
-      machiaza_id: 141071-0019000
+      machiaza_id:
+        - 141071-0019000
     - name: 田中2丁目
       yomi: たなか
-      machiaza_id: 141071-0027002
-    - name: 中原3丁目
+      machiaza_id:
+        - 141071-0027002
+    - name: 中原3・4丁目
       yomi: なかはら
-      machiaza_id: 141071-0024003
-    - name: 中原4丁目
-      yomi: なかはら
-      machiaza_id: 141071-0024004
-    - name: 洋光台1丁目（13と14番の一部）
+      machiaza_id:
+        - 141071-0024003
+        - 141071-0024004
+    - name: 洋光台1丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026001
-    - name: 洋光台3丁目
+      machiaza_id:
+        - 141071-0026001
+      note: 13と14番の一部
+    - name: 洋光台3・4丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026003
-    - name: 洋光台4丁目
+      machiaza_id:
+        - 141071-0026003
+        - 141071-0026004
+    - name: 洋光台5丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026004
-    - name: 洋光台5丁目（4番）
+      machiaza_id:
+        - 141071-0026005
+      note: 4番
+    - name: 洋光台6丁目
       yomi: ようこうだい
-      machiaza_id: 141071-0026005
-    - name: 洋光台6丁目（33〜43番）
-      yomi: ようこうだい
-      machiaza_id: 141071-0026006
+      machiaza_id:
+        - 141071-0026006
+      note: 33〜43番
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

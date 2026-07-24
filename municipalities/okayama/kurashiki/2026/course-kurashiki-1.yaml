@@ -5,25 +5,32 @@ metadata:
   areas:
     - name: 矢部
       yomi: やべ
-      machiaza_id: 332020-0249000
+      machiaza_id:
+        - 332020-0249000
     - name: 日畑
       yomi: ひばた
-      machiaza_id: 332020-0152000
+      machiaza_id:
+        - 332020-0152000
     - name: 庄新町
       yomi: しょうしんまち
-      machiaza_id: 332020-0079000
+      machiaza_id:
+        - 332020-0079000
     - name: 西尾
       yomi: にしお
-      machiaza_id: 332020-0132000
+      machiaza_id:
+        - 332020-0132000
     - name: 山地
       yomi: やまじ
-      machiaza_id: 332020-0235000
+      machiaza_id:
+        - 332020-0235000
     - name: 松島
       yomi: まつしま
-      machiaza_id: 332020-0237000
+      machiaza_id:
+        - 332020-0237000
     - name: 二子
       yomi: ふたご
-      machiaza_id: 332020-0167000
+      machiaza_id:
+        - 332020-0167000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

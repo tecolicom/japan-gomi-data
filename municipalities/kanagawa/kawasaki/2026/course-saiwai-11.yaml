@@ -4,16 +4,20 @@ metadata:
   areas:
     - name: 東古市場
       yomi: ひがしふるいちば
-      machiaza_id: 141321-0030000
+      machiaza_id:
+        - 141321-0030000
     - name: 古市場
       yomi: ふるいちば
-      machiaza_id: 141321-0032000
+      machiaza_id:
+        - 141321-0032000
     - name: 古市場1丁目
       yomi: ふるいちば
-      machiaza_id: 141321-0032001
+      machiaza_id:
+        - 141321-0032001
     - name: 古市場2丁目
       yomi: ふるいちば
-      machiaza_id: 141321-0032002
+      machiaza_id:
+        - 141321-0032002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

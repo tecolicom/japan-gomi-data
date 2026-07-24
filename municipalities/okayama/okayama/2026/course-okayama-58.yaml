@@ -5,45 +5,58 @@ metadata:
   areas:
     - name: 下中野（北区・岡山児島線の西。ＪＲ貨物西岡山駅からの南北道路の東）
       yomi: しもなかの
-      machiaza_id: 331015-0093000
+      machiaza_id:
+        - 331015-0093000
     - name: 大安寺中町
       yomi: だいあんじなかまち
-      machiaza_id: 331015-0113000
+      machiaza_id:
+        - 331015-0113000
     - name: 大安寺西町
       yomi: だいあんじにしまち
-      machiaza_id: 331015-0114000
+      machiaza_id:
+        - 331015-0114000
     - name: 大安寺東町
       yomi: だいあんじひがしまち
-      machiaza_id: 331015-0115000
+      machiaza_id:
+        - 331015-0115000
     - name: 大安寺南町１丁目
       yomi: だいあんじみなみまち
-      machiaza_id: 331015-0116001
+      machiaza_id:
+        - 331015-0116001
     - name: 大安寺南町２丁目
       yomi: だいあんじみなみまち
-      machiaza_id: 331015-0116002
+      machiaza_id:
+        - 331015-0116002
     - name: 高柳西町
       yomi: たかやなぎにしまち
-      machiaza_id: 331015-0127000
+      machiaza_id:
+        - 331015-0127000
     - name: 西市（県道岡山児島線の西）
       yomi: にしいち
     - name: 西崎１丁目
       yomi: にしざき
-      machiaza_id: 331015-0202001
+      machiaza_id:
+        - 331015-0202001
     - name: 西崎２丁目
       yomi: にしざき
-      machiaza_id: 331015-0202002
+      machiaza_id:
+        - 331015-0202002
     - name: 西崎本町
       yomi: にしざきほんまち
-      machiaza_id: 331015-0203000
+      machiaza_id:
+        - 331015-0203000
     - name: 野殿西町
       yomi: のどのにしまち
-      machiaza_id: 331015-0218000
+      machiaza_id:
+        - 331015-0218000
     - name: 野殿東町
       yomi: のどのひがしまち
-      machiaza_id: 331015-0219000
+      machiaza_id:
+        - 331015-0219000
     - name: 米倉（県道岡山児島線の西）
       yomi: よねぐら
-      machiaza_id: 331040-0072000
+      machiaza_id:
+        - 331040-0072000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

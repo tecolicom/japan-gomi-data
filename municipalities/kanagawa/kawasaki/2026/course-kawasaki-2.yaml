@@ -6,7 +6,8 @@ metadata:
       yomi: きょうまち
     - name: 渡田山王町
       yomi: わたりださんのうちょう
-      machiaza_id: 141313-0040000
+      machiaza_id:
+        - 141313-0040000
     - name: 渡田新町
       yomi: わたりだしんちょう
   year: 2026

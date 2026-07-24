@@ -6,15 +6,11 @@ metadata:
       yomi: かつらだいきた
     - name: 桂台中
       yomi: かつらだいなか
-    - name: 桂台西1丁目
-      yomi: かつらだいにし
-    - name: 桂台西2丁目
+    - name: 桂台西1・2丁目
       yomi: かつらだいにし
     - name: 桂台東
       yomi: かつらだいひがし
-    - name: 桂台南1丁目
-      yomi: かつらだいみなみ
-    - name: 桂台南2丁目
+    - name: 桂台南1・2丁目
       yomi: かつらだいみなみ
     - name: 上郷町1〜199の一部
       yomi: かみごうちょう

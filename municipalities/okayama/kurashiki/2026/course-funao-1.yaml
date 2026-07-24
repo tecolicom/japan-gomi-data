@@ -5,15 +5,18 @@ metadata:
   areas:
     - name: 船穂町柳井原
       yomi: ふなおちょうやないはら
-      machiaza_id: 332020-0171000
+      machiaza_id:
+        - 332020-0171000
       note: 柳井原・水江
     - name: 船穂町水江
       yomi: ふなおちょうみずえ
-      machiaza_id: 332020-0170000
+      machiaza_id:
+        - 332020-0170000
       note: 柳井原・水江
     - name: 船穂町船穂（柳井原・水江）
       yomi: ふなおちょうふなお
-      machiaza_id: 332020-0169000
+      machiaza_id:
+        - 332020-0169000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,14 +4,16 @@ metadata:
   areas:
     - name: 大宮町
       yomi: おおみやちょう
-      machiaza_id: 141321-0007000
+      machiaza_id:
+        - 141321-0007000
     - name: 幸町
       yomi: さいわいちょう
     - name: 中幸町
       yomi: なかさいわいちょう
     - name: 堀川町
       yomi: ほりかわちょう
-      machiaza_id: 141321-0008000
+      machiaza_id:
+        - 141321-0008000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

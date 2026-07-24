@@ -2,11 +2,7 @@ metadata:
   city: yokohama
   course: seya-6
   areas:
-    - name: 阿久和東1丁目
-      yomi: あくわひがし
-    - name: 阿久和東2丁目
-      yomi: あくわひがし
-    - name: 阿久和東3丁目
+    - name: 阿久和東1〜3丁目
       yomi: あくわひがし
     - name: 阿久和南1丁目
       yomi: あくわみなみ

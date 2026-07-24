@@ -5,25 +5,32 @@ metadata:
   areas:
     - name: 大内田
       yomi: おおうちだ
-      machiaza_id: 331015-0030000
+      machiaza_id:
+        - 331015-0030000
     - name: 川入
       yomi: かわいり
-      machiaza_id: 331015-0319000
+      machiaza_id:
+        - 331015-0319000
     - name: 中撫川
       yomi: なかなつかわ
-      machiaza_id: 331015-0324000
+      machiaza_id:
+        - 331015-0324000
     - name: 撫川
       yomi: なつかわ
-      machiaza_id: 331015-0195000
+      machiaza_id:
+        - 331015-0195000
     - name: 庭瀬（JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以西 及びJR山陽本線以南）
       yomi: にわせ
-      machiaza_id: 331015-0327000
+      machiaza_id:
+        - 331015-0327000
     - name: 納所
       yomi: のうそ
-      machiaza_id: 331015-0215000
+      machiaza_id:
+        - 331015-0215000
     - name: 平野（JR山陽本線以北で庭瀬駅から中国銀行庭瀬支店から八幡神社を結ぶ道路以西）
       yomi: ひらの
-      machiaza_id: 331015-0333000
+      machiaza_id:
+        - 331015-0333000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

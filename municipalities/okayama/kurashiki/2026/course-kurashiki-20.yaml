@@ -5,10 +5,12 @@ metadata:
   areas:
     - name: 中島（北部の一部）
       yomi: なかしま
-      machiaza_id: 332020-0243000
+      machiaza_id:
+        - 332020-0243000
     - name: 水江
       yomi: みずえ
-      machiaza_id: 332020-0239000
+      machiaza_id:
+        - 332020-0239000
     - name: 中洲団地
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -5,19 +5,24 @@ metadata:
   areas:
     - name: 有井（丸山のみ）
       yomi: ありい
-      machiaza_id: 332020-0177000
+      machiaza_id:
+        - 332020-0177000
     - name: 市場
       yomi: いちば
-      machiaza_id: 332020-0178000
+      machiaza_id:
+        - 332020-0178000
     - name: 上二万
       yomi: かみにま
-      machiaza_id: 332020-0181000
+      machiaza_id:
+        - 332020-0181000
     - name: 下二万
       yomi: しもにま
-      machiaza_id: 332020-0183000
+      machiaza_id:
+        - 332020-0183000
     - name: 箭田（福原・中学東）
       yomi: やた
-      machiaza_id: 332020-0187000
+      machiaza_id:
+        - 332020-0187000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

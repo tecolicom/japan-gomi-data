@@ -2,27 +2,15 @@ metadata:
   city: yokohama
   course: aoba-5
   areas:
-    - name: あかね台1丁目
-      yomi: あかねだい
-    - name: あかね台2丁目
+    - name: あかね台1・2丁目
       yomi: あかねだい
     - name: 恩田町
       yomi: おんだちょう
-    - name: 桂台1丁目
-      yomi: かつらだい
-    - name: 桂台2丁目
+    - name: 桂台1〜2丁目
       yomi: かつらだい
     - name: すみよし台
       yomi: すみよしだい
-    - name: 奈良1丁目
-      yomi: なら
-    - name: 奈良2丁目
-      yomi: なら
-    - name: 奈良3丁目
-      yomi: なら
-    - name: 奈良4丁目
-      yomi: なら
-    - name: 奈良5丁目
+    - name: 奈良1〜5丁目
       yomi: なら
     - name: 奈良町
       yomi: ならちょう

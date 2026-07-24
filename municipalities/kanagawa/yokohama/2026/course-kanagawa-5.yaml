@@ -2,9 +2,11 @@ metadata:
   city: yokohama
   course: kanagawa-5
   areas:
-    - name: 西寺尾1丁目（27・30・31番地の一部）
+    - name: 西寺尾1丁目
       yomi: にしてらお
-      machiaza_id: 141020-0012001
+      machiaza_id:
+        - 141020-0012001
+      note: 27・30・31番地の一部
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

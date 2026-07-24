@@ -5,7 +5,8 @@ metadata:
   areas:
     - name: 笹沖
       yomi: ささおき
-      machiaza_id: 332020-0070000
+      machiaza_id:
+        - 332020-0070000
     - name: 県営
     - name: 太田
   year: 2026

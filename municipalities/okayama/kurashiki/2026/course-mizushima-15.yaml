@@ -5,16 +5,20 @@ metadata:
   areas:
     - name: 福田町福田（古城池線以南）
       yomi: ふくだちょうふくだ
-      machiaza_id: 332020-0163000
+      machiaza_id:
+        - 332020-0163000
     - name: 福田町古新田（老松線以東で古城池線以南）
       yomi: ふくだちょうこしんでん
-      machiaza_id: 332020-0160000
+      machiaza_id:
+        - 332020-0160000
     - name: 広江2丁目
       yomi: ひろえ
-      machiaza_id: 332020-0155002
+      machiaza_id:
+        - 332020-0155002
     - name: 広江4丁目（2524～2556番地）
       yomi: ひろえ
-      machiaza_id: 332020-0155004
+      machiaza_id:
+        - 332020-0155004
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

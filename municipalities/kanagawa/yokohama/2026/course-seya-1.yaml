@@ -10,22 +10,16 @@ metadata:
       yomi: きたまち
     - name: 五貫目町
       yomi: ごかんめちょう
-    - name: 瀬谷5丁目
-      yomi: せや
-    - name: 瀬谷6丁目
+    - name: 瀬谷5・6丁目
       yomi: せや
     - name: 竹村町
       yomi: たけむらちょう
     - name: 中屋敷1丁目
       yomi: なかやしき
-    - name: 橋戸2丁目
+    - name: 橋戸2・3丁目
       yomi: はしど
       note: （3丁目51番地を除く）
-    - name: 橋戸3丁目（3丁目51番地を除く）
-      yomi: はしど
-    - name: 本郷1丁目
-      yomi: ほんごう
-    - name: 本郷3丁目
+    - name: 本郷1・3丁目
       yomi: ほんごう
     - name: 目黒町
       yomi: めぐろちょう

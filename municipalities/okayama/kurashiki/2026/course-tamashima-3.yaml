@@ -5,18 +5,22 @@ metadata:
   areas:
     - name: 富
       yomi: とみ
-      machiaza_id: 332020-0100000
+      machiaza_id:
+        - 332020-0100000
       note: 富田
     - name: 道口（富田）
       yomi: みちぐち
-      machiaza_id: 332020-0103000
+      machiaza_id:
+        - 332020-0103000
     - name: 道越
       yomi: みちごえ
-      machiaza_id: 332020-0104000
+      machiaza_id:
+        - 332020-0104000
       note: 富田
     - name: 八島（富田）
       yomi: やしま
-      machiaza_id: 332020-0105000
+      machiaza_id:
+        - 332020-0105000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

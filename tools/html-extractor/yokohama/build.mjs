@@ -8,7 +8,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { parsePage, cellsToSchedule } from './parse.mjs';
-import { expandTown } from './areas.mjs';
+import { parseTown } from './areas.mjs';
 import { WARDS, BASE } from './wards.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -27,25 +27,34 @@ for (const t of ABR) {
     abrByOaza.get(k).push(t);
   }
 }
-// base(大字) + chome(番号|null) + wardJa(区名) → { yomi, machiazaId } | {}
-function abrOf(base, chome, wardJa) {
+// base(大字) + chomes(構成丁目のリスト、丁目なしは []) + wardJa(区名)
+//   → { yomi, machiazaIds }。丁目まとめは各丁目の ID をリストで返す。
+function abrOf(base, chomes, wardJa) {
   const b = base.normalize('NFKC');
   let rows = abrByOaza.get(b) ?? abrByOaza.get(b.replace(/ケ/g, 'ヶ')) ?? abrByOaza.get(b.replace(/が/g, 'ヶ')) ?? [];
   rows = rows.filter((t) => t.ward === wardJa);
-  const uniq = new Map(rows.map((t) => [`${t.lg}-${t.id}`, t]));
-  rows = [...uniq.values()];
-  const pick = chome !== null
-    ? rows.filter((t) => t.chome_number === chome)
-    : rows.filter((t) => t.chome_number === null);
-  if (pick.length === 1) return { yomi: pick[0].kana ?? undefined, machiazaId: `${pick[0].lg}-${pick[0].id}` };
-  // 丁目行が無い/複数の場合: 大字読みだけでも付ける (ID は一意でないと付けない)
+  rows = [...new Map(rows.map((t) => [`${t.lg}-${t.id}`, t])).values()];
+  // 大字読み (丁目まとめでも読みは大字を使う。無ければ丁目行の読みから大字部を採る)
   const oaza = rows.filter((t) => t.chome_number === null);
-  const kanas = new Set(oaza.map((t) => t.kana).filter(Boolean));
-  if (kanas.size === 1) return { yomi: [...kanas][0], machiazaId: undefined };
-  // ABR に無い広域大字は日本郵便 ken_all の読みで補完 (戸塚町・和泉町 等)
-  const kk = KENALL[base] ?? KENALL[base.replace(/ヶ/g, 'ケ')] ?? KENALL[base.replace(/ケ/g, 'ヶ')];
-  if (kk) return { yomi: kk, machiazaId: undefined };
-  return {};
+  let yomi = new Set(oaza.map((t) => t.kana).filter(Boolean)).size === 1 ? oaza.find((t) => t.kana).kana : undefined;
+  if (!yomi) yomi = KENALL[base] ?? KENALL[base.replace(/ヶ/g, 'ケ')] ?? KENALL[base.replace(/ケ/g, 'ヶ')];
+  if (chomes.length === 0) {
+    // 素の大字: 大字行が一意なら ID も付ける
+    if (oaza.length === 1) return { yomi: oaza[0].kana ?? yomi, machiazaIds: [`${oaza[0].lg}-${oaza[0].id}`] };
+    return { yomi, machiazaIds: undefined };
+  }
+  // 丁目まとめ/単一丁目: 各構成丁目の行が一意に取れた分だけ ID をリスト化
+  const ids = [];
+  for (const c of chomes) {
+    const p = rows.filter((t) => t.chome_number === c);
+    if (p.length === 1) ids.push(`${p[0].lg}-${p[0].id}`);
+  }
+  // 丁目行の読みからも yomi を補える (大字読みが無い場合)
+  if (!yomi) {
+    const anyChome = rows.find((t) => chomes.includes(t.chome_number) && t.kana);
+    if (anyChome) yomi = anyChome.kana.replace(/[0-9１-９]+ちょうめ$/, '');
+  }
+  return { yomi, machiazaIds: ids.length ? ids : undefined };
 }
 let KENALL = {};
 try { KENALL = JSON.parse(readFileSync(join(HERE, 'cache', 'kenall-town.json'), 'utf8')); } catch { /* ken_all 未配置は許容 */ }
@@ -84,7 +93,7 @@ for (const ward of WARDS) {
   }
   wardRows.push({ ward, rows });
   for (const r of rows) {
-    const base = expandTown(r.town)[0].base; // 区またぎ判定は大字ベースで
+    const base = parseTown(r.town).base; // 区またぎ判定は大字ベースで
     if (!townWards.has(base)) townWards.set(base, new Set());
     townWards.get(base).add(ward.ja);
   }
@@ -109,21 +118,19 @@ for (const { ward, rows } of wardRows) {
     const sched = cellsToSchedule(row.cells);
     const sig = `${sched.burnable.join('')}|${sched.can}|${sched.plastic}`;
     if (!bySig.has(sig)) bySig.set(sig, { sched, areas: [] });
-    // 町名セルを 1 町名 (丁目単位) へ展開し、ABR で yomi・machiaza_id を付与
-    for (const a of expandTown(row.town)) {
-      const dup = isDup(a.base);
-      const name = dup ? `${a.name}（${ward.ja}）` : a.name;
-      const { yomi, machiazaId } = abrOf(a.base, a.chome, ward.ja);
-      yomiStat.total++;
-      if (yomi) yomiStat.abr++;
-      if (machiazaId) yomiStat.id++;
-      bySig.get(sig).areas.push({
-        name,
-        yomi: yomi ?? row.kana, // ABR に無ければ公式表の五十音マーカ (初字) にフォールバック
-        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
-        ...(a.note ? { note: a.note } : {}),
-      });
-    }
+    // 町名セルを 1 area にパースし (丁目まとめは展開せず)、ABR で yomi・machiaza_id を付与
+    const a = parseTown(row.town);
+    const name = isDup(a.base) ? `${a.name}（${ward.ja}）` : a.name;
+    const { yomi, machiazaIds } = abrOf(a.base, a.chomes, ward.ja);
+    yomiStat.total++;
+    if (yomi) yomiStat.abr++;
+    if (machiazaIds) yomiStat.id++;
+    bySig.get(sig).areas.push({
+      name,
+      yomi: yomi ?? row.kana, // ABR/ken_all に無ければ公式表の五十音マーカ (初字)
+      ...(machiazaIds ? { machiaza_id: machiazaIds } : {}),
+      ...(a.note ? { note: a.note } : {}),
+    });
   }
   // 同一 name+note の重複 (丁目展開が既存の単一丁目と衝突) を除去
   for (const v of bySig.values()) {

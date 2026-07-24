@@ -5,25 +5,32 @@ metadata:
   areas:
     - name: 北畝2丁目（古城池線以北）
       yomi: きたせ
-      machiaza_id: 332020-0029002
+      machiaza_id:
+        - 332020-0029002
     - name: 北畝3丁目
       yomi: きたせ
-      machiaza_id: 332020-0029003
+      machiaza_id:
+        - 332020-0029003
     - name: 北畝5丁目（北畝南畝線以東）
       yomi: きたせ
-      machiaza_id: 332020-0029005
+      machiaza_id:
+        - 332020-0029005
     - name: 北畝6丁目（古城池線以北）
       yomi: きたせ
-      machiaza_id: 332020-0029006
+      machiaza_id:
+        - 332020-0029006
     - name: 北畝7丁目
       yomi: きたせ
-      machiaza_id: 332020-0029007
+      machiaza_id:
+        - 332020-0029007
     - name: 福田町古新田（1219～1236番地）
       yomi: ふくだちょうこしんでん
-      machiaza_id: 332020-0160000
+      machiaza_id:
+        - 332020-0160000
     - name: 相生町
       yomi: あいおいちょう
-      machiaza_id: 332020-0189000
+      machiaza_id:
+        - 332020-0189000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

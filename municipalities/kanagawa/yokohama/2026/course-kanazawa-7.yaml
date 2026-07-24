@@ -4,47 +4,57 @@ metadata:
   areas:
     - name: 海の公園
       yomi: うみのこうえん
-      machiaza_id: 141089-0007000
+      machiaza_id:
+        - 141089-0007000
     - name: 乙舳町
       yomi: おっともちょう
-      machiaza_id: 141089-0022000
+      machiaza_id:
+        - 141089-0022000
     - name: 金沢町（城山地区）
       yomi: かなざわちょう
-      machiaza_id: 141089-0037000
+      machiaza_id:
+        - 141089-0037000
     - name: 洲崎町
       yomi: すさきちょう
-      machiaza_id: 141089-0023000
+      machiaza_id:
+        - 141089-0023000
     - name: 瀬戸京急線東側
       yomi: せ
-    - name: 泥亀1丁目
+    - name: 泥亀1・2丁目
       yomi: でいき
-      machiaza_id: 141089-0001001
-    - name: 泥亀2丁目
-      yomi: でいき
-      machiaza_id: 141089-0001002
+      machiaza_id:
+        - 141089-0001001
+        - 141089-0001002
     - name: 寺前1丁目
       yomi: てらまえ
-      machiaza_id: 141089-0032001
+      machiaza_id:
+        - 141089-0032001
     - name: 野島町
       yomi: のじまちょう
-      machiaza_id: 141089-0021000
+      machiaza_id:
+        - 141089-0021000
     - name: 平潟町
       yomi: ひらがたちょう
-      machiaza_id: 141089-0024000
+      machiaza_id:
+        - 141089-0024000
     - name: 町屋町
       yomi: まちやちょう
-      machiaza_id: 141089-0008000
+      machiaza_id:
+        - 141089-0008000
     - name: 六浦1丁目
       yomi: むつうら
-      machiaza_id: 141089-0003001
+      machiaza_id:
+        - 141089-0003001
     - name: 六浦東1丁目
       yomi: むつうらひがし
-      machiaza_id: 141089-0002001
+      machiaza_id:
+        - 141089-0002001
     - name: 谷津町京急線東側
       yomi: や
     - name: 柳町
       yomi: やなぎちょう
-      machiaza_id: 141089-0005000
+      machiaza_id:
+        - 141089-0005000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

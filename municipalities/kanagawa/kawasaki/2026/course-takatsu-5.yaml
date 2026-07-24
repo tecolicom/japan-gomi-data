@@ -4,19 +4,24 @@ metadata:
   areas:
     - name: 宇奈根
       yomi: うなね
-      machiaza_id: 141348-0025000
+      machiaza_id:
+        - 141348-0025000
     - name: 上作延
       yomi: かみさくのべ
-      machiaza_id: 141348-0024000
+      machiaza_id:
+        - 141348-0024000
     - name: 久地
       yomi: くじ
-      machiaza_id: 141348-0020000
+      machiaza_id:
+        - 141348-0020000
     - name: 下作延
       yomi: しもさくのべ
-      machiaza_id: 141348-0002000
+      machiaza_id:
+        - 141348-0002000
     - name: 向ヶ丘
       yomi: むかいがおか
-      machiaza_id: 141348-0023000
+      machiaza_id:
+        - 141348-0023000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

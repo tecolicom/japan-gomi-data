@@ -160,7 +160,7 @@ function expandWithYomi(r) {
     if (yomi) stats[src]++; else { stats.none++; stats.missing.push(name); }
     if (machiazaId) stats.id++;
     return { name, base: a.base, gakku: r.gakku || '',
-      ...(yomi ? { yomi } : {}), ...(machiazaId ? { machiaza_id: machiazaId } : {}), ...(note ? { note } : {}) };
+      ...(yomi ? { yomi } : {}), ...(machiazaId ? { machiaza_id: [machiazaId] } : {}), ...(note ? { note } : {}) };
   });
   expandTable.push({ district: r.district, gakku: r.gakku, kyu: r.kyu, area: r.area,
     expanded: out.map((a) => ({ name: a.name, ...(a.yomi ? { yomi: a.yomi } : {}),

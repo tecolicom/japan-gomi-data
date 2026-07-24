@@ -6,27 +6,34 @@ metadata:
       yomi: いさご
     - name: 駅前本町
       yomi: えきまえほんちょう
-      machiaza_id: 141313-0073000
+      machiaza_id:
+        - 141313-0073000
     - name: 小川町
       yomi: おがわちょう
-      machiaza_id: 141313-0061000
+      machiaza_id:
+        - 141313-0061000
     - name: 日進町
       yomi: にっしんちょう
-      machiaza_id: 141313-0075000
+      machiaza_id:
+        - 141313-0075000
     - name: 東田町
       yomi: ひがしだちょう
-      machiaza_id: 141313-0070000
+      machiaza_id:
+        - 141313-0070000
     - name: 堀之内町
       yomi: ほりのうちちょう
-      machiaza_id: 141313-0066000
+      machiaza_id:
+        - 141313-0066000
     - name: 本町
       yomi: ほんちょう
     - name: 南町
       yomi: みなみまち
-      machiaza_id: 141313-0069000
+      machiaza_id:
+        - 141313-0069000
     - name: 宮本町
       yomi: みやもとちょう
-      machiaza_id: 141313-0065000
+      machiaza_id:
+        - 141313-0065000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

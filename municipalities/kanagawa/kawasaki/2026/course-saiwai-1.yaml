@@ -6,10 +6,12 @@ metadata:
       yomi: みなみさいわいちょう
     - name: 都町
       yomi: みやこちょう
-      machiaza_id: 141321-0012000
+      machiaza_id:
+        - 141321-0012000
     - name: 柳町
       yomi: やなぎちょう
-      machiaza_id: 141321-0020000
+      machiaza_id:
+        - 141321-0020000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -10,12 +10,14 @@ metadata:
       yomi: すげきたうら
     - name: 菅城下
       yomi: すげしろした
-      machiaza_id: 141356-0025000
+      machiaza_id:
+        - 141356-0025000
     - name: 菅仙谷
       yomi: すげせんごく
     - name: 菅野戸呂
       yomi: すげのとろ
-      machiaza_id: 141356-0026000
+      machiaza_id:
+        - 141356-0026000
     - name: 菅馬場
       yomi: すげばんば
   year: 2026

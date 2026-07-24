@@ -4,52 +4,56 @@ metadata:
   areas:
     - name: 磯子3丁目（6番）
       yomi: いそご
-      machiaza_id: 141071-0003003
+      machiaza_id:
+        - 141071-0003003
     - name: 新杉田町
       yomi: しんすぎたちょう
-      machiaza_id: 141071-0004000
+      machiaza_id:
+        - 141071-0004000
     - name: 新中原町
       yomi: しんなかはらちょう
-      machiaza_id: 141071-0006000
+      machiaza_id:
+        - 141071-0006000
     - name: 新森町
       yomi: しんもりちょう
-      machiaza_id: 141071-0007000
+      machiaza_id:
+        - 141071-0007000
     - name: 杉田1丁目
       yomi: すぎた
-      machiaza_id: 141071-0002001
-    - name: 杉田4丁目
+      machiaza_id:
+        - 141071-0002001
+    - name: 杉田4〜6丁目
       yomi: すぎた
-      machiaza_id: 141071-0002004
-    - name: 杉田5丁目
+      machiaza_id:
+        - 141071-0002004
+        - 141071-0002005
+        - 141071-0002006
+    - name: 杉田7・8丁目
       yomi: すぎた
-      machiaza_id: 141071-0002005
-    - name: 杉田6丁目
-      yomi: すぎた
-      machiaza_id: 141071-0002006
-    - name: 杉田7丁目
-      yomi: すぎた
-      machiaza_id: 141071-0002007
-    - name: 杉田8丁目
-      yomi: すぎた
-      machiaza_id: 141071-0002008
+      machiaza_id:
+        - 141071-0002007
+        - 141071-0002008
     - name: 杉田9丁目
       yomi: すぎた
-      machiaza_id: 141071-0002009
+      machiaza_id:
+        - 141071-0002009
     - name: 杉田坪呑
       yomi: すぎたつぼのみ
-      machiaza_id: 141071-0019000
-    - name: 中原1丁目
+      machiaza_id:
+        - 141071-0019000
+    - name: 中原1・2丁目
       yomi: なかはら
-      machiaza_id: 141071-0024001
-    - name: 中原2丁目
-      yomi: なかはら
-      machiaza_id: 141071-0024002
+      machiaza_id:
+        - 141071-0024001
+        - 141071-0024002
     - name: 森1丁目
       yomi: もり
-      machiaza_id: 141071-0025001
+      machiaza_id:
+        - 141071-0025001
     - name: 森3丁目
       yomi: もり
-      machiaza_id: 141071-0025003
+      machiaza_id:
+        - 141071-0025003
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

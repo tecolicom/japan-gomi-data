@@ -4,25 +4,32 @@ metadata:
   areas:
     - name: 久保町
       yomi: くぼちょう
-      machiaza_id: 141038-0025000
+      machiaza_id:
+        - 141038-0025000
     - name: 境之谷
       yomi: さかいのたに
-      machiaza_id: 141038-0019000
+      machiaza_id:
+        - 141038-0019000
     - name: 浜松町
       yomi: はままつちょう
-      machiaza_id: 141038-0024000
+      machiaza_id:
+        - 141038-0024000
     - name: 東久保町
       yomi: ひがしくぼちょう
-      machiaza_id: 141038-0022000
+      machiaza_id:
+        - 141038-0022000
     - name: 藤棚町1丁目
       yomi: ふじだなちょう
-      machiaza_id: 141038-0044001
+      machiaza_id:
+        - 141038-0044001
     - name: 藤棚町2丁目
       yomi: ふじだなちょう
-      machiaza_id: 141038-0044002
+      machiaza_id:
+        - 141038-0044002
     - name: 元久保町
       yomi: もとくぼちょう
-      machiaza_id: 141038-0029000
+      machiaza_id:
+        - 141038-0029000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

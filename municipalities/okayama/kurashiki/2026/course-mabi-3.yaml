@@ -5,7 +5,8 @@ metadata:
   areas:
     - name: 有井（丸山を除く）
       yomi: ありい
-      machiaza_id: 332020-0177000
+      machiaza_id:
+        - 332020-0177000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

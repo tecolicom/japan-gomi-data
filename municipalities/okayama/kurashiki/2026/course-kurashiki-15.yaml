@@ -7,22 +7,28 @@ metadata:
       yomi: ちゅうおう
     - name: 阿知2丁目（一部）
       yomi: あち
-      machiaza_id: 332020-0003002
+      machiaza_id:
+        - 332020-0003002
     - name: 阿知3丁目
       yomi: あち
-      machiaza_id: 332020-0003003
+      machiaza_id:
+        - 332020-0003003
     - name: 船倉
       yomi: ふなぐら
-      machiaza_id: 332020-0172000
+      machiaza_id:
+        - 332020-0172000
     - name: 向山
       yomi: むこうやま
-      machiaza_id: 332020-0234000
+      machiaza_id:
+        - 332020-0234000
     - name: 新田
       yomi: しんでん
-      machiaza_id: 332020-0238000
+      machiaza_id:
+        - 332020-0238000
     - name: 本町（南側）
       yomi: ほんまち
-      machiaza_id: 332020-0174000
+      machiaza_id:
+        - 332020-0174000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

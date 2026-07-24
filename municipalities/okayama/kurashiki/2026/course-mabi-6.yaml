@@ -5,7 +5,8 @@ metadata:
   areas:
     - name: 箭田（福原・中学東・所生・反古・遠田を除く）
       yomi: やた
-      machiaza_id: 332020-0187000
+      machiaza_id:
+        - 332020-0187000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

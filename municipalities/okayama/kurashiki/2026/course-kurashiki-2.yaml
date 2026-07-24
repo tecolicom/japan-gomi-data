@@ -5,13 +5,16 @@ metadata:
   areas:
     - name: 上東
       yomi: じょうとう
-      machiaza_id: 332020-0080000
+      machiaza_id:
+        - 332020-0080000
     - name: 下庄
       yomi: しもしょう
-      machiaza_id: 332020-0072000
+      machiaza_id:
+        - 332020-0072000
     - name: 栗坂
       yomi: くりさか
-      machiaza_id: 332020-0034000
+      machiaza_id:
+        - 332020-0034000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

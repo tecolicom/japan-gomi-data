@@ -5,25 +5,32 @@ metadata:
   areas:
     - name: 福田町広江
       yomi: ふくだちょうひろえ
-      machiaza_id: 332020-0162000
+      machiaza_id:
+        - 332020-0162000
     - name: 広江3丁目
       yomi: ひろえ
-      machiaza_id: 332020-0155003
+      machiaza_id:
+        - 332020-0155003
     - name: 広江4丁目（2524～2556番地除く）
       yomi: ひろえ
-      machiaza_id: 332020-0155004
+      machiaza_id:
+        - 332020-0155004
     - name: 広江5丁目
       yomi: ひろえ
-      machiaza_id: 332020-0155005
+      machiaza_id:
+        - 332020-0155005
     - name: 広江6丁目
       yomi: ひろえ
-      machiaza_id: 332020-0155006
+      machiaza_id:
+        - 332020-0155006
     - name: 広江7丁目
       yomi: ひろえ
-      machiaza_id: 332020-0155007
+      machiaza_id:
+        - 332020-0155007
     - name: 広江8丁目
       yomi: ひろえ
-      machiaza_id: 332020-0155008
+      machiaza_id:
+        - 332020-0155008
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

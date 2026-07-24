@@ -14,21 +14,11 @@ metadata:
       yomi: かみごうちょう
     - name: 上之町
       yomi: かみのちょう
-    - name: 庄戸1丁目
-      yomi: しょうど
-    - name: 庄戸2丁目
-      yomi: しょうど
-    - name: 庄戸3丁目
-      yomi: しょうど
-    - name: 庄戸4丁目
-      yomi: しょうど
-    - name: 庄戸5丁目
+    - name: 庄戸1〜5丁目
       yomi: しょうど
     - name: 長倉町
       yomi: ながくらちょう
-    - name: 野七里1丁目
-      yomi: のしちり
-    - name: 野七里2丁目
+    - name: 野七里1・2丁目
       yomi: のしちり
     - name: 東上郷町
       yomi: ひがしかみごうちょう

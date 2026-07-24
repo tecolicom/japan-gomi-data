@@ -5,10 +5,12 @@ metadata:
   areas:
     - name: 藤戸町藤戸
       yomi: ふじとちょうふじと
-      machiaza_id: 332020-0166000
+      machiaza_id:
+        - 332020-0166000
     - name: 藤戸町天城
       yomi: ふじとちようあまき
-      machiaza_id: 332020-0244000
+      machiaza_id:
+        - 332020-0244000
     - name: 山下
     - name: 天城台
       yomi: あまきだい

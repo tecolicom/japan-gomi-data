@@ -10,7 +10,8 @@ metadata:
       yomi: ちよがおか
     - name: 細山
       yomi: ほそやま
-      machiaza_id: 141372-0024000
+      machiaza_id:
+        - 141372-0024000
     - name: 向原
       yomi: むかいばら
   year: 2026

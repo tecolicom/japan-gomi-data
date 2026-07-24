@@ -4,20 +4,24 @@ metadata:
   areas:
     - name: 榎町
       yomi: えのきちょう
-      machiaza_id: 141313-0067000
+      machiaza_id:
+        - 141313-0067000
     - name: 大島
       yomi: おおしま
     - name: 境町
       yomi: さかいちょう
-      machiaza_id: 141313-0033000
+      machiaza_id:
+        - 141313-0033000
     - name: 新川通
       yomi: しんかわどおり
-      machiaza_id: 141313-0039000
+      machiaza_id:
+        - 141313-0039000
     - name: 富士見
       yomi: ふじみ
     - name: 宮前町
       yomi: みやまえちょう
-      machiaza_id: 141313-0068000
+      machiaza_id:
+        - 141313-0068000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

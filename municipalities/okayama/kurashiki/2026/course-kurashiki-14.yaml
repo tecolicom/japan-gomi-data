@@ -5,37 +5,48 @@ metadata:
   areas:
     - name: 美和1丁目
       yomi: みわ
-      machiaza_id: 332020-0223001
+      machiaza_id:
+        - 332020-0223001
     - name: 美和2丁目
       yomi: みわ
-      machiaza_id: 332020-0223002
+      machiaza_id:
+        - 332020-0223002
     - name: 鶴形1丁目
       yomi: つるがた
-      machiaza_id: 332020-0120001
+      machiaza_id:
+        - 332020-0120001
     - name: 鶴形2丁目
       yomi: つるがた
-      machiaza_id: 332020-0120002
+      machiaza_id:
+        - 332020-0120002
     - name: 阿知1丁目
       yomi: あち
-      machiaza_id: 332020-0003001
+      machiaza_id:
+        - 332020-0003001
     - name: 阿知2丁目
       yomi: あち
-      machiaza_id: 332020-0003002
+      machiaza_id:
+        - 332020-0003002
     - name: 阿知3丁目（一部）
       yomi: あち
-      machiaza_id: 332020-0003003
+      machiaza_id:
+        - 332020-0003003
     - name: 幸町
       yomi: さいわいちょう
-      machiaza_id: 332020-0068000
+      machiaza_id:
+        - 332020-0068000
     - name: 東町
       yomi: ひがしまち
-      machiaza_id: 332020-0277000
+      machiaza_id:
+        - 332020-0277000
     - name: 昭和2丁目
       yomi: しょうわ
-      machiaza_id: 332020-0232002
+      machiaza_id:
+        - 332020-0232002
     - name: 本町（北側）
       yomi: ほんまち
-      machiaza_id: 332020-0174000
+      machiaza_id:
+        - 332020-0174000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

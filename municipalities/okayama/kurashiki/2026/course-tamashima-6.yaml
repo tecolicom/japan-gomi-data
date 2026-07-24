@@ -5,10 +5,12 @@ metadata:
   areas:
     - name: 長尾（長尾・爪崎）
       yomi: ながお
-      machiaza_id: 332020-0101000
+      machiaza_id:
+        - 332020-0101000
     - name: 爪崎（長尾・爪崎）
       yomi: つまさき
-      machiaza_id: 332020-0099000
+      machiaza_id:
+        - 332020-0099000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

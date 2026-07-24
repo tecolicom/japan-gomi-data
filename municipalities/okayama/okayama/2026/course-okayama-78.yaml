@@ -5,25 +5,32 @@ metadata:
   areas:
     - name: 御津宇垣（山条・宇垣原・富谷）
       yomi: みつうがき
-      machiaza_id: 331015-0266000
+      machiaza_id:
+        - 331015-0266000
     - name: 御津北野（大坪・大月）
       yomi: みつきたの
-      machiaza_id: 331015-0271000
+      machiaza_id:
+        - 331015-0271000
     - name: 御津河内（小田・河内・母谷）
       yomi: みつこうち
-      machiaza_id: 331015-0274000
+      machiaza_id:
+        - 331015-0274000
     - name: 御津中牧（十谷・湯須）
       yomi: みつなかまき
-      machiaza_id: 331015-0282000
+      machiaza_id:
+        - 331015-0282000
     - name: 御津中山
       yomi: みつなかやま
-      machiaza_id: 331015-0283000
+      machiaza_id:
+        - 331015-0283000
     - name: 御津野々口（野々口・小山）
       yomi: みつののくち
-      machiaza_id: 331015-0284000
+      machiaza_id:
+        - 331015-0284000
     - name: 御津吉尾
       yomi: みつよしお
-      machiaza_id: 331015-0288000
+      machiaza_id:
+        - 331015-0288000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

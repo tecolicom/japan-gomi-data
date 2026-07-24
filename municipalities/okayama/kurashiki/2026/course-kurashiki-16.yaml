@@ -5,46 +5,58 @@ metadata:
   areas:
     - name: 川西町
       yomi: かわにしまち
-      machiaza_id: 332020-0027000
+      machiaza_id:
+        - 332020-0027000
     - name: 稲荷町
       yomi: いなりまち
-      machiaza_id: 332020-0279000
+      machiaza_id:
+        - 332020-0279000
     - name: 南町
       yomi: みなみまち
-      machiaza_id: 332020-0221000
+      machiaza_id:
+        - 332020-0221000
     - name: 白楽町
       yomi: ばくろちょう
-      machiaza_id: 332020-0138000
+      machiaza_id:
+        - 332020-0138000
     - name: 田ノ上
       yomi: たのうえ
-      machiaza_id: 332020-0086000
+      machiaza_id:
+        - 332020-0086000
     - name: 田ノ上新町
       yomi: たのうえしんまち
-      machiaza_id: 332020-0087000
+      machiaza_id:
+        - 332020-0087000
     - name: 大内
       yomi: おおうち
-      machiaza_id: 332020-0241000
+      machiaza_id:
+        - 332020-0241000
     - name: 川入
       yomi: かわいり
-      machiaza_id: 332020-0026000
+      machiaza_id:
+        - 332020-0026000
     - name: 寿町
       yomi: ことぶきちょう
-      machiaza_id: 332020-0065000
+      machiaza_id:
+        - 332020-0065000
     - name: 北浜町
       yomi: きたはまちょう
-      machiaza_id: 332020-0030000
+      machiaza_id:
+        - 332020-0030000
     - name: 日ノ出町
       yomi: ひのでちょう
     - name: 浜ノ茶屋1丁目
       yomi: はまのちゃや
-      machiaza_id: 332020-0143001
+      machiaza_id:
+        - 332020-0143001
     - name: 浜町
       yomi: はままち
     - name: 本部落
     - name: 大西
     - name: 中島（北部の中洲学区部分を除く）
       yomi: なかしま
-      machiaza_id: 332020-0243000
+      machiaza_id:
+        - 332020-0243000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

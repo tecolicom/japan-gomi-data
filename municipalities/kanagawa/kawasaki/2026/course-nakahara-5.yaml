@@ -4,13 +4,16 @@ metadata:
   areas:
     - name: 上平間
       yomi: かみひらま
-      machiaza_id: 141330-0026000
+      machiaza_id:
+        - 141330-0026000
     - name: 北谷町
       yomi: きたやちょう
-      machiaza_id: 141330-0014000
+      machiaza_id:
+        - 141330-0014000
     - name: 田尻町
       yomi: たじりちょう
-      machiaza_id: 141330-0013000
+      machiaza_id:
+        - 141330-0013000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

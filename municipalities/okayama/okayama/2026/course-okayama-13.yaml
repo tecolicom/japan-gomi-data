@@ -5,28 +5,36 @@ metadata:
   areas:
     - name: 粟井（粟井第1・粟井第2・粟井第3）
       yomi: あわい
-      machiaza_id: 331015-0008000
+      machiaza_id:
+        - 331015-0008000
     - name: 一宮（緑町町内会・一宮高堤町内・一宮町内会（A40ステーション利用地区））
       yomi: いちのみや
-      machiaza_id: 331015-0015000
+      machiaza_id:
+        - 331015-0015000
     - name: 一宮山崎
       yomi: いちのみややまさき
-      machiaza_id: 331015-0016000
+      machiaza_id:
+        - 331015-0016000
     - name: 今岡（上今岡を除く）
       yomi: いまおか
-      machiaza_id: 331015-0019000
+      machiaza_id:
+        - 331015-0019000
     - name: 大井（筒井坂・八軒町・富田町・玉南町・西町）
       yomi: おおい
-      machiaza_id: 331015-0321000
+      machiaza_id:
+        - 331015-0321000
     - name: 首部
       yomi: こうべ
-      machiaza_id: 331015-0072000
+      machiaza_id:
+        - 331015-0072000
     - name: 苔山
       yomi: こけやま
-      machiaza_id: 331015-0076000
+      machiaza_id:
+        - 331015-0076000
     - name: 楢津
       yomi: ならづ
-      machiaza_id: 331015-0198000
+      machiaza_id:
+        - 331015-0198000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

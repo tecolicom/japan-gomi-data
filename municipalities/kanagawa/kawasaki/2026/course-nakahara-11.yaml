@@ -6,7 +6,8 @@ metadata:
       yomi: きづき
     - name: 木月大町
       yomi: きづきおおまち
-      machiaza_id: 141330-0054000
+      machiaza_id:
+        - 141330-0054000
     - name: 木月祇園町
       yomi: き
   year: 2026

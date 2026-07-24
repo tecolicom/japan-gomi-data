@@ -5,24 +5,30 @@ metadata:
   areas:
     - name: 矢柄（北面を除く）
       yomi: やがら
-      machiaza_id: 332020-0119000
+      machiaza_id:
+        - 332020-0119000
     - name: 亀島新田（宝島寺入口交差点以東）
       yomi: かめじましんでん
-      machiaza_id: 332020-0115000
+      machiaza_id:
+        - 332020-0115000
     - name: 連島（茂浦）
       yomi: つらじま
     - name: 連島2丁目
       yomi: つらじま
-      machiaza_id: 332020-0113002
+      machiaza_id:
+        - 332020-0113002
     - name: 連島3丁目
       yomi: つらじま
-      machiaza_id: 332020-0113003
+      machiaza_id:
+        - 332020-0113003
     - name: 連島4丁目
       yomi: つらじま
-      machiaza_id: 332020-0113004
+      machiaza_id:
+        - 332020-0113004
     - name: 連島5丁目
       yomi: つらじま
-      machiaza_id: 332020-0113005
+      machiaza_id:
+        - 332020-0113005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

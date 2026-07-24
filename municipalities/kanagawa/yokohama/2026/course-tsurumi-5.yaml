@@ -4,55 +4,39 @@ metadata:
   areas:
     - name: 小野町
       yomi: おのちょう
-      machiaza_id: 141011-0022000
-    - name: 上の宮1丁目
+      machiaza_id:
+        - 141011-0022000
+    - name: 上の宮1・2丁目
       yomi: かみのみや
-      machiaza_id: 141011-0048001
-    - name: 上の宮2丁目
-      yomi: かみのみや
-      machiaza_id: 141011-0048002
-    - name: 生麦1丁目
+      machiaza_id:
+        - 141011-0048001
+        - 141011-0048002
+    - name: 生麦1〜5丁目
       yomi: なまむぎ
-      machiaza_id: 141011-0021001
-    - name: 生麦2丁目
-      yomi: なまむぎ
-      machiaza_id: 141011-0021002
-    - name: 生麦3丁目
-      yomi: なまむぎ
-      machiaza_id: 141011-0021003
-    - name: 生麦4丁目
-      yomi: なまむぎ
-      machiaza_id: 141011-0021004
-    - name: 生麦5丁目
-      yomi: なまむぎ
-      machiaza_id: 141011-0021005
-    - name: 馬場1丁目
+      machiaza_id:
+        - 141011-0021001
+        - 141011-0021002
+        - 141011-0021003
+        - 141011-0021004
+        - 141011-0021005
+    - name: 馬場1〜3丁目
       yomi: ばば
-      machiaza_id: 141011-0011001
-    - name: 馬場2丁目
-      yomi: ばば
-      machiaza_id: 141011-0011002
-    - name: 馬場3丁目
-      yomi: ばば
-      machiaza_id: 141011-0011003
+      machiaza_id:
+        - 141011-0011001
+        - 141011-0011002
+        - 141011-0011003
     - name: 馬場7丁目
       yomi: ばば
-      machiaza_id: 141011-0011007
-    - name: 東寺尾1丁目
+      machiaza_id:
+        - 141011-0011007
+    - name: 東寺尾1〜5丁目
       yomi: ひがしてらお
-      machiaza_id: 141011-0006001
-    - name: 東寺尾2丁目
-      yomi: ひがしてらお
-      machiaza_id: 141011-0006002
-    - name: 東寺尾3丁目
-      yomi: ひがしてらお
-      machiaza_id: 141011-0006003
-    - name: 東寺尾4丁目
-      yomi: ひがしてらお
-      machiaza_id: 141011-0006004
-    - name: 東寺尾5丁目
-      yomi: ひがしてらお
-      machiaza_id: 141011-0006005
+      machiaza_id:
+        - 141011-0006001
+        - 141011-0006002
+        - 141011-0006003
+        - 141011-0006004
+        - 141011-0006005
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

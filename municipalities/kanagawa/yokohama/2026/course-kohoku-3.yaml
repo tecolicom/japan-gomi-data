@@ -8,26 +8,26 @@ metadata:
       yomi: こづくえちょう
     - name: 篠原台町
       yomi: しのはらだいまち
-      machiaza_id: 141097-0015000
+      machiaza_id:
+        - 141097-0015000
     - name: 篠原町
       yomi: しのはらちょう
     - name: 篠原西町
       yomi: しのはらにしちょう
-      machiaza_id: 141097-0003000
-    - name: 新横浜1丁目
+      machiaza_id:
+        - 141097-0003000
+    - name: 新横浜1〜3丁目
       yomi: しんよこはま
-      machiaza_id: 141097-0012001
-    - name: 新横浜2丁目
-      yomi: しんよこはま
-      machiaza_id: 141097-0012002
-    - name: 新横浜3丁目
-      yomi: しんよこはま
-      machiaza_id: 141097-0012003
+      machiaza_id:
+        - 141097-0012001
+        - 141097-0012002
+        - 141097-0012003
     - name: 鳥山町
       yomi: とりやまちょう
     - name: 仲手原2丁目
       yomi: なかてはら
-      machiaza_id: 141097-0016002
+      machiaza_id:
+        - 141097-0016002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

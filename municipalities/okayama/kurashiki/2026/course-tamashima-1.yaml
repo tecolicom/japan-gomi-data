@@ -5,16 +5,20 @@ metadata:
   areas:
     - name: 服部（穂井田）
       yomi: はっとり
-      machiaza_id: 332020-0102000
+      machiaza_id:
+        - 332020-0102000
     - name: 陶（穂井田）
       yomi: すえ
-      machiaza_id: 332020-0097000
+      machiaza_id:
+        - 332020-0097000
     - name: 道口（穂井田）
       yomi: みちぐち
-      machiaza_id: 332020-0103000
+      machiaza_id:
+        - 332020-0103000
     - name: 長尾（穂井田）
       yomi: ながお
-      machiaza_id: 332020-0101000
+      machiaza_id:
+        - 332020-0101000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

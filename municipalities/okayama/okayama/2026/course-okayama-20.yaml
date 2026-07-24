@@ -5,31 +5,40 @@ metadata:
   areas:
     - name: 泉田５丁目
       yomi: いずみだ
-      machiaza_id: 331040-0006005
+      machiaza_id:
+        - 331040-0006005
     - name: 一宮（一宮町内会（A40ステーション利用地区を除く））
       yomi: いちのみや
-      machiaza_id: 331015-0015000
+      machiaza_id:
+        - 331015-0015000
     - name: 浦安西町
       yomi: うらやすにしまち
-      machiaza_id: 331040-0009000
+      machiaza_id:
+        - 331040-0009000
     - name: 浦安本町
       yomi: うらやすほんまち
-      machiaza_id: 331040-0010000
+      machiaza_id:
+        - 331040-0010000
     - name: 尾上（尾上・尾上雇用促進住宅）
       yomi: おのうえ
-      machiaza_id: 331015-0041000
+      machiaza_id:
+        - 331015-0041000
     - name: 南輝１丁目
       yomi: なんき
-      machiaza_id: 331040-0044001
+      machiaza_id:
+        - 331040-0044001
     - name: 福田②（726.730から736.741.742番地）
       yomi: ふくだ
-      machiaza_id: 331040-0079000
+      machiaza_id:
+        - 331040-0079000
     - name: 芳泉１丁目
       yomi: ほうせん
-      machiaza_id: 331040-0065001
+      machiaza_id:
+        - 331040-0065001
     - name: 芳泉２丁目
       yomi: ほうせん
-      machiaza_id: 331040-0065002
+      machiaza_id:
+        - 331040-0065002
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

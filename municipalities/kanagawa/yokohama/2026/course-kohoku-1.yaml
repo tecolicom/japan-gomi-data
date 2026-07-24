@@ -4,57 +4,44 @@ metadata:
   areas:
     - name: 大倉山1丁目（30〜35番地）
       yomi: おおくらやま
-      machiaza_id: 141097-0001001
+      machiaza_id:
+        - 141097-0001001
     - name: 大倉山4丁目（13〜15番地の一部）
       yomi: おおくらやま
-      machiaza_id: 141097-0001004
-    - name: 菊名1丁目
+      machiaza_id:
+        - 141097-0001004
+    - name: 菊名1〜7丁目
       yomi: きくな
-      machiaza_id: 141097-0005001
-    - name: 菊名2丁目
-      yomi: きくな
-      machiaza_id: 141097-0005002
-    - name: 菊名3丁目
-      yomi: きくな
-      machiaza_id: 141097-0005003
-    - name: 菊名4丁目
-      yomi: きくな
-      machiaza_id: 141097-0005004
-    - name: 菊名5丁目
-      yomi: きくな
-      machiaza_id: 141097-0005005
-    - name: 菊名6丁目
-      yomi: きくな
-      machiaza_id: 141097-0005006
-    - name: 菊名7丁目
-      yomi: きくな
-      machiaza_id: 141097-0005007
-    - name: 篠原東町1丁目
+      machiaza_id:
+        - 141097-0005001
+        - 141097-0005002
+        - 141097-0005003
+        - 141097-0005004
+        - 141097-0005005
+        - 141097-0005006
+        - 141097-0005007
+    - name: 篠原東町1〜3丁目
       yomi: し
-    - name: 篠原東町2丁目
-      yomi: し
-    - name: 篠原東町3丁目
-      yomi: し
-    - name: 篠原北1丁目
+    - name: 篠原北1・2丁目
       yomi: しのはらきた
-      machiaza_id: 141097-0019001
-    - name: 篠原北2丁目
-      yomi: しのはらきた
-      machiaza_id: 141097-0019002
+      machiaza_id:
+        - 141097-0019001
+        - 141097-0019002
     - name: 篠原町2553・2557・2565・2735付近
       yomi: しのはらちょう
     - name: 仲手原1丁目
       yomi: なかてはら
-      machiaza_id: 141097-0016001
+      machiaza_id:
+        - 141097-0016001
     - name: 仲手原2丁目（35・38・41の一部）
       yomi: なかてはら
-      machiaza_id: 141097-0016002
+      machiaza_id:
+        - 141097-0016002
     - name: 錦が丘
       yomi: にしきがおか
-      machiaza_id: 141097-0018000
-    - name: 富士塚1丁目
-      yomi: ふじづか
-    - name: 富士塚2丁目
+      machiaza_id:
+        - 141097-0018000
+    - name: 富士塚1・2丁目
       yomi: ふじづか
     - name: 大豆戸町
       yomi: まめどちょう

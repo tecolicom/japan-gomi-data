@@ -5,7 +5,8 @@ metadata:
   areas:
     - name: 稗田町（稗田町・美野団地）
       yomi: ひえだちょう
-      machiaza_id: 332020-0061000
+      machiaza_id:
+        - 332020-0061000
     - name: 美野団地
       yomi: みのだんち
       note: 稗田町・美野団地

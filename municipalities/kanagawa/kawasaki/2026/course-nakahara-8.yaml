@@ -10,7 +10,8 @@ metadata:
       yomi: こすぎまち
     - name: 等々力
       yomi: とどろき
-      machiaza_id: 141330-0055000
+      machiaza_id:
+        - 141330-0055000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -5,17 +5,21 @@ metadata:
   areas:
     - name: 片島
       yomi: かたしま
-      machiaza_id: 332020-0248000
+      machiaza_id:
+        - 332020-0248000
       note: ＪＲ南
     - name: 西阿知町（ＪＲ南）
       yomi: にしあちちょう
-      machiaza_id: 332020-0129000
+      machiaza_id:
+        - 332020-0129000
     - name: 西阿知町新田（ＪＲ南）
       yomi: にしあちちょうしんでん
-      machiaza_id: 332020-0130000
+      machiaza_id:
+        - 332020-0130000
     - name: 西阿知町西原（ＪＲ南）
       yomi: にしあちちょうにしばら
-      machiaza_id: 332020-0131000
+      machiaza_id:
+        - 332020-0131000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

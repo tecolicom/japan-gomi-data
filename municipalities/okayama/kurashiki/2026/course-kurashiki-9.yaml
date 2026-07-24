@@ -5,19 +5,23 @@ metadata:
   areas:
     - name: 有城
       yomi: あるき
-      machiaza_id: 332020-0005000
+      machiaza_id:
+        - 332020-0005000
       note: Ｒ2南（倉敷ハイツ除く）
     - name: 加須山
       yomi: かすやま
-      machiaza_id: 332020-0021000
+      machiaza_id:
+        - 332020-0021000
       note: Ｒ2南（倉敷ハイツ除く）
     - name: 亀山
       yomi: かめやま
-      machiaza_id: 332020-0233000
+      machiaza_id:
+        - 332020-0233000
       note: Ｒ2南（倉敷ハイツ除く）
     - name: 帯高
       yomi: おびたか
-      machiaza_id: 332020-0020000
+      machiaza_id:
+        - 332020-0020000
       note: Ｒ2南（倉敷ハイツ除く）
   year: 2026
   fiscal_year_ja: 令和8年度

@@ -5,19 +5,24 @@ metadata:
   areas:
     - name: 沖
       yomi: おき
-      machiaza_id: 332020-0017000
+      machiaza_id:
+        - 332020-0017000
     - name: 沖新町
       yomi: おきしんまち
-      machiaza_id: 332020-0018000
+      machiaza_id:
+        - 332020-0018000
     - name: 西中新田
       yomi: にしなかしんでん
-      machiaza_id: 332020-0240000
+      machiaza_id:
+        - 332020-0240000
     - name: 四十瀬
       yomi: しじゅうせ
-      machiaza_id: 332020-0071000
+      machiaza_id:
+        - 332020-0071000
     - name: 上富井
       yomi: かみとみい
-      machiaza_id: 332020-0023000
+      machiaza_id:
+        - 332020-0023000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

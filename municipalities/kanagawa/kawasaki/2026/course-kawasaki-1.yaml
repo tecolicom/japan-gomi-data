@@ -6,15 +6,18 @@ metadata:
       yomi: あさだ
     - name: 大川町
       yomi: おおかわちょう
-      machiaza_id: 141313-0013000
+      machiaza_id:
+        - 141313-0013000
     - name: 小田
       yomi: おだ
     - name: 白石町
       yomi: しらいしちょう
-      machiaza_id: 141313-0009000
+      machiaza_id:
+        - 141313-0009000
     - name: 田辺新田
       yomi: たなべしんでん
-      machiaza_id: 141313-0010000
+      machiaza_id:
+        - 141313-0010000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,13 +4,16 @@ metadata:
   areas:
     - name: 片倉4丁目（1〜3番地）
       yomi: かたくら
-      machiaza_id: 141020-0074004
+      machiaza_id:
+        - 141020-0074004
     - name: 片倉5丁目
       yomi: かたくら
-      machiaza_id: 141020-0074005
+      machiaza_id:
+        - 141020-0074005
     - name: 神大寺4丁目
       yomi: かんだいじ
-      machiaza_id: 141020-0076004
+      machiaza_id:
+        - 141020-0076004
     - name: 三枚町1〜195番地
       yomi: さんまいちょう
     - name: 三枚町230〜260番地
@@ -24,11 +27,13 @@ metadata:
     - name: 羽沢町1560番地付近〜1965番地
       yomi: はざわちょう
     - name: 六角橋5丁目
-      yomi: ろくかくばし
-      machiaza_id: 141020-0006005
+      yomi: ろっかくばし
+      machiaza_id:
+        - 141020-0006005
     - name: 六角橋6丁目
-      yomi: ろくかくばし
-      machiaza_id: 141020-0006006
+      yomi: ろっかくばし
+      machiaza_id:
+        - 141020-0006006
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -6,13 +6,16 @@ metadata:
       yomi: いだ
     - name: 井田三舞町
       yomi: いださんまいちょう
-      machiaza_id: 141330-0045000
+      machiaza_id:
+        - 141330-0045000
     - name: 井田杉山町
       yomi: いだすぎやまちょう
-      machiaza_id: 141330-0047000
+      machiaza_id:
+        - 141330-0047000
     - name: 井田中ノ町
       yomi: いだなかのちょう
-      machiaza_id: 141330-0046000
+      machiaza_id:
+        - 141330-0046000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

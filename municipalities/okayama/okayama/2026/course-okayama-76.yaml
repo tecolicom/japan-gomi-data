@@ -5,25 +5,32 @@ metadata:
   areas:
     - name: 御津石上（石上・佐野）
       yomi: みついしかみ
-      machiaza_id: 331015-0263000
+      machiaza_id:
+        - 331015-0263000
     - name: 御津伊田（上伊田・下伊田）
       yomi: みついた
-      machiaza_id: 331015-0264000
+      machiaza_id:
+        - 331015-0264000
     - name: 御津新庄（寺部・新庄原・西谷・ひかり団地）
       yomi: みつしんじょう
-      machiaza_id: 331015-0278000
+      machiaza_id:
+        - 331015-0278000
     - name: 御津中畑
       yomi: みつなかはた
-      machiaza_id: 331015-0281000
+      machiaza_id:
+        - 331015-0281000
     - name: 御津平岡西
       yomi: みつひらおかにし
-      machiaza_id: 331015-0285000
+      machiaza_id:
+        - 331015-0285000
     - name: 御津矢知
       yomi: みつやち
-      machiaza_id: 331015-0286000
+      machiaza_id:
+        - 331015-0286000
     - name: 御津矢原（矢原・大園）
       yomi: みつやばら
-      machiaza_id: 331015-0287000
+      machiaza_id:
+        - 331015-0287000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

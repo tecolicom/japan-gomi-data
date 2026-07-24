@@ -5,15 +5,18 @@ metadata:
   areas:
     - name: 西之浦（宮の浦，青木）
       yomi: にしのうら
-      machiaza_id: 332020-0118000
+      machiaza_id:
+        - 332020-0118000
     - name: 矢柄（北面）
       yomi: やがら
-      machiaza_id: 332020-0119000
+      machiaza_id:
+        - 332020-0119000
     - name: 連島（丸山，大浦，江長，旭丘，大江）
       yomi: つらじま
     - name: 西阿知町（新田の一部）
       yomi: にしあちちょう
-      machiaza_id: 332020-0129000
+      machiaza_id:
+        - 332020-0129000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

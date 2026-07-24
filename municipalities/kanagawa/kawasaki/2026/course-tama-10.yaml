@@ -8,7 +8,8 @@ metadata:
       yomi: せき
     - name: 登戸新町
       yomi: のぼりとしんまち
-      machiaza_id: 141356-0013000
+      machiaza_id:
+        - 141356-0013000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

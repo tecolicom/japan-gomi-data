@@ -5,22 +5,27 @@ metadata:
   areas:
     - name: 上の町1丁目（上の町・由加・白尾・峠、11番～14番）
       yomi: かみのちょう
-      machiaza_id: 332020-0051001
+      machiaza_id:
+        - 332020-0051001
     - name: 上の町2丁目
       yomi: かみのちょう
-      machiaza_id: 332020-0051002
+      machiaza_id:
+        - 332020-0051002
       note: 上の町・由加・白尾・峠
     - name: 上の町3丁目
       yomi: かみのちょう
-      machiaza_id: 332020-0051003
+      machiaza_id:
+        - 332020-0051003
       note: 上の町・由加・白尾・峠
     - name: 上の町4丁目
       yomi: かみのちょう
-      machiaza_id: 332020-0051004
+      machiaza_id:
+        - 332020-0051004
       note: 上の町・由加・白尾・峠
     - name: 由加
       yomi: ゆが
-      machiaza_id: 332020-0064000
+      machiaza_id:
+        - 332020-0064000
       note: 上の町・由加・白尾・峠、35～3285
     - name: 白尾平野
       note: 上の町・由加・白尾・峠、1236～1351
@@ -28,7 +33,8 @@ metadata:
       note: 上の町・由加・白尾・峠、505～2227
     - name: 田の口（上の町・由加・白尾・峠、1914～2999）
       yomi: たのくち
-      machiaza_id: 332020-0060000
+      machiaza_id:
+        - 332020-0060000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

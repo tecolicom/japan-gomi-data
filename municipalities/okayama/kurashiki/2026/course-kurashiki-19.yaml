@@ -5,16 +5,20 @@ metadata:
   areas:
     - name: 西坂
       yomi: にしざか
-      machiaza_id: 332020-0134000
+      machiaza_id:
+        - 332020-0134000
     - name: 生坂
       yomi: いくさか
-      machiaza_id: 332020-0006000
+      machiaza_id:
+        - 332020-0006000
     - name: 三田
       yomi: みつだ
-      machiaza_id: 332020-0219000
+      machiaza_id:
+        - 332020-0219000
     - name: 浅原
       yomi: あさばら
-      machiaza_id: 332020-0002000
+      machiaza_id:
+        - 332020-0002000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

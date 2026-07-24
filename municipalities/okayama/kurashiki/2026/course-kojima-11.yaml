@@ -5,16 +5,20 @@ metadata:
   areas:
     - name: 林（林・串田）
       yomi: はやし
-      machiaza_id: 332020-0145000
+      machiaza_id:
+        - 332020-0145000
     - name: 福江（林・串田、沖縄手の一部 福江1432～1502）
       yomi: ふくえ
-      machiaza_id: 332020-0246000
+      machiaza_id:
+        - 332020-0246000
     - name: 木見（林・串田、12～194）
       yomi: きみ
-      machiaza_id: 332020-0031000
+      machiaza_id:
+        - 332020-0031000
     - name: 串田
       yomi: くしだ
-      machiaza_id: 332020-0032000
+      machiaza_id:
+        - 332020-0032000
       note: 林・串田
   year: 2026
   fiscal_year_ja: 令和8年度

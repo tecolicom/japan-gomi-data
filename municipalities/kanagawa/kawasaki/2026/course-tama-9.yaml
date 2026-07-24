@@ -4,10 +4,12 @@ metadata:
   areas:
     - name: 和泉
       yomi: いずみ
-      machiaza_id: 141356-0016000
+      machiaza_id:
+        - 141356-0016000
     - name: 登戸
       yomi: のぼりと
-      machiaza_id: 141356-0023000
+      machiaza_id:
+        - 141356-0023000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

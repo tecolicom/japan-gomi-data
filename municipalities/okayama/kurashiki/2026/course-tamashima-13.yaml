@@ -5,24 +5,30 @@ metadata:
   areas:
     - name: 玉島1丁目（玉島中央南）
       yomi: たましま
-      machiaza_id: 332020-0089001
+      machiaza_id:
+        - 332020-0089001
     - name: 玉島2丁目（玉島中央南）
       yomi: たましま
-      machiaza_id: 332020-0089002
+      machiaza_id:
+        - 332020-0089002
     - name: 玉島3丁目（玉島中央南）
       yomi: たましま
-      machiaza_id: 332020-0089003
+      machiaza_id:
+        - 332020-0089003
     - name: 玉島中央町1丁目
       yomi: たましまちゅうおうちょう
-      machiaza_id: 332020-0098001
+      machiaza_id:
+        - 332020-0098001
       note: 玉島中央南
     - name: 玉島中央町2丁目
       yomi: たましまちゅうおうちょう
-      machiaza_id: 332020-0098002
+      machiaza_id:
+        - 332020-0098002
       note: 玉島中央南
     - name: 玉島中央町3丁目
       yomi: たましまちゅうおうちょう
-      machiaza_id: 332020-0098003
+      machiaza_id:
+        - 332020-0098003
       note: 玉島中央南
   year: 2026
   fiscal_year_ja: 令和8年度

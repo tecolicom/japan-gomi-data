@@ -162,7 +162,7 @@ for (const { ward, url, rows } of wardRows) {
       bySig.get(sig).areas.push({
         name,
         yomi: yomi ?? row.kana, // ABR/ken_all に無ければ公式表の五十音マーカ (初字)
-        ...(machiazaId ? { machiaza_id: machiazaId } : {}),
+        ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
       });
     }
   }

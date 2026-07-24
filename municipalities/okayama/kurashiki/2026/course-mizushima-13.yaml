@@ -5,34 +5,44 @@ metadata:
   areas:
     - name: 中畝2丁目
       yomi: なかせ
-      machiaza_id: 332020-0128002
+      machiaza_id:
+        - 332020-0128002
     - name: 中畝3丁目
       yomi: なかせ
-      machiaza_id: 332020-0128003
+      machiaza_id:
+        - 332020-0128003
     - name: 中畝7丁目
       yomi: なかせ
-      machiaza_id: 332020-0128007
+      machiaza_id:
+        - 332020-0128007
     - name: 中畝8丁目
       yomi: なかせ
-      machiaza_id: 332020-0128008
+      machiaza_id:
+        - 332020-0128008
     - name: 東塚1丁目（国道430号線以北）
       yomi: ひがしづか
-      machiaza_id: 332020-0147001
+      machiaza_id:
+        - 332020-0147001
     - name: 東塚2丁目
       yomi: ひがしづか
-      machiaza_id: 332020-0147002
+      machiaza_id:
+        - 332020-0147002
     - name: 東塚3丁目
       yomi: ひがしづか
-      machiaza_id: 332020-0147003
+      machiaza_id:
+        - 332020-0147003
     - name: 東塚5丁目
       yomi: ひがしづか
-      machiaza_id: 332020-0147005
+      machiaza_id:
+        - 332020-0147005
     - name: 東塚6丁目
       yomi: ひがしづか
-      machiaza_id: 332020-0147006
+      machiaza_id:
+        - 332020-0147006
     - name: 東塚7丁目（国道430号線以北）
       yomi: ひがしづか
-      machiaza_id: 332020-0147007
+      machiaza_id:
+        - 332020-0147007
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

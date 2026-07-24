@@ -5,30 +5,37 @@ metadata:
   areas:
     - name: 柏島（柏島南）
       yomi: かしわじま
-      machiaza_id: 332020-0093000
+      machiaza_id:
+        - 332020-0093000
     - name: 柏台1丁目
       yomi: かしわだい
-      machiaza_id: 332020-0094001
+      machiaza_id:
+        - 332020-0094001
       note: 柏島南
     - name: 柏台2丁目
       yomi: かしわだい
-      machiaza_id: 332020-0094002
+      machiaza_id:
+        - 332020-0094002
       note: 柏島南
     - name: 柏台3丁目
       yomi: かしわだい
-      machiaza_id: 332020-0094003
+      machiaza_id:
+        - 332020-0094003
       note: 柏島南
     - name: 柏台4丁目
       yomi: かしわだい
-      machiaza_id: 332020-0094004
+      machiaza_id:
+        - 332020-0094004
       note: 柏島南
     - name: 柏台5丁目
       yomi: かしわだい
-      machiaza_id: 332020-0094005
+      machiaza_id:
+        - 332020-0094005
       note: 柏島南
     - name: 勇崎（柏島南）
       yomi: ゆうざき
-      machiaza_id: 332020-0106000
+      machiaza_id:
+        - 332020-0106000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -4,46 +4,45 @@ metadata:
   areas:
     - name: 井土ケ谷上町
       yomi: いどがやかみまち
-      machiaza_id: 141054-0036000
+      machiaza_id:
+        - 141054-0036000
     - name: 井土ケ谷中町
       yomi: いどがやなかまち
-      machiaza_id: 141054-0047000
-    - name: 中里1丁目
+      machiaza_id:
+        - 141054-0047000
+    - name: 中里1〜4丁目
       yomi: なかざと
-      machiaza_id: 141054-0005001
-    - name: 中里2丁目
-      yomi: なかざと
-      machiaza_id: 141054-0005002
-    - name: 中里3丁目
-      yomi: なかざと
-      machiaza_id: 141054-0005003
-    - name: 中里4丁目
-      yomi: なかざと
-      machiaza_id: 141054-0005004
+      machiaza_id:
+        - 141054-0005001
+        - 141054-0005002
+        - 141054-0005003
+        - 141054-0005004
     - name: 永田山王台
       yomi: ながたさんのうだい
-      machiaza_id: 141054-0046000
+      machiaza_id:
+        - 141054-0046000
     - name: 永田東1丁目
       yomi: ながたひがし
-      machiaza_id: 141054-0051001
-    - name: 永田南1丁目
+      machiaza_id:
+        - 141054-0051001
+    - name: 永田南1・2丁目
       yomi: ながたみなみ
-      machiaza_id: 141054-0048001
-    - name: 永田南2丁目
-      yomi: ながたみなみ
-      machiaza_id: 141054-0048002
-    - name: 別所1丁目
+      machiaza_id:
+        - 141054-0048001
+        - 141054-0048002
+    - name: 別所1・2丁目
       yomi: べっしょ
-      machiaza_id: 141054-0010001
-    - name: 別所2丁目
-      yomi: べっしょ
-      machiaza_id: 141054-0010002
+      machiaza_id:
+        - 141054-0010001
+        - 141054-0010002
     - name: 別所3丁目（ヒルズ上大岡ガーデニア）
       yomi: べっしょ
-      machiaza_id: 141054-0010003
+      machiaza_id:
+        - 141054-0010003
     - name: 六ツ川1丁目
       yomi: むつかわ
-      machiaza_id: 141054-0013001
+      machiaza_id:
+        - 141054-0013001
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

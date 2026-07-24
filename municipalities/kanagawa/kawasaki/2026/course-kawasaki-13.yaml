@@ -6,17 +6,20 @@ metadata:
       yomi: あさひちょう
     - name: 伊勢町
       yomi: いせちょう
-      machiaza_id: 141313-0060000
+      machiaza_id:
+        - 141313-0060000
     - name: 鈴木町
       yomi: すずきちょう
-      machiaza_id: 141313-0059000
+      machiaza_id:
+        - 141313-0059000
     - name: 中島
       yomi: なかじま
     - name: 藤崎
       yomi: ふじさき
     - name: 港町
       yomi: みなとちょう
-      machiaza_id: 141313-0062000
+      machiaza_id:
+        - 141313-0062000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

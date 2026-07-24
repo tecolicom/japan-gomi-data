@@ -4,7 +4,8 @@ metadata:
   areas:
     - name: 上丸子八幡町
       yomi: かみまるこはちまんちょう
-      machiaza_id: 141330-0007000
+      machiaza_id:
+        - 141330-0007000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
