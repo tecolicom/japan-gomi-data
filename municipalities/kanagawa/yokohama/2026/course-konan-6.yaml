@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: konan-6
   areas:
-    - name: 上永谷3丁目1・3番
+    - name: 上永谷3丁目（1・3番）
       yomi: かみながや
     - name: 下永谷1丁目
       yomi: しもながや
@@ -32,7 +32,7 @@ metadata:
       yomi: ひがしながや
     - name: 東永谷2丁目
       yomi: ひがしながや
-    - name: 東永谷3丁目1〜45・52番の一部・53〜63番
+    - name: 東永谷3丁目（1〜45・52番の一部・53〜63番）
       yomi: ひがしながや
   year: 2026
   fiscal_year_ja: 令和8年度

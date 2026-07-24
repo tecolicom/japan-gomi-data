@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: nishi-6
   areas:
-    - name: 桜木町7丁目48（西区）
+    - name: 桜木町7丁目（西区）（48）
       yomi: さくらぎちょう
       machiaza_id: 141038-0039007
     - name: 高島1丁目

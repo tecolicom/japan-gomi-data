@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: kohoku-6
   areas:
-    - name: 大倉山1丁目1〜29番地
+    - name: 大倉山1丁目（1〜29番地）
       yomi: おおくらやま
       machiaza_id: 141097-0001001
     - name: 大倉山2丁目
@@ -11,7 +11,7 @@ metadata:
     - name: 大倉山3丁目
       yomi: おおくらやま
       machiaza_id: 141097-0001003
-    - name: 大倉山4丁目上記以外の地域
+    - name: 大倉山4丁目（上記以外の地域）
       yomi: おおくらやま
       machiaza_id: 141097-0001004
     - name: 大倉山5丁目
@@ -49,10 +49,10 @@ metadata:
     - name: 新吉田東8丁目
       yomi: しんよしだひがし
       machiaza_id: 141097-0007008
-    - name: 樽町1丁目30の一部
+    - name: 樽町1丁目（30の一部）
       yomi: たるまち
       machiaza_id: 141097-0021001
-    - name: 樽町2丁目13の一部
+    - name: 樽町2丁目（13の一部）
       yomi: たるまち
       machiaza_id: 141097-0021002
     - name: 新羽町

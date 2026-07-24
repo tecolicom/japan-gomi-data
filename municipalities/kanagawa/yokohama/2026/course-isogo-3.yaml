@@ -7,23 +7,23 @@ metadata:
     - name: 栗木3丁目
       yomi: くりき
       machiaza_id: 141071-0022003
-    - name: 杉田8丁目1番
+    - name: 杉田8丁目（1番）
       yomi: すぎた
       machiaza_id: 141071-0002008
-    - name: 杉田9丁目1番50号
+    - name: 杉田9丁目（1番50号）
       yomi: すぎた
       machiaza_id: 141071-0002009
     - name: 田中1丁目
       yomi: たなか
       machiaza_id: 141071-0027001
-    - name: 中原3丁目1〜4・14番
+    - name: 中原3丁目（1〜4・14番）
       yomi: なかはら
       machiaza_id: 141071-0024003
     - name: 氷取沢町
       yomi: ひとりざわちょう
     - name: 峰町
       yomi: みねちょう
-    - name: 森3丁目21番の一部
+    - name: 森3丁目（21番の一部）
       yomi: もり
       machiaza_id: 141071-0025003
     - name: 森5丁目
@@ -38,7 +38,7 @@ metadata:
     - name: 洋光台2丁目
       yomi: ようこうだい
       machiaza_id: 141071-0026002
-    - name: 洋光台3丁目1〜10番
+    - name: 洋光台3丁目（1〜10番）
       yomi: ようこうだい
       machiaza_id: 141071-0026003
     - name: 洋光台5丁目

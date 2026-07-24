@@ -5,7 +5,7 @@ metadata:
     - name: 永田みなみ台
       yomi: ながたみなみだい
       machiaza_id: 141054-0054000
-    - name: 別所2丁目5丁目側
+    - name: 別所2丁目（5丁目側）
       yomi: べっしょ
       machiaza_id: 141054-0010002
     - name: 別所3丁目
@@ -26,7 +26,7 @@ metadata:
     - name: 別所中里台
       yomi: べっしょなかざとだい
       machiaza_id: 141054-0018000
-    - name: 六ツ川1丁目サニーハイツ他2ヶ所
+    - name: 六ツ川1丁目（サニーハイツ他2ヶ所）
       yomi: むつかわ
       machiaza_id: 141054-0013001
     - name: 六ツ川2丁目

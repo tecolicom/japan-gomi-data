@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: kohoku-2
   areas:
-    - name: 大曽根1丁目25・26の一部
+    - name: 大曽根1丁目（25・26の一部）
       yomi: おおそね
       machiaza_id: 141097-0025001
     - name: 樽町1丁目
@@ -35,10 +35,10 @@ metadata:
     - name: 綱島東6丁目
       yomi: つなしまひがし
       machiaza_id: 141097-0023006
-    - name: 日吉3丁目4〜23番地
+    - name: 日吉3丁目（4〜23番地）
       yomi: ひよし
       machiaza_id: 141097-0022003
-    - name: 日吉4丁目1・4〜21番地
+    - name: 日吉4丁目（1・4〜21番地）
       yomi: ひよし
       machiaza_id: 141097-0022004
     - name: 日吉5丁目

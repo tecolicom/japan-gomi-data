@@ -25,10 +25,10 @@ metadata:
     - name: 仏向西
       yomi: ぶっこうにし
       machiaza_id: 141062-0001000
-    - name: 峰岡町3丁目【桜道橋付近】
+    - name: 峰岡町3丁目（【桜道橋付近】）
       yomi: みねおかちよう
       machiaza_id: 141062-0048003
-    - name: 和田2丁目【常盤台公園付近】
+    - name: 和田2丁目（【常盤台公園付近】）
       yomi: わだ
       machiaza_id: 141062-0030002
   year: 2026

@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: kanagawa-7
   areas:
-    - name: 片倉4丁目1〜3番地
+    - name: 片倉4丁目（1〜3番地）
       yomi: かたくら
       machiaza_id: 141020-0074004
     - name: 片倉5丁目

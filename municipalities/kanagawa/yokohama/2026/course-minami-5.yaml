@@ -20,7 +20,7 @@ metadata:
     - name: 永田台
       yomi: ながただい
       machiaza_id: 141054-0053000
-    - name: 永田東1丁目永田東2丁目境
+    - name: 永田東1丁目（永田東2丁目境）
       yomi: ながたひがし
       machiaza_id: 141054-0051001
     - name: 永田東2丁目
@@ -29,7 +29,7 @@ metadata:
     - name: 永田東3丁目
       yomi: ながたひがし
       machiaza_id: 141054-0051003
-    - name: 永田南2丁目永田東2丁目境
+    - name: 永田南2丁目（永田東2丁目境）
       yomi: ながたみなみ
       machiaza_id: 141054-0048002
     - name: 南太田1丁目

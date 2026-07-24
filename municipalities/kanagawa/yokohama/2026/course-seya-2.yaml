@@ -8,7 +8,7 @@ metadata:
       yomi: あいざわ
     - name: 相沢4丁目
       yomi: あいざわ
-    - name: 瀬谷1丁目1〜22番地
+    - name: 瀬谷1丁目（1〜22番地）
       yomi: せや
     - name: 瀬谷2丁目
       yomi: せや
@@ -20,7 +20,7 @@ metadata:
       yomi: ちゅうおう
     - name: 橋戸1丁目
       yomi: はしど
-    - name: 南台1丁目37〜45番地
+    - name: 南台1丁目（37〜45番地）
       yomi: みなみだい
   year: 2026
   fiscal_year_ja: 令和8年度

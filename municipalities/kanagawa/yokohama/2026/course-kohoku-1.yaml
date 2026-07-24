@@ -2,10 +2,10 @@ metadata:
   city: yokohama
   course: kohoku-1
   areas:
-    - name: 大倉山1丁目30〜35番地
+    - name: 大倉山1丁目（30〜35番地）
       yomi: おおくらやま
       machiaza_id: 141097-0001001
-    - name: 大倉山4丁目13〜15番地の一部
+    - name: 大倉山4丁目（13〜15番地の一部）
       yomi: おおくらやま
       machiaza_id: 141097-0001004
     - name: 菊名1丁目
@@ -46,7 +46,7 @@ metadata:
     - name: 仲手原1丁目
       yomi: なかてはら
       machiaza_id: 141097-0016001
-    - name: 仲手原2丁目35・38・41の一部
+    - name: 仲手原2丁目（35・38・41の一部）
       yomi: なかてはら
       machiaza_id: 141097-0016002
     - name: 錦が丘

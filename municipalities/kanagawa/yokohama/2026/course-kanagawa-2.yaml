@@ -77,10 +77,10 @@ metadata:
     - name: 三ツ沢南町
       yomi: みつざわみなみまち
       machiaza_id: 141020-0071000
-    - name: 六角橋2丁目4〜6番地一部
+    - name: 六角橋2丁目（4〜6番地一部）
       yomi: ろくかくばし
       machiaza_id: 141020-0006002
-    - name: 六角橋3丁目2〜18番地
+    - name: 六角橋3丁目（2〜18番地）
       yomi: ろくかくばし
       machiaza_id: 141020-0006003
     - name: 六角橋4丁目

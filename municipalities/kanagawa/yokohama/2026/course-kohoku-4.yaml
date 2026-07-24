@@ -34,10 +34,10 @@ metadata:
     - name: 日吉2丁目
       yomi: ひよし
       machiaza_id: 141097-0022002
-    - name: 日吉3丁目1〜3番地
+    - name: 日吉3丁目（1〜3番地）
       yomi: ひよし
       machiaza_id: 141097-0022003
-    - name: 日吉4丁目2〜3番地
+    - name: 日吉4丁目（2〜3番地）
       yomi: ひよし
       machiaza_id: 141097-0022004
     - name: 日吉本町1丁目

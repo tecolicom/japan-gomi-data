@@ -43,18 +43,26 @@ export function expandTown(rawTown) {
     note = full.slice(starMid + 1).trim() || null;
   }
 
+  // 丁目の後に続く範囲・条件 (「10の一部と…を除く」「1〜8番の一部」等) は note へ回す。
+  // name は「<町>N丁目」に留める (居住地は丁目で特定できる。細かい範囲は note で補足)。
+  const mkNote = (rest) => {
+    const r = zen(rest).trim();
+    return [r || null, note].filter(Boolean).join(' ') || null;
+  };
+
   // 2) 複数丁目まとめ: <町><丁目リスト>丁目<残り>
   const m = body.match(/^(.+?)(\d+(?:[・〜]\d+)+)丁目(.*)$/);
   if (m) {
     const townBase = m[1];
     const chomes = expandChomeList(m[2]);
-    const rest = m[3]; // 番地範囲等 (通常は空)
+    const rest = m[3];
     if (chomes) {
+      const n = mkNote(rest);
       return chomes.map((c) => ({
-        name: zen(`${townBase}${c}丁目${rest}`),
+        name: zen(`${townBase}${c}丁目`),
         base: townBase,
         chome: c,
-        ...(note ? { note } : {}),
+        ...(n ? { note: n } : {}),
       }));
     }
   }
@@ -62,11 +70,12 @@ export function expandTown(rawTown) {
   // 3) 単一丁目 (+番地範囲) : <町>N丁目<残り>
   const s1 = body.match(/^(.+?)(\d+)丁目(.*)$/);
   if (s1) {
+    const n = mkNote(s1[3]);
     return [{
-      name: zen(body),
+      name: zen(`${s1[1]}${s1[2]}丁目`),
       base: s1[1],
       chome: +s1[2],
-      ...(note ? { note } : {}),
+      ...(n ? { note: n } : {}),
     }];
   }
 

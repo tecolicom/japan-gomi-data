@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: isogo-4
   areas:
-    - name: 磯子3丁目6番
+    - name: 磯子3丁目（6番）
       yomi: いそご
       machiaza_id: 141071-0003003
     - name: 新杉田町

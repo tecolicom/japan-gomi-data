@@ -2,13 +2,14 @@ metadata:
   city: yokohama
   course: izumi-1
   areas:
-    - name: 中田北1丁目全域
+    - name: 中田北1丁目
       yomi: なかたきた
-    - name: 中田北2丁目（中田東側集積場所利用者除く）
+      note: 全域
+    - name: 中田北2丁目
       yomi: なかたきた
-    - name: 中田北3丁目
+      note: （中田東側集積場所利用者除く）
+    - name: 中田北3丁目（富士見丘町内会を除く）
       yomi: なかたきた
-      note: 富士見丘町内会を除く
     - name: 中田町2700番台〜3400番台
       yomi: なかたちょう
     - name: 中田西1丁目
@@ -29,7 +30,7 @@ metadata:
       yomi: なかたみなみ
     - name: 中田南5丁目
       yomi: なかたみなみ
-    - name: 西が岡1丁目28〜32番地
+    - name: 西が岡1丁目（28〜32番地）
       yomi: にしがおか
     - name: 弥生台44番地
       yomi: やよいだい

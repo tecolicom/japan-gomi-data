@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: isogo-2
   areas:
-    - name: 磯子3丁目13番（ブリリア磯子）
+    - name: 磯子3丁目（13番（ブリリア磯子））
       yomi: いそご
       machiaza_id: 141071-0003003
     - name: 磯子6丁目
@@ -11,19 +11,19 @@ metadata:
     - name: 磯子7丁目
       yomi: いそご
       machiaza_id: 141071-0003007
-    - name: 磯子8丁目一部:15〜19
+    - name: 磯子8丁目（一部:15〜19）
       yomi: いそご
       machiaza_id: 141071-0003008
     - name: 磯子台27番（ブリリア磯子）
       yomi: いそごだい
       machiaza_id: 141071-0030000
-    - name: 岡村1丁目一部:19〜21・25番
+    - name: 岡村1丁目（一部:19〜21・25番）
       yomi: おかむら
       machiaza_id: 141071-0012001
-    - name: 岡村5丁目一部:19〜22番
+    - name: 岡村5丁目（一部:19〜22番）
       yomi: おかむら
       machiaza_id: 141071-0012005
-    - name: 岡村6丁目一部:10〜13
+    - name: 岡村6丁目（一部:10〜13）
       yomi: おかむら
       machiaza_id: 141071-0012006
     - name: 岡村7丁目
@@ -47,13 +47,13 @@ metadata:
     - name: 久木町（23の一部と24番を除く）
       yomi: ひさきちょう
       machiaza_id: 141071-0009000
-    - name: 森2丁目8番
+    - name: 森2丁目（8番）
       yomi: もり
       machiaza_id: 141071-0025002
     - name: 森4丁目
       yomi: もり
       machiaza_id: 141071-0025004
-    - name: 森5丁目19番
+    - name: 森5丁目（19番）
       yomi: もり
       machiaza_id: 141071-0025005
     - name: 森が丘1丁目

@@ -8,7 +8,7 @@ metadata:
     - name: 栗木2丁目
       yomi: くりき
       machiaza_id: 141071-0022002
-    - name: 栗木3丁目1〜8番の一部
+    - name: 栗木3丁目（1〜8番の一部）
       yomi: くりき
       machiaza_id: 141071-0022003
     - name: 杉田2丁目
@@ -17,7 +17,7 @@ metadata:
     - name: 杉田3丁目
       yomi: すぎた
       machiaza_id: 141071-0002003
-    - name: 杉田6丁目2・3番
+    - name: 杉田6丁目（2・3番）
       yomi: すぎた
       machiaza_id: 141071-0002006
     - name: 杉田坪呑10〜13番の一部
@@ -32,7 +32,7 @@ metadata:
     - name: 中原4丁目
       yomi: なかはら
       machiaza_id: 141071-0024004
-    - name: 洋光台1丁目13と14番の一部
+    - name: 洋光台1丁目（13と14番の一部）
       yomi: ようこうだい
       machiaza_id: 141071-0026001
     - name: 洋光台3丁目
@@ -41,10 +41,10 @@ metadata:
     - name: 洋光台4丁目
       yomi: ようこうだい
       machiaza_id: 141071-0026004
-    - name: 洋光台5丁目4番
+    - name: 洋光台5丁目（4番）
       yomi: ようこうだい
       machiaza_id: 141071-0026005
-    - name: 洋光台6丁目33〜43番
+    - name: 洋光台6丁目（33〜43番）
       yomi: ようこうだい
       machiaza_id: 141071-0026006
   year: 2026

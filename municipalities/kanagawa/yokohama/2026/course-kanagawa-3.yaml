@@ -11,10 +11,10 @@ metadata:
     - name: 片倉3丁目
       yomi: かたくら
       machiaza_id: 141020-0074003
-    - name: 片倉4丁目4〜26番地
+    - name: 片倉4丁目（4〜26番地）
       yomi: かたくら
       machiaza_id: 141020-0074004
-    - name: 片倉4丁目新横浜ミユキマンション
+    - name: 片倉4丁目（新横浜ミユキマンション）
       yomi: かたくら
       machiaza_id: 141020-0074004
     - name: 神大寺3丁目

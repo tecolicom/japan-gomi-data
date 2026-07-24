@@ -75,7 +75,7 @@ metadata:
     - name: 白楽
       yomi: はくらく
       machiaza_id: 141020-0055000
-    - name: 東神奈川1丁目14
+    - name: 東神奈川1丁目（14）
       yomi: ひがしかながわ
       machiaza_id: 141020-0035001
     - name: 平川町
@@ -90,13 +90,13 @@ metadata:
     - name: 六角橋1丁目
       yomi: ろくかくばし
       machiaza_id: 141020-0006001
-    - name: 六角橋2丁目1〜3・7〜34番地・4〜6番地一部
+    - name: 六角橋2丁目（1〜3・7〜34番地・4〜6番地一部）
       yomi: ろくかくばし
       machiaza_id: 141020-0006002
-    - name: 六角橋3丁目1・19〜27番地
+    - name: 六角橋3丁目（1・19〜27番地）
       yomi: ろくかくばし
       machiaza_id: 141020-0006003
-    - name: 六角橋5丁目一部
+    - name: 六角橋5丁目（一部）
       yomi: ろくかくばし
       machiaza_id: 141020-0006005
   year: 2026

@@ -6,7 +6,7 @@ metadata:
       yomi: かみながやちょう
     - name: 野庭町野庭町25、26の一部を除く
       yomi: の
-    - name: 日野9丁目7の一部
+    - name: 日野9丁目（7の一部）
       yomi: ひの
     - name: 日野南4丁目
       yomi: ひのみなみ
@@ -16,14 +16,17 @@ metadata:
       yomi: ひのみなみ
     - name: 日野南7丁目
       yomi: ひのみなみ
-    - name: 丸山台1丁目（3丁目パレスTSKIIを除く）
+    - name: 丸山台1丁目
       yomi: まるやまだい
-    - name: 丸山台2丁目（3丁目パレスTSKIIを除く）
+      note: （3丁目パレスTSKIIを除く）
+    - name: 丸山台2丁目
       yomi: まるやまだい
+      note: （3丁目パレスTSKIIを除く）
     - name: 丸山台3丁目（3丁目パレスTSKIIを除く）
       yomi: まるやまだい
-    - name: 丸山台4丁目（3丁目パレスTSKIIを除く）
+    - name: 丸山台4丁目
       yomi: まるやまだい
+      note: （3丁目パレスTSKIIを除く）
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

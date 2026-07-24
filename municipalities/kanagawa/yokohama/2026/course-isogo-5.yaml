@@ -17,10 +17,10 @@ metadata:
     - name: 磯子5丁目
       yomi: いそご
       machiaza_id: 141071-0003005
-    - name: 磯子6丁目2〜3番の一部
+    - name: 磯子6丁目（2〜3番の一部）
       yomi: いそご
       machiaza_id: 141071-0003006
-    - name: 磯子7丁目1・3・4の一部と16〜23番
+    - name: 磯子7丁目（1・3・4の一部と16〜23番）
       yomi: いそご
       machiaza_id: 141071-0003007
     - name: 磯子台
@@ -35,7 +35,7 @@ metadata:
     - name: 坂下町
       yomi: さかしたちょう
       machiaza_id: 141071-0010000
-    - name: 汐見台2丁目9-21・9-29・10・11番
+    - name: 汐見台2丁目（9-21・9-29・10・11番）
       yomi: しおみだい
       machiaza_id: 141071-0029002
     - name: 下町
@@ -62,7 +62,7 @@ metadata:
     - name: 森2丁目
       yomi: もり
       machiaza_id: 141071-0025002
-    - name: 森4丁目1〜3番
+    - name: 森4丁目（1〜3番）
       yomi: もり
       machiaza_id: 141071-0025004
   year: 2026

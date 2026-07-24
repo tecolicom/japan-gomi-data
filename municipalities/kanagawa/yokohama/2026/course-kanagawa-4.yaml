@@ -2,7 +2,7 @@ metadata:
   city: yokohama
   course: kanagawa-4
   areas:
-    - name: 入江1丁目29〜34番地
+    - name: 入江1丁目（29〜34番地）
       yomi: いりえ
       machiaza_id: 141020-0046001
     - name: 入江2丁目
@@ -32,7 +32,7 @@ metadata:
     - name: 子安台2丁目
       yomi: こやすだい
       machiaza_id: 141020-0048002
-    - name: 新子安1丁目18番地
+    - name: 新子安1丁目（18番地）
       yomi: しんこやす
       machiaza_id: 141020-0047001
     - name: 新子安2丁目

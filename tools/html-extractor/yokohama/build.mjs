@@ -102,6 +102,7 @@ rmSync(join(OUT, '2026'), { recursive: true, force: true });
 mkdirSync(join(OUT, '2026'), { recursive: true });
 let totalCourses = 0;
 let totalTowns = 0;
+const allDocs = [];
 for (const { ward, rows } of wardRows) {
   const bySig = new Map(); // sig -> { sched, areas }
   for (const row of rows) {
@@ -173,11 +174,38 @@ for (const { ward, rows } of wardRows) {
       rules,
       overrides: yearEndOverrides(rules),
     };
-    writeFileSync(join(OUT, '2026', `course-${course}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
+    allDocs.push({ path: join(OUT, '2026', `course-${course}.yaml`), doc });
   });
   totalCourses += sigs.length;
   totalTowns += rows.length;
   console.log(`${ward.ja} (${ward.romaji}): ${rows.length}町名 → ${sigs.length}コース`);
 }
+
+// 割れ町 (同一 name が複数コースに存在) は note の判別子を name に昇格し「町名（判別子）」に
+// (岡山・倉敷と統一。name 単独で地域特定できるように)。昇格行の note は外す。判別 note 無しは警告。
+{
+  const nameCount = new Map();
+  for (const { doc } of allDocs) for (const a of doc.metadata.areas) nameCount.set(a.name, (nameCount.get(a.name) ?? 0) + 1);
+  // 割れ name の note を判別子として name に昇格。note は整形する:
+  // 外側括弧の除去 (二重括弧防止)・先頭の町名繰り返し除去 (笹下1丁目「笹下1丁目10の一部…」→「10の一部…」)。
+  for (const { doc } of allDocs) {
+    doc.metadata.areas = doc.metadata.areas.map((a) => {
+      if (!((nameCount.get(a.name) ?? 0) > 1 && a.note)) return a;
+      const { note, ...rest } = a;
+      let nc = note.replace(/^（(.+)）$/, '$1').trim();
+      if (nc.startsWith(a.name)) nc = nc.slice(a.name.length).trim();
+      return { ...rest, name: nc ? `${a.name}（${nc}）` : a.name };
+    });
+  }
+  // 昇格後に再カウントし、まだ同一 name が複数コースに残る = 真に判別不能な割れのみ警告
+  const after = new Map();
+  for (const { doc } of allDocs) for (const a of doc.metadata.areas) {
+    if (!after.has(a.name)) after.set(a.name, new Set());
+    after.get(a.name).add(doc.metadata.course);
+  }
+  const dup = [...after].filter(([, cs]) => cs.size > 1).map(([n]) => n);
+  if (dup.length) console.log(`  警告: 昇格後も判別不能な割れ (原文に番地等の区別が無い): ${dup.join('、')}`);
+}
+for (const { path, doc } of allDocs) writeFileSync(path, yamlStringify(doc, { lineWidth: 0 }));
 console.log(`generated ${totalCourses} courses, ${totalTowns} towns (18区)`);
 console.log(`yomi: ${yomiStat.abr}/${yomiStat.total} (ABR) + フォールバック${yomiStat.total-yomiStat.abr} / machiaza_id: ${yomiStat.id} (${(100*yomiStat.id/yomiStat.total).toFixed(1)}%)`);
