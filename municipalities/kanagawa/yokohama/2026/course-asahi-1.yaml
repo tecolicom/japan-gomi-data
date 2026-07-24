@@ -3,35 +3,35 @@ metadata:
   course: asahi-1
   areas:
     - name: 上白根2丁目
-      yomi: か
+      yomi: かみしらね
     - name: 上白根3丁目
-      yomi: か
+      yomi: かみしらね
     - name: 白根1丁目
-      yomi: し
+      yomi: しらね
     - name: 白根2丁目
-      yomi: し
+      yomi: しらね
     - name: 白根3丁目
-      yomi: し
+      yomi: しらね
     - name: 白根6丁目
-      yomi: し
+      yomi: しらね
     - name: 白根7丁目
-      yomi: し
+      yomi: しらね
     - name: 白根8丁目
-      yomi: し
+      yomi: しらね
     - name: 白根町
-      yomi: し
+      yomi: しらねちょう
     - name: 鶴ケ峰1丁目
-      yomi: つ
+      yomi: つるがみね
     - name: 鶴ケ峰2丁目
-      yomi: つ
+      yomi: つるがみね
     - name: 中白根1丁目
-      yomi: な
+      yomi: なかしらね
     - name: 中白根2丁目
-      yomi: な
+      yomi: なかしらね
     - name: 中白根3丁目
-      yomi: な
+      yomi: なかしらね
     - name: 中白根4丁目
-      yomi: な
+      yomi: なかしらね
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

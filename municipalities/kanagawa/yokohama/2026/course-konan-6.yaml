@@ -3,37 +3,37 @@ metadata:
   course: konan-6
   areas:
     - name: 上永谷3丁目1・3番
-      yomi: か
+      yomi: かみながや
     - name: 下永谷1丁目
-      yomi: し
+      yomi: しもながや
     - name: 下永谷2丁目
-      yomi: し
+      yomi: しもながや
     - name: 下永谷3丁目
-      yomi: し
+      yomi: しもながや
     - name: 下永谷4丁目
-      yomi: し
+      yomi: しもながや
     - name: 下永谷5丁目
-      yomi: し
+      yomi: しもながや
     - name: 下永谷6丁目
-      yomi: し
+      yomi: しもながや
     - name: 芹が谷1丁目
-      yomi: せ
+      yomi: せりがや
     - name: 芹が谷2丁目
-      yomi: せ
+      yomi: せりがや
     - name: 芹が谷3丁目
-      yomi: せ
+      yomi: せりがや
     - name: 芹が谷4丁目
-      yomi: せ
+      yomi: せりがや
     - name: 芹が谷5丁目
-      yomi: せ
+      yomi: せりがや
     - name: 東芹が谷
-      yomi: ひ
+      yomi: ひがしせりがや
     - name: 東永谷1丁目
-      yomi: ひ
+      yomi: ひがしながや
     - name: 東永谷2丁目
-      yomi: ひ
+      yomi: ひがしながや
     - name: 東永谷3丁目1〜45・52番の一部・53〜63番
-      yomi: ひ
+      yomi: ひがしながや
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

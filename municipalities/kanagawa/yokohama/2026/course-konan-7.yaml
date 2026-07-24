@@ -3,27 +3,27 @@ metadata:
   course: konan-7
   areas:
     - name: 上永谷町
-      yomi: か
+      yomi: かみながやちょう
     - name: 野庭町野庭町25、26の一部を除く
       yomi: の
     - name: 日野9丁目7の一部
-      yomi: ひ
+      yomi: ひの
     - name: 日野南4丁目
-      yomi: ひ
+      yomi: ひのみなみ
     - name: 日野南5丁目
-      yomi: ひ
+      yomi: ひのみなみ
     - name: 日野南6丁目
-      yomi: ひ
+      yomi: ひのみなみ
     - name: 日野南7丁目
-      yomi: ひ
+      yomi: ひのみなみ
     - name: 丸山台1丁目（3丁目パレスTSKIIを除く）
-      yomi: ま
+      yomi: まるやまだい
     - name: 丸山台2丁目（3丁目パレスTSKIIを除く）
-      yomi: ま
+      yomi: まるやまだい
     - name: 丸山台3丁目（3丁目パレスTSKIIを除く）
-      yomi: ま
+      yomi: まるやまだい
     - name: 丸山台4丁目（3丁目パレスTSKIIを除く）
-      yomi: ま
+      yomi: まるやまだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

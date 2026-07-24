@@ -3,41 +3,41 @@ metadata:
   course: tsuzuki-6
   areas:
     - name: あゆみが丘
-      yomi: あ
+      yomi: あゆみがおか
     - name: 牛久保2丁目
-      yomi: う
+      yomi: うしくぼ
     - name: 牛久保3丁目
-      yomi: う
+      yomi: うしくぼ
     - name: 牛久保町
-      yomi: う
+      yomi: うしくぼちょう
     - name: 牛久保西2丁目
-      yomi: う
+      yomi: うしくぼにし
     - name: 牛久保西3丁目
-      yomi: う
+      yomi: うしくぼにし
     - name: 牛久保西4丁目
-      yomi: う
+      yomi: うしくぼにし
     - name: すみれが丘
-      yomi: す
+      yomi: すみれがおか
     - name: 中川1丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川3丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川4丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川5丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川6丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川7丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川8丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川2丁目
-      yomi: な
+      yomi: なかがわ
     - name: 中川中央1丁目
-      yomi: な
+      yomi: なかがわちゅうおう
     - name: 中川中央2丁目
-      yomi: な
+      yomi: なかがわちゅうおう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

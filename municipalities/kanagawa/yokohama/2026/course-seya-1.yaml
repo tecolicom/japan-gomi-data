@@ -5,29 +5,29 @@ metadata:
     - name: 御本町
       yomi: お
     - name: 上瀬谷町
-      yomi: か
+      yomi: かみせやちょう
     - name: 北町
-      yomi: き
+      yomi: きたまち
     - name: 五貫目町
-      yomi: こ
+      yomi: ごかんめちょう
     - name: 瀬谷5丁目
-      yomi: せ
+      yomi: せや
     - name: 瀬谷6丁目
-      yomi: せ
+      yomi: せや
     - name: 竹村町
-      yomi: た
+      yomi: たけむらちょう
     - name: 中屋敷1丁目
-      yomi: な
+      yomi: なかやしき
     - name: 橋戸2丁目（3丁目51番地を除く）
-      yomi: は
+      yomi: はしど
     - name: 橋戸3丁目（3丁目51番地を除く）
-      yomi: は
+      yomi: はしど
     - name: 本郷1丁目
-      yomi: ほ
+      yomi: ほんごう
     - name: 本郷3丁目
-      yomi: ほ
+      yomi: ほんごう
     - name: 目黒町
-      yomi: め
+      yomi: めぐろちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

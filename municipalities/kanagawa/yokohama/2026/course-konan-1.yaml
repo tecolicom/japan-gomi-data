@@ -3,41 +3,41 @@ metadata:
   course: konan-1
   areas:
     - name: 港南1丁目
-      yomi: こ
+      yomi: こうなん
     - name: 港南2丁目
-      yomi: こ
+      yomi: こうなん
     - name: 港南3丁目
-      yomi: こ
+      yomi: こうなん
     - name: 港南4丁目
-      yomi: こ
+      yomi: こうなん
     - name: 港南5丁目
-      yomi: こ
+      yomi: こうなん
     - name: 港南6丁目
-      yomi: こ
+      yomi: こうなん
     - name: 港南中央通
-      yomi: こ
+      yomi: こうなんちゅうおうどおり
     - name: 笹下3丁目
-      yomi: さ
+      yomi: ささげ
     - name: 笹下4丁目
-      yomi: さ
+      yomi: ささげ
     - name: 笹下5丁目
-      yomi: さ
+      yomi: ささげ
     - name: 笹下6丁目
-      yomi: さ
+      yomi: ささげ
     - name: 笹下7丁目
-      yomi: さ
+      yomi: ささげ
     - name: 日野1丁目日野2丁目22の一部を除く
-      yomi: ひ
+      yomi: ひの
     - name: 日野2丁目日野2丁目22の一部を除く
-      yomi: ひ
+      yomi: ひの
     - name: 日野4丁目7の一部
-      yomi: ひ
+      yomi: ひの
     - name: 日野5丁目
-      yomi: ひ
+      yomi: ひの
     - name: 日野中央1丁目
-      yomi: ひ
+      yomi: ひのちゅうおう
     - name: 日野中央2丁目（32〜34番の一部を除く）
-      yomi: ひ
+      yomi: ひのちゅうおう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

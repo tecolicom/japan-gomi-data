@@ -3,29 +3,29 @@ metadata:
   course: sakae-6
   areas:
     - name: 飯島町2200〜2599
-      yomi: い
+      yomi: いいじまちょう
     - name: 小菅ヶ谷1丁目6〜31
-      yomi: こ
+      yomi: こすがや
     - name: 小菅ヶ谷2丁目
-      yomi: こ
+      yomi: こすがや
     - name: 小菅ヶ谷3丁目
-      yomi: こ
+      yomi: こすがや
     - name: 小菅ヶ谷4丁目
-      yomi: こ
+      yomi: こすがや
     - name: 小山台1丁目
-      yomi: こ
+      yomi: こやまだい
     - name: 小山台2丁目
-      yomi: こ
+      yomi: こやまだい
     - name: 本郷台1丁目
-      yomi: ほ
+      yomi: ほんごうだい
     - name: 本郷台2丁目
-      yomi: ほ
+      yomi: ほんごうだい
     - name: 本郷台3丁目
-      yomi: ほ
+      yomi: ほんごうだい
     - name: 本郷台4丁目
-      yomi: ほ
+      yomi: ほんごうだい
     - name: 本郷台5丁目
-      yomi: ほ
+      yomi: ほんごうだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

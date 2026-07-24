@@ -3,31 +3,31 @@ metadata:
   course: aoba-6
   areas:
     - name: 青葉台1丁目
-      yomi: あ
+      yomi: あおばだい
     - name: 青葉台2丁目
-      yomi: あ
+      yomi: あおばだい
     - name: 柿の木台
-      yomi: か
+      yomi: かきのきだい
     - name: 上谷本町
-      yomi: か
+      yomi: かみやもとちょう
     - name: 鴨志田町
-      yomi: か
+      yomi: かもしだちょう
     - name: 桜台
-      yomi: さ
+      yomi: さくらだい
     - name: 寺家町
-      yomi: し
+      yomi: じけちょう
     - name: たちばな台1丁目
-      yomi: た
+      yomi: たちばなだい
     - name: たちばな台2丁目
-      yomi: た
+      yomi: たちばなだい
     - name: 成合町
-      yomi: な
+      yomi: なりあいちょう
     - name: みたけ台
-      yomi: み
+      yomi: みたけだい
     - name: もえぎ野
-      yomi: も
+      yomi: もえぎの
     - name: 若草台
-      yomi: わ
+      yomi: わかくさだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

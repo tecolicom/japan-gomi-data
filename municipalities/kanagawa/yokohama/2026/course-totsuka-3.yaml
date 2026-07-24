@@ -3,18 +3,18 @@ metadata:
   course: totsuka-3
   areas:
     - name: 上矢部町
-      yomi: か
+      yomi: かみやべちょう
     - name: 汲沢1丁目
-      yomi: く
+      yomi: ぐみざわ
     - name: 汲沢2丁目
-      yomi: く
+      yomi: ぐみざわ
     - name: 戸塚町（ハローワーク戸塚（戸塚町3722番地）より北側）
-      yomi: と
+      yomi: とつかちょう
       note: 一部異なる地域あり
     - name: 鳥が丘
-      yomi: と
+      yomi: とりがおか
     - name: 矢部町（JR線路の西側）
-      yomi: や
+      yomi: やべちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

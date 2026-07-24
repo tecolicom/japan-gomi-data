@@ -3,37 +3,37 @@ metadata:
   course: tsuzuki-5
   areas:
     - name: 牛久保東1丁目
-      yomi: う
+      yomi: うしくぼひがし
     - name: 牛久保東2丁目
-      yomi: う
+      yomi: うしくぼひがし
     - name: 牛久保東3丁目
-      yomi: う
+      yomi: うしくぼひがし
     - name: 大棚町
-      yomi: お
+      yomi: おおだなちょう
     - name: 大棚西
-      yomi: お
+      yomi: おおだなにし
     - name: 勝田町
-      yomi: か
+      yomi: かちだちょう
     - name: 勝田南1丁目
-      yomi: か
+      yomi: かちだみなみ
     - name: 勝田南2丁目
-      yomi: か
+      yomi: かちだみなみ
     - name: 新栄町
-      yomi: し
+      yomi: しんえいちょう
     - name: 早渕1丁目
-      yomi: は
+      yomi: はやぶち
     - name: 早渕2丁目
-      yomi: は
+      yomi: はやぶち
     - name: 早渕3丁目
-      yomi: は
+      yomi: はやぶち
     - name: 南山田1丁目
-      yomi: み
+      yomi: みなみやまた
     - name: 南山田2丁目
-      yomi: み
+      yomi: みなみやまた
     - name: 南山田3丁目
-      yomi: み
+      yomi: みなみやまた
     - name: 南山田町
-      yomi: み
+      yomi: みなみやまたちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,47 +3,47 @@ metadata:
   course: izumi-2
   areas:
     - name: 岡津町1〜300番地
-      yomi: お
+      yomi: おかつちょう
       note: 240〜242番を除く
     - name: 岡津町500〜600番地
-      yomi: お
+      yomi: おかつちょう
     - name: 岡津町1000〜1400台
-      yomi: お
+      yomi: おかつちょう
       note: 1200と1400一部除く
     - name: 白百合全域
       yomi: し
     - name: 新橋町500〜700番地の一部（弥生台側集積場所利用者）
-      yomi: し
+      yomi: しんばしちょう
     - name: 中田北3丁目
-      yomi: な
+      yomi: なかたきた
       note: 富士見が丘町内会地域
     - name: 中田東1丁目
-      yomi: な
+      yomi: なかたひがし
     - name: 中田東2丁目
-      yomi: な
+      yomi: なかたひがし
     - name: 中田東3丁目
-      yomi: な
+      yomi: なかたひがし
     - name: 中田東4丁目
-      yomi: な
+      yomi: なかたひがし
     - name: 西が岡1丁目
-      yomi: に
+      yomi: にしがおか
       note: 1丁目28〜32を除く
     - name: 西が岡2丁目
-      yomi: に
+      yomi: にしがおか
       note: 1丁目28〜32を除く
     - name: 西が岡3丁目
-      yomi: に
+      yomi: にしがおか
       note: 1丁目28〜32を除く
     - name: 弥生台1〜37番地
-      yomi: や
+      yomi: やよいだい
     - name: 領家1丁目
-      yomi: り
+      yomi: りょうけ
     - name: 領家2丁目
-      yomi: り
+      yomi: りょうけ
     - name: 領家3丁目
-      yomi: り
+      yomi: りょうけ
     - name: 領家4丁目
-      yomi: り
+      yomi: りょうけ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

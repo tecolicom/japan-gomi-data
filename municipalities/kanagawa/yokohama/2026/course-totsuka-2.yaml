@@ -3,23 +3,23 @@ metadata:
   course: totsuka-2
   areas:
     - name: 影取町
-      yomi: か
+      yomi: かげとりちょう
     - name: 汲沢町の一部（深谷交番付近）
       yomi: く
     - name: 小雀町
-      yomi: こ
+      yomi: こすずめちょう
     - name: 原宿3丁目
-      yomi: は
+      yomi: はらじゅく
     - name: 原宿4丁目
-      yomi: は
+      yomi: はらじゅく
     - name: 原宿5丁目
-      yomi: は
+      yomi: はらじゅく
     - name: 東俣野町
-      yomi: ひ
+      yomi: ひがしまたのちょう
     - name: 深谷町
-      yomi: ふ
+      yomi: ふかやちょう
     - name: 俣野町
-      yomi: ま
+      yomi: またのちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

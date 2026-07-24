@@ -3,13 +3,13 @@ metadata:
   course: midori-5
   areas:
     - name: 台村町
-      yomi: た
+      yomi: だいむらちょう
     - name: 寺山町
-      yomi: て
+      yomi: てらやまちょう
     - name: 三保町
-      yomi: み
+      yomi: みほちょう
     - name: 森の台
-      yomi: も
+      yomi: もりのだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

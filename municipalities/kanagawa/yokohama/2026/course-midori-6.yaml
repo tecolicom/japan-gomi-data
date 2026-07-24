@@ -3,23 +3,23 @@ metadata:
   course: midori-6
   areas:
     - name: 霧が丘1丁目
-      yomi: き
+      yomi: きりがおか
     - name: 霧が丘2丁目
-      yomi: き
+      yomi: きりがおか
     - name: 霧が丘3丁目
-      yomi: き
+      yomi: きりがおか
     - name: 霧が丘4丁目
-      yomi: き
+      yomi: きりがおか
     - name: 霧が丘5丁目
-      yomi: き
+      yomi: きりがおか
     - name: 霧が丘6丁目
-      yomi: き
+      yomi: きりがおか
     - name: 十日市場町
-      yomi: と
+      yomi: とおかいちばちょう
     - name: 長津田みなみ台7-9〜32番地
-      yomi: な
+      yomi: ながつたみなみだい
     - name: 新治町
-      yomi: に
+      yomi: にいはるちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

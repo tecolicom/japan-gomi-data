@@ -3,17 +3,17 @@ metadata:
   course: sakae-5
   areas:
     - name: 飯島町1〜2199
-      yomi: い
+      yomi: いいじまちょう
     - name: 飯島町2800〜2999
-      yomi: い
+      yomi: いいじまちょう
     - name: 金井町
-      yomi: か
+      yomi: かないちょう
     - name: 小菅ヶ谷町
-      yomi: こ
+      yomi: こすがやちょう
     - name: 田谷町
-      yomi: た
+      yomi: たやちょう
     - name: 長沼町
-      yomi: な
+      yomi: ながぬまちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

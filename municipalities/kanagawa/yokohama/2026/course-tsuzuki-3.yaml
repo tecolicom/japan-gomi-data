@@ -3,27 +3,27 @@ metadata:
   course: tsuzuki-3
   areas:
     - name: 池辺町
-      yomi: い
+      yomi: いこのべちょう
     - name: 大熊町
-      yomi: お
+      yomi: おおくまちょう
     - name: 折本町
-      yomi: お
+      yomi: おりもとちょう
     - name: 川向町
-      yomi: か
+      yomi: かわむこうちょう
     - name: 佐江戸町
-      yomi: さ
+      yomi: さえどちょう
     - name: 仲町台1丁目
-      yomi: な
+      yomi: なかまちだい
     - name: 仲町台2丁目
-      yomi: な
+      yomi: なかまちだい
     - name: 仲町台3丁目
-      yomi: な
+      yomi: なかまちだい
     - name: 仲町台4丁目
-      yomi: な
+      yomi: なかまちだい
     - name: 仲町台5丁目
-      yomi: な
+      yomi: なかまちだい
     - name: 東方町
-      yomi: ひ
+      yomi: ひがしかたちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

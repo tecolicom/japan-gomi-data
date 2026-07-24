@@ -3,27 +3,27 @@ metadata:
   course: asahi-5
   areas:
     - name: 上川井町
-      yomi: か
+      yomi: かみかわいちょう
     - name: 上白根町
-      yomi: か
+      yomi: かみしらねちょう
     - name: 川井宿町
-      yomi: か
+      yomi: かわいしゅくちょう
     - name: 川井本町
-      yomi: か
+      yomi: かわいほんちょう
     - name: 下川井町
-      yomi: し
+      yomi: しもかわいちょう
     - name: 都岡町
-      yomi: つ
+      yomi: つおかちょう
     - name: 矢指町
-      yomi: や
+      yomi: やさしちょう
     - name: 若葉台1丁目
-      yomi: わ
+      yomi: わかばだい
     - name: 若葉台2丁目
-      yomi: わ
+      yomi: わかばだい
     - name: 若葉台3丁目
-      yomi: わ
+      yomi: わかばだい
     - name: 若葉台4丁目
-      yomi: わ
+      yomi: わかばだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

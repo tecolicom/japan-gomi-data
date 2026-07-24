@@ -3,37 +3,37 @@ metadata:
   course: sakae-1
   areas:
     - name: 犬山町1〜75
-      yomi: い
+      yomi: いのやまちょう
     - name: 尾月
-      yomi: お
+      yomi: おづき
     - name: 上郷町1〜199の一部
-      yomi: か
+      yomi: かみごうちょう
     - name: 上郷町200〜1699
-      yomi: か
+      yomi: かみごうちょう
     - name: 上郷町4400〜4599
-      yomi: か
+      yomi: かみごうちょう
     - name: 上之町
-      yomi: か
+      yomi: かみのちょう
     - name: 庄戸1丁目
-      yomi: し
+      yomi: しょうど
     - name: 庄戸2丁目
-      yomi: し
+      yomi: しょうど
     - name: 庄戸3丁目
-      yomi: し
+      yomi: しょうど
     - name: 庄戸4丁目
-      yomi: し
+      yomi: しょうど
     - name: 庄戸5丁目
-      yomi: し
+      yomi: しょうど
     - name: 長倉町
-      yomi: な
+      yomi: ながくらちょう
     - name: 野七里1丁目
-      yomi: の
+      yomi: のしちり
     - name: 野七里2丁目
-      yomi: の
+      yomi: のしちり
     - name: 東上郷町
-      yomi: ひ
+      yomi: ひがしかみごうちょう
     - name: 若竹町
-      yomi: わ
+      yomi: わかたけちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

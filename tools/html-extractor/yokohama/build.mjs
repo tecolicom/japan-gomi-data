@@ -42,8 +42,13 @@ function abrOf(base, chome, wardJa) {
   const oaza = rows.filter((t) => t.chome_number === null);
   const kanas = new Set(oaza.map((t) => t.kana).filter(Boolean));
   if (kanas.size === 1) return { yomi: [...kanas][0], machiazaId: undefined };
+  // ABR に無い広域大字は日本郵便 ken_all の読みで補完 (戸塚町・和泉町 等)
+  const kk = KENALL[base] ?? KENALL[base.replace(/ヶ/g, 'ケ')] ?? KENALL[base.replace(/ケ/g, 'ヶ')];
+  if (kk) return { yomi: kk, machiazaId: undefined };
   return {};
 }
+let KENALL = {};
+try { KENALL = JSON.parse(readFileSync(join(HERE, 'cache', 'kenall-town.json'), 'utf8')); } catch { /* ken_all 未配置は許容 */ }
 
 // 収集曜日が非公開の町 (表に「◯◯事務所にお問合せください」とだけある行)。検出したら既知リストと突合。
 const KNOWN_UNPUBLISHED = new Set(['平楽']); // 南区

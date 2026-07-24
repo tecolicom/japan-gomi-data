@@ -3,27 +3,27 @@ metadata:
   course: midori-4
   areas:
     - name: 青砥町
-      yomi: あ
+      yomi: あおとちょう
     - name: 上山2丁目3・4・5番地
-      yomi: か
+      yomi: かみやま
     - name: 北八朔町
-      yomi: き
+      yomi: きたはっさくちょう
     - name: 小山町
-      yomi: こ
+      yomi: こやまちょう
     - name: 中山1丁目
-      yomi: な
+      yomi: なかやま
     - name: 中山2丁目
-      yomi: な
+      yomi: なかやま
     - name: 中山3丁目
-      yomi: な
+      yomi: なかやま
     - name: 中山4丁目
-      yomi: な
+      yomi: なかやま
     - name: 中山5丁目
-      yomi: な
+      yomi: なかやま
     - name: 中山6丁目
-      yomi: な
+      yomi: なかやま
     - name: 西八朔町
-      yomi: に
+      yomi: にしはっさくちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

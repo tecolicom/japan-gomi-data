@@ -3,33 +3,33 @@ metadata:
   course: aoba-5
   areas:
     - name: あかね台1丁目
-      yomi: あ
+      yomi: あかねだい
     - name: あかね台2丁目
-      yomi: あ
+      yomi: あかねだい
     - name: 恩田町
-      yomi: お
+      yomi: おんだちょう
     - name: 桂台1丁目
-      yomi: か
+      yomi: かつらだい
     - name: 桂台2丁目
-      yomi: か
+      yomi: かつらだい
     - name: すみよし台
-      yomi: す
+      yomi: すみよしだい
     - name: 奈良1丁目
-      yomi: な
+      yomi: なら
     - name: 奈良2丁目
-      yomi: な
+      yomi: なら
     - name: 奈良3丁目
-      yomi: な
+      yomi: なら
     - name: 奈良4丁目
-      yomi: な
+      yomi: なら
     - name: 奈良5丁目
-      yomi: な
+      yomi: なら
     - name: 奈良町
-      yomi: な
+      yomi: ならちょう
     - name: 松風台
-      yomi: ま
+      yomi: まつかぜだい
     - name: 緑山
-      yomi: み
+      yomi: みどりやま
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

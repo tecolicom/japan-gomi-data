@@ -3,30 +3,30 @@ metadata:
   course: izumi-3
   areas:
     - name: 岡津町240〜242番地
-      yomi: お
+      yomi: おかつちょう
     - name: 岡津町1200と1400一部
-      yomi: お
+      yomi: おかつちょう
     - name: 岡津町1500〜3200番地台
-      yomi: お
+      yomi: おかつちょう
     - name: 桂坂全域
       yomi: か
     - name: 新橋町全域
       yomi: し
       note: 一部地域を除く
     - name: 緑園1丁目
-      yomi: り
+      yomi: りょくえん
     - name: 緑園2丁目
-      yomi: り
+      yomi: りょくえん
     - name: 緑園3丁目
-      yomi: り
+      yomi: りょくえん
     - name: 緑園4丁目
-      yomi: り
+      yomi: りょくえん
     - name: 緑園5丁目
-      yomi: り
+      yomi: りょくえん
     - name: 緑園6丁目
-      yomi: り
+      yomi: りょくえん
     - name: 緑園7丁目
-      yomi: り
+      yomi: りょくえん
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

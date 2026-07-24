@@ -3,40 +3,40 @@ metadata:
   course: izumi-4
   areas:
     - name: 和泉中央北1丁目
-      yomi: い
+      yomi: いずみちゅうおうきた
     - name: 和泉中央北2丁目
-      yomi: い
+      yomi: いずみちゅうおうきた
     - name: 和泉中央北3丁目
-      yomi: い
+      yomi: いずみちゅうおうきた
     - name: 和泉中央北4丁目
-      yomi: い
+      yomi: いずみちゅうおうきた
     - name: 和泉中央北5丁目
-      yomi: い
+      yomi: いずみちゅうおうきた
     - name: 和泉中央北6丁目
-      yomi: い
+      yomi: いずみちゅうおうきた
     - name: 和泉中央南5丁目
-      yomi: い
+      yomi: いずみちゅうおうみなみ
     - name: 和泉町1〜42番地および900番地台の一部（元木町内会）
-      yomi: い
+      yomi: いずみちょう
     - name: 和泉町3299〜3300台の一部
-      yomi: い
+      yomi: いずみちょう
       note: 3347〜3355台除く
     - name: 和泉町3400〜3500番地台
-      yomi: い
+      yomi: いずみちょう
     - name: 和泉町4100〜5800番地台
-      yomi: い
+      yomi: いずみちょう
       note: 一部異なる地域あり
     - name: 和泉町6400台（主水分橋〜宮西橋際までの地域）
-      yomi: い
+      yomi: いずみちょう
     - name: 和泉町6500台（上飯田町大塚〜いずみ野駅方面右側地域）
-      yomi: い
+      yomi: いずみちょう
     - name: 上飯田町
-      yomi: か
+      yomi: かみいいだちょう
       note: 長後街道を戸塚に向かって右側地域(南側地域)
     - name: 下飯田町
-      yomi: し
+      yomi: しもいいだちょう
     - name: ゆめが丘16〜72番地
-      yomi: ゆ
+      yomi: ゆめがおか
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,27 +3,27 @@ metadata:
   course: sakae-2
   areas:
     - name: 桂台北
-      yomi: か
+      yomi: かつらだいきた
     - name: 桂台中
-      yomi: か
+      yomi: かつらだいなか
     - name: 桂台西1丁目
-      yomi: か
+      yomi: かつらだいにし
     - name: 桂台西2丁目
-      yomi: か
+      yomi: かつらだいにし
     - name: 桂台東
-      yomi: か
+      yomi: かつらだいひがし
     - name: 桂台南1丁目
-      yomi: か
+      yomi: かつらだいみなみ
     - name: 桂台南2丁目
-      yomi: か
+      yomi: かつらだいみなみ
     - name: 上郷町1〜199の一部
-      yomi: か
+      yomi: かみごうちょう
     - name: 上郷町1700〜2299
-      yomi: か
+      yomi: かみごうちょう
     - name: 亀井町
-      yomi: か
+      yomi: かめいちょう
     - name: 公田町
-      yomi: く
+      yomi: くでんちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,23 +3,23 @@ metadata:
   course: sakae-3
   areas:
     - name: 鍛冶ヶ谷1丁目
-      yomi: か
+      yomi: かじがや
     - name: 鍛冶ヶ谷2丁目
-      yomi: か
+      yomi: かじがや
     - name: 鍛冶ヶ谷町
-      yomi: か
+      yomi: かじがやちょう
     - name: 桂町
-      yomi: か
+      yomi: かつらちょう
     - name: 小菅ヶ谷1丁目1〜5
-      yomi: こ
+      yomi: こすがや
     - name: 中野町
-      yomi: な
+      yomi: なかのちょう
     - name: 柏陽
-      yomi: は
+      yomi: はくよう
     - name: 元大橋1丁目
-      yomi: も
+      yomi: もとおおはし
     - name: 元大橋2丁目
-      yomi: も
+      yomi: もとおおはし
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

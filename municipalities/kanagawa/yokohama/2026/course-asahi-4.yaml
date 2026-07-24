@@ -3,35 +3,35 @@ metadata:
   course: asahi-4
   areas:
     - name: 今川町
-      yomi: い
+      yomi: いまがわちょう
     - name: 今宿西町
-      yomi: い
+      yomi: いまじゅくにしちょう
     - name: 今宿東町
-      yomi: い
+      yomi: いまじゅくひがしちょう
     - name: 今宿南町
-      yomi: い
+      yomi: いまじゅくみなみちょう
     - name: 上白根1丁目
-      yomi: か
+      yomi: かみしらね
     - name: さちが丘（相鉄本線より北側）
-      yomi: さ
+      yomi: さちがおか
     - name: 四季美台
-      yomi: し
+      yomi: しきみだい
     - name: 白根4丁目
-      yomi: し
+      yomi: しらね
     - name: 白根5丁目
-      yomi: し
+      yomi: しらね
     - name: 鶴ケ峰1丁目（5〜9番地付近）
-      yomi: つ
+      yomi: つるがみね
     - name: 鶴ケ峰本町1丁目
-      yomi: つ
+      yomi: つるがみねほんちょう
     - name: 鶴ケ峰本町2丁目
-      yomi: つ
+      yomi: つるがみねほんちょう
     - name: 鶴ケ峰本町3丁目
-      yomi: つ
+      yomi: つるがみねほんちょう
     - name: 二俣川1丁目
-      yomi: ふ
+      yomi: ふたまたがわ
     - name: 本村町
-      yomi: ほ
+      yomi: ほんむらちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

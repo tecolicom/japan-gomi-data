@@ -3,27 +3,27 @@ metadata:
   course: aoba-3
   areas:
     - name: あざみ野1丁目
-      yomi: あ
+      yomi: あざみの
     - name: あざみ野4丁目
-      yomi: あ
+      yomi: あざみの
     - name: 美しが丘1丁目
-      yomi: う
+      yomi: うつくしがおか
     - name: 美しが丘2丁目
-      yomi: う
+      yomi: うつくしがおか
     - name: 美しが丘3丁目
-      yomi: う
+      yomi: うつくしがおか
     - name: 美しが丘4丁目
-      yomi: う
+      yomi: うつくしがおか
     - name: 美しが丘5丁目
-      yomi: う
+      yomi: うつくしがおか
     - name: 新石川1丁目
-      yomi: し
+      yomi: しんいしかわ
     - name: 新石川2丁目
-      yomi: し
+      yomi: しんいしかわ
     - name: 新石川3丁目
-      yomi: し
+      yomi: しんいしかわ
     - name: 新石川4丁目
-      yomi: し
+      yomi: しんいしかわ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

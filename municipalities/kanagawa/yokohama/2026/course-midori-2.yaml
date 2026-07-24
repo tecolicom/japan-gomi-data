@@ -3,33 +3,33 @@ metadata:
   course: midori-2
   areas:
     - name: 鴨居1丁目
-      yomi: か
+      yomi: かもい
     - name: 鴨居2丁目
-      yomi: か
+      yomi: かもい
     - name: 鴨居3丁目
-      yomi: か
+      yomi: かもい
     - name: 鴨居4丁目
-      yomi: か
+      yomi: かもい
     - name: 鴨居町200〜399番地
-      yomi: か
+      yomi: かもいちょう
     - name: 鴨居町800〜2699番地
-      yomi: か
+      yomi: かもいちょう
     - name: 白山1丁目
-      yomi: は
+      yomi: はくさん
     - name: 東本郷1丁目
-      yomi: ひ
+      yomi: ひがしほんごう
     - name: 東本郷2丁目
-      yomi: ひ
+      yomi: ひがしほんごう
     - name: 東本郷3丁目
-      yomi: ひ
+      yomi: ひがしほんごう
     - name: 東本郷4丁目
-      yomi: ひ
+      yomi: ひがしほんごう
     - name: 東本郷5丁目
-      yomi: ひ
+      yomi: ひがしほんごう
     - name: 東本郷6丁目
-      yomi: ひ
+      yomi: ひがしほんごう
     - name: 東本郷町
-      yomi: ひ
+      yomi: ひがしほんごうちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

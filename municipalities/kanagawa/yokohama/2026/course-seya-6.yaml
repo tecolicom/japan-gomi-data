@@ -3,17 +3,17 @@ metadata:
   course: seya-6
   areas:
     - name: 阿久和東1丁目
-      yomi: あ
+      yomi: あくわひがし
     - name: 阿久和東2丁目
-      yomi: あ
+      yomi: あくわひがし
     - name: 阿久和東3丁目
-      yomi: あ
+      yomi: あくわひがし
     - name: 阿久和南1丁目
-      yomi: あ
+      yomi: あくわみなみ
     - name: 二ツ橋町（387〜537番地を除く）
-      yomi: ふ
+      yomi: ふたつばしちょう
     - name: 三ツ境
-      yomi: み
+      yomi: みつきょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

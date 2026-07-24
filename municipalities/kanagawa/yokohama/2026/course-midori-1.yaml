@@ -3,33 +3,33 @@ metadata:
   course: midori-1
   areas:
     - name: 鴨居5丁目
-      yomi: か
+      yomi: かもい
     - name: 鴨居6丁目
-      yomi: か
+      yomi: かもい
     - name: 鴨居7丁目
-      yomi: か
+      yomi: かもい
     - name: 竹山1丁目
-      yomi: た
+      yomi: たけやま
     - name: 竹山2丁目
-      yomi: た
+      yomi: たけやま
     - name: 竹山3丁目
-      yomi: た
+      yomi: たけやま
     - name: 竹山4丁目
-      yomi: た
+      yomi: たけやま
     - name: 長津田1丁目
-      yomi: な
+      yomi: ながつた
     - name: 長津田2丁目
-      yomi: な
+      yomi: ながつた
     - name: 長津田3丁目
-      yomi: な
+      yomi: ながつた
     - name: 長津田4丁目
-      yomi: な
+      yomi: ながつた
     - name: 長津田5丁目
-      yomi: な
+      yomi: ながつた
     - name: 長津田6丁目
-      yomi: な
+      yomi: ながつた
     - name: 長津田7丁目
-      yomi: な
+      yomi: ながつた
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

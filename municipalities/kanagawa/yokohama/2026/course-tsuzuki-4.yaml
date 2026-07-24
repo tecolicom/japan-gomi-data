@@ -3,33 +3,33 @@ metadata:
   course: tsuzuki-4
   areas:
     - name: 牛久保1丁目
-      yomi: う
+      yomi: うしくぼ
     - name: 牛久保西1丁目
-      yomi: う
+      yomi: うしくぼにし
     - name: 北山田1丁目
-      yomi: き
+      yomi: きたやまた
     - name: 北山田2丁目
-      yomi: き
+      yomi: きたやまた
     - name: 北山田3丁目
-      yomi: き
+      yomi: きたやまた
     - name: 北山田4丁目
-      yomi: き
+      yomi: きたやまた
     - name: 北山田5丁目
-      yomi: き
+      yomi: きたやまた
     - name: 北山田6丁目
-      yomi: き
+      yomi: きたやまた
     - name: 北山田7丁目
-      yomi: き
+      yomi: きたやまた
     - name: 東山田1丁目
-      yomi: ひ
+      yomi: ひがしやまた
     - name: 東山田2丁目
-      yomi: ひ
+      yomi: ひがしやまた
     - name: 東山田3丁目
-      yomi: ひ
+      yomi: ひがしやまた
     - name: 東山田4丁目
-      yomi: ひ
+      yomi: ひがしやまた
     - name: 東山田町
-      yomi: ひ
+      yomi: ひがしやまたちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

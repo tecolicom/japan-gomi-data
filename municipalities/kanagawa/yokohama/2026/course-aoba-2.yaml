@@ -3,37 +3,37 @@ metadata:
   course: aoba-2
   areas:
     - name: あざみ野3丁目
-      yomi: あ
+      yomi: あざみの
     - name: 美しが丘西1丁目
-      yomi: う
+      yomi: うつくしがおかにし
     - name: 美しが丘西2丁目
-      yomi: う
+      yomi: うつくしがおかにし
     - name: 美しが丘西3丁目
-      yomi: う
+      yomi: うつくしがおかにし
     - name: 荏子田1丁目
-      yomi: え
+      yomi: えこだ
     - name: 荏子田2丁目
-      yomi: え
+      yomi: えこだ
     - name: 荏子田3丁目
-      yomi: え
+      yomi: えこだ
     - name: 大場町
-      yomi: お
-    - name: 鉄町
-      yomi: く
+      yomi: おおばちょう
     - name: 黒須田町
       yomi: く
+    - name: 鉄町
+      yomi: くろがねちょう
     - name: すすき野1丁目
-      yomi: す
+      yomi: すすきの
     - name: すすき野2丁目
-      yomi: す
+      yomi: すすきの
     - name: すすき野3丁目
-      yomi: す
+      yomi: すすきの
     - name: みすずが丘
-      yomi: み
+      yomi: みすずがおか
     - name: 元石川町
-      yomi: も
+      yomi: もといしかわちょう
     - name: もみの木台
-      yomi: も
+      yomi: もみのきだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

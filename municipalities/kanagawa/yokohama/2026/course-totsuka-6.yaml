@@ -3,21 +3,21 @@ metadata:
   course: totsuka-6
   areas:
     - name: 秋葉町
-      yomi: あ
+      yomi: あきばちょう
     - name: 上品濃
-      yomi: か
+      yomi: かみしなの
     - name: 川上町
-      yomi: か
+      yomi: かわかみちょう
     - name: 品濃町
-      yomi: し
+      yomi: しなのちょう
     - name: 名瀬町
-      yomi: な
+      yomi: なせちょう
     - name: 平戸4丁目（品濃町との境目付近）
-      yomi: ひ
+      yomi: ひらど
     - name: 平戸町（環状2号線の西側）
-      yomi: ひ
+      yomi: ひらどちょう
     - name: 前田町
-      yomi: ま
+      yomi: まえだちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

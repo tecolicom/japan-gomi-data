@@ -3,33 +3,33 @@ metadata:
   course: tsuzuki-1
   areas:
     - name: 荏田南1丁目
-      yomi: え
+      yomi: えだみなみ
     - name: 荏田南2丁目
-      yomi: え
+      yomi: えだみなみ
     - name: 荏田南3丁目
-      yomi: え
+      yomi: えだみなみ
     - name: 大丸
-      yomi: お
+      yomi: おおまる
     - name: 加賀原1丁目
-      yomi: か
+      yomi: かがはら
     - name: 加賀原2丁目
-      yomi: か
+      yomi: かがはら
     - name: 川和台
-      yomi: か
+      yomi: かわわだい
     - name: 川和町
-      yomi: か
+      yomi: かわわちょう
     - name: 葛が谷
-      yomi: く
+      yomi: くずがや
     - name: 高山
-      yomi: た
+      yomi: たかやま
     - name: 二の丸
-      yomi: に
+      yomi: にのまる
     - name: 平台
-      yomi: ひ
+      yomi: ひらだい
     - name: 富士見が丘
-      yomi: ふ
+      yomi: ふじみがおか
     - name: 見花山
-      yomi: み
+      yomi: みはなやま
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

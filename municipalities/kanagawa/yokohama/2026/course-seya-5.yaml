@@ -3,27 +3,27 @@ metadata:
   course: seya-5
   areas:
     - name: 阿久和西1丁目
-      yomi: あ
+      yomi: あくわにし
     - name: 阿久和西2丁目
-      yomi: あ
+      yomi: あくわにし
     - name: 阿久和西3丁目
-      yomi: あ
+      yomi: あくわにし
     - name: 阿久和西4丁目
-      yomi: あ
+      yomi: あくわにし
     - name: 阿久和東4丁目
-      yomi: あ
+      yomi: あくわひがし
     - name: 阿久和南2丁目
-      yomi: あ
+      yomi: あくわみなみ
     - name: 阿久和南3丁目
-      yomi: あ
+      yomi: あくわみなみ
     - name: 阿久和南4丁目
-      yomi: あ
+      yomi: あくわみなみ
     - name: 宮沢2丁目
-      yomi: み
+      yomi: みやざわ
     - name: 宮沢3丁目
-      yomi: み
+      yomi: みやざわ
     - name: 宮沢4丁目
-      yomi: み
+      yomi: みやざわ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

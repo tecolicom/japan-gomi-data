@@ -2,10 +2,10 @@ metadata:
   city: yokohama
   course: hodogaya-4
   areas:
-    - name: 今井町
-      yomi: い
     - name: 岩崎町【市営岩崎住宅付近】
       yomi: い
+    - name: 今井町
+      yomi: いまいちょう
     - name: 境木本町【環状2号線沿い】
       yomi: さ
     - name: 境木町

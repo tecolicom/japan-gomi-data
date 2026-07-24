@@ -3,25 +3,25 @@ metadata:
   course: asahi-3
   areas:
     - name: 柏町
-      yomi: か
+      yomi: かしわちょう
     - name: さちが丘
-      yomi: さ
+      yomi: さちがおか
     - name: 善部町
-      yomi: せ
+      yomi: ぜんぶちょう
     - name: 中希望が丘
-      yomi: な
+      yomi: なかきぼうがおか
     - name: 東希望が丘（100番地付近）
-      yomi: ひ
+      yomi: ひがしきぼうがおか
     - name: 二俣川1丁目（2番地のうちの1か所のみ）
-      yomi: ふ
+      yomi: ふたまたがわ
     - name: 二俣川2丁目
-      yomi: ふ
+      yomi: ふたまたがわ
     - name: 万騎が原
-      yomi: ま
+      yomi: まきがはら
     - name: 南希望が丘
-      yomi: み
+      yomi: みなみきぼうがおか
     - name: 南本宿町（85番地付近）
-      yomi: み
+      yomi: みなみほんじゅくちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

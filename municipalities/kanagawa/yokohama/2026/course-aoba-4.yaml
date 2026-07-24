@@ -3,25 +3,25 @@ metadata:
   course: aoba-4
   areas:
     - name: 梅が丘
-      yomi: う
+      yomi: うめがおか
     - name: 榎が丘
-      yomi: え
+      yomi: えのきがおか
     - name: さつきが丘
-      yomi: さ
+      yomi: さつきがおか
     - name: 下谷本町
-      yomi: し
+      yomi: しもやもとちょう
     - name: しらとり台
-      yomi: し
+      yomi: しらとりだい
     - name: 田奈町
-      yomi: た
+      yomi: たなちょう
     - name: 千草台
-      yomi: ち
+      yomi: ちぐさだい
     - name: つつじが丘
-      yomi: つ
+      yomi: つつじがおか
     - name: 藤が丘1丁目
-      yomi: ふ
+      yomi: ふじがおか
     - name: 藤が丘2丁目
-      yomi: ふ
+      yomi: ふじがおか
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

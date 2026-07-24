@@ -3,36 +3,36 @@ metadata:
   course: izumi-1
   areas:
     - name: 中田北1丁目全域
-      yomi: な
+      yomi: なかたきた
     - name: 中田北2丁目（中田東側集積場所利用者除く）
-      yomi: な
+      yomi: なかたきた
     - name: 中田北3丁目
-      yomi: な
+      yomi: なかたきた
       note: 富士見丘町内会を除く
     - name: 中田町2700番台〜3400番台
-      yomi: な
+      yomi: なかたちょう
     - name: 中田西1丁目
-      yomi: な
+      yomi: なかたにし
     - name: 中田西2丁目
-      yomi: な
+      yomi: なかたにし
     - name: 中田西3丁目
-      yomi: な
+      yomi: なかたにし
     - name: 中田西4丁目
-      yomi: な
+      yomi: なかたにし
     - name: 中田南1丁目
-      yomi: な
+      yomi: なかたみなみ
     - name: 中田南2丁目
-      yomi: な
+      yomi: なかたみなみ
     - name: 中田南3丁目
-      yomi: な
+      yomi: なかたみなみ
     - name: 中田南4丁目
-      yomi: な
+      yomi: なかたみなみ
     - name: 中田南5丁目
-      yomi: な
+      yomi: なかたみなみ
     - name: 西が岡1丁目28〜32番地
-      yomi: に
+      yomi: にしがおか
     - name: 弥生台44番地
-      yomi: や
+      yomi: やよいだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

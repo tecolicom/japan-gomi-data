@@ -3,25 +3,25 @@ metadata:
   course: seya-2
   areas:
     - name: 相沢1丁目
-      yomi: あ
+      yomi: あいざわ
     - name: 相沢3丁目
-      yomi: あ
+      yomi: あいざわ
     - name: 相沢4丁目
-      yomi: あ
+      yomi: あいざわ
     - name: 瀬谷1丁目1〜22番地
-      yomi: せ
+      yomi: せや
     - name: 瀬谷2丁目
-      yomi: せ
+      yomi: せや
     - name: 瀬谷3丁目
-      yomi: せ
+      yomi: せや
     - name: 瀬谷4丁目
-      yomi: せ
+      yomi: せや
     - name: 中央（瀬谷区）
-      yomi: ち
+      yomi: ちゅうおう
     - name: 橋戸1丁目
-      yomi: は
+      yomi: はしど
     - name: 南台1丁目37〜45番地
-      yomi: み
+      yomi: みなみだい
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

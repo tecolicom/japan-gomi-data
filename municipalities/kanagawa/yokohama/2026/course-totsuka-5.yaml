@@ -3,19 +3,19 @@ metadata:
   course: totsuka-5
   areas:
     - name: 上倉田町
-      yomi: か
+      yomi: かみくらたちょう
     - name: 下倉田町
-      yomi: し
+      yomi: しもくらたちょう
     - name: 舞岡町
-      yomi: ま
+      yomi: まいおかちょう
     - name: 南舞岡1丁目
-      yomi: み
+      yomi: みなみまいおか
     - name: 南舞岡2丁目
-      yomi: み
+      yomi: みなみまいおか
     - name: 南舞岡3丁目
-      yomi: み
+      yomi: みなみまいおか
     - name: 南舞岡4丁目
-      yomi: み
+      yomi: みなみまいおか
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

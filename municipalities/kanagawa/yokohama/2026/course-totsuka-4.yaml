@@ -3,38 +3,38 @@ metadata:
   course: totsuka-4
   areas:
     - name: 柏尾町
-      yomi: か
+      yomi: かしおちょう
     - name: 上柏尾町
-      yomi: か
+      yomi: かみかしおちょう
     - name: 上矢部町2847の一部（国道1号線上の集積場所）
-      yomi: か
+      yomi: かみやべちょう
     - name: 平戸1丁目
-      yomi: ひ
+      yomi: ひらど
     - name: 平戸2丁目
-      yomi: ひ
+      yomi: ひらど
     - name: 平戸3丁目
-      yomi: ひ
+      yomi: ひらど
     - name: 平戸5丁目
-      yomi: ひ
+      yomi: ひらど
     - name: 平戸4丁目
-      yomi: ひ
+      yomi: ひらど
     - name: 平戸町（環状2号線の東側）
-      yomi: ひ
+      yomi: ひらどちょう
       note: 一部異なる地域あり
     - name: 舞岡町33〜48番地付近（柏尾町との境目の道路の一部）
-      yomi: ま
+      yomi: まいおかちょう
     - name: 舞岡町115〜122番地付近（吉田町との境目の道路の一部）
-      yomi: ま
+      yomi: まいおかちょう
     - name: 舞岡町1091番地付近（日立和敬寮前のバス停付近のみ）
-      yomi: ま
+      yomi: まいおかちょう
     - name: 舞岡町3575〜3589番地付近（柏尾町との境目の道路の一部）
-      yomi: ま
+      yomi: まいおかちょう
     - name: 前田町（国道1号線（品濃口〜赤関橋）付近）
-      yomi: ま
+      yomi: まえだちょう
     - name: 矢部町（JR線路の東側）
-      yomi: や
+      yomi: やべちょう
     - name: 吉田町（戸塚区）
-      yomi: よ
+      yomi: よしだまち
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

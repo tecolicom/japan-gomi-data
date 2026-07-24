@@ -3,41 +3,41 @@ metadata:
   course: asahi-6
   areas:
     - name: 今宿1丁目
-      yomi: い
+      yomi: いまじゅく
     - name: 今宿2丁目
-      yomi: い
+      yomi: いまじゅく
     - name: 今宿町
-      yomi: い
+      yomi: いまじゅくちょう
     - name: 今宿南町（2289番地付近）
-      yomi: い
+      yomi: いまじゅくみなみちょう
     - name: 金が谷
-      yomi: か
+      yomi: かねがや
     - name: 金が谷1丁目
-      yomi: か
+      yomi: かねがや
     - name: 金が谷2丁目
-      yomi: か
+      yomi: かねがや
     - name: 笹野台1丁目
-      yomi: さ
+      yomi: ささのだい
     - name: 笹野台2丁目
-      yomi: さ
+      yomi: ささのだい
     - name: 笹野台3丁目
-      yomi: さ
+      yomi: ささのだい
     - name: 笹野台4丁目
-      yomi: さ
+      yomi: ささのだい
     - name: 中尾1丁目
-      yomi: な
+      yomi: なかお
     - name: 中尾2丁目
-      yomi: な
+      yomi: なかお
     - name: 中沢1丁目
-      yomi: な
+      yomi: なかざわ
     - name: 中沢2丁目
-      yomi: な
+      yomi: なかざわ
     - name: 中沢3丁目
-      yomi: な
+      yomi: なかざわ
     - name: 東希望が丘
-      yomi: ひ
+      yomi: ひがしきぼうがおか
     - name: 矢指町（1194番地広域水道企業団公舎のみ）
-      yomi: や
+      yomi: やさしちょう
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

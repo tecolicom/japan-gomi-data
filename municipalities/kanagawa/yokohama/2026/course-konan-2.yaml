@@ -3,31 +3,31 @@ metadata:
   course: konan-2
   areas:
     - name: 大久保1丁目
-      yomi: お
+      yomi: おおくぼ
     - name: 大久保2丁目
-      yomi: お
+      yomi: おおくぼ
     - name: 大久保3丁目
-      yomi: お
+      yomi: おおくぼ
     - name: 上大岡西1丁目
-      yomi: か
+      yomi: かみおおおかにし
     - name: 上大岡西2丁目
-      yomi: か
+      yomi: かみおおおかにし
     - name: 上大岡西3丁目
-      yomi: か
+      yomi: かみおおおかにし
     - name: 上大岡東1丁目（上大岡東3丁目11の一部を除く）
-      yomi: か
+      yomi: かみおおおかひがし
     - name: 上大岡東2丁目（上大岡東3丁目11の一部を除く）
-      yomi: か
+      yomi: かみおおおかひがし
     - name: 上大岡東3丁目（上大岡東3丁目11の一部を除く）
-      yomi: か
+      yomi: かみおおおかひがし
     - name: 最戸1丁目
-      yomi: さ
+      yomi: さいど
     - name: 最戸2丁目
-      yomi: さ
+      yomi: さいど
     - name: 笹下1丁目笹下1丁目10の一部と笹下2丁目30の一部を除く
-      yomi: さ
+      yomi: ささげ
     - name: 笹下2丁目笹下1丁目10の一部と笹下2丁目30の一部を除く
-      yomi: さ
+      yomi: ささげ
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
