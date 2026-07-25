@@ -71,6 +71,8 @@ catch { throw new Error('cache/abr-town.json がありません。node fetch-yom
 const nfkc = (s) => s.normalize('NFKC');
 // 原文の丸括弧は全角/半角が混在する (（…) 等) ため出力時に全角へ正規化する
 const zenParen = (s) => s.replace(/\(/g, '（').replace(/\)/g, '）');
+// 注記マーカー「（※）」は町名ではないので name・course_name_ja から除く (説明は note に残す)。
+const cleanTownName = (t) => t.replace(/\s*（※）\s*/g, '').trim();
 const eqOaza = (a, b) => a === b || a.replace(/ケ/g, 'ヶ') === b || a.replace(/ヶ/g, 'ケ') === b;
 // kViewer 町名 → { base(大字), chome(丁目番号|null), ward(区注記|null) } へ正規化
 const parseTown = (t) => {
@@ -152,10 +154,15 @@ const splitKey = (t) => nfkc(t)
 const splitCount = new Map(); // build 実行部で records 読込後に構築する
 const splitNoNote = [];
 const rowArea = (r) => {
+  // 注記マーカー「（※）」は町名ではないので name に出さず、note 内の「（※）説明」は「（説明）」へ。
+  const townName = cleanTownName(r.town);
   const { yomi, machiazaId } = abrOf(r.town);
   if (!yomi) yomiMissing.push(r.town);
   if (!machiazaId) idMissing.push(r.town);
-  const note = r.note && r.note.trim() ? zenParen(stripTimeNote(r.note)) : '';
+  let note = r.note && r.note.trim() ? zenParen(stripTimeNote(r.note)) : '';
+  // 括弧つき注記マーカー「（※）」→「※」に。※記号は残す (build が運用注記の目印に使うため、
+  // 消すと note が地域情報扱いされ name へ誤昇格する)。
+  note = note.replace(/\s*（※）\s*/g, ' ※').replace(/\s+/g, ' ').trim();
   const isSplit = splitCount.get(splitKey(r.town)) > 1;
   if (isSplit && !note) splitNoNote.push(r.town);
   // 地域情報の一貫化: note のうち「地域範囲・区別」の情報 (割れ町の判別子、非割れ町の
@@ -167,7 +174,7 @@ const rowArea = (r) => {
     // name と重複する冗長な範囲説明 (御津中山 | 中山 等) は昇格せず note ごと落とす
     if (r.town.includes(note)) {
       return {
-        name: r.town,
+        name: townName,
         ...(yomi ? { yomi } : {}),
         ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
       };
@@ -183,13 +190,13 @@ const rowArea = (r) => {
     }
     if (!noteClean || r.town.includes(noteClean)) {
       return {
-        name: r.town,
+        name: townName,
         ...(yomi ? { yomi } : {}),
         ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
       };
     }
-    const wm = r.town.match(/^(.+?)（([^）]+)）\s*$/);
-    const name = wm ? `${wm[1]}（${wm[2]}・${noteClean}）` : `${r.town}（${noteClean}）`;
+    const wm = townName.match(/^(.+?)（([^）]+)）\s*$/);
+    const name = wm ? `${wm[1]}（${wm[2]}・${noteClean}）` : `${townName}（${noteClean}）`;
     return {
       name: zenParen(name),
       ...(yomi ? { yomi } : {}),
@@ -197,7 +204,7 @@ const rowArea = (r) => {
     };
   }
   return {
-    name: r.town,
+    name: townName,
     ...(yomi ? { yomi } : {}),
     ...(machiazaId ? { machiaza_id: [machiazaId] } : {}),
     ...(note ? { note } : {}),
@@ -241,7 +248,7 @@ const docs = folded.map((c, i) => {
   const byDist = new Map();
   for (const r of c.areas) {
     if (!byDist.has(r.district)) byDist.set(r.district, []);
-    byDist.get(r.district).push(r.town);
+    byDist.get(r.district).push(cleanTownName(r.town));
   }
   const courseNameJa = [...byDist.entries()].map(([d, ts]) => `${d}: ${ts.join('／')}`).join(' ｜ ');
   return courseDoc({
