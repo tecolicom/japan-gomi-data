@@ -239,7 +239,8 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
     }));
     const gakkuByName = new Map();
     for (const a of uniq) if (!gakkuByName.has(a.name)) gakkuByName.set(a.name, a.gakku || '');
-    docMeta.push({ district: distJa, gakkuByName });
+    const burnable = c.rules.find((r) => r.category === 'burnable');
+    docMeta.push({ district: distJa, gakkuByName, burnableDays: burnable?.days || [] });
   });
 }
 
@@ -283,7 +284,21 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
     after.get(a.name).add(d.metadata.course);
   }
   const dup = [...after].filter(([, cs]) => cs.size > 1).map(([n]) => n);
-  if (dup.length) console.log(`  警告: 昇格後も判別不能な割れ (原文に番地等の区別が無い): ${dup.join('、')}`);
+  // 学区・地区でも区別できない割れ (八島(玉島中央北・島地): 市PDFが同一表記に月木/火金の2日程を
+  // 掲載) は、唯一の区別材料である「燃やせるごみの収集曜日」を note に付けて住民が選べるようにする。
+  if (dup.length) {
+    const DOW = { SU: '日', MO: '月', TU: '火', WE: '水', TH: '木', FR: '金', SA: '土' };
+    for (let i = 0; i < docs.length; i++) {
+      const days = docMeta[i].burnableDays.map((x) => DOW[x]).join('・');
+      if (!days) continue;
+      docs[i].metadata.areas = docs[i].metadata.areas.map((a) => {
+        if (!dup.includes(a.name)) return a;
+        const tag = `燃やせるごみ${days}曜日の地区`;
+        return { ...a, note: a.note ? `${a.note}、${tag}` : tag };
+      });
+    }
+    console.log(`  判別不能な割れに収集日 note を付与 (要市照会): ${dup.join('、')}`);
+  }
 }
 const n = writeCourses(OUTDIR, YEAR, docs);
 writeFileSync(join(HERE, 'cache', 'area_expansion.json'),
