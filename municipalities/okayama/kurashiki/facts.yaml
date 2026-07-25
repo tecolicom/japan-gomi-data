@@ -59,3 +59,23 @@ facts:
     tags: [地名の読み]
     sources:
       - https://www.city.kurashiki.okayama.jp (各地区収集日一覧)
+  - id: banchi-split-collection
+    title: 同じ丁目でも番地でごみの日が変わる
+    body: >-
+      児島の下の町・上の町・小川などでは、同じ丁目のなかでも番地によって収集日が分かれています。
+      市の一覧表は「下の町 4 丁目 9 番、10 番…」のように番地まで指定しており、丁目だけでは
+      自分の収集日が決まりません。引っ越しのときなどは、丁目に加えて番地も確かめる必要があります。
+    scope: city
+    tags: [町内の違い, 番地]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (児島地区 ごみ収集日一覧表)
+  - id: old-place-names
+    title: 古い地名がごみ収集の目印として残る
+    body: >-
+      児島の下の町・上の町の一覧には、沖熊・萱刈・和井田・堀江団地といった古い地名が丁目名と
+      並んで書かれています。住居表示で丁目に整理されたあとも、地元で使われてきた地名が収集区域を
+      示す目印として市の資料に残っています。
+    scope: city
+    tags: [地名, 合併の痕跡]
+    sources:
+      - https://www.city.kurashiki.okayama.jp (児島地区 ごみ収集日一覧表)

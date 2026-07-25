@@ -3,14 +3,25 @@ metadata:
   course: kojima-15
   course_name_ja: "児島地区: 上の町／由加／白尾平野／白尾下／田の口"
   areas:
-    - name: 上の町1～4丁目
+    - name: 上の町1丁目（上の町・由加・白尾・峠、11番～14番）
       yomi: かみのちょう
       machiaza_id:
         - 332020-0051001
+    - name: 上の町2丁目
+      yomi: かみのちょう
+      machiaza_id:
         - 332020-0051002
+      note: 上の町・由加・白尾・峠
+    - name: 上の町3丁目
+      yomi: かみのちょう
+      machiaza_id:
         - 332020-0051003
+      note: 上の町・由加・白尾・峠
+    - name: 上の町4丁目
+      yomi: かみのちょう
+      machiaza_id:
         - 332020-0051004
-      note: 上の町・由加・白尾・峠、1丁目11番～14番
+      note: 上の町・由加・白尾・峠
     - name: 由加
       yomi: ゆが
       machiaza_id:

@@ -3,10 +3,11 @@
 // chomes:[…] リストで保持する (build が各丁目の machiaza_id を配列で付与)。
 //
 // 丁目まとめ/リストの area 化ルール:
-//  - 連続レンジ (N丁目～M丁目 / N～M丁目): 1 area・chomes 配列 (例 下の町3～8丁目)。
-//  - レンジを含まず、各丁目が別々の番地割れ (「N番…」) を持つ町: 丁目ごとに別 area へ分割し、
-//    各丁目の番地だけを note に載せる (例 下の町1丁目/2丁目/9丁目/10丁目)。
-//  - それ以外の複数丁目 (番地割れ無し・共通条件のみ): 1 area・chomes 配列 (例 神田3・4丁目)。
+//  - 番地割れ (「N番…」) を持つ丁目がある複数丁目の町: 丁目ごとに別 area へ分割し、各丁目の
+//    番地だけを note に載せる (レンジ有無に関わらず。例 下の町1/2/9/10丁目、
+//    上の町 = 1丁目(11～14番)+2～4丁目(全域) → 1/2/3/4丁目に分割)。
+//  - 番地割れの無い複数丁目 (連続レンジ全域 / 共通条件のみ): 1 area・chomes 配列
+//    (例 下の町3～8丁目が全域なら 1 area、神田3・4丁目)。
 //  番地/号/番地レンジ・道路河川境界条件・字/町内会補足・旧呼称 (kyu) は note へ (name には入れない)。
 //
 // 規約の要点:
@@ -224,9 +225,12 @@ export function expandRow(rec) {
       continue;
     }
 
-    // 各丁目が別々の番地割れを持つ (レンジ無し・複数丁目・番地 note あり) なら丁目ごとに分割。
+    // 番地割れを持つ丁目がある複数丁目の町は丁目ごとに分割 (レンジ有無に関わらず)。
+    // レンジ (2～4丁目) と番地割れ丁目 (1丁目=11～14番) が混在する町でも、番地割れ丁目の
+    // 番地が 1 area 内で潰れて「どの丁目の番地か」読めなくなるのを防ぐ。番地割れの無い丁目は
+    // note なしの素の丁目 area になる (例 上の町 → 1丁目(11～14番)/2丁目/3丁目/4丁目)。
     const hasPerChomeBanchi = chomes.some((c) => (g.chomeNotes.get(c) || []).some(isBanchi));
-    if (!g.hasRange && chomes.length > 1 && hasPerChomeBanchi) {
+    if (chomes.length > 1 && hasPerChomeBanchi) {
       for (const c of chomes) {
         const note = dedup([...rowNotes, ...g.townNotes, ...(g.chomeNotes.get(c) || [])]).join('、');
         areas.push({ base: g.town, chomes: [c], ...(note ? { note } : {}) });

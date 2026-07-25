@@ -15,11 +15,10 @@ metadata:
       yomi: ひろえ
       machiaza_id:
         - 332020-0155002
-    - name: 広江4丁目
+    - name: 広江4丁目（2524～2556番地）
       yomi: ひろえ
       machiaza_id:
         - 332020-0155004
-      note: 2524～2556番地
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

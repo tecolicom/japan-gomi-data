@@ -81,13 +81,16 @@ for (const t of ABR) { if (!abrByOaza.has(t.oaza)) abrByOaza.set(t.oaza, []); ab
 const PREFIX_YOMI = {
   水島: 'みずしま', 児島: 'こじま', 玉島: 'たましま', 真備町: 'まびちょう', 船穂町: 'ふなおちょう',
   茶屋町: 'ちゃやまち', 藤戸町: 'ふじとちょう', 連島町: 'つらじまちょう', 福田町: 'ふくだちょう',
-  西阿知町: 'にしあちちょう', 下津井: 'しもつい',
+  西阿知町: 'にしあちちょう', 下津井: 'しもつい', 児島味野: 'こじまあじの',
 };
+// 接頭辞候補の順序 = マッチ優先順。倉敷本体は接頭辞なしが正なので '' 先頭。玉島は「黒崎」が
+// 倉敷本体 (0036000) と玉島黒崎 (0095000) の両在で、玉島 PDF の黒崎は玉島黒崎が正のため '玉島'
+// を先に試す (玉島で接頭辞つき↔なし両在は黒崎のみ)。児島味野: 原文略記「城」= 児島味野城。
 const PREFIX = {
   倉敷: ['', '茶屋町', '藤戸町', '西阿知町'],
   水島: ['', '水島', '連島町', '福田町', '西阿知町'],
-  玉島: ['', '玉島'],
-  児島: ['', '児島', '下津井'],
+  玉島: ['玉島', ''],
+  児島: ['', '児島', '下津井', '児島味野'],
   真備: ['', '真備町'],
   船穂: ['', '船穂町'],
 };
@@ -196,6 +199,7 @@ function courseName(distJa, flat) {
 }
 
 const docs = [];
+const docMeta = []; // docs と同順: 割れ判別子昇格用の { district, gakkuByName }
 let seq = 0;
 for (const [distJa, meta] of Object.entries(DISTRICTS)) {
   const rows = records.filter((r) => r.district === distJa);
@@ -233,6 +237,9 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
       },
       rules: c.rules,
     }));
+    const gakkuByName = new Map();
+    for (const a of uniq) if (!gakkuByName.has(a.name)) gakkuByName.set(a.name, a.gakku || '');
+    docMeta.push({ district: distJa, gakkuByName });
   });
 }
 
@@ -252,6 +259,20 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
       if (nc.startsWith(a.name)) nc = nc.slice(a.name.length).trim();
       return { ...rest, name: nc ? `${a.name}（${nc}）` : a.name };
     });
+  }
+  // note 判別子でも残る割れ (原文に番地等の区別が無い) は、学区(gakku)→無ければ地区(district)を
+  // 判別子に付ける。同名でも別学区・別地区なら住民が区別できるようにする (黒崎=倉敷/玉島、中島=学区)。
+  {
+    const cnt = new Map();
+    for (const d of docs) for (const a of d.metadata.areas) cnt.set(a.name, (cnt.get(a.name) || 0) + 1);
+    for (let i = 0; i < docs.length; i++) {
+      const dm = docMeta[i];
+      docs[i].metadata.areas = docs[i].metadata.areas.map((a) => {
+        if ((cnt.get(a.name) || 0) <= 1 || /[（(]/.test(a.name)) return a;
+        const disc = dm.gakkuByName.get(a.name) || dm.district;
+        return disc ? { ...a, name: `${a.name}（${disc}）` } : a;
+      });
+    }
   }
   // 昇格後も同一 name が複数コースに残る = 真に判別不能な割れのみ警告。
   const after = new Map();
