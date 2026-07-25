@@ -178,7 +178,8 @@ export function expandRow(rec) {
         const idx = town.indexOf(mk);
         if (idx > 0 && (best < 0 || idx < best)) best = idx;
       }
-      if (best >= 0) { condNote = town.slice(best); town = town.slice(0, best); }
+      // 「のうち」は接続語 (「平田のうち山陽本線より北」= 平田の、山陽本線より北) なので note に残さない。
+      if (best >= 0) { condNote = town.slice(best).replace(/^のうち/, ''); town = town.slice(0, best); }
     }
     if (!town) throw new Error(`町名が空: ${JSON.stringify(token)} in ${JSON.stringify(rec.area)}`);
 

@@ -3,7 +3,7 @@ metadata:
   course: kojima-13
   course_name_ja: "児島地区: 福江／曽原／尾原／木見／林"
   areas:
-    - name: 福江（・曽原・尾原・木見・佐野安）
+    - name: 福江（曽原・尾原・木見・佐野安）
       yomi: ふくえ
       machiaza_id:
         - 332020-0246000

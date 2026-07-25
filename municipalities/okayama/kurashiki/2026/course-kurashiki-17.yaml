@@ -27,11 +27,11 @@ metadata:
       yomi: はまのちゃや
       machiaza_id:
         - 332020-0143002
-    - name: 大島（のうち山陽本線より北）
+    - name: 大島（山陽本線より北）
       yomi: おおじま
       machiaza_id:
         - 332020-0014000
-    - name: 平田（のうち山陽本線より北）
+    - name: 平田（山陽本線より北）
       yomi: ひらた
       machiaza_id:
         - 332020-0247000
@@ -39,11 +39,11 @@ metadata:
       yomi: ふくしま
       machiaza_id:
         - 332020-0158000
-    - name: 大島（のうち山陽本線より南）
+    - name: 大島（山陽本線より南）
       yomi: おおじま
       machiaza_id:
         - 332020-0014000
-    - name: 平田（のうち山陽本線より南）
+    - name: 平田（山陽本線より南）
       yomi: ひらた
       machiaza_id:
         - 332020-0247000

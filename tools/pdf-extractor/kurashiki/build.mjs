@@ -256,7 +256,9 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
       if (!((nameCount.get(a.name) || 0) > 1 && a.note)) return a;
       const { note, ...rest } = a;
       let nc = note.replace(/^（(.+)）$/, '$1').trim();
-      if (nc.startsWith(a.name)) nc = nc.slice(a.name.length).trim();
+      if (nc.startsWith(a.name)) nc = nc.slice(a.name.length);
+      // name 重複分を削った後に残る先頭・末尾の区切り (・、) を除去 (「福江（・曽原…）」防止)。
+      nc = nc.replace(/^[・、\s]+/, '').replace(/[・、\s]+$/, '');
       return { ...rest, name: nc ? `${a.name}（${nc}）` : a.name };
     });
   }
