@@ -79,3 +79,15 @@ facts:
     tags: [地名, 合併の痕跡]
     sources:
       - https://www.city.kurashiki.okayama.jp (児島地区 ごみ収集日一覧表)
+  - id: plastic-collection-from-2028
+    title: プラスチックの分別回収が 2028 年度から始まる
+    body: >-
+      倉敷市は現在、プラスチック製の容器や製品を資源として分けず、燃やせるごみとして焼却しています
+      (真備地区を除く)。資源ごみの品目が少なく見える理由のひとつです。プラスチック資源循環促進法を
+      受けて、市は家庭から出るプラスチックの一括回収を 2028 年 4 月に始める予定で、リサイクルを
+      進めて温室効果ガスの排出を抑えることを目指しています。
+    scope: city
+    tags: [分別体系, 今後の予定]
+    sources:
+      - https://www.sanyonews.jp/article/1757664 (山陽新聞 プラ一括回収28年度スタート 倉敷市)
+      - https://www.env.go.jp/recycle/waste/3r_network/5_region/project_list/33_okayama/01_kurashiki_r7.pdf (倉敷市 第4期循環型社会形成推進地域計画)
