@@ -8,7 +8,7 @@ source:
   yearend_url: https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
 notes:
   - "一次ソース: 朝霞市公式「家庭ごみ収集日一覧表」dust-syuusyuu.html の HTML 表(区域と 資源/プラ資源=燃やせないごみ/燃やすごみ の3曜日列、約38町丁グループ)。CSV/PDF ダウンロードは無し。収集は全域 朝霞市クリーンセンター単一・全品目 weekly。機械可読な第2ソースとして市民団体 Publitech ASAKA の 5374版 area_days.csv(github.com/publitechasaka/5374、36行、地区×4分別の収集曜日)を併用し、公式HTML表と全地区で照合した。"
-  - "収録単位: 全域が単一クリーンセンター管内で、同一日程の地区を畳んで 5 コース(course-1〜5)に集約。course_name_ja は付けていない(全域単一・少数コースのため area 列挙で足りる)。"
+  - "収録単位: 全域が単一クリーンセンター管内で、同一日程の地区を畳んで 6 コース(course-1〜6)に集約。course_name_ja は付けていない(全域単一・少数コースのため area 列挙で足りる)。"
   - "種別マッピング(taxonomy.yaml と一致、語彙追加なし): 燃やすごみ=burnable(週2曜日) / プラスチック資源=plastic(週1、容器包装プラのみ。プラ製品は燃やすごみ) / 燃やせないごみと有害ごみ=non_burnable+hazardous(週1・同日、乾電池・蛍光管・スプレー缶等の有害を燃やせないごみと同日収集) / 資源=市の分別定義どおり びん=glass_bottle・缶=beverage_can・ペットボトル=pet_bottle・古紙=paper・古布=cloth を同一日に一括収集するので5カテゴリの同日収集に分解(週1)。"
   - "areas: 5374 area_days.csv の地名を tools/html-extractor/asaka/build.mjs で 1 町名へ分解。分解規約: 先頭「大字」接頭辞は base から除く / 丁目(N丁目・N〜M丁目)は元表記を name に保持し machiaza_id 照合用に展開 / 番地・河川道路鉄道境界条件(「7番の一部(黒目川の西)」「県道和光志木線北側」「東武東上線南側」)と「◯◯の一部」は note へ / 全角数字は半角へ正規化。割れ area(同名が境界で別コース: 浜崎・膝折町2/4丁目・溝沼 等)は note の判別子を name に昇格し「町名(判別子)」とする(横浜・倉敷と同規則)。"
   - "yomi・machiaza_id: yomi は 5374 CSV の読み併記(「青葉台 あおばだい」)由来で全 36/36 付与(丁目細分行の読み欠落は同一大字の読みで補完)。machiaza_id はデジタル庁 ABR 町字マスター埼玉県版(pref11、lg 11227、fetch-yomi.mjs)由来で 25/36。ABR が住居表示ベースのため大字行を持たない農村部の広域大字(上内間木・下内間木・宮戸・台・根岸)と、丁目化された町の大字部分の割れ(大字浜崎・大字溝沼)は machiaza_id 無し(推測で付けない)。ABR は政府標準利用規約(CC BY 4.0 互換)。"
