@@ -582,6 +582,7 @@
   handle: asaka
   name_ja: 朝霞市
   population: 147521
+  status: collected
   source_type: html
   schedule_url: https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
   calendar_urls:

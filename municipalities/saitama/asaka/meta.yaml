@@ -1,0 +1,18 @@
+handle: asaka
+name_ja: 朝霞市
+region_ja: 埼玉県
+code: "11227"
+source:
+  index_url: https://www.city.asaka.lg.jp/soshiki/15/dust-katei.html
+  schedule_url: https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
+  yearend_url: https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
+notes:
+  - "一次ソース: 朝霞市公式「家庭ごみ収集日一覧表」dust-syuusyuu.html の HTML 表(区域と 資源/プラ資源=燃やせないごみ/燃やすごみ の3曜日列、約38町丁グループ)。CSV/PDF ダウンロードは無し。収集は全域 朝霞市クリーンセンター単一・全品目 weekly。機械可読な第2ソースとして市民団体 Publitech ASAKA の 5374版 area_days.csv(github.com/publitechasaka/5374、36行、地区×4分別の収集曜日)を併用し、公式HTML表と全地区で照合した。"
+  - "収録単位: 全域が単一クリーンセンター管内で、同一日程の地区を畳んで 5 コース(course-1〜5)に集約。course_name_ja は付けていない(全域単一・少数コースのため area 列挙で足りる)。"
+  - "種別マッピング(taxonomy.yaml と一致、語彙追加なし): 燃やすごみ=burnable(週2曜日) / プラスチック資源=plastic(週1、容器包装プラのみ。プラ製品は燃やすごみ) / 燃やせないごみと有害ごみ=non_burnable+hazardous(週1・同日、乾電池・蛍光管・スプレー缶等の有害を燃やせないごみと同日収集) / 資源=市の分別定義どおり びん=glass_bottle・缶=beverage_can・ペットボトル=pet_bottle・古紙=paper・古布=cloth を同一日に一括収集するので5カテゴリの同日収集に分解(週1)。"
+  - "areas: 5374 area_days.csv の地名を tools/html-extractor/asaka/build.mjs で 1 町名へ分解。分解規約: 先頭「大字」接頭辞は base から除く / 丁目(N丁目・N〜M丁目)は元表記を name に保持し machiaza_id 照合用に展開 / 番地・河川道路鉄道境界条件(「7番の一部(黒目川の西)」「県道和光志木線北側」「東武東上線南側」)と「◯◯の一部」は note へ / 全角数字は半角へ正規化。割れ area(同名が境界で別コース: 浜崎・膝折町2/4丁目・溝沼 等)は note の判別子を name に昇格し「町名(判別子)」とする(横浜・倉敷と同規則)。"
+  - "yomi・machiaza_id: yomi は 5374 CSV の読み併記(「青葉台 あおばだい」)由来で全 36/36 付与(丁目細分行の読み欠落は同一大字の読みで補完)。machiaza_id はデジタル庁 ABR 町字マスター埼玉県版(pref11、lg 11227、fetch-yomi.mjs)由来で 25/36。ABR が住居表示ベースのため大字行を持たない農村部の広域大字(上内間木・下内間木・宮戸・台・根岸)と、丁目化された町の大字部分の割れ(大字浜崎・大字溝沼)は machiaza_id 無し(推測で付けない)。ABR は政府標準利用規約(CC BY 4.0 互換)。"
+  - "年末年始: HTML表に「祝日も収集します(年末年始を除く)」と明記(december-announce 型)。年末年始の実日付休止は毎年12月に別途告知の運用で一次ソースに載らないため cancelled override は作らない(推測で作らない)。course は恒常的な曜日スケジュールで year=2026 は名目値。"
+  - "粗大ごみ: 別途申込・有料で集積所対象外 → rules 非対象。"
+  - "検証(2026-08-01): 公式HTML「家庭ごみ収集日一覧表」の3曜日列と、5374 area_days.csv の4分別曜日を、全36地区で独立照合し完全一致(HTMLのプラ資源列=CSVのプラスチック資源=燃やせないごみと有害ごみ が同曜日であることも確認)。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可。"
+  - "ライセンス: 収集日程データ自体の公開ライセンスは未確認(市サイト利用規約ページ 404、埼玉県ODポータルにごみ収集日程データセット無し)→ unknown。収集日という事実データの抽出として収録(練馬・杉並・所沢と同じ整理)。5374 area_days.csv は市データの転記(リポジトリのコードは MPL2.0 だが area_days.csv はデータ)。全国系アプリ「さんあ〜る」は第三者商用のため一次ソースに採らない。"
