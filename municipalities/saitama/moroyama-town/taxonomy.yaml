@@ -1,0 +1,50 @@
+# 毛呂山町(埼玉西部環境保全組合)。組合カレンダーPDFの品目を正典語彙へ割り当てる(語彙追加なし)。
+#  可燃=burnable / 不燃=non_burnable / 他プラ(その他容器包装プラスチック)=plastic /
+#  びん缶(びん・かん類 同日)=glass_bottle+beverage_can / 有害=hazardous /
+#  紙布(紙・布類 同日)=paper+cloth / ペット(ペットボトル)=pet_bottle
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - glass_bottle
+  - beverage_can
+  - hazardous
+  - paper
+  - cloth
+  - pet_bottle
+overrides:
+  burnable:
+    label: 可燃ごみ
+    short: 可燃
+  non_burnable:
+    label: 不燃ごみ
+    short: 不燃
+  plastic:
+    label: その他容器包装プラスチック
+    short: 他プラ
+  glass_bottle:
+    label: びん
+  beverage_can:
+    label: かん
+    short: 缶
+  hazardous:
+    label: 有害ごみ
+    short: 有害
+  paper:
+    label: 紙
+  cloth:
+    label: 布
+  pet_bottle:
+    label: ペットボトル
+    short: ペット
+
+# 参考情報: 組合カレンダーの品目名(同日収集の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: びん・かん類
+    short: びん缶
+    members: [glass_bottle, beverage_can]
+    note: びんとかんを同じ「びん缶」の日に収集
+  - label: 紙・布類
+    short: 紙布
+    members: [paper, cloth]
+    note: 紙と布を同じ「紙布」の日に収集

@@ -1,0 +1,77 @@
+metadata:
+  city: moroyama-town
+  course: c
+  course_name_ja: C地区
+  areas:
+    - name: C地区
+  year: 2026
+  fiscal_year_ja: 令和8年度
+  source:
+    source_url: https://www.town.moroyama.saitama.jp/
+    pdf_url: http://www.hozenkumiai.or.jp/pdf/moroyama2026_c.pdf
+    extracted_at: 2026-08-02
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(埼玉西部環境保全組合の令和8年度収集カレンダーPDFを pdfplumber 座標抽出し、各品目の実収集日から曜日+第n パターンを導出。祝日も収集する運用のためパターンで表現し、パターンからの逸脱(年末年始休止)は overrides に cancelled で記録。日付は実カレンダー由来)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 1
+      - 3
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TH
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: &a3
+      - WE
+    occurrences: &a4
+      - 2
+      - 4
+  - category: cloth
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: hazardous
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 1
+      - 3
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 2
+      - 4
+overrides:
+  - date: 2026-12-29
+    category: burnable
+    cancelled: true
+  - date: 2026-12-31
+    category: plastic
+    cancelled: true
+  - date: 2027-01-01
+    category: burnable
+    cancelled: true

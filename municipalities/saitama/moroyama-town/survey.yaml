@@ -4,6 +4,7 @@ code: '11326'
 handle: moroyama-town
 name_ja: 毛呂山町
 population: 32987
+status: collected
 source_type: pdf
 schedule_url: http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
 calendar_urls:

@@ -1,0 +1,32 @@
+# 毛呂山町の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: collection-on-holidays
+    title: 祝日も休まずに収集する
+    body: >-
+      毛呂山町では、祝日も通常どおりごみ・資源を収集します。祝日に収集を休んだり翌日へ振り替えたり
+      する自治体が多いなか、毛呂山町のカレンダーは祝日の日にもそのまま品目が入っています。休むのは
+      年末年始だけで、その日程はカレンダーに明記されています。
+    scope: city
+    tags: [収集日, 祝日]
+    sources:
+      - http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf (令和8年度 ごみ・資源収集カレンダー)
+  - id: kumiai-processing
+    title: ごみ処理は近隣と共同の「組合」が担う
+    body: >-
+      毛呂山町のごみ収集・処理は、町が単独で行うのではなく、一部事務組合「埼玉西部環境保全組合」が
+      担っています。収集カレンダーも町ではなく組合が発行しています。近隣自治体と施設を共同運営する
+      ことで、小さな町でもごみ処理を維持するしくみです。
+    scope: city
+    tags: [運営体制, 広域処理]
+    sources:
+      - http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf (令和8年度 ごみ・資源収集カレンダー)
+  - id: three-districts
+    title: 町内は A・B・C の3地区で収集日が違う
+    body: >-
+      毛呂山町は町内を A・B・C の3つの地区に分け、地区ごとに収集する曜日が異なります。たとえば
+      可燃ごみは A地区が月・木、B地区とC地区は火・金です。自分がどの地区かは、配布される地区別
+      カレンダーと、そこに載っている地図で確認します。
+    scope: city
+    tags: [地区, 収集日]
+    sources:
+      - http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf (令和8年度 ごみ・資源収集カレンダー A/B/C地区)
