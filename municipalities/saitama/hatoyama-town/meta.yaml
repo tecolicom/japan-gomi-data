@@ -1,0 +1,17 @@
+handle: hatoyama-town
+name_ja: 鳩山町
+region_ja: 埼玉県
+code: "11348"
+source:
+  index_url: http://www.hozenkumiai.or.jp/
+  schedule_url: http://www.hozenkumiai.or.jp/pdf/hatoyama2026_a.pdf
+  yearend_url: http://www.hozenkumiai.or.jp/pdf/hatoyama2026_a.pdf
+notes:
+  - "一次ソース: 鳩山町のごみ処理を担う一部事務組合「埼玉西部環境保全組合」(hozenkumiai.or.jp)発行の令和8年度ごみ・資源収集カレンダーPDF 2枚(hatoyama2026_a/b.pdf、A/B地区)。埋込CIDフォントのテキスト層があり、共通ツール tools/pdf-extractor/saiseibu-kumiai/ が pdfplumber で日付グリッド(1ページ12ヶ月・3列4段)の各日付セル直下の品目略称を座標抽出する。組合サイト直リンクが空応答になる年もあるが 2026年度分は正常取得。"
+  - "収録単位: 収集は A/B の2地区。地区ごとに全品目のパターンが異なるため 2 コース(course-a/b)。A地区は大橋・奥田・須江・竹本・泉井・高野倉・熊井・小用・大豆戸・赤沼・今宿・石坂 等、B地区は松ヶ丘・楓ヶ丘・鳩ヶ丘の団地地区(町域を実質2分割)。ただし正式な町名→地区の対応表は町・組合とも公開しておらず、areas は地区名のみ(町名・machiaza_id 無し)。"
+  - "種別マッピング(taxonomy.yaml と一致、語彙追加なし): 可燃=burnable / 不燃=non_burnable / 他プラ(その他容器包装プラスチック)=plastic / びん缶(びん・かん類 同日)=glass_bottle+beverage_can / 有害=hazardous / 紙布(紙・布類 同日)=paper+cloth / ペット(ペットボトル)=pet_bottle。紙布は PDF 上「紙」「布」の2 word で入るため extract は「紙」で代表し build で paper+cloth へ展開する。"
+  - "パターン導出: カレンダーは日付入りだが、各品目の実収集日から曜日+第n パターンを導出して rules 化する(build.mjs)。可燃は A・B地区とも毎週 火・金(weekly)。他プラは毎週(weekly)、びん缶・不燃有害・紙布・ペットは第n(monthly_nth)で、地区ごとに曜日が異なる。"
+  - "祝日と年末年始: 鳩山町は祝日も通常どおり収集する(振替なし)ためパターンで表現でき、例外は年末年始の休止のみ。パターン該当日が実カレンダーで休止する分を overrides に cancelled で記録した。"
+  - "粗大ごみ: 別途申込・有料で集積所対象外 → rules 非対象。使用済乾電池・蛍光管等は「有害ごみ」の日に収集し hazardous に含める。"
+  - "検証(2026-08-03): 導出したパターン rules で令和8年度(2026-04〜2027-03)の全収集日を再生成し、PDF 抽出の実日付と突合。実にあってパターンに無い日(振替・臨時・抽出誤り)=0件で、2地区とも実カレンダーを完全再現(倉敷・毛呂山と同型の日付レベル自己検証)。逸脱は年末年始休止のみ。"
+  - "ライセンス: 収集日程データ自体の公開ライセンスは未確認(鳩山町ODページ・埼玉県ODポータルにごみ収集日程データセット無し)→ unknown。収集日という事実データの抽出として収録(練馬・杉並・所沢と同じ整理)。全国系アプリ「さんあ〜る」は第三者商用のため一次ソースに採らない。"

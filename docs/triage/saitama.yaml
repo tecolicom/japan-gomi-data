@@ -913,6 +913,7 @@
   handle: tsurugashima
   name_ja: 鶴ヶ島市
   population: 70534
+  status: collected
   source_type: image-pdf
   schedule_url: https://www.city.tsurugashima.lg.jp/page/page003533.html
   calendar_urls:
@@ -1119,6 +1120,7 @@
   handle: ogose-town
   name_ja: 越生町
   population: 10097
+  status: collected
   source_type: pdf
   schedule_url: http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
   calendar_urls:
@@ -1272,6 +1274,7 @@
   handle: hatoyama-town
   name_ja: 鳩山町
   population: 12531
+  status: collected
   source_type: pdf
   schedule_url: https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
   calendar_urls:

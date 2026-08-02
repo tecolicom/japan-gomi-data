@@ -1,0 +1,7 @@
+{
+  "_comment": "埼玉西部環境保全組合(鶴ヶ島市・毛呂山町・鳩山町・越生町)の共通抽出設定。file=組合PDFファイル名の接頭辞、districts=地区、name_ja=自治体名。",
+  "moroyama-town": { "file": "moroyama", "districts": ["a", "b", "c"], "name_ja": "毛呂山町", "code": "11326" },
+  "tsurugashima": { "file": "tsurugashima", "districts": ["a", "b", "c", "d"], "name_ja": "鶴ヶ島市", "code": "11245" },
+  "ogose-town": { "file": "ogose", "districts": ["a", "b"], "name_ja": "越生町", "code": "11327" },
+  "hatoyama-town": { "file": "hatoyama", "districts": ["a", "b"], "name_ja": "鳩山町", "code": "11348" }
+}

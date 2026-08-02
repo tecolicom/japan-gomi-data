@@ -4,6 +4,7 @@ code: '11241'
 handle: tsurugashima
 name_ja: 鶴ヶ島市
 population: 70534
+status: collected
 source_type: image-pdf
 schedule_url: https://www.city.tsurugashima.lg.jp/page/page003533.html
 calendar_urls:

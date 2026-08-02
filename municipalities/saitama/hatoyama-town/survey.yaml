@@ -4,6 +4,7 @@ code: '11348'
 handle: hatoyama-town
 name_ja: 鳩山町
 population: 12531
+status: collected
 source_type: pdf
 schedule_url: https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
 calendar_urls:

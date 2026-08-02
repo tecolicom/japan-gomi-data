@@ -7,11 +7,11 @@ metadata:
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
-    source_url: https://www.town.moroyama.saitama.jp/
+    source_url: http://www.hozenkumiai.or.jp/
     pdf_url: http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
     extracted_at: 2026-08-02
     extracted_by: claude-opus-4-8
-    verified_by: Claude(埼玉西部環境保全組合の令和8年度収集カレンダーPDFを pdfplumber 座標抽出し、各品目の実収集日から曜日+第n パターンを導出。祝日も収集する運用のためパターンで表現し、パターンからの逸脱(年末年始休止)は overrides に cancelled で記録。日付は実カレンダー由来)
+    verified_by: Claude(埼玉西部環境保全組合の毛呂山町令和8年度収集カレンダーPDFを pdfplumber 座標抽出し、各品目の実収集日から曜日+第n パターンを導出。祝日も収集する運用のためパターンで表現し、パターンからの逸脱(年末年始休止)は overrides に cancelled で記録。パターン再展開↔実日付を突合し完全再現)
 rules:
   - category: burnable
     pattern: weekly
