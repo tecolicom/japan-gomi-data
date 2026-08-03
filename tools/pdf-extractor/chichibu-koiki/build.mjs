@@ -4,8 +4,8 @@
 // 当てはまらなければ monthly_specific(実日付)。導出後に再展開して抽出結果と完全一致することを
 // 自己検証してから採用する(不一致なら monthly_specific にフォールバック)。
 // カンビンは glass_bottle+beverage_can に分ける(config.item_category)。
-// build 時の点検: 品目カバレッジ・同日複数品目(斜め分割)を報告。
-// 使い方: EXTRACTED_AT=YYYY-MM-DD node build.mjs [course...]   (省略時は config の全地区)
+// config は複数自治体(秩父市・横瀬町…、同一組合の同一テンプレート)を municipalities で保持。
+// 使い方: EXTRACTED_AT=YYYY-MM-DD node build.mjs [handle ...]   (省略時は全自治体)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,7 +15,7 @@ import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CONF = JSON.parse(readFileSync(join(HERE, 'config.json'), 'utf8'));
-const OUT = join(HERE, '..', '..', '..', 'municipalities', 'saitama', CONF.handle);
+const outDir = (handle) => join(HERE, '..', '..', '..', 'municipalities', 'saitama', handle);
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
@@ -99,23 +99,23 @@ function selfVerify(ext, rules, overrides, year) {
   return problems;
 }
 
-function writeMeta() {
+function writeMeta(OUT, handle, muni) {
   const meta = {
-    handle: CONF.handle, name_ja: CONF.name_ja, region_ja: CONF.region_ja, code: CONF.code,
-    source: { index_url: CONF.source_index, schedule_url: CONF.source_index, yearend_url: CONF.source_index },
+    handle, name_ja: muni.name_ja, region_ja: CONF.region_ja, code: muni.code,
+    source: { index_url: muni.source_index, schedule_url: muni.source_index, yearend_url: muni.source_index },
     notes: [
-      '一次ソース: 秩父市公式「家庭ごみ収集カレンダー」(city.chichibu.lg.jp/9098.html)の地区別PDF。収集主体は秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)、日程管理は秩父市生活衛生課。地区は町名対応で全43分割、コースは地区番号(course=01〜43、PDF番号に一致)。',
-      '抽出方法: PDFはInDesign製の雑誌型で文字/座標抽出が不可(pdfplumber extract_words空)。品目がセル背景色で塗り分けられていることを使い、全PDF共通テンプレートの各月グリッド四隅座標(01日野田町の矩形注釈から確定しextract.pyに埋め込み)から暦計算でセル座標を復元し、セル領域の色ピクセルで品目を判定する色ベース抽出(tools/pdf-extractor/chichibu-koiki)。文字も日付も読まない。斜め分割・上下2段の複数品目、6週目(最終行下半分)も網羅。',
+      `一次ソース: ${muni.name_ja}のごみ収集カレンダー地区別PDF(${muni.source_index})。収集主体は${CONF.union_ja}。コースは地区番号(course=PDF番号に一致)。`,
+      '抽出方法: PDFはInDesign製の雑誌型で文字/座標抽出が不可(pdfplumber extract_words空)。品目がセル背景色で塗り分けられていることを使い、組合共通テンプレートの各月グリッド四隅座標(extract.pyに埋め込み)から暦計算でセル座標を復元し、セル領域の色ピクセルで品目を判定する色ベース抽出(tools/pdf-extractor/chichibu-koiki)。文字も日付も読まない。斜め分割・上下2段の複数品目、6週目(最終行下半分)も網羅。',
       '種別マッピング(taxonomy.yaml と一致、語彙追加なし): 可燃ごみ(緑)=burnable / 不燃ごみ(黄)=non_burnable / 紙・布類(紫)=paper_cloth / カン・ビン(水色、同日収集)=glass_bottle+beverage_can に分解 / ペットボトル(茶)=pet_bottle。ピンクの「クリーンサンデー」「施設持込可/不可」は集積所収集でなく施設持込のため収録しない。',
-      '収集頻度・曜日は地区で異なる(可燃=日野田町は月・木、上宮地町は火・金など。太田部は全品目が少頻度で可燃も月2)。パターンは固定せず各品目の実日付から導出: 可燃はweeklyが綺麗に当てはまる地区はweekly+休止のcancelled override(例:日野田町は12/03休止、12/31は可燃あり)、当てはまらない地区や不規則な品目(不燃・紙布・カン・ビン・ペット等)はmonthly_specificで実日付を転記。',
-      '検証: 生成した規則(weekly/monthly_specific+override)を会計年度で再展開し、色ベース抽出の実日付集合と品目ごとに完全一致することを自己検証(build.mjs)。目視レビューは日野田町(全12ヶ月)+上宮地町・太田部(サンプル)。',
-      'ライセンス: 収集日程データ自体の公開ライセンスは未確認(市サイト、埼玉県ODポータルに個別データセット無し)→ unknown。収集日という事実データの抽出として収録。',
+      '収集頻度・曜日は地区で異なる(可燃の収集曜日が地区で違う。山間部は全品目が少頻度のことがある)。パターンは固定せず各品目の実日付から導出: 可燃はweeklyが綺麗に当てはまる地区はweekly+休止のcancelled override(年末年始等)、当てはまらない地区や不規則な品目(不燃・紙布・カン・ビン・ペット等)はmonthly_specificで実日付を転記。',
+      '検証: 生成した規則(weekly/monthly_specific+override)を会計年度で再展開し、色ベース抽出の実日付集合と品目ごとに完全一致することを自己検証(build.mjs)。目視レビューはサンプル地区で実施。',
+      'ライセンス: 収集日程データ自体の公開ライセンスは未確認(自治体サイト、埼玉県ODポータルに個別データセット無し)→ unknown。収集日という事実データの抽出として収録。',
     ],
   };
   writeFileSync(join(OUT, 'meta.yaml'), yamlStringify(meta, { lineWidth: 0 }));
 }
 
-function writeTaxonomy() {
+function writeTaxonomy(OUT, name) {
   const tax = {
     categories: ['burnable', 'non_burnable', 'paper_cloth', 'glass_bottle', 'beverage_can', 'pet_bottle'],
     overrides: {
@@ -130,44 +130,49 @@ function writeTaxonomy() {
       { label: 'カン・ビン', members: ['glass_bottle', 'beverage_can'], note: 'カンとビンを同日(monthly_specificの実日付)に収集' },
     ],
   };
-  const header = '# 秩父市(秩父広域市町村圏組合)。地区別ごみカレンダーPDFの品目を正典語彙へ割り当てる(語彙追加なし)。\n'
+  const header = `# ${name}(${CONF.union_ja})。地区別ごみカレンダーPDFの品目を正典語彙へ割り当てる(語彙追加なし)。\n`
     + '#  可燃ごみ=burnable / 不燃ごみ=non_burnable / 紙・布類=paper_cloth /\n'
     + '#  カン・ビン(同日)=glass_bottle+beverage_can / ペットボトル=pet_bottle\n';
   writeFileSync(join(OUT, 'taxonomy.yaml'), header + yamlStringify(tax, { lineWidth: 0 }));
 }
 
-// ---- main ----
-mkdirSync(OUT, { recursive: true });
-const wanted = process.argv.slice(2);
-const districts = CONF.districts.filter((d) => !wanted.length || wanted.includes(d.course));
-const docs = [];
-for (const dist of districts) {
-  const raw = execFileSync('python3', [join(HERE, 'extract.py'), join(HERE, dist.pdf)], { encoding: 'utf8', maxBuffer: 1 << 24 });
-  const ext = JSON.parse(raw);
-  const { rules, overrides } = buildRules(ext, CONF.year);
-  const problems = selfVerify(ext, rules, overrides, CONF.year);
-  if (problems.length) { for (const p of problems) console.error(`  ⚠ [${dist.course}] ${p}`); throw new Error(`${dist.course}: 自己検証NG (規則の再展開が抽出と不一致)`); }
-  // 表示: 品目件数 + 可燃の導出結果 + 同日複数品目
-  const kaen = rules.find((r) => r.category === 'burnable');
-  const kdesc = kaen?.pattern === 'weekly'
-    ? `weekly[${kaen.days.join('')}]${overrides.some((o) => o.category === 'burnable') ? `+休止${overrides.filter((o) => o.category === 'burnable').length}` : ''}`
-    : `monthly_specific(${kaen?.dates.length || 0})`;
-  const dupes = {};
-  for (const [item, dl] of Object.entries(ext)) for (const d of dl) (dupes[d] ||= []).push(item);
-  const multi = Object.entries(dupes).filter(([, v]) => v.length > 1);
-  console.log(`[${dist.course}] ${dist.name_ja}: 可燃${(ext['可燃'] || []).length}(${kdesc}) 不燃${(ext['不燃'] || []).length} 紙布${(ext['紙布'] || []).length} カンビン${(ext['カンビン'] || []).length} ペット${(ext['ペット'] || []).length} / 同日${multi.length}件`);
-  docs.push(courseDoc({
-    city: CONF.handle, course: dist.course, courseNameJa: dist.name_ja, areas: dist.areas,
-    year: CONF.year, fiscalYearJa: CONF.fiscal_year_ja,
-    source: {
-      pdf_url: dist.pdf_url, extracted_at: EXTRACTED_AT, extracted_by: 'claude-opus-4-8', confidence: 0.9,
-      verified_by: 'Claude(秩父広域の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。全PDF共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューは日野田町(全月)+上宮地町/太田部(サンプル))',
-    },
-    rules, overrides,
-  }));
+function buildMunicipality(handle, muni) {
+  const OUT = outDir(handle);
+  mkdirSync(OUT, { recursive: true });
+  const docs = [];
+  for (const dist of muni.districts) {
+    const raw = execFileSync('python3', [join(HERE, 'extract.py'), join(HERE, dist.pdf)], { encoding: 'utf8', maxBuffer: 1 << 24 });
+    const ext = JSON.parse(raw);
+    const { rules, overrides } = buildRules(ext, CONF.year);
+    const problems = selfVerify(ext, rules, overrides, CONF.year);
+    if (problems.length) { for (const p of problems) console.error(`  ⚠ [${handle}/${dist.course}] ${p}`); throw new Error(`${handle}/${dist.course}: 自己検証NG (規則の再展開が抽出と不一致)`); }
+    const kaen = rules.find((r) => r.category === 'burnable');
+    const kdesc = kaen?.pattern === 'weekly'
+      ? `weekly[${kaen.days.join('')}]${overrides.some((o) => o.category === 'burnable') ? `+休止${overrides.filter((o) => o.category === 'burnable').length}` : ''}`
+      : `monthly_specific(${kaen?.dates.length || 0})`;
+    const dupes = {};
+    for (const [item, dl] of Object.entries(ext)) for (const d of dl) (dupes[d] ||= []).push(item);
+    const multi = Object.entries(dupes).filter(([, v]) => v.length > 1);
+    console.log(`[${handle}/${dist.course}] ${dist.name_ja}: 可燃${(ext['可燃'] || []).length}(${kdesc}) 不燃${(ext['不燃'] || []).length} 紙布${(ext['紙布'] || []).length} カンビン${(ext['カンビン'] || []).length} ペット${(ext['ペット'] || []).length} / 同日${multi.length}件`);
+    docs.push(courseDoc({
+      city: handle, course: dist.course, courseNameJa: dist.name_ja, areas: dist.areas,
+      year: CONF.year, fiscalYearJa: CONF.fiscal_year_ja,
+      source: {
+        pdf_url: dist.pdf_url, extracted_at: EXTRACTED_AT, extracted_by: 'claude-opus-4-8', confidence: 0.9,
+        verified_by: `Claude(${CONF.union_ja}の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)`,
+      },
+      rules, overrides,
+    }));
+  }
+  // 既存の同年 course を全消しして書き直すので、自治体単位で全地区を一括ビルドする。
+  const n = writeCourses(OUT, CONF.year, docs);
+  writeMeta(OUT, handle, muni);
+  writeTaxonomy(OUT, muni.name_ja);
+  console.log(`  -> ${n} course + meta + taxonomy: ${OUT}\n`);
 }
-// 既存の同年 course を全消しして書き直すので、複数地区は一括ビルドが前提。
-const n = writeCourses(OUT, CONF.year, docs);
-writeMeta();
-writeTaxonomy();
-console.log(`\n書き出し: ${n} course + meta + taxonomy -> ${OUT}`);
+
+// ---- main ----
+const wanted = process.argv.slice(2);
+const handles = Object.keys(CONF.municipalities).filter((h) => !wanted.length || wanted.includes(h));
+if (!handles.length) throw new Error(`対象自治体なし。指定可能: ${Object.keys(CONF.municipalities).join(' ')}`);
+for (const handle of handles) buildMunicipality(handle, CONF.municipalities[handle]);
