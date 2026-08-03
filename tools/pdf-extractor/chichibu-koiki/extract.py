@@ -5,10 +5,14 @@ InDesign 製の雑誌型 PDF はテキストが語にまとまらず (pdfplumber
 日付マスの背景も curves 描画で座標抽出できない。しかし品目はセル背景色で塗り分けられて
 いるので、文字も日付も一切読まず「暦計算で決めたセル領域の色」だけで品目を判定する。
 
-前提: 各月グリッドの四隅の空セル (日列/土列 × 第1週/最終行) に PDF の /Square 注釈
-(矩形) が置かれている (秩父市が各月枠に配置)。この4点からグリッド幾何を厳密に復元し、
-暦から各日の (週,曜日) → セル中心を求め、そのセル領域内の品目色ピクセルを数える。
-塊クラスタリングは使わないため週行ずれ (旧実装の 12月バグ) は原理的に起きない。
+グリッド幾何は全 PDF で同一の InDesign テンプレート (01_chichibu*.indd 系) なので、
+各月グリッドの四隅の空セル (日列/土列 × 第1週/最終行) の座標を TEMPLATE に埋め込んで
+使う (PDF pt, ページ非依存)。この4点から暦計算で各日の (週,曜日) → セル中心を求め、
+セル領域内の品目色ピクセルを数える。塊クラスタリングは使わないため週行ずれ
+(旧実装の 12月バグ) は原理的に起きない。四隅数ドットの誤差は面サンプリングで吸収。
+
+新しい版で幾何がずれた場合は derive_template_from_annots(pdf) で /Square 注釈から
+再較正して TEMPLATE を差し替える (--dump-template)。
 
 出力: {品目名: [YYYY-MM-DD, ...]} の JSON を stdout へ。
 使い方: python3 extract.py <PDF> [--dpi 150] > out.json
@@ -18,6 +22,17 @@ import sys, json, subprocess, calendar, argparse, tempfile, os
 import numpy as np
 from PIL import Image
 import pypdf
+
+# 月index(0..5, 左上->右下 行優先) -> [日列x, 土列x, 第1週y, 最終行y] (PDF pt, y-up)。
+# 01 日野田町の /Square 注釈から確定 (page0 実測、page1 との差 <1.5pt でテンプレ共通)。
+TEMPLATE = {
+    0: [51.0, 347.4, 1352.3, 1180.8],
+    1: [406.9, 702.1, 1352.3, 1180.8],
+    2: [761.7, 1057.9, 1352.3, 1180.8],
+    3: [51.8, 347.4, 1100.4, 928.9],
+    4: [405.9, 701.2, 1100.4, 928.9],
+    5: [760.9, 1057.3, 1100.4, 928.9],
+}
 
 # 品目名 -> 代表 RGB (150dpi レンダリングでの実測中央値)
 REFS = {
@@ -60,28 +75,27 @@ def render(pdf, page, dpi):
     return Image.open(f"{prefix}-{page + 1}.png").convert("RGB")
 
 
-def square_centers(page):
-    """ページ上の /Square 注釈中心を PDF pt (y-up) で返す。"""
+def derive_template_from_annots(pdf):
+    """/Square 注釈から月index->[xl,xr,yt,yb] (PDF pt) を再導出する (テンプレ再較正用)。
+    page0 を採用 (page1 との差は面サンプリングで吸収される範囲)。"""
+    r = pypdf.PdfReader(pdf)
+    page = r.pages[0]
     cs = []
     for a in (page.get("/Annots") or []):
         o = a.get_object(); rc = o.get("/Rect")
         if rc and str(o.get("/Subtype")) == "/Square":
             cs.append(((float(rc[0]) + float(rc[2])) / 2, (float(rc[1]) + float(rc[3])) / 2))
-    return cs
-
-
-def group_months(icen):
-    """画像座標の四隅中心24点 -> 月index(0..5, 左上->右下 行優先) -> {xl,xr,yt,yb}。
-    画像座標は上=小さいy。yを4レベルに分け、上段=band0/下段=band1。各段6x=3月×(日,土)。"""
-    ylevels = sorted(cluster([cy for _, cy in icen], tol=30))
-    bands = [(ylevels[0], ylevels[1]), (ylevels[2], ylevels[3])]
-    months = {}
+    if len(cs) != 24:
+        raise SystemExit(f"/Square 注釈が24個でない ({len(cs)}個): 再較正不可")
+    yl = sorted(cluster([cy for _, cy in cs], tol=30), reverse=True)  # 上=大きいpt
+    bands = [(yl[0], yl[1]), (yl[2], yl[3])]
+    templ = {}
     for bi, (yt, yb) in enumerate(bands):
-        pts = [(cx, cy) for cx, cy in icen if abs(cy - yt) < 30 or abs(cy - yb) < 30]
+        pts = [(cx, cy) for cx, cy in cs if abs(cy - yt) < 30 or abs(cy - yb) < 30]
         xl = sorted(cluster([cx for cx, _ in pts], tol=40))
         for mi in range(3):
-            months[bi * 3 + mi] = dict(xl=xl[mi * 2], xr=xl[mi * 2 + 1], yt=yt, yb=yb)
-    return months
+            templ[bi * 3 + mi] = [round(xl[mi * 2], 1), round(xl[mi * 2 + 1], 1), round(yt, 1), round(yb, 1)]
+    return templ
 
 
 def cell_counts(arr, cx, cy, hw, hh):
@@ -96,7 +110,7 @@ def cell_counts(arr, cx, cy, hw, hh):
     return out
 
 
-def extract(pdf, dpi):
+def extract(pdf, dpi, template=TEMPLATE):
     reader = pypdf.PdfReader(pdf)
     result = {name: set() for name in REFS}
     for page, months_ym in PAGE_MONTHS.items():
@@ -104,17 +118,18 @@ def extract(pdf, dpi):
         PW, PH = float(pg.mediabox.width), float(pg.mediabox.height)
         img = render(pdf, page, dpi); arr = np.asarray(img)
         sx, sy = img.size[0] / PW, img.size[1] / PH
-        icen = [(cx * sx, (PH - cy) * sy) for cx, cy in square_centers(pg)]
-        months = group_months(icen)
         for mi, (y, m) in enumerate(months_ym):
-            g = months[mi]
-            col = [g['xl'] + (g['xr'] - g['xl']) * j / 6 for j in range(7)]
+            xl_pt, xr_pt, yt_pt, yb_pt = template[mi]
+            # PDF pt (y-up) -> 画像座標 (y-down)
+            xl, xr = xl_pt * sx, xr_pt * sx
+            yt, yb = (PH - yt_pt) * sy, (PH - yb_pt) * sy
+            col = [xl + (xr - xl) * j / 6 for j in range(7)]
             weeks = calendar.Calendar(firstweekday=6).monthdayscalendar(y, m)
             nweeks = len(weeks)
             nrows = min(nweeks, 5)  # 物理行は最大5、6週目は最終行の下半分
-            row = [g['yt'] + (g['yb'] - g['yt']) * i / (nrows - 1) for i in range(nrows)] if nrows > 1 else [g['yt']]
-            colpitch = (g['xr'] - g['xl']) / 6
-            rowpitch = (g['yb'] - g['yt']) / (nrows - 1) if nrows > 1 else (g['yb'] - g['yt'])
+            row = [yt + (yb - yt) * i / (nrows - 1) for i in range(nrows)] if nrows > 1 else [yt]
+            colpitch = (xr - xl) / 6
+            rowpitch = (yb - yt) / (nrows - 1) if nrows > 1 else (yb - yt)
             hw = colpitch * 0.42
             for wi, wk in enumerate(weeks):
                 for dow, day in enumerate(wk):
@@ -138,7 +153,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf")
     ap.add_argument("--dpi", type=int, default=150)
+    ap.add_argument("--dump-template", action="store_true",
+                    help="PDFの/Square注釈からTEMPLATE座標を再導出して表示 (再較正用)")
     args = ap.parse_args()
+    if args.dump_template:
+        print(json.dumps(derive_template_from_annots(args.pdf), ensure_ascii=False, indent=1))
+        return
     out = extract(args.pdf, args.dpi)
     print(json.dumps(out, ensure_ascii=False, indent=1))
 
