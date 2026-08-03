@@ -6,21 +6,497 @@
   "year": 2026,
   "fiscal_year_ja": "令和8年度",
   "source_index": "https://www.city.chichibu.lg.jp/9098.html",
-  "burnable_weekly": ["MO", "TH"],
   "item_category": {
-    "可燃": ["burnable"],
-    "不燃": ["non_burnable"],
-    "紙布": ["paper_cloth"],
-    "カンビン": ["glass_bottle", "beverage_can"],
-    "ペット": ["pet_bottle"]
+    "可燃": [
+      "burnable"
+    ],
+    "不燃": [
+      "non_burnable"
+    ],
+    "紙布": [
+      "paper_cloth"
+    ],
+    "カンビン": [
+      "glass_bottle",
+      "beverage_can"
+    ],
+    "ペット": [
+      "pet_bottle"
+    ]
   },
   "districts": [
     {
-      "course": "hinoda",
+      "course": "01",
       "name_ja": "日野田町",
-      "pdf": "cache/01-hinoda.pdf",
-      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/01%E6%97%A5%E9%87%8E%E7%94%B0%E7%94%BA.pdf",
-      "areas": [{ "name": "日野田町", "yomi": "ひのだまち" }]
+      "pdf": "cache/01.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/01%20%E6%97%A5%E9%87%8E%E7%94%B0%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "日野田町"
+        }
+      ]
+    },
+    {
+      "course": "02",
+      "name_ja": "野坂町",
+      "pdf": "cache/02.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/02%20%E9%87%8E%E5%9D%82%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "野坂町"
+        }
+      ]
+    },
+    {
+      "course": "03",
+      "name_ja": "熊木町",
+      "pdf": "cache/03.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/03%20%E7%86%8A%E6%9C%A8%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "熊木町"
+        }
+      ]
+    },
+    {
+      "course": "04",
+      "name_ja": "上町",
+      "pdf": "cache/04.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/04%20%E4%B8%8A%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "上町"
+        }
+      ]
+    },
+    {
+      "course": "05",
+      "name_ja": "中町",
+      "pdf": "cache/05.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/05%20%E4%B8%AD%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "中町"
+        }
+      ]
+    },
+    {
+      "course": "06",
+      "name_ja": "本町",
+      "pdf": "cache/06.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/06%20%E6%9C%AC%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "本町"
+        }
+      ]
+    },
+    {
+      "course": "07",
+      "name_ja": "宮側町",
+      "pdf": "cache/07.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/07%20%E5%AE%AE%E5%81%B4%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "宮側町"
+        }
+      ]
+    },
+    {
+      "course": "08",
+      "name_ja": "番場・東町",
+      "pdf": "cache/08.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/08%20%E7%95%AA%E5%A0%B4%E3%83%BB%E6%9D%B1%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "番場・東町"
+        }
+      ]
+    },
+    {
+      "course": "09",
+      "name_ja": "上野町",
+      "pdf": "cache/09.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/09%20%E4%B8%8A%E9%87%8E%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "上野町"
+        }
+      ]
+    },
+    {
+      "course": "10",
+      "name_ja": "道生町",
+      "pdf": "cache/10.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/10%20%E9%81%93%E7%94%9F%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "道生町"
+        }
+      ]
+    },
+    {
+      "course": "11",
+      "name_ja": "中村町",
+      "pdf": "cache/11.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/11%20%E4%B8%AD%E6%9D%91%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "中村町"
+        }
+      ]
+    },
+    {
+      "course": "12",
+      "name_ja": "近戸町",
+      "pdf": "cache/12.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/12%20%E8%BF%91%E6%88%B8%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "近戸町"
+        }
+      ]
+    },
+    {
+      "course": "13",
+      "name_ja": "桜木町・永田町",
+      "pdf": "cache/13.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/13%20%E6%A1%9C%E6%9C%A8%E7%94%BA%E3%83%BB%E6%B0%B8%E7%94%B0%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "桜木町・永田町"
+        }
+      ]
+    },
+    {
+      "course": "14",
+      "name_ja": "金室町",
+      "pdf": "cache/14.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/14%20%E9%87%91%E5%AE%A4%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "金室町"
+        }
+      ]
+    },
+    {
+      "course": "15",
+      "name_ja": "柳田町・阿保町",
+      "pdf": "cache/15.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/15%20%E6%9F%B3%E7%94%B0%E7%94%BA%E3%83%BB%E9%98%BF%E4%BF%9D%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "柳田町・阿保町"
+        }
+      ]
+    },
+    {
+      "course": "16",
+      "name_ja": "滝の上町",
+      "pdf": "cache/16.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/16%20%E6%BB%9D%E3%81%AE%E4%B8%8A%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "滝の上町"
+        }
+      ]
+    },
+    {
+      "course": "17",
+      "name_ja": "上宮地町",
+      "pdf": "cache/17.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/17%20%E4%B8%8A%E5%AE%AE%E5%9C%B0%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "上宮地町"
+        }
+      ]
+    },
+    {
+      "course": "18",
+      "name_ja": "中宮地町",
+      "pdf": "cache/18.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/18%20%E4%B8%AD%E5%AE%AE%E5%9C%B0%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "中宮地町"
+        }
+      ]
+    },
+    {
+      "course": "19",
+      "name_ja": "大畑町・下宮地町",
+      "pdf": "cache/19.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/19%20%E5%A4%A7%E7%95%91%E7%94%BA%E3%83%BB%E4%B8%8B%E5%AE%AE%E5%9C%B0%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "大畑町・下宮地町"
+        }
+      ]
+    },
+    {
+      "course": "20",
+      "name_ja": "相生町",
+      "pdf": "cache/20.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/20%20%E7%9B%B8%E7%94%9F%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "相生町"
+        }
+      ]
+    },
+    {
+      "course": "21",
+      "name_ja": "別所",
+      "pdf": "cache/21.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/21%20%E5%88%A5%E6%89%80.pdf",
+      "areas": [
+        {
+          "name": "別所"
+        }
+      ]
+    },
+    {
+      "course": "22",
+      "name_ja": "宮崎・諏訪",
+      "pdf": "cache/22.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/22%20%E5%AE%AE%E5%B4%8E%E3%83%BB%E8%AB%8F%E8%A8%AA.pdf",
+      "areas": [
+        {
+          "name": "宮崎・諏訪"
+        }
+      ]
+    },
+    {
+      "course": "23",
+      "name_ja": "大野原町会",
+      "pdf": "cache/23.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/23%20%E5%A4%A7%E9%87%8E%E5%8E%9F%E7%94%BA%E4%BC%9A.pdf",
+      "areas": [
+        {
+          "name": "大野原町会"
+        }
+      ]
+    },
+    {
+      "course": "24",
+      "name_ja": "黒谷",
+      "pdf": "cache/24.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/24%20%E9%BB%92%E8%B0%B7.pdf",
+      "areas": [
+        {
+          "name": "黒谷"
+        }
+      ]
+    },
+    {
+      "course": "25",
+      "name_ja": "久那・太田・伊古田・堀切",
+      "pdf": "cache/25.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/25%20%E4%B9%85%E9%82%A3%E3%83%BB%E5%A4%AA%E7%94%B0%E3%83%BB%E4%BC%8A%E5%8F%A4%E7%94%B0%E3%83%BB%E5%A0%80%E5%88%87.pdf",
+      "areas": [
+        {
+          "name": "久那・太田・伊古田・堀切"
+        }
+      ]
+    },
+    {
+      "course": "26",
+      "name_ja": "尾田蒔",
+      "pdf": "cache/26.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/26%20%E5%B0%BE%E7%94%B0%E8%92%94.pdf",
+      "areas": [
+        {
+          "name": "尾田蒔"
+        }
+      ]
+    },
+    {
+      "course": "27",
+      "name_ja": "山田",
+      "pdf": "cache/27.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/27%20%E5%B1%B1%E7%94%B0.pdf",
+      "areas": [
+        {
+          "name": "山田"
+        }
+      ]
+    },
+    {
+      "course": "28",
+      "name_ja": "栃谷",
+      "pdf": "cache/28.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/28%20%E6%A0%83%E8%B0%B7.pdf",
+      "areas": [
+        {
+          "name": "栃谷"
+        }
+      ]
+    },
+    {
+      "course": "29",
+      "name_ja": "定峰",
+      "pdf": "cache/29.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/29%20%E5%AE%9A%E5%B3%B0.pdf",
+      "areas": [
+        {
+          "name": "定峰"
+        }
+      ]
+    },
+    {
+      "course": "30",
+      "name_ja": "品沢",
+      "pdf": "cache/30.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/30%20%E5%93%81%E6%B2%A2.pdf",
+      "areas": [
+        {
+          "name": "品沢"
+        }
+      ]
+    },
+    {
+      "course": "31",
+      "name_ja": "小柱",
+      "pdf": "cache/31.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/31%20%E5%B0%8F%E6%9F%B1.pdf",
+      "areas": [
+        {
+          "name": "小柱"
+        }
+      ]
+    },
+    {
+      "course": "32",
+      "name_ja": "宮本・栄・大沼・八幡",
+      "pdf": "cache/32.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/32%20%E5%AE%AE%E6%9C%AC%E3%83%BB%E6%A0%84%E3%83%BB%E5%A4%A7%E6%B2%BC%E3%83%BB%E5%85%AB%E5%B9%A1.pdf",
+      "areas": [
+        {
+          "name": "宮本・栄・大沼・八幡"
+        }
+      ]
+    },
+    {
+      "course": "33",
+      "name_ja": "旭町・巴町",
+      "pdf": "cache/33.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/33%20%E6%97%AD%E7%94%BA%E3%83%BB%E5%B7%B4%E7%94%BA.pdf",
+      "areas": [
+        {
+          "name": "旭町・巴町"
+        }
+      ]
+    },
+    {
+      "course": "34",
+      "name_ja": "浦山",
+      "pdf": "cache/34.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/34%20%E6%B5%A6%E5%B1%B1.pdf",
+      "areas": [
+        {
+          "name": "浦山"
+        }
+      ]
+    },
+    {
+      "course": "35",
+      "name_ja": "久長・下吉田",
+      "pdf": "cache/35.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/35%20%E4%B9%85%E9%95%B7%E3%83%BB%E4%B8%8B%E5%90%89%E7%94%B0.pdf",
+      "areas": [
+        {
+          "name": "久長・下吉田"
+        }
+      ]
+    },
+    {
+      "course": "36",
+      "name_ja": "阿熊・石間（半納を除く）・上吉田",
+      "pdf": "cache/36.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/36%20%E9%98%BF%E7%86%8A%E3%83%BB%E7%9F%B3%E9%96%93%EF%BC%88%E5%8D%8A%E7%B4%8D%E3%82%92%E9%99%A4%E3%81%8F%EF%BC%89%E3%83%BB%E4%B8%8A%E5%90%89%E7%94%B0.pdf",
+      "areas": [
+        {
+          "name": "阿熊・石間（半納を除く）・上吉田"
+        }
+      ]
+    },
+    {
+      "course": "37",
+      "name_ja": "半納（石間）",
+      "pdf": "cache/37.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/37%20%E5%8D%8A%E7%B4%8D%EF%BC%88%E7%9F%B3%E9%96%93%EF%BC%89.pdf",
+      "areas": [
+        {
+          "name": "半納（石間）"
+        }
+      ]
+    },
+    {
+      "course": "38",
+      "name_ja": "太田部",
+      "pdf": "cache/38.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/38%20%E5%A4%AA%E7%94%B0%E9%83%A8.pdf",
+      "areas": [
+        {
+          "name": "太田部"
+        }
+      ]
+    },
+    {
+      "course": "39",
+      "name_ja": "強石より落合・二瀬・栃本・川又・三峰",
+      "pdf": "cache/39.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/39%20%E5%BC%B7%E7%9F%B3%E3%82%88%E3%82%8A%E8%90%BD%E5%90%88%E3%83%BB%E4%BA%8C%E7%80%AC%E3%83%BB%E6%A0%83%E6%9C%AC%E3%83%BB%E5%B7%9D%E5%8F%88%E3%83%BB%E4%B8%89%E5%B3%B0.pdf",
+      "areas": [
+        {
+          "name": "強石より落合・二瀬・栃本・川又・三峰"
+        }
+      ]
+    },
+    {
+      "course": "40",
+      "name_ja": "宮平より中津川",
+      "pdf": "cache/40.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/40%20%E5%AE%AE%E5%B9%B3%E3%82%88%E3%82%8A%E4%B8%AD%E6%B4%A5%E5%B7%9D.pdf",
+      "areas": [
+        {
+          "name": "宮平より中津川"
+        }
+      ]
+    },
+    {
+      "course": "41",
+      "name_ja": "半縄・坂口・事上・日野・柴原",
+      "pdf": "cache/41.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/41%20%E5%8D%8A%E7%B8%84%E3%83%BB%E5%9D%82%E5%8F%A3%E3%83%BB%E4%BA%8B%E4%B8%8A%E3%83%BB%E6%97%A5%E9%87%8E%E3%83%BB%E6%9F%B4%E5%8E%9F.pdf",
+      "areas": [
+        {
+          "name": "半縄・坂口・事上・日野・柴原"
+        }
+      ]
+    },
+    {
+      "course": "42",
+      "name_ja": "白久・贄川・小野原・鷺の巣",
+      "pdf": "cache/42.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/42%20%E7%99%BD%E4%B9%85%E3%83%BB%E8%B4%84%E5%B7%9D%E3%83%BB%E5%B0%8F%E9%87%8E%E5%8E%9F%E3%83%BB%E9%B7%BA%E3%81%AE%E5%B7%A3.pdf",
+      "areas": [
+        {
+          "name": "白久・贄川・小野原・鷺の巣"
+        }
+      ]
+    },
+    {
+      "course": "43",
+      "name_ja": "久那・下石原・上石原・栃久保・糀屋・船川・越",
+      "pdf": "cache/43.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/43%20%E4%B9%85%E9%82%A3%E3%83%BB%E4%B8%8B%E7%9F%B3%E5%8E%9F%E3%83%BB%E4%B8%8A%E7%9F%B3%E5%8E%9F%E3%83%BB%E6%A0%83%E4%B9%85%E4%BF%9D%E3%83%BB%E7%B3%80%E5%B1%8B%E3%83%BB%E8%88%B9%E5%B7%9D%E3%83%BB%E8%B6%8A.pdf",
+      "areas": [
+        {
+          "name": "久那・下石原・上石原・栃久保・糀屋・船川・越"
+        }
+      ]
     }
   ]
 }

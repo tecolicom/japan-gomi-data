@@ -1,18 +1,17 @@
 metadata:
   city: chichibu
-  course: hinoda
+  course: "01"
   course_name_ja: 日野田町
   areas:
     - name: 日野田町
-      yomi: ひのだまち
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
-    pdf_url: https://city.chichibu.lg.jp/secure/22218/01%E6%97%A5%E9%87%8E%E7%94%B0%E7%94%BA.pdf
+    pdf_url: https://city.chichibu.lg.jp/secure/22218/01%20%E6%97%A5%E9%87%8E%E7%94%B0%E7%94%BA.pdf
     extracted_at: 2026-08-03
     extracted_by: claude-opus-4-8
     confidence: 0.9
-    verified_by: Claude(秩父広域の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。四隅較正矩形+暦でセル座標を決めセル背景色で品目判定。可燃=weekly月木との差分がcancelledのみ・月別件数一致・同日複数品目がカンビン+ペットの斜め分割のみ、を自動照合。目視レビューは12月/1月/8月をサンプル)
+    verified_by: Claude(秩父広域の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。全PDF共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューは日野田町(全月)+上宮地町/太田部(サンプル))
 rules:
   - category: burnable
     pattern: weekly
@@ -63,7 +62,7 @@ rules:
       - 2027-03-20
   - category: glass_bottle
     pattern: monthly_specific
-    dates:
+    dates: &a1
       - 2026-04-08
       - 2026-04-22
       - 2026-05-12
@@ -90,31 +89,7 @@ rules:
       - 2027-03-31
   - category: beverage_can
     pattern: monthly_specific
-    dates:
-      - 2026-04-08
-      - 2026-04-22
-      - 2026-05-12
-      - 2026-05-26
-      - 2026-06-09
-      - 2026-06-23
-      - 2026-07-07
-      - 2026-07-21
-      - 2026-08-04
-      - 2026-08-19
-      - 2026-09-04
-      - 2026-09-18
-      - 2026-10-07
-      - 2026-10-24
-      - 2026-11-11
-      - 2026-11-25
-      - 2026-12-09
-      - 2026-12-23
-      - 2027-01-13
-      - 2027-01-27
-      - 2027-02-13
-      - 2027-02-27
-      - 2027-03-13
-      - 2027-03-31
+    dates: *a1
   - category: pet_bottle
     pattern: monthly_specific
     dates:
