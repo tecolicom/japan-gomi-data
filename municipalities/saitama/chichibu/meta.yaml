@@ -1,0 +1,15 @@
+handle: chichibu
+name_ja: 秩父市
+region_ja: 埼玉県
+code: "11207"
+source:
+  index_url: https://www.city.chichibu.lg.jp/9098.html
+  schedule_url: https://www.city.chichibu.lg.jp/9098.html
+  yearend_url: https://www.city.chichibu.lg.jp/9098.html
+notes:
+  - "一次ソース: 秩父市公式「家庭ごみ収集カレンダー」(city.chichibu.lg.jp/9098.html)の地区別PDF。収集主体は秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)、日程管理は秩父市生活衛生課。地区は町名対応で全43分割、コースは地区単位(course=地区名ローマ字)。"
+  - "抽出方法: PDFはInDesign製の雑誌型で文字/座標抽出が不可(pdfplumber extract_words空)。品目がセル背景色で塗り分けられていることを使い、各月グリッド四隅の空セルに置いた矩形注釈から暦計算でセル座標を復元し、セル領域の色ピクセルで品目を判定する色ベース抽出(tools/pdf-extractor/chichibu-koiki)。文字も日付も読まない。"
+  - "種別マッピング(taxonomy.yaml と一致、語彙追加なし): 可燃ごみ(緑)=burnable / 不燃ごみ(黄)=non_burnable / 紙・布類(紫)=paper_cloth / カン・ビン(水色、同日収集)=glass_bottle+beverage_can に分解 / ペットボトル(茶)=pet_bottle。ピンクの「クリーンサンデー」「施設持込可/不可」は集積所収集でなく施設持込のため収録しない。"
+  - 可燃ごみは月・木の週2回。実カレンダーとの差分は 2026-12-03(休・施設持込可の日)の1件のみで、override に cancelled として記録。12/31は可燃収集あり(施設持込不可の注記のみ)。不燃は月1、紙・布類/カン・ビン/ペットボトルは月2で、各月の実日付を monthly_specific に転記(第n回では表せない不規則配置のため)。
+  - "検証: 色ベース抽出の結果を自動照合(可燃=weekly月木との差分がcancelledのみ・臨時収集ゼロ、月別件数が不燃1紙布2カンビン2ペット2で全12ヶ月一致、同日複数品目がカン・ビン+ペットの斜め分割6日のみ)。目視サンプル(12月・1月・8月)とも一致。"
+  - "ライセンス: 収集日程データ自体の公開ライセンスは未確認(市サイト、埼玉県ODポータルに個別データセット無し)→ unknown。収集日という事実データの抽出として収録。"

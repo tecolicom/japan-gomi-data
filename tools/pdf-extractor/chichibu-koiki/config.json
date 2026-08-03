@@ -1,0 +1,26 @@
+{
+  "handle": "chichibu",
+  "name_ja": "秩父市",
+  "region_ja": "埼玉県",
+  "code": "11207",
+  "year": 2026,
+  "fiscal_year_ja": "令和8年度",
+  "source_index": "https://www.city.chichibu.lg.jp/9098.html",
+  "burnable_weekly": ["MO", "TH"],
+  "item_category": {
+    "可燃": ["burnable"],
+    "不燃": ["non_burnable"],
+    "紙布": ["paper_cloth"],
+    "カンビン": ["glass_bottle", "beverage_can"],
+    "ペット": ["pet_bottle"]
+  },
+  "districts": [
+    {
+      "course": "hinoda",
+      "name_ja": "日野田町",
+      "pdf": "cache/01-hinoda.pdf",
+      "pdf_url": "https://city.chichibu.lg.jp/secure/22218/01%E6%97%A5%E9%87%8E%E7%94%B0%E7%94%BA.pdf",
+      "areas": [{ "name": "日野田町", "yomi": "ひのだまち" }]
+    }
+  ]
+}
