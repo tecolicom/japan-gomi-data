@@ -4,6 +4,7 @@ code: '11369'
 handle: higashichichibu-vill
 name_ja: 東秩父村
 population: 2223
+status: collected
 source_type: html
 schedule_url: https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html
 calendar_urls: []

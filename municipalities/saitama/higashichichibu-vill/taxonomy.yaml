@@ -1,0 +1,51 @@
+# 東秩父村。公式「ごみの出し方」HTMLの種別を正典語彙へ割り当てる(語彙追加なし)。
+#  燃えるごみ=burnable / 資源プラスチック(容器包装)+廃プラスチック(製品プラ)=plastic /
+#  ガラス類=non_burnable(村に不燃ごみ区分は無くガラス類がこれに当たる) / 金属類=metal /
+#  有害ごみ=hazardous / びん類=glass_bottle / ペットボトル=pet_bottle /
+#  資源回収(新聞・雑誌・段ボール・牛乳パック=paper / 衣類=cloth / アルミ缶=beverage_can)
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - glass_bottle
+  - beverage_can
+  - paper
+  - cloth
+  - hazardous
+  - metal
+  - pet_bottle
+overrides:
+  burnable:
+    label: 燃えるごみ
+    short: 燃える
+  non_burnable:
+    label: ガラス類
+    short: ガラス
+  plastic:
+    label: プラスチック
+    short: プラ
+  glass_bottle:
+    label: びん類
+    short: びん
+  beverage_can:
+    label: アルミ缶
+    short: 缶
+  paper:
+    label: 古紙
+  cloth:
+    label: 衣類
+  hazardous:
+    label: 有害ごみ
+    short: 有害
+  metal:
+    label: 金属類
+    short: 金属
+  pet_bottle:
+    label: ペットボトル
+    short: ペット
+
+# 参考情報: 村の括り名 (同日収集の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源回収
+    members: [paper, cloth, beverage_can]
+    note: 新聞・雑誌・段ボール・牛乳パック・衣類・アルミ缶を第2水曜(役場前)・第4水曜(各ステーション)に収集

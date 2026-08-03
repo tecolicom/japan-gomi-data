@@ -1,0 +1,31 @@
+# 東秩父村の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: pet-summer-extra
+    title: ペットボトルは夏だけ収集が増える
+    body: >-
+      東秩父村では、ペットボトルの収集は通常「第3火曜日」の月1回ですが、5〜10月の暑い時期だけは
+      第1水曜日にも収集があり、月2回に増えます。ペットボトルの排出が増える夏場に合わせた対応です。
+    scope: city
+    tags: [収集頻度, 季節]
+    sources:
+      - https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html (ごみの出し方)
+  - id: fine-grained-sorting
+    title: 小さな村だが分別は細かい
+    body: >-
+      東秩父村は埼玉県で人口の少ない自治体のひとつですが、ごみの分別は細かく、燃えるごみ・
+      プラスチック・金属類・有害ごみ・びん・ペットボトル・資源回収などに分かれています。とくに
+      プラスチックは、リサイクルする「資源プラスチック」と処分する「廃プラスチック」を別の日に出します。
+    scope: city
+    tags: [分別体系]
+    sources:
+      - https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html (ごみの出し方)
+  - id: village-wide-uniform
+    title: 村全域で収集日が同じ
+    body: >-
+      東秩父村は地区割りが無く、村内どこでも同じ収集日です。地区ごとにカレンダーが分かれる自治体が
+      多いなか、収集日を1種類だけ覚えればよいのは小さな村ならではです。資源回収だけは、第2水曜が
+      役場前、第4水曜が各ステーションと場所が分かれています。
+    scope: city
+    tags: [地区, 収集日]
+    sources:
+      - https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html (ごみの出し方)
