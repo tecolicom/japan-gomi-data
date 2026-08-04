@@ -3,8 +3,7 @@ metadata:
   course: "39"
   course_name_ja: 強石より落合・二瀬・栃本・川又・三峰
   areas:
-    - name: 強石
-    - name: 落合
+    - name: 強石より落合
     - name: 二瀬
     - name: 栃本
     - name: 川又

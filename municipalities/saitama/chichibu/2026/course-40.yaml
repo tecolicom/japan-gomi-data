@@ -3,10 +3,7 @@ metadata:
   course: "40"
   course_name_ja: 宮平より中津川
   areas:
-    - name: 宮平
-    - name: 中津川
-      yomi: なかつがわ
-      machiaza_id: 112071-0059000
+    - name: 宮平より中津川
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
