@@ -56,6 +56,8 @@ for (const { handle, dir, pref } of handles) {
         dtstamp: `${iso(m.source.extracted_at).replace(/-/g, '')}T000000Z`,
         course: m.course, courseNameJa: m.course_name_ja ?? '',
         areas: (m.areas || []).map((a) => a.name), events: [],
+        // 照合用の一次ソース URL (コース別 PDF を優先。無ければ自治体の掲載ページ)
+        sourceUrl: m.source?.pdf_url || m.source?.source_url || meta.source?.schedule_url || '',
       };
       for (let d = new Date(start); d < end; d = new Date(d.getTime() + 86400000)) {
         const cats = categoriesOn(d, rules, overrides);
@@ -93,6 +95,7 @@ for (const { handle, dir, pref } of handles) {
     writeFileSync(join(outDir, `${slug}.json`), JSON.stringify({
       city: meta.name_ja, pref, handle,
       course: rec.course, course_name_ja: rec.courseNameJa, areas: rec.areas,
+      source_url: rec.sourceUrl,
       labels: Object.fromEntries(usedCats.map((c) => [c, {
         label: taxOv?.[c]?.label ?? vocab[c]?.label ?? c,
         short: taxOv?.[c]?.short ?? vocab[c]?.short ?? c,

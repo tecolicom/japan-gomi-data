@@ -71,6 +71,7 @@ footer { margin-top: 34px; padding-top: 12px; border-top: 1px solid var(--line);
   <div class="acts" id="acts" hidden>
     <a id="webcal" href="#">カレンダーに追加</a>
     <button class="ghost" id="copy">購読 URL をコピー</button>
+    <a id="source" class="ghost" href="#" target="_blank" rel="noopener" hidden>元データを見る</a>
   </div>
 </header>
 
@@ -109,6 +110,12 @@ if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(q)) {
     catch { prompt('この URL をコピーしてください', ics); }
     setTimeout(() => { this.textContent = '購読 URL をコピー'; }, 1500);
   });
+  if (d.source_url) {
+    const s = document.getElementById('source');
+    s.href = d.source_url;
+    s.textContent = /\.pdf(\?|$)/i.test(d.source_url) ? '元PDFを見る' : '元データを見る';
+    s.hidden = false;
+  }
   document.getElementById('acts').hidden = false;
 
   const days = d.days;
