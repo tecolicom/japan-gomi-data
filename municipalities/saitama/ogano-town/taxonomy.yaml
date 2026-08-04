@@ -1,0 +1,35 @@
+# 小鹿野町(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同))。地区別ごみカレンダーPDFの品目を正典語彙へ割り当てる(語彙追加なし)。
+#  可燃ごみ=burnable / 不燃ごみ=non_burnable / 紙・布類=paper_cloth /
+#  カン・ビン(同日)=glass_bottle+beverage_can / ペットボトル=pet_bottle
+categories:
+  - burnable
+  - non_burnable
+  - paper_cloth
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  burnable:
+    label: 可燃ごみ
+    short: 可燃
+  non_burnable:
+    label: 不燃ごみ
+    short: 不燃
+  paper_cloth:
+    label: 紙・布類
+    short: 紙布
+  glass_bottle:
+    label: びん
+    short: びん
+  beverage_can:
+    label: かん
+    short: 缶
+  pet_bottle:
+    label: ペットボトル
+    short: ペット
+groups:
+  - label: カン・ビン
+    members:
+      - glass_bottle
+      - beverage_can
+    note: カンとビンを同日(monthly_specificの実日付)に収集

@@ -21,6 +21,7 @@ InDesign 製の雑誌型 PDF はテキストが語にまとまらず (pdfplumber
 import sys, json, subprocess, calendar, argparse, tempfile, os
 import numpy as np
 from PIL import Image
+from scipy import ndimage
 import pypdf
 
 # 月index(0..5, 左上->右下 行優先) -> [日列x, 土列x, 第1週y, 最終行y] (PDF pt, y-up)。
@@ -110,6 +111,28 @@ def cell_counts(arr, cx, cy, hw, hh):
     return out
 
 
+def split_row_items(arr, cx, cp, rp, ymid, split_off=0.07, min_area=40):
+    """6週の月の最終物理行(週5=上半・週6=下半)セルを分割解析する。
+    セル領域内の各品目色を連結成分(blob)にし、blob重心のyで週5/週6へ振り分ける。
+    薄い帯や、半セル内でさらに上下/斜めに分かれた複数品目も、それぞれ独立blobとして拾える。
+    ymid=最終行中心(=yb相当)。返り値 (週5の品目set, 週6の品目set)。"""
+    H, W, _ = arr.shape
+    x0, x1 = max(0, int(cx - cp * 0.45)), min(W, int(cx + cp * 0.45))
+    y0, y1 = max(0, int(ymid - 0.50 * rp)), min(H, int(ymid + 0.60 * rp))
+    sub = arr[y0:y1, x0:x1].astype(np.int16)
+    split_y = (ymid + split_off * rp) - y0
+    w5, w6 = set(), set()
+    for name, rgb in REFS.items():
+        mask = np.abs(sub - np.array(rgb)).sum(2) < COLOR_THRESH
+        lab, n = ndimage.label(mask)
+        for i in range(1, n + 1):
+            ys = np.where(lab == i)[0]
+            if ys.size < min_area:
+                continue
+            (w5 if ys.mean() < split_y else w6).add(name)
+    return w5, w6
+
+
 def extract(pdf, dpi, template=TEMPLATE):
     reader = pypdf.PdfReader(pdf)
     result = {name: set() for name in REFS}
@@ -126,26 +149,36 @@ def extract(pdf, dpi, template=TEMPLATE):
             col = [xl + (xr - xl) * j / 6 for j in range(7)]
             weeks = calendar.Calendar(firstweekday=6).monthdayscalendar(y, m)
             nweeks = len(weeks)
-            nrows = min(nweeks, 5)  # 物理行は最大5、6週目は最終行の下半分
+            nrows = min(nweeks, 5)  # 物理行は最大5。6週の月は最終行を上下2週に分割。
             row = [yt + (yb - yt) * i / (nrows - 1) for i in range(nrows)] if nrows > 1 else [yt]
-            colpitch = (xr - xl) / 6
-            rowpitch = (yb - yt) / (nrows - 1) if nrows > 1 else (yb - yt)
-            hw = colpitch * 0.42
-            for wi, wk in enumerate(weeks):
-                for dow, day in enumerate(wk):
-                    if day == 0:
+            cp = (xr - xl) / 6
+            rp = (yb - yt) / (nrows - 1) if nrows > 1 else (yb - yt)
+
+            def add(day, names):
+                if not day or not names:
+                    return
+                date = f"{y:04d}-{m:02d}-{day:02d}"
+                for nm in names:
+                    result[nm].add(date)
+
+            # 週1〜(最大週5)の通常セル。6週の月の最終物理行(wi==4)は下でblob分割する。
+            for wi in range(nrows):
+                if nweeks > 5 and wi == 4:
+                    continue
+                for dow, day in enumerate(weeks[wi]):
+                    c = cell_counts(arr, col[dow], row[wi], cp * 0.42, rp * 0.40)
+                    add(day, [nm for nm in REFS if c[nm] >= MIN_PIXELS])
+            # 6週の月: 最終行(週5=weeks[4]/週6=weeks[5])を列ごとに blob 分割
+            if nweeks > 5:
+                for dow in range(7):
+                    d5, d6 = weeks[4][dow], weeks[5][dow]
+                    if not d5 and not d6:
                         continue
-                    if nweeks <= 5 or wi <= 3:
-                        cx, cy, hh = col[dow], row[wi], rowpitch * 0.40
-                    elif wi == 4:  # 第5週 = 最終行の上半分
-                        cx, cy, hh = col[dow], row[4] - rowpitch * 0.25, rowpitch * 0.22
-                    else:          # 第6週 = 最終行の下半分
-                        cx, cy, hh = col[dow], row[4] + rowpitch * 0.25, rowpitch * 0.22
-                    counts = cell_counts(arr, cx, cy, hw, hh)
-                    date = f"{y:04d}-{m:02d}-{day:02d}"
-                    for name in REFS:
-                        if counts[name] >= MIN_PIXELS:
-                            result[name].add(date)
+                    w5, w6 = split_row_items(arr, col[dow], cp, rp, row[4])
+                    if d5 and d6:      # 上下2週が同居 → 重心で振り分け
+                        add(d5, w5); add(d6, w6)
+                    else:              # 片方のみ = 全高セル → 全blobをその日へ
+                        add(d5 or d6, w5 | w6)
     return {name: sorted(dates) for name, dates in result.items()}
 
 

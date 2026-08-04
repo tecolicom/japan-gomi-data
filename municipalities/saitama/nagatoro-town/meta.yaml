@@ -1,0 +1,15 @@
+handle: nagatoro-town
+name_ja: 長瀞町
+region_ja: 埼玉県
+code: "11363"
+source:
+  index_url: https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC-2/
+  schedule_url: https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC-2/
+  yearend_url: https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC-2/
+notes:
+  - "一次ソース: 長瀞町のごみ収集カレンダー地区別PDF(https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC-2/)。収集主体は秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)。コースは地区番号(course=PDF番号に一致)。"
+  - "抽出方法: PDFはInDesign製の雑誌型で文字/座標抽出が不可(pdfplumber extract_words空)。品目がセル背景色で塗り分けられていることを使い、組合共通テンプレートの各月グリッド四隅座標(extract.pyに埋め込み)から暦計算でセル座標を復元し、セル領域の色ピクセルで品目を判定する色ベース抽出(tools/pdf-extractor/chichibu-koiki)。文字も日付も読まない。斜め分割・上下2段の複数品目、6週目(最終行下半分)も網羅。"
+  - "種別マッピング(taxonomy.yaml と一致、語彙追加なし): 可燃ごみ(緑)=burnable / 不燃ごみ(黄)=non_burnable / 紙・布類(紫)=paper_cloth / カン・ビン(水色、同日収集)=glass_bottle+beverage_can に分解 / ペットボトル(茶)=pet_bottle。ピンクの「クリーンサンデー」「施設持込可/不可」は集積所収集でなく施設持込のため収録しない。"
+  - "収集頻度・曜日は地区で異なる(可燃の収集曜日が地区で違う。山間部は全品目が少頻度のことがある)。パターンは固定せず各品目の実日付から導出: 可燃はweeklyが綺麗に当てはまる地区はweekly+休止のcancelled override(年末年始等)、当てはまらない地区や不規則な品目(不燃・紙布・カン・ビン・ペット等)はmonthly_specificで実日付を転記。"
+  - "検証: 生成した規則(weekly/monthly_specific+override)を会計年度で再展開し、色ベース抽出の実日付集合と品目ごとに完全一致することを自己検証(build.mjs)。目視レビューはサンプル地区で実施。"
+  - "ライセンス: 収集日程データ自体の公開ライセンスは未確認(自治体サイト、埼玉県ODポータルに個別データセット無し)→ unknown。収集日という事実データの抽出として収録。"

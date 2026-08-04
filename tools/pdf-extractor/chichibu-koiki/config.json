@@ -541,6 +541,192 @@
           ]
         }
       ]
+    },
+    "ogano-town": {
+      "name_ja": "小鹿野町",
+      "code": "11365",
+      "source_index": "https://www.town.ogano.lg.jp/kurashi-tetsuzuki/kankyou-gomi-suidou/gomicalendar/",
+      "districts": [
+        {
+          "course": "01",
+          "name_ja": "下小鹿野",
+          "pdf": "cache/ogano-shimoogano.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8shimoogano_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "下小鹿野"
+            }
+          ]
+        },
+        {
+          "course": "02",
+          "name_ja": "小鹿野・伊豆沢",
+          "pdf": "cache/ogano-izusawa.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8izusawa_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "小鹿野・伊豆沢"
+            }
+          ]
+        },
+        {
+          "course": "03",
+          "name_ja": "小鹿野（新井・腰の根）",
+          "pdf": "cache/ogano-araikoshinone.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8araikoshinone_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "小鹿野（新井・腰の根）"
+            }
+          ]
+        },
+        {
+          "course": "04",
+          "name_ja": "長若",
+          "pdf": "cache/ogano-nagawaka.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8nagawaka_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "長若"
+            }
+          ]
+        },
+        {
+          "course": "05",
+          "name_ja": "三田川・倉尾",
+          "pdf": "cache/ogano-mitagawakurao.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8mitagawakurao_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "三田川・倉尾"
+            }
+          ]
+        },
+        {
+          "course": "06",
+          "name_ja": "薄",
+          "pdf": "cache/ogano-susuki.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "薄"
+            }
+          ]
+        },
+        {
+          "course": "07",
+          "name_ja": "薄8区",
+          "pdf": "cache/ogano-susuki8k.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki8k_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "薄8区"
+            }
+          ]
+        },
+        {
+          "course": "08",
+          "name_ja": "小森・薄（3区・須川）",
+          "pdf": "cache/ogano-komorisusuki.pdf",
+          "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8komorisusuki_gomicalendar.pdf",
+          "areas": [
+            {
+              "name": "小森・薄（3区・須川）"
+            }
+          ]
+        }
+      ]
+    },
+    "minano-town": {
+      "name_ja": "皆野町",
+      "code": "11362",
+      "source_index": "https://www.town.minano.saitama.jp/section/seikatu/265/",
+      "districts": [
+        {
+          "course": "01",
+          "name_ja": "戦場・土京・親鼻・駒形・上の台・根岸・下田野",
+          "pdf": "cache/minano-01.pdf",
+          "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/f9eb63572d046a0170bc788b856f0c36-11.pdf",
+          "areas": [
+            {
+              "name": "戦場・土京・親鼻・駒形・上の台・根岸・下田野"
+            }
+          ]
+        },
+        {
+          "course": "02",
+          "name_ja": "腰・上原・原・下原・上大浜・中大浜・下大浜",
+          "pdf": "cache/minano-02.pdf",
+          "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/ad9f53afdff8f682d38752a8e8429111-11.pdf",
+          "areas": [
+            {
+              "name": "腰・上原・原・下原・上大浜・中大浜・下大浜"
+            }
+          ]
+        },
+        {
+          "course": "03",
+          "name_ja": "日野沢・金沢・国神・大渕・野巻",
+          "pdf": "cache/minano-03.pdf",
+          "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/52a3509281a700734ff8299b52005ffb-11.pdf",
+          "areas": [
+            {
+              "name": "日野沢・金沢・国神・大渕・野巻"
+            }
+          ]
+        },
+        {
+          "course": "04",
+          "name_ja": "三沢・金崎",
+          "pdf": "cache/minano-04.pdf",
+          "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/51ad3cd62cf1f3d84c5071fbea3ddf85-12.pdf",
+          "areas": [
+            {
+              "name": "三沢・金崎"
+            }
+          ]
+        }
+      ]
+    },
+    "nagatoro-town": {
+      "name_ja": "長瀞町",
+      "code": "11363",
+      "source_index": "https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC-2/",
+      "districts": [
+        {
+          "course": "01",
+          "name_ja": "長瀞・本野上（袋区を除く）",
+          "pdf": "cache/nagatoro-01.pdf",
+          "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/57ed490a93eec9c71df8b62f2ab64005-4.pdf",
+          "areas": [
+            {
+              "name": "長瀞・本野上（袋区を除く）"
+            }
+          ]
+        },
+        {
+          "course": "02",
+          "name_ja": "袋区（本野上）・中野上・野上下郷",
+          "pdf": "cache/nagatoro-02.pdf",
+          "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/367199f249a96e1c30ce981700f5fbd0.pdf",
+          "areas": [
+            {
+              "name": "袋区（本野上）・中野上・野上下郷"
+            }
+          ]
+        },
+        {
+          "course": "03",
+          "name_ja": "矢那瀬・岩田・井戸・風布",
+          "pdf": "cache/nagatoro-03.pdf",
+          "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/2558dd9b4136f66768cfcae6eec1b73f.pdf",
+          "areas": [
+            {
+              "name": "矢那瀬・岩田・井戸・風布"
+            }
+          ]
+        }
+      ]
     }
   }
 }
