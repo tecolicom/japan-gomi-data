@@ -3,12 +3,19 @@ metadata:
   course: "39"
   course_name_ja: 強石より落合・二瀬・栃本・川又・三峰
   areas:
-    - name: 強石より落合・二瀬・栃本・川又・三峰
+    - name: 強石
+    - name: 落合
+    - name: 二瀬
+    - name: 栃本
+    - name: 川又
+    - name: 三峰
+      yomi: みつみね
+      machiaza_id: 112071-0051000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     pdf_url: https://city.chichibu.lg.jp/secure/22218/39%20%E5%BC%B7%E7%9F%B3%E3%82%88%E3%82%8A%E8%90%BD%E5%90%88%E3%83%BB%E4%BA%8C%E7%80%AC%E3%83%BB%E6%A0%83%E6%9C%AC%E3%83%BB%E5%B7%9D%E5%8F%88%E3%83%BB%E4%B8%89%E5%B3%B0.pdf
-    extracted_at: 2026-08-03
+    extracted_at: 2026-08-04
     extracted_by: claude-opus-4-8
     confidence: 0.9
     verified_by: Claude(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)

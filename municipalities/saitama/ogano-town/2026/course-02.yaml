@@ -3,7 +3,12 @@ metadata:
   course: "02"
   course_name_ja: 小鹿野・伊豆沢
   areas:
-    - name: 小鹿野・伊豆沢
+    - name: 小鹿野
+      yomi: おがの
+      machiaza_id: 113654-0001000
+    - name: 伊豆沢
+      yomi: いずさわ
+      machiaza_id: 113654-0005000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

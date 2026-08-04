@@ -3,7 +3,19 @@ metadata:
   course: "03"
   course_name_ja: 日野沢・金沢・国神・大渕・野巻
   areas:
-    - name: 日野沢・金沢・国神・大渕・野巻
+    - name: 日野沢
+    - name: 金沢
+      yomi: かねざわ
+      machiaza_id: 113620-0009000
+    - name: 国神
+      yomi: くにかみ
+      machiaza_id: 113620-0002000
+    - name: 大渕
+      yomi: おおふち
+      machiaza_id: 113620-0003000
+    - name: 野巻
+      yomi: のまき
+      machiaza_id: 113620-0004000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

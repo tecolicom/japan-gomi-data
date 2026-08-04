@@ -3,12 +3,16 @@ metadata:
   course: "46"
   course_name_ja: 根古屋・芦ヶ久保（苅米の一部地域含む）
   areas:
-    - name: 根古屋・芦ヶ久保（苅米の一部地域含む）
+    - name: 根古屋
+    - name: 芦ヶ久保
+      yomi: あしがくぼ
+      machiaza_id: 113611-0001000
+      note: 苅米の一部地域含む
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     pdf_url: https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/46%E6%A0%B9%E5%8F%A4%E5%B1%8B%E3%83%BB%E8%8A%A6%E3%83%B6%E4%B9%85%E4%BF%9D%EF%BC%88%E8%8B%85%E7%B1%B3%E3%81%AE%E4%B8%80%E9%83%A8%E5%9C%B0%E5%9F%9F%E5%90%AB%E3%82%80%EF%BC%89.pdf
-    extracted_at: 2026-08-03
+    extracted_at: 2026-08-04
     extracted_by: claude-opus-4-8
     confidence: 0.9
     verified_by: Claude(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)

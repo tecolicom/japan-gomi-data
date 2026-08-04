@@ -3,12 +3,14 @@ metadata:
   course: "44"
   course_name_ja: 川西・中郷・宇根
   areas:
-    - name: 川西・中郷・宇根
+    - name: 川西
+    - name: 中郷
+    - name: 宇根
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     pdf_url: https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/44%E5%B7%9D%E8%A5%BF%E3%83%BB%E4%B8%AD%E9%83%B7%E3%83%BB%E5%AE%87%E6%A0%B9.pdf
-    extracted_at: 2026-08-03
+    extracted_at: 2026-08-04
     extracted_by: claude-opus-4-8
     confidence: 0.9
     verified_by: Claude(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)

@@ -3,7 +3,15 @@ metadata:
   course: "01"
   course_name_ja: 戦場・土京・親鼻・駒形・上の台・根岸・下田野
   areas:
-    - name: 戦場・土京・親鼻・駒形・上の台・根岸・下田野
+    - name: 戦場
+    - name: 土京
+    - name: 親鼻
+    - name: 駒形
+    - name: 上の台
+    - name: 根岸
+    - name: 下田野
+      yomi: しもたの
+      machiaza_id: 113620-0005000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

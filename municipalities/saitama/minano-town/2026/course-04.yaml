@@ -3,7 +3,12 @@ metadata:
   course: "04"
   course_name_ja: 三沢・金崎
   areas:
-    - name: 三沢・金崎
+    - name: 三沢
+      yomi: みさわ
+      machiaza_id: 113620-0010000
+    - name: 金崎
+      yomi: かなさき
+      machiaza_id: 113620-0001000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

@@ -3,7 +3,13 @@ metadata:
   course: "02"
   course_name_ja: 腰・上原・原・下原・上大浜・中大浜・下大浜
   areas:
-    - name: 腰・上原・原・下原・上大浜・中大浜・下大浜
+    - name: 腰
+    - name: 上原
+    - name: 原
+    - name: 下原
+    - name: 上大浜
+    - name: 中大浜
+    - name: 下大浜
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

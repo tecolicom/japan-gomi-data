@@ -34,7 +34,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/01%20%E6%97%A5%E9%87%8E%E7%94%B0%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "日野田町"
+              "name": "日野田町",
+              "yomi": "ひのだまち",
+              "machiaza_id": "112071-0014001"
             }
           ]
         },
@@ -45,7 +47,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/02%20%E9%87%8E%E5%9D%82%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "野坂町"
+              "name": "野坂町",
+              "yomi": "のさかまち",
+              "machiaza_id": "112071-0016001"
             }
           ]
         },
@@ -56,7 +60,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/03%20%E7%86%8A%E6%9C%A8%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "熊木町"
+              "name": "熊木町",
+              "yomi": "くまぎまち",
+              "machiaza_id": "112071-0021000"
             }
           ]
         },
@@ -67,7 +73,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/04%20%E4%B8%8A%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "上町"
+              "name": "上町",
+              "yomi": "かみまち",
+              "machiaza_id": "112071-0005001"
             }
           ]
         },
@@ -78,7 +86,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/05%20%E4%B8%AD%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "中町"
+              "name": "中町",
+              "yomi": "なかまち",
+              "machiaza_id": "112071-0009000"
             }
           ]
         },
@@ -89,7 +99,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/06%20%E6%9C%AC%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "本町"
+              "name": "本町",
+              "yomi": "もとまち",
+              "machiaza_id": "112071-0001000"
             }
           ]
         },
@@ -100,7 +112,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/07%20%E5%AE%AE%E5%81%B4%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "宮側町"
+              "name": "宮側町",
+              "yomi": "みやかわちょう",
+              "machiaza_id": "112071-0010000"
             }
           ]
         },
@@ -111,7 +125,14 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/08%20%E7%95%AA%E5%A0%B4%E3%83%BB%E6%9D%B1%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "番場・東町"
+              "name": "番場町",
+              "yomi": "ばんばまち",
+              "machiaza_id": "112071-0006000"
+            },
+            {
+              "name": "東町",
+              "yomi": "ひがしまち",
+              "machiaza_id": "112071-0003000"
             }
           ]
         },
@@ -122,7 +143,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/09%20%E4%B8%8A%E9%87%8E%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "上野町"
+              "name": "上野町",
+              "yomi": "うえのまち",
+              "machiaza_id": "112071-0011000"
             }
           ]
         },
@@ -133,7 +156,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/10%20%E9%81%93%E7%94%9F%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "道生町"
+              "name": "道生町",
+              "yomi": "どうじょうまち",
+              "machiaza_id": "112071-0007000"
             }
           ]
         },
@@ -144,7 +169,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/11%20%E4%B8%AD%E6%9D%91%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "中村町"
+              "name": "中村町",
+              "yomi": "なかむらまち",
+              "machiaza_id": "112071-0004001"
             }
           ]
         },
@@ -155,7 +182,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/12%20%E8%BF%91%E6%88%B8%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "近戸町"
+              "name": "近戸町",
+              "yomi": "ちかとまち",
+              "machiaza_id": "112071-0022000"
             }
           ]
         },
@@ -166,7 +195,14 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/13%20%E6%A1%9C%E6%9C%A8%E7%94%BA%E3%83%BB%E6%B0%B8%E7%94%B0%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "桜木町・永田町"
+              "name": "桜木町",
+              "yomi": "さくらぎまち",
+              "machiaza_id": "112071-0017000"
+            },
+            {
+              "name": "永田町",
+              "yomi": "ながたまち",
+              "machiaza_id": "112071-0012000"
             }
           ]
         },
@@ -177,7 +213,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/14%20%E9%87%91%E5%AE%A4%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "金室町"
+              "name": "金室町",
+              "yomi": "かなむろまち",
+              "machiaza_id": "112071-0025000"
             }
           ]
         },
@@ -188,7 +226,14 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/15%20%E6%9F%B3%E7%94%B0%E7%94%BA%E3%83%BB%E9%98%BF%E4%BF%9D%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "柳田町・阿保町"
+              "name": "柳田町",
+              "yomi": "やなぎだまち",
+              "machiaza_id": "112071-0013000"
+            },
+            {
+              "name": "阿保町",
+              "yomi": "あぼまち",
+              "machiaza_id": "112071-0020000"
             }
           ]
         },
@@ -199,7 +244,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/16%20%E6%BB%9D%E3%81%AE%E4%B8%8A%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "滝の上町"
+              "name": "滝の上町",
+              "yomi": "たきのうえまち",
+              "machiaza_id": "112071-0015000"
             }
           ]
         },
@@ -210,7 +257,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/17%20%E4%B8%8A%E5%AE%AE%E5%9C%B0%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "上宮地町"
+              "name": "上宮地町",
+              "yomi": "かみみやじまち",
+              "machiaza_id": "112071-0024000"
             }
           ]
         },
@@ -221,7 +270,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/18%20%E4%B8%AD%E5%AE%AE%E5%9C%B0%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "中宮地町"
+              "name": "中宮地町",
+              "yomi": "なかみやじまち",
+              "machiaza_id": "112071-0023000"
             }
           ]
         },
@@ -232,7 +283,14 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/19%20%E5%A4%A7%E7%95%91%E7%94%BA%E3%83%BB%E4%B8%8B%E5%AE%AE%E5%9C%B0%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "大畑町・下宮地町"
+              "name": "大畑町",
+              "yomi": "おおばたけまち",
+              "machiaza_id": "112071-0018000"
+            },
+            {
+              "name": "下宮地町",
+              "yomi": "しもみやじまち",
+              "machiaza_id": "112071-0019000"
             }
           ]
         },
@@ -243,7 +301,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/20%20%E7%9B%B8%E7%94%9F%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "相生町"
+              "name": "相生町",
+              "yomi": "あいおいちょう",
+              "machiaza_id": "112071-0008000"
             }
           ]
         },
@@ -254,7 +314,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/21%20%E5%88%A5%E6%89%80.pdf",
           "areas": [
             {
-              "name": "別所"
+              "name": "別所",
+              "yomi": "べっしょ",
+              "machiaza_id": "112071-0031000"
             }
           ]
         },
@@ -265,7 +327,10 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/22%20%E5%AE%AE%E5%B4%8E%E3%83%BB%E8%AB%8F%E8%A8%AA.pdf",
           "areas": [
             {
-              "name": "宮崎・諏訪"
+              "name": "宮崎"
+            },
+            {
+              "name": "諏訪"
             }
           ]
         },
@@ -276,7 +341,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/23%20%E5%A4%A7%E9%87%8E%E5%8E%9F%E7%94%BA%E4%BC%9A.pdf",
           "areas": [
             {
-              "name": "大野原町会"
+              "name": "大野原",
+              "yomi": "おおのはら",
+              "machiaza_id": "112071-0038000"
             }
           ]
         },
@@ -287,7 +354,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/24%20%E9%BB%92%E8%B0%B7.pdf",
           "areas": [
             {
-              "name": "黒谷"
+              "name": "黒谷",
+              "yomi": "くろや",
+              "machiaza_id": "112071-0041000"
             }
           ]
         },
@@ -298,7 +367,24 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/25%20%E4%B9%85%E9%82%A3%E3%83%BB%E5%A4%AA%E7%94%B0%E3%83%BB%E4%BC%8A%E5%8F%A4%E7%94%B0%E3%83%BB%E5%A0%80%E5%88%87.pdf",
           "areas": [
             {
-              "name": "久那・太田・伊古田・堀切"
+              "name": "久那",
+              "yomi": "くな",
+              "machiaza_id": "112071-0030000"
+            },
+            {
+              "name": "太田",
+              "yomi": "おおた",
+              "machiaza_id": "112071-0034000"
+            },
+            {
+              "name": "伊古田",
+              "yomi": "いこた",
+              "machiaza_id": "112071-0032000"
+            },
+            {
+              "name": "堀切",
+              "yomi": "ほりぎり",
+              "machiaza_id": "112071-0027000"
             }
           ]
         },
@@ -320,7 +406,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/27%20%E5%B1%B1%E7%94%B0.pdf",
           "areas": [
             {
-              "name": "山田"
+              "name": "山田",
+              "yomi": "やまだ",
+              "machiaza_id": "112071-0052000"
             }
           ]
         },
@@ -331,7 +419,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/28%20%E6%A0%83%E8%B0%B7.pdf",
           "areas": [
             {
-              "name": "栃谷"
+              "name": "栃谷",
+              "yomi": "とちや",
+              "machiaza_id": "112071-0033000"
             }
           ]
         },
@@ -342,7 +432,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/29%20%E5%AE%9A%E5%B3%B0.pdf",
           "areas": [
             {
-              "name": "定峰"
+              "name": "定峰",
+              "yomi": "さだみね",
+              "machiaza_id": "112071-0045000"
             }
           ]
         },
@@ -353,7 +445,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/30%20%E5%93%81%E6%B2%A2.pdf",
           "areas": [
             {
-              "name": "品沢"
+              "name": "品沢",
+              "yomi": "しなざわ",
+              "machiaza_id": "112071-0036000"
             }
           ]
         },
@@ -364,7 +458,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/31%20%E5%B0%8F%E6%9F%B1.pdf",
           "areas": [
             {
-              "name": "小柱"
+              "name": "小柱",
+              "yomi": "おばしら",
+              "machiaza_id": "112071-0028000"
             }
           ]
         },
@@ -375,7 +471,16 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/32%20%E5%AE%AE%E6%9C%AC%E3%83%BB%E6%A0%84%E3%83%BB%E5%A4%A7%E6%B2%BC%E3%83%BB%E5%85%AB%E5%B9%A1.pdf",
           "areas": [
             {
-              "name": "宮本・栄・大沼・八幡"
+              "name": "宮本"
+            },
+            {
+              "name": "栄"
+            },
+            {
+              "name": "大沼"
+            },
+            {
+              "name": "八幡"
             }
           ]
         },
@@ -386,7 +491,10 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/33%20%E6%97%AD%E7%94%BA%E3%83%BB%E5%B7%B4%E7%94%BA.pdf",
           "areas": [
             {
-              "name": "旭町・巴町"
+              "name": "旭町"
+            },
+            {
+              "name": "巴町"
             }
           ]
         },
@@ -397,7 +505,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/34%20%E6%B5%A6%E5%B1%B1.pdf",
           "areas": [
             {
-              "name": "浦山"
+              "name": "浦山",
+              "yomi": "うらやま",
+              "machiaza_id": "112071-0058000"
             }
           ]
         },
@@ -408,7 +518,14 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/35%20%E4%B9%85%E9%95%B7%E3%83%BB%E4%B8%8B%E5%90%89%E7%94%B0.pdf",
           "areas": [
             {
-              "name": "久長・下吉田"
+              "name": "久長",
+              "yomi": "ひさなが",
+              "machiaza_id": "112071-0040000"
+            },
+            {
+              "name": "下吉田",
+              "yomi": "しもよしだ",
+              "machiaza_id": "112071-0056000"
             }
           ]
         },
@@ -419,7 +536,20 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/36%20%E9%98%BF%E7%86%8A%E3%83%BB%E7%9F%B3%E9%96%93%EF%BC%88%E5%8D%8A%E7%B4%8D%E3%82%92%E9%99%A4%E3%81%8F%EF%BC%89%E3%83%BB%E4%B8%8A%E5%90%89%E7%94%B0.pdf",
           "areas": [
             {
-              "name": "阿熊・石間（半納を除く）・上吉田"
+              "name": "阿熊",
+              "yomi": "あぐま",
+              "machiaza_id": "112071-0046000"
+            },
+            {
+              "name": "石間",
+              "yomi": "いさま",
+              "machiaza_id": "112071-0053000",
+              "note": "半納を除く"
+            },
+            {
+              "name": "上吉田",
+              "yomi": "かみよしだ",
+              "machiaza_id": "112071-0057000"
             }
           ]
         },
@@ -430,7 +560,8 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/37%20%E5%8D%8A%E7%B4%8D%EF%BC%88%E7%9F%B3%E9%96%93%EF%BC%89.pdf",
           "areas": [
             {
-              "name": "半納（石間）"
+              "name": "半納",
+              "note": "石間"
             }
           ]
         },
@@ -441,7 +572,9 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/38%20%E5%A4%AA%E7%94%B0%E9%83%A8.pdf",
           "areas": [
             {
-              "name": "太田部"
+              "name": "太田部",
+              "yomi": "おおたぶ",
+              "machiaza_id": "112071-0047000"
             }
           ]
         },
@@ -452,7 +585,24 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/39%20%E5%BC%B7%E7%9F%B3%E3%82%88%E3%82%8A%E8%90%BD%E5%90%88%E3%83%BB%E4%BA%8C%E7%80%AC%E3%83%BB%E6%A0%83%E6%9C%AC%E3%83%BB%E5%B7%9D%E5%8F%88%E3%83%BB%E4%B8%89%E5%B3%B0.pdf",
           "areas": [
             {
-              "name": "強石より落合・二瀬・栃本・川又・三峰"
+              "name": "強石"
+            },
+            {
+              "name": "落合"
+            },
+            {
+              "name": "二瀬"
+            },
+            {
+              "name": "栃本"
+            },
+            {
+              "name": "川又"
+            },
+            {
+              "name": "三峰",
+              "yomi": "みつみね",
+              "machiaza_id": "112071-0051000"
             }
           ]
         },
@@ -463,7 +613,12 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/40%20%E5%AE%AE%E5%B9%B3%E3%82%88%E3%82%8A%E4%B8%AD%E6%B4%A5%E5%B7%9D.pdf",
           "areas": [
             {
-              "name": "宮平より中津川"
+              "name": "宮平"
+            },
+            {
+              "name": "中津川",
+              "yomi": "なかつがわ",
+              "machiaza_id": "112071-0059000"
             }
           ]
         },
@@ -474,7 +629,21 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/41%20%E5%8D%8A%E7%B8%84%E3%83%BB%E5%9D%82%E5%8F%A3%E3%83%BB%E4%BA%8B%E4%B8%8A%E3%83%BB%E6%97%A5%E9%87%8E%E3%83%BB%E6%9F%B4%E5%8E%9F.pdf",
           "areas": [
             {
-              "name": "半縄・坂口・事上・日野・柴原"
+              "name": "半縄"
+            },
+            {
+              "name": "坂口"
+            },
+            {
+              "name": "事上"
+            },
+            {
+              "name": "日野",
+              "yomi": "ひの",
+              "machiaza_id": "112071-0055000"
+            },
+            {
+              "name": "柴原"
             }
           ]
         },
@@ -485,7 +654,22 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/42%20%E7%99%BD%E4%B9%85%E3%83%BB%E8%B4%84%E5%B7%9D%E3%83%BB%E5%B0%8F%E9%87%8E%E5%8E%9F%E3%83%BB%E9%B7%BA%E3%81%AE%E5%B7%A3.pdf",
           "areas": [
             {
-              "name": "白久・贄川・小野原・鷺の巣"
+              "name": "白久",
+              "yomi": "しろく",
+              "machiaza_id": "112071-0050000"
+            },
+            {
+              "name": "贄川",
+              "yomi": "にえがわ",
+              "machiaza_id": "112071-0049000"
+            },
+            {
+              "name": "小野原",
+              "yomi": "おのばら",
+              "machiaza_id": "112071-0035000"
+            },
+            {
+              "name": "鷺の巣"
             }
           ]
         },
@@ -496,7 +680,27 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/43%20%E4%B9%85%E9%82%A3%E3%83%BB%E4%B8%8B%E7%9F%B3%E5%8E%9F%E3%83%BB%E4%B8%8A%E7%9F%B3%E5%8E%9F%E3%83%BB%E6%A0%83%E4%B9%85%E4%BF%9D%E3%83%BB%E7%B3%80%E5%B1%8B%E3%83%BB%E8%88%B9%E5%B7%9D%E3%83%BB%E8%B6%8A.pdf",
           "areas": [
             {
-              "name": "久那・下石原・上石原・栃久保・糀屋・船川・越"
+              "name": "久那",
+              "yomi": "くな",
+              "machiaza_id": "112071-0030000"
+            },
+            {
+              "name": "下石原"
+            },
+            {
+              "name": "上石原"
+            },
+            {
+              "name": "栃久保"
+            },
+            {
+              "name": "糀屋"
+            },
+            {
+              "name": "船川"
+            },
+            {
+              "name": "越"
             }
           ]
         }
@@ -514,7 +718,13 @@
           "pdf_url": "https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/44%E5%B7%9D%E8%A5%BF%E3%83%BB%E4%B8%AD%E9%83%B7%E3%83%BB%E5%AE%87%E6%A0%B9.pdf",
           "areas": [
             {
-              "name": "川西・中郷・宇根"
+              "name": "川西"
+            },
+            {
+              "name": "中郷"
+            },
+            {
+              "name": "宇根"
             }
           ]
         },
@@ -525,7 +735,11 @@
           "pdf_url": "https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/45%E5%B7%9D%E6%9D%B1%E3%83%BB%E8%8B%85%E7%B1%B3%EF%BC%88%E6%A0%B9%E5%8F%A4%E5%B1%8B%E3%81%AE%E4%B8%80%E9%83%A8%E5%9C%B0%E5%9F%9F%E5%90%AB%E3%82%80%EF%BC%89.pdf",
           "areas": [
             {
-              "name": "川東・苅米（根古屋の一部地域含む）"
+              "name": "川東"
+            },
+            {
+              "name": "苅米",
+              "note": "根古屋の一部地域含む"
             }
           ]
         },
@@ -536,7 +750,13 @@
           "pdf_url": "https://www.town.yokoze.saitama.jp/wp-content/uploads/2026/03/46%E6%A0%B9%E5%8F%A4%E5%B1%8B%E3%83%BB%E8%8A%A6%E3%83%B6%E4%B9%85%E4%BF%9D%EF%BC%88%E8%8B%85%E7%B1%B3%E3%81%AE%E4%B8%80%E9%83%A8%E5%9C%B0%E5%9F%9F%E5%90%AB%E3%82%80%EF%BC%89.pdf",
           "areas": [
             {
-              "name": "根古屋・芦ヶ久保（苅米の一部地域含む）"
+              "name": "根古屋"
+            },
+            {
+              "name": "芦ヶ久保",
+              "yomi": "あしがくぼ",
+              "machiaza_id": "113611-0001000",
+              "note": "苅米の一部地域含む"
             }
           ]
         }
@@ -554,7 +774,9 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8shimoogano_gomicalendar.pdf",
           "areas": [
             {
-              "name": "下小鹿野"
+              "name": "下小鹿野",
+              "yomi": "しもおがの",
+              "machiaza_id": "113654-0003000"
             }
           ]
         },
@@ -565,7 +787,14 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8izusawa_gomicalendar.pdf",
           "areas": [
             {
-              "name": "小鹿野・伊豆沢"
+              "name": "小鹿野",
+              "yomi": "おがの",
+              "machiaza_id": "113654-0001000"
+            },
+            {
+              "name": "伊豆沢",
+              "yomi": "いずさわ",
+              "machiaza_id": "113654-0005000"
             }
           ]
         },
@@ -576,7 +805,9 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8araikoshinone_gomicalendar.pdf",
           "areas": [
             {
-              "name": "小鹿野（新井・腰の根）"
+              "name": "小鹿野（新井・腰の根）",
+              "yomi": "おがの",
+              "machiaza_id": "113654-0001000"
             }
           ]
         },
@@ -598,7 +829,10 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8mitagawakurao_gomicalendar.pdf",
           "areas": [
             {
-              "name": "三田川・倉尾"
+              "name": "三田川"
+            },
+            {
+              "name": "倉尾"
             }
           ]
         },
@@ -609,7 +843,9 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki_gomicalendar.pdf",
           "areas": [
             {
-              "name": "薄"
+              "name": "薄",
+              "yomi": "すすき",
+              "machiaza_id": "113654-0011000"
             }
           ]
         },
@@ -620,7 +856,9 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8susuki8k_gomicalendar.pdf",
           "areas": [
             {
-              "name": "薄8区"
+              "name": "薄8区",
+              "yomi": "すすき",
+              "machiaza_id": "113654-0011000"
             }
           ]
         },
@@ -631,7 +869,14 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8komorisusuki_gomicalendar.pdf",
           "areas": [
             {
-              "name": "小森・薄（3区・須川）"
+              "name": "小森",
+              "yomi": "こもり",
+              "machiaza_id": "113654-0012000"
+            },
+            {
+              "name": "薄（3区・須川）",
+              "yomi": "すすき",
+              "machiaza_id": "113654-0011000"
             }
           ]
         }
@@ -649,7 +894,27 @@
           "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/f9eb63572d046a0170bc788b856f0c36-11.pdf",
           "areas": [
             {
-              "name": "戦場・土京・親鼻・駒形・上の台・根岸・下田野"
+              "name": "戦場"
+            },
+            {
+              "name": "土京"
+            },
+            {
+              "name": "親鼻"
+            },
+            {
+              "name": "駒形"
+            },
+            {
+              "name": "上の台"
+            },
+            {
+              "name": "根岸"
+            },
+            {
+              "name": "下田野",
+              "yomi": "しもたの",
+              "machiaza_id": "113620-0005000"
             }
           ]
         },
@@ -660,7 +925,25 @@
           "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/ad9f53afdff8f682d38752a8e8429111-11.pdf",
           "areas": [
             {
-              "name": "腰・上原・原・下原・上大浜・中大浜・下大浜"
+              "name": "腰"
+            },
+            {
+              "name": "上原"
+            },
+            {
+              "name": "原"
+            },
+            {
+              "name": "下原"
+            },
+            {
+              "name": "上大浜"
+            },
+            {
+              "name": "中大浜"
+            },
+            {
+              "name": "下大浜"
             }
           ]
         },
@@ -671,7 +954,27 @@
           "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/52a3509281a700734ff8299b52005ffb-11.pdf",
           "areas": [
             {
-              "name": "日野沢・金沢・国神・大渕・野巻"
+              "name": "日野沢"
+            },
+            {
+              "name": "金沢",
+              "yomi": "かねざわ",
+              "machiaza_id": "113620-0009000"
+            },
+            {
+              "name": "国神",
+              "yomi": "くにかみ",
+              "machiaza_id": "113620-0002000"
+            },
+            {
+              "name": "大渕",
+              "yomi": "おおふち",
+              "machiaza_id": "113620-0003000"
+            },
+            {
+              "name": "野巻",
+              "yomi": "のまき",
+              "machiaza_id": "113620-0004000"
             }
           ]
         },
@@ -682,7 +985,14 @@
           "pdf_url": "https://www.town.minano.saitama.jp/wp-content/uploads/2010/07/51ad3cd62cf1f3d84c5071fbea3ddf85-12.pdf",
           "areas": [
             {
-              "name": "三沢・金崎"
+              "name": "三沢",
+              "yomi": "みさわ",
+              "machiaza_id": "113620-0010000"
+            },
+            {
+              "name": "金崎",
+              "yomi": "かなさき",
+              "machiaza_id": "113620-0001000"
             }
           ]
         }
@@ -700,7 +1010,15 @@
           "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/57ed490a93eec9c71df8b62f2ab64005-4.pdf",
           "areas": [
             {
-              "name": "長瀞・本野上（袋区を除く）"
+              "name": "長瀞",
+              "yomi": "ながとろ",
+              "machiaza_id": "113638-0005000"
+            },
+            {
+              "name": "本野上",
+              "yomi": "ほんのがみ",
+              "machiaza_id": "113638-0003000",
+              "note": "袋区を除く"
             }
           ]
         },
@@ -711,7 +1029,18 @@
           "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/367199f249a96e1c30ce981700f5fbd0.pdf",
           "areas": [
             {
-              "name": "袋区（本野上）・中野上・野上下郷"
+              "name": "袋区",
+              "note": "本野上"
+            },
+            {
+              "name": "中野上",
+              "yomi": "なかのがみ",
+              "machiaza_id": "113638-0001000"
+            },
+            {
+              "name": "野上下郷",
+              "yomi": "のがみしもごう",
+              "machiaza_id": "113638-0008000"
             }
           ]
         },
@@ -722,7 +1051,24 @@
           "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/2558dd9b4136f66768cfcae6eec1b73f.pdf",
           "areas": [
             {
-              "name": "矢那瀬・岩田・井戸・風布"
+              "name": "矢那瀬",
+              "yomi": "やなせ",
+              "machiaza_id": "113638-0004000"
+            },
+            {
+              "name": "岩田",
+              "yomi": "いわた",
+              "machiaza_id": "113638-0007000"
+            },
+            {
+              "name": "井戸",
+              "yomi": "いど",
+              "machiaza_id": "113638-0006000"
+            },
+            {
+              "name": "風布",
+              "yomi": "ふうぷ",
+              "machiaza_id": "113638-0002000"
             }
           ]
         }

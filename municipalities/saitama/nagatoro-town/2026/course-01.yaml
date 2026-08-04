@@ -3,7 +3,13 @@ metadata:
   course: "01"
   course_name_ja: 長瀞・本野上（袋区を除く）
   areas:
-    - name: 長瀞・本野上（袋区を除く）
+    - name: 長瀞
+      yomi: ながとろ
+      machiaza_id: 113638-0005000
+    - name: 本野上
+      yomi: ほんのがみ
+      machiaza_id: 113638-0003000
+      note: 袋区を除く
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

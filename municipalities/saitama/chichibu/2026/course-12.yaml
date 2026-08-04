@@ -4,11 +4,13 @@ metadata:
   course_name_ja: 近戸町
   areas:
     - name: 近戸町
+      yomi: ちかとまち
+      machiaza_id: 112071-0022000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     pdf_url: https://city.chichibu.lg.jp/secure/22218/12%20%E8%BF%91%E6%88%B8%E7%94%BA.pdf
-    extracted_at: 2026-08-03
+    extracted_at: 2026-08-04
     extracted_by: claude-opus-4-8
     confidence: 0.9
     verified_by: Claude(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)

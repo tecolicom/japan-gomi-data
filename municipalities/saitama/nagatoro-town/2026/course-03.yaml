@@ -3,7 +3,18 @@ metadata:
   course: "03"
   course_name_ja: 矢那瀬・岩田・井戸・風布
   areas:
-    - name: 矢那瀬・岩田・井戸・風布
+    - name: 矢那瀬
+      yomi: やなせ
+      machiaza_id: 113638-0004000
+    - name: 岩田
+      yomi: いわた
+      machiaza_id: 113638-0007000
+    - name: 井戸
+      yomi: いど
+      machiaza_id: 113638-0006000
+    - name: 風布
+      yomi: ふうぷ
+      machiaza_id: 113638-0002000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

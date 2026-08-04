@@ -3,12 +3,23 @@ metadata:
   course: "25"
   course_name_ja: 久那・太田・伊古田・堀切
   areas:
-    - name: 久那・太田・伊古田・堀切
+    - name: 久那
+      yomi: くな
+      machiaza_id: 112071-0030000
+    - name: 太田
+      yomi: おおた
+      machiaza_id: 112071-0034000
+    - name: 伊古田
+      yomi: いこた
+      machiaza_id: 112071-0032000
+    - name: 堀切
+      yomi: ほりぎり
+      machiaza_id: 112071-0027000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     pdf_url: https://city.chichibu.lg.jp/secure/22218/25%20%E4%B9%85%E9%82%A3%E3%83%BB%E5%A4%AA%E7%94%B0%E3%83%BB%E4%BC%8A%E5%8F%A4%E7%94%B0%E3%83%BB%E5%A0%80%E5%88%87.pdf
-    extracted_at: 2026-08-03
+    extracted_at: 2026-08-04
     extracted_by: claude-opus-4-8
     confidence: 0.9
     verified_by: Claude(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)

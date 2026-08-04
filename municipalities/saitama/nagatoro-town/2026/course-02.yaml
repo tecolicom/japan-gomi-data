@@ -3,7 +3,14 @@ metadata:
   course: "02"
   course_name_ja: 袋区（本野上）・中野上・野上下郷
   areas:
-    - name: 袋区（本野上）・中野上・野上下郷
+    - name: 袋区
+      note: 本野上
+    - name: 中野上
+      yomi: なかのがみ
+      machiaza_id: 113638-0001000
+    - name: 野上下郷
+      yomi: のがみしもごう
+      machiaza_id: 113638-0008000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

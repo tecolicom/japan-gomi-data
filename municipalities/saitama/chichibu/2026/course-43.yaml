@@ -3,12 +3,20 @@ metadata:
   course: "43"
   course_name_ja: 久那・下石原・上石原・栃久保・糀屋・船川・越
   areas:
-    - name: 久那・下石原・上石原・栃久保・糀屋・船川・越
+    - name: 久那
+      yomi: くな
+      machiaza_id: 112071-0030000
+    - name: 下石原
+    - name: 上石原
+    - name: 栃久保
+    - name: 糀屋
+    - name: 船川
+    - name: 越
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
     pdf_url: https://city.chichibu.lg.jp/secure/22218/43%20%E4%B9%85%E9%82%A3%E3%83%BB%E4%B8%8B%E7%9F%B3%E5%8E%9F%E3%83%BB%E4%B8%8A%E7%9F%B3%E5%8E%9F%E3%83%BB%E6%A0%83%E4%B9%85%E4%BF%9D%E3%83%BB%E7%B3%80%E5%B1%8B%E3%83%BB%E8%88%B9%E5%B7%9D%E3%83%BB%E8%B6%8A.pdf
-    extracted_at: 2026-08-03
+    extracted_at: 2026-08-04
     extracted_by: claude-opus-4-8
     confidence: 0.9
     verified_by: Claude(秩父広域市町村圏組合(秩父市・横瀬町・皆野町・長瀞町・小鹿野町の5市町共同)の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)

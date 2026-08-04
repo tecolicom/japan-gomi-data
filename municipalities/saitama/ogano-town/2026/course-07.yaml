@@ -4,6 +4,8 @@ metadata:
   course_name_ja: 薄8区
   areas:
     - name: 薄8区
+      yomi: すすき
+      machiaza_id: 113654-0011000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

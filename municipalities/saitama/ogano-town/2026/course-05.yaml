@@ -3,7 +3,8 @@ metadata:
   course: "05"
   course_name_ja: 三田川・倉尾
   areas:
-    - name: 三田川・倉尾
+    - name: 三田川
+    - name: 倉尾
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
