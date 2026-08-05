@@ -3,8 +3,10 @@ metadata:
   course: "37"
   course_name_ja: 半納（石間）
   areas:
-    - name: 半納
-      note: 石間
+    - name: 石間
+      note: 半納
+      yomi: いさま
+      machiaza_id: 112071-0053000
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

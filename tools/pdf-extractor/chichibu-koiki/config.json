@@ -560,8 +560,10 @@
           "pdf_url": "https://city.chichibu.lg.jp/secure/22218/37%20%E5%8D%8A%E7%B4%8D%EF%BC%88%E7%9F%B3%E9%96%93%EF%BC%89.pdf",
           "areas": [
             {
-              "name": "半納",
-              "note": "石間"
+              "name": "石間",
+              "note": "半納",
+              "yomi": "いさま",
+              "machiaza_id": "112071-0053000"
             }
           ]
         },
@@ -1023,8 +1025,10 @@
           "pdf_url": "https://www.town.nagatoro.saitama.jp/wp-content/uploads/2026/03/367199f249a96e1c30ce981700f5fbd0.pdf",
           "areas": [
             {
-              "name": "袋区",
-              "note": "本野上"
+              "name": "本野上",
+              "note": "袋区",
+              "yomi": "ほんのがみ",
+              "machiaza_id": "113638-0003000"
             },
             {
               "name": "中野上",
