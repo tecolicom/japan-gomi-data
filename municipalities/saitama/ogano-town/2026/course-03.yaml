@@ -3,9 +3,10 @@ metadata:
   course: "03"
   course_name_ja: 小鹿野（新井・腰の根）
   areas:
-    - name: 小鹿野（新井・腰の根）
+    - name: 小鹿野
       yomi: おがの
       machiaza_id: 113654-0001000
+      note: 新井・腰の根
   year: 2026
   fiscal_year_ja: 令和8年度
   source:

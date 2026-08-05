@@ -797,9 +797,10 @@
           "pdf_url": "https://www.town.ogano.lg.jp/cms/wp-content/uploads/2026/03/r8araikoshinone_gomicalendar.pdf",
           "areas": [
             {
-              "name": "小鹿野（新井・腰の根）",
+              "name": "小鹿野",
               "yomi": "おがの",
-              "machiaza_id": "113654-0001000"
+              "machiaza_id": "113654-0001000",
+              "note": "新井・腰の根"
             }
           ]
         },
@@ -866,9 +867,10 @@
               "machiaza_id": "113654-0012000"
             },
             {
-              "name": "薄（3区・須川）",
+              "name": "薄",
               "yomi": "すすき",
-              "machiaza_id": "113654-0011000"
+              "machiaza_id": "113654-0011000",
+              "note": "3区・須川"
             }
           ]
         }

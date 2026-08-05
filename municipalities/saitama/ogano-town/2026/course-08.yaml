@@ -6,9 +6,10 @@ metadata:
     - name: 小森
       yomi: こもり
       machiaza_id: 113654-0012000
-    - name: 薄（3区・須川）
+    - name: 薄
       yomi: すすき
       machiaza_id: 113654-0011000
+      note: 3区・須川
   year: 2026
   fiscal_year_ja: 令和8年度
   source:
