@@ -33,7 +33,7 @@ handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPR
   `facts.yaml`(任意。**利用者向け読み物断片** — その街のごみ収集の特徴を出典つき事実で 2〜4 文にまとめたもの。真備だけ分別が違う・可燃が月2回の集落がある 等。全国横断の比較統計は `build:stats` が `ics/stats.json` に機械導出する)
   - 都道府県ディレクトリは romaji(`hokkaido`, `saitama`, `fukui` …)。将来 47 都道府県へ拡張。
   - handle は leaf 名で全国一意。ツール(validate/build-ics/ダウンストリーム)は leaf を都市キーとして使う。
-- `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)
+- `tools/pdf-extractor/` — PDF からの抽出パイプライン(PDF 由来の自治体用)。テキスト層があるものは pdftotext/座標抽出、日付入りカレンダー型は実日付からパターン導出 (`saiseibu-kumiai`)。**雑誌型 InDesign 製で文字も座標も取れない PDF は、品目のセル背景色で判定する色ベース抽出** (`chichibu-koiki` — 全PDF共通テンプレートの月グリッド四隅座標＋暦でセル位置を決め、セル領域の色で品目を当てる。6週の月の分割セルは連結成分の重心で週を振り分け)
 - `tools/html-extractor/` / `tools/csv-extractor/` — HTML 表 / オープンデータ CSV からの抽出パイプライン
 - `tools/txt-extractor/` — 自治体配布のテキスト版カレンダー (日付入り通年) からの抽出パイプライン
 - `tools/_lib/` — extractor 共通部品 (曜日/第n回目パース・categoriesOn 正典展開・コース畳み込み・照合と rule of three・レジストリ)。build-ics も同じ展開を使う
@@ -73,11 +73,22 @@ ken_all で補完されるのは読みのみ。cache は `.gitignore` 対象な�
 - 上富良野町 — `kamifurano-town` (5コース)
 
 ### 埼玉県 (saitama)
-- 飯能市 — `hanno` (6コース)
-- 日高市 — `hidaka` (20コース)
-- 入間市 — `iruma` (12コース、58地区) ※埼玉県ODの日付入り収集カレンダーCSV (PDL-1.0) 由来。市「分け出し表」PDFと全12地区で照合済み (隔週品目は実日付レベル)
-- 所沢市 — `tokorozawa` (38コース、86町別PDF→87地区) ※市公式の日付入り地区別カレンダーPDF由来。通年機械照合 (87×365日 差分ゼロ) + poppler×pdfminer 2エンジン全数一致で検証
 - 川口市 — `kawaguchi` (18コース、133町丁目) ※市公式の地区別カレンダーPDF (テキスト層あり・ヘッダに規則明示) 由来。同一PDF内のヘッダ規則×本体実日付グリッドを2026暦年で全日照合、相違ゼロ。暦年 (1〜12月) カレンダーで年度ではない
+- 秩父市 — `chichibu` (43コース、43地区) ※秩父広域市町村圏組合の雑誌型カレンダーPDF (InDesign 製で文字/座標抽出不可)。品目がセル背景色で塗り分けられているのを使い、文字も日付も読まず**セルの色だけで品目を判定する色ベース抽出** (`tools/pdf-extractor/chichibu-koiki`)。収集曜日・頻度は地区で異なるため、各品目の実日付から weekly / monthly_specific を地区ごとに導出し、規則の再展開が抽出結果と一致することを自己検証
+- 所沢市 — `tokorozawa` (38コース、86町別PDF→87地区) ※市公式の日付入り地区別カレンダーPDF由来。通年機械照合 (87×365日 差分ゼロ) + poppler×pdfminer 2エンジン全数一致で検証
+- 飯能市 — `hanno` (6コース)
+- 入間市 — `iruma` (12コース、58地区) ※埼玉県ODの日付入り収集カレンダーCSV (PDL-1.0) 由来。市「分け出し表」PDFと全12地区で照合済み (隔週品目は実日付レベル)
+- 朝霞市 — `asaka` (6コース) ※市公式「ごみの出し方」HTML 由来
+- 日高市 — `hidaka` (20コース)
+- 鶴ヶ島市 — `tsurugashima` (4コース) ※埼玉西部環境保全組合の日付入りカレンダーPDFを座標抽出し、実収集日から曜日+第nパターンを導出 (`tools/pdf-extractor/saiseibu-kumiai`、組合共通ツール)
+- 毛呂山町 — `moroyama-town` (3コース) ※埼玉西部環境保全組合 (`saiseibu-kumiai`)
+- 越生町 — `ogose-town` (2コース) ※埼玉西部環境保全組合 (`saiseibu-kumiai`)
+- 鳩山町 — `hatoyama-town` (2コース) ※埼玉西部環境保全組合 (`saiseibu-kumiai`)
+- 横瀬町 — `yokoze-town` (3コース) ※秩父広域市町村圏組合。秩父市と同一 InDesign テンプレートのため四隅座標を流用した色ベース抽出 (`chichibu-koiki`)
+- 皆野町 — `minano-town` (4コース) ※秩父広域市町村圏組合 (色ベース抽出 `chichibu-koiki`)
+- 長瀞町 — `nagatoro-town` (3コース) ※秩父広域市町村圏組合 (色ベース抽出 `chichibu-koiki`)
+- 小鹿野町 — `ogano-town` (8コース) ※秩父広域市町村圏組合 (色ベース抽出 `chichibu-koiki`)
+- 東秩父村 — `higashichichibu-vill` (1コース) ※村公式「ごみの出し方」HTML 由来。地区割が無く全域一律1コース
 
 ### 東京都 (tokyo)
 - 杉並区 — `suginami` (28コース) ※区サイトの収集曜日検索 CSV 由来。地域別カレンダー PDF 全28枚と通年機械照合済み (延べ5,785日差分ゼロ)
