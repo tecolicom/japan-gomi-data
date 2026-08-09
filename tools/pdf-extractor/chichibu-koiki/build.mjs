@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { stringify as yamlStringify } from 'yaml';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
+import { parsePeriod } from '../../_lib/schedule.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CONF = JSON.parse(readFileSync(join(HERE, 'config.json'), 'utf8'));
@@ -25,10 +26,13 @@ const CAT_ORDER = ['burnable', 'non_burnable', 'paper_cloth', 'glass_bottle', 'b
 const catRank = (c) => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
 const ym = (s) => s.slice(0, 7);
 
-// 会計年度 4/1..翌3/31 の weekly[dowSet] 展開
-function weeklyExpand(year, dowSet) {
+// 収録期間 (CONF.period) の weekly[dowSet] 展開。会計年度を決め打ちしない
+function weeklyExpand(period, dowSet) {
+  const { from, to } = parsePeriod(period);
+  const [ty, tm] = to.split('-').map(Number);
+  const last = iso(new Date(Date.UTC(tm === 12 ? ty + 1 : ty, tm % 12, 0)));
   const out = [];
-  for (let d = parseUTC(`${year}-04-01`); d <= parseUTC(`${year + 1}-03-31`); d.setUTCDate(d.getUTCDate() + 1))
+  for (let d = parseUTC(`${from}-01`); d <= parseUTC(last); d.setUTCDate(d.getUTCDate() + 1))
     if (dowSet.has(d.getUTCDay())) out.push(iso(d));
   return out;
 }
@@ -37,14 +41,14 @@ function weeklyExpand(year, dowSet) {
 // 当てはまらなければ {pattern:monthly_specific,dates}。extra(規則外の実日付)がゼロの時だけ
 // weekly を採用するので、規則の再展開は必ず実日付集合に一致する(自己検証済み)。
 const WEEKLY_MIN = 40; // 通年でこの回数以上ある曜日を weekly の曜日とみなす(月2=~24は除外)
-function deriveRule(dates, year) {
+function deriveRule(dates, period) {
   const S = new Set(dates);
   const cnt = new Map();
   for (const s of dates) { const w = parseUTC(s).getUTCDay(); cnt.set(w, (cnt.get(w) || 0) + 1); }
   const days = [...cnt.entries()].filter(([, c]) => c >= WEEKLY_MIN).map(([w]) => w).sort((a, b) => a - b);
   if (days.length >= 1 && days.length <= 3) {
     const dowSet = new Set(days);
-    const exp = weeklyExpand(year, dowSet);
+    const exp = weeklyExpand(period, dowSet);
     const expSet = new Set(exp);
     const extra = [...S].filter((d) => !expSet.has(d));
     const missing = exp.filter((d) => !S.has(d));
@@ -54,13 +58,13 @@ function deriveRule(dates, year) {
   return { pattern: 'monthly_specific', dates: [...S].sort(), cancelled: [] };
 }
 
-function buildRules(ext, year) {
+function buildRules(ext, period) {
   const rules = [];
   const overrides = [];
   for (const [item, cats] of Object.entries(CONF.item_category)) {
     const dates = ext[item] || [];
     if (!dates.length) continue;
-    const r = deriveRule(dates, year);
+    const r = deriveRule(dates, period);
     for (const cat of cats) {
       if (r.pattern === 'weekly') {
         rules.push({ category: cat, pattern: 'weekly', days: r.days });
@@ -76,11 +80,11 @@ function buildRules(ext, year) {
 }
 
 // 生成した rules+overrides を再展開して、抽出の実日付集合と品目カテゴリごとに一致するか検証する。
-function selfVerify(ext, rules, overrides, year) {
+function selfVerify(ext, rules, overrides, period) {
   const cancelSet = new Set(overrides.map((o) => `${o.category}|${o.date}`));
   const byCat = new Map();
   for (const r of rules) {
-    const dates = r.pattern === 'weekly' ? weeklyExpand(year, new Set(r.days.map((d) => DOW.indexOf(d)))) : r.dates;
+    const dates = r.pattern === 'weekly' ? weeklyExpand(period, new Set(r.days.map((d) => DOW.indexOf(d)))) : r.dates;
     const kept = dates.filter((d) => !cancelSet.has(`${r.category}|${d}`));
     if (!byCat.has(r.category)) byCat.set(r.category, new Set());
     for (const d of kept) byCat.get(r.category).add(d);
@@ -143,8 +147,8 @@ function buildMunicipality(handle, muni) {
   for (const dist of muni.districts) {
     const raw = execFileSync('python3', [join(HERE, 'extract.py'), join(HERE, dist.pdf)], { encoding: 'utf8', maxBuffer: 1 << 24 });
     const ext = JSON.parse(raw);
-    const { rules, overrides } = buildRules(ext, CONF.year);
-    const problems = selfVerify(ext, rules, overrides, CONF.year);
+    const { rules, overrides } = buildRules(ext, CONF.period);
+    const problems = selfVerify(ext, rules, overrides, CONF.period);
     if (problems.length) { for (const p of problems) console.error(`  ⚠ [${handle}/${dist.course}] ${p}`); throw new Error(`${handle}/${dist.course}: 自己検証NG (規則の再展開が抽出と不一致)`); }
     const kaen = rules.find((r) => r.category === 'burnable');
     const kdesc = kaen?.pattern === 'weekly'
@@ -156,7 +160,7 @@ function buildMunicipality(handle, muni) {
     console.log(`[${handle}/${dist.course}] ${dist.name_ja}: 可燃${(ext['可燃'] || []).length}(${kdesc}) 不燃${(ext['不燃'] || []).length} 紙布${(ext['紙布'] || []).length} カンビン${(ext['カンビン'] || []).length} ペット${(ext['ペット'] || []).length} / 同日${multi.length}件`);
     docs.push(courseDoc({
       city: handle, course: dist.course, courseNameJa: dist.name_ja, areas: dist.areas,
-      year: CONF.year, fiscalYearJa: CONF.fiscal_year_ja,
+      period: CONF.period,
       source: {
         pdf_url: dist.pdf_url, extracted_at: EXTRACTED_AT, extracted_by: 'claude-opus-4-8', confidence: 0.9,
         verified_by: `Claude(${CONF.union_ja}の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)`,
@@ -165,7 +169,7 @@ function buildMunicipality(handle, muni) {
     }));
   }
   // 既存の同年 course を全消しして書き直すので、自治体単位で全地区を一括ビルドする。
-  const n = writeCourses(OUT, CONF.year, docs);
+  const n = writeCourses(OUT, CONF.period, docs);
   writeMeta(OUT, handle, muni);
   writeTaxonomy(OUT, muni.name_ja);
   console.log(`  -> ${n} course + meta + taxonomy: ${OUT}\n`);

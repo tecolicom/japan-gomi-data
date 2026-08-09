@@ -10,7 +10,13 @@ import { categoriesOn, isoDate } from '../../_lib/schedule.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', '..', '..', 'municipalities', 'saitama', 'kawaguchi');
-const YEAR = 2026;
+const PERIOD = '2026-01--2026-12'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+// カレンダーPDF脚注「年末年始の収集日は反映されていません」→ 期間末尾の年末は不明扱い。
+const UNKNOWN = [{
+  from: '2026-12-30', to: '2026-12-31',
+  reason: 'カレンダーPDF脚注に「年末年始の収集日は反映されていません。『年末・年始ごみ収集のお知らせ』をご覧ください」と明記',
+  source_url: 'https://www.city.kawaguchi.lg.jp/soshiki/01100/040/4/2/3488.html',
+}];
 const EXTRACTED_AT = process.env.EXTRACTED_AT;
 if (!EXTRACTED_AT) throw new Error('set EXTRACTED_AT=YYYY-MM-DD');
 
@@ -78,8 +84,7 @@ for (let d = 1; d <= 18; d++) {
     course: String(d),
     courseNameJa,
     areas, // 構造化 areas(name+yomi)。yomi は日本郵便 郵便カナ由来(yomi.yaml)。
-    year: YEAR,
-    fiscalYearJa: undefined, // 川口は暦年(2026年)カレンダー。年度ではない。
+    period: PERIOD,
     source: {
       pdf_url: `https://www.city.kawaguchi.lg.jp/material/files/group/94/2026---${d}.pdf`,
       extracted_at: EXTRACTED_AT,
@@ -87,6 +92,7 @@ for (let d = 1; d <= 18; d++) {
       verified_by: 'Claude(地区別カレンダーPDFヘッダの明示ルールを抽出し、同PDFのカレンダー本体実日付とcategoriesOn再展開で2026暦年を全日照合、相違ゼロ。年末年始休止は本体空欄より)',
     },
     rules,
+    unknownPeriods: UNKNOWN,
     overrides,
   }));
 
@@ -104,5 +110,5 @@ for (let d = 1; d <= 18; d++) {
   if (diff) console.log(`  ⚠ d${d}: ${diff} diffs vs grid`);
 }
 
-const n = writeCourses(OUT, YEAR, docs);
+const n = writeCourses(OUT, PERIOD, docs);
 console.log(`wrote ${n} courses; total self-vs-grid diffs (2026 calendar year): ${totalDiff}`);

@@ -1,0 +1,188 @@
+metadata:
+  city: okayama
+  course: okayama-6
+  course_name_ja: "南輝: あけぼの町／築港新町１丁目／築港新町２丁目／築港ひかり町／築港緑町１丁目／築港緑町２丁目／築港緑町３丁目／並木町２丁目／南輝２丁目／南輝３丁目／松浜町 ｜ 伊島: 伊島町１丁目／伊島町２丁目／伊島町３丁目／伊福町４丁目／京山１丁目／京山２丁目／津倉町１丁目 ｜ 浦安: 浦安南町 ｜ : 市場１丁目／市場２丁目 ｜ 福島: 立川町／千鳥町／並木町１丁目／若葉町 ｜ 福島･南輝: 築港栄町 ｜ 伊島･三門: 津倉町２丁目 ｜ 平福: 福浜町／三浜町１丁目／三浜町２丁目"
+  areas:
+    - name: あけぼの町
+      yomi: あけぼのちょう
+      machiaza_id:
+        - 331040-0003000
+      note: ３月は当面古紙古布ペットボトルのみ
+    - name: 伊島町１丁目
+      yomi: いしまちょう
+      machiaza_id:
+        - 331015-0012001
+    - name: 伊島町２丁目
+      yomi: いしまちょう
+      machiaza_id:
+        - 331015-0012002
+    - name: 伊島町３丁目
+      yomi: いしまちょう
+      machiaza_id:
+        - 331015-0012003
+    - name: 伊福町４丁目
+      yomi: いふくちょう
+      machiaza_id:
+        - 331015-0017004
+    - name: 浦安南町
+      yomi: うらやすみなみまち
+      machiaza_id:
+        - 331040-0011000
+    - name: 京山１丁目
+      yomi: きょうやま
+      machiaza_id:
+        - 331015-0067001
+    - name: 京山２丁目
+      yomi: きょうやま
+      machiaza_id:
+        - 331015-0067002
+    - name: 市場１丁目
+      yomi: しじょう
+      machiaza_id:
+        - 331040-0022001
+    - name: 市場２丁目
+      yomi: しじょう
+      machiaza_id:
+        - 331040-0022002
+    - name: 立川町
+      yomi: たちかわちょう
+      machiaza_id:
+        - 331040-0031000
+    - name: 築港栄町
+      yomi: ちっこうさかえまち
+      machiaza_id:
+        - 331040-0032000
+    - name: 築港新町１丁目
+      yomi: ちっこうしんまち
+      machiaza_id:
+        - 331040-0033001
+      note: 築港新町東町内会の資源化物は当面の間１月のみ
+    - name: 築港新町２丁目
+      yomi: ちっこうしんまち
+      machiaza_id:
+        - 331040-0033002
+    - name: 築港ひかり町
+      yomi: ちっこうひかりまち
+      machiaza_id:
+        - 331040-0034000
+    - name: 築港緑町１丁目
+      yomi: ちっこうみどりまち
+      machiaza_id:
+        - 331040-0035001
+    - name: 築港緑町２丁目
+      yomi: ちっこうみどりまち
+      machiaza_id:
+        - 331040-0035002
+    - name: 築港緑町３丁目
+      yomi: ちっこうみどりまち
+      machiaza_id:
+        - 331040-0035003
+    - name: 千鳥町
+      yomi: ちどりちょう
+      machiaza_id:
+        - 331040-0037000
+      note: １の月は当面古紙古布ペットボトルのみ
+    - name: 津倉町１丁目
+      yomi: つくらちょう
+      machiaza_id:
+        - 331015-0160001
+    - name: 津倉町２丁目
+      yomi: つくらちょう
+      machiaza_id:
+        - 331015-0160002
+    - name: 並木町１丁目
+      yomi: なみきちょう
+      machiaza_id:
+        - 331040-0043001
+    - name: 並木町２丁目
+      yomi: なみきちょう
+      machiaza_id:
+        - 331040-0043002
+    - name: 南輝２丁目
+      yomi: なんき
+      machiaza_id:
+        - 331040-0044002
+    - name: 南輝３丁目
+      yomi: なんき
+      machiaza_id:
+        - 331040-0044003
+    - name: 福浜町
+      yomi: ふくはまちょう
+      machiaza_id:
+        - 331040-0061000
+      note: ３の月は当面古紙古布ペットボトルのみ
+    - name: 松浜町
+      yomi: まつはまちょう
+      machiaza_id:
+        - 331040-0066000
+      note: ３の月は当面古紙古布ペットボトルのみ
+    - name: 三浜町１丁目
+      yomi: みはまちょう
+      machiaza_id:
+        - 331040-0069001
+      note: 1月は当面古紙古布ペットボトルのみ
+    - name: 三浜町２丁目
+      yomi: みはまちょう
+      machiaza_id:
+        - 331040-0069002
+    - name: 若葉町
+      yomi: わかばちょう
+      machiaza_id:
+        - 331040-0073000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - MO
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

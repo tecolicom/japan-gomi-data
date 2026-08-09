@@ -1,4 +1,4 @@
-// 台東区オープンデータ CSV → municipalities/tokyo/taito/2026/course-*.yaml
+// 台東区オープンデータ CSV → municipalities/tokyo/taito/<収録期間>/course-*.yaml
 //
 // 検証は独立3ソースで行い、どれか1つでも食い違えば中断する:
 //   (1) オープンデータ CSV (一次)        … 令和4年3月公開
@@ -21,6 +21,7 @@ import {
 import { CSV_URL } from './urls.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲
 const OUT = join(HERE, '../../../municipalities/tokyo/taito');
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-20'; // Date.now() 不使用 (決定的出力)
 
@@ -103,7 +104,7 @@ if (sigToNo.size !== bySig.size) throw new Error('整理番号とグループが
 console.log(`検証(3) 日程グループ ${bySig.size}件 = 区公式カレンダーの整理番号 ${sigToNo.size}件 に1対1対応`);
 
 // --- 出力 (コース番号 = 区公式の整理番号) ---
-mkdirSync(join(OUT, '2026'), { recursive: true });
+mkdirSync(join(OUT, PERIOD), { recursive: true });
 const nos = [...sigToNo.keys()].sort((a, b) => a - b);
 for (const no of nos) {
   const { rules, areas } = bySig.get(sigToNo.get(no));
@@ -114,9 +115,9 @@ for (const no of nos) {
       areas: areas
         .map(({ name, yomi }) => ({ name, yomi }))
         .sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
-      year: 2026,
-      fiscal_year_ja: '令和8年度',
+      period: '2026-04--2027-03',
       source: {
+        edition_ja: '令和8年度',
         source_url: CSV_URL,
         extracted_at: EXTRACTED_AT,
         extracted_by: 'claude-opus-4-5',
@@ -136,7 +137,7 @@ for (const no of nos) {
     if (hit) yearEnd.push({ date: iso, cancelled: true, note: '年末年始休止(1/1〜1/3。複数年実績、12月の広報たいとう・区HPで要確認)' });
   }
   if (yearEnd.length) doc.overrides = yearEnd;
-  writeFileSync(join(OUT, '2026', `course-${no}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
+  writeFileSync(join(OUT, PERIOD, `course-${no}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
 }
 const areaTotal = [...bySig.values()].reduce((n, g) => n + g.areas.length, 0);
 console.log(`generated ${nos.length} courses / ${areaTotal} 町丁 (CSV ${csvRows.length}行から畳み込み)`);

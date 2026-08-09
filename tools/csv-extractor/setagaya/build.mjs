@@ -24,7 +24,7 @@ import { CSV_URL, LIST_URL, CAL_URL } from './fetch.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CACHE = join(HERE, 'cache');
 const OUT = join(HERE, '../../../municipalities/tokyo/setagaya');
-const YEAR = 2026;
+const PERIOD = '2025-12--2026-12'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-20'; // Date.now() 不使用 (決定的出力)
 
 const yomi = yamlParse(readFileSync(join(HERE, 'yomi.yaml'), 'utf8'));
@@ -132,9 +132,9 @@ const docs = courses.map(({ no, rules, rows }) => courseDoc({
   course: String(no),
   courseNameJa: `対象地区${no}`,
   areas: rows.map(areaOf).sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
-  year: YEAR,
-  fiscalYearJa: '令和8年度',
+  period: PERIOD,
   source: {
+    edition_ja: '令和8年度',
     source_url: CSV_URL,
     pdf_url: `https://www.city.setagaya.lg.jp/documents/27859/no${no}.pdf`,
     extracted_at: EXTRACTED_AT,
@@ -146,7 +146,7 @@ const docs = courses.map(({ no, rules, rows }) => courseDoc({
 }));
 
 mkdirSync(OUT, { recursive: true });
-const n = writeCourses(OUT, YEAR, docs);
+const n = writeCourses(OUT, PERIOD, docs);
 // 検証用: 対象地区 → 町丁目 の対応表
 writeFileSync(join(CACHE, 'course-areas.json'),
   JSON.stringify(Object.fromEntries(courses.map((c) => [c.no, c.rows.map(areaName)])), null, 1));

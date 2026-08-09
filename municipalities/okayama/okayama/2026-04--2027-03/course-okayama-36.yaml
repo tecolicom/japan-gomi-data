@@ -1,0 +1,196 @@
+metadata:
+  city: okayama
+  course: okayama-36
+  course_name_ja: "太伯: 邑久郷／乙子／神崎町 ｜ 大宮: 上阿知／西大寺一宮／下阿知／宿毛／千手 ｜ 幸島: 北幸田／幸地崎町／水門町／西幸西／東幸西／東幸崎／南水門町 ｜ 朝日: 久々井／西片岡／東片岡／宝伝／正儀 ｜ 豊: 西大寺射越／西大寺川口／西大寺五明／西大寺新／西大寺新地／西大寺浜／西大寺門前／長沼"
+  areas:
+    - name: 邑久郷
+      yomi: おくのごう
+      machiaza_id:
+        - 331031-0146000
+    - name: 乙子
+      yomi: おとご
+      machiaza_id:
+        - 331031-0008000
+    - name: 上阿知
+      yomi: かみあち
+      machiaza_id:
+        - 331031-0013000
+    - name: 神崎町
+      yomi: かんざきちょう
+      machiaza_id:
+        - 331031-0014000
+    - name: 北幸田
+      yomi: きたこうだ
+      machiaza_id:
+        - 331031-0015000
+    - name: 久々井
+      yomi: くぐい
+      machiaza_id:
+        - 331031-0017000
+    - name: 幸地崎町
+      yomi: こうちざきちょう
+      machiaza_id:
+        - 331031-0022000
+    - name: 西大寺射越
+      yomi: さいだいじいこし
+      machiaza_id:
+        - 331031-0029000
+    - name: 西大寺一宮
+      yomi: さいだいじいちのみや
+      machiaza_id:
+        - 331031-0030000
+    - name: 西大寺川口
+      yomi: さいだいじかわぐち
+      machiaza_id:
+        - 331031-0033000
+    - name: 西大寺五明
+      yomi: さいだいじごみょう
+      machiaza_id:
+        - 331031-0035000
+    - name: 西大寺新
+      yomi: さいだいじしん
+      machiaza_id:
+        - 331031-0036000
+    - name: 西大寺新地
+      yomi: さいだいじしんち
+      machiaza_id:
+        - 331031-0037000
+    - name: 西大寺浜
+      yomi: さいだいじはま
+      machiaza_id:
+        - 331031-0041000
+    - name: 西大寺門前
+      yomi: さいだいじもんぜん
+      machiaza_id:
+        - 331031-0045000
+    - name: 下阿知
+      yomi: しもあち
+      machiaza_id:
+        - 331031-0048000
+    - name: 宿毛
+      yomi: しゅくも
+      machiaza_id:
+        - 331031-0049000
+    - name: 水門町
+      yomi: すいもんちょう
+      machiaza_id:
+        - 331031-0145000
+    - name: 千手
+      yomi: せんじゅ
+      machiaza_id:
+        - 331031-0080000
+    - name: 長沼
+      yomi: ながぬま
+      machiaza_id:
+        - 331031-0088000
+    - name: 西片岡
+      yomi: にしかたおか
+      machiaza_id:
+        - 331031-0090000
+    - name: 西幸西
+      yomi: にしこうざい
+      machiaza_id:
+        - 331031-0091000
+    - name: 東片岡
+      yomi: ひがしかたおか
+      machiaza_id:
+        - 331031-0095000
+    - name: 東幸西
+      yomi: ひがしこうざい
+      machiaza_id:
+        - 331031-0096000
+    - name: 東幸崎
+      yomi: ひがしこうざき
+      machiaza_id:
+        - 331031-0097000
+    - name: 宝伝
+      yomi: ほうでん
+      machiaza_id:
+        - 331031-0104000
+    - name: 正儀
+      yomi: まさき
+      machiaza_id:
+        - 331031-0105000
+    - name: 南水門町
+      yomi: みなみすいもんちょう
+      machiaza_id:
+        - 331031-0111000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences: &a2
+      - 1
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a3
+      - FR
+    occurrences: &a4
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

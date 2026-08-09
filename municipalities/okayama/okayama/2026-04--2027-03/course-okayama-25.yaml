@@ -1,0 +1,178 @@
+metadata:
+  city: okayama
+  course: okayama-25
+  course_name_ja: "大元: 今２丁目／大元上町／上中野１丁目／上中野２丁目 ｜ 西: 今２丁目／今３丁目／今４丁目／今５丁目／今６丁目／今７丁目／今８丁目／今村／北長瀬表町１丁目／北長瀬表町２丁目／辰巳／辰巳／問屋町／中仙道／中仙道１丁目／平田／平田 ｜ 西大寺南: 金岡西町／金岡東町一丁目／金岡東町二丁目／金岡東町三丁目／西大寺金岡 ｜ 大元・西: 下中野（北区） ｜ 御南･西: 田中／田中／田中"
+  areas:
+    - name: 今２丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018002
+    - name: 今３丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018003
+    - name: 今４丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018004
+    - name: 今５丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018005
+    - name: 今６丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018006
+    - name: 今７丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018007
+    - name: 今８丁目
+      yomi: いま
+      machiaza_id:
+        - 331015-0018008
+    - name: 今村
+      yomi: いまむら
+      machiaza_id:
+        - 331015-0021000
+    - name: 大元上町
+      yomi: おおもとかみまち
+      machiaza_id:
+        - 331015-0035000
+    - name: 金岡西町
+      yomi: かなおかにしまち
+      machiaza_id:
+        - 331031-0010000
+    - name: 金岡東町一丁目（1番15号～30号以外）
+      yomi: かなおかひがしまち
+      machiaza_id:
+        - 331031-0011001
+    - name: 金岡東町二丁目
+      yomi: かなおかひがしまち
+      machiaza_id:
+        - 331031-0011002
+    - name: 金岡東町三丁目
+      yomi: かなおかひがしまち
+      machiaza_id:
+        - 331031-0011003
+    - name: 上中野１丁目
+      yomi: かみなかの
+      machiaza_id:
+        - 331015-0051001
+    - name: 上中野２丁目
+      yomi: かみなかの
+      machiaza_id:
+        - 331015-0051002
+    - name: 北長瀬表町１丁目
+      yomi: きたながせおもてまち
+      machiaza_id:
+        - 331015-0061001
+    - name: 北長瀬表町２丁目
+      yomi: きたながせおもてまち
+      machiaza_id:
+        - 331015-0061002
+    - name: 西大寺金岡
+      yomi: さいだいじかなおか
+      machiaza_id:
+        - 331031-0031000
+    - name: 下中野（北区・ＪＲ貨物西岡山駅からの南北道路の西）
+      yomi: しもなかの
+      machiaza_id:
+        - 331015-0093000
+    - name: 辰巳（辰巳西公園北側の道路の南）
+      yomi: たつみ
+      machiaza_id:
+        - 331015-0152000
+    - name: 辰巳（辰巳西公園北側の道路の北）
+      yomi: たつみ
+      machiaza_id:
+        - 331015-0152000
+    - name: 田中（岡山西バイパスの東。辰巳西公園北側の道路の南）
+      yomi: たなか
+      machiaza_id:
+        - 331015-0329000
+    - name: 田中（岡山西バイパスの西）
+      yomi: たなか
+      machiaza_id:
+        - 331015-0329000
+    - name: 田中（辰巳西公園北東の角、プレステージ難波 北区田中１０９－１０１）
+      yomi: たなか
+      machiaza_id:
+        - 331015-0329000
+    - name: 問屋町
+      yomi: といやちょう
+      machiaza_id:
+        - 331015-0176000
+    - name: 中仙道
+      yomi: なかせんどう
+      machiaza_id:
+        - 331015-0190000
+    - name: 中仙道１丁目
+      yomi: なかせんどう
+      machiaza_id:
+        - 331015-0190001
+    - name: 平田（岡山西バイパスの東）
+      yomi: ひらた
+      machiaza_id:
+        - 331015-0241000
+    - name: 平田（岡山西バイパスの西）
+      yomi: ひらた
+      machiaza_id:
+        - 331015-0241000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - WE
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

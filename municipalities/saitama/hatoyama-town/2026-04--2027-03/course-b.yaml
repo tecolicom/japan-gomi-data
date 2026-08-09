@@ -1,0 +1,83 @@
+metadata:
+  city: hatoyama-town
+  course: b
+  course_name_ja: B地区
+  areas:
+    - name: B地区
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: http://www.hozenkumiai.or.jp/
+    pdf_url: http://www.hozenkumiai.or.jp/pdf/hatoyama2026_b.pdf
+    extracted_at: 2026-08-03
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(埼玉西部環境保全組合の鳩山町令和8年度収集カレンダーPDFを pdfplumber 座標抽出し、各品目の実収集日から曜日+第n パターンを導出。祝日も収集する運用のためパターンで表現し、パターンからの逸脱(年末年始休止)は overrides に cancelled で記録。パターン再展開↔実日付を突合し完全再現)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - MO
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: &a3
+      - TH
+    occurrences: &a4
+      - 1
+      - 3
+  - category: cloth
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: hazardous
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+      - 3
+overrides:
+  - date: 2026-08-24
+    category: plastic
+    cancelled: true
+  - date: 2026-08-24
+    category: glass_bottle
+    cancelled: true
+  - date: 2026-08-24
+    category: beverage_can
+    cancelled: true
+  - date: 2026-12-29
+    category: burnable
+    cancelled: true
+  - date: 2027-01-01
+    category: burnable
+    cancelled: true

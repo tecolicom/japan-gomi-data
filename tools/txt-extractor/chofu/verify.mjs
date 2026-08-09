@@ -9,7 +9,7 @@ import { parseCalendar, fiscalYearDates } from './parse.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
 const OUTDIR = join(ROOT, 'municipalities', 'tokyo', 'chofu', '2026');
-const FY = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const DOW_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
 
 function categoriesOn(iso, rules, overrides) {

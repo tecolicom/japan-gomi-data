@@ -1,6 +1,6 @@
 // 生成した course YAML を、一次ソースの規則から独立に組み立てた期待日程と通年照合する。
 //
-// build.mjs が使う _lib/schedule.mjs (categoriesOn/expandFiscalYear) には依存せず、
+// build.mjs が使う _lib/schedule.mjs (categoriesOn/expandRange) には依存せず、
 // ここでは素朴な日次ループで期待日程を作る。両者が一致すれば
 // 「規則の解釈」と「YAML への書き出し」の双方が正しいと言える。
 //
@@ -17,7 +17,7 @@ import { parseShinagawaHtml } from './parse-html.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const COURSE_DIR = join(HERE, '../../../municipalities/tokyo/shinagawa/2026');
-const FY = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const DAY_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
 
 const pad = (n) => String(n).padStart(2, '0');

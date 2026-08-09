@@ -1,4 +1,4 @@
-// 中野区オープンデータ CSV → municipalities/tokyo/tokyo-nakano/2026/course-*.yaml
+// 中野区オープンデータ CSV → municipalities/tokyo/tokyo-nakano/<収録期間>/course-*.yaml
 //
 // 1. cache/nakano.csv (オープンデータ) と cache/nakanoku.html (現行公式表) を全行照合し、
 //    一致しなければ中断する (CSV の鮮度ガード。最終確認日 2021 の CSV が現行と一致することが前提)。
@@ -13,6 +13,7 @@ import { parse as yamlParse, stringify as yamlStringify } from 'yaml';
 import { parseOpenDataCsv, parseOfficialHtml, chomeKey, rowToRules, signatureKey } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲
 const OUT = join(HERE, '../../../municipalities/tokyo/tokyo-nakano');
 const CSV_URL = 'https://www2.wagmap.jp/nakanodatamap/nakanodatamap/opendatafile/map_1/CSV/opendata_550239.csv';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-16'; // Date.now() 不使用 (決定的出力)
@@ -73,7 +74,7 @@ for (const row of csvRows) {
 
 // --- 3) 出力 ---
 const sigs = [...bySig.keys()].sort();
-mkdirSync(join(OUT, '2026'), { recursive: true });
+mkdirSync(join(OUT, PERIOD), { recursive: true });
 let n = 0;
 for (const sig of sigs) {
   n++;
@@ -82,8 +83,9 @@ for (const sig of sigs) {
     metadata: {
       city: 'tokyo-nakano', course: String(n),
       areas: areas.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
-      year: 2026, fiscal_year_ja: '令和8年度',
+      period: '2026-04--2027-03',
       source: {
+        edition_ja: '令和8年度',
         source_url: CSV_URL, extracted_at: EXTRACTED_AT,
         extracted_by: 'claude-fable-5',
         verified_by: 'Claude(中野区オープンデータCSVの機械変換。現行公式HTML表と全行照合 + 町丁目別カレンダーPDF全42枚と通年機械照合)',
@@ -92,7 +94,7 @@ for (const sig of sigs) {
     rules,
     overrides: yearEndOverrides(rules),
   };
-  writeFileSync(join(OUT, '2026', `course-${n}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
+  writeFileSync(join(OUT, PERIOD, `course-${n}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
 }
 writeFileSync(join(HERE, 'cache', 'no-to-area.json'), JSON.stringify(noToArea, null, 1));
 console.log(`generated ${n} courses (${csvRows.length} 行から畳み込み)`);

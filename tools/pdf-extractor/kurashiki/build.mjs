@@ -15,7 +15,14 @@ import { expandRow, compressChomes } from './areas.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
 const OUTDIR = join(ROOT, 'municipalities', 'okayama', 'kurashiki');
-const YEAR = 2026;
+const PERIOD = '2026-04--2027-03'; // 恒常規則の材料化窓 (ソースは日付入りカレンダーではない)
+// 年末年始: PDFに「年末年始の休業日は事前に広報紙を通じてお知らせします」とあり実日付が無い。
+// cancelled を書かないことは「収集あり」の断定になるため、不明として宣言する。
+const UNKNOWN = [{
+  from: '2026-12-30', to: '2027-01-03',
+  reason: 'PDFに「年末年始の休業日は事前に広報紙を通じてお知らせします」と明記され、実日付は一次ソースに載らない',
+  source_url: 'https://www.city.kurashiki.okayama.jp/',
+}];
 const FY_JA = '令和8年度';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 const EXTRACTED_BY = 'claude-opus-4-8';
@@ -226,9 +233,9 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
       courseNameJa: courseName(distJa, uniq),
       areas: uniq.map((a) => ({ name: a.name, ...(a.yomi ? { yomi: a.yomi } : {}),
         ...(a.machiaza_id ? { machiaza_id: a.machiaza_id } : {}), ...(a.note ? { note: a.note } : {}) })),
-      year: YEAR,
-      fiscalYearJa: FY_JA,
+      period: PERIOD,
       source: {
+        edition_ja: FY_JA,
         source_url: INDEX_URL,
         pdf_url: `${PDF_BASE}/${meta.pdf}`,
         extracted_at: EXTRACTED_AT,
@@ -236,6 +243,7 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
         verified_by: 'Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)',
       },
       rules: c.rules,
+      unknownPeriods: UNKNOWN,
     }));
     const gakkuByName = new Map();
     for (const a of uniq) if (!gakkuByName.has(a.name)) gakkuByName.set(a.name, a.gakku || '');
@@ -300,10 +308,10 @@ for (const [distJa, meta] of Object.entries(DISTRICTS)) {
     console.log(`  判別不能な割れに収集日 note を付与 (要市照会): ${dup.join('、')}`);
   }
 }
-const n = writeCourses(OUTDIR, YEAR, docs);
+const n = writeCourses(OUTDIR, PERIOD, docs);
 writeFileSync(join(HERE, 'cache', 'area_expansion.json'),
   JSON.stringify({ rows: expandTable.length, areas: stats.total, table: expandTable }, null, 1));
-console.log(`wrote ${n} courses (${seq} total) → ${OUTDIR}/${YEAR}/`);
+console.log(`wrote ${n} courses (${seq} total) → ${OUTDIR}/${PERIOD}/`);
 console.log(`areas: ${stats.total} 展開 (ABR ${stats.abr} / PDF読み括弧 ${stats.ruby} / ひらがな自明 ${stats.kana} / 未付与 ${stats.none})`);
 console.log(`yomi 付与率: ${((stats.abr + stats.kana) / stats.total * 100).toFixed(1)}%`);
 console.log(`machiaza_id 付与率: ${(stats.id / stats.total * 100).toFixed(1)}% (${stats.id}/${stats.total})`);

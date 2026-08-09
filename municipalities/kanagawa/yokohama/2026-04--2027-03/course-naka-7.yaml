@@ -1,0 +1,230 @@
+metadata:
+  city: yokohama
+  course: naka-7
+  areas:
+    - name: 相生町1〜6丁目
+      yomi: あいおいちょう
+      machiaza_id:
+        - 141046-0135001
+        - 141046-0135002
+        - 141046-0135003
+        - 141046-0135004
+        - 141046-0135005
+        - 141046-0135006
+    - name: 石川町1・2丁目
+      yomi: いしかわちょう
+      machiaza_id:
+        - 141046-0131001
+        - 141046-0131002
+    - name: 上野町1・2丁目
+      yomi: うえのちょう
+      machiaza_id:
+        - 141046-0127001
+        - 141046-0127002
+    - name: 上野町3・4丁目
+      yomi: うえのちょう
+      machiaza_id:
+        - 141046-0127003
+        - 141046-0127004
+    - name: 太田町1〜6丁目
+      yomi: おおたまち
+      machiaza_id:
+        - 141046-0136001
+        - 141046-0136002
+        - 141046-0136003
+        - 141046-0136004
+        - 141046-0136005
+        - 141046-0136006
+    - name: 尾上町1〜6丁目
+      yomi: おのえちょう
+      machiaza_id:
+        - 141046-0142001
+        - 141046-0142002
+        - 141046-0142003
+        - 141046-0142004
+        - 141046-0142005
+        - 141046-0142006
+    - name: 柏葉桜道沿集積場
+      yomi: か
+    - name: 海岸通
+      yomi: かいがんどおり
+      machiaza_id:
+        - 141046-0112000
+    - name: 北方町
+      yomi: きたがたちょう
+      machiaza_id:
+        - 141046-0146000
+    - name: 北仲通
+      yomi: きたなかどおり
+      machiaza_id:
+        - 141046-0145000
+    - name: 小港町1丁目
+      yomi: こみなとちょう
+      machiaza_id:
+        - 141046-0125001
+    - name: 小港町2丁目（関東財務局小港住宅）
+      yomi: こみなとちょう
+      machiaza_id:
+        - 141046-0125002
+    - name: 小港町3丁目
+      yomi: こみなとちょう
+      machiaza_id:
+        - 141046-0125003
+    - name: 住吉町1〜6丁目
+      yomi: すみよしちょう
+      machiaza_id:
+        - 141046-0123001
+        - 141046-0123002
+        - 141046-0123003
+        - 141046-0123004
+        - 141046-0123005
+        - 141046-0123006
+    - name: 諏訪町
+      yomi: すわちょう
+      machiaza_id:
+        - 141046-0054000
+    - name: 千代崎町
+      yomi: ちよざきちょう
+      machiaza_id:
+        - 141046-0133000
+    - name: 常盤町1〜6丁目
+      yomi: ときわちょう
+      machiaza_id:
+        - 141046-0128001
+        - 141046-0128002
+        - 141046-0128003
+        - 141046-0128004
+        - 141046-0128005
+        - 141046-0128006
+    - name: 日本大通
+      yomi: にほんおおどおり
+      machiaza_id:
+        - 141046-0096000
+    - name: 弁天通1〜6丁目
+      yomi: べんてんどおり
+      machiaza_id:
+        - 141046-0144001
+        - 141046-0144002
+        - 141046-0144003
+        - 141046-0144004
+        - 141046-0144005
+        - 141046-0144006
+    - name: 本郷町1・2丁目
+      yomi: ほんごうちょう
+      machiaza_id:
+        - 141046-0147001
+        - 141046-0147002
+      note: 本牧通りから千代町側
+    - name: 本町1〜6丁目
+      yomi: ほんちょう
+      machiaza_id:
+        - 141046-0148001
+        - 141046-0148002
+        - 141046-0148003
+        - 141046-0148004
+        - 141046-0148005
+        - 141046-0148006
+    - name: 本牧町1丁目（見晴らしトンネル側）
+      yomi: ほんもくちょう
+      machiaza_id:
+        - 141046-0149001
+    - name: 本牧町2丁目（本牧通りから北方町側）
+      yomi: ほんもくちょう
+      machiaza_id:
+        - 141046-0149002
+    - name: 港町1〜6丁目
+      yomi: みなとちょう
+      machiaza_id:
+        - 141046-0116001
+        - 141046-0116002
+        - 141046-0116003
+        - 141046-0116004
+        - 141046-0116005
+        - 141046-0116006
+    - name: 南仲通1〜5丁目
+      yomi: みなみなかどおり
+      machiaza_id:
+        - 141046-0139001
+        - 141046-0139002
+        - 141046-0139003
+        - 141046-0139004
+        - 141046-0139005
+    - name: 妙香寺台
+      yomi: みょうこうじだい
+      machiaza_id:
+        - 141046-0043000
+    - name: 麦田町1・2丁目（本牧通りから山手公園側）
+      yomi: むぎたちょう
+      machiaza_id:
+        - 141046-0141001
+        - 141046-0141002
+    - name: 麦田町3丁目
+      yomi: むぎたちょう
+      machiaza_id:
+        - 141046-0141003
+    - name: 麦田町4丁目（本牧通りから妙香寺台側）
+      yomi: むぎたちょう
+      machiaza_id:
+        - 141046-0141004
+    - name: 元浜町
+      yomi: もとはまちょう
+      machiaza_id:
+        - 141046-0115000
+    - name: 元町
+      yomi: もとまち
+      machiaza_id:
+        - 141046-0114000
+    - name: 山手町
+      yomi: やまてちょう
+      machiaza_id:
+        - 141046-0072000
+    - name: 山元町1丁目（1〜7番地）
+      yomi: やまもとちょう
+      machiaza_id:
+        - 141046-0120001
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/naka/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

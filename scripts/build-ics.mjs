@@ -5,7 +5,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync, existsSy
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
-import { categoriesOn, iso, pad2 as pad } from '../tools/_lib/schedule.mjs';
+import { expandRange, PERIOD_RE, iso, pad2 as pad } from '../tools/_lib/schedule.mjs';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const loadYaml = (p) => yamlParse(readFileSync(p, 'utf8'), {
@@ -44,13 +44,13 @@ for (const { handle, dir, pref } of handles) {
   // slug -> { courseLabel, dtstamp, events: [{day,next,title}] }
   const bySlug = new Map();
   for (const entry of readdirSync(dir)) {
-    if (!/^\d{4}$/.test(entry)) continue;
+    if (!PERIOD_RE.test(entry)) continue;
     for (const f of readdirSync(join(dir, entry))) {
       if (!/^course-.*\.yaml$/.test(f)) continue;
-      const { metadata: m, rules, overrides = [] } = loadYaml(join(dir, entry, f));
+      const { metadata: m, rules, overrides = [], unknown_periods: unknown = [] } = loadYaml(join(dir, entry, f));
       const slug = courseSlug(m.course);
-      const fy = m.year;
-      const start = new Date(fy, 3, 1), end = new Date(fy + 1, 3, 1);
+      // 展開範囲は収録期間そのもの。ディレクトリ名と metadata.period の食い違いは配信前に落とす。
+      if (m.period !== entry) throw new Error(`${handle}/${entry}/${f}: metadata.period "${m.period}" がディレクトリ名と不一致`);
       const rec = bySlug.get(slug) || {
         courseLabel: `${m.course} ${m.course_name_ja ?? ''}`.trim(),
         dtstamp: `${iso(m.source.extracted_at).replace(/-/g, '')}T000000Z`,
@@ -59,14 +59,27 @@ for (const { handle, dir, pref } of handles) {
         // 照合用の一次ソース URL (コース別 PDF を優先。無ければ自治体の掲載ページ)
         sourceUrl: m.source?.pdf_url || m.source?.source_url || meta.source?.schedule_url || '',
       };
-      for (let d = new Date(start); d < end; d = new Date(d.getTime() + 86400000)) {
-        const cats = categoriesOn(d, rules, overrides);
-        if (cats.length === 0) continue;
+      for (const [key, cats] of expandRange(m.period, rules, overrides, unknown)) {
+        const d = new Date(key + 'T00:00:00');
         rec.events.push({
           day: ymd(d),
           next: ymd(new Date(d.getTime() + 86400000)),
           title: '🗑 ' + cats.map((c) => labelOf(c, taxOv)).join('、'),
           cats,
+        });
+      }
+      // 不明区間は収集日を出さない代わりに、確認を促す案内を 1 件置く。
+      // 黙って消すと「収集なし」に見えるため (収集ありの断定と同じ誤り)。
+      for (const u of unknown) {
+        const from = new Date(iso(u.from) + 'T00:00:00'), to = new Date(iso(u.to) + 'T00:00:00');
+        rec.events.push({
+          day: ymd(from),
+          next: ymd(new Date(to.getTime() + 86400000)),
+          lastDay: ymd(to),
+          title: '⚠️ 収集日は自治体の告知をご確認ください',
+          cats: [],
+          unknown: true,
+          note: u.reason,
         });
       }
       bySlug.set(slug, rec);
@@ -101,7 +114,14 @@ for (const { handle, dir, pref } of handles) {
         short: taxOv?.[c]?.short ?? vocab[c]?.short ?? c,
         color: vocab[c]?.color ?? '#888',
       }])),
-      days: Object.fromEntries(rec.events.map((ev) => [isoDay(ev.day), ev.cats])),
+      // days は「収集がある日」だけ。不明区間の案内は混ぜず unknown に分けて出す
+      // (days に空配列で入れると「収集なしが確定した日」と区別できなくなる)
+      days: Object.fromEntries(rec.events.filter((ev) => ev.cats.length).map((ev) => [isoDay(ev.day), ev.cats])),
+      ...(rec.events.some((ev) => ev.unknown) ? {
+        unknown: rec.events.filter((ev) => ev.unknown).map((ev) => ({
+          from: isoDay(ev.day), to: isoDay(ev.lastDay), reason: ev.note,
+        })),
+      } : {}),
     }) + '\n');
     indexRows.push({
       code: meta.code, pref, handle, name_ja: meta.name_ja,

@@ -1,0 +1,79 @@
+metadata:
+  city: kawasaki
+  course: takatsu-8
+  areas:
+    - name: 明津
+      yomi: あくつ
+      machiaza_id:
+        - 141348-0009000
+    - name: 蟹ヶ谷
+      yomi: かにがや
+      machiaza_id:
+        - 141348-0010000
+    - name: 子母口
+      yomi: しぼくち
+      machiaza_id:
+        - 141348-0011000
+    - name: 子母口富士見台
+      yomi: しぼくちふじみだい
+      machiaza_id:
+        - 141348-0013000
+    - name: 新作
+      yomi: しんさく
+    - name: 千年
+      yomi: ちとせ
+      machiaza_id:
+        - 141348-0005000
+    - name: 千年新町
+      yomi: ちとせしんちょう
+      machiaza_id:
+        - 141348-0012000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.kawasaki.jp/300/page/0000012561.html
+    cover_pdf_url: https://www.city.kawasaki.jp/300/cmsfiles/contents/0000012/12561/takatsumiyamae(R8).pdf
+    extracted_at: 2026-07-17
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(川崎市公式「収集日一覧」HTML表の機械変換。区別カバーPDFと全町名×5種別の曜日照合、不一致なし。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: beverage_can
+    pattern: weekly
+    days: &a1
+      - FR
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: paper
+    pattern: weekly
+    days:
+      - TH
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+  - category: metal
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - TH
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(1/1〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(1/1〜1/3)

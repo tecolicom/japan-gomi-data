@@ -1,0 +1,64 @@
+metadata:
+  city: kurashiki
+  course: kurashiki-4
+  course_name_ja: "倉敷地区: 茶屋町(茶屋町／早沖)"
+  areas:
+    - name: 茶屋町（ＪＲ東 共睦社・如蘭社）
+      yomi: ちゃやまち
+      machiaza_id:
+        - 332020-0107000
+    - name: 早沖（ＪＲ東 共睦社・如蘭社）
+      yomi: はやおき
+      machiaza_id:
+        - 332020-0108000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
+    pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/kurashiki.pdf
+    extracted_at: 2026-07-24
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 3
+    days:
+      - TU
+  - category: glass_bottle
+    pattern: monthly_nth
+    occurrences: &a1
+      - 2
+    days:
+      - TU
+  - category: beverage_can
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - TU
+  - category: pet_bottle
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - TU
+  - category: paper
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - TU
+  - category: cloth
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - TU
+unknown_periods:
+  - from: 2026-12-30
+    to: 2027-01-03
+    reason: PDFに「年末年始の休業日は事前に広報紙を通じてお知らせします」と明記され、実日付は一次ソースに載らない
+    source_url: https://www.city.kurashiki.okayama.jp/

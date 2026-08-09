@@ -2,7 +2,7 @@
 import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { stringify as yamlStringify } from 'yaml';
-import { signatureKey } from './schedule.mjs';
+import { signatureKey, parsePeriod } from './schedule.mjs';
 
 // 同一日程の行を 1 コースに畳む。
 // rows: 任意の行配列 / toRules(row) → rules / toArea(row) → {name, yomi}
@@ -18,19 +18,25 @@ export function foldCourses(rows, toRules, toArea) {
   return [...bySig.values()];
 }
 
-// course YAML 1 本を組み立てる (フィールド順を全自治体で統一)
-export function courseDoc({ city, course, courseNameJa, areas, year, fiscalYearJa, source, rules, overrides }) {
+// course YAML 1 本を組み立てる (フィールド順を全自治体で統一)。
+// period は "YYYY-MM--YYYY-MM" (収録期間 = 出力ディレクトリ名と一致させる)。
+// editionJa は自治体自身の刊行物名 (例「令和7年度版」)。期間とは一致しないことがあるので
+// 期間の説明には使わない (例: 東村山は 2025-10--2026-09 を「令和7年度版」と呼ぶ)。
+export function courseDoc({ city, course, courseNameJa, areas, period, source, rules, overrides, unknownPeriods }) {
+  if (!parsePeriod(period)) throw new Error(`courseDoc: 不正な period "${period}" (${city}/${course})`);
   const metadata = { city, course: String(course) };
   if (courseNameJa) metadata.course_name_ja = courseNameJa;
-  Object.assign(metadata, { areas, year, fiscal_year_ja: fiscalYearJa, source });
+  Object.assign(metadata, { areas, period, source });
   const doc = { metadata, rules };
   if (overrides?.length) doc.overrides = overrides;
+  if (unknownPeriods?.length) doc.unknown_periods = unknownPeriods;
   return doc;
 }
 
-// <outDir>/<year>/ を作り直して course YAML 群を書き出す
-export function writeCourses(outDir, year, docs) {
-  const dir = join(outDir, String(year));
+// <outDir>/<period>/ を作り直して course YAML 群を書き出す
+export function writeCourses(outDir, period, docs) {
+  if (!parsePeriod(period)) throw new Error(`writeCourses: 不正な period "${period}"`);
+  const dir = join(outDir, String(period));
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
   for (const doc of docs) {

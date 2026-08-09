@@ -5,6 +5,7 @@ import { stringify as yamlStringify } from 'yaml';
 import { parseTables, parseWeekly, parseMonthlyNth } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲
 const OUT = join(HERE, '../../../municipalities/kanagawa/kawasaki');
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-17'; // Date.now() 不使用
 
@@ -143,8 +144,8 @@ for (const page of PAGES) {
 const isDup = (base) => (townWards.get(base)?.size ?? 0) > 1; // 区をまたぐ同名のみ曖昧性解消
 
 // 2) 区ごとにシグネチャで畳み込み → コース
-rmSync(join(OUT, '2026'), { recursive: true, force: true });
-mkdirSync(join(OUT, '2026'), { recursive: true });
+rmSync(join(OUT, PERIOD), { recursive: true, force: true });
+mkdirSync(join(OUT, PERIOD), { recursive: true });
 let totalCourses = 0;
 const summary = [];
 for (const { ward, url, rows } of wardRows) {
@@ -178,9 +179,9 @@ for (const { ward, url, rows } of wardRows) {
         city: 'kawasaki',
         course,
         areas, // 公式表の掲載 (五十音) 順を保持
-        year: 2026,
-        fiscal_year_ja: '令和8年度',
+        period: '2026-04--2027-03',
         source: {
+          edition_ja: '令和8年度',
           source_url: url,
           cover_pdf_url: `${PDF_BASE}/${ward.pdf}`,
           extracted_at: EXTRACTED_AT,
@@ -192,7 +193,7 @@ for (const { ward, url, rows } of wardRows) {
       rules,
       overrides: yearEndOverrides(rules),
     };
-    writeFileSync(join(OUT, '2026', `course-${course}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
+    writeFileSync(join(OUT, PERIOD, `course-${course}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
   });
   totalCourses += sigs.length;
   summary.push(`${ward.ja} (${ward.romaji}): ${rows.length}町名 → ${sigs.length}コース`);

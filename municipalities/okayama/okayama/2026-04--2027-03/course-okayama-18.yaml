@@ -1,0 +1,103 @@
+metadata:
+  city: okayama
+  course: okayama-18
+  course_name_ja: "芳田: 泉田 ｜ 旭竜: さい／高島一丁目／高島二丁目／中島／八幡／八幡東町 ｜ 芳田・芳明: 新保 ｜ 芳明: 西市／米倉 ｜ 芳田･芳明: 万倍"
+  areas:
+    - name: 泉田
+      yomi: いずみだ
+      machiaza_id:
+        - 331040-0006000
+      note: ※一部地区のみ、収集曜日が異なります。
+    - name: さい（山陽本線より北）
+      yomi: さい
+    - name: 新保（国道２号線バイパスの南）
+      yomi: しんぼう
+      machiaza_id:
+        - 331040-0025000
+    - name: 高島一丁目
+      yomi: たかしま
+      machiaza_id:
+        - 331023-0045001
+    - name: 高島二丁目
+      yomi: たかしま
+      machiaza_id:
+        - 331023-0045002
+    - name: 中島
+      yomi: なかしま
+      machiaza_id:
+        - 331023-0088000
+    - name: 西市（ＪＲ瀬戸大橋線の東。国道２号線バイパスの南）
+      yomi: にしいち
+    - name: 万倍（洲崎米倉線より北）
+      yomi: まんばい
+      machiaza_id:
+        - 331040-0067000
+    - name: 八幡
+      yomi: やはた
+      machiaza_id:
+        - 331023-0080000
+    - name: 八幡東町
+      yomi: やはたひがしまち
+      machiaza_id:
+        - 331023-0081000
+    - name: 米倉（JR瀬戸大橋線以東・県道洲崎米倉線含む以北）
+      yomi: よねぐら
+      machiaza_id:
+        - 331040-0072000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - WE
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

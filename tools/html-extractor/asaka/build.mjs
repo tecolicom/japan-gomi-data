@@ -11,7 +11,13 @@ import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', '..', '..', 'municipalities', 'saitama', 'asaka');
-const YEAR = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+// 年末年始: 市は「祝日も収集します(年末年始を除く)」と明記するが実日付は毎年12月に別途告知。
+const UNKNOWN = [{
+  from: '2026-12-30', to: '2027-01-03',
+  reason: '市は「祝日も収集します(年末年始を除く)」と明記するが、休止の実日付は毎年12月に別途告知され一次ソースに載らない',
+  source_url: 'https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html',
+}];
 const FY_JA = '令和8年度';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 const SRC_HTML = 'https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html';
@@ -160,15 +166,16 @@ folded.forEach((c, i) => {
     city: 'asaka',
     course: i + 1,
     areas,
-    year: YEAR,
-    fiscalYearJa: FY_JA,
+    period: PERIOD,
     source: {
+      edition_ja: FY_JA,
       source_url: SRC_HTML,
       extracted_at: EXTRACTED_AT,
       extracted_by: 'claude-opus-4-8',
       verified_by: 'Claude(朝霞市公式「家庭ごみ収集日一覧表」HTML表を一次ソースに機械抽出。市民団体Publitech ASAKAの5374版 area_days.csv と全地区の4分別×曜日を照合し、CSVが欠く大字溝沼の東上線北側区分・自衛隊はHTMLを採用。読みはCSVの読み併記、町字IDはABR町字マスター埼玉県版由来。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)',
     },
     rules: c.rules,
+    unknownPeriods: UNKNOWN,
   }));
 });
 
@@ -193,7 +200,7 @@ folded.forEach((c, i) => {
   if (dup.length) console.log(`  警告: 判別不能な割れ: ${dup.join('、')}`);
 }
 
-const n = writeCourses(OUT, YEAR, docs);
-console.log(`wrote ${n} courses → ${OUT}/${YEAR}/`);
+const n = writeCourses(OUT, PERIOD, docs);
+console.log(`wrote ${n} courses → ${OUT}/${PERIOD}/`);
 console.log(`areas: ${stat.total} (yomi ${stat.yomi} / machiaza_id ${stat.id})`);
 if (stat.noYomi.length) console.log(`yomi 未付与: ${[...new Set(stat.noYomi)].join('、')}`);

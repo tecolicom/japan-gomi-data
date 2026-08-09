@@ -1,0 +1,113 @@
+metadata:
+  city: okayama
+  course: okayama-15
+  course_name_ja: "大井: 粟井 ｜ 福谷: 掛畑／河原／間倉／真星 ｜ 福浜: 福富中２丁目／福富東１丁目／福富東２丁目／福成１丁目／福成２丁目 ｜ 福浜･南輝: 福成３丁目 ｜ 平福: 福浜西町"
+  areas:
+    - name: 粟井（粟井第4（堂坂を除く地区））
+      yomi: あわい
+      machiaza_id:
+        - 331015-0008000
+    - name: 掛畑
+      yomi: かけはた
+      machiaza_id:
+        - 331015-0046000
+    - name: 河原（別所・黒谷上・黒谷中）
+      yomi: かわはら
+      machiaza_id:
+        - 331015-0055000
+    - name: 福富中２丁目
+      yomi: ふくとみなか
+      machiaza_id:
+        - 331040-0057002
+      note: 福成町内会の４木は当面古紙古布ペットボトルのみ
+    - name: 福富東１丁目
+      yomi: ふくとみひがし
+      machiaza_id:
+        - 331040-0059001
+    - name: 福富東２丁目
+      yomi: ふくとみひがし
+      machiaza_id:
+        - 331040-0059002
+      note: 福成町内会の４木は当面古紙古布ペットボトルのみ
+    - name: 福成１丁目
+      yomi: ふくなり
+      machiaza_id:
+        - 331040-0060001
+      note: ４木は当面古紙古布ペットボトルのみ
+    - name: 福成２丁目
+      yomi: ふくなり
+      machiaza_id:
+        - 331040-0060002
+      note: ４木は当面古紙古布ペットボトルのみ
+    - name: 福成３丁目
+      yomi: ふくなり
+      machiaza_id:
+        - 331040-0060003
+      note: ４木は当面古紙古布ペットボトルのみ
+    - name: 福浜西町
+      yomi: ふくはまにしまち
+      machiaza_id:
+        - 331040-0062000
+      note: ４木は当面古紙古布ペットボトルのみ
+    - name: 間倉（猿見）
+      yomi: まぐら
+      machiaza_id:
+        - 331015-0254000
+    - name: 真星（田口・古川・神谷b・神谷c）
+      yomi: まなぼし
+      machiaza_id:
+        - 331015-0256000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TH
+    occurrences: &a2
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

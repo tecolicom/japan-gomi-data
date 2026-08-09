@@ -1,12 +1,17 @@
 // 照合の共通部品: 期待日程との比較・確率的信頼度 (rule of three)・サンプリング。
 // 方法論は docs/opendata-sources.md「検証の考え方 (確率論的な信頼度)」を参照。
-import { expandFiscalYear } from './schedule.mjs';
+import { expandRange, parsePeriod, isUnknown } from './schedule.mjs';
 
-// 生成 course と「独立ソース由来の期待日程」を通年比較する。
-// expected: Map<iso, string[]> (カテゴリ集合。順序不問) / 返り値: 不一致の一覧
-export function diffYear(fy, rules, overrides, expected) {
-  const actual = expandFiscalYear(fy, rules, overrides);
-  const keys = new Set([...actual.keys(), ...expected.keys()]);
+// 生成 course と「独立ソース由来の期待日程」を収録期間で比較する。
+// period: "YYYY-MM--YYYY-MM" / expected: Map<iso, string[]> (カテゴリ集合。順序不問)
+// 返り値: 不一致の一覧
+export function diffRange(period, rules, overrides, expected, unknownPeriods) {
+  const actual = expandRange(period, rules, overrides, unknownPeriods);
+  // 比較対象は収録期間内かつ unknown 区間の外だけ。
+  // 期間外の expected を「欠落」と数えると、ソースが裏付けない日を照合が要求してしまう。
+  const { from, to } = parsePeriod(period);
+  const inScope = (k) => k.slice(0, 7) >= from && k.slice(0, 7) <= to && !isUnknown(k, unknownPeriods);
+  const keys = new Set([...actual.keys(), ...[...expected.keys()].filter(inScope)]);
   const diffs = [];
   for (const k of [...keys].sort()) {
     const a = new Set(actual.get(k) || []), e = new Set(expected.get(k) || []);

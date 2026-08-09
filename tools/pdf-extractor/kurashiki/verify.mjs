@@ -5,17 +5,17 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
-import { expandFiscalYear, nthOfMonth } from '../../_lib/schedule.mjs';
+import { expandRange, nthOfMonth } from '../../_lib/schedule.mjs';
 import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUTDIR = join(HERE, '..', '..', '..', 'municipalities', 'okayama', 'kurashiki', '2026');
-const FY = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 
 // コース YAML → {category: {weeklyDays:Set, nth:Set("occ|DAY")}} を通年展開から復元
 function realized(doc) {
-  const cal = expandFiscalYear(FY, doc.rules, doc.overrides || []);
+  const cal = expandRange(PERIOD, doc.rules, doc.overrides || []);
   const out = {};
   for (const [iso, cats] of cal) {
     const d = new Date(iso + 'T00:00:00');

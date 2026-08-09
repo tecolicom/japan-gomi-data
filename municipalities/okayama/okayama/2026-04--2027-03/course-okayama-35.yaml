@@ -1,0 +1,118 @@
+metadata:
+  city: okayama
+  course: okayama-35
+  course_name_ja: "鹿田: 大元駅前／東古松１丁目／東古松３丁目／東古松４丁目／東古松５丁目／東古松A／東古松南町 ｜ 岡南･清輝: 奥田１丁目／奥田本町 ｜ 岡南: 奥田２丁目／奥田西町／奥田南町／神田町１丁目／神田町２丁目"
+  areas:
+    - name: 大元駅前（大元駅前・二日市町線以南）
+      yomi: おおもとえきまえ
+      machiaza_id:
+        - 331015-0034000
+    - name: 奥田１丁目
+      yomi: おくだ
+      machiaza_id:
+        - 331015-0037001
+    - name: 奥田２丁目
+      yomi: おくだ
+      machiaza_id:
+        - 331015-0037002
+    - name: 奥田西町
+      yomi: おくだにしまち
+      machiaza_id:
+        - 331015-0038000
+    - name: 奥田本町
+      yomi: おくだほんまち
+      machiaza_id:
+        - 331015-0039000
+    - name: 奥田南町
+      yomi: おくだみなみまち
+      machiaza_id:
+        - 331015-0040000
+    - name: 神田町１丁目
+      yomi: かんだちょう
+      machiaza_id:
+        - 331015-0057001
+    - name: 神田町２丁目
+      yomi: かんだちょう
+      machiaza_id:
+        - 331015-0057002
+    - name: 東古松１丁目
+      yomi: ひがしふるまつ
+      machiaza_id:
+        - 331015-0236001
+    - name: 東古松３丁目
+      yomi: ひがしふるまつ
+      machiaza_id:
+        - 331015-0236003
+    - name: 東古松４丁目
+      yomi: ひがしふるまつ
+      machiaza_id:
+        - 331015-0236004
+    - name: 東古松５丁目
+      yomi: ひがしふるまつ
+      machiaza_id:
+        - 331015-0236005
+    - name: 東古松A（東古松209～241番地）
+      yomi: ひがしふるまつ
+      machiaza_id:
+        - 331015-0236000
+    - name: 東古松南町（青江津島線の東）
+      yomi: ひがしふるまつみなみまち
+      machiaza_id:
+        - 331015-0237000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences: &a2
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

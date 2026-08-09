@@ -2,9 +2,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseWeeklyJa, parseMonthlyNthJa, townBase, normalizeTownName } from './jp.mjs';
-import { categoriesOn, expandFiscalYear, nthOfMonth, signatureKey, cancelledOverrides } from './schedule.mjs';
+import { categoriesOn, expandRange, parsePeriod, isUnknown, nthOfMonth, signatureKey, cancelledOverrides } from './schedule.mjs';
 import { foldCourses, courseDoc } from './emit.mjs';
-import { diffYear, ruleOfThreePct, sampleSizeFor, sampleStratified } from './verify.mjs';
+import { diffRange, ruleOfThreePct, sampleSizeFor, sampleStratified } from './verify.mjs';
 
 test('parseWeeklyJa: 実在表記', () => {
   assert.deepEqual(parseWeeklyJa('水曜日・土曜日'), ['WE', 'SA']); // 杉並
@@ -44,14 +44,57 @@ test('categoriesOn: overrides cancelled が優先', () => {
   assert.deepEqual(categoriesOn(new Date(2027, 0, 1), rules, ov), []);
 });
 
-test('expandFiscalYear + diffYear: 一致で差分ゼロ', () => {
+test('parsePeriod: 期間表記', () => {
+  assert.deepEqual(parsePeriod('2026-04--2027-03'), { from: '2026-04', to: '2027-03' });
+  assert.deepEqual(parsePeriod('2025-10--2026-09'), { from: '2025-10', to: '2026-09' }); // 西東京 (10月起点)
+  assert.deepEqual(parsePeriod('2026-01--2026-12'), { from: '2026-01', to: '2026-12' }); // 川口 (暦年)
+  assert.equal(parsePeriod('2026'), null);
+  assert.equal(parsePeriod('2026-04'), null);
+});
+
+test('expandRange: 期間の外へはみ出さない', () => {
   const rules = [{ category: 'burnable', pattern: 'weekly', days: ['MO', 'TH'] }];
-  const expected = expandFiscalYear(2026, rules, []);
-  assert.equal(diffYear(2026, rules, [], expected).length, 0);
+  // 川口型: 暦年ソース。2027 年へ外挿してはならない
+  const keys = [...expandRange('2026-01--2026-12', rules, []).keys()];
+  assert.equal(keys[0], '2026-01-01');
+  assert.equal(keys.at(-1), '2026-12-31');
+  assert.equal(keys.some((k) => k.startsWith('2027')), false);
+  // 会計年度型は年をまたぐ
+  const fy = [...expandRange('2026-04--2027-03', rules, []).keys()];
+  assert.equal(fy[0], '2026-04-02'); // 4/1 は水曜
+  assert.equal(fy.at(-1), '2027-03-29');
+});
+
+test('expandRange + diffRange: 一致で差分ゼロ', () => {
+  const rules = [{ category: 'burnable', pattern: 'weekly', days: ['MO', 'TH'] }];
+  const P = '2026-04--2027-03';
+  const expected = expandRange(P, rules, []);
+  assert.equal(diffRange(P, rules, [], expected).length, 0);
   // 1 日欠けを注入すると検出される
   const broken = new Map(expected);
   broken.delete([...expected.keys()][0]);
-  assert.equal(diffYear(2026, rules, [], broken).length, 1);
+  assert.equal(diffRange(P, rules, [], broken).length, 1);
+});
+
+test('unknown_periods: 不明区間は収集日を生成しない', () => {
+  // 朝霞型: 市は「年末年始を除く」と明記するが実日付は12月に別途告知 → 断定しない
+  const rules = [{ category: 'burnable', pattern: 'weekly', days: ['MO', 'TH', 'FR'] }];
+  const unk = [{ from: '2026-12-30', to: '2027-01-03', reason: '年末年始の実日付は別途告知' }];
+  assert.equal(isUnknown('2027-01-01', unk), true);
+  assert.equal(isUnknown('2026-12-29', unk), false); // 区間の外
+  const got = expandRange('2026-04--2027-03', rules, [], unk);
+  for (const d of ['2026-12-30', '2026-12-31', '2027-01-01']) assert.equal(got.has(d), false);
+  assert.equal(got.has('2026-12-28'), true); // 月曜。区間の直前は生成される
+  assert.equal(got.has('2027-01-04'), true); // 月曜。区間の直後も生成される
+  // 不明区間内の expected は照合対象外 (欠落と数えない)。
+  // ソースが不明区間の収集を主張しても、こちらは生成しないので差分にしない。
+  const expected = new Map(got);
+  expected.set('2027-01-01', ['burnable']);
+  assert.equal(diffRange('2026-04--2027-03', rules, [], expected, unk).length, 0);
+  // 不明区間の外の食い違いはちゃんと検出する
+  const off = new Map(got);
+  off.delete('2027-01-04');
+  assert.equal(diffRange('2026-04--2027-03', rules, [], off, unk).length, 1);
 });
 
 test('cancelledOverrides: 収集が発生する日だけ生成', () => {
@@ -74,11 +117,13 @@ test('foldCourses: 同一日程を 1 コースへ', () => {
 
 test('courseDoc: metadata のフィールド順が既存収録と同じ', () => {
   const doc = courseDoc({
-    city: 'x', course: '1', areas: [{ name: 'A' }], year: 2026, fiscalYearJa: '令和8年度',
-    source: { source_url: 'u', extracted_at: '2026-07-17' },
+    city: 'x', course: '1', areas: [{ name: 'A' }], period: '2026-04--2027-03',
+    source: { source_url: 'u', extracted_at: '2026-07-17', edition_ja: '令和8年度版' },
     rules: [], overrides: [],
   });
-  assert.deepEqual(Object.keys(doc.metadata), ['city', 'course', 'areas', 'year', 'fiscal_year_ja', 'source']);
+  assert.deepEqual(Object.keys(doc.metadata), ['city', 'course', 'areas', 'period', 'source']);
+  // period が不正なら書き出す前に落とす (ディレクトリ名と乖離させない)
+  assert.throws(() => courseDoc({ city: 'x', course: '1', period: '2026', source: {}, rules: [] }));
 });
 
 test('verify の確率部品', () => {

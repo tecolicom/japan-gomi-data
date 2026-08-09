@@ -21,7 +21,7 @@ import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
 const OUTDIR = join(ROOT, 'municipalities', 'saitama', 'tokorozawa');
-const FY = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 const EXTRACTED_BY = 'claude-opus-4-8';
 
@@ -152,9 +152,9 @@ const docs = courses.map((c, i) => {
     course: String(n),
     courseNameJa: undefined,
     areas: c.areas,
-    year: FY,
-    fiscalYearJa: '令和8年度',
+    period: PERIOD,
     source: {
+      edition_ja: '令和8年度',
       index_url: INDEX_URL,
       pdf_url: manifest.find((m) => m.file === c.files[0]).url,
       extracted_at: EXTRACTED_AT,
@@ -178,7 +178,7 @@ for (const doc of docs) {
   };
 }
 
-const written = writeCourses(OUTDIR, FY, docs);
+const written = writeCourses(OUTDIR, PERIOD, docs);
 console.log(`courses: ${written}  (from ${rows.length} PDFs, ${rows.reduce((a, r) => a + r.areas.length, 0)} areas)`);
 // コース内訳
 docs.forEach((d) => console.log(`  course-${d.metadata.course}: ${d.metadata.areas.length} areas  [${d.metadata.areas.map((a) => a.name).join(', ')}]`));

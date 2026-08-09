@@ -1,0 +1,102 @@
+metadata:
+  city: yokohama
+  course: isogo-6
+  areas:
+    - name: 栗木1・2丁目
+      yomi: くりき
+      machiaza_id:
+        - 141071-0022001
+        - 141071-0022002
+    - name: 栗木3丁目（1〜8番の一部）
+      yomi: くりき
+      machiaza_id:
+        - 141071-0022003
+    - name: 杉田2・3丁目
+      yomi: すぎた
+      machiaza_id:
+        - 141071-0002002
+        - 141071-0002003
+    - name: 杉田6丁目
+      yomi: すぎた
+      machiaza_id:
+        - 141071-0002006
+      note: 2・3番
+    - name: 杉田坪呑10〜13番の一部
+      yomi: すぎたつぼのみ
+      machiaza_id:
+        - 141071-0019000
+    - name: 田中2丁目
+      yomi: たなか
+      machiaza_id:
+        - 141071-0027002
+    - name: 中原3・4丁目
+      yomi: なかはら
+      machiaza_id:
+        - 141071-0024003
+        - 141071-0024004
+    - name: 洋光台1丁目
+      yomi: ようこうだい
+      machiaza_id:
+        - 141071-0026001
+      note: 13と14番の一部
+    - name: 洋光台3・4丁目
+      yomi: ようこうだい
+      machiaza_id:
+        - 141071-0026003
+        - 141071-0026004
+    - name: 洋光台5丁目
+      yomi: ようこうだい
+      machiaza_id:
+        - 141071-0026005
+      note: 4番
+    - name: 洋光台6丁目
+      yomi: ようこうだい
+      machiaza_id:
+        - 141071-0026006
+      note: 33〜43番
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/isogo/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

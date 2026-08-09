@@ -13,13 +13,13 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { parse as yamlParse } from 'yaml';
-import { categoriesOn, expandFiscalYear, isoDate } from '../../_lib/schedule.mjs';
+import { categoriesOn, expandRange, isoDate } from '../../_lib/schedule.mjs';
 import { parseIrumaCsv, BUNBETSU2CATS, splitRegion, baseName } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
 const COURSES = join(ROOT, 'municipalities', 'saitama', 'iruma', '2026');
-const FY = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 const WD_JA = { 月: 'MO', 火: 'TU', 水: 'WE', 木: 'TH', 金: 'FR', 土: 'SA', 日: 'SU' };
 const zen2han = (s) => s.replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0));
@@ -52,7 +52,7 @@ for (let n = 1; n <= 12; n++) {
   courseRegion.set(n, region);
   const R = regions.get(region);
   if (!R) { console.error(`course-${n}: CSV に一致する地域が無い (${region})`); selfNG++; continue; }
-  const exp = expandFiscalYear(FY, doc.rules, doc.overrides || []);
+  const exp = expandRange(PERIOD, doc.rules, doc.overrides || []);
   // 比較
   let mism = 0;
   const keys = new Set([...exp.keys(), ...R.cal.keys()]);

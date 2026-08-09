@@ -4,6 +4,7 @@
 import { readFileSync, readdirSync, existsSync, writeFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse as yamlParse } from 'yaml';
+import { PERIOD_RE } from '../tools/_lib/schedule.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const loadYaml = (p) => yamlParse(readFileSync(p, 'utf8'));
@@ -23,7 +24,7 @@ for (const pref of readdirSync(muniDir).filter((p) => statSync(join(muniDir, p))
     const freq = {}; // cat -> Set<表現>
     let courseCount = 0;
     let areaCount = 0;
-    for (const y of readdirSync(dir).filter((e) => /^\d{4}$/.test(e))) {
+    for (const y of readdirSync(dir).filter((e) => PERIOD_RE.test(e))) {
       for (const f of readdirSync(join(dir, y)).filter((f) => /^course-.*\.yaml$/.test(f))) {
         courseCount++;
         const doc = loadYaml(join(dir, y, f));

@@ -24,7 +24,7 @@ import { fragmentsExpecting } from './parse.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
 const OUTDIR = join(ROOT, 'municipalities', 'okayama', 'okayama');
-const YEAR = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const FY_JA = '令和8年度';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 const EXTRACTED_BY = 'claude-opus-4-8';
@@ -258,9 +258,9 @@ const docs = folded.map((c, i) => {
     // 同一日程で学区だけ違う行 (例 今2丁目=西/大元) は畳み込みで同一コースに入り
     // area が重複するため、同一表現 (name+yomi+id+note) を dedupe する
     areas: [...new Map(c.areas.map(rowArea).map((a) => [JSON.stringify(a), a])).values()],
-    year: YEAR,
-    fiscalYearJa: FY_JA,
+    period: PERIOD,
     source: {
+      edition_ja: FY_JA,
       source_url: SOURCE_URL,
       extracted_at: EXTRACTED_AT,
       extracted_by: EXTRACTED_BY,
@@ -271,8 +271,8 @@ const docs = folded.map((c, i) => {
   });
 });
 
-const n = writeCourses(OUTDIR, YEAR, docs);
-console.log(`wrote ${n} courses (from ${records.length} rows) -> ${OUTDIR}/${YEAR}/`);
+const n = writeCourses(OUTDIR, PERIOD, docs);
+console.log(`wrote ${n} courses (from ${records.length} rows) -> ${OUTDIR}/${PERIOD}/`);
 const uniqMissing = [...new Set(yomiMissing)];
 console.log(`yomi: ${records.length - yomiMissing.length}/${records.length} 行に付与 (未付与 町名: ${uniqMissing.join('、') || 'なし'})`);
 const uniqIdMissing = [...new Set(idMissing)];

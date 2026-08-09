@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
+import { PERIOD_RE, parsePeriod, iso } from '../tools/_lib/schedule.mjs';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 // schema/*.json は $schema: draft/2020-12 を使うため Ajv2020 が必要 (plain Ajv は draft-07 のみ)
@@ -93,16 +94,39 @@ for (const { handle, dir } of handles) {
     }
   }
 
-  // courses(年度ディレクトリ配下の course-*.yaml)
+  // courses(収録期間ディレクトリ YYYY-MM--YYYY-MM 配下の course-*.yaml)
   for (const entry of readdirSync(dir)) {
-    if (!/^\d{4}$/.test(entry)) continue;
-    const yearDir = join(dir, entry);
-    for (const f of readdirSync(yearDir)) {
+    const periodDir = join(dir, entry);
+    if (!statSync(periodDir).isDirectory()) continue;
+    if (!PERIOD_RE.test(entry)) {
+      // 期間名でないディレクトリを黙って読み飛ばすと、収録が丸ごと配信から漏れても気づけない
+      if (/^\d{4}$/.test(entry)) fail(`${handle}/${entry}`, '年ディレクトリは廃止。YYYY-MM--YYYY-MM へ移行すること');
+      continue;
+    }
+    const period = parsePeriod(entry);
+    for (const f of readdirSync(periodDir)) {
       if (!/^course-.*\.yaml$/.test(f)) continue;
       const rel = `${handle}/${entry}/${f}`;
-      const doc = loadYaml(join(yearDir, f));
+      const doc = loadYaml(join(periodDir, f));
       if (!scheduleV(doc)) { fail(rel, ajv.errorsText(scheduleV.errors)); continue; }
       if (doc.metadata.city !== handle) fail(rel, `metadata.city "${doc.metadata.city}" != "${handle}"`);
+      // ディレクトリ名 = 収録期間 = 展開範囲。三者がずれたら日付が静かに捨てられる/湧く
+      if (doc.metadata.period !== entry) fail(rel, `metadata.period "${doc.metadata.period}" がディレクトリ名 "${entry}" と不一致`);
+      // 期間外の日付は展開されない = 書いても効かない。黙って無視させず落とす
+      // (川口の 2026-01-01 cancelled が FY2026 の外にあって効いていなかった事例)
+      const outside = (d) => { const m = iso(d).slice(0, 7); return m < period.from || m > period.to; };
+      for (const o of doc.overrides ?? []) {
+        if (outside(o.date)) fail(rel, `override の日付 ${iso(o.date)} が収録期間 ${entry} の外 (展開されないため無効)`);
+      }
+      for (const r of doc.rules ?? []) {
+        for (const d of r.dates ?? []) {
+          if (outside(d)) fail(rel, `rule "${r.category}" の日付 ${iso(d)} が収録期間 ${entry} の外`);
+        }
+      }
+      for (const u of doc.unknown_periods ?? []) {
+        if (iso(u.to) < iso(u.from)) fail(rel, `unknown_periods の from/to が逆転: ${iso(u.from)}〜${iso(u.to)}`);
+        if (outside(u.from) && outside(u.to)) fail(rel, `unknown_periods ${iso(u.from)}〜${iso(u.to)} が収録期間 ${entry} と重ならない`);
+      }
       // areas の name/note の括弧バランス (全角・半角を別々に検査。抽出の削り残し検出)
       for (const a of doc.metadata.areas ?? []) {
         for (const v of [a.name, a.note]) {

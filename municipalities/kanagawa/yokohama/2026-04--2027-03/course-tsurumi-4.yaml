@@ -1,0 +1,117 @@
+metadata:
+  city: yokohama
+  course: tsurumi-4
+  areas:
+    - name: 安善町1・2丁目
+      yomi: あんぜんちょう
+      machiaza_id:
+        - 141011-0016001
+        - 141011-0016002
+    - name: 寛政町
+      yomi: かんせいちょう
+      machiaza_id:
+        - 141011-0003000
+    - name: 岸谷1〜4丁目
+      yomi: きしや
+      machiaza_id:
+        - 141011-0007001
+        - 141011-0007002
+        - 141011-0007003
+        - 141011-0007004
+    - name: 北寺尾5丁目
+      yomi: きたてらお
+      machiaza_id:
+        - 141011-0045005
+      note: 7・11番地の一部
+    - name: 北寺尾6丁目
+      yomi: きたてらお
+      machiaza_id:
+        - 141011-0045006
+    - name: 汐入町1丁目
+      yomi: しおいりちょう
+      machiaza_id:
+        - 141011-0056001
+    - name: 下野谷町1〜4丁目
+      yomi: したのやちょう
+      machiaza_id:
+        - 141011-0052001
+        - 141011-0052002
+        - 141011-0052003
+        - 141011-0052004
+    - name: 鶴見1丁目
+      yomi: つるみ
+      machiaza_id:
+        - 141011-0010001
+    - name: 鶴見中央1丁目
+      yomi: つるみちゅうおう
+      machiaza_id:
+        - 141011-0009001
+    - name: 鶴見中央4・5丁目
+      yomi: つるみちゅうおう
+      machiaza_id:
+        - 141011-0009004
+        - 141011-0009005
+    - name: 馬場4〜6丁目
+      yomi: ばば
+      machiaza_id:
+        - 141011-0011004
+        - 141011-0011005
+        - 141011-0011006
+    - name: 東寺尾6丁目
+      yomi: ひがしてらお
+      machiaza_id:
+        - 141011-0006006
+    - name: 東寺尾東台
+      yomi: ひがしてらおひがしだい
+      machiaza_id:
+        - 141011-0004000
+    - name: 弁天町
+      yomi: べんてんちょう
+      machiaza_id:
+        - 141011-0023000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/tsurumi/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

@@ -1,0 +1,92 @@
+metadata:
+  city: yokohama
+  course: kohoku-2
+  areas:
+    - name: 大曽根1丁目
+      yomi: おおそね
+      machiaza_id:
+        - 141097-0025001
+      note: 25・26の一部
+    - name: 樽町1〜4丁目
+      yomi: たるまち
+      machiaza_id:
+        - 141097-0021001
+        - 141097-0021002
+        - 141097-0021003
+        - 141097-0021004
+    - name: 綱島東1〜6丁目
+      yomi: つなしまひがし
+      machiaza_id:
+        - 141097-0023001
+        - 141097-0023002
+        - 141097-0023003
+        - 141097-0023004
+        - 141097-0023005
+        - 141097-0023006
+    - name: 日吉3丁目（4〜23番地）
+      yomi: ひよし
+      machiaza_id:
+        - 141097-0022003
+    - name: 日吉4丁目（1・4〜21番地）
+      yomi: ひよし
+      machiaza_id:
+        - 141097-0022004
+    - name: 日吉5〜7丁目
+      yomi: ひよし
+      machiaza_id:
+        - 141097-0022005
+        - 141097-0022006
+        - 141097-0022007
+    - name: 箕輪町1・2丁目
+      yomi: みのわちょう
+      machiaza_id:
+        - 141097-0029001
+        - 141097-0029002
+    - name: 師岡町環状線北側（師岡南町内会地域を除く）
+      yomi: も
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/kohoku/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - MO
+      - FR
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

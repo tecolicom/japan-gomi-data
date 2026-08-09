@@ -20,7 +20,7 @@ const CSV_URL = existsSync(join(CACHE, 'source-url.txt'))
   ? readFileSync(join(CACHE, 'source-url.txt'), 'utf8').trim()
   : 'https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-20'; // Date.now() 不使用 (決定的出力)
-const YEAR = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 
 const yomi = yamlParse(readFileSync(join(HERE, 'yomi.yaml'), 'utf8'));
 const allRows = parseCsv(readFileSync(join(CACHE, 'gomi.csv'), 'utf8'));
@@ -164,9 +164,9 @@ const docs = folded.map(({ rules, areas: members }, i) => courseDoc({
   city: 'arakawa',
   course: String(i + 1),
   areas: areasFor(members),
-  year: YEAR,
-  fiscalYearJa: '令和8年度',
+  period: PERIOD,
   source: {
+    edition_ja: '令和8年度',
     source_url: CSV_URL,
     extracted_at: EXTRACTED_AT,
     extracted_by: 'claude-opus-4.8',
@@ -177,7 +177,7 @@ const docs = folded.map(({ rules, areas: members }, i) => courseDoc({
 }));
 
 mkdirSync(OUT, { recursive: true });
-writeCourses(OUT, YEAR, docs);
+writeCourses(OUT, PERIOD, docs);
 
 // verify.py が使う行→コース対応表
 const rowToCourse = [];

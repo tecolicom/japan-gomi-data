@@ -24,7 +24,7 @@ import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '../../../municipalities/tokyo/shinagawa');
-const YEAR = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const FISCAL_YEAR_JA = '令和8年度';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-20'; // Date.now() 不使用 (決定的出力)
 const CATEGORIES_JA = Object.keys(CATEGORY_MAP);
@@ -217,9 +217,9 @@ const docs = courses.map(({ rules, areas: as }, i) => courseDoc({
   city: 'shinagawa',
   course: String(i + 1),
   areas: as.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
-  year: YEAR,
-  fiscalYearJa: FISCAL_YEAR_JA,
+  period: PERIOD,
   source: {
+    edition_ja: FISCAL_YEAR_JA,
     source_url: CSV_URL,
     extracted_at: EXTRACTED_AT,
     extracted_by: 'claude-opus-4-6',
@@ -229,7 +229,7 @@ const docs = courses.map(({ rules, areas: as }, i) => courseDoc({
   overrides: yearEndOverrides(rules),
 }));
 
-const n = writeCourses(OUT, YEAR, docs);
+const n = writeCourses(OUT, PERIOD, docs);
 console.log(`[4] ${areas.length} 地区 → ${n} コースを ${join(OUT, String(YEAR))} へ出力`);
 
 writeFileSync(join(HERE, 'cache', 'banchi-map.json'), JSON.stringify(banchiMap, null, 1));

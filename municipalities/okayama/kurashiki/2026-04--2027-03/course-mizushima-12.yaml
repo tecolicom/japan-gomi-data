@@ -1,0 +1,94 @@
+metadata:
+  city: kurashiki
+  course: mizushima-12
+  course_name_ja: "水島地区: 南畝／中畝／松江／東塚／呼松／広江"
+  areas:
+    - name: 南畝1～7丁目
+      yomi: みなみせ
+      machiaza_id:
+        - 332020-0220001
+        - 332020-0220002
+        - 332020-0220003
+        - 332020-0220004
+        - 332020-0220005
+        - 332020-0220006
+        - 332020-0220007
+    - name: 中畝1・6丁目
+      yomi: なかせ
+      machiaza_id:
+        - 332020-0128001
+        - 332020-0128006
+    - name: 松江1～4丁目
+      yomi: まつえ
+      machiaza_id:
+        - 332020-0175001
+        - 332020-0175002
+        - 332020-0175003
+        - 332020-0175004
+    - name: 東塚1・7丁目
+      yomi: ひがしづか
+      machiaza_id:
+        - 332020-0147001
+        - 332020-0147007
+      note: 国道430号線以南
+    - name: 呼松1～3丁目
+      yomi: よびまつ
+      machiaza_id:
+        - 332020-0229001
+        - 332020-0229002
+        - 332020-0229003
+    - name: 広江1丁目
+      yomi: ひろえ
+      machiaza_id:
+        - 332020-0155001
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
+    pdf_url: https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/003/660/mizushima.pdf
+    extracted_at: 2026-07-24
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(地区別PDFを pdfplumber 罫線グリッド抽出。area 文字列は areas.mjs で 1 町名=1 area へ機械分解。読みは ABR 倉敷市町字マスター由来。data eye 平成31年度地区別収集日CSVと曜日/第n を独立照合)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 3
+    days:
+      - MO
+  - category: glass_bottle
+    pattern: monthly_nth
+    occurrences: &a1
+      - 2
+    days:
+      - WE
+  - category: beverage_can
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - WE
+  - category: pet_bottle
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - WE
+  - category: paper
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - WE
+  - category: cloth
+    pattern: monthly_nth
+    occurrences: *a1
+    days:
+      - WE
+unknown_periods:
+  - from: 2026-12-30
+    to: 2027-01-03
+    reason: PDFに「年末年始の休業日は事前に広報紙を通じてお知らせします」と明記され、実日付は一次ソースに載らない
+    source_url: https://www.city.kurashiki.okayama.jp/

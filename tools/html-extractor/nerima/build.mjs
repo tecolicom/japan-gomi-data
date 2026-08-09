@@ -5,6 +5,7 @@ import { parse as yamlParse, stringify as yamlStringify } from 'yaml';
 import { parseTable, parseWeekly, parseMonthlyNth } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲
 const OUT = join(HERE, '../../../municipalities/tokyo/nerima');
 const PAGES = ['a', 'ka', 'sa', 'ta', 'na', 'ha', 'maya'];
 const INDEX_URL = 'https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html';
@@ -67,7 +68,7 @@ for (const p of PAGES) {
 
 // 2) 安定順にコース採番(シグネチャ文字列でソート)
 const sigs = [...bySig.keys()].sort();
-mkdirSync(join(OUT, '2026'), { recursive: true });
+mkdirSync(join(OUT, PERIOD), { recursive: true });
 let n = 0;
 for (const sig of sigs) {
   n++;
@@ -77,8 +78,9 @@ for (const sig of sigs) {
       // course_name_ja は付けない: 曜日サマリの機械生成名は激長で UI/ICS の表示を壊す (2026-07-15 廃止)
       city: 'nerima', course: String(n),
       areas: areas.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
-      year: 2026, fiscal_year_ja: '令和8年度',
+      period: '2026-04--2027-03',
       source: {
+        edition_ja: '令和8年度',
         source_url: INDEX_URL, extracted_at: EXTRACTED_AT,
         extracted_by: 'claude-opus-4-8',
         verified_by: 'Claude(練馬区公式「地域別収集曜日一覧」HTML表の機械変換。エッジは地域別PDFでスポット照合)',
@@ -87,7 +89,7 @@ for (const sig of sigs) {
     rules,
     overrides: yearEndOverrides(rules),
   };
-  writeFileSync(join(OUT, '2026', `course-${n}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
+  writeFileSync(join(OUT, PERIOD, `course-${n}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
 }
 console.log(`generated ${n} courses`);
 

@@ -9,13 +9,13 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 import { parseFragments, DAY_INDEX } from './parse.mjs';
-import { expandFiscalYear, nthOfMonth, signatureKey } from '../../_lib/schedule.mjs';
+import { expandRange, nthOfMonth, signatureKey } from '../../_lib/schedule.mjs';
 import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CACHE = join(HERE, 'cache');
 const OUTDIR = join(HERE, '..', '..', '..', 'municipalities', 'okayama', 'okayama', '2026');
-const FY = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 
 // フィールド断片 -> 正規化署名文字列 (JS/Python 共通仕様)
@@ -65,7 +65,7 @@ console.log(`(2) JS パース署名 ${fieldSigs.length} 行 -> cache/js_field_si
 // ---- (3) コース展開整合 ----
 // コースYAML を読み、rules 署名 -> 実現パターン(展開)を索引化
 function realizedByCat(rules, overrides) {
-  const cal = expandFiscalYear(FY, rules, overrides || []);
+  const cal = expandRange(PERIOD, rules, overrides || []);
   const out = {};
   for (const [iso, cats] of cal) {
     const d = new Date(iso + 'T00:00:00');

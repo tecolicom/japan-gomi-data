@@ -14,7 +14,7 @@ const handle = process.argv[2];
 if (!handle || !CONF[handle]) throw new Error(`使い方: node build.mjs <handle> (${Object.keys(CONF).filter((k) => !k.startsWith('_')).join('/')})`);
 const conf = CONF[handle];
 const OUT = join(HERE, '..', '..', '..', 'municipalities', 'saitama', handle);
-const YEAR = 2026;
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
 const FY_JA = '令和8年度';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 const PDF_BASE = 'http://www.hozenkumiai.or.jp/pdf';
@@ -102,9 +102,9 @@ for (const rec of records) {
     course: dist,
     courseNameJa: `${dist.toUpperCase()}地区`,
     areas: [{ name: `${dist.toUpperCase()}地区` }],
-    year: YEAR,
-    fiscalYearJa: FY_JA,
+    period: PERIOD,
     source: {
+      edition_ja: FY_JA,
       source_url: 'http://www.hozenkumiai.or.jp/',
       pdf_url: `${PDF_BASE}/${conf.file}2026_${dist}.pdf`,
       extracted_at: EXTRACTED_AT,
@@ -116,7 +116,7 @@ for (const rec of records) {
   }));
 }
 
-const n = writeCourses(OUT, YEAR, docs);
-console.log(`${handle}: wrote ${n} courses → ${OUT}/${YEAR}/`);
+const n = writeCourses(OUT, PERIOD, docs);
+console.log(`${handle}: wrote ${n} courses → ${OUT}/${PERIOD}/`);
 for (const d of docs) console.log(`  ${d.metadata.course}: rules ${d.rules.length} / overrides ${(d.overrides || []).length}`);
 if (anomalies.length) { console.log('--- 逸脱/注意 ---'); anomalies.forEach((a) => console.log('  ' + a)); }

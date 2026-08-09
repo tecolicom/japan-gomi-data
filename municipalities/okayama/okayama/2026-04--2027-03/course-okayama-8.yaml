@@ -1,0 +1,140 @@
+metadata:
+  city: okayama
+  course: okayama-8
+  course_name_ja: "西大寺: 浅越／西庄／吉原 ｜ 芥子山: 大多羅町／可知五丁目／西大寺中野／西大寺松崎／富崎／広谷／福治／富士見町一丁目／松新町 ｜ 可知: 可知三丁目 ｜ 開成: 金田"
+  areas:
+    - name: 浅越（砂川以西）
+      yomi: あさごえ
+      machiaza_id:
+        - 331031-0002000
+    - name: 大多羅町
+      yomi: おおだらちょう
+      machiaza_id:
+        - 331031-0006000
+    - name: 可知三丁目（4番～7番、13番～17番）
+      yomi: かち
+      machiaza_id:
+        - 331031-0009003
+    - name: 可知五丁目
+      yomi: かち
+      machiaza_id:
+        - 331031-0009005
+    - name: 金田（川北町内会）
+      yomi: かなだ
+      machiaza_id:
+        - 331031-0012000
+    - name: 西大寺中野（898番地～960番地）
+      yomi: さいだいじなかの
+      machiaza_id:
+        - 331031-0039000
+    - name: 西大寺松崎
+      yomi: さいだいじまつざき
+      machiaza_id:
+        - 331031-0043000
+    - name: 富崎（砂川より西）
+      yomi: とみさき
+      machiaza_id:
+        - 331031-0084000
+    - name: 西庄
+      yomi: にししょう
+      machiaza_id:
+        - 331031-0092000
+    - name: 広谷
+      yomi: ひろたに
+      machiaza_id:
+        - 331031-0144000
+    - name: 福治（砂川から西）
+      yomi: ふくじ
+      machiaza_id:
+        - 331031-0101000
+    - name: 富士見町一丁目
+      yomi: ふじみちょう
+      machiaza_id:
+        - 331031-0103001
+    - name: 松新町
+      yomi: まつしんちょう
+      machiaza_id:
+        - 331031-0109000
+    - name: 吉原
+      yomi: よしわら
+      machiaza_id:
+        - 331031-0118000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779
+    extracted_at: 2026-07-22
+    extracted_by: claude-opus-4-8
+    verified_by: Claude(市公式 kViewer「収集曜日一覧」records API を機械取得。API取得×ブラウザ取得の2経路で全844行突合一致、JS/Python 2実装でパース突合一致。資源化物の構成品目は市公式分別ページで裏取り。日付入り年間カレンダー・原簿の独立照合は kViewer が唯一の公開のため不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences: &a2
+      - 2
+  - category: glass_bottle
+    pattern: monthly_nth
+    days: &a3
+      - FR
+    occurrences: &a4
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: spray_can
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: pet_bottle
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: paper
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: paper
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: cloth
+    pattern: monthly_nth
+    days: *a1
+    occurrences: *a2
+  - category: cloth
+    pattern: monthly_nth
+    days: *a3
+    occurrences: *a4
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3。令和2・4・5年度の市告知に共通する不変部分。振替は12月の変更一覧で要確認)

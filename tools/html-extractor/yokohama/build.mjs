@@ -1,4 +1,4 @@
-// 横浜市: cache/ の 126 サブページ → municipalities/kanagawa/yokohama/2026/course-<区>-<n>.yaml
+// 横浜市: cache/ の 126 サブページ → municipalities/kanagawa/yokohama/<収録期間>/course-<区>-<n>.yaml
 // 収集体系は全品目 weekly の 3 スロット:
 //   燃やすごみの曜日 (週2) = 燃えないごみ・電池類・スプレー缶も同日別袋
 //   缶・びん・ペットボトルの曜日 (週1) = 小さな金属類も同日別袋
@@ -12,6 +12,7 @@ import { parseTown } from './areas.mjs';
 import { WARDS, BASE } from './wards.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲
 const OUT = join(HERE, '../../../municipalities/kanagawa/yokohama');
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-20'; // Date.now() 不使用
 
@@ -107,8 +108,8 @@ const isDup = (base) => (townWards.get(base)?.size ?? 0) > 1; // 区をまたぐ
 const yomiStat = { total: 0, abr: 0, id: 0 };
 
 // 2) 区ごとにスケジュールシグネチャで畳み込み → コース
-rmSync(join(OUT, '2026'), { recursive: true, force: true });
-mkdirSync(join(OUT, '2026'), { recursive: true });
+rmSync(join(OUT, PERIOD), { recursive: true, force: true });
+mkdirSync(join(OUT, PERIOD), { recursive: true });
 let totalCourses = 0;
 let totalTowns = 0;
 const allDocs = [];
@@ -168,9 +169,9 @@ for (const { ward, rows } of wardRows) {
         city: 'yokohama',
         course,
         areas, // 公式表の掲載 (五十音) 順を保持
-        year: 2026,
-        fiscal_year_ja: '令和8年度',
+        period: '2026-04--2027-03',
         source: {
+          edition_ja: '令和8年度',
           source_url: `${BASE}/${ward.romaji}/index.html`,
           extracted_at: EXTRACTED_AT,
           extracted_by: 'claude-fable-5',
@@ -181,7 +182,7 @@ for (const { ward, rows } of wardRows) {
       rules,
       overrides: yearEndOverrides(rules),
     };
-    allDocs.push({ path: join(OUT, '2026', `course-${course}.yaml`), doc });
+    allDocs.push({ path: join(OUT, PERIOD, `course-${course}.yaml`), doc });
   });
   totalCourses += sigs.length;
   totalTowns += rows.length;

@@ -1,0 +1,186 @@
+metadata:
+  city: yokohama
+  course: kanagawa-1
+  areas:
+    - name: 青木町
+      yomi: あおきちょう
+      machiaza_id:
+        - 141020-0026000
+    - name: 泉町
+      yomi: いずみちょう
+      machiaza_id:
+        - 141020-0007000
+    - name: 入江1丁目（1〜28番地）
+      yomi: いりえ
+      machiaza_id:
+        - 141020-0046001
+    - name: 浦島丘3番地
+      yomi: うらしまおか
+      machiaza_id:
+        - 141020-0057000
+    - name: 浦島町
+      yomi: うらしまちょう
+      machiaza_id:
+        - 141020-0032000
+    - name: 恵比須町
+      yomi: えびすちょう
+      machiaza_id:
+        - 141020-0015000
+    - name: 大口通18〜26番地
+      yomi: おおぐちどおり
+      machiaza_id:
+        - 141020-0062000
+    - name: 大野町
+      yomi: おおのちょう
+      machiaza_id:
+        - 141020-0025000
+    - name: 神奈川1・2丁目
+      yomi: かながわ
+      machiaza_id:
+        - 141020-0033001
+        - 141020-0033002
+    - name: 神奈川本町
+      yomi: かながわほんちょう
+      machiaza_id:
+        - 141020-0037000
+    - name: 亀住町
+      yomi: かめずみちょう
+      machiaza_id:
+        - 141020-0058000
+    - name: 金港町
+      yomi: きんこうちょう
+      machiaza_id:
+        - 141020-0029000
+    - name: 幸ヶ谷
+      yomi: こうがや
+      machiaza_id:
+        - 141020-0038000
+    - name: 子安台1丁目
+      yomi: こやすだい
+      machiaza_id:
+        - 141020-0048001
+    - name: 子安通1〜3丁目
+      yomi: こやすどおり
+      machiaza_id:
+        - 141020-0079001
+        - 141020-0079002
+        - 141020-0079003
+    - name: 栄町
+      yomi: さかえちょう
+      machiaza_id:
+        - 141020-0030000
+    - name: 沢渡
+      yomi: さわたり
+      machiaza_id:
+        - 141020-0068000
+    - name: 新浦島町1・2丁目
+      yomi: しんうらしまちょう
+      machiaza_id:
+        - 141020-0020001
+        - 141020-0020002
+    - name: 新子安1丁目（18番地を除く）
+      yomi: しんこやす
+      machiaza_id:
+        - 141020-0047001
+    - name: 新町
+      yomi: しんまち
+      machiaza_id:
+        - 141020-0034000
+    - name: 台町
+      yomi: だいまち
+      machiaza_id:
+        - 141020-0004000
+    - name: 高島台
+      yomi: たかしまだい
+      machiaza_id:
+        - 141020-0010000
+    - name: 宝町
+      yomi: たからちょう
+      machiaza_id:
+        - 141020-0014000
+    - name: 千若町1〜3丁目
+      yomi: ちわかちょう
+      machiaza_id:
+        - 141020-0016001
+        - 141020-0016002
+        - 141020-0016003
+    - name: 鶴屋町1〜3丁目
+      yomi: つるやちょう
+      machiaza_id:
+        - 141020-0083001
+        - 141020-0083002
+        - 141020-0083003
+    - name: 七島町112〜146番地
+      yomi: ななしまちょう
+      machiaza_id:
+        - 141020-0053000
+    - name: 橋本町
+      yomi: はしもとちょう
+      machiaza_id:
+        - 141020-0019000
+    - name: 東神奈川1・2丁目
+      yomi: ひがしかながわ
+      machiaza_id:
+        - 141020-0035001
+        - 141020-0035002
+      note: （東神奈川1丁目14を除く）
+    - name: 星野町
+      yomi: ほしのちょう
+      machiaza_id:
+        - 141020-0023000
+    - name: 松ヶ丘
+      yomi: まつがおか
+      machiaza_id:
+        - 141020-0067000
+    - name: 三ツ沢東町の一部
+      yomi: み
+    - name: 守屋町
+      yomi: もりやちょう
+      machiaza_id:
+        - 141020-0080000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/kanagawa/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - MO
+      - FR
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

@@ -1,0 +1,132 @@
+metadata:
+  city: yokohama
+  course: naka-6
+  areas:
+    - name: 赤門町1丁目（中区）
+      yomi: あかもんちょう
+      machiaza_id:
+        - 141046-0132001
+    - name: 黄金町
+      yomi: こがねちょう
+      machiaza_id:
+        - 141046-0110000
+    - name: 小港町1丁目（磯子線から本牧町側）
+      yomi: こみなとちょう
+      machiaza_id:
+        - 141046-0125001
+    - name: 小港町1丁目（磯子線からビューコート小港側）
+      yomi: こみなとちょう
+      machiaza_id:
+        - 141046-0125001
+    - name: 小港町2丁目
+      yomi: こみなとちょう
+      machiaza_id:
+        - 141046-0125002
+    - name: 桜木町（中区）
+      yomi: さくらぎちょう
+      machiaza_id:
+        - 141046-0119000
+    - name: 新山下
+      yomi: しんやました
+    - name: 錦町
+      yomi: にしきちょう
+      machiaza_id:
+        - 141046-0001000
+    - name: 野毛町1〜4丁目
+      yomi: のげちょう
+      machiaza_id:
+        - 141046-0153001
+        - 141046-0153002
+        - 141046-0153003
+        - 141046-0153004
+    - name: 初音町
+      yomi: はつねちょう
+      machiaza_id:
+        - 141046-0124000
+    - name: 花咲町（中区）
+      yomi: はなさきちょう
+      machiaza_id:
+        - 141046-0111000
+    - name: 英町
+      yomi: はなぶさちょう
+      machiaza_id:
+        - 141046-0092000
+    - name: 日ノ出町1・2丁目
+      yomi: ひのでちょう
+      machiaza_id:
+        - 141046-0140001
+        - 141046-0140002
+    - name: 本牧満坂大鳥小学校周辺
+      yomi: ほ
+    - name: 本牧十二天
+      yomi: ほんもくじゅうにてん
+      machiaza_id:
+        - 141046-0095000
+    - name: 本牧町1丁目（大鳥小学校周辺）
+      yomi: ほんもくちょう
+      machiaza_id:
+        - 141046-0149001
+    - name: 本牧ふ頭
+      yomi: ほんもくふとう
+      machiaza_id:
+        - 141046-0027000
+    - name: 本牧宮原
+      yomi: ほんもくみやばら
+      machiaza_id:
+        - 141046-0094000
+    - name: 宮川町1〜3丁目
+      yomi: みやがわちょう
+      machiaza_id:
+        - 141046-0113001
+        - 141046-0113002
+        - 141046-0113003
+    - name: 和田山
+      yomi: わだやま
+      machiaza_id:
+        - 141046-0031000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/naka/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - WE
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

@@ -1,4 +1,4 @@
-// 杉並区 収集曜日 CSV → municipalities/tokyo/suginami/2026/course-*.yaml
+// 杉並区 収集曜日 CSV → municipalities/tokyo/suginami/<収録期間>/course-*.yaml
 //
 // 1. cache/suginami.csv (区公式の収集曜日検索を駆動する一次 CSV) を読む。
 // 2. コース単位 = 地域別カレンダー PDF 番号 (pdf_url の <N>)。同一 PDF を共有する
@@ -13,6 +13,7 @@ import { parse as yamlParse, stringify as yamlStringify } from 'yaml';
 import { parseSuginamiCsv, rowToRules, signatureKey, townBase, normalizeTownName } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲
 const OUT = join(HERE, '../../../municipalities/tokyo/suginami');
 const CSV_URL = 'https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || '2026-07-17'; // Date.now() 不使用 (決定的出力)
@@ -64,7 +65,7 @@ for (const row of rows) {
 console.log(`${byPdf.size} コース (PDF 番号単位)`);
 
 // --- 出力 (course-<N>.yaml、N は PDF 番号) ---
-mkdirSync(join(OUT, '2026'), { recursive: true });
+mkdirSync(join(OUT, PERIOD), { recursive: true });
 const nos = [...byPdf.keys()].sort((a, b) => a - b);
 for (const no of nos) {
   const { rules, areas } = byPdf.get(no);
@@ -72,8 +73,9 @@ for (const no of nos) {
     metadata: {
       city: 'suginami', course: String(no),
       areas: areas.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
-      year: 2026, fiscal_year_ja: '令和8年度',
+      period: '2026-04--2027-03',
       source: {
+        edition_ja: '令和8年度',
         source_url: CSV_URL,
         pdf_url: `https://www.city.suginami.tokyo.jp/shared/garbage/${no}.pdf`,
         extracted_at: EXTRACTED_AT,
@@ -84,6 +86,6 @@ for (const no of nos) {
     rules,
     overrides: yearEndOverrides(rules),
   };
-  writeFileSync(join(OUT, '2026', `course-${no}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
+  writeFileSync(join(OUT, PERIOD, `course-${no}.yaml`), yamlStringify(doc, { lineWidth: 0 }));
 }
 console.log(`generated ${nos.length} courses (course-${nos[0]}〜course-${nos[nos.length - 1]})`);

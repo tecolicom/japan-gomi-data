@@ -1,0 +1,132 @@
+metadata:
+  city: yokohama
+  course: minami-4
+  areas:
+    - name: 唐沢バス通り周辺
+      yomi: か
+    - name: 庚台
+      yomi: かのえだい
+      machiaza_id:
+        - 141054-0052000
+    - name: 山王町1〜5丁目
+      yomi: さんのうちょう
+      machiaza_id:
+        - 141054-0065001
+        - 141054-0065002
+        - 141054-0065003
+        - 141054-0065004
+        - 141054-0065005
+    - name: 山谷
+      yomi: さんや
+      machiaza_id:
+        - 141054-0023000
+    - name: 白金町
+      yomi: しろがねちょう
+      machiaza_id:
+        - 141054-0080000
+    - name: 新川町
+      yomi: しんかわちょう
+      machiaza_id:
+        - 141054-0068000
+    - name: 高砂町
+      yomi: たかさごちょう
+      machiaza_id:
+        - 141054-0064000
+    - name: 中村町
+      yomi: なかむらちょう
+      machiaza_id:
+        - 141054-0073000
+    - name: 西中町
+      yomi: にしなかちょう
+      machiaza_id:
+        - 141054-0070000
+    - name: 八幡町
+      yomi: はちまんちょう
+      machiaza_id:
+        - 141054-0021000
+    - name: 日枝町1〜5丁目
+      yomi: ひえちょう
+      machiaza_id:
+        - 141054-0079001
+        - 141054-0079002
+        - 141054-0079003
+        - 141054-0079004
+        - 141054-0079005
+    - name: 伏見町
+      yomi: ふしみちょう
+      machiaza_id:
+        - 141054-0045000
+    - name: 二葉町
+      yomi: ふたばちょう
+      machiaza_id:
+        - 141054-0078000
+    - name: 前里町1〜4丁目
+      yomi: まえさとちょう
+      machiaza_id:
+        - 141054-0071001
+        - 141054-0071002
+        - 141054-0071003
+        - 141054-0071004
+    - name: 南吉田町1〜5丁目
+      yomi: みなみよしだちょう
+      machiaza_id:
+        - 141054-0076001
+        - 141054-0076002
+        - 141054-0076003
+        - 141054-0076004
+        - 141054-0076005
+    - name: 三春台
+      yomi: みはるだい
+      machiaza_id:
+        - 141054-0044000
+    - name: 吉野町1〜5丁目
+      yomi: よしのちょう
+      machiaza_id:
+        - 141054-0060001
+        - 141054-0060002
+        - 141054-0060003
+        - 141054-0060004
+        - 141054-0060005
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/shushuyobi/minami/index.html
+    extracted_at: 2026-07-20
+    extracted_by: claude-fable-5
+    verified_by: Claude(横浜市公式「ごみと資源の収集曜日」区別HTML表の機械変換。独立2実装・独立取得の2経路で全1,087行突合一致。青葉区は事務所版一覧画像と全町照合一致。日付入り年間カレンダーは市非公開のため日付レベルの独立照合は不可)
+rules:
+  - category: burnable
+    pattern: weekly
+    days: &a1
+      - TU
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days: *a1
+  - category: hazardous
+    pattern: weekly
+    days: *a1
+  - category: spray_can
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: &a2
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2
+  - category: metal
+    pattern: weekly
+    days: *a2
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2027-01-02
+    cancelled: true
+    note: 年末年始休止(12/31〜1/3)

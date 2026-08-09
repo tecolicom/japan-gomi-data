@@ -28,13 +28,43 @@ export function categoriesOn(date, rules, overrides) {
   return [...final];
 }
 
-// 会計年度 (4/1〜翌3/31) を日毎に展開: Map<iso, string[]> (収集なしの日は載せない)
-export function expandFiscalYear(fy, rules, overrides) {
+// 収録期間の表記 "YYYY-MM--YYYY-MM" (月単位の閉区間)。
+// ディレクトリ名と course の metadata.period に同じ文字列を使う。
+// 会計年度を仮定しない: 4月起点も10月起点も暦年も半期もそのまま表せる。
+export const PERIOD_RE = /^(\d{4})-(\d{2})--(\d{4})-(\d{2})$/;
+
+// "2026-04--2027-03" → { from: '2026-04', to: '2027-03' } / 不正なら null
+export function parsePeriod(name) {
+  const m = PERIOD_RE.exec(String(name));
+  return m ? { from: `${m[1]}-${m[2]}`, to: `${m[3]}-${m[4]}` } : null;
+}
+
+// 期間の両端を Date に (end は「to の翌月 1 日」= 排他)
+function periodBounds(period) {
+  const p = typeof period === 'string' ? parsePeriod(period) : period;
+  if (!p) throw new Error(`不正な期間表記: ${period}`);
+  const [fy, fm] = p.from.split('-').map(Number);
+  const [ty, tm] = p.to.split('-').map(Number);
+  if (!(fy && fm && ty && tm) || `${p.to}` < `${p.from}`) throw new Error(`不正な期間: ${p.from}--${p.to}`);
+  return { start: new Date(fy, fm - 1, 1), end: new Date(ty, tm, 1) };
+}
+
+// その日が unknown_periods (収集の有無が不明な区間) に入るか。
+// 「休止」ではなく「一次ソースが裏付けない」の意。展開結果に載せない。
+export function isUnknown(isoKey, unknownPeriods) {
+  return (unknownPeriods || []).some((u) => iso(u.from) <= isoKey && isoKey <= iso(u.to));
+}
+
+// 収録期間を日毎に展開: Map<iso, string[]>
+// (収集なしの日と unknown_periods 内の日は載せない)
+export function expandRange(period, rules, overrides, unknownPeriods) {
+  const { start, end } = periodBounds(period);
   const out = new Map();
-  const start = new Date(fy, 3, 1), end = new Date(fy + 1, 3, 1);
   for (let d = new Date(start); d < end; d = new Date(d.getTime() + 86400000)) {
+    const key = isoDate(d);
+    if (isUnknown(key, unknownPeriods)) continue;
     const cats = categoriesOn(d, rules, overrides);
-    if (cats.length) out.set(isoDate(d), cats);
+    if (cats.length) out.set(key, cats);
   }
   return out;
 }
