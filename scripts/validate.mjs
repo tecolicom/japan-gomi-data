@@ -42,12 +42,27 @@ if (existsSync(muniDir)) {
 let surveyOnly = 0;
 for (const { handle, dir } of handles) {
 
+  // survey.yaml は収録後も調査記録の正典として残る。下の分岐は「meta が無いとき」しか
+  // 読まないため、収録済み自治体の survey.yaml は誰も検査していなかった
+  // (notes への追記でコロン+空白を入れて YAML を壊したまま気づけなかった実例あり)。
+  // 収録の有無によらず、構文と handle だけは必ず検査する。
+  const surveyPath = join(dir, 'survey.yaml');
+  let survey = null;
+  if (existsSync(surveyPath)) {
+    try {
+      survey = loadYaml(surveyPath);
+    } catch (e) {
+      fail(`${handle}/survey.yaml`, `YAML として読めません: ${String(e?.message ?? e).split('\n')[0]}`);
+    }
+    if (survey && survey.handle !== handle) {
+      fail(`${handle}/survey.yaml`, `handle "${survey.handle}" がディレクトリ名と不一致`);
+    }
+  }
+
   // meta — 無い場合、survey.yaml だけの「調査済み・未収録」ディレクトリは許容する
   const metaPath = join(dir, 'meta.yaml');
   if (!existsSync(metaPath)) {
-    if (existsSync(join(dir, 'survey.yaml'))) {
-      const sv = loadYaml(join(dir, 'survey.yaml'));
-      if (sv.handle !== handle) fail(`${handle}/survey.yaml`, `handle "${sv.handle}" がディレクトリ名と不一致`);
+    if (existsSync(surveyPath)) {
       surveyOnly++;
       continue;
     }
