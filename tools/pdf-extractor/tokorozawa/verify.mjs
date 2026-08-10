@@ -5,7 +5,6 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
-import { expandRange } from '../../_lib/schedule.mjs';
 import { diffRange, ruleOfThreePct } from '../../_lib/verify.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -28,7 +27,7 @@ for (const m of manifest) {
   for (const nm of m.label.split('、').map((s) => s.trim()).filter(Boolean)) areaToFile.set(nm, m.file);
 }
 
-let totalDays = 0, mism = 0, checkedTowns = 0;
+let mism = 0, checkedTowns = 0;
 const patternCount = { weekly: 0, monthly_nth: 0, monthly_specific: 0 };
 for (const doc of docs) {
   for (const r of doc.rules) patternCount[r.pattern]++;
@@ -40,7 +39,6 @@ for (const doc of docs) {
     const expected = new Map(Object.entries(cal).map(([d, cats]) => [d, cats]));
     const diffs = diffRange(PERIOD, doc.rules, doc.overrides || [], expected);
     checkedTowns++;
-    totalDays += 365;
     if (diffs.length) {
       mism += diffs.length;
       console.error(`NG course-${doc.metadata.course} ${area.name} (${file}): ${diffs.length}件`);

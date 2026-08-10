@@ -14,9 +14,8 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
-import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
 import { nthOfMonth, isoDate, categoriesOn, periodDates } from '../../_lib/schedule.mjs';
-import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
+import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');

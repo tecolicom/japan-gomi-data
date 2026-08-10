@@ -14,8 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse, stringify as yamlStringify } from 'yaml';
-import { categoriesOn, expandRange, nthOfMonth, isoDate, periodDates } from '../../_lib/schedule.mjs';
-import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
+import { categoriesOn, nthOfMonth, isoDate, periodDates } from '../../_lib/schedule.mjs';
 import {
   parseIrumaCsv, BUNBETSU2CATS, CAT_ORDER, splitRegion, fragmentToArea,
 } from './parse.mjs';

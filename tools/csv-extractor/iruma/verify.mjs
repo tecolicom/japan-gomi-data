@@ -13,7 +13,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { parse as yamlParse } from 'yaml';
-import { categoriesOn, expandRange, isoDate } from '../../_lib/schedule.mjs';
+import { expandRange } from '../../_lib/schedule.mjs';
 import { parseIrumaCsv, BUNBETSU2CATS, splitRegion, baseName } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));

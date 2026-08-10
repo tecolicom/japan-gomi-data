@@ -10,7 +10,6 @@ import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 import { parseFragments, DAY_INDEX } from './parse.mjs';
 import { expandRange, nthOfMonth, signatureKey } from '../../_lib/schedule.mjs';
-import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CACHE = join(HERE, 'cache');

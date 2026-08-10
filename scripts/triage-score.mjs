@@ -7,7 +7,6 @@ import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
-const TRIAGE = join(ROOT, 'docs/triage');
 
 const STRUCTURED = new Set(['csv', 'json', 'xls']);
 
@@ -60,8 +59,6 @@ function score(r) {
   else if (vs.length && !vs.every((v) => v === 'app')) E = 10;
   else { E = 5; est.add('E'); }
 
-  const total = A + B + C + D + E;
-  const rank = total >= 90 ? 'S' : total >= 75 ? 'A' : total >= 60 ? 'B' : total >= 40 ? 'C' : total >= 20 ? 'D' : 'E';
   const s = { A, B, C, D, E, ...(r.score_overrides || {}) };
   let t2 = s.A + s.B + s.C + s.D + s.E;
   // キャップ規則: 部分欠落 (partial) は C 止まり。

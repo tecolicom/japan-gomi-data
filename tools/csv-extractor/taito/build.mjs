@@ -88,7 +88,7 @@ for (const row of csvRows) {
 const sigToNo = new Map();
 for (const [sig, g] of bySig) {
   const nos = new Set(g.areas.map((a) => {
-    const [town, ch] = a.key.split('|');
+    const [town] = a.key.split('|');
     const no = seiri.get(a.key) ?? seiri.get(`${town}|*`);
     if (no === undefined) throw new Error(`カレンダー案内に整理番号が無い町丁: ${a.key}`);
     return no;

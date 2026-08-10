@@ -19,7 +19,7 @@ import { parse as parseHtml } from 'node-html-parser';
 import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
 import { signatureKey, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { parseOpenDataCsv, parseOfficialHtml, rowToRules, rowKey, areaName, parseChome, norm, parseAreaLabel, areaKey, rowAreaKey } from './parse.mjs';
-import { CSV_URL, LIST_URL, CAL_URL } from './fetch.mjs';
+import { CSV_URL } from './fetch.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CACHE = join(HERE, 'cache');

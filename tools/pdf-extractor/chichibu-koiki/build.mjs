@@ -24,7 +24,6 @@ const parseUTC = (s) => new Date(`${s}T00:00:00Z`);
 const iso = (d) => d.toISOString().slice(0, 10);
 const CAT_ORDER = ['burnable', 'non_burnable', 'paper_cloth', 'glass_bottle', 'beverage_can', 'pet_bottle'];
 const catRank = (c) => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
-const ym = (s) => s.slice(0, 7);
 
 // 収録期間 (CONF.period) の weekly[dowSet] 展開。会計年度を決め打ちしない
 function weeklyExpand(period, dowSet) {

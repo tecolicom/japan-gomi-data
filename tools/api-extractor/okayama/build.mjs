@@ -29,7 +29,6 @@ const FY_JA = '令和8年度';
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
 const EXTRACTED_BY = 'claude-opus-4-8';
 const SOURCE_URL = 'https://f5d44204.viewer.kintoneapp.com/public/bba750ccc0622ed0ea1ee9803b60537753367b11af275de1ad0d1507c414d779';
-const CATEGORY_URL = 'https://www.city.okayama.jp/kurashi/category/1-12-7-10-3-0-0-0-0-0.html';
 
 // 資源化物の同日一括6品目
 const RECYCLE_CATS = ['glass_bottle', 'beverage_can', 'spray_can', 'pet_bottle', 'paper', 'cloth'];

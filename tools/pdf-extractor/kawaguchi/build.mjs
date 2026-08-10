@@ -6,7 +6,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
-import { categoriesOn, isoDate } from '../../_lib/schedule.mjs';
+import { categoriesOn, periodDates } from '../../_lib/schedule.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', '..', '..', 'municipalities', 'saitama', 'kawaguchi');
@@ -99,8 +99,8 @@ for (let d = 1; d <= 18; d++) {
   // verify: expand rules+overrides over 2026 calendar year, diff against grid.json
   const grid = gridJson[String(d)] || {};
   let diff = 0;
-  for (let dt = new Date(YEAR, 0, 1); dt <= new Date(YEAR, 11, 31); dt = new Date(dt.getTime() + 86400000)) {
-    const key = isoDate(dt);
+  for (const key of periodDates(PERIOD)) {
+    const dt = new Date(key + 'T00:00:00');
     const got = new Set(categoriesOn(dt, rules, overrides));
     const exp = new Set(grid[key] || []);
     for (const c of got) if (!exp.has(c)) diff++;

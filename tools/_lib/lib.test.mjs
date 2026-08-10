@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseWeeklyJa, parseMonthlyNthJa, townBase, normalizeTownName } from './jp.mjs';
-import { categoriesOn, expandRange, parsePeriod, isUnknown, nthOfMonth, signatureKey, cancelledOverrides } from './schedule.mjs';
+import { categoriesOn, expandRange, parsePeriod, isUnknown, nthOfMonth, cancelledOverrides } from './schedule.mjs';
 import { foldCourses, courseDoc } from './emit.mjs';
 import { diffRange, ruleOfThreePct, sampleSizeFor, sampleStratified } from './verify.mjs';
 import { classifyRules } from './classify.mjs';

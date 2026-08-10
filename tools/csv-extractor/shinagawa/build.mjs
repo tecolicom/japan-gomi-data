@@ -230,7 +230,7 @@ const docs = courses.map(({ rules, areas: as }, i) => courseDoc({
 }));
 
 const n = writeCourses(OUT, PERIOD, docs);
-console.log(`[4] ${areas.length} 地区 → ${n} コースを ${join(OUT, String(YEAR))} へ出力`);
+console.log(`[4] ${areas.length} 地区 → ${n} コースを ${join(OUT, PERIOD)} へ出力`);
 
 writeFileSync(join(HERE, 'cache', 'banchi-map.json'), JSON.stringify(banchiMap, null, 1));
 console.log(`[4] 分割地区 ${banchiMap.length} 件の CSV 名 ↔ 公式 HTML 番地表記の対応を cache/banchi-map.json に出力`);

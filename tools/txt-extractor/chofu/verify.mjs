@@ -19,7 +19,7 @@ const OUTDIR = join(ROOT, 'municipalities', 'tokyo', 'chofu', PERIOD);
 const DISTRICTS = ['1', '2', '3', '4'];
 
 const dates = periodDates(PERIOD);
-let ok = 0, ng = 0, patterns = 0;
+let ng = 0, patterns = 0;
 for (const n of DISTRICTS) {
   const text = readFileSync(join(HERE, 'cache', `r8calendar_no${n}.txt`), 'utf8');
   const events = parseCalendar(text);
@@ -35,7 +35,7 @@ for (const n of DISTRICTS) {
       if (mism <= 10) console.error(`  地区${n} ${d}: got[${got}] exp[${exp}]`);
     }
   }
-  if (mism === 0) { console.log(`地区${n}: 全${dates.length}日 一致 (rules ${doc.rules.length})`); ok++; }
+  if (mism === 0) { console.log(`地区${n}: 全${dates.length}日 一致 (rules ${doc.rules.length})`); }
   else { console.error(`地区${n}: ${mism}日 不一致`); ng++; }
 }
 

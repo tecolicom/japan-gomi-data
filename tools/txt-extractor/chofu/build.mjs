@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { periodDates } from '../../_lib/schedule.mjs';
 import { classifyRules } from '../../_lib/classify.mjs';
-import { parseCalendar, DOW } from './parse.mjs';
+import { parseCalendar } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
@@ -30,8 +30,6 @@ const CAT_ORDER = [
 const DOW_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
 
 const SOURCE_URL = (n) => `https://www.city.chofu.lg.jp/documents/16365/r8calendar_no${n}.txt`;
-
-const dow = (iso) => new Date(iso + 'T00:00:00').getDay();
 
 // build-ics.mjs categoriesOn() と等価な展開(この tool 用の再実装)
 function categoriesOn(iso, rules, overrides) {

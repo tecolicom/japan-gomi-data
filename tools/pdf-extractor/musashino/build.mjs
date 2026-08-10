@@ -29,12 +29,6 @@ const CAT_ORDER = [
   'burnable', 'non_burnable', 'plastic', 'paper_cloth',
   'glass_bottle', 'beverage_can', 'pet_bottle', 'hazardous',
 ];
-const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
-const dowOf = (iso) => new Date(iso + 'T00:00:00').getDay();
-// weekly と認めるのに許す「停止で欠けた回数」の上限 (割合)。
-// 年末年始のような例外的休止は cancelled override で表せるが、隔週リズム
-// (欠け 50%) を「毎週 + 半分キャンセル」と表現してしまわないための歯止め。
-const WEEKLY_STOP_TOLERANCE = 0.1;
 
 const data = JSON.parse(readFileSync(join(HERE, 'cache', 'extracted.json'), 'utf8'));
 

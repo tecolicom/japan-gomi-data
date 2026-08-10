@@ -13,7 +13,7 @@ import { expandRange, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 import { classifyRules } from '../../_lib/classify.mjs';
 import { normJa } from '../../_lib/jp.mjs';
-import { parseCalendar, periodDates, DOW, AREA_URL, AREAS } from './parse.mjs';
+import { parseCalendar, periodDates, AREA_URL, AREAS } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
@@ -28,8 +28,6 @@ const CAT_ORDER = [
   'burnable', 'non_burnable', 'plastic', 'paper_cloth',
   'glass_bottle', 'spray_can', 'beverage_can', 'pet_bottle', 'hazardous', 'metal',
 ];
-const DOW_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
-const dowOf = (iso) => new Date(iso + 'T00:00:00').getDay();
 
 // ---- areas: ページタイトルの町名列挙を ABR 町字マスターで丁目へ展開する ----
 

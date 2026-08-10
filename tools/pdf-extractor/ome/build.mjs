@@ -52,11 +52,6 @@ const CAT_NOTE = {
   beverage_can: 'カン。同じ日に「ガラス」(びん以外のガラス製品) も収集される',
   glass_bottle: 'ビン。同じ日に「陶磁器」も収集される',
 };
-const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
-const dowOf = (iso) => new Date(iso + 'T00:00:00').getDay();
-// weekly と認めるのに許す「停止で欠けた回数」の上限 (割合)。隔週・月1 のリズムを
-// 「毎週 + 大半をキャンセル」と表現してしまわないための歯止め (武蔵野と同じ)。
-const WEEKLY_STOP_TOLERANCE = 0.1;
 
 const data = JSON.parse(readFileSync(join(HERE, 'cache', 'extracted.json'), 'utf8'));
 
