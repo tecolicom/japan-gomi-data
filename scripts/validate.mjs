@@ -80,7 +80,7 @@ for (const { handle, dir } of handles) {
     }
   }
 
-  // facts (任意。読み物断片 — schema 検証 + id 一意)
+  // facts (任意。読み物断片 — schema 検証 + id 一意 + 出典パスの実在)
   const factsPath = join(dir, 'facts.yaml');
   if (existsSync(factsPath)) {
     const facts = loadYaml(factsPath);
@@ -90,6 +90,14 @@ for (const { handle, dir } of handles) {
       for (const f of facts.facts) {
         if (ids.has(f.id)) fail(`${handle}/facts.yaml`, `fact id 重複 "${f.id}"`);
         ids.add(f.id);
+        // 出典がリポジトリ内パスなら実在を確かめる。スキーマ移行 (年ディレクトリ →
+        // 収録期間ディレクトリ) で 33 件が黙って壊れていたため検査を足した。
+        // URL は到達性を確かめない (ネットワークに依存させない)。ics/ は生成物で
+        // .gitignore 対象、かつ CI は npm test → build:ics の順なので対象外。
+        for (const s of f.sources ?? []) {
+          if (/^https?:\/\//.test(s) || s.startsWith('ics/')) continue;
+          if (!existsSync(join(ROOT, s))) fail(`${handle}/facts.yaml`, `fact "${f.id}" の出典パスが存在しません: ${s}`);
+        }
       }
     }
   }
