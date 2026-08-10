@@ -42,8 +42,12 @@ make ics                  .ics と stats を生成
   作らずに `survey.yaml` だけ残して終わる。それは失敗ではなく正しい完走。
 - **未対応の表記は throw する。** 黙って読み飛ばさない。
 - **`Date.now()` を使わない。** 日付は環境変数 (`EXTRACTED_AT`) で渡す。出力を決定的に保つため。
-- **生成ファイルを手で編集しない。** `meta.yaml` / `taxonomy.yaml` / `course-*.yaml` は
-  build が作る。直したいときは生成器を直して `make regen` する。
+- **生成ファイルを手で編集しない。** その extractor が実際に出力しているファイルは
+  build が作るので、直したいときは生成器を直して `make regen` する。
+  `course-*.yaml` は全 extractor が生成するが、`meta.yaml` / `taxonomy.yaml` は
+  生成しない extractor もある (`tools/_template/build.mjs` を含む) — その場合はそのファイルが
+  手書きの正典であり、`make regen` の比較対象にも入らない。迷ったら生成器 (`build.mjs`) を読んで
+  そのファイルを書いているか確認する。
   (2026-08-10 に手編集が 3 件見つかり、再生成で消えるところだった)
 - **`git add -A` を使わない。** 同一作業ツリーを別セッションが使うことがある。
   コミットは必ずファイルを指定する。

@@ -53,16 +53,9 @@
 ## 2. 実装 (tools/_lib を使う)
 
 `tools/_template/` を `tools/<形式>-extractor/<handle>/` にコピーして埋める。
-共通部品 (`tools/_lib/`) にあるものを再実装しない:
-
-| 部品 | 提供 |
-|---|---|
-| jp.mjs | 曜日・第n回目の日本語パース、町名正規化 |
-| schedule.mjs | categoriesOn 展開 (正典)、署名キー、年末 overrides |
-| emit.mjs | コース畳み込み、course YAML 出力 (フィールド順統一) |
-| fetch.mjs | キャッシュつき取得 (encoding 対応) |
-| verify.mjs | 通年 diff、rule of three、層化サンプリング |
-| registry.mjs | レジストリ lookup |
+共通部品 (`tools/_lib/`) にあるものを再実装しない — 一覧は `AGENTS.md`「共通部品」の表を見る。
+実日付から weekly / monthly_specific の規則を導くときの `classify.mjs`、
+ABR 町字マスターを引く `abr.mjs` も含めてそこが正典。
 
 規約:
 - 「第n」は全都市「その月 n 回目の該当曜日」(第n週ではない)。頻度が季節変動する品目 (調布のペット等) は

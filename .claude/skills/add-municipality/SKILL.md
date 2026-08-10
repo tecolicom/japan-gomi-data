@@ -101,6 +101,9 @@ Phase 1 で宣言した独立ソースと突き合わせる。
 
 ## Phase 4: 仕上げ
 
+自分の extractor が `meta.yaml` / `taxonomy.yaml` を生成するか (`build.mjs` を読んで確認する) を
+先に決める。生成しないなら、そのファイルは手書きが正典になる (`AGENTS.md` の不変条件を見る)。
+
 1. `meta.yaml` の notes に運用ルール・年末年始・検証・**確率的信頼度**を書く
    (rule of three。N の数え方は `docs/opendata-sources.md`「検証の考え方」§1 を見る)
 2. `taxonomy.yaml` は `schema/categories.yaml` の部分集合 + ラベル override
