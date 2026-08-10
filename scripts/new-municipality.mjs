@@ -100,17 +100,14 @@ if (existsSync(toolDir)) {
   mkdirSync(toolDir, { recursive: true });
   const tpl = join(ROOT, 'tools', '_template');
   for (const f of readdirSync(tpl).filter((f) => statSync(join(tpl, f)).isFile())) {
+    // 置換は定数の宣言行だけを狙う。source: ブロックの CHANGEME (edition_ja / source_url /
+    // extracted_by / verified_by) は一次ソースを調べてから人が埋める欄なので、
+    // 埋め忘れに気づけるよう CHANGEME のまま残す。
     const body = readFileSync(join(tpl, f), 'utf8')
-      .replaceAll("'CHANGEME'", `'${handle}'`)
-      .replaceAll('CHANGEME', handle)
-      .replaceAll('2026-04--2027-03', period);
+      .replaceAll("const HANDLE = 'CHANGEME';", `const HANDLE = '${handle}';`)
+      .replaceAll("const PREF = 'CHANGEME';", `const PREF = '${pref}';`)
+      .replaceAll("const PERIOD = '2026-04--2027-03';", `const PERIOD = '${period}';`);
     writeFileSync(join(toolDir, f), body);
-  }
-  // PREF は handle 置換で潰れるので個別に直す
-  for (const f of ['build.mjs', 'verify.mjs']) {
-    const p = join(toolDir, f);
-    if (!existsSync(p)) continue;
-    writeFileSync(p, readFileSync(p, 'utf8').replaceAll(`const PREF = '${handle}'`, `const PREF = '${pref}'`));
   }
   writeFileSync(join(toolDir, '.gitignore'),
     '# fetch で再取得できる一次ソースのスナップショット (他の extractor と同様に非追跡)\n' +
