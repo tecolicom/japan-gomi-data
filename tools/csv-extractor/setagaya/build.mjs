@@ -1,4 +1,4 @@
-// 世田谷区オープンデータ CSV → municipalities/tokyo/setagaya/2026/course-*.yaml
+// 世田谷区オープンデータ CSV → municipalities/tokyo/setagaya/<収録期間>/course-*.yaml
 //
 // 検証を 3 段構えで build に内蔵する (どれか 1 つでも崩れたら中断):
 //   1. CSV 118 行 と 配布ページ 416.html の HTML 表 118 行 を全行突合

@@ -28,7 +28,7 @@ import yaml
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.path.join(HERE, "cache", "gomi.csv")
-COURSE_DIR = os.path.normpath(os.path.join(HERE, "../../../municipalities/tokyo/arakawa/2026"))
+COURSE_DIR = os.path.normpath(os.path.join(HERE, "../../../municipalities/tokyo/arakawa/2026-04--2027-03"))
 
 DAY_JA = {"日": "SU", "月": "MO", "火": "TU", "水": "WE", "木": "TH", "金": "FR", "土": "SA"}
 # date.weekday(): 月=0 … 日=6

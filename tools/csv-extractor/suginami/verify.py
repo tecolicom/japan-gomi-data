@@ -19,7 +19,7 @@ import pdf_calendar
 import booklet
 
 HERE = Path(__file__).parent
-OUT = HERE / '../../../municipalities/tokyo/suginami/2026'
+OUT = HERE / '../../../municipalities/tokyo/suginami/2026-04--2027-03'
 CACHE = HERE / 'cache'
 
 DAY_TO_WD = {'MO': 0, 'TU': 1, 'WE': 2, 'TH': 3, 'FR': 4, 'SA': 5, 'SU': 6}

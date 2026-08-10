@@ -20,7 +20,7 @@ import yaml
 import pdf_calendar
 
 HERE = Path(__file__).parent
-OUT = HERE / '../../../municipalities/tokyo/tokyo-nakano/2026'
+OUT = HERE / '../../../municipalities/tokyo/tokyo-nakano/2026-04--2027-03'
 CACHE = HERE / 'cache'
 
 CHIP_TO_CATS = {

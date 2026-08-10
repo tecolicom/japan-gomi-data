@@ -1,4 +1,4 @@
-// 荒川区配布 CSV → municipalities/tokyo/arakawa/2026/course-*.yaml
+// 荒川区配布 CSV → municipalities/tokyo/arakawa/<収録期間>/course-*.yaml
 //
 // 1. cache/gomi.csv (2,249 行 = 地区×丁目×番地・号) を rules へ変換。
 // 2. 同一日程の行をシグネチャで畳み込みコース採番 (中野・川崎と同方式)。

@@ -1,4 +1,4 @@
-// 品川区 ODP CSV → municipalities/tokyo/shinagawa/2026/course-*.yaml
+// 品川区 ODP CSV → municipalities/tokyo/shinagawa/<収録期間>/course-*.yaml
 //
 // 3 経路を突合してから出力する:
 //   A. CSV  (日本語ラベル "第2木・第4木" を解釈)          … parse.mjs
