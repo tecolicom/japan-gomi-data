@@ -28,7 +28,7 @@
 | 出発点 | survey が無い自治体も対象。ゼロから探索する |
 | 戻し方 | **PR 一本**。submodule は採らない (下記) |
 | 貢献経路 | エージェント / 手書き / 自治体公式 の 3 つを対等に扱う |
-| 指示ファイル | `AGENTS.md` が実体、`CLAUDE.md` は symlink |
+| 指示ファイル | `AGENTS.md` が実体、`CLAUDE.md` は `@AGENTS.md` の 1 行 |
 | 手順の置き場 | 知識は `docs/playbook.md`、進行管理は skill |
 
 ### submodule を採らない理由
@@ -49,7 +49,7 @@ facts 出典パス切れ 33 件はリポジトリ横断では検出できず、`
 | ファイル | 目安 | 中身 | 読者 |
 |---|---|---|---|
 | `AGENTS.md` | 80 行 | 事実と不変条件。データの単位、触ってよい場所、コマンド、禁止事項、次に読むもの | エージェント |
-| `CLAUDE.md` | — | `AGENTS.md` への symlink | Claude Code |
+| `CLAUDE.md` | 1 行 | `@AGENTS.md` (公式の import 構文) | Claude Code |
 | `CONTRIBUTING.md` | 60 行 | 貢献の入口。3 経路と各々の最低条件。**手元だけで使う導線を先頭に置く** | 人間 (初見) |
 | `.claude/skills/add-municipality/SKILL.md` | 100 行 | 進行管理。順序・停止点・承認の取り方・完了条件・撤退条件 | Claude Code |
 | `Makefile` | 40 行 | 人間向けの入口。`make help` で一覧 | 人間 |
@@ -57,9 +57,12 @@ facts 出典パス切れ 33 件はリポジトリ横断では検出できず、`
 | `scripts/check-regen.mjs` | 60 行 | 再生成して差分ゼロを確認 | 全経路 |
 | `scripts/build-coverage.mjs` | 60 行 | `docs/coverage.md` を生成 | CI |
 
-`CLAUDE.md` は symlink にする。公式ドキュメントが認めている方法で
-(`ln -s AGENTS.md CLAUDE.md`)、`@AGENTS.md` の import と違い**実体が 1 つになる**ので
-drift が構造的に起きない。Windows は対象外とする判断による (symlink に管理者権限が要るため)。
+`CLAUDE.md` は `@AGENTS.md` の 1 行にする。Claude Code が読むのは `CLAUDE.md` で
+`AGENTS.md` ではないが、公式ドキュメントが「既に `AGENTS.md` を使うリポジトリでは
+`CLAUDE.md` から import して両方のツールが同じ指示を読むようにせよ」と案内している
+import 構文がこれ。**内容の実体は `AGENTS.md` 側だけ**なので drift しない。
+symlink (`ln -s AGENTS.md CLAUDE.md`) も公式に認められた方法だが、
+普通のテキストファイルで済むほうが環境依存が少ないため import を採る。
 
 ### 変更
 
@@ -223,7 +226,7 @@ CI が bot コミットする方式 (`next-edition-status.md` の前例) では�
 
 ## 非目標
 
-- Windows 対応 (symlink を使うため)
+- Windows での動作確認 (Makefile と shell 前提のため)
 - CI での build/verify 実行 (cache と一次ソース取得が要るため。ローカルゲートに留める)
 - submodule / 分散リポジトリ運用
 - 語彙 (`schema/categories.yaml`) の自動追加 — 上流の判断として残す
