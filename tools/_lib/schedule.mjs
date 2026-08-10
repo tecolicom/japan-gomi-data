@@ -55,6 +55,15 @@ export function isUnknown(isoKey, unknownPeriods) {
   return (unknownPeriods || []).some((u) => iso(u.from) <= isoKey && isoKey <= iso(u.to));
 }
 
+// 収録期間の全日付を iso 文字列で返す (収集の有無によらず 1 日ずつ)。
+// 「カレンダーが期間を欠けなく覆っているか」の検査に使う。
+export function periodDates(period) {
+  const { start, end } = periodBounds(period);
+  const out = [];
+  for (let d = new Date(start); d < end; d = new Date(d.getTime() + 86400000)) out.push(isoDate(d));
+  return out;
+}
+
 // 収録期間を日毎に展開: Map<iso, string[]>
 // (収集なしの日と unknown_periods 内の日は載せない)
 export function expandRange(period, rules, overrides, unknownPeriods) {

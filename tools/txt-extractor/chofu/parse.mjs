@@ -53,14 +53,7 @@ export function parseCalendar(text) {
   return events;
 }
 
-// 会計年度の全日付 (FY開始4/1 〜 翌3/31) を iso 文字列で返す。
-export function fiscalYearDates(fy) {
-  const out = [];
-  const start = new Date(fy, 3, 1), end = new Date(fy + 1, 3, 1);
-  for (let d = new Date(start); d < end; d = new Date(d.getTime() + 86400000)) {
-    out.push(`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`);
-  }
-  return out;
-}
+// 期間の全日付は tools/_lib/schedule.mjs の periodDates() を使う
+// (会計年度を仮定する fiscalYearDates は収録期間ディレクトリへの移行で不要になった)。
 
 export const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
