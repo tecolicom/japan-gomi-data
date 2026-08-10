@@ -82,8 +82,11 @@ function nextTokens(period, editionJa) {
   const nextYear = endMonth === 12 ? endYear + 1 : endYear;
   const tokens = [String(nextYear)];
   // 令和 N 年度 → N+1。edition_ja が無い自治体は西暦から計算する (令和 = 西暦 - 2018)。
-  const m = editionJa && /令和\s*(\d+)/.exec(editionJa);
-  const nextReiwa = m ? Number(m[1]) + 1 : nextYear - 2018;
+  // 版名が 2 つの元号年にまたがることがある (西東京「令和7年10月〜令和8年9月版」)。
+  // 先頭を取ると現行版の後半の年をそのまま「次の版」の印にしてしまい、現行版の
+  // リンク自身に一致して誤検出になる。最後の一致を使う。
+  const ms = editionJa ? [...editionJa.matchAll(/令和\s*(\d+)/g)] : [];
+  const nextReiwa = ms.length ? Number(ms.at(-1)[1]) + 1 : nextYear - 2018;
   tokens.push(`令和${nextReiwa}`, `令和 ${nextReiwa}`, `R${String(nextReiwa).padStart(2, '0')}`, `R${nextReiwa}`);
   return { nextYear, nextReiwa, tokens };
 }
