@@ -5,6 +5,9 @@
   "license": "CC-BY-4.0",
   "private": false,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "test": "node scripts/validate.mjs && node scripts/check-tools.mjs && eslint tools scripts && node --test tools/_lib/lib.test.mjs",

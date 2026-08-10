@@ -5,11 +5,16 @@
 
 ## まず動かす
 
+**Node.js 20 以上**が要ります (CI は 22。20.19 と 22.22 で全ゲートの通過を確認しています)。
+
 ```bash
-make setup    # 依存を入れる
-make test     # 全ゲートが通ることを確認
-make ics      # .ics を生成する (ics/<handle>/<course>.ics)
+make setup    # 依存を入れる      … 1 秒 (初回はダウンロードでもう少し)
+make test     # 全ゲートが通る    … 4 秒
+make ics      # .ics を生成する   … 2 秒 (ics/<handle>/<course>.ics が 1,700 件ほど)
 ```
+
+いずれも待つほどの時間はかかりません。時間がかかるのは収録作業で使う
+`make regen` (全自治体) と、一次ソースの取得だけです — それぞれの目安は後述します。
 
 ## 自分の町を追加する
 
@@ -41,10 +46,13 @@ make new HANDLE=<handle> PREF=<都道府県romaji> KIND=<html|pdf|csv|txt|api>
 ## 通すべきゲート
 
 ```bash
-make test                    # schema + extractor 静的検査 + ESLint + 単体テスト
-make regen HANDLE=<handle>   # 再生成して差分ゼロ (PR を出すなら必須)
+make test                    # schema + extractor 静的検査 + ESLint + 単体テスト … 4 秒
+make regen HANDLE=<handle>   # 再生成して差分ゼロ (PR を出すなら必須)      … 数秒
 make verify HANDLE=<handle>  # 独立照合 (verify.mjs がある場合)
 ```
+
+`HANDLE` を省くと収録済み全 33 自治体を検査します (**6 分ほど**かかります)。
+自分の自治体を足すだけなら `HANDLE` を指定すれば数秒で済みます。
 
 `make regen` は cache と一次ソースが要るので CI では回りません。**手元で必ず通してください。**
 差分が出たら、まず cache を作り直してください。それでも出るなら、
