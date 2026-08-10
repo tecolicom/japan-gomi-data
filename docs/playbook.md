@@ -53,16 +53,9 @@
 ## 2. 実装 (tools/_lib を使う)
 
 `tools/_template/` を `tools/<形式>-extractor/<handle>/` にコピーして埋める。
-共通部品 (`tools/_lib/`) にあるものを再実装しない:
-
-| 部品 | 提供 |
-|---|---|
-| jp.mjs | 曜日・第n回目の日本語パース、町名正規化 |
-| schedule.mjs | categoriesOn 展開 (正典)、署名キー、年末 overrides |
-| emit.mjs | コース畳み込み、course YAML 出力 (フィールド順統一) |
-| fetch.mjs | キャッシュつき取得 (encoding 対応) |
-| verify.mjs | 通年 diff、rule of three、層化サンプリング |
-| registry.mjs | レジストリ lookup |
+共通部品 (`tools/_lib/`) にあるものを再実装しない — 一覧は `AGENTS.md`「共通部品」の表を見る。
+実日付から weekly / monthly_specific の規則を導くときの `classify.mjs`、
+ABR 町字マスターを引く `abr.mjs` も含めてそこが正典。
 
 規約:
 - 「第n」は全都市「その月 n 回目の該当曜日」(第n週ではない)。頻度が季節変動する品目 (調布のペット等) は
@@ -101,7 +94,7 @@
 
 ## 3. 照合 (docs/opendata-sources.md「検証の考え方」に従う)
 
-- 独立ソースがあれば `expandFiscalYear` + `diffYear` で機械照合。日付レベル > 曜日レベル。
+- 独立ソースがあれば `schedule.mjs` の `expandRange` + `verify.mjs` の `diffRange` で機械照合。日付レベル > 曜日レベル。
 - **高コスト照合 (目視転記など) は全数をやらない**: 目標上限 p* を決め n≈3/p* 件 (5%なら60件) を
   層化サンプリング (`sampleStratified` + 例外的な行を追加) → ゼロ不一致で打ち切り。不一致 1 件で昇格。
 - 不一致はベイズ的に裁定 (印刷物側の誤植事前確率が高い。同パターン隣接町・他表と突き合わせ)、
@@ -124,7 +117,7 @@
   docs/・schema/・他自治体・git 操作は禁止 (統合担当が一元処理)。
 - 指示に含める確定事項: handle (レジストリで引いた値)、**survey.yaml の参照** (一次ソース・罠が集約済み)、
   カテゴリ対応の当たり、運用ルール、本プレイブックと手本自治体の参照。
-- 完了報告の様式: コース数・area 数 / 照合統計 (N・不一致内訳・確率的信頼度) / npm test 結果 /
-  docs 追記案 / 未解決事項。
 - 統合担当はレビューで **報告を鵜呑みにせず追試** する: verify 再実行、抜き取りで一次ソースを直接見る、
   build 再現、npm test。その後 docs 統合 → ics 生成 → 自治体単位で commit。
+- 貢献者 1 人が単独で回すときの進行管理 (停止点・承認する 4 項目・撤退条件) は
+  `.claude/skills/add-municipality/SKILL.md` にある。本節は統括者が複数を並行させるときの話。

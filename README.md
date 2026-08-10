@@ -10,6 +10,17 @@
 - 自治体キー: **handle**(lg.jp ドメインのラベルに準拠、全国一意。規則は下記)。
   ディレクトリは都道府県で束ねる: `municipalities/<都道府県>/<handle>/`
 
+## はじめに
+
+- **自分の町を追加したい** → [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- **エージェント (Claude Code / Codex) で作業する** → [`AGENTS.md`](AGENTS.md)
+- **収録の手順と判断基準** → [`docs/playbook.md`](docs/playbook.md)
+
+```bash
+make setup && make test    # 動作確認
+make help                  # コマンド一覧
+```
+
 ## handle の命名規則
 
 handle は自治体の **lg.jp ドメイン**(`<種別>.<値>.lg.jp`、J-LIS/JPRS 管理)から機械的に決める。自前では採番しない(一意性は lg.jp 側の先願主義が保証する)。

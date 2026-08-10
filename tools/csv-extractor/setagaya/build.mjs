@@ -134,7 +134,7 @@ const docs = courses.map(({ no, rules, rows }) => courseDoc({
   areas: rows.map(areaOf).sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja')),
   period: PERIOD,
   source: {
-    edition_ja: '令和8年度',
+    edition_ja: '令和8年版',
     source_url: CSV_URL,
     pdf_url: `https://www.city.setagaya.lg.jp/documents/27859/no${no}.pdf`,
     extracted_at: EXTRACTED_AT,

@@ -161,6 +161,9 @@ function buildMunicipality(handle, muni) {
       city: handle, course: dist.course, courseNameJa: dist.name_ja, areas: dist.areas,
       period: CONF.period,
       source: {
+        // edition_ja の根拠: cache/01.pdf ヘッダの表記「令和8年度・家庭用」(pdftotext で確認)。
+        // period (収録期間) とは別に自治体自身の呼称を持つフィールドなので period から導出しない。
+        edition_ja: CONF.fiscal_year_ja,
         pdf_url: dist.pdf_url, extracted_at: EXTRACTED_AT, extracted_by: 'claude-opus-4-8', confidence: 0.9,
         verified_by: `Claude(${CONF.union_ja}の雑誌型ごみカレンダーPDFを色ベース抽出(tools/pdf-extractor/chichibu-koiki)。組合共通テンプレートの四隅座標+暦でセル座標を決めセル背景色で品目判定。実日付からweekly/monthly_specificを地区ごとに導出し、規則の再展開が抽出結果と完全一致することを自己検証。目視レビューはサンプル地区)`,
       },
