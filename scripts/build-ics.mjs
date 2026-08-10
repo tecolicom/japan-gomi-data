@@ -55,6 +55,9 @@ for (const { handle, dir, pref } of handles) {
         courseLabel: `${m.course} ${m.course_name_ja ?? ''}`.trim(),
         dtstamp: `${iso(m.source.extracted_at).replace(/-/g, '')}T000000Z`,
         course: m.course, courseNameJa: m.course_name_ja ?? '',
+        // 収録期間と出典 YAML のパス。期間は自治体ごとに違うので画面に出す
+        // (course 値は course-<値>.yaml のファイル名とそのまま一致する)
+        period: m.period, yamlPath: `municipalities/${pref}/${handle}/${entry}/${f}`,
         areas: (m.areas || []).map((a) => a.name), events: [],
         // 照合用の一次ソース URL (コース別 PDF を優先。無ければ自治体の掲載ページ)
         sourceUrl: m.source?.pdf_url || m.source?.source_url || meta.source?.schedule_url || '',
@@ -108,6 +111,7 @@ for (const { handle, dir, pref } of handles) {
     writeFileSync(join(outDir, `${slug}.json`), JSON.stringify({
       city: meta.name_ja, pref, handle,
       course: rec.course, course_name_ja: rec.courseNameJa, areas: rec.areas,
+      period: rec.period, yaml_path: rec.yamlPath,
       source_url: rec.sourceUrl,
       labels: Object.fromEntries(usedCats.map((c) => [c, {
         label: taxOv?.[c]?.label ?? vocab[c]?.label ?? c,

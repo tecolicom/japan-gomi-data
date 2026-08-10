@@ -58,6 +58,16 @@ td.empty { background: var(--panel); }
   font-size: 11.5px; line-height: 1.5; padding: 0 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .legend { display: flex; gap: 8px 14px; flex-wrap: wrap; margin: 16px 0 0; font-size: 13px; }
 .legend .chip { display: inline-block; min-width: 3.2em; margin-right: 4px; }
+/* 収録期間 — 自治体ごとに違う (4月起点/10月起点/暦年/半期)。範囲外は展開していない */
+.period { margin: 2px 0 0; font-size: 12.5px; color: var(--sub); }
+/* 収集の有無が一次ソースから確定できない区間。「収集なし」ではなく「不明」 */
+.unknote { margin: 12px 0 0; padding: 9px 11px; border: 1px solid #d6a300; border-radius: 6px;
+  background: rgba(214, 163, 0, .09); font-size: 13px; line-height: 1.5; }
+.unknote b { font-weight: 600; }
+.unknote .why { color: var(--sub); font-size: 12.5px; }
+td.unk { background: repeating-linear-gradient(135deg, transparent, transparent 4px,
+  rgba(214, 163, 0, .16) 4px, rgba(214, 163, 0, .16) 8px); }
+td.unk .dnum::after { content: '⚠'; margin-left: 3px; font-size: 11px; color: #b98a00; }
 footer { margin-top: 34px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--sub); }
 #err { color: var(--sun); }
 </style>
@@ -68,12 +78,16 @@ footer { margin-top: 34px; padding-top: 12px; border-top: 1px solid var(--line);
   <p class="crumb"><a href="./">japan-gomi-data</a> › 収集カレンダー</p>
   <h1 id="title">読み込み中…</h1>
   <p class="areas" id="areas"></p>
+  <p class="period" id="period" hidden></p>
   <div class="acts" id="acts" hidden>
     <a id="webcal" href="#">カレンダーに追加</a>
     <button class="ghost" id="copy">購読 URL をコピー</button>
     <a id="source" class="ghost" href="#" target="_blank" rel="noopener" hidden>元データを見る</a>
+    <a id="yaml" class="ghost" href="#" target="_blank" rel="noopener" hidden>収録データ (YAML)</a>
   </div>
 </header>
+
+<div id="unknotes"></div>
 
 <p id="err" hidden></p>
 
@@ -116,11 +130,52 @@ if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(q)) {
     s.textContent = /\.pdf(\?|$)/i.test(d.source_url) ? '元PDFを見る' : '元データを見る';
     s.hidden = false;
   }
+  if (d.yaml_path) {
+    const y = document.getElementById('yaml');
+    y.href = `https://github.com/tecolicom/japan-gomi-data/blob/main/${d.yaml_path}`;
+    y.hidden = false;
+  }
   document.getElementById('acts').hidden = false;
 
+  // 収録期間。一次ソースが裏付ける範囲そのもので、自治体ごとに異なる
+  // (4月起点 / 10月起点 / 暦年 / 半期)。この範囲の外は展開していない。
+  const per = parsePeriod(d.period);
+  if (per) {
+    document.getElementById('period').textContent =
+      `収録期間: ${per.fromJa}〜${per.toJa} (この範囲の外は一次ソースの裏付けが無いため収録していません)`;
+    document.getElementById('period').hidden = false;
+  }
+
+  // 収集の有無が確定できない区間。黙って空白にすると「収集なし」に見えるため明示する。
+  const unknown = d.unknown || [];
+  document.getElementById('unknotes').innerHTML = unknown.map((u) =>
+    `<p class="unknote">⚠️ <b>${esc(jaDate(u.from))}〜${esc(jaDate(u.to))} は収集日が確定していません。</b>` +
+    `自治体の告知をご確認ください。<br><span class="why">${esc(u.reason)}</span></p>`).join('');
+  const isUnknown = (iso) => unknown.some((u) => u.from <= iso && iso <= u.to);
+
+  function parsePeriod(p) {
+    const m = /^(\d{4})-(\d{2})--(\d{4})-(\d{2})$/.exec(p || '');
+    return m ? { fromJa: `${m[1]}年${+m[2]}月`, toJa: `${m[3]}年${+m[4]}月` } : null;
+  }
+  function jaDate(iso) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+    return m ? `${m[1]}年${+m[2]}月${+m[3]}日` : iso;
+  }
+
   const days = d.days;
-  const months = [...new Set(Object.keys(days).map((k) => k.slice(0, 7)))].sort();
+  // 表示する月は収録期間から作る。収集日の有無から導くと、収集ゼロの月や
+  // 丸ごと unknown の月が黙って抜け落ちてしまう。
+  const months = monthsOf(d.period) || [...new Set(Object.keys(days).map((k) => k.slice(0, 7)))].sort();
   if (!months.length) return err('収集日データがありません。');
+
+  function monthsOf(p) {
+    const m = /^(\d{4})-(\d{2})--(\d{4})-(\d{2})$/.exec(p || '');
+    if (!m) return null;
+    const out = [];
+    for (let y = +m[1], mo = +m[2]; y < +m[3] || (y === +m[3] && mo <= +m[4]); mo === 12 ? (mo = 1, y++) : mo++)
+      out.push(`${y}-${String(mo).padStart(2, '0')}`);
+    return out;
+  }
   // 凡例
   document.getElementById('legend').innerHTML = Object.values(d.labels).map((l) =>
     `<span><span class="chip" style="background:${l.color}">${esc(l.short)}</span>${esc(l.label)}</span>`).join('');
@@ -146,7 +201,9 @@ if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(q)) {
       const iso = `${y}-${String(m).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
       const dow = (first.getDay() + day - 1) % 7;
       const cats = days[iso] || [];
-      html += `<td><div class="dnum ${dow === 0 ? 'sun' : dow === 6 ? 'sat' : ''}">${day}</div>` +
+      const unk = isUnknown(iso);
+      html += `<td${unk ? ' class="unk" title="収集日が確定していません。自治体の告知をご確認ください"' : ''}>` +
+        `<div class="dnum ${dow === 0 ? 'sun' : dow === 6 ? 'sat' : ''}">${day}</div>` +
         (cats.length ? `<div class="chips">${cats.map((c) => {
           const l = d.labels[c] || { short: c, label: c, color: '#888' };
           return `<span class="chip" style="background:${l.color}" title="${esc(l.label)}">${esc(l.short)}</span>`;
