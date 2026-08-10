@@ -42,7 +42,7 @@ for i, p in enumerate(pdf.pages):
 " <pdf>
 ```
 
-罫線 (`lines`) が生きていればグリッドは座標復元でき、品目が図版でも**塗り色**で判定できる。
+判定の考え方 (罫線・塗り色で図版から読み取る方法) は `docs/playbook.md` §1 を見る。
 
 ### 停止して報告する 4 項目
 
@@ -102,7 +102,7 @@ Phase 1 で宣言した独立ソースと突き合わせる。
 ## Phase 4: 仕上げ
 
 1. `meta.yaml` の notes に運用ルール・年末年始・検証・**確率的信頼度**を書く
-   (rule of three。N は「1 つの誤りで壊れる最小単位」で数える)
+   (rule of three。N の数え方は `docs/opendata-sources.md`「検証の考え方」§1 を見る)
 2. `taxonomy.yaml` は `schema/categories.yaml` の部分集合 + ラベル override
 3. `survey.yaml` に「【収録済 YYYY-MM-DD】…」を追記する
 4. 通す。
