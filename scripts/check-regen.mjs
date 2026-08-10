@@ -70,6 +70,23 @@ function directExtractors() {
 //   2. { <handle>: { ... }, _comment: '...' }  (フラット。_ 始まりのキーは無視)
 //      (例: saiseibu-kumiai。cache/<handle>-records.json を読む生成器)
 // どちらの形かは config.json の中身から判定する (対応表を手で書かない)。
+// config.json が読めない異常時に、「本来この extractor がカバーするはずだった
+// (=黙殺すると『データは手書き』という偽の理由で skip されるはずだった) 自治体」を
+// エラーメッセージに含めるための最善努力の推測。config.json の名前とカバーする handle
+// (例: chichibu-koiki ⇔ chichibu/yokoze-town/…) には命名上の関係が無いことがあるので、
+// 直接読めないなら git 管理下の最終正常版 (HEAD) を読んで宣言を辿る。
+function guessAffectedHandles(dir) {
+  try {
+    const raw = execFileSync('git', ['show', `HEAD:${dir}/config.json`], { cwd: ROOT, encoding: 'utf8' });
+    const conf = JSON.parse(raw);
+    const muniMap = (conf && typeof conf.municipalities === 'object' && conf.municipalities) || conf;
+    if (!muniMap || typeof muniMap !== 'object') return [];
+    return Object.keys(muniMap).filter((h) => !h.startsWith('_'));
+  } catch {
+    return [];
+  }
+}
+
 function sharedCoverage(direct) {
   const out = new Map(); // handle -> { dir, kind, buildArgs, hasCache }
   for (const kind of readdirSync(join(ROOT, 'tools')).filter((k) => k.endsWith('-extractor'))) {
@@ -77,13 +94,34 @@ function sharedCoverage(direct) {
       const dir = join('tools', kind, name);
       if (!existsSync(join(ROOT, dir, 'build.mjs'))) continue;
       if (municipalityDir(name)) continue; // 直接対応済み
+
+      // ここに到達した時点で「build.mjs はあるが単独 handle とは一致しない共通 extractor
+      // 候補」であることが確定している。その候補で宣言 (config.json) が読めないのは
+      // 異常事態であり、黙って飛ばすと配下の自治体が「生成器が無い (データは手書き)」という
+      // 事実と異なる理由で skip される (AGENTS.md の不変条件「未対応の表記は throw する」
+      // に反する: この検査は生成物の手編集を見つける唯一の手段なので、壊れた設定を
+      // 静かに無視して「検査しました」と見せるのが最も避けたい壊れ方)。
+      const guess = guessAffectedHandles(dir);
+      const affected = guess.length
+        ? `git HEAD の config.json から推測される影響先: ${guess.join(', ')} (黙殺すると「生成器が無い(データは手書き)」と誤表示されるところだった)`
+        : '影響先を推測できなかった (git HEAD にも読める config.json が無い)';
+
       const confPath = join(ROOT, dir, 'config.json');
-      if (!existsSync(confPath)) continue; // 宣言を読めるものだけを対象にできる
+      if (!existsSync(confPath)) {
+        throw new Error(`${dir}: build.mjs はあるが config.json が無く、対象 handle を宣言的に読めない。${affected}`);
+      }
 
       let conf;
-      try { conf = JSON.parse(readFileSync(confPath, 'utf8')); } catch { continue; }
-      const muniMap = (conf && typeof conf.municipalities === 'object' && conf.municipalities) || conf;
-      if (!muniMap || typeof muniMap !== 'object') continue;
+      try {
+        conf = JSON.parse(readFileSync(confPath, 'utf8'));
+      } catch (e) {
+        throw new Error(`${dir}/config.json の JSON パースに失敗した (${e.message})。${affected}`);
+      }
+      const isPlainObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
+      const muniMap = (isPlainObj(conf) && isPlainObj(conf.municipalities) && conf.municipalities) || conf;
+      if (!isPlainObj(muniMap)) {
+        throw new Error(`${dir}/config.json の形が想定外 (.municipalities オブジェクトにも、_ 始まり以外を handle として持つフラットオブジェクトにもならない: ${JSON.stringify(conf).slice(0, 80)})。${affected}`);
+      }
 
       for (const [handle, entry] of Object.entries(muniMap)) {
         if (handle.startsWith('_')) continue;
@@ -153,6 +191,7 @@ if (badOpt) {
   process.exit(1);
 }
 
+const collected = collectedHandles();
 const direct = directExtractors();
 const shared = sharedCoverage(direct);
 function resolveExtractor(handle) {
@@ -165,7 +204,7 @@ function resolveExtractor(handle) {
 }
 
 const explicit = args.length > 0;
-const handles = explicit ? args : collectedHandles();
+const handles = explicit ? args : collected;
 
 let checked = 0, skipped = 0, failed = 0;
 for (const handle of handles) {
