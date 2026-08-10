@@ -1,0 +1,66 @@
+name: next-editions
+
+# 収録済み自治体の一次ソースを見に行き、「次の版が公開されたか」を一覧に落とす。
+# 収録データの寿命 (period) が切れる前に気づくための仕組み。判定は候補出しまでで、
+# 収録そのものは人が判断する。
+#
+# 出力ファイルの git 履歴が、そのまま「どの自治体がいつ公開したか」の記録になる。
+
+on:
+  schedule:
+    # 毎週月曜 09:00 JST (= 00:00 UTC)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # webhook は job レベルで公開する。step 自身の env: は、その step の if: の評価時点では
+    # 参照できない (if が先に評価される) ため、step 側に置くと通知が常にスキップされる。
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+
+      - name: 一次ソースを確認
+        run: node scripts/check-new-editions.mjs
+
+      - name: 結果をジョブサマリに出す
+        run: |
+          {
+            echo '### 次の版の公開状況'
+            echo
+            sed -n '/## 公開を検出/,/^## /p' docs/next-edition-status.md | sed '$d'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 変化があればコミット
+        run: |
+          if git diff --quiet -- docs/next-edition-status.md; then
+            echo "状態に変化なし — コミットしない (毎週の空コミットで履歴を汚さない)"
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs/next-edition-status.md
+          git commit -m 'chore(watch): 次の版の公開状況を更新'
+          git push
+
+      # Discord への通知は「公開を検出」が出たときだけ。secret が無ければ黙って飛ばす。
+      - name: 検出時に Discord へ通知
+        if: ${{ env.DISCORD_WEBHOOK != '' }}
+        run: |
+          FOUND=$(sed -n '/## 公開を検出/,/^## /p' docs/next-edition-status.md | grep -c '^- \*\*' || true)
+          if [ "$FOUND" -eq 0 ]; then
+            echo "検出なし — 通知しない"
+            exit 0
+          fi
+          BODY=$(sed -n '/## 公開を検出/,/^## /p' docs/next-edition-status.md | sed '$d' | head -c 1500)
+          jq -n --arg c "🗑 次の版が公開された自治体があります ($FOUND 件)"$'\n\n'"$BODY" '{content: $c}' \
+            | curl -sS -X POST -H 'Content-Type: application/json' -d @- "$DISCORD_WEBHOOK"
