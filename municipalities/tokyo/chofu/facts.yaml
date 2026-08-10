@@ -46,5 +46,5 @@ facts:
       12/30 (水) へ前倒しされます。市のカレンダーに実際の日付で示されています。
     tags: [年末年始]
     sources:
-      - municipalities/tokyo/chofu/2026/course-1.yaml
+      - municipalities/tokyo/chofu/2026-04--2027-03/course-1.yaml
       - municipalities/tokyo/chofu/meta.yaml

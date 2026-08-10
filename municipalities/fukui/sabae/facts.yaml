@@ -19,7 +19,7 @@ facts:
     tags: [資源の中身, 分別体系]
     sources:
       - https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
-      - municipalities/fukui/sabae/2026/course-1.yaml
+      - municipalities/fukui/sabae/2026-04--2027-03/course-1.yaml
   - id: burnable-vs-resource-holiday
     title: 可燃は祝日も収集、資源は祝日は休み
     body: >-
@@ -46,5 +46,5 @@ facts:
       福井県のオープンデータに付いている読み仮名がもとになっています。
     tags: [地名の読み]
     sources:
-      - municipalities/fukui/sabae/2026/course-1.yaml
+      - municipalities/fukui/sabae/2026-04--2027-03/course-1.yaml
       - https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv

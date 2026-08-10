@@ -9,7 +9,7 @@ facts:
       入れ替わる、少し珍しい組み方です。
     tags: [収集頻度, 資源の中身]
     sources:
-      - municipalities/saitama/hanno/2026/course-A1.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-A1.yaml
       - https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
   - id: newyear-friday-shift
     title: 年始は金曜の資源サイクルが 1 週繰り下がる
@@ -19,8 +19,8 @@ facts:
       繰り下がる調整で、市のカレンダーも 1 月分は実日付で日程を書き換えて示しています。
     tags: [年末年始, 収集頻度]
     sources:
-      - municipalities/saitama/hanno/2026/course-A2.yaml
-      - municipalities/saitama/hanno/2026/course-A3.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-A2.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-A3.yaml
   - id: oversized-two-weekdays
     title: 粗大ごみは月 2 回、別々の曜日に分かれる
     body: >-
@@ -29,8 +29,8 @@ facts:
       同じ品目の収集日が曜日ごとに離れて置かれる形です。
     tags: [収集頻度]
     sources:
-      - municipalities/saitama/hanno/2026/course-A1.yaml
-      - municipalities/saitama/hanno/2026/course-B2.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-A1.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-B2.yaml
   - id: burnable-weekday-groups
     title: 可燃ごみの曜日が地区で月木組と火金組に分かれる
     body: >-
@@ -39,8 +39,8 @@ facts:
       引っ越すと可燃ごみの曜日ごと変わることになります。
     tags: [収集頻度, 町内の違い]
     sources:
-      - municipalities/saitama/hanno/2026/course-A1.yaml
-      - municipalities/saitama/hanno/2026/course-B1.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-A1.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-B1.yaml
   - id: yearend-explicit-dates
     title: 年末年始の休みを実日付で明記
     body: >-
@@ -49,4 +49,4 @@ facts:
       年末に「本来は第 5 火曜・紙布」といった注記が残る形です。
     tags: [年末年始]
     sources:
-      - municipalities/saitama/hanno/2026/course-A1.yaml
+      - municipalities/saitama/hanno/2026-04--2027-03/course-A1.yaml

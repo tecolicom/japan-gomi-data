@@ -17,7 +17,7 @@ facts:
       乾電池や蛍光管などの有害ごみに独立した収集日を設けず、一般ごみと同じ曜日にまとめる方式です。
     tags: [分別体系, 収集頻度]
     sources:
-      - municipalities/saitama/kawaguchi/2026/course-1.yaml
+      - municipalities/saitama/kawaguchi/2026-01--2026-12/course-1.yaml
       - municipalities/saitama/kawaguchi/taxonomy.yaml
   - id: ippan-gomi-name
     title: 家庭ごみを「一般ごみ」と呼ぶのは川口市だけ
@@ -47,7 +47,7 @@ facts:
       種類の違う品目を 2 つずつ組にして出す仕組みです。
     tags: [資源の中身, 分別体系]
     sources:
-      - municipalities/saitama/kawaguchi/2026/course-1.yaml
+      - municipalities/saitama/kawaguchi/2026-01--2026-12/course-1.yaml
       - municipalities/saitama/kawaguchi/taxonomy.yaml
   - id: yearend-separate-notice
     title: 年末年始の日程は毎年 12 月に別途告知

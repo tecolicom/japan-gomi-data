@@ -17,7 +17,7 @@ facts:
       一緒に出します。分けて出す市もある中で、びん・かん・スプレー缶が 1 日にまとまるのが特徴です。
     tags: [資源の中身, 分別体系]
     sources:
-      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/2026-04--2027-03/course-1.yaml
       - municipalities/saitama/tokorozawa/taxonomy.yaml
   - id: kaden-furugi-same-day
     title: 小型家電と古着・古布を同じ日に
@@ -26,7 +26,7 @@ facts:
       性質の違う品目ですが、所沢市では同じ日に出す組み合わせになっています。
     tags: [資源の中身]
     sources:
-      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/2026-04--2027-03/course-1.yaml
       - municipalities/saitama/tokorozawa/taxonomy.yaml
   - id: january-schedule-shift
     title: 1 月だけ日程が例月とずれる
@@ -36,7 +36,7 @@ facts:
       1 月分はこの表の実日付どおりに収集されます。
     tags: [年末年始]
     sources:
-      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/2026-04--2027-03/course-1.yaml
       - municipalities/saitama/tokorozawa/meta.yaml
   - id: holiday-obon-normal
     title: 祝日もお盆も通常どおり収集
@@ -46,4 +46,4 @@ facts:
     tags: [祝日運用]
     sources:
       - municipalities/saitama/tokorozawa/meta.yaml
-      - municipalities/saitama/tokorozawa/2026/course-1.yaml
+      - municipalities/saitama/tokorozawa/2026-04--2027-03/course-1.yaml

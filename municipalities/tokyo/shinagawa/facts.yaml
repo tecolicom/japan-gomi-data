@@ -48,8 +48,8 @@ facts:
     scope: "course:13"
     tags: [収集頻度, 町内の違い]
     sources:
-      - municipalities/tokyo/shinagawa/2026/course-13.yaml
-      - municipalities/tokyo/shinagawa/2026/course-25.yaml
+      - municipalities/tokyo/shinagawa/2026-04--2027-03/course-13.yaml
+      - municipalities/tokyo/shinagawa/2026-04--2027-03/course-25.yaml
   - id: csv-rdf-open-data
     title: 収集日データを CSV と RDF で二重公開している
     body: >-

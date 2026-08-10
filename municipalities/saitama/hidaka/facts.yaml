@@ -8,7 +8,7 @@ facts:
       出しそびれると次は 3 か月後になる、かなり低頻度の品目です。
     tags: [収集頻度]
     sources:
-      - municipalities/saitama/hidaka/2026/course-1.yaml
+      - municipalities/saitama/hidaka/2026-04--2027-03/course-1.yaml
       - https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
   - id: oversized-metal-bimonthly
     title: 粗大ごみと金属ごみは隔月で年 6 回
@@ -18,8 +18,8 @@ facts:
       地区によってどの月に回ってくるかが分かれています。
     tags: [収集頻度]
     sources:
-      - municipalities/saitama/hidaka/2026/course-1.yaml
-      - municipalities/saitama/hidaka/2026/course-5.yaml
+      - municipalities/saitama/hidaka/2026-04--2027-03/course-1.yaml
+      - municipalities/saitama/hidaka/2026-04--2027-03/course-5.yaml
   - id: bin-can-summer-boost
     title: びん・缶は夏だけ収集が増える
     body: >-
@@ -28,7 +28,7 @@ facts:
       同じ品目でも夏と冬で収集回数が変わります。
     tags: [収集頻度, 資源の中身]
     sources:
-      - municipalities/saitama/hidaka/2026/course-1.yaml
+      - municipalities/saitama/hidaka/2026-04--2027-03/course-1.yaml
   - id: pet-more-than-bin-can
     title: ペットボトルはびん・缶より収集回数が多い
     body: >-
@@ -37,7 +37,7 @@ facts:
       資源の中でも品目によって収集回数の差が大きいのが特徴です。
     tags: [資源の中身, 収集頻度]
     sources:
-      - municipalities/saitama/hidaka/2026/course-1.yaml
+      - municipalities/saitama/hidaka/2026-04--2027-03/course-1.yaml
   - id: one-sheet-timetable
     title: 全 20 コースの年間日程が 1 枚の表に
     body: >-

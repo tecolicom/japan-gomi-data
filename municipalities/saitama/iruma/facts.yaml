@@ -17,7 +17,7 @@ facts:
       まとめて出します。品目ごとに別の日を設けず、1 日に 4 種類を一度に回収する方式です。
     tags: [資源の中身, 分別体系]
     sources:
-      - municipalities/saitama/iruma/2026/course-1.yaml
+      - municipalities/saitama/iruma/2026-04--2027-03/course-1.yaml
       - https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf
   - id: burnable-three-times
     title: 可燃ごみは週 3 回
@@ -26,8 +26,8 @@ facts:
       週 2 回の市が多い中で回数が多く、生ごみをためこみにくい頻度になっています。
     tags: [収集頻度]
     sources:
-      - municipalities/saitama/iruma/2026/course-1.yaml
-      - municipalities/saitama/iruma/2026/course-7.yaml
+      - municipalities/saitama/iruma/2026-04--2027-03/course-1.yaml
+      - municipalities/saitama/iruma/2026-04--2027-03/course-7.yaml
   - id: yearend-as-missing-data
     title: 年末年始の休みは「データの空き」で表す
     body: >-
@@ -37,4 +37,4 @@ facts:
     tags: [年末年始, データ公開]
     sources:
       - municipalities/saitama/iruma/meta.yaml
-      - municipalities/saitama/iruma/2026/course-1.yaml
+      - municipalities/saitama/iruma/2026-04--2027-03/course-1.yaml

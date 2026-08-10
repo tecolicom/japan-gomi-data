@@ -9,7 +9,7 @@ facts:
     tags: [町内の違い]
     sources:
       - https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
-      - municipalities/tokyo/arakawa/2026/course-48.yaml
+      - municipalities/tokyo/arakawa/2026-04--2027-03/course-48.yaml
   - id: yearend-one-day-gap
     title: 年末年始の休みがごみと資源で 1 日ずれる
     body: >-
