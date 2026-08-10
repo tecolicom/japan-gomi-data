@@ -12,7 +12,8 @@
     "build:stats": "node scripts/build-stats.mjs",
     "check:editions": "node scripts/check-new-editions.mjs",
     "check:tools": "node scripts/check-tools.mjs",
-    "lint": "eslint tools scripts"
+    "lint": "eslint tools scripts",
+    "regen": "node scripts/check-regen.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
