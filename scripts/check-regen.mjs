@@ -257,6 +257,9 @@ for (const handle of handles) {
       console.error(diffLines.map((l) => '    ' + l).join('\n'));
       console.error('    生成物を手編集したか、cache が古いか、一次ソースが更新された可能性がある。');
       console.error(`    git diff -- ${muniDir} で中身を確認すること。`);
+      // 差分は「build がたった今書いた再生成結果」であって作業中の変更ではない。
+      // 復元しないまま次の作業に移ると、無関係な差分を抱えたままコミットしかねない。
+      console.error(`    確認が済んだら git checkout -- ${muniDir} で戻すこと (再生成結果を残さない)。`);
     }
     failed++;
   } else {
