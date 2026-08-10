@@ -9,8 +9,8 @@ import { expandRange, nthOfMonth } from '../../_lib/schedule.mjs';
 import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const OUTDIR = join(HERE, '..', '..', '..', 'municipalities', 'okayama', 'kurashiki', '2026');
 const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+const OUTDIR = join(HERE, '..', '..', '..', 'municipalities', 'okayama', 'kurashiki', PERIOD);
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 
 // コース YAML → {category: {weeklyDays:Set, nth:Set("occ|DAY")}} を通年展開から復元

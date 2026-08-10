@@ -18,8 +18,8 @@ import { parseIrumaCsv, BUNBETSU2CATS, splitRegion, baseName } from './parse.mjs
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
-const COURSES = join(ROOT, 'municipalities', 'saitama', 'iruma', '2026');
 const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+const COURSES = join(ROOT, 'municipalities', 'saitama', 'iruma', PERIOD);
 const DOW = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 const WD_JA = { 月: 'MO', 火: 'TU', 水: 'WE', 木: 'TH', 金: 'FR', 土: 'SA', 日: 'SU' };
 const zen2han = (s) => s.replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0));

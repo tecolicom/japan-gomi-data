@@ -19,7 +19,8 @@ import { categoriesOn } from '../../_lib/schedule.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CACHE = join(HERE, 'cache');
-const COURSES = join(HERE, '../../../municipalities/tokyo/setagaya/2026');
+const PERIOD = '2025-12--2026-12'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+const COURSES = join(HERE, '../../../municipalities/tokyo/setagaya/' + PERIOD);
 
 const SHORT = { burnable: '可燃', non_burnable: '不燃', paper: '資源', glass_bottle: '資源', beverage_can: '資源', pet_bottle: 'ペット' };
 // 資源 (古紙・びん・缶) は PDF 上 1 つのチップ「資源」で表される

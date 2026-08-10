@@ -3,6 +3,7 @@
 #   ビン・缶・ペットボトル・有害ごみ (この4品目は同日収集)。
 # 資源の「ビン・缶・ペットボトル・有害ごみ」は同日収集のため glass_bottle/beverage_can/
 # pet_bottle/hazardous の4区分に分解して収録 (収集日は同一)。
+# groups は参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
 categories:
   - burnable
   - non_burnable
@@ -31,9 +32,11 @@ overrides:
     label: ペットボトル
   hazardous:
     label: 有害ごみ
-
-# 参考情報: 市区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
 groups:
   - label: ビン・缶・ペットボトル・有害ごみ
     short: ビン缶等
-    members: [glass_bottle, beverage_can, pet_bottle, hazardous]
+    members:
+      - glass_bottle
+      - beverage_can
+      - pet_bottle
+      - hazardous

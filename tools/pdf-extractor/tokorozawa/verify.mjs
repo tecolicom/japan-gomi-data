@@ -10,8 +10,8 @@ import { diffRange, ruleOfThreePct } from '../../_lib/verify.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
-const OUTDIR = join(ROOT, 'municipalities', 'saitama', 'tokorozawa', '2026');
 const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+const OUTDIR = join(ROOT, 'municipalities', 'saitama', 'tokorozawa', PERIOD);
 
 const extracted = JSON.parse(readFileSync(join(HERE, 'cache', 'extracted.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(join(HERE, 'manifest.json'), 'utf8'));

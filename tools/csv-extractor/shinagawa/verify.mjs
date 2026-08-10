@@ -11,24 +11,21 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
+import { periodDates } from '../../_lib/schedule.mjs';
 import { loadCsv, loadHtmlPages } from './fetch.mjs';
 import { parseShinagawaCsv, CATEGORY_MAP } from './parse.mjs';
 import { parseShinagawaHtml } from './parse-html.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const COURSE_DIR = join(HERE, '../../../municipalities/tokyo/shinagawa/2026');
 const PERIOD = '2026-04--2027-03'; // 一次ソースが裏付ける範囲 (会計年度とは限らない)
+const COURSE_DIR = join(HERE, '../../../municipalities/tokyo/shinagawa/' + PERIOD);
 const DAY_INDEX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
 
 const pad = (n) => String(n).padStart(2, '0');
 const isoOf = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 
-// 年度の全日を列挙 (2026-04-01 〜 2027-03-31)
-function fiscalDays() {
-  const out = [];
-  for (let d = new Date(FY, 3, 1); d < new Date(FY + 1, 3, 1); d = new Date(d.getTime() + 86400000)) out.push(new Date(d));
-  return out;
-}
+// 収録期間の全日を Date で列挙 (会計年度を仮定しない)
+const fiscalDays = () => periodDates(PERIOD).map((iso) => new Date(iso + 'T00:00:00'));
 
 // 素朴な展開: 「その月の n 回目の該当曜日」を日付から直接数える (nth = ceil(日付/7))
 function expand(rules) {

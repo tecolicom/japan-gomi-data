@@ -4,8 +4,8 @@
 // 推定方針 (通年ラウンドトリップでゼロ差分になることを構成的に保証):
 //  - 町ごとに「収集が全く無い日 (NoCollectionDays)」を求める (年末年始休止は町で異なる: 12/29 or 12/30〜1/3)。
 //  - 各品目 D について:
-//     weekly 検定  : D == {FYでその曜日} − NoCollectionDays なら weekly
-//     monthly_nth  : D == {FYでその曜日かつ第n} − NoCollectionDays なら monthly_nth
+//     weekly 検定  : D == {収録期間でその曜日} − NoCollectionDays なら weekly
+//     monthly_nth  : D == {収録期間でその曜日かつ第n} − NoCollectionDays なら monthly_nth
 //     どちらも不成立: monthly_specific (実日付列挙)。1月は曜日ごとずれる町があり、
 //                    その品目は自動的に monthly_specific に落ちる (source どおり忠実)。
 //  - cancelled overrides = NoCollectionDays のうち weekly/nth が生成する日 (その日を全停止)。
@@ -15,7 +15,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
 import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
-import { nthOfMonth, isoDate, categoriesOn } from '../../_lib/schedule.mjs';
+import { nthOfMonth, isoDate, categoriesOn, periodDates } from '../../_lib/schedule.mjs';
 import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -39,7 +39,7 @@ const yomiMap = yamlParse(readFileSync(join(HERE, 'yomi.yaml'), 'utf8'));
 
 // 会計年度の全日付 (iso)
 const fyDates = [];
-for (let d = new Date(FY, 3, 1); d < new Date(FY + 1, 3, 1); d = new Date(d.getTime() + 86400000)) {
+for (const d of periodDates(PERIOD).map((iso) => new Date(iso + 'T00:00:00'))) {
   fyDates.push(isoDate(d));
 }
 const isoWeekday = (iso) => new Date(iso + 'T00:00:00').getDay();
@@ -171,6 +171,7 @@ const docs = courses.map((c, i) => {
 for (const doc of docs) {
   const s = doc.metadata.source;
   doc.metadata.source = {
+    edition_ja: s.edition_ja, // 収録期間ディレクトリ移行で追加された項目。落とすと再生成で消える
     pdf_url: s.pdf_url,
     extracted_at: s.extracted_at,
     extracted_by: s.extracted_by,
