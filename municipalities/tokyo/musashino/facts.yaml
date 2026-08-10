@@ -1,0 +1,40 @@
+# 武蔵野市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: door-to-door-collection
+    title: 集積所ではなく各戸の敷地内に出す「戸別収集」
+    body: >-
+      武蔵野市のごみ収集は集積所方式ではなく「戸別収集」で、各戸の敷地内の決められた場所に出します。
+      締切は収集日の朝9時までです。
+    tags: [収集方式]
+    sources:
+      - https://www.city.musashino.lg.jp/gomi_kankyo/gomi/gomi_shushubi/1053782.html
+      - municipalities/tokyo/musashino/meta.yaml
+  - id: pet-bottle-weekly-from-july
+    title: ペットボトルが年度の途中で隔週から毎週に変わる
+    body: >-
+      令和8年度は、ペットボトルの収集が6月まで隔週、7月から毎週になります。
+      年度の途中で頻度が上がる珍しい変更で、3月に全戸配布されたカレンダーはそのまま使える一方、
+      6・7月のページには「7月からペットボトルの毎週収集が始まります!」の告知が入っています。
+    tags: [収集頻度, 資源の中身]
+    sources:
+      - https://www.city.musashino.lg.jp/gomi_kankyo/gomi/gomi_shushubi/1053782.html
+      - municipalities/tokyo/musashino/meta.yaml
+  - id: paid-bags-only-for-two-items
+    title: 有料袋が要るのは燃やす・燃やさないごみだけ
+    body: >-
+      家庭から出すごみのうち市指定有料ごみ処理袋が要るのは「燃やすごみ」と「燃やさないごみ」の2つで、
+      ペットボトル・プラスチック製容器包装・古紙・古着・びん・缶・危険有害ごみは無料です。
+      有料か無料かが、そのまま「ごみ」と「資源」の線引きになっています。
+    tags: [有料化, 分別体系]
+    sources:
+      - https://www.city.musashino.lg.jp/gomi_kankyo/gomi/gomi_shushubi/1053782.html
+  - id: yearend-differs-by-district
+    title: 年末年始の休みが地区で1日ずれ、12月29日に特別収集がある
+    body: >-
+      年末年始の休みは、A〜E地区が12月29日から1月1日まで、F〜J地区が12月30日から1月1日までと
+      地区によって1日ずれます。F〜J地区では12月29日の燃やすごみに「(年末特別収集)」の
+      添え書きがあり、年末だけの特別な回として扱われています。
+    tags: [年末年始]
+    sources:
+      - municipalities/tokyo/musashino/2026-04--2027-03/course-F.yaml
+      - municipalities/tokyo/musashino/meta.yaml

@@ -1,0 +1,43 @@
+# 青梅市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: resources-in-a-single-day
+    title: 資源物をほぼ1日にまとめて出す
+    body: >-
+      青梅市は資源物を1日にまとめて出す方式です。A日程では水曜日の1日に
+      「容器包装プラスチック・古紙・ペットボトル・カン・有害ごみ・ガラス」が同時に出ます。
+      日程によっては古紙類だけ別の曜日に分かれますが、それでも収集がある日は週3〜4日にとどまります。
+    tags: [収集方式, 資源の中身]
+    sources:
+      - https://www.city.ome.tokyo.jp/soshiki/23/1182.html
+      - municipalities/tokyo/ome/2026-04--2027-03/course-A.yaml
+  - id: nth-week-rotation
+    title: 資源の日は「月内の何回目か」で中身が入れ替わる
+    body: >-
+      資源の日は、その月の何回目かによって出せるものが変わります。1回目が新聞・折込チラシ、
+      2回目が雑誌・雑紙、3回目がダンボール・飲料用紙パック、4回目が繊維類です。
+      カン・ガラスは1・3・5回目、ビン・陶磁器は2・4回目に出し、燃やさないごみは3回目だけで年12回です。
+    tags: [収集頻度, 分別体系]
+    sources:
+      - https://www.city.ome.tokyo.jp/soshiki/23/1182.html
+      - municipalities/tokyo/ome/meta.yaml
+  - id: glass-and-ceramic-separated
+    title: 「びん」とは別に「ガラス」「陶磁器」の区分がある
+    body: >-
+      青梅市は飲食物のびんを出す「ビン」とは別に、コップ・板ガラス・ガラスの食器などの「ガラス」と、
+      茶碗・皿・植木鉢などの「陶磁器」という区分を持ちます。ガラスはカンと同じ日、陶磁器はビンと同じ日に、
+      それぞれ種類ごとに別の容器に分けて出します。
+    tags: [分別体系, 資源の中身]
+    sources:
+      - https://www.city.ome.tokyo.jp/soshiki/23/1182.html
+      - municipalities/tokyo/ome/taxonomy.yaml
+  - id: mitakesan-weekly-only
+    title: 御岳山だけ収集が週1日しかない
+    body: >-
+      御岳山地区 (H日程) は燃やすごみも週1回で、収集がある日は年52日です。
+      市街地の日程が年200日前後あるのと比べると4分の1ほどで、同じ市の中で最も差の大きい地区です。
+      ケーブルカーで上がる山上の集落という地形がそのまま収集頻度に表れています。
+    scope: course:H
+    tags: [地形と収集, 収集頻度]
+    sources:
+      - municipalities/tokyo/ome/2026-04--2027-03/course-H.yaml
+      - municipalities/tokyo/ome/meta.yaml

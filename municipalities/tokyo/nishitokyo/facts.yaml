@@ -1,0 +1,42 @@
+# 西東京市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: wednesday-four-week-cycle
+    title: 水曜だけが4週周期で回っている
+    body: >-
+      西東京市の水曜日は「不燃ごみ・有害ごみ → 金属類 → 不燃ごみ・有害ごみ → 収集なし」という
+      4週周期で回ります。このため金属類の収集は年13回しかなく、4週に1度は水曜がまるごと
+      収集なしの日になります。曜日を覚えるだけでは決まらないので、カレンダーで実際の日付を
+      確かめる必要があります。
+    tags: [収集頻度, 分別体系]
+    sources:
+      - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
+      - municipalities/tokyo/nishitokyo/meta.yaml
+  - id: biweekly-alternation-bottles-cans
+    title: びんと缶が同じ曜日で1週おきに入れ替わる
+    body: >-
+      「びん・スプレー缶・ライター」と「古紙・古布類」を出す日と、「缶」を出す日は、
+      同じ曜日に1週おきで交互にやってきます。びんと缶という近い品目が別の週に分かれるため、
+      曜日だけでなく隔週のどちら側かを意識する必要があります。
+    tags: [収集頻度, 資源の中身]
+    sources:
+      - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/111.html
+      - municipalities/tokyo/nishitokyo/meta.yaml
+  - id: waste-cooking-oil-collected
+    title: 廃食用油を金属類と同じ日に回収している
+    body: >-
+      西東京市は廃食用油を資源として回収しており、金属類・小型家電と同じ日に出します。
+      カレンダー上もこの3品目は常に同じマスに並び、収集は年13回です。
+    tags: [資源の中身]
+    sources:
+      - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/111.html
+      - municipalities/tokyo/nishitokyo/taxonomy.yaml
+  - id: october-start-calendar
+    title: カレンダーが年度ではなく10月始まり
+    body: >-
+      西東京市の収集カレンダーは、4月始まりの年度ではなく10月始まりの1年間 (10月〜翌年9月) で
+      作られています。現行版は2025年9月に公開された2025年10月〜2026年9月版です。
+      年度で区切られていないため、3月末や4月頭にカレンダーが切り替わるわけではありません。
+    tags: [カレンダー運用]
+    sources:
+      - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
+      - municipalities/tokyo/nishitokyo/meta.yaml
