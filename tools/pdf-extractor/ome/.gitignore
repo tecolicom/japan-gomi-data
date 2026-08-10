@@ -1,0 +1,3 @@
+# fetch.mjs で再取得できる一次ソースのスナップショット(他の extractor と同様に非追跡)
+cache/
+__pycache__/

@@ -1,0 +1,39 @@
+# 青梅市。公式区分(資源物・ごみ収集カレンダー): 燃やすごみ / 燃やさないごみ /
+#   容器包装プラスチックごみ / 新聞・折込チラシ / 雑誌・雑紙 / ダンボール・飲料用紙パック /
+#   繊維類 / カン / ビン / ガラス / 陶磁器 / ペットボトル / 有害ごみ
+# 新聞・折込チラシ / 雑誌・雑紙 / ダンボール・飲料用紙パックはいずれも古紙で、同一曜日の
+# 月内 1・2・3 回目に分かれるだけなので paper に統合した (内訳は course の rule note)。
+# 「ガラス」(びん以外のガラス製品) と「陶磁器」は正典語彙に無い。ガラスはカンと、陶磁器は
+# ビンと常に同日収集のため収録していない (日程情報の欠落はゼロ。鯖江・西東京と同じ整理)。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper
+  - cloth
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - hazardous
+overrides:
+  burnable:
+    label: 燃やすごみ
+    short: 燃やす
+  non_burnable:
+    label: 燃やさないごみ
+    short: 燃やさない
+  plastic:
+    label: 容器包装プラスチックごみ
+    short: 容プラ
+  paper:
+    label: 古紙(新聞・雑誌雑紙・ダンボール)
+    short: 古紙
+  cloth:
+    label: 繊維類
+  glass_bottle:
+    label: ビン
+  beverage_can:
+    label: カン
+  hazardous:
+    label: 有害ごみ
+    short: 有害
