@@ -5,12 +5,12 @@
 
 ```
 fetch.mjs        一次ソース取得 (cachedFetch。cache/ は .gitignore 済み)
-parse.mjs        ソース → 行 (町×種別×曜日)。表記パースは _lib/jp.mjs を使う
-parse.test.mjs   実データの断片を使った回帰テスト (node --test)
 build.mjs        行 → course YAML (foldCourses / courseDoc / writeCourses / cancelledOverrides)
-verify.mjs       独立ソースとの照合 (expandFiscalYear / diffYear / ruleOfThreePct)
+verify.mjs       独立ソースとの照合 (schedule.mjs の expandRange / verify.mjs の diffRange / ruleOfThreePct)
 ```
 
 - `EXTRACTED_AT` は環境変数で渡す (`Date.now()` は使わない — 再現性のため)。
 - パースに失敗する表記は黙って読み飛ばさず throw する (握りつぶし禁止)。
 - 照合結果 (件数・不一致・確率的信頼度) は `municipalities/<県>/<handle>/meta.yaml` の notes に記録。
+- ソース → 行 (町×種別×曜日) のパースを `parse.mjs` (+ `parse.test.mjs`) に切り出すのは推奨される構成
+  (表記パースは `_lib/jp.mjs` を使う)。分けるほどの量でなければ `build.mjs` に直接書いてよい。
