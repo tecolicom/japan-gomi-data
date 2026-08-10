@@ -17,13 +17,16 @@
 // 生成器そのものが無い自治体 (データを手書きした収録) は検査しようがないので skip する。
 // ただし build.mjs 規約に乗っていないだけで生成器 (Python 等) が実在する場合は、
 // 「データは手書き」という偽の理由を出さないよう、skip の文言を区別する。
-import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
+import { readdirSync, readFileSync, existsSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const isDir = (p) => existsSync(p) && statSync(p).isDirectory();
+const gitStatus = (dir) =>
+  execFileSync('git', ['status', '--porcelain', '--', dir], { cwd: ROOT, encoding: 'utf8' }).trim();
 
 function municipalityDir(handle) {
   const muni = join(ROOT, 'municipalities');
@@ -230,6 +233,29 @@ for (const handle of handles) {
     skipped++; continue;
   }
 
+  // build を走らせる前に作業ツリーの状態を見る。build 後の差分だけを見ていた頃は
+  // 「build が書いた差分」と「元からあった未コミットの変更」を区別できず、
+  // 後者に対して「git checkout -- で戻せ」と案内していた = 作業を壊す指示だった。
+  // meta.yaml / taxonomy.yaml は生成しない extractor があり (その場合は手書きが正典)、
+  // それらを編集中に regen を叩くのは普通に起きる。
+  const before = gitStatus(muniDir);
+  if (before) {
+    const lines = before.split('\n');
+    if (lines.every((l) => l.startsWith('?? '))) {
+      // ディレクトリ全体が未追跡 = まだコミットしていない新規収録。比較対象が git に無い。
+      console.error(`✗ ${handle}: 未コミットの新規収録 — 比較対象がまだ無い`);
+      console.error(lines.map((l) => '    ' + l).join('\n'));
+      console.error('    手編集や cache の問題ではない。コミットしてから再実行すること。');
+    } else {
+      console.error(`✗ ${handle}: 未コミットの変更があるので実行しない`);
+      console.error(lines.map((l) => '    ' + l).join('\n'));
+      console.error('    make regen は build を実際に走らせて作業ツリーを書き換えるため、');
+      console.error('    このまま実行すると作業中の変更を壊す。');
+      console.error('    先にコミットするか git stash してから再実行すること。');
+    }
+    failed++; continue;
+  }
+
   const at = extractedAt(muniDir);
   try {
     execFileSync(process.execPath, [join(ROOT, res.dir, 'build.mjs'), ...res.buildArgs], {
@@ -241,25 +267,25 @@ for (const handle of handles) {
     failed++; continue;
   }
 
-  const diff = execFileSync('git', ['status', '--porcelain', '--', muniDir], { cwd: ROOT, encoding: 'utf8' }).trim();
+  const diff = gitStatus(muniDir);
   if (diff) {
+    // 実行前は clean だったことを上で確認済みなので、ここの差分はすべて build の出力。
+    // 作業中の変更が混ざる余地が無いため、保存してから安全に元へ戻せる。
     const diffLines = diff.split('\n');
-    // 全行が `??` (未追跡) なら、比較対象がまだ git 管理下に無いだけの新規収録であり、
-    // 手編集や cache 陳腐化の疑いとは別の状態。同じ文言で出すと、存在しない cache の
-    // 問題を貢献者が追いかける (CONTRIBUTING.md の「まず cache を作り直す」案内に従ってしまう)。
-    // 一部だけ `??` (既存自治体に新ファイルが増えた) は本物の異常なので、従来どおり扱う。
-    if (diffLines.every((l) => l.startsWith('?? '))) {
-      console.error(`✗ ${handle}: 未コミットの新規収録 — 比較対象がまだ無い`);
-      console.error(diffLines.map((l) => '    ' + l).join('\n'));
-      console.error('    手編集や cache の問題ではない。git add でコミットしてから再実行すること。');
-    } else {
-      console.error(`✗ ${handle}: 再生成で差分が出た`);
-      console.error(diffLines.map((l) => '    ' + l).join('\n'));
-      console.error('    生成物を手編集したか、cache が古いか、一次ソースが更新された可能性がある。');
-      console.error(`    git diff -- ${muniDir} で中身を確認すること。`);
-      // 差分は「build がたった今書いた再生成結果」であって作業中の変更ではない。
-      // 復元しないまま次の作業に移ると、無関係な差分を抱えたままコミットしかねない。
-      console.error(`    確認が済んだら git checkout -- ${muniDir} で戻すこと (再生成結果を残さない)。`);
+    console.error(`✗ ${handle}: 再生成で差分が出た`);
+    console.error(diffLines.map((l) => '    ' + l).join('\n'));
+    console.error('    生成物を手編集したか、cache が古いか、一次ソースが更新された可能性がある。');
+
+    const saved = join(tmpdir(), `regen-diff-${handle}.diff`);
+    writeFileSync(saved, execFileSync('git', ['diff', '--', muniDir], { cwd: ROOT, encoding: 'utf8' }));
+    execFileSync('git', ['checkout', '--', muniDir], { cwd: ROOT });
+    console.error(`    差分は ${saved} に保存し、作業ツリーは元に戻した。`);
+
+    // git checkout は未追跡ファイルを消さない。build が新しいファイルを作った場合は残る。
+    const leftover = diffLines.filter((l) => l.startsWith('?? '));
+    if (leftover.length) {
+      console.error('    次のファイルは build が新規に作ったもので、作業ツリーに残っている:');
+      console.error(leftover.map((l) => '      ' + l.slice(3)).join('\n'));
     }
     failed++;
   } else {
