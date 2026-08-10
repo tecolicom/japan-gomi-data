@@ -52,9 +52,19 @@ function extractedAt(muniDir) {
   return null;
 }
 
-const targets = process.argv.slice(2).filter((a) => !a.startsWith('-'));
+// 使い方: node scripts/check-regen.mjs [handle...]
+// 引数省略時は cache を持つ全自治体が対象。共通ツール (chichibu-koiki・saiseibu-kumiai 等、
+// municipalities に対応物を持たないもの) は既定の対象からは除く。ただし handle を明示指定
+// された場合は打ち間違いを検出するため、対応が無ければそのまま失敗させる。
+const args = process.argv.slice(2);
+const badOpt = args.find((a) => a.startsWith('-'));
+if (badOpt) {
+  console.error(`不明なオプション: ${badOpt}`);
+  console.error('使い方: node scripts/check-regen.mjs [handle...]');
+  process.exit(1);
+}
 const all = extractors();
-const handles = targets.length ? targets : [...all.keys()].sort();
+const handles = args.length ? args : [...all.keys()].filter((h) => municipalityDir(h)).sort();
 
 let ran = 0, skipped = 0, failed = 0;
 for (const handle of handles) {
