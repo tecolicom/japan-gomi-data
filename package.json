@@ -13,7 +13,8 @@
     "check:editions": "node scripts/check-new-editions.mjs",
     "check:tools": "node scripts/check-tools.mjs",
     "lint": "eslint tools scripts",
-    "regen": "node scripts/check-regen.mjs"
+    "regen": "node scripts/check-regen.mjs",
+    "new": "node scripts/new-municipality.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
