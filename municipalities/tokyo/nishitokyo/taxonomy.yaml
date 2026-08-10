@@ -1,0 +1,40 @@
+# 西東京市。公式区分(ごみ・資源物収集カレンダー):
+#   可燃ごみ / せん定枝・落ち葉・草・おむつ / 不燃ごみ / 有害ごみ・危険物 /
+#   プラスチック容器包装類 / ペットボトル / びん・スプレー缶・ライター /
+#   古紙・古布類（衣類等） / 缶 / 金属類 / 小型家電 / 廃食用油
+# せん定枝・落ち葉・草・おむつは可燃ごみと常に同日のため burnable に含めた。
+# 小型家電は金属類と常に同一セル・同日のため metal に含めた (所沢・東秩父の先例)。
+# 廃食用油は正典語彙に無く、金属類と常に同日のため収録していない (鯖江の先例。日程情報の欠落なし)。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper_cloth
+  - glass_bottle
+  - spray_can
+  - beverage_can
+  - pet_bottle
+  - hazardous
+  - metal
+overrides:
+  plastic:
+    label: プラスチック容器包装類
+    short: 容プラ
+  paper_cloth:
+    label: 古紙・古布類（衣類等）
+    short: 古紙布
+  beverage_can:
+    label: 缶
+  hazardous:
+    label: 有害ごみ・危険物
+    short: 有害
+  metal:
+    label: 金属類・小型家電
+    short: 金属
+groups:
+  - label: びん・スプレー缶・ライター
+    short: びん類
+    members:
+      - glass_bottle
+      - spray_can
+    note: カレンダー上は 1 品目 1 セル。ライターはスプレー缶に含めて収録した (語彙なし)
