@@ -243,10 +243,21 @@ for (const handle of handles) {
 
   const diff = execFileSync('git', ['status', '--porcelain', '--', muniDir], { cwd: ROOT, encoding: 'utf8' }).trim();
   if (diff) {
-    console.error(`✗ ${handle}: 再生成で差分が出た`);
-    console.error(diff.split('\n').map((l) => '    ' + l).join('\n'));
-    console.error('    生成物を手編集したか、cache が古いか、一次ソースが更新された可能性がある。');
-    console.error(`    git diff -- ${muniDir} で中身を確認すること。`);
+    const diffLines = diff.split('\n');
+    // 全行が `??` (未追跡) なら、比較対象がまだ git 管理下に無いだけの新規収録であり、
+    // 手編集や cache 陳腐化の疑いとは別の状態。同じ文言で出すと、存在しない cache の
+    // 問題を貢献者が追いかける (CONTRIBUTING.md の「まず cache を作り直す」案内に従ってしまう)。
+    // 一部だけ `??` (既存自治体に新ファイルが増えた) は本物の異常なので、従来どおり扱う。
+    if (diffLines.every((l) => l.startsWith('?? '))) {
+      console.error(`✗ ${handle}: 未コミットの新規収録 — 比較対象がまだ無い`);
+      console.error(diffLines.map((l) => '    ' + l).join('\n'));
+      console.error('    手編集や cache の問題ではない。git add でコミットしてから再実行すること。');
+    } else {
+      console.error(`✗ ${handle}: 再生成で差分が出た`);
+      console.error(diffLines.map((l) => '    ' + l).join('\n'));
+      console.error('    生成物を手編集したか、cache が古いか、一次ソースが更新された可能性がある。');
+      console.error(`    git diff -- ${muniDir} で中身を確認すること。`);
+    }
     failed++;
   } else {
     console.log(`✓ ${handle}: 再生成で差分なし`);
