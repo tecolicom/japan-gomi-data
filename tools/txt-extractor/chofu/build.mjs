@@ -11,6 +11,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { periodDates } from '../../_lib/schedule.mjs';
+import { classifyRules } from '../../_lib/classify.mjs';
 import { parseCalendar, DOW } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -63,42 +64,22 @@ function buildCourse(n) {
     throw new Error(`地区${n}: カレンダー範囲 ${evDates[0]}..${evDates.at(-1)} が ${PERIOD} と不一致`);
   }
 
-  // 全停止日(収集なし = 空配列)
-  const fullStop = new Set(evDates.filter((d) => events.get(d).length === 0));
+  // 調布のテキスト版カレンダーは日曜・土曜の行を持たない (365日中261日)。
+  // classifyRules は「収集なし = 空配列」を要求するので、行が無い日を空で埋めてから渡す。
+  // ただし cancelled override は**カレンダーが明示した**収集なしの日 (12/31・1/1) だけに付ける
+  // — 行が無いだけの土日まで cancelled にすると、ありもしない休止を宣言することになる。
+  const dense = new Map(fyDates.map((d) => [d, events.get(d) ?? []]));
 
-  // category -> 出現日(昇順)
+  // 品目ごとの weekly / monthly_specific 判定は _lib/classify.mjs に集約されている
+  // (以前は調布・西東京・武蔵野・青梅に同じものが 4 つコピーされていた)
+  const { rules } = classifyRules({ dates: fyDates, events: dense, catOrder: CAT_ORDER });
+  const fullStop = new Set(evDates.filter((d) => events.get(d).length === 0));
   const catDates = new Map();
   for (const d of evDates) for (const c of events.get(d)) {
     if (!catDates.has(c)) catDates.set(c, []);
     catDates.get(c).push(d);
   }
-
-  const rules = [];
-  const specificCats = new Set();
-  for (const c of CAT_ORDER) {
-    if (!catDates.has(c)) continue;
-    const dates = catDates.get(c);
-    const dset = new Set(dates);
-    // 主要曜日 = その曜日での出現が6回以上(年末年始の単発移動を除外)
-    const cnt = {};
-    for (const d of dates) cnt[d] = 0; // placeholder
-    const wcnt = {};
-    for (const d of dates) { const w = dow(d); wcnt[w] = (wcnt[w] || 0) + 1; }
-    const domWd = Object.entries(wcnt).filter(([, k]) => k >= 6).map(([w]) => Number(w)).sort();
-    const weeklyExp = fyDates.filter((d) => domWd.includes(dow(d)));
-    const weeklyExpSet = new Set(weeklyExp);
-    const weeklyMinusStop = weeklyExp.filter((d) => !fullStop.has(d));
-
-    const eqExact = dates.length === weeklyExp.length && dates.every((d) => weeklyExpSet.has(d));
-    const eqMinusStop = dates.length === weeklyMinusStop.length && weeklyMinusStop.every((d) => dset.has(d));
-
-    if (domWd.length && (eqExact || eqMinusStop)) {
-      rules.push({ category: c, pattern: 'weekly', days: domWd.map((w) => DOW[w]) });
-    } else {
-      rules.push({ category: c, pattern: 'monthly_specific', dates: [...dates] });
-      specificCats.add(c);
-    }
-  }
+  const specificCats = new Set(rules.filter((r) => r.pattern === 'monthly_specific').map((r) => r.category));
 
   // overrides: 全停止日を cancelled で明示
   const overrides = [...fullStop].sort().map((d) => ({

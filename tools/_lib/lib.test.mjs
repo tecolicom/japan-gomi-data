@@ -5,6 +5,8 @@ import { parseWeeklyJa, parseMonthlyNthJa, townBase, normalizeTownName } from '.
 import { categoriesOn, expandRange, parsePeriod, isUnknown, nthOfMonth, signatureKey, cancelledOverrides } from './schedule.mjs';
 import { foldCourses, courseDoc } from './emit.mjs';
 import { diffRange, ruleOfThreePct, sampleSizeFor, sampleStratified } from './verify.mjs';
+import { classifyRules } from './classify.mjs';
+import { periodDates } from './schedule.mjs';
 
 test('parseWeeklyJa: 実在表記', () => {
   assert.deepEqual(parseWeeklyJa('水曜日・土曜日'), ['WE', 'SA']); // 杉並
@@ -133,4 +135,74 @@ test('verify の確率部品', () => {
   assert.equal(s.length, 10);
   assert.equal(s[0], 0);
   assert.equal(s.at(-1), 99);
+});
+
+test('periodDates: 収録期間を日毎に列挙する', () => {
+  const d = periodDates('2026-04--2027-03');
+  assert.equal(d.length, 365);
+  assert.equal(d[0], '2026-04-01');
+  assert.equal(d.at(-1), '2027-03-31');
+  // 10月起点も暦年も同じ形で表せる
+  assert.equal(periodDates('2025-10--2026-09').length, 365);
+  assert.equal(periodDates('2026-01--2026-12').length, 365);
+});
+
+test('classifyRules: 毎週は weekly、隔週は monthly_specific', () => {
+  const dates = periodDates('2026-04--2027-03');
+  const events = {};
+  for (const d of dates) events[d] = [];
+  const dow = (iso) => new Date(iso + 'T00:00:00').getDay();
+  // burnable: 毎週月曜 / glass_bottle: 隔週月曜 (月内 1・3 回目)
+  const mondays = dates.filter((d) => dow(d) === 1);
+  for (const d of mondays) events[d].push('burnable');
+  for (const d of mondays.filter((d) => [1, 3].includes(Math.floor((Number(d.slice(8)) - 1) / 7) + 1)))
+    events[d].push('glass_bottle');
+  const { rules, stopDays } = classifyRules({ dates, events, catOrder: ['burnable', 'glass_bottle'] });
+  assert.deepEqual(rules[0], { category: 'burnable', pattern: 'weekly', days: ['MO'] });
+  assert.equal(rules[1].pattern, 'monthly_specific');
+  assert.equal(stopDays.length, dates.length - mondays.length);
+});
+
+test('classifyRules: 年末年始だけ欠ける品目は weekly + 休止日を返す', () => {
+  const dates = periodDates('2026-04--2027-03');
+  const events = {};
+  for (const d of dates) events[d] = [];
+  const dow = (iso) => new Date(iso + 'T00:00:00').getDay();
+  const stop = new Set(['2027-01-01']);
+  for (const d of dates) if (dow(d) === 5 && !stop.has(d)) events[d].push('burnable');
+  const { rules, stopDays } = classifyRules({ dates, events, catOrder: ['burnable'] });
+  assert.deepEqual(rules[0], { category: 'burnable', pattern: 'weekly', days: ['FR'] });
+  assert.ok(stopDays.includes('2027-01-01'));
+});
+
+test('classifyRules: 隔週を「毎週+半分キャンセル」と表現しない (歯止め)', () => {
+  // その曜日に「収集あり/何も無い」が交互に来る配置。歯止めが無いと weekly と誤判定する
+  const dates = periodDates('2026-04--2027-03');
+  const events = {};
+  for (const d of dates) events[d] = [];
+  const dow = (iso) => new Date(iso + 'T00:00:00').getDay();
+  const weds = dates.filter((d) => dow(d) === 3);
+  weds.forEach((d, i) => { if (i % 2 === 0) events[d].push('non_burnable'); });
+  const strict = classifyRules({ dates, events, catOrder: ['non_burnable'] });
+  assert.equal(strict.rules[0].pattern, 'monthly_specific');
+  // 歯止めを外せば weekly になってしまうこと自体は確認しておく (回帰の意図を明示)
+  const loose = classifyRules({ dates, events, catOrder: ['non_burnable'], stopTolerance: 1 });
+  assert.equal(loose.rules[0].pattern, 'weekly');
+});
+
+test('classifyRules: catOrder に無い category は落とす', () => {
+  const dates = periodDates('2026-04--2027-03');
+  const events = Object.fromEntries(dates.map((d) => [d, []]));
+  events['2026-04-01'] = ['unknown_cat'];
+  assert.throws(() => classifyRules({ dates, events, catOrder: ['burnable'] }), /catOrder に無い/);
+});
+
+test('classifyRules: events が期間を覆っていなければ落とす', () => {
+  // 土日の行を持たないカレンダー (調布) を素朴に渡すと、欠けを「収集なし」と解釈して
+  // ありもしない休止日を捏造してしまう。黙って埋めずエラーにする。
+  const dates = periodDates('2026-04--2027-03');
+  const sparse = new Map();
+  for (const d of dates) if (new Date(d + 'T00:00:00').getDay() !== 0) sparse.set(d, []);
+  assert.throws(() => classifyRules({ dates, events: sparse, catOrder: ['burnable'] }),
+    /events に .* が無い/);
 });

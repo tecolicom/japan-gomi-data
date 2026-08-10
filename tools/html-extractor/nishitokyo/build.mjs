@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { expandRange, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
+import { classifyRules } from '../../_lib/classify.mjs';
 import { normJa } from '../../_lib/jp.mjs';
 import { parseCalendar, periodDates, DOW, AREA_URL, AREAS } from './parse.mjs';
 
@@ -76,38 +77,10 @@ function expandTown(token) {
 // ---- rules: 日付入りカレンダー → weekly / monthly_specific ----
 
 function buildRules(events, dates) {
-  const stop = new Set(dates.filter((d) => events.get(d).length === 0));
-  const catDates = new Map();
-  for (const d of dates) for (const c of events.get(d)) {
-    if (!catDates.has(c)) catDates.set(c, []);
-    catDates.get(c).push(d);
-  }
-  for (const c of catDates.keys()) {
-    if (!CAT_ORDER.includes(c)) throw new Error(`CAT_ORDER に無い category "${c}"`);
-  }
-
-  const rules = [];
-  for (const c of CAT_ORDER) {
-    if (!catDates.has(c)) continue;
-    const ds = catDates.get(c), dset = new Set(ds);
-    // 主要曜日 = その曜日での出現が 6 回以上 (単発の移動収集を主要曜日と誤認しない)
-    const wcnt = {};
-    for (const d of ds) wcnt[dowOf(d)] = (wcnt[dowOf(d)] || 0) + 1;
-    const domWd = Object.entries(wcnt).filter(([, k]) => k >= 6).map(([w]) => Number(w)).sort();
-    const weeklyExp = dates.filter((d) => domWd.includes(dowOf(d)));
-    const minusStop = weeklyExp.filter((d) => !stop.has(d));
-    const eqExact = ds.length === weeklyExp.length && weeklyExp.every((d) => dset.has(d));
-    const eqMinusStop = ds.length === minusStop.length && minusStop.every((d) => dset.has(d));
-
-    if (domWd.length && (eqExact || eqMinusStop)) {
-      rules.push({ category: c, pattern: 'weekly', days: domWd.map((w) => DOW[w]) });
-    } else {
-      rules.push({ category: c, pattern: 'monthly_specific', dates: [...ds] });
-    }
-  }
+  const { rules, stopDays } = classifyRules({ dates, events, catOrder: CAT_ORDER });
 
   // 全停止日のうち weekly 規則が発火する日だけ cancelled にする
-  const overrides = cancelledOverrides(rules, [...stop].sort(),
+  const overrides = cancelledOverrides(rules, [...stopDays].sort(),
     '収集なし(市カレンダーどおり)').map((o) => ({
       ...o,
       note: /^(2025-12|2026-01-0[123])/.test(o.date) ? '年末年始 収集なし(市カレンダーどおり)' : o.note,
@@ -122,7 +95,7 @@ function buildRules(events, dates) {
   }
   for (const d of actual.keys()) if (!events.has(d)) throw new Error(`期間外の展開日 ${d}`);
 
-  return { rules, overrides, stopCount: stop.size };
+  return { rules, overrides, stopCount: stopDays.length };
 }
 
 // ---- 実行 ----

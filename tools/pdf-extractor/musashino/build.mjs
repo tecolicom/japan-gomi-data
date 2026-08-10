@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { expandRange, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
+import { classifyRules } from '../../_lib/classify.mjs';
 import { normJa } from '../../_lib/jp.mjs';
 import { BASE, CAL_PDF, DISTRICTS } from './sources.mjs';
 
@@ -84,34 +85,8 @@ function expandTown(token) {
 // ---- rules ----
 
 function buildRules(events, dates, label) {
-  const stop = new Set(dates.filter((d) => events[d].length === 0));
-  const catDates = new Map();
-  for (const d of dates) for (const c of events[d]) {
-    if (!CAT_ORDER.includes(c)) throw new Error(`CAT_ORDER に無い category "${c}"`);
-    if (!catDates.has(c)) catDates.set(c, []);
-    catDates.get(c).push(d);
-  }
-
-  const rules = [];
-  for (const c of CAT_ORDER) {
-    if (!catDates.has(c)) continue;
-    const ds = catDates.get(c), dset = new Set(ds);
-    const wcnt = {};
-    for (const d of ds) wcnt[dowOf(d)] = (wcnt[dowOf(d)] || 0) + 1;
-    // 主要曜日 = その曜日での出現が 6 回以上 (単発の移動収集を主要曜日と誤認しない)
-    const domWd = Object.entries(wcnt).filter(([, k]) => k >= 6).map(([w]) => Number(w)).sort();
-    const weeklyExp = dates.filter((d) => domWd.includes(dowOf(d)));
-    const minusStop = weeklyExp.filter((d) => !stop.has(d));
-    const eqExact = ds.length === weeklyExp.length && weeklyExp.every((d) => dset.has(d));
-    const eqMinusStop = ds.length === minusStop.length && minusStop.every((d) => dset.has(d))
-      && weeklyExp.length - minusStop.length <= weeklyExp.length * WEEKLY_STOP_TOLERANCE;
-
-    if (domWd.length && (eqExact || eqMinusStop)) {
-      rules.push({ category: c, pattern: 'weekly', days: domWd.map((w) => DOW[w]) });
-    } else {
-      rules.push({ category: c, pattern: 'monthly_specific', dates: [...ds] });
-    }
-  }
+  const { rules, stopDays } = classifyRules({ dates, events, catOrder: CAT_ORDER });
+  const stop = stopDays;
 
   const overrides = cancelledOverrides(rules, [...stop].sort(), '年末年始 収集なし(市カレンダーどおり)');
 

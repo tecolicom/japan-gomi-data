@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { stringify as yamlStringify } from 'yaml';
 import { expandRange, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
+import { classifyRules } from '../../_lib/classify.mjs';
 import { normJa } from '../../_lib/jp.mjs';
 import { BASE, SCHEDULES } from './sources.mjs';
 
@@ -102,40 +103,19 @@ function expandTown(town) {
 // ---- rules ----
 
 function buildRules(events, dates, label) {
-  const stop = new Set(dates.filter((d) => events[d].length === 0));
-  const catDates = new Map();
+  // 原文表記 → 正典 category へ写してから分類する (語彙外の品目はここで落ちる)
+  const mapped = {};
   for (const d of dates) {
     const cats = [];
     for (const item of events[d]) {
-      const mapped = ITEM2CAT[item];
-      if (!mapped) throw new Error(`${label}: 未知の品目 "${item}" (${d})`);
-      for (const c of mapped) if (!cats.includes(c)) cats.push(c);
+      const m = ITEM2CAT[item];
+      if (!m) throw new Error(`${label}: 未知の品目 "${item}" (${d})`);
+      for (const c of m) if (!cats.includes(c)) cats.push(c);
     }
-    for (const c of cats) {
-      if (!catDates.has(c)) catDates.set(c, []);
-      catDates.get(c).push(d);
-    }
+    mapped[d] = cats;
   }
-
-  const rules = [];
-  for (const c of CAT_ORDER) {
-    if (!catDates.has(c)) continue;
-    const ds = catDates.get(c), dset = new Set(ds);
-    const wcnt = {};
-    for (const d of ds) wcnt[dowOf(d)] = (wcnt[dowOf(d)] || 0) + 1;
-    const domWd = Object.entries(wcnt).filter(([, k]) => k >= 6).map(([w]) => Number(w)).sort();
-    const weeklyExp = dates.filter((d) => domWd.includes(dowOf(d)));
-    const minusStop = weeklyExp.filter((d) => !stop.has(d));
-    const eqExact = ds.length === weeklyExp.length && weeklyExp.every((d) => dset.has(d));
-    const eqMinusStop = ds.length === minusStop.length && minusStop.every((d) => dset.has(d))
-      && weeklyExp.length - minusStop.length <= weeklyExp.length * WEEKLY_STOP_TOLERANCE;
-
-    const rule = (domWd.length && (eqExact || eqMinusStop))
-      ? { category: c, pattern: 'weekly', days: domWd.map((w) => DOW[w]) }
-      : { category: c, pattern: 'monthly_specific', dates: [...ds] };
-    if (CAT_NOTE[c]) rule.note = CAT_NOTE[c];
-    rules.push(rule);
-  }
+  const { rules: base, stopDays: stop } = classifyRules({ dates, events: mapped, catOrder: CAT_ORDER });
+  const rules = base.map((r) => (CAT_NOTE[r.category] ? { ...r, note: CAT_NOTE[r.category] } : r));
 
   const overrides = cancelledOverrides(rules, [...stop].sort(), '年末年始 収集なし(市カレンダーどおり)');
 
