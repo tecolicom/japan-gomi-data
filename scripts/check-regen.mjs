@@ -15,6 +15,8 @@
 // の配下の自治体も config.json から宣言的に引いて対象に含める。対応表は
 // ハードコードしない (将来組合に自治体が増えても沈黙で消えないようにするため)。
 // 生成器そのものが無い自治体 (データを手書きした収録) は検査しようがないので skip する。
+// ただし build.mjs 規約に乗っていないだけで生成器 (Python 等) が実在する場合は、
+// 「データは手書き」という偽の理由を出さないよう、skip の文言を区別する。
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -105,6 +107,24 @@ function sharedCoverage(direct) {
   return out;
 }
 
+// resolveExtractor が null を返す handle について、「本当に生成器が無い」のか
+// 「build.mjs 規約に乗っていないだけで生成器 (Python 等) は実在する」のかを、
+// ディレクトリの実在で機械的に見分ける。handle 名はハードコードしない —
+// tools/*-extractor/ を走査し、ディレクトリ名が handle に一致するか、
+// handle が「ディレクトリ名 + '-'」で始まる (例: 上富良野の extractor ディレクトリ名は
+// kamifurano だが handle は kamifurano-town、というような命名の揺れ) ものを探す。
+// build.mjs を持つディレクトリは direct/shared 側で既に解決されているはずなので除く。
+function extractorTraceWithoutBuild(handle) {
+  for (const kind of readdirSync(join(ROOT, 'tools')).filter((k) => k.endsWith('-extractor'))) {
+    for (const name of readdirSync(join(ROOT, 'tools', kind)).filter((n) => isDir(join(ROOT, 'tools', kind, n)))) {
+      if (name !== handle && !handle.startsWith(`${name}-`)) continue;
+      if (existsSync(join(ROOT, 'tools', kind, name, 'build.mjs'))) continue;
+      return join('tools', kind, name);
+    }
+  }
+  return null;
+}
+
 // build が要求する環境変数を、既存データの extracted_at から復元する。
 // Date.now() を使わない規約のため、build は EXTRACTED_AT を要求することがある。
 function extractedAt(muniDir) {
@@ -157,7 +177,12 @@ for (const handle of handles) {
 
   const res = resolveExtractor(handle);
   if (!res) {
-    console.log(`- ${handle}: 生成器が無い (データは手書き) — skip`);
+    const trace = extractorTraceWithoutBuild(handle);
+    if (trace) {
+      console.log(`- ${handle}: build.mjs が無い (${trace}/ に生成器はあるが regen 非対応) — skip`);
+    } else {
+      console.log(`- ${handle}: 生成器が無い (データは手書き) — skip`);
+    }
     skipped++; continue;
   }
 
