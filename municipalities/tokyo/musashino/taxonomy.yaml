@@ -1,0 +1,40 @@
+# 武蔵野市。公式区分(ごみと資源の収集カレンダー):
+#   燃やすごみ / 燃やさないごみ / プラスチック製容器包装 / 古紙、古着 /
+#   びん / 缶 / 危険・有害ごみ / ペットボトル
+# 古紙と古着はカレンダー上「古紙・古着」の 1 品目として同日収集されるため paper_cloth にまとめた。
+# 粗大ごみは予約制のため rules の対象外。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper_cloth
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - hazardous
+overrides:
+  burnable:
+    label: 燃やすごみ
+    short: 燃やす
+  non_burnable:
+    label: 燃やさないごみ
+    short: 燃やさない
+  plastic:
+    label: プラスチック製容器包装
+    short: 容器包装
+  paper_cloth:
+    label: 古紙、古着
+    short: 古紙古着
+  beverage_can:
+    label: 缶
+  hazardous:
+    label: 危険・有害ごみ
+    short: 危険有害
+groups:
+  - label: びん、缶、危険・有害ごみ
+    short: びん缶危険
+    members:
+      - glass_bottle
+      - beverage_can
+      - hazardous
+    note: 同じ曜日に隔週で一括収集される 3 品目 (市サイトの地区別曜日サマリの括り)
