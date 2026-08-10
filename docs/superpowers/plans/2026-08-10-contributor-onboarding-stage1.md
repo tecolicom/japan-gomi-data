@@ -158,13 +158,24 @@ node scripts/check-regen.mjs chofu
 
 - [ ] **Step 4: 差分を検出できることを確認する**
 
+**手編集は「コミットされている」状態でなければ検出できない。** 作業ツリーを書き換えただけでは、
+check-regen が走らせる build がその場で正しい内容を再生成してしまい、HEAD と一致するので
+差分は出ない (それが正しい挙動)。手編集がリポジトリに入るのはコミット経由なので、
+コミットした状態を作って確かめる。
+
 ```bash
-sed -i '' 's/^  - 祝日(振替休日含む)・お盆も通常どおり収集。休みは日曜と年末年始のみ。$/  - 手編集テスト/' municipalities/tokyo/chofu/meta.yaml
+sed -i '' 's|^  - 祝日(振替休日含む)・お盆も通常どおり収集。休みは日曜と年末年始のみ。$|  - 手編集テスト (この行は生成器に無い)|' municipalities/tokyo/chofu/meta.yaml
+git add municipalities/tokyo/chofu/meta.yaml
+git commit -q -m "TEMP: 手編集を模擬 (検証用・直後に破棄)"
 node scripts/check-regen.mjs chofu; echo "exit=$?"
-git checkout municipalities/tokyo/chofu/meta.yaml
+git reset --hard HEAD~1
+node scripts/check-regen.mjs chofu; echo "exit=$?"
 ```
 
-期待: `✗ chofu: 再生成で差分が出た` と差分の中身が出て `exit=1`。復元後は再び 0。
+期待: 1 回目は `✗ chofu: 再生成で差分が出た` と `M municipalities/tokyo/chofu/meta.yaml` が出て `exit=1`。
+`git reset --hard` の後は `✓ chofu: 再生成で差分なし` で `exit=0`。
+
+**`git reset --hard` を忘れないこと。** 忘れると偽の手編集がブランチに残る。
 
 - [ ] **Step 5: cache が無い自治体で skip されることを確認する**
 
