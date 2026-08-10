@@ -54,8 +54,9 @@ make verify HANDLE=<handle>  # 独立照合 (verify.mjs がある場合)
 
 - **推測でデータを作らない。** ソースが機械可読でない・地区割に確信が持てないなら、
   作らずに `survey.yaml` だけ残してください。それでも台帳が 1 件増えます
-- **生成ファイル (`meta.yaml` / `taxonomy.yaml` / `course-*.yaml`) を手で編集しない。**
-  生成器を直して `make regen` してください
+- **生成ファイルを手で編集しない。** 生成器を直して `make regen` してください。
+  どのファイルが生成物かは `AGENTS.md`「不変条件」が正典です —
+  `meta.yaml` / `taxonomy.yaml` は extractor によっては生成せず、その場合は手書きが正典になります
 - **語彙 (`schema/categories.yaml`) を勝手に増やさない。** 足りないと思ったら Issue で相談を
 - **一次ソースの誤記を「修正」しない。** 事実として `meta.yaml` に記録してください
 
