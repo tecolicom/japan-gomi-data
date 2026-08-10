@@ -10,6 +10,9 @@ tools/csv-extractor/shinagawa/cache/
 tools/pdf-extractor/kurashiki/cache/
 tools/pdf-extractor/chichibu-koiki/cache/
 tools/api-extractor/okayama/cache/
+tools/html-extractor/asaka/cache/
+tools/pdf-extractor/saiseibu-kumiai/cache/
+tools/pdf-extractor/moroyama-town/cache/
 __pycache__/
 .DS_Store
 /ics/
