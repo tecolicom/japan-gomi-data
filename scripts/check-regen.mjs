@@ -8,6 +8,13 @@
 // 手編集は再生成すると消えるので、この検査が唯一の検出手段になる。
 //
 // cache と一次ソースが要るので CI では回せない。PR を出す前のローカルゲート。
+//
+// 対象は「収録済み自治体 (course-*.yaml を持つもの) 全件」で、1 件たりとも
+// 沈黙で結果から消さない。extractor 名が handle と一致する「直接対応」に加えて、
+// 複数自治体を 1 本の生成器で束ねる「共通 extractor」(秩父広域・埼玉西部環境保全組合等)
+// の配下の自治体も config.json から宣言的に引いて対象に含める。対応表は
+// ハードコードしない (将来組合に自治体が増えても沈黙で消えないようにするため)。
+// 生成器そのものが無い自治体 (データを手書きした収録) は検査しようがないので skip する。
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,24 +23,86 @@ import { execFileSync } from 'node:child_process';
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const isDir = (p) => existsSync(p) && statSync(p).isDirectory();
 
-// handle → { dir, kind } (extractor 名が handle と一致するものだけ)
-function extractors() {
-  const out = new Map();
-  for (const kind of readdirSync(join(ROOT, 'tools')).filter((k) => k.endsWith('-extractor'))) {
-    for (const name of readdirSync(join(ROOT, 'tools', kind)).filter((n) => isDir(join(ROOT, 'tools', kind, n)))) {
-      if (!existsSync(join(ROOT, 'tools', kind, name, 'build.mjs'))) continue;
-      out.set(name, { dir: join('tools', kind, name), kind });
-    }
-  }
-  return out;
-}
-
 function municipalityDir(handle) {
   const muni = join(ROOT, 'municipalities');
   for (const pref of readdirSync(muni).filter((p) => isDir(join(muni, p)))) {
     if (isDir(join(muni, pref, handle))) return join('municipalities', pref, handle);
   }
   return null;
+}
+
+// 収録済み自治体の正典リスト: municipalities/*/*/<収録期間>/course-*.yaml を持つもの全件。
+// これが「本来検査対象になり得る全数」の基準になる (最後にこの件数と内訳合計を突き合わせる)。
+function collectedHandles() {
+  const muni = join(ROOT, 'municipalities');
+  const out = [];
+  for (const pref of readdirSync(muni).filter((p) => isDir(join(muni, p)))) {
+    for (const handle of readdirSync(join(muni, pref)).filter((h) => isDir(join(muni, pref, h)))) {
+      const dir = join(muni, pref, handle);
+      const hasCourse = readdirSync(dir)
+        .filter((entry) => /^\d{4}-\d{2}--\d{4}-\d{2}$/.test(entry) && isDir(join(dir, entry)))
+        .some((entry) => readdirSync(join(dir, entry)).some((f) => f.startsWith('course-') && f.endsWith('.yaml')));
+      if (hasCourse) out.push(handle);
+    }
+  }
+  return out.sort();
+}
+
+// 直接対応: extractor ディレクトリ名が handle と一致し、build.mjs を持つもの。
+function directExtractors() {
+  const out = new Map();
+  for (const kind of readdirSync(join(ROOT, 'tools')).filter((k) => k.endsWith('-extractor'))) {
+    for (const name of readdirSync(join(ROOT, 'tools', kind)).filter((n) => isDir(join(ROOT, 'tools', kind, n)))) {
+      if (!existsSync(join(ROOT, 'tools', kind, name, 'build.mjs'))) continue;
+      if (!municipalityDir(name)) continue; // 単独 handle と一致しないものは共通 extractor 側で扱う
+      out.set(name, { dir: join('tools', kind, name), kind });
+    }
+  }
+  return out;
+}
+
+// 共通 extractor: ディレクトリ名がどの handle とも一致しない (municipalityDir が無い) が
+// build.mjs を持つもの。config.json から対象 handle を読む。2 つの形を許す:
+//   1. { municipalities: { <handle>: { districts: [{ pdf: 'cache/...', ... }, ...], ... } } }
+//      (例: chichibu-koiki。districts[].pdf が cache 内の相対パスを宣言している)
+//   2. { <handle>: { ... }, _comment: '...' }  (フラット。_ 始まりのキーは無視)
+//      (例: saiseibu-kumiai。cache/<handle>-records.json を読む生成器)
+// どちらの形かは config.json の中身から判定する (対応表を手で書かない)。
+function sharedCoverage(direct) {
+  const out = new Map(); // handle -> { dir, kind, buildArgs, hasCache }
+  for (const kind of readdirSync(join(ROOT, 'tools')).filter((k) => k.endsWith('-extractor'))) {
+    for (const name of readdirSync(join(ROOT, 'tools', kind)).filter((n) => isDir(join(ROOT, 'tools', kind, n)))) {
+      const dir = join('tools', kind, name);
+      if (!existsSync(join(ROOT, dir, 'build.mjs'))) continue;
+      if (municipalityDir(name)) continue; // 直接対応済み
+      const confPath = join(ROOT, dir, 'config.json');
+      if (!existsSync(confPath)) continue; // 宣言を読めるものだけを対象にできる
+
+      let conf;
+      try { conf = JSON.parse(readFileSync(confPath, 'utf8')); } catch { continue; }
+      const muniMap = (conf && typeof conf.municipalities === 'object' && conf.municipalities) || conf;
+      if (!muniMap || typeof muniMap !== 'object') continue;
+
+      for (const [handle, entry] of Object.entries(muniMap)) {
+        if (handle.startsWith('_')) continue;
+        if (!municipalityDir(handle)) continue; // municipalities に対応が無いキーは対象外
+        if (direct.has(handle) || out.has(handle)) continue; // 二重登録は先勝ち
+
+        const districts = entry && Array.isArray(entry.districts) ? entry.districts : null;
+        const pdfPaths = districts && districts.every((d) => d && typeof d.pdf === 'string')
+          ? districts.map((d) => join(ROOT, dir, d.pdf))
+          : null;
+
+        const hasCache = () => {
+          if (pdfPaths) return pdfPaths.every((p) => existsSync(p));
+          return existsSync(join(ROOT, dir, 'cache', `${handle}-records.json`));
+        };
+
+        out.set(handle, { dir, kind, buildArgs: [handle], hasCache });
+      }
+    }
+  }
+  return out;
 }
 
 // build が要求する環境変数を、既存データの extracted_at から復元する。
@@ -53,9 +122,9 @@ function extractedAt(muniDir) {
 }
 
 // 使い方: node scripts/check-regen.mjs [handle...]
-// 引数省略時は cache を持つ全自治体が対象。共通ツール (chichibu-koiki・saiseibu-kumiai 等、
-// municipalities に対応物を持たないもの) は既定の対象からは除く。ただし handle を明示指定
-// された場合は打ち間違いを検出するため、対応が無ければそのまま失敗させる。
+// 引数省略時は収録済み全自治体が対象 (cache が無ければ skip、生成器が無ければ skip、
+// いずれも理由つきで 1 行ずつ出す)。handle を明示指定した場合は打ち間違いを検出するため、
+// municipalities に無ければそのまま失敗させる。
 const args = process.argv.slice(2);
 const badOpt = args.find((a) => a.startsWith('-'));
 if (badOpt) {
@@ -63,23 +132,43 @@ if (badOpt) {
   console.error('使い方: node scripts/check-regen.mjs [handle...]');
   process.exit(1);
 }
-const all = extractors();
-const handles = args.length ? args : [...all.keys()].filter((h) => municipalityDir(h)).sort();
 
-let ran = 0, skipped = 0, failed = 0;
+const direct = directExtractors();
+const shared = sharedCoverage(direct);
+function resolveExtractor(handle) {
+  if (direct.has(handle)) {
+    const ex = direct.get(handle);
+    return { dir: ex.dir, kind: ex.kind, buildArgs: [], hasCache: () => isDir(join(ROOT, ex.dir, 'cache')) };
+  }
+  if (shared.has(handle)) return shared.get(handle);
+  return null;
+}
+
+const explicit = args.length > 0;
+const handles = explicit ? args : collectedHandles();
+
+let checked = 0, skipped = 0, failed = 0;
 for (const handle of handles) {
-  const ex = all.get(handle);
-  if (!ex) { console.error(`✗ ${handle}: build.mjs を持つ extractor が無い`); failed++; continue; }
   const muniDir = municipalityDir(handle);
-  if (!muniDir) { console.error(`✗ ${handle}: municipalities に見つからない`); failed++; continue; }
-  if (!isDir(join(ROOT, ex.dir, 'cache'))) {
-    console.log(`- ${handle}: cache が無いので skip (make fetch HANDLE=${handle} で取得できる)`);
+  if (!muniDir) {
+    console.error(`✗ ${handle}: municipalities に見つからない`);
+    failed++; continue;
+  }
+
+  const res = resolveExtractor(handle);
+  if (!res) {
+    console.log(`- ${handle}: 生成器が無い (データは手書き) — skip`);
+    skipped++; continue;
+  }
+
+  if (!res.hasCache()) {
+    console.log(`- ${handle}: cache が無いので skip (${res.dir}/cache を用意すること)`);
     skipped++; continue;
   }
 
   const at = extractedAt(muniDir);
   try {
-    execFileSync(process.execPath, [join(ROOT, ex.dir, 'build.mjs')], {
+    execFileSync(process.execPath, [join(ROOT, res.dir, 'build.mjs'), ...res.buildArgs], {
       cwd: ROOT, stdio: 'pipe',
       env: { ...process.env, ...(at ? { EXTRACTED_AT: at } : {}) },
     });
@@ -89,7 +178,6 @@ for (const handle of handles) {
   }
 
   const diff = execFileSync('git', ['status', '--porcelain', '--', muniDir], { cwd: ROOT, encoding: 'utf8' }).trim();
-  ran++;
   if (diff) {
     console.error(`✗ ${handle}: 再生成で差分が出た`);
     console.error(diff.split('\n').map((l) => '    ' + l).join('\n'));
@@ -98,8 +186,14 @@ for (const handle of handles) {
     failed++;
   } else {
     console.log(`✓ ${handle}: 再生成で差分なし`);
+    checked++;
   }
 }
 
-console.log(`\n実行 ${ran} / skip ${skipped} / 失敗 ${failed}`);
+const total = checked + skipped + failed;
+console.log(`\n検査 ${checked} / skip ${skipped} / 失敗 ${failed}、収録済み合計 = ${total}`);
+if (!explicit && total !== handles.length) {
+  console.error(`✗ 内訳合計が収録済み件数と一致しない: ${total} ≠ ${handles.length} (どこかで自治体が沈黙で消えている)`);
+  failed++;
+}
 process.exit(failed ? 1 : 0);
