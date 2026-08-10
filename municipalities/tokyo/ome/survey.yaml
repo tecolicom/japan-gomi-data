@@ -25,7 +25,8 @@ granularity: dates
 district_unit: 町丁目を8つの収集日程(A〜H)にグルーピング
 district_count_approx: 8
 yearend: calendar-explicit
-notes: 主ソースは令和8年度版「青梅市のごみと資源物の分け方・出し方」PDF(A-H日程)。schedule_url=soshiki/23/1182.html は HTTP 200。 A日程PDF (uploaded/attachment/77610.pdf)
+notes: >-
+  主ソースは令和8年度版「青梅市のごみと資源物の分け方・出し方」PDF(A-H日程)。schedule_url=soshiki/23/1182.html は HTTP 200。 A日程PDF (uploaded/attachment/77610.pdf)
   は HTTP 200 application/pdf 6,892,849 bytes、pdftotext でテキスト層あり(約92,585文字)。 ただし抽出できるのは分別ルール解説と「収集は週2回(毎週)」「容器包装プラ=週1回・第3週除く」等の頻度テキストのみで、
   地区別の具体的収集曜日/日付は月間カレンダーの画像グリッド内にあり pdftotext では取得不可 (検出した「月曜/金曜/日曜」トークンは全て窓口/電話受付時間の記載)。よって granularity=partial(頻度ルールはテキスト、確定曜日は画像)。
   東京都ODカタログ t132055 には分別方法一覧(t132055d0000000010)・ゴミ集積所一覧(t132055d0000000037)・リサイクルセンター一覧等があるが、 収集日程/収集曜日のCSV/JSONは存在せず(WebSearchで確認)。市オープンデータページ(soshiki/80/2094.html)にも収集日データ無し。
