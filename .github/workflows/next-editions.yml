@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   check:
@@ -51,6 +52,38 @@ jobs:
           git add docs/next-edition-status.md
           git commit -m 'chore(watch): 次の版の公開状況を更新'
           git push
+
+      # 検出を Issue に落とす。secret を要さずリポジトリ内で完結するので、これが既定の通知経路。
+      # (Discord は下の step。webhook 未設定なら黙って飛ぶため、それだけだと検出が沈黙する)
+      #
+      # 検出状態は「人が次の版を収録するまで」続く。毎週立て直すと同じ Issue が積み上がるので、
+      # 未対応の open が既にあれば何もしない。中身の正典は docs/next-edition-status.md 側。
+      - name: 検出時に Issue を立てる
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FOUND=$(sed -n '/## 公開を検出/,/^## /p' docs/next-edition-status.md | grep -c '^- \*\*' || true)
+          if [ "$FOUND" -eq 0 ]; then
+            echo "検出なし — Issue を立てない"
+            exit 0
+          fi
+          if [ -n "$(gh issue list --label next-edition --state open --json number --jq '.[].number')" ]; then
+            echo "未対応の Issue が既にある — 立て直さない"
+            exit 0
+          fi
+          # ラベルは初回だけ作られる。既にあれば失敗するので握りつぶす。
+          gh label create next-edition --color '0e8a16' \
+            --description '一次ソースに次の版が出ている (収録候補)' 2>/dev/null || true
+          {
+            sed -n '/## 公開を検出/,/^## /p' docs/next-edition-status.md | sed '$d'
+            echo
+            echo '---'
+            echo '自動生成。判定は候補出しまでで、収録するかは人が決める。'
+            echo '最新の状態は `docs/next-edition-status.md` を見ること。'
+            echo '収録したらこの Issue を閉じる (開いたままだと次の検出が通知されない)。'
+          } > /tmp/issue-body.md
+          gh issue create --title "次の版が公開された自治体があります ($FOUND 件)" \
+            --label next-edition --body-file /tmp/issue-body.md
 
       # Discord への通知は「公開を検出」が出たときだけ。secret が無ければ黙って飛ばす。
       - name: 検出時に Discord へ通知
