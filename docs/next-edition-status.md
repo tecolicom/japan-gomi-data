@@ -43,7 +43,7 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
 ## 未検出
 
-次の版はまだ見当たらない。 (16 自治体)
+次の版はまだ見当たらない。 (19 自治体)
 
 - **asaka** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.asaka.lg.jp/soshiki/15/dust-syuusyuu.html
@@ -61,14 +61,20 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
 - **minano-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.minano.saitama.jp/section/seikatu/265/
+- **musashino** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度(2026年度)版
+  - 探した年: 2027 / 令和9 — https://www.city.musashino.lg.jp/gomi_kankyo/gomi/gomi_shushubi/1053782.html
 - **nagatoro-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/
 - **nerima** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
+- **nishitokyo** (tokyo) — 収録 `2025-10--2026-09` (2026-09 末) / 現行 令和7年10月〜令和8年9月版
+  - 探した年: 2026 / 令和9 — https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
 - **ogano-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.ogano.lg.jp/kurashi-tetsuzuki/kankyou-gomi-suidou/gomicalendar/
 - **okayama** (okayama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.okayama.jp/kurashi/category/1-12-7-10-3-0-0-0-0-0.html
+- **ome** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度版
+  - 探した年: 2027 / 令和9 — https://www.city.ome.tokyo.jp/soshiki/23/1182.html
 - **setagaya** (tokyo) — 収録 `2025-12--2026-12` (2026-12 末) / 現行 令和8年版
   - 探した年: 2027 / 令和9 — https://www.city.setagaya.lg.jp/02241/416.html
 - **tokorozawa** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
