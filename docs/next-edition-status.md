@@ -8,9 +8,16 @@
 生成: `node scripts/check-new-editions.mjs`。いつ状態が変わったかは、このファイルの
 git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
+## 確認できず — 要点検
+
+ページが取れない。移転・削除の可能性があるので**未公開と混同しない**。 (1 自治体)
+
+- **iruma** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
+  - HTTP 403 — https://opendata.pref.saitama.lg.jp/resource_download/1494
+
 ## 監視先がページでない — 要設定
 
-監視先が CSV / PDF / テキスト等でリンクを持たないため、次の版が出ても検出できない。survey.yaml の `schedule_url` を、そのファイルが置かれている**案内ページ**に直すこと。 (14 自治体)
+監視先が CSV / PDF / テキスト等でリンクを持たないため、次の版が出ても検出できない。survey.yaml の `schedule_url` を、そのファイルが置かれている**案内ページ**に直すこと。 (13 自治体)
 
 - **arakawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - text/csv — https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
@@ -20,8 +27,6 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - application/pdf — https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
 - **hidaka** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - application/pdf — https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
-- **iruma** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
-  - text/csv — https://opendata.pref.saitama.lg.jp/resource_download/1494
 - **kamifurano-town** (hokkaido) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - application/pdf — https://www.town.kamifurano.hokkaido.jp/contents/04chomin/0420seikatsu/gomi/calendar/R08_aka.pdf
 - **moroyama-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
