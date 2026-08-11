@@ -36,6 +36,14 @@ export function courseDoc({ city, course, courseNameJa, areas, period, source, r
 // <outDir>/<period>/ を作り直して course YAML 群を書き出す
 export function writeCourses(outDir, period, docs) {
   if (!parsePeriod(period)) throw new Error(`writeCourses: 不正な period "${period}"`);
+  // 「消してから入れる」順序なので、入れる側がゼロになった瞬間に破壊へ転じる。
+  // 収録済み自治体でコース 0 件は成立しない状態 (パーサが壊れた等) なので、
+  // 既存の日程を消す前に止める。黙って空にすると、build を直接叩いた人には
+  // エラーも警告も出ないまま日程が消える (make regen なら差分として捕まるが、
+  // それは PR 前のゲートなので、それまで気づけない)。
+  if (!Array.isArray(docs) || docs.length === 0) {
+    throw new Error(`writeCourses: コースが 0 件 (${outDir}/${period})。既存の日程を消さずに中止する`);
+  }
   const dir = join(outDir, String(period));
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
