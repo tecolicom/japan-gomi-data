@@ -6,7 +6,7 @@ name_ja: 調布市
 population: 242418
 status: collected
 source_type: txt
-schedule_url: https://www.city.chofu.lg.jp/documents/16365/r8calendar_no1.txt
+schedule_url: https://www.city.chofu.lg.jp/kurashi/gomirecycle/index.html
 calendar_urls:
 - https://www.city.chofu.lg.jp/070030/p041249.html
 verify_sources: []

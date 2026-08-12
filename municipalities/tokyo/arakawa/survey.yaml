@@ -6,7 +6,7 @@ name_ja: 荒川区
 population: 226289
 status: collected
 source_type: csv
-schedule_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+schedule_url: https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
 calendar_urls:
 - https://www.city.arakawa.tokyo.jp/a025/recycle/shuushuubi/syusyubi.html
 - https://www.city.arakawa.tokyo.jp/portal/gomi/index.html

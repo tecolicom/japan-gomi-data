@@ -6,7 +6,7 @@ name_ja: 入間市
 population: 139748
 status: collected
 source_type: csv
-schedule_url: https://opendata.pref.saitama.lg.jp/resource_download/1494
+schedule_url: https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
 calendar_urls:
 - https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
 - https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf

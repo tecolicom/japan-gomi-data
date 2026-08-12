@@ -6,7 +6,7 @@ name_ja: 中野区
 population: 345178
 status: collected
 source_type: csv
-schedule_url: https://www2.wagmap.jp/nakanodatamap/nakanodatamap/opendatafile/map_1/CSV/opendata_550239.csv
+schedule_url: https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
 calendar_urls:
 - https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/syusyuyobi/nakanoku.html
 verify_sources:

@@ -555,7 +555,7 @@
   population: 139748
   status: collected
   source_type: csv
-  schedule_url: https://opendata.pref.saitama.lg.jp/resource_download/1494
+  schedule_url: https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
   calendar_urls:
     - https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
     - https://www.city.iruma.saitama.jp/material/files/group/21/R8wakedasihyou.pdf
@@ -913,7 +913,7 @@
   population: 70534
   status: collected
   source_type: image-pdf
-  schedule_url: https://www.city.tsurugashima.lg.jp/page/page003533.html
+  schedule_url: https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/gomi-recycle/bunbetsu-calendar/
   calendar_urls:
     - https://www.city.tsurugashima.lg.jp/page/page003543.html
     - https://www.city.tsurugashima.lg.jp/page/page003542.html
@@ -944,7 +944,7 @@
   notes: "収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml
     から一次ソースを転記: 全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。"
   granularity: dates
-  schedule_url: https://www.city.hidaka.lg.jp/material/files/group/13/reiwa8nendogominitteihyou.pdf
+  schedule_url: https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
   calendar_urls:
     - https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
   verify_sources:
@@ -1088,7 +1088,7 @@
   population: 32987
   status: collected
   source_type: pdf
-  schedule_url: http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
+  schedule_url: https://www.town.moroyama.saitama.jp/soshikikarasagasu/seikatsukankyoka/kankyoukakari/gominowakekatadasikata/3203.html
   calendar_urls:
     - http://www.hozenkumiai.or.jp/pdf/moroyama2026_a.pdf
     - http://www.hozenkumiai.or.jp/pdf/moroyama2026_b.pdf
@@ -1120,7 +1120,7 @@
   population: 10097
   status: collected
   source_type: pdf
-  schedule_url: http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
+  schedule_url: https://www.town.ogose.saitama.jp/kurashi/kankyou/gomi/index.html
   calendar_urls:
     - http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
     - http://www.hozenkumiai.or.jp/pdf/ogose2026_b.pdf
@@ -1274,7 +1274,7 @@
   population: 12531
   status: collected
   source_type: pdf
-  schedule_url: https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
+  schedule_url: https://www.town.hatoyama.saitama.jp/kurashi/gomi_seikatsukankyo/gomi_recycle/
   calendar_urls:
     - https://www.town.hatoyama.saitama.jp/data/doc/1773387112_doc_50_0.pdf
     - https://www.town.hatoyama.saitama.jp/data/doc/1773387148_doc_50_0.pdf

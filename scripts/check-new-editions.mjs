@@ -57,6 +57,20 @@ async function resolveTarget(m) {
   } catch {
     /* survey 無しは想定内 (sabae / kamifurano-town / kawasaki / yokohama) */
   }
+  if (!watchUrl) {
+    // survey が無い自治体でも meta.yaml の index_url は案内ページを指している。
+    // course の出典 (PDF/CSV 直リンク) へ落ちる前にこれを試す —
+    // 直リンクはリンクを 1 本も持たないので、監視先としては最初から機能しない。
+    // survey.yaml を新設する手もあるが、docs/triage/ は survey.yaml から全県を
+    // 走査して生成されるため、収録だけが目的の県ファイルが生えてしまう。
+    try {
+      const meta = yamlParse(await readFile(join(m.dir, 'meta.yaml'), 'utf-8'));
+      if (meta?.source?.index_url) {
+        watchUrl = meta.source.index_url;
+        source = 'meta.index_url';
+      }
+    } catch { /* meta 無しは収録済み自治体では起きない */ }
+  }
   let editionJa = null;
   const courseDir = join(m.dir, m.period);
   const courses = (await readdir(courseDir)).filter((f) => /^course-.*\.yaml$/.test(f));

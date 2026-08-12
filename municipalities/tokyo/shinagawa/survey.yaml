@@ -6,7 +6,7 @@ name_ja: 品川区
 population: 418389
 status: collected
 source_type: csv
-schedule_url: http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+schedule_url: https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-gomi/gomi-kateigomi/wastedayslist/index.html
 calendar_urls:
 - http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.rdf
 verify_sources:

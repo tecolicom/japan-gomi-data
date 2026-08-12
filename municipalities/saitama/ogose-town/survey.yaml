@@ -6,7 +6,7 @@ name_ja: 越生町
 population: 10097
 status: collected
 source_type: pdf
-schedule_url: http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
+schedule_url: https://www.town.ogose.saitama.jp/kurashi/kankyou/gomi/index.html
 calendar_urls:
 - http://www.hozenkumiai.or.jp/pdf/ogose2026_a.pdf
 - http://www.hozenkumiai.or.jp/pdf/ogose2026_b.pdf

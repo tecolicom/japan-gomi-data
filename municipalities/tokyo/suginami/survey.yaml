@@ -6,7 +6,7 @@ name_ja: 杉並区
 population: 585730
 status: collected
 source_type: csv
-schedule_url: https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv
+schedule_url: https://www.city.suginami.tokyo.jp/kurashi/gomi/seisougomi/index.html
 calendar_urls:
 - https://www.city.suginami.tokyo.jp/shared/garbage/19.pdf
 verify_sources:

@@ -162,7 +162,7 @@
   population: 217798
   status: collected
   source_type: csv
-  schedule_url: https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.files/tiikibetusyuusyuuyoubiitiran.csv
+  schedule_url: https://www.city.taito.lg.jp/kurashi/gomi/wakekata/index.html
   calendar_urls:
     - https://www.city.taito.lg.jp/kusei/online/opendata/koutu/gomibunbetuitiran.html
     - https://www.city.taito.lg.jp/kurashi/gomi/wakekata/gomiinfo/shushubi/shushubi_zentai.html
@@ -242,7 +242,7 @@
   population: 418389
   status: collected
   source_type: csv
-  schedule_url: http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.csv
+  schedule_url: https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-gomi/gomi-kateigomi/wastedayslist/index.html
   calendar_urls:
     - http://www.city.shinagawa.tokyo.jp/ct/other000081600/gomisyusyubi.rdf
   verify_sources:
@@ -387,7 +387,7 @@
   population: 345178
   status: collected
   source_type: csv
-  schedule_url: https://www2.wagmap.jp/nakanodatamap/nakanodatamap/opendatafile/map_1/CSV/opendata_550239.csv
+  schedule_url: https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
   calendar_urls:
     - https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/syusyuyobi/nakanoku.html
   verify_sources:
@@ -408,7 +408,7 @@
   population: 585730
   status: collected
   source_type: csv
-  schedule_url: https://www.city.suginami.tokyo.jp/documents/12125/garbage.csv
+  schedule_url: https://www.city.suginami.tokyo.jp/kurashi/gomi/seisougomi/index.html
   calendar_urls:
     - https://www.city.suginami.tokyo.jp/shared/garbage/19.pdf
   verify_sources:
@@ -489,7 +489,7 @@
   population: 226289
   status: collected
   source_type: csv
-  schedule_url: https://www.city.arakawa.tokyo.jp/documents/41480/gomi_20251216.csv
+  schedule_url: https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
   calendar_urls:
     - https://www.city.arakawa.tokyo.jp/a025/recycle/shuushuubi/syusyubi.html
     - https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
@@ -879,7 +879,7 @@
   population: 242418
   status: collected
   source_type: txt
-  schedule_url: https://www.city.chofu.lg.jp/documents/16365/r8calendar_no1.txt
+  schedule_url: https://www.city.chofu.lg.jp/kurashi/gomirecycle/index.html
   calendar_urls:
     - https://www.city.chofu.lg.jp/070030/p041249.html
   verify_sources: []
