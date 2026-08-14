@@ -10,7 +10,10 @@ difficulty: 4
 notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hanno-data の sources.yaml から一次ソースを転記:
   コース別年間カレンダー PDF (日付入り・テキスト層あり)。市は PDF URL を予告なく変える運用のため index ページからの動的発見が必要 → 取得性 A=15 に override。検証ソースは単一。 【統括実確認
   2026-07-18】「テキスト層あり」は誤った推定だった。2026haraichibanaguri.pdf を実取得し pdftotext 出力 2 バイト = テキスト層なしの画像 PDF と確認 → image-pdf/d4
-  に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。'
+  に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。 【生成器の再構築 2026-08-14】収録当初の生成器が残っておらず
+  make regen の検査対象から外れていた。そのせいで A-1 の第5週の読み違い (ペット4日・紙布3日) を機械が検出できず、人が PDF を見るまで配信され続けた。tools/pdf-extractor/hanno
+  を起こして解消。テキスト層が無いので秩父広域・青梅と同じ色ベース抽出だが、飯能は罫線がベクタで残っているため四隅座標をハードコードせず毎回グリッドを復元する。course
+  YAML は生成物に切り替え (日程は不変、規則の表現のみ monthly_nth → monthly_specific)。照合 2190 日枠で不一致 0。'
 granularity: dates
 schedule_url: https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
 calendar_urls: []

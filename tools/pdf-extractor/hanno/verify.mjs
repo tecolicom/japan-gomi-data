@@ -31,7 +31,7 @@ const CATEGORY = {
 };
 
 const quiet = process.argv.includes('--quiet');
-const courseFile = (course) => join(CANON, `course-${course.replace('-', '')}.yaml`);
+const courseFile = (course) => join(CANON, `course-${course}.yaml`);
 
 let totalSlots = 0;
 let totalDiff = 0;
