@@ -80,9 +80,13 @@ function buildOverrides(rules, events, course, closed) {
   // (12/29 は A 系が休業・B 系は可燃を収集)。規則がその日に収集を予測しない場合も
   // 入れる — 日程は変わらないが、「市が休んだ日」がデータに残る。これが無いと
   // 利用者から見て年末年始に市が休むこと自体が読み取れない。
+  // note にはその日に本来出せたはずの品目を書く。休むこと自体より
+  // 「何が出せなくなるか」が読み手には要る情報で、規則から機械的に作れる。
   for (const day of closed) {
     if (events[day].length) throw new Error(`${course} ${day}: 「休業」表示なのに収集がある`);
-    out.push({ date: day, cancelled: true, note: '年末年始 休業(市カレンダーの表示どおり)' });
+    const ja = categoriesOn(new Date(day + 'T00:00:00'), rules, []).map((c) => CAT_JA[c]).join('・');
+    const note = ja ? `年末年始 休業(通常は${ja})` : '年末年始 休業(通常も収集なし)';
+    out.push({ date: day, cancelled: true, note });
   }
   return out.sort((a, b) => a.date.localeCompare(b.date));
 }

@@ -92,16 +92,16 @@ rules:
 overrides:
   - date: 2026-12-29
     cancelled: true
-    note: 年末年始 休業(市カレンダーの表示どおり)
+    note: 年末年始 休業(通常はプラ)
   - date: 2026-12-30
     cancelled: true
-    note: 年末年始 休業(市カレンダーの表示どおり)
+    note: 年末年始 休業(通常も収集なし)
   - date: 2026-12-31
     cancelled: true
-    note: 年末年始 休業(市カレンダーの表示どおり)
+    note: 年末年始 休業(通常は可燃)
   - date: 2027-01-01
     cancelled: true
-    note: 年末年始 休業(市カレンダーの表示どおり)
+    note: 年末年始 休業(通常は不燃・有害)
   - date: 2027-01-08
     category: non_burnable
     note: 年始休業による繰り下げ (2回目の金曜は通常紙布)
