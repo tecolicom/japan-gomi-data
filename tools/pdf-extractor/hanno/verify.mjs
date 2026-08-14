@@ -40,7 +40,7 @@ const summary = [];
 for (const { course, slug } of COURSES) {
   const jsonPath = join(CACHE, `extracted-${PDF_FILE(slug).replace(/\.pdf$/, '')}.json`);
   if (!existsSync(jsonPath)) throw new Error(`抽出結果が無い: ${jsonPath} (先に extract.py を回す)`);
-  const { items } = JSON.parse(readFileSync(jsonPath, 'utf8'));
+  const { items, closed: extractedClosed } = JSON.parse(readFileSync(jsonPath, 'utf8'));
 
   // 抽出結果: 日付 -> category の集合
   const extracted = new Map();
@@ -56,6 +56,15 @@ for (const { course, slug } of COURSES) {
   // 収録済み YAML: 日付 -> category の集合
   const doc = YAML.parse(readFileSync(courseFile(course), 'utf8'));
   const canon = expandRange(doc.metadata.period, doc.rules, doc.overrides);
+
+  // 休業日 (PDF の赤字「休業」) が cancelled override として残っているか。
+  // 日程には影響しない日もあるので expandRange の比較では捕まらない。
+  const closedInDoc = (doc.overrides || []).filter((o) => o.cancelled).map((o) => String(o.date)).sort();
+  const closedInPdf = [...(extractedClosed || [])].sort();
+  if (closedInDoc.join(',') !== closedInPdf.join(',')) {
+    console.log(`${course}: ★休業日が不一致  YAML=[${closedInDoc}]  PDF=[${closedInPdf}]`);
+    totalDiff++;
+  }
 
   const diffs = [];
   for (const day of periodDates(PERIOD)) {

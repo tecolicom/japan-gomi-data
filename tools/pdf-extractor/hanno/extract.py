@@ -72,14 +72,23 @@ PAGE_MONTHS = {
 # いない)。閾値で「どれかに当たるか」を見ると取り違えるので、各画素は最も近い参照色 1 つに
 # 割り当て、その距離が MAX_DIST を超えたものだけ未知として扱う。
 MAX_DIST = 30          # 画素を参照色に割り当てる上限 (|RGB差| の合計)
+
+# 年末年始の「休業」は白地に赤文字で、品目色が無い = 収集なしとしては正しく落ちる。
+# ただしそれだと「休んだ」のか「元々収集がない日」なのかが区別できない。
+# 赤い画素の量で「休業」の 2 文字を拾い、休業日として別に報告する。
+# 実測: 「休業」は 317〜347 px、祝日の日番号 (同じ赤) は 74〜89 px できれいに分かれる。
+CLOSED_RED_MIN = 200
 MIN_RATIO = 0.08       # セル面積に対する比率。これ以上あれば「その品目あり」
 UNKNOWN_RATIO = 0.03   # 既知色に当たらない「単一の色」がこれ以上を占めたら throw
 UNKNOWN_MIN_PX = 150   # 同上。狭いセルで文字の縁が相対的に増えるので絶対数でも下限を置く
 PAD = 0.15             # セル境界の罫線を避けるための内側マージン
 
-HEADER_H = (8, 16)     # 曜日ヘッダ行の高さ
-FULL_H = (35, 50)      # 通常の週行の高さ
-HALF_H = (16, 28)      # 最終行 (上下 2 段) の高さ
+# 行の高さ (pt)。週行は実測で 42.2〜42.5 か 20.8〜21.4 にきれいに分かれる。
+# 月ブロックの下には高さ 39.9 の帯 (次ブロックの見出し枠) が混じることがあり、
+# 42 に近いので範囲を広く取ると週行として拾ってしまう。狭く取って選別する。
+HEADER_H = (8, 16)     # 曜日ヘッダ行
+FULL_H = (41, 44)      # 通常の週行
+HALF_H = (19, 23)      # 最終行 (上下 2 段に割れているとき)
 
 
 class ExtractError(RuntimeError):
@@ -138,13 +147,18 @@ def blocks_of_page(page):
 
         for side in (cols[:8], cols[8:]):
             own = [l for l in lines if side[0] - 2 <= l['x0'] <= side[-1] + 2 and bottom - 1 <= l['top'] < nxt]
-            bands = row_bands(own)
-            rows = [bands[0][0]] + [b[1] for b in bands]
-            heights = [rows[i + 1] - rows[i] for i in range(len(rows) - 1)]
-            if not all(HALF_H[0] <= h <= FULL_H[1] for h in heights):
-                raise ExtractError(
-                    f'週行の高さが想定外 at x={side[0]:.1f} y={top:.1f}: {[round(h, 1) for h in heights]}'
-                )
+            isRow = lambda h: FULL_H[0] <= h <= FULL_H[1] or HALF_H[0] <= h <= HALF_H[1]
+            bands = [b for b in row_bands(own) if isRow(b[1] - b[0])]
+            if not bands:
+                raise ExtractError(f'週行が 1 本も無い at x={side[0]:.1f} y={top:.1f}')
+            # ヘッダ直下から連続している行だけを週行とする (間が空いたらそこで打ち切る)
+            rows = [bands[0][0]]
+            for b in bands:
+                if abs(b[0] - rows[-1]) > 2:
+                    break
+                rows.append(b[1])
+            if len(rows) - 1 > 6:
+                raise ExtractError(f'週行が 7 本以上ある ({len(rows) - 1}) at x={side[0]:.1f} y={top:.1f}')
             blocks.append({'cols': side, 'rows': rows})
     return blocks
 
@@ -162,16 +176,21 @@ def render(pdf, page_index, dpi):
 def cell_span(rows, weeks, wi, dow):
     """(wi, dow) のセルが占める y 範囲を返す。
 
-    最終行は上下 2 段に割ってあるが、**その列に 6 週目の日がある場合だけ**上下が
-    別々の日のセットになる。6 週目が無い列では 2 段ぶんが 1 つの縦長セルになり、
-    そこに品目が 2 つ縦積みされる。上段だけを見ると下の品目を丸ごと落とす。
+    最終行は上下 2 段に割ってあるが、**6 週ある月で、その列に 6 週目の日がある場合だけ**
+    上下が別々の日になる。6 週目が無い列では 2 段ぶんが 1 つの縦長セルで、そこに品目が
+    2 つ縦積みされる。上段だけ見ると下の品目を丸ごと落とす (実際 24 日ぶん取りこぼした)。
+
+    最終週は下に空段があればそこまでを 1 セルとして使うが、**使うのは 2 段まで**。
+    罫線からは月ブロックの下に余分な段が拾われることがあり (行が 7 つになる月がある)、
+    残り全部を含めると隣の要素まで巻き込む。品目色は無いので日程には響かないが、
+    「休業」の赤字を数えるときに誤検出する。
     """
     last = len(rows) - 1
-    if wi == len(weeks) - 1 and wi + 1 < last:
-        # 最終週。この列に次段の日が無いので、残りの段までを 1 セルとして使う
-        return rows[wi], rows[last]
-    if wi == 4 and len(weeks) > 5 and not weeks[5][dow]:
-        return rows[4], rows[min(6, last)]
+    if wi == 4 and len(weeks) > 5:
+        # 6 週の月の第 5 週。その列に第 6 週の日があるなら上段だけ、無ければ 2 段ぶん
+        return (rows[4], rows[5]) if weeks[5][dow] else (rows[4], rows[min(6, last)])
+    if wi == len(weeks) - 1:
+        return rows[wi], rows[min(wi + 2, last)]
     return rows[wi], rows[wi + 1]
 
 
@@ -213,8 +232,22 @@ def cell_items(arr, scale, cols, rows, weeks, wi, dow, where):
     return found
 
 
+def cell_is_closed(arr, scale, cols, rows, weeks, wi, dow):
+    """そのセルに「休業」の赤文字が入っているか。"""
+    x0, x1 = cols[dow], cols[dow + 1]
+    y0, y1 = cell_span(rows, weeks, wi, dow)
+    dx, dy = (x1 - x0) * PAD, (y1 - y0) * PAD
+    sub = arr[
+        int((y0 + dy) * scale):int((y1 - dy) * scale),
+        int((x0 + dx) * scale):int((x1 - dx) * scale),
+    ].reshape(-1, 3).astype(np.int16)
+    red = np.array(IGNORE['赤'])
+    return int((np.abs(sub - red).sum(1) < MAX_DIST).sum()) >= CLOSED_RED_MIN
+
+
 def extract(pdf, dpi, debug=False):
     result = {name: set() for name in REFS}
+    closed = set()
     with pdfplumber.open(pdf) as doc:
         for page_index, months in PAGE_MONTHS.items():
             page = doc.pages[page_index]
@@ -235,12 +268,15 @@ def extract(pdf, dpi, debug=False):
                     for dow, day in enumerate(week):
                         if not day:
                             continue
-                        where = f'{year}-{month:02d}-{day:02d} (page {page_index + 1}, 週{wi + 1}, 曜{dow})'
+                        key = f'{year}-{month:02d}-{day:02d}'
+                        where = f'{key} (page {page_index + 1}, 週{wi + 1}, 曜{dow})'
                         for name in cell_items(arr, scale, cols, rows, weeks, wi, dow, where):
-                            result[name].add(f'{year}-{month:02d}-{day:02d}')
+                            result[name].add(key)
+                        if cell_is_closed(arr, scale, cols, rows, weeks, wi, dow):
+                            closed.add(key)
                 if debug:
                     print(f'  {year}-{month:02d}: {len(weeks)} 週', file=sys.stderr)
-    return {name: sorted(dates) for name, dates in result.items()}
+    return {name: sorted(dates) for name, dates in result.items()}, sorted(closed)
 
 
 def main():
@@ -249,8 +285,11 @@ def main():
     ap.add_argument('--dpi', type=int, default=150)
     ap.add_argument('--debug', action='store_true')
     args = ap.parse_args()
-    items = extract(args.pdf, args.dpi, args.debug)
-    json.dump({'pdf': os.path.basename(args.pdf), 'items': items}, sys.stdout, ensure_ascii=False, indent=1)
+    items, closed = extract(args.pdf, args.dpi, args.debug)
+    json.dump(
+        {'pdf': os.path.basename(args.pdf), 'items': items, 'closed': closed},
+        sys.stdout, ensure_ascii=False, indent=1,
+    )
     print()
 
 

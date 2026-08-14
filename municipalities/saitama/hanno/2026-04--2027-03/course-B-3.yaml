@@ -102,6 +102,12 @@ rules:
     occurrences:
       - 4
 overrides:
+  - date: 2026-12-30
+    cancelled: true
+    note: 年末年始 休業(市カレンダーの表示どおり)
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始 休業(市カレンダーの表示どおり)
   - date: 2027-01-01
     cancelled: true
-    note: 年末年始 収集なし(市カレンダーどおり)
+    note: 年末年始 休業(市カレンダーの表示どおり)
