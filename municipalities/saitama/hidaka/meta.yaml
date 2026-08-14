@@ -1,6 +1,18 @@
 handle: hidaka
 name_ja: 日高市
 region_ja: 埼玉県
-code: "11242"
+code: '11242'
 source:
   index_url: https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
+notes:
+- '# course-*.yaml は tools/pdf-extractor/hidaka が生成する。直したいときは生成器を直して make regen する'
+- 全20コースが1本のPDF (全戸配布の年間日程表) に載る。3・4ページ目の表をコースごとに切り取って貼る形式
+- 可燃ごみは祝日も収集する。休むのは施設の定期点検日だけで、月木コースは 5/4・12/31、火金コースは 5/5・1/1 (PDFの「※注意」に実日付で明記)
+- 「ビン･カン」「粗大･金属」は同日収集の2品目をまとめた市の呼称。構成カテゴリへ分解して収録している (日程情報の欠落はゼロ)
+- 古紙・古布を市が収集しないコースが7つある (5・9・12・14・18・19・20)。course 13 は下鹿山区のみ対象外で、規則の note に残した
+- 資源7品目はすべて monthly_specific。びん缶が7〜9月だけ増便、粗大・金属が隔月、有害が年4回と、月内n回目では表せないため
+- '# 検証記録'
+- 2026-08-14 生成器が失われていたため tools/pdf-extractor/hidaka を起こし、course YAML を生成物に切り替えた
+- 収録は2026-07で「人間による目視レビューは未実施」と断っていたが、PDFとの全数照合で 20コース×365日=7300日枠すべて一致。誤りは無かった
+- rules は19/20コースで収録済みと完全一致。差は course 13 の note の文言のみ (収録済みが縮めていたのをPDFの原文に戻した)
+- overrides の日付は20/20一致。形式は cancelled のみに統一した (収録済みは category+cancelled と混在していたが、categoriesOn の扱いは同じ)

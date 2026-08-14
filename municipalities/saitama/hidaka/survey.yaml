@@ -1,5 +1,3 @@
-# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
-# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
 code: '11242'
 handle: hidaka
 name_ja: 日高市
@@ -7,8 +5,9 @@ population: 53141
 status: collected
 source_type: pdf
 difficulty: 3
-notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml から一次ソースを転記:
-  全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。'
+notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【統括バックフィル 2026-07-18】hidaka-data の sources.yaml から一次ソースを転記: 全20コースの年間日程表 PDF (全戸配布・固定URL・テキスト層あり) + コース別カレンダー PDF 20本 (照合に使用可)。 【生成器の再構築 2026-08-14】収録当初の生成器
+  (extract-hidaka-batch) が残っておらず make regen の検査対象から外れていた。飯能で同じ状態から読み違いが 4 か月配信された実例が出たため、tools/pdf-extractor/hidaka を起こして解消。テキスト層があるので pdfplumber の表抽出で素直に取れる (色ベース抽出は不要)。罠はコース番号 10 以降が黒丸に白抜きの数字でテキストとして読めない点
+  (1〜9 と並び順の一致を検査して補完)。照合の結果、収録済みデータに誤りは無かった (20コース×365日=7300日枠で不一致 0)。ヘッダの「人間による目視レビューは未実施」は、機械照合が通ったことで裏づけが取れた形。'
 granularity: dates
 schedule_url: https://www.city.hidaka.lg.jp/soshiki/shiminseikatsu/kankyo/haikibutsutaisaku/gomi/syusyu_hannyu/27861.html
 calendar_urls:
