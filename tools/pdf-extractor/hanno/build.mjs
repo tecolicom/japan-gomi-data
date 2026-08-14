@@ -5,7 +5,7 @@
 // 使い方: EXTRACTED_AT=YYYY-MM-DD node build.mjs
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { expandRange, periodDates, cancelledOverrides } from '../../_lib/schedule.mjs';
+import { expandRange, periodDates, categoriesOn, nthOfMonth } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 import { classifyRules } from '../../_lib/classify.mjs';
 import { COURSES, PERIOD, EDITION_JA, CACHE, HERE, PDF_URL, PDF_FILE } from './sources.mjs';
@@ -40,8 +40,56 @@ const VERIFIED_BY =
   '決めたセル領域の塗り色だけで品目を判定。expandRange 再展開で全365日を自己照合し、' +
   '6コース×365日=2190日枠を PDF 画像の目視転記と全数照合)';
 
+const CAT_JA = Object.fromEntries(Object.entries(ITEM2CAT).map(([ja, cat]) => [cat, ja]));
+const DOW_JA = '日月火水木金土';
+
+// 規則と実日付の食い違いを overrides に落とす。
+//
+// categoriesOn は「category override がある日は monthly 系の規則を丸ごと捨て、weekly と
+// override の category だけを残す」という規約なので、差し替える日はその日の monthly 品目を
+// **漏れなく全部** 並べる必要がある (1 つ書き忘れるとその品目が黙って消える)。
+function buildOverrides(rules, events, course) {
+  const weeklyCats = new Set(rules.filter((r) => r.pattern === 'weekly').map((r) => r.category));
+  const out = [];
+  for (const day of dates) {
+    const at = new Date(day + 'T00:00:00');
+    const actual = [...events[day]].sort();
+    const predicted = categoriesOn(at, rules, []).slice().sort();
+    if (actual.join(',') === predicted.join(',')) continue;
+
+    if (actual.length === 0) {
+      out.push({ date: day, cancelled: true, note: '年末年始 収集なし(市カレンダーどおり)' });
+      continue;
+    }
+    // weekly の品目が欠ける日は cancelled でしか表せない。全休止でないのに欠けるのは想定外
+    for (const c of weeklyCats) {
+      if (predicted.includes(c) && !actual.includes(c)) {
+        throw new Error(`${course} ${day}: weekly の ${c} だけが欠けている (override で表せない)`);
+      }
+    }
+    const wasJa = predicted.filter((c) => !weeklyCats.has(c)).map((c) => CAT_JA[c]).join('・');
+    const note = `年始休業による繰り下げ (${nthOfMonth(at)}回目の${DOW_JA[at.getDay()]}曜は通常${wasJa || '収集なし'})`;
+    for (const c of CAT_ORDER) {
+      if (actual.includes(c) && !weeklyCats.has(c)) out.push({ date: day, category: c, note });
+    }
+  }
+  // 「そのコースで実際に収集が消えた日」だけを cancelled にする。
+  // PDF はコースによって休業日の表示が違い (12/29 は A 系が休業・B 系は可燃を収集)、
+  // その赤字の「休業」は色ベース抽出では読めない。読めないものを他コースの観測から
+  // 推測して足すことはしない。規則が収集を予測する日の休みは、この差分で必ず捕まる。
+  return out.sort((a, b) => a.date.localeCompare(b.date));
+}
+
 const dates = periodDates(PERIOD);
-const docs = [];
+
+// --- 1 周目: コースごとの events と rules を決め、市の休業日を割り出す ---
+//
+// 休業日はコースによって違って見える。12/29 (火) は A 系 3 コースが休みだが、
+// 火曜が可燃の B 系は収集している。市が休業と書いた日を漏れなく拾うには、
+// 「どこか 1 コースでも、規則が収集を予測するのに実際に無い日」の和集合を取る。
+// 6 コースを独立観測として突き合わせる形になる。
+const built = [];
+const closed = new Set();
 
 for (const { course, slug, nameJa, areas } of COURSES) {
   const jsonPath = join(CACHE, `extracted-${PDF_FILE(slug).replace(/\.pdf$/, '')}.json`);
@@ -59,8 +107,20 @@ for (const { course, slug, nameJa, areas } of COURSES) {
     }
   }
 
-  const { rules, stopDays } = classifyRules({ dates, events, catOrder: CAT_ORDER });
-  const overrides = cancelledOverrides(rules, [...stopDays].sort(), '年末年始 収集なし(市カレンダーどおり)');
+  const { rules } = classifyRules({ dates, events, catOrder: CAT_ORDER, foldMonthlyNth: true });
+  for (const d of dates) {
+    if (events[d].length === 0 && categoriesOn(new Date(d + 'T00:00:00'), rules, []).length) closed.add(d);
+  }
+  built.push({ course, slug, nameJa, areas, events, rules });
+}
+
+console.log(`市の休業日 (6 コースの観測の和集合): ${[...closed].sort().join(', ')}`);
+
+// --- 2 周目: overrides を作って course YAML を組み立てる ---
+const docs = [];
+
+for (const { course, slug, nameJa, areas, events, rules } of built) {
+  const overrides = buildOverrides(rules, events, course);
 
   // 自己検証: rules + overrides を再展開して抽出した実日付と全日一致するか
   const actual = expandRange(PERIOD, rules, overrides, []);

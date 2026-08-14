@@ -13,7 +13,7 @@ notes: '収録済み (municipalities/saitama/ 参照)。triage 対象外。 【�
   に是正。収録時に LLM ベースの抽出パイプライン (tools/pdf-extractor) を要したのはこのため。 【生成器の再構築 2026-08-14】収録当初の生成器が残っておらず
   make regen の検査対象から外れていた。そのせいで A-1 の第5週の読み違い (ペット4日・紙布3日) を機械が検出できず、人が PDF を見るまで配信され続けた。tools/pdf-extractor/hanno
   を起こして解消。テキスト層が無いので秩父広域・青梅と同じ色ベース抽出だが、飯能は罫線がベクタで残っているため四隅座標をハードコードせず毎回グリッドを復元する。course
-  YAML は生成物に切り替え (日程は不変、規則の表現のみ monthly_nth → monthly_specific)。照合 2190 日枠で不一致 0。'
+  YAML は生成物に切り替えた (日程は不変、規則の表現も monthly_nth のまま)。生成した規則 60 本と category override 9 件は手書き正典と完全一致。照合 2190 日枠で不一致 0。'
 granularity: dates
 schedule_url: https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
 calendar_urls: []

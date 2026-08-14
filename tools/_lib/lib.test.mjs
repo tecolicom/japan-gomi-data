@@ -190,6 +190,63 @@ test('classifyRules: 隔週を「毎週+半分キャンセル」と表現しな�
   assert.equal(loose.rules[0].pattern, 'weekly');
 });
 
+// 飯能 A-2 の金曜と同じ形: 1・3 回目にペット / 2・4 回目に缶。
+// 1/1 が休業でその後 1 週ずつ繰り下がり、1 月だけ 2・4 回目 (缶は 3・5 回目) になる。
+function hannoA2Fridays(cat, baseOcc, janOcc) {
+  const dates = periodDates('2026-04--2027-03');
+  const events = Object.fromEntries(dates.map((d) => [d, []]));
+  const nth = (iso) => Math.floor((Number(iso.slice(8)) - 1) / 7) + 1;
+  for (const d of dates) {
+    if (new Date(d + 'T00:00:00').getDay() !== 5) continue;
+    const occ = d.startsWith('2027-01') ? janOcc : baseOcc;
+    if (occ.includes(nth(d)) && d !== '2027-01-01') events[d].push(cat);
+  }
+  return { dates, events };
+}
+
+test('classifyRules: foldMonthlyNth は既定 off (既存 extractor の出力を変えない)', () => {
+  const { dates, events } = hannoA2Fridays('pet_bottle', [1, 3], [2, 4]);
+  const { rules } = classifyRules({ dates, events, catOrder: ['pet_bottle'] });
+  assert.equal(rules[0].pattern, 'monthly_specific');
+});
+
+test('classifyRules: foldMonthlyNth は少数の例外月があっても monthly_nth に畳む', () => {
+  const { dates, events } = hannoA2Fridays('pet_bottle', [1, 3], [2, 4]);
+  const { rules } = classifyRules({ dates, events, catOrder: ['pet_bottle'], foldMonthlyNth: true });
+  assert.equal(rules.length, 1);
+  assert.equal(rules[0].pattern, 'monthly_nth');
+  assert.deepEqual(rules[0].days, ['FR']);
+  assert.deepEqual(rules[0].occurrences, [1, 3]); // 11 か月の多数決。1 月は呼び出し側が override に落とす
+});
+
+test('classifyRules: foldMonthlyNth でも食い違いが多すぎれば monthly_specific へ退避', () => {
+  // 隔月で 1・3 回目 ↔ 2・4 回目 が入れ替わる形。規則 1 本では説明できない
+  const dates = periodDates('2026-04--2027-03');
+  const events = Object.fromEntries(dates.map((d) => [d, []]));
+  const nth = (iso) => Math.floor((Number(iso.slice(8)) - 1) / 7) + 1;
+  for (const d of dates) {
+    if (new Date(d + 'T00:00:00').getDay() !== 5) continue;
+    const occ = Number(d.slice(5, 7)) % 2 === 0 ? [1, 3] : [2, 4];
+    if (occ.includes(nth(d))) events[d].push('pet_bottle');
+  }
+  const { rules } = classifyRules({ dates, events, catOrder: ['pet_bottle'], foldMonthlyNth: true });
+  assert.equal(rules[0].pattern, 'monthly_specific');
+});
+
+test('classifyRules: foldMonthlyNth は曜日ごとに規則を分ける (直積に広げない)', () => {
+  // 飯能の粗大と同じ形: 月曜 3 回目 ∪ 水曜 1 回目
+  const dates = periodDates('2026-04--2027-03');
+  const events = Object.fromEntries(dates.map((d) => [d, []]));
+  const nth = (iso) => Math.floor((Number(iso.slice(8)) - 1) / 7) + 1;
+  for (const d of dates) {
+    const w = new Date(d + 'T00:00:00').getDay();
+    if ((w === 1 && nth(d) === 3) || (w === 3 && nth(d) === 1)) events[d].push('oversized');
+  }
+  const { rules } = classifyRules({ dates, events, catOrder: ['oversized'], foldMonthlyNth: true });
+  assert.equal(rules.length, 2);
+  assert.deepEqual(rules.map((r) => [r.days[0], r.occurrences]), [['MO', [3]], ['WE', [1]]]);
+});
+
 test('classifyRules: catOrder に無い category は落とす', () => {
   const dates = periodDates('2026-04--2027-03');
   const events = Object.fromEntries(dates.map((d) => [d, []]));
