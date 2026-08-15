@@ -22,7 +22,11 @@ description: このリポジトリに新しい自治体のごみ収集カレン�
 node -e "import('./tools/_lib/registry.mjs').then(async m => console.log(await m.lookupMunicipality('市区町村名')))"
 ```
 
-3. `municipalities/<pref>/<handle>/survey.yaml` があれば読む。
+3. **その自治体が既に収録済みなら、本書ではなく `docs/playbook.md` §6 に従う。**
+   データはあるが生成器が無い自治体があり (`make regen` の skip 行が一覧)、手順が違う —
+   既存データが照合の基準になるので、停止点も承認項目も本書とは別になる。
+
+4. `municipalities/<pref>/<handle>/survey.yaml` があれば読む。
    **survey の記述を鵜呑みにしない** — 2026-08-10 に青梅で
    「カレンダーは画像で抽出不可」という記述が誤りだった実例がある。
 
@@ -31,18 +35,20 @@ node -e "import('./tools/_lib/registry.mjs').then(async m => console.log(await m
 `docs/playbook.md` §1 の優先順で探す。テキスト版カレンダー > OD CSV > サイト内 CSV >
 HTML 表 > テキスト層 PDF > 画像 PDF。
 
-PDF を「画像だから無理」と判断する前に、必ず次を実行する。
+PDF の方針は次の 1 コマンドで決まる。pdftotext の見た目で決めない。
 
 ```bash
 python3 -c "
 import pdfplumber, sys
 pdf = pdfplumber.open(sys.argv[1])
 for i, p in enumerate(pdf.pages):
-    print(i+1, 'words', len(p.extract_words()), 'lines', len(p.lines), 'curves', len(p.curves), 'images', len(p.images))
+    print(i+1, 'chars', len(p.chars), 'lines', len(p.lines), 'rects', len(p.rects), 'curves', len(p.curves))
 " <pdf>
 ```
 
-判定の考え方 (罫線・塗り色で図版から読み取る方法) は `docs/playbook.md` §1 を見る。
+`chars` があって罫線もあるなら**まず `find_tables()` を試す** (日高はこれで一発だった)。
+`chars` が 0 でも諦めない — 罫線が生きていれば色ベース抽出が効く (飯能・秩父広域・青梅)。
+判定表は `docs/playbook.md` §1。
 
 ### 停止して報告する 4 項目
 
@@ -75,8 +81,10 @@ make new HANDLE=<handle> PREF=<都道府県romaji> KIND=<html|pdf|csv|txt|api>
 |---|---|
 | テキスト版カレンダー | `tools/txt-extractor/chofu/` |
 | 日付入り HTML | `tools/html-extractor/nishitokyo/` |
+| **表として取れる PDF** (`find_tables` が効く) | `tools/pdf-extractor/hidaka/` |
 | 罫線のある PDF | `tools/pdf-extractor/musashino/` |
-| 文字が図版の PDF (色ベース) | `tools/pdf-extractor/ome/`、`tools/pdf-extractor/chichibu-koiki/` |
+| 文字が図版の PDF (色ベース・四隅座標を埋め込み) | `tools/pdf-extractor/ome/`、`tools/pdf-extractor/chichibu-koiki/` |
+| 文字が図版の PDF (色ベース・罫線からグリッド復元) | `tools/pdf-extractor/hanno/` |
 | OD CSV | `tools/csv-extractor/iruma/` |
 
 守ること。
@@ -98,6 +106,9 @@ Phase 1 で宣言した独立ソースと突き合わせる。
 - **目視で読んだ結果は `verify.mjs` の `PDF_SAMPLES` に固定保持する** (同 §6)。
   一過性にしない。平日は全部書き、「収集なし」も明示する。
   サンプルは端 (年末年始・6 週ある月・隔週の位相が変わる月) を狙う
+- **「不一致 0」と報告する前に、検査が効くことを確かめる。** 抽出結果を 1 日ぶん書き換えて回し、
+  差分が出ることを見る。**存在する日付を狙う** — 飯能では最初の改竄テストが、生成物に無い日付を
+  狙って空振りし、「差分なし」を検査成功と誤読しかけた
 
 ## Phase 4: 仕上げ
 
