@@ -1,0 +1,66 @@
+# 三鷹市の読み物断片 (facts)。事実と出典に基づく。文体: です・ます調、2〜4 文。
+facts:
+  - id: ten-districts-all-different
+    title: 10 地区すべてで曜日の組み合わせが違う
+    body: >-
+      三鷹市は市内を 10 地区に分けていますが、同じ曜日の組み合わせを持つ地区が 1 つもありません。
+      たとえば燃やせるごみは、月曜・木曜の地区もあれば火曜・金曜の地区もあり、
+      資源をどの曜日に出すかも地区ごとに入れ替わっています。
+      引っ越すと、可燃も資源もまとめて曜日が変わることになります。
+    tags: [収集頻度, 町内の違い]
+    sources:
+      - municipalities/tokyo/mitaka/2026-04--2027-03/course-095682.yaml
+      - municipalities/tokyo/mitaka/2026-04--2027-03/course-095664.yaml
+      - https://www.city.mitaka.lg.jp/c_categories/index01004001001.html
+  - id: yearend-dec29-differs
+    title: 年末の 12 月 29 日は地区によって収集がある
+    body: >-
+      年末年始は 12 月 30 日から 1 月 1 日まで全地区が休みですが、12 月 29 日 (火) だけは
+      地区で扱いが分かれます。火曜日が燃やせるごみの 5 地区では「臨時に収集します」として
+      その日も可燃だけを集め、残りの 5 地区は休みになります。
+      同じ市内でも、年末に出せる最後の日が違うということです。
+    tags: [年末年始, 町内の違い]
+    sources:
+      - municipalities/tokyo/mitaka/2026-04--2027-03/course-095664.yaml
+      - municipalities/tokyo/mitaka/2026-04--2027-03/course-095682.yaml
+      - https://www.city.mitaka.lg.jp/c_service/095/attached/attach_95664_6.pdf
+  - id: january-friday-shift
+    title: 元日が金曜のため、2 地区だけ資源の順番がずれる
+    body: >-
+      2027 年 1 月 1 日は金曜日で収集が休みになります。金曜に「第 1・3 週」「第 2・4 週」の
+      資源の枠を持つ下連雀 1〜4 丁目と牟礼の 2 地区では、その分だけ順番が 1 週ずつ後ろにずれ、
+      ふだんは何も無い第 5 金曜日にも収集があります。休みで飛ばすのではなく繰り下がる調整で、
+      市のカレンダーにも「空きびん・缶は 2 回目と 4 回目」と書き添えられています。
+    tags: [年末年始, 収集頻度]
+    sources:
+      - municipalities/tokyo/mitaka/2026-04--2027-03/course-095671.yaml
+      - municipalities/tokyo/mitaka/2026-04--2027-03/course-095682.yaml
+      - https://www.city.mitaka.lg.jp/c_service/095/attached/attach_95682_6.pdf
+  - id: burnable-on-holidays
+    title: 燃やせるごみは祝日も収集する
+    body: >-
+      三鷹市では燃やせるごみを祝日も通常どおり収集します。休むのは年末年始だけです。
+      祝日のたびに収集が飛ぶ自治体もあるなかで、曜日さえ覚えておけばよい形になっています。
+    tags: [収集頻度, 年末年始]
+    sources:
+      - https://www.city.mitaka.lg.jp/c_service/095/095682.html
+  - id: two-blocks-late-night
+    title: 2 つの丁目だけ夜 11 時 30 分まで出せる
+    body: >-
+      ごみは収集日当日の朝 8 時までに出すのが原則ですが、下連雀 3 丁目と上連雀 2 丁目の
+      燃やせるごみだけは「当日の夜 11 時 30 分まで」となっています。
+      収集日そのものは他の地区と同じで、出せる時間帯だけが違います。
+    tags: [町内の違い]
+    sources:
+      - https://www.city.mitaka.lg.jp/c_service/095/095671.html
+      - https://www.city.mitaka.lg.jp/c_service/095/095667.html
+  - id: paired-item-slots
+    title: 「空きびん・缶」「古紙・古着」は 1 つの枠
+    body: >-
+      三鷹市の収集案内では、びんと缶が「空きびん・缶」、古紙と古着が「古紙・古着」という
+      1 つの枠にまとめられています。どちらも必ず同じ日に集められるため、
+      利用者から見ればひとまとまりの「その日に出せるもの」として扱えます。
+    tags: [資源の中身]
+    sources:
+      - municipalities/tokyo/mitaka/taxonomy.yaml
+      - https://www.city.mitaka.lg.jp/c_service/095/095682.html
