@@ -1,0 +1,85 @@
+metadata:
+  city: mitaka
+  course: "095680"
+  course_name_ja: 井の頭全域
+  areas:
+    - name: 井の頭1丁目
+      yomi: いのかしら
+      machiaza_id: 132047-0011001
+    - name: 井の頭2丁目
+      yomi: いのかしら
+      machiaza_id: 132047-0011002
+    - name: 井の頭3丁目
+      yomi: いのかしら
+      machiaza_id: 132047-0011003
+    - name: 井の頭4丁目
+      yomi: いのかしら
+      machiaza_id: 132047-0011004
+    - name: 井の頭5丁目
+      yomi: いのかしら
+      machiaza_id: 132047-0011005
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.mitaka.lg.jp/c_service/095/095680.html
+    extracted_at: 2026-08-15
+    extracted_by: claude-opus-5
+    verified_by: Claude(三鷹市「収集日程」令和8年度の地区別HTMLに載る曜日規則を抽出。年末年始 (休止日・1月の繰り下げ) は地区別カレンダーPDFから読み、10地区の12月・2027年1月をPDFのテキスト層と目視で照合。areas は ABR 町字マスターの三鷹市 62 町字を10地区へ重複・欠落なく分割できることを検査)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences:
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences: &a1
+      - 1
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days:
+      - MO
+    occurrences: *a1
+  - category: cloth
+    pattern: weekly
+    days:
+      - TH
+  - category: paper
+    pattern: weekly
+    days:
+      - TH
+  - category: hazardous
+    pattern: weekly
+    days:
+      - WE
+overrides:
+  - date: 2026-12-30
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)

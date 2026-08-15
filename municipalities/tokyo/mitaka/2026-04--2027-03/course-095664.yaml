@@ -1,0 +1,103 @@
+metadata:
+  city: mitaka
+  course: "095664"
+  course_name_ja: 大沢3丁目・深大寺全域・井口全域・野崎2・3丁目地区
+  areas:
+    - name: 大沢3丁目
+      yomi: おおさわ
+      machiaza_id: 132047-0004003
+    - name: 深大寺1丁目
+      yomi: じんだいじ
+      machiaza_id: 132047-0009001
+    - name: 深大寺2丁目
+      yomi: じんだいじ
+      machiaza_id: 132047-0009002
+    - name: 深大寺3丁目
+      yomi: じんだいじ
+      machiaza_id: 132047-0009003
+    - name: 井口1丁目
+      yomi: いぐち
+      machiaza_id: 132047-0010001
+    - name: 井口2丁目
+      yomi: いぐち
+      machiaza_id: 132047-0010002
+    - name: 井口3丁目
+      yomi: いぐち
+      machiaza_id: 132047-0010003
+    - name: 井口4丁目
+      yomi: いぐち
+      machiaza_id: 132047-0010004
+    - name: 井口5丁目
+      yomi: いぐち
+      machiaza_id: 132047-0010005
+    - name: 野崎2丁目
+      yomi: のざき
+      machiaza_id: 132047-0008002
+    - name: 野崎3丁目
+      yomi: のざき
+      machiaza_id: 132047-0008003
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.mitaka.lg.jp/c_service/095/095664.html
+    extracted_at: 2026-08-15
+    extracted_by: claude-opus-5
+    verified_by: Claude(三鷹市「収集日程」令和8年度の地区別HTMLに載る曜日規則を抽出。年末年始 (休止日・1月の繰り下げ) は地区別カレンダーPDFから読み、10地区の12月・2027年1月をPDFのテキスト層と目視で照合。areas は ABR 町字マスターの三鷹市 62 町字を10地区へ重複・欠落なく分割できることを検査)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences:
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences: &a1
+      - 2
+      - 4
+  - category: glass_bottle
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences: *a1
+  - category: cloth
+    pattern: weekly
+    days:
+      - TH
+  - category: paper
+    pattern: weekly
+    days:
+      - TH
+  - category: hazardous
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2026-12-30
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)

@@ -1,0 +1,19 @@
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - pet_bottle
+  - beverage_can
+  - glass_bottle
+  - cloth
+  - paper
+  - hazardous
+groups:
+  - label: 空きびん・缶
+    short: びん缶
+    members: [glass_bottle, beverage_can]
+    note: 市が 1 つの収集枠として案内する呼称。日程は常に同日
+  - label: 古紙・古着
+    short: 古紙古着
+    members: [paper, cloth]
+    note: 市が 1 つの収集枠として案内する呼称。日程は常に同日

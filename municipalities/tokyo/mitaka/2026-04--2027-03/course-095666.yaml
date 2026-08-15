@@ -1,0 +1,88 @@
+metadata:
+  city: mitaka
+  course: "095666"
+  course_name_ja: 野崎4丁目・大沢1・2・4・5・6丁目地区
+  areas:
+    - name: 野崎4丁目
+      yomi: のざき
+      machiaza_id: 132047-0008004
+    - name: 大沢1丁目
+      yomi: おおさわ
+      machiaza_id: 132047-0004001
+    - name: 大沢2丁目
+      yomi: おおさわ
+      machiaza_id: 132047-0004002
+    - name: 大沢4丁目
+      yomi: おおさわ
+      machiaza_id: 132047-0004004
+    - name: 大沢5丁目
+      yomi: おおさわ
+      machiaza_id: 132047-0004005
+    - name: 大沢6丁目
+      yomi: おおさわ
+      machiaza_id: 132047-0004006
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度
+    source_url: https://www.city.mitaka.lg.jp/c_service/095/095666.html
+    extracted_at: 2026-08-15
+    extracted_by: claude-opus-5
+    verified_by: Claude(三鷹市「収集日程」令和8年度の地区別HTMLに載る曜日規則を抽出。年末年始 (休止日・1月の繰り下げ) は地区別カレンダーPDFから読み、10地区の12月・2027年1月をPDFのテキスト層と目視で照合。areas は ABR 町字マスターの三鷹市 62 町字を10地区へ重複・欠落なく分割できることを検査)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences:
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences: &a1
+      - 1
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences: *a1
+  - category: cloth
+    pattern: weekly
+    days:
+      - WE
+  - category: paper
+    pattern: weekly
+    days:
+      - WE
+  - category: hazardous
+    pattern: weekly
+    days:
+      - MO
+overrides:
+  - date: 2026-12-30
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
+  - date: 2026-12-31
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
+  - date: 2027-01-01
+    cancelled: true
+    note: 年末年始 収集なし(市のカレンダーどおり)
