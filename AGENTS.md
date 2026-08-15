@@ -3,6 +3,7 @@
 日本の自治体のごみ収集カレンダーを機械可読なオープンデータ (CC BY 4.0) として集約するリポジトリ。
 
 - 人間向けの入口: `CONTRIBUTING.md`
+- **用語の定義: `docs/glossary.md`** (course と地区、照合と自己検証と regen、文書の呼び方)
 - 収録の手順と判断基準: `docs/playbook.md`
 - 進行管理 (Claude Code): `.claude/skills/add-municipality/SKILL.md`
 - 検証の考え方: `docs/opendata-sources.md`「検証の考え方 (確率論的な信頼度)」
