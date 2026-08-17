@@ -1,5 +1,3 @@
-# 収集日データの公開状況サーベイ (正典)。docs/triage/ の県別YAML・triage.csv・scores.csv はここから生成される。
-# 収録作業の起点: 一次ソース・形式・粒度・罠は notes を参照。更新したら scripts/triage-csv.mjs / triage-score.mjs を再実行。
 code: '11100'
 handle: saitama
 name_ja: さいたま市
@@ -18,14 +16,15 @@ difficulty: 2
 district_unit: 地区
 district_count_approx: 70
 yearend: calendar-explicit
-notes: '【前回G1のdifficulty=4/unknownを是正】gomisukeエンドポイントの実体取得を実施し疑問点を解消。 一次ソースは優先順③に該当する JSON(JSONP)。さいたま市公式カレンダーページ
-  (p042612.html?page=area)は第三者商用サービス「ごみすけ(gomisuke)」app0017を埋め込み、 実データは admin.gomisuke.jp/app/0017/api/jsonp.php?file={area,type,calendar}
-  から JSONP で配信(curl 200・認証不要、Referer付与で取得確認済)。3ファイル結合で完全再構成可: (1) file=area … areaID→町名リスト(全70エリア, 【区名】::町名… 形式)
-  (2) file=type … typeID→ごみ種別名(1もえるごみ/2もえないごみ/6びん/7かん/8ペット/9容プラ/4古紙/5繊維/3有害危険/…/15お休み) (3) file=calendar(約290KB)
-  … 月×areaID×日→typeID群。202601〜202703 の15ヶ月ローリング(年末年始含む)。 政令市10区は全区この単一 gomisuke システムで統一(区ごとに別ソース構造は無い)。収集グループ数は
-  区で差(南区13が最多、西区3が最少)。アプリ「さいちゃん(jp.gomisuke.app.Gomisuke0017)」iOS/Android も同バックエンド。 年末年始は毎年カレンダーデータに直接反映され明示的(告知待ちでない)。
-  埼玉県ODポータル opendata.pref.saitama.lg.jp にごみ収集日の個別ODは無し(確認済)。 出し方マニュアルPDF(r8)はテキスト層あり=検証用に利用可。gomisuke配信データは商用サービス由来で
-  ライセンス明示なし=proprietary-site 扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。 【収録方針 2026-07-18】gomisuke API は本プロジェクトの一次ソースとして採用しない
-  (playbook 参照)。収録時は市の直接公開物 (出し方マニュアルPDF等) か市への照会経由で。スコアは公開状況の記述として維持。'
+notes: '【前回G1のdifficulty=4/unknownを是正】gomisukeエンドポイントの実体取得を実施し疑問点を解消。 一次ソースは優先順③に該当する JSON(JSONP)。さいたま市公式カレンダーページ (p042612.html?page=area)は第三者商用サービス「ごみすけ(gomisuke)」app0017を埋め込み、 実データは admin.gomisuke.jp/app/0017/api/jsonp.php?file={area,type,calendar}
+  から JSONP で配信(curl 200・認証不要、Referer付与で取得確認済)。3ファイル結合で完全再構成可: (1) file=area … areaID→町名リスト(全70エリア, 【区名】::町名… 形式) (2) file=type … typeID→ごみ種別名(1もえるごみ/2もえないごみ/6びん/7かん/8ペット/9容プラ/4古紙/5繊維/3有害危険/…/15お休み) (3)
+  file=calendar(約290KB) … 月×areaID×日→typeID群。202601〜202703 の15ヶ月ローリング(年末年始含む)。 政令市10区は全区この単一 gomisuke システムで統一(区ごとに別ソース構造は無い)。収集グループ数は 区で差(南区13が最多、西区3が最少)。アプリ「さいちゃん(jp.gomisuke.app.Gomisuke0017)」iOS/Android
+  も同バックエンド。 年末年始は毎年カレンダーデータに直接反映され明示的(告知待ちでない)。 埼玉県ODポータル opendata.pref.saitama.lg.jp にごみ収集日の個別ODは無し(確認済)。 出し方マニュアルPDF(r8)はテキスト層あり=検証用に利用可。gomisuke配信データは商用サービス由来で ライセンス明示なし=proprietary-site 扱い。難易度2(構造化JSON・JSONP除去と3ファイルjoinのみ)。
+  【収録方針 2026-07-18】gomisuke API は本プロジェクトの一次ソースとして採用しない (playbook 参照)。収録時は市の直接公開物 (出し方マニュアルPDF等) か市への照会経由で。スコアは公開状況の記述として維持。 【実地調査 2026-08-17 / 保留】市の直接公開物に地区別の収集曜日が無いことを 3 経路で確認した: (1) 収集曜日ページ p001912.html
+  は収集"回数"の一般表のみで「お住まいの地区の収集曜日については収集日カレンダーにて」とごみすけへ誘導、(2) p042612.html はごみすけの埋め込み、(3) ごみマニュアル r8_jp_gomimanual.pdf (10ページA3) も「▶地区別の収集曜日について」と誘導するだけで地区別の表なし。 一方 JSONP は実取得できた: file=area 17,774B (70エリア)
+  / file=type 36,711B (15種) / file=calendar 297,574B (2026-01〜2027-03 の15か月)。calendar に現れるのは収集する9品目 + typeID15「ごみ収集のお休み」(420件) のみで、小型家電・粗大・家電リサイクル・パソコン・収集不可は出現しない (= 語彙は正典に収まり除外判断も不要)。年末年始の休止も日付データから直接読める。granularity
+  は dates。 ★注意: 市の HTML ソースに jsonp.php は書かれていない。埋め込みスクリプト admin.gomisuke.jp/app/0017/api/gomisuke_ssl.js (26,804B、難読化なし) を読んで初めてエンドポイントが分かる構造で、ブラウザで見えるカレンダーは JS 実行後の DOM。 「生成後の DOM を読む方が単なる参照に近い」という整理はありうるが、1画面=1エリア1か月なので
+  70エリア×12か月=840画面のレンダリングと playwright 等の依存追加が要る (現行 extractor は全て curl/fetch ベース)。また経路を変えても方針が挙げる3理由のうち「約款不明の商用インフラへの依存」「導入形態による挙動差」は残り、緩和されうるのは「商用データベース複製の法務リスク」の議論だけ。 → 方針 2026-07-18 (第三者商用アプリは一次ソースにしない)
+  により**保留**。再開するなら (a) ごみすけの利用約款を確認して「約款不明」を解消する、(b) 市へオープンデータ化を照会する、のいずれかが先。'
 surveyed_at: '2026-07-17'
 granularity: dates
