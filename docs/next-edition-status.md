@@ -8,6 +8,13 @@
 生成: `node scripts/check-new-editions.mjs`。いつ状態が変わったかは、このファイルの
 git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
+## 監視先がページでない — 要設定
+
+監視先が CSV / PDF / テキスト等でリンクを持たないため、次の版が出ても検出できない。survey.yaml の `schedule_url` を、そのファイルが置かれている**案内ページ**に直すこと。 (1 自治体)
+
+- **tsurugashima** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
+  - リンク無し — https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/gomi-recycle/bunbetsu-calendar/
+
 ## 未検出
 
 次の版はまだ見当たらない。 (33 自治体)
@@ -40,6 +47,8 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
 - **minano-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.minano.saitama.jp/section/seikatu/265/
+- **mitaka** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
+  - 探した年: 2027 / 令和9 — https://www.city.mitaka.lg.jp/c_categories/index01004001001.html
 - **moroyama-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.moroyama.saitama.jp/soshikikarasagasu/seikatsukankyoka/kankyoukakari/gominowakekatadasikata/3203.html
 - **musashino** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度(2026年度)版
@@ -72,8 +81,6 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/index.html
 - **tokyo-nakano** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
-- **tsurugashima** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
-  - 探した年: 2027 / 令和9 — https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/gomi-recycle/bunbetsu-calendar/
 - **yokohama** (kanagawa) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/
 - **yokoze-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
