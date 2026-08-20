@@ -28,7 +28,7 @@ rules:
   - category: beverage_can
     pattern: monthly_nth
     days: [WE]
-    occurrences: [2, 4]
+    occurrences: [4]
   - category: paper
     pattern: monthly_nth
     days: [WE]
@@ -36,7 +36,7 @@ rules:
   - category: cloth
     pattern: monthly_nth
     days: [WE]
-    occurrences: [2, 4]
+    occurrences: [4]
   - category: hazardous
     pattern: monthly_nth
     days: [TU]
