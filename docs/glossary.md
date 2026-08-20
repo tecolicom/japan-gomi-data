@@ -29,6 +29,7 @@
 | `meta.yaml` | **運用ルールと検証記録**。祝日・年末年始の扱い、確率的信頼度 |
 | `taxonomy.yaml` | **その自治体の語彙**。`schema/categories.yaml` の部分集合 + `groups` (市の呼称) |
 | `facts.yaml` | **読み物断片** (任意)。出典必須 |
+| `bunbetsu-jiten.yaml` | **品目辞典** (任意)。品目名 → 出し方。日程とは別の資料で、**収録期間ディレクトリに置かない** (build が消す)。`category` は `categories.yaml` か `disposal.yaml` のどちらか |
 | `<収録期間>/course-*.yaml` | **日程本体**。多くは生成物 (下記「正典」を見よ) |
 
 ## 2. 処理と検査
@@ -67,6 +68,14 @@
 | **weekly** | 毎週その曜日 |
 | **monthly_nth** | **その月 n 回目の該当曜日**。`occurrences` は 1〜5 の**肯定リスト**で、除外を書く構文は無い |
 | **monthly_specific** | 実日付の列挙。規則化できないものの退避先 |
+
+`schema/disposal.yaml` は**別の軸**で、品目辞典だけが使う。日程には現れない。
+
+| 用語 | 意味 |
+|---|---|
+| **not_collected** | 市は収集しない (受入不可) |
+| **drop_off_only** | 持ち込みのみ |
+| **reference** | 別ページ参照 |
 
 - **「第n週」ではない。**「1 日が土曜の月は第 1 週に月曜が無いが、1 回目の月曜は第 2 週にある」。
   実装は `tools/_lib/schedule.mjs` の `nthOfMonth`、日本語表記のパースは `tools/_lib/jp.mjs`

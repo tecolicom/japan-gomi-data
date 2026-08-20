@@ -21,7 +21,10 @@ const scheduleV = ajv.compile(loadJson('schema/schedule.schema.json'));
 const taxonomyV = ajv.compile(loadJson('schema/taxonomy.schema.json'));
 const factsV = ajv.compile(loadJson('schema/facts.schema.json'));
 const metaV = ajv.compile(loadJson('schema/meta.schema.json'));
+const jitenV = ajv.compile(loadJson('schema/bunbetsu-jiten.schema.json'));
 const vocab = new Set(Object.keys(loadYaml(join(ROOT, 'schema/categories.yaml')).categories));
+// 品目辞典だけが使う「処分の可否」語彙。course-*.yaml には現れない (schema/disposal.yaml 参照)
+const disposalVocab = new Set(Object.keys(loadYaml(join(ROOT, 'schema/disposal.yaml')).disposal));
 
 const errors = [];
 const fail = (f, msg) => errors.push(`${f}: ${msg}`);
@@ -90,6 +93,42 @@ for (const { handle, dir } of handles) {
       for (const g of tax.groups ?? []) {
         for (const m of g.members ?? []) {
           if (!taxCats.has(m)) fail(`${handle}/taxonomy.yaml`, `groups "${g.label}" の member "${m}" が categories に無い`);
+        }
+      }
+    }
+  }
+
+  // 品目辞典 (任意)。品目名から出し方を引く辞典で、収集日程とは別の資料。
+  // **収録期間ディレクトリに置いてはいけない** — emit.mjs の writeCourses() が
+  // <outDir>/<period>/ を rmSync してから書き出すので、build のたびに消える。
+  // handle 直下に置く (meta.yaml / taxonomy.yaml と同じ階層)。
+  const jitenPath = join(dir, 'bunbetsu-jiten.yaml');
+  if (existsSync(jitenPath)) {
+    const jiten = loadYaml(jitenPath);
+    if (!jitenV(jiten)) fail(`${handle}/bunbetsu-jiten.yaml`, ajv.errorsText(jitenV.errors));
+    else {
+      // category は「収集種別」か「処分可否」のどちらかの正典に属すること。
+      // 2026-08 まで飯能が not_collected / drop_off_only / reference を混ぜており、
+      // 別リポジトリにあったため誰も検査していなかった。
+      const seen = new Map();
+      for (const it of jiten.items) {
+        if (!vocab.has(it.category) && !disposalVocab.has(it.category)) {
+          fail(`${handle}/bunbetsu-jiten.yaml`,
+            `未知の category "${it.category}" (品目「${it.name}」)。` +
+            'schema/categories.yaml (収集種別) か schema/disposal.yaml (処分可否) に無い');
+        }
+        // 同名品目が別種別で二重に載っていると、アプリは先勝ちで一方しか見せない
+        const prev = seen.get(it.name);
+        if (prev != null && prev !== it.category) {
+          fail(`${handle}/bunbetsu-jiten.yaml`, `品目「${it.name}」が "${prev}" と "${it.category}" で重複`);
+        }
+        seen.set(it.name, it.category);
+      }
+      // taxonomy に無い収集種別を辞典が使っていたら、その街では出せない種別を案内している
+      for (const it of jiten.items) {
+        if (vocab.has(it.category) && taxCats.size && !taxCats.has(it.category)) {
+          fail(`${handle}/bunbetsu-jiten.yaml`,
+            `category "${it.category}" (品目「${it.name}」) がこの自治体の taxonomy.yaml に無い`);
         }
       }
     }

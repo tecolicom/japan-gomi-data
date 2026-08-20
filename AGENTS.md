@@ -16,8 +16,20 @@ municipalities/<都道府県romaji>/<handle>/
   meta.yaml              自治体メタ + 更新に必要な情報源 + 運用ルール + 検証記録
   taxonomy.yaml          その自治体の種別語彙 (schema/categories.yaml の部分集合)
   facts.yaml             任意。利用者向けの読み物断片 (出典必須)
+  bunbetsu-jiten.yaml    任意。品目辞典 (品目名 → 出し方)。日程とは別の資料
   <収録期間>/course-*.yaml  日程本体
 ```
+
+- **`bunbetsu-jiten.yaml` を収録期間ディレクトリに置かない。** `emit.mjs` の
+  `writeCourses()` が `<outDir>/<期間>/` を `rmSync` してから書き出すので、build のたびに
+  消える。辞典は資料の版 (「令和8年4月修正」) で変わるもので、日程の収録期間とは無関係。
+- 辞典の `category` は **2 つの正典**のどちらかに属する。`schema/categories.yaml` (収集種別)
+  か `schema/disposal.yaml` (処分可否 = 収集しない / 持ち込みのみ / 別ページ参照)。
+  **混ぜない** — 処分可否を `categories.yaml` に足すと、日程を読む全利用者に
+  「どのコースも決して収集しない種別」が見える。
+- **辞典はリポジトリの CC BY 4.0 に自動では乗らない。** 日程は事実なので著作権が及ばないが、
+  辞典は品目の選択・配列と note の文言が自治体の著作物になりうる。許諾が確認できない自治体の
+  辞典には `source.license` と `license_note` を必ず書く (飯能が実例)。
 
 - **handle** は自分で綴りを考えず、必ずレジストリで引く (`tools/_lib/registry.mjs`)。
 - **収録期間** は `YYYY-MM--YYYY-MM`。**一次ソースが実際に裏付ける範囲**であって会計年度ではない。

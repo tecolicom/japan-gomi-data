@@ -1,0 +1,18 @@
+# 品目辞典 (bunbetsu-jiten.yaml) の「処分の可否」語彙(正典)。
+#
+# **schema/categories.yaml とは軸が違う。**
+#   categories.yaml … 収集する物の種類 (可燃 / 不燃 / プラ …)。course-*.yaml が使う
+#   disposal.yaml   … そもそも収集するのか (収集しない / 持ち込みのみ / 別ページ参照)
+#
+# 混ぜてはいけない。ここの値を categories.yaml に足すと、日程を読むすべての利用者に
+# 「どのコースも決して収集しない種別」が見えてしまう。逆に course-*.yaml の category に
+# ここの値は現れない。**辞典だけが使う。**
+#
+# (2026-08-20 追加。それまで飯能の辞典が 69 品目でこの 3 つを category に混ぜており、
+#  正典に無いキーを誰も検査していなかった。アプリ側は search.astro の
+#  EXTRA_LABELS / EXTRA_COLORS で独自に補っていて、語彙が二重管理になっていた。
+#  色とラベルはそのアプリ側の表をそのまま正典へ移したもの。)
+disposal:
+  not_collected: { label: 収集しない,   short: 受入不可, color: '#3F4D2A' }  # 杉
+  drop_off_only: { label: 持ち込みのみ, short: 持込限定, color: '#A6261C' }  # 朱
+  reference:     { label: 別ページ参照, short: 参照,     color: '#1A1209' }  # 墨
