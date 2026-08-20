@@ -7,48 +7,66 @@ metadata:
   source:
     edition_ja: 令和8年度
     source_url: https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html
-    extracted_at: 2026-08-03
-    extracted_by: claude-opus-4-8
-    verified_by: Claude(東秩父村公式「ごみの出し方」HTML本文に明記された種別別の収集曜日を転記。村全域一律で地区割なし。資源プラ(第1・2・3・5金)と廃プラ(第4金)は正典 plastic に統合し毎週金。ガラス類(第3火)は non_burnable。ペットボトルは第3火に加え5〜10月の第1水も収集(overrides)。年末年始の記載はHTMLに無く override 未作成)
+    extracted_at: 2026-08-20
+    extracted_by: claude-opus-5
+    verified_by: Claude (村公式「ごみの出し方」ページの表から種別ごとの収集曜日を機械抽出。村全域一律で地区割なし。資源プラ(第1・2・3・5金)と廃プラ(第4金)は正典 plastic に統合され毎週金になる。ガラス類(第3火)は non_burnable。資源回収は第2水と第4水で出せる品目が違い、衣類とアルミ缶は第4水のみ。ペットボトルは第3火に加え5〜10月の第1水も収集 (overrides)。日付入りカレンダーが無いため独立照合ソースは無い)
 rules:
   - category: burnable
     pattern: weekly
-    days: [MO, TH]
-  - category: non_burnable
-    pattern: monthly_nth
-    days: [TU]
-    occurrences: [3]
+    days:
+      - MO
+      - TH
   - category: plastic
     pattern: weekly
-    days: [FR]
-  - category: glass_bottle
-    pattern: monthly_nth
-    days: [TU]
-    occurrences: [4]
-  - category: beverage_can
-    pattern: monthly_nth
-    days: [WE]
-    occurrences: [4]
-  - category: paper
-    pattern: monthly_nth
-    days: [WE]
-    occurrences: [2, 4]
-  - category: cloth
-    pattern: monthly_nth
-    days: [WE]
-    occurrences: [4]
-  - category: hazardous
-    pattern: monthly_nth
-    days: [TU]
-    occurrences: [2]
+    days:
+      - FR
   - category: metal
     pattern: monthly_nth
-    days: [TU]
-    occurrences: [1]
+    days:
+      - TU
+    occurrences:
+      - 1
+  - category: hazardous
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+  - category: non_burnable
+    pattern: monthly_nth
+    days: &a1
+      - TU
+    occurrences:
+      - 3
   - category: pet_bottle
     pattern: monthly_nth
-    days: [TU]
-    occurrences: [3]
+    days: *a1
+    occurrences:
+      - 3
+  - category: glass_bottle
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 4
+  - category: paper
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: cloth
+    pattern: monthly_nth
+    days: &a2
+      - WE
+    occurrences:
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days: *a2
+    occurrences:
+      - 4
 overrides:
   - date: 2026-05-06
     category: pet_bottle
