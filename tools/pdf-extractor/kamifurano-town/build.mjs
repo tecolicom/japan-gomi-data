@@ -5,11 +5,11 @@
 // 使い方: node fetch.mjs && EXTRACTED_AT=YYYY-MM-DD node build.mjs
 //
 // 抽出は extract_kamifurano.py (pdfplumber) が担う。**pdfplumber を持つ python が要る** —
-// 既定の python3 が持っていない環境があるので、PYTHON 環境変数で明示できるようにし、
-// 無ければ候補を順に試す。見つからなければ黙って進まず throw する。
+// 既定の python3 が持っていない環境があるので _lib/python.mjs の findPython() で探す。
 import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { findPython } from '../../_lib/python.mjs';
 import { classifyRules } from '../../_lib/classify.mjs';
 import { expandRange, periodDates, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
@@ -32,20 +32,7 @@ const CAT_ORDER = [
   'beverage_can', 'glass_bottle', 'non_burnable', 'hazardous', 'oversized',
 ];
 
-function findPython() {
-  const cands = process.env.PYTHON ? [process.env.PYTHON] : ['python3.10', 'python3', 'python'];
-  for (const p of cands) {
-    try {
-      execFileSync(p, ['-c', 'import pdfplumber'], { stdio: 'ignore' });
-      return p;
-    } catch { /* 次の候補へ */ }
-  }
-  throw new Error(
-    `pdfplumber を持つ python が見つからない (試した: ${cands.join(', ')})。` +
-    'PYTHON=/path/to/python で指定する');
-}
-
-const PY = findPython();
+const PY = findPython(['pdfplumber']);
 const dates = periodDates(PERIOD);
 const docs = [];
 

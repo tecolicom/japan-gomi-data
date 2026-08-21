@@ -13,8 +13,11 @@ import { execFileSync } from 'node:child_process';
 import { stringify as yamlStringify } from 'yaml';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 import { parsePeriod } from '../../_lib/schedule.mjs';
+import { findPython } from '../../_lib/python.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+// extract.py は pdfplumber / PIL / numpy を使う。python3 直打ちにしない (_lib/python.mjs)
+const PY = findPython(['pdfplumber', 'PIL', 'numpy']);
 const CONF = JSON.parse(readFileSync(join(HERE, 'config.json'), 'utf8'));
 const outDir = (handle) => join(HERE, '..', '..', '..', 'municipalities', 'saitama', handle);
 const EXTRACTED_AT = process.env.EXTRACTED_AT || (() => { throw new Error('EXTRACTED_AT env 必須'); })();
@@ -144,7 +147,7 @@ function buildMunicipality(handle, muni) {
   mkdirSync(OUT, { recursive: true });
   const docs = [];
   for (const dist of muni.districts) {
-    const raw = execFileSync('python3', [join(HERE, 'extract.py'), join(HERE, dist.pdf)], { encoding: 'utf8', maxBuffer: 1 << 24 });
+    const raw = execFileSync(PY, [join(HERE, 'extract.py'), join(HERE, dist.pdf)], { encoding: 'utf8', maxBuffer: 1 << 24 });
     const ext = JSON.parse(raw);
     const { rules, overrides } = buildRules(ext, CONF.period);
     const problems = selfVerify(ext, rules, overrides, CONF.period);

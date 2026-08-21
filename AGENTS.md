@@ -94,6 +94,7 @@ municipalities/<都道府県>/<handle>/
 | `verify.mjs` | 期間 diff、rule of three、層化サンプリング |
 | `fetch.mjs` | キャッシュつき取得 |
 | `registry.mjs` | 全国自治体レジストリの参照 |
+| `python.mjs` | pdfplumber / PIL / numpy を持つ python の探索 (**`python3` を直打ちしない**) |
 
 `build-ics` と各 verify が `schedule.mjs` を共有することで
 「照合と配信で同じ解釈」を保証している。ここを自前で書き直さない。
