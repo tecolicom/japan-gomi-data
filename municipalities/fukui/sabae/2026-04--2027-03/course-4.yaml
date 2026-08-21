@@ -1,60 +1,98 @@
-# 鯖江市 コース4（可燃 毎週火・金／資源 水）2026年度
-# Source: 福井県オープンデータ CSV（https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv）。PDF抽出ではなく構造化CSVを機械変換。
-# 読み(yomi)は元CSVの読み列より。資源系は同一資源日に一括収集(元CSVで全種別同日)。
 metadata:
   city: sabae
   course: "4"
-  course_name_ja: 可燃火・金・資源水
   areas:
-    - { name: "青葉町", yomi: "あおばちょう" }
-    - { name: "莇生田町", yomi: "あぞうだちょう" }
-    - { name: "入町", yomi: "いりちょう" }
-    - { name: "尾花町", yomi: "おばなちょう" }
-    - { name: "片山町", yomi: "かたやまちょう" }
-    - { name: "金谷町", yomi: "かなだにちょう" }
-    - { name: "上河内町", yomi: "かみこうちちょう" }
-    - { name: "上河端町", yomi: "かみこうばたちょう" }
-    - { name: "上杉本", yomi: "かみすぎもと" }
-    - { name: "河和田町", yomi: "かわだちょう" }
-    - { name: "北中町", yomi: "きたなかちょう" }
-    - { name: "沢町", yomi: "さわちょう" }
-    - { name: "下河端町", yomi: "しもこうばたちょう" }
-    - { name: "下杉本", yomi: "しもすぎもと" }
-    - { name: "新出", yomi: "しんで" }
-    - { name: "寺中町", yomi: "じちゅうちょう" }
-    - { name: "糺町", yomi: "ただすちょう" }
-    - { name: "椿坂", yomi: "つばえ" }
-    - { name: "中杉本", yomi: "なかすぎもと" }
-    - { name: "中野町 木引", yomi: "なかの きびき" }
-    - { name: "中野町 出口", yomi: "なかの でぐち" }
-    - { name: "中野町 花出", yomi: "なかの はないで" }
-    - { name: "中野町 原", yomi: "なかの はら" }
-    - { name: "中野町 樋口", yomi: "なかの ひぐち" }
-    - { name: "中野町 曲木", yomi: "なかの まがりき" }
-    - { name: "中野町 まち", yomi: "なかの まち" }
-    - { name: "中野町 松成", yomi: "なかの まつなり" }
-    - { name: "西杉本", yomi: "にしすぎもと" }
-    - { name: "西番町", yomi: "にしばんちょう" }
-    - { name: "西袋町", yomi: "にしぶくろちょう" }
-    - { name: "橋立町", yomi: "はしたてちょう" }
-    - { name: "東清水町", yomi: "ひがししみずちょう" }
-    - { name: "東米岡2丁目", yomi: "ひがしよねおか2" }
-    - { name: "舟枝町", yomi: "ふなえだちょう" }
-    - { name: "平和台団地", yomi: "へいわだいだんち" }
-    - { name: "別司町", yomi: "べっしちょう" }
-    - { name: "丸山町3丁目", yomi: "まるやまちょう3" }
-    - { name: "吉江住宅団地", yomi: "よしえじゅうたくだんち" }
-    - { name: "吉江町", yomi: "よしえちょう" }
-    - { name: "吉江中", yomi: "よしえなか" }
-    - { name: "吉江山手団地", yomi: "よしえやまてだんち" }
-    - { name: "米岡町", yomi: "よねおかちょう" }
+    - name: 青葉町
+      yomi: あおばちょう
+    - name: 莇生田町
+      yomi: あぞうだちょう
+    - name: 入町
+      yomi: いりちょう
+    - name: 尾花町
+      yomi: おばなちょう
+    - name: 片山町
+      yomi: かたやまちょう
+    - name: 金谷町
+      yomi: かなだにちょう
+    - name: 上河内町
+      yomi: かみこうちちょう
+    - name: 上河端町
+      yomi: かみこうばたちょう
+    - name: 上杉本
+      yomi: かみすぎもと
+    - name: 河和田町
+      yomi: かわだちょう
+    - name: 北中町
+      yomi: きたなかちょう
+    - name: 沢町
+      yomi: さわちょう
+    - name: 下河端町
+      yomi: しもこうばたちょう
+    - name: 下杉本
+      yomi: しもすぎもと
+    - name: 新出
+      yomi: しんで
+    - name: 寺中町
+      yomi: じちゅうちょう
+    - name: 糺町
+      yomi: ただすちょう
+    - name: 椿坂
+      yomi: つばえ
+    - name: 中杉本
+      yomi: なかすぎもと
+    - name: 中野町 木引
+      yomi: なかの きびき
+    - name: 中野町 出口
+      yomi: なかの でぐち
+    - name: 中野町 花出
+      yomi: なかの はないで
+    - name: 中野町 原
+      yomi: なかの はら
+    - name: 中野町 樋口
+      yomi: なかの ひぐち
+    - name: 中野町 曲木
+      yomi: なかの まがりき
+    - name: 中野町 まち
+      yomi: なかの まち
+    - name: 中野町 松成
+      yomi: なかの まつなり
+    - name: 西杉本
+      yomi: にしすぎもと
+    - name: 西番町
+      yomi: にしばんちょう
+    - name: 西袋町
+      yomi: にしぶくろちょう
+    - name: 橋立町
+      yomi: はしたてちょう
+    - name: 東清水町
+      yomi: ひがししみずちょう
+    - name: 東米岡2丁目
+      yomi: ひがしよねおか2
+    - name: 舟枝町
+      yomi: ふなえだちょう
+    - name: 平和台団地
+      yomi: へいわだいだんち
+    - name: 別司町
+      yomi: べっしちょう
+    - name: 丸山町3丁目
+      yomi: まるやまちょう3
+    - name: 吉江住宅団地
+      yomi: よしえじゅうたくだんち
+    - name: 吉江町
+      yomi: よしえちょう
+    - name: 吉江中
+      yomi: よしえなか
+    - name: 吉江山手団地
+      yomi: よしえやまてだんち
+    - name: 米岡町
+      yomi: よねおかちょう
   period: 2026-04--2027-03
   source:
     edition_ja: 令和8年度
     source_url: https://www.pref.fukui.lg.jp/doc/dx-suishin/list_ct_gomisyusyubi_d/fil/sabaeshisyusyubi.csv
-    extracted_at: 2026-07-13
-    extracted_by: claude-opus-4-8
-    verified_by: "Claude (福井県オープンデータCSVの機械変換、人間による目視レビューは未実施)"
+    extracted_at: 2026-08-21
+    extracted_by: claude-opus-5
+    verified_by: Claude (福井県オープンデータ CSV の町名×品目→収集曜日を機械抽出し、内閣府「国民の祝日」CSV とエコプラザさばえ「年末年始のごみ収集」PDF で実日付に落とした。可燃は休日も収集し、資源系は祝日休止。年末年始は品目別・曜日別に最終日と開始日が違う。2 週連続で祝日になるコースの特別収集日 (2026 年度は水コースの 5/6) は収集する)
 rules:
   - category: burnable
     pattern: weekly
@@ -89,9 +127,6 @@ rules:
     pattern: weekly
     days:
       - WE
-
-# 休止(overrides): 資源系は祝日は収集なし(可燃は休日も収集)。年末年始は全種休止。
-# 祝日は @holiday-jp で算出。年末年始は鯖江公式「年末年始のごみ収集日」PDFより。GWの特別収集5/6は資源も収集のため休止に含めない。
 overrides:
   - date: 2026-04-29
     cancelled: true
