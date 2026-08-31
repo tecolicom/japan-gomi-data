@@ -79,7 +79,7 @@ ken_all は日本郵便が無償配布する正式データ。`machiaza_id` は 
 ken_all で補完されるのは読みのみ。cache は `.gitignore` 対象なので zip はリポジトリに含めない。
 - `docs/opendata-sources.md` — ごみ収集オープンデータの調査記録(新自治体収録時の探索ガイド・自治体別メモ)
 - `docs/triage/` — **調査台帳データセット** (すべて生成物)。自治体ごとの収集日データ公開状況 (出典 URL・形式・粒度・
-  ライセンス・「使いやすさスコア」) を集約した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 埼玉63+東京62=125 自治体。
+  ライセンス・「使いやすさスコア」) を集約した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 埼玉63+東京62+岡山2=127 自治体。
   **正典は各自治体の `municipalities/<都道府県>/<handle>/survey.yaml`** で、`<都道府県>.yaml`・`triage.csv`・`scores.csv` は
   そこから再生成する (`node scripts/triage-csv.mjs` / `node scripts/triage-score.mjs --csv docs/triage/scores.csv`)。
   スコア定義は [`docs/opendata-quality-index.md`](docs/opendata-quality-index.md)。

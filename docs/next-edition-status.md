@@ -8,16 +8,9 @@
 生成: `node scripts/check-new-editions.mjs`。いつ状態が変わったかは、このファイルの
 git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
-## 監視先がページでない — 要設定
-
-監視先が CSV / PDF / テキスト等でリンクを持たないため、次の版が出ても検出できない。survey.yaml の `schedule_url` を、そのファイルが置かれている**案内ページ**に直すこと。 (1 自治体)
-
-- **tsurugashima** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
-  - リンク無し — https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/gomi-recycle/bunbetsu-calendar/
-
 ## 未検出
 
-次の版はまだ見当たらない。 (33 自治体)
+次の版はまだ見当たらない。 (35 自治体)
 
 - **arakawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
@@ -81,6 +74,10 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.tokorozawa.saitama.jp/kurashi/gomi/nittei/index.html
 - **tokyo-nakano** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/index.html
+- **toshima** (tokyo) — 収録 `2026-04--2026-11` (2026-11 末) / 現行 「資源回収・ごみ収集のお知らせ」と「曜日一覧」(2026年7月16日掲載)
+  - 探した年: 2026 / 令和8 — https://www.city.toshima.lg.jp/150/kurashi/gomi/shigen/2303021832.html
+- **tsurugashima** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
+  - 探した年: 2027 / 令和9 — https://www.city.tsurugashima.lg.jp/kurashi-tetsuduki/gomi-recycle/bunbetsu-calendar/
 - **yokohama** (kanagawa) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/
 - **yokoze-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度

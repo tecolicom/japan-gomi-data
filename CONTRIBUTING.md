@@ -51,7 +51,7 @@ make regen HANDLE=<handle>   # 再生成して差分ゼロ (PR を出すなら�
 make verify HANDLE=<handle>  # 独立照合 (verify.mjs がある場合)
 ```
 
-`HANDLE` を省くと収録済み全 33 自治体を検査します (**6 分ほど**かかります)。
+`HANDLE` を省くと収録済み全 35 自治体を検査します (**6 分ほど**かかります)。
 自分の自治体を足すだけなら `HANDLE` を指定すれば数秒で済みます。
 
 `make regen` は cache と一次ソースが要るので CI では回りません。**手元で必ず通してください。**
