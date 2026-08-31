@@ -4,26 +4,35 @@ code: '13116'
 handle: toshima
 name_ja: 豊島区
 population: 297511
-source_type: app-only
+source_type: pdf-text
 schedule_url: https://www.city.toshima.lg.jp/150/kurashi/gomi/shigen/2303021832.html
 calendar_urls:
-- https://manage.delight-system.com/threeR/web/calendar?jichitaiId=toshimaku&areaId=144919&year=2026&month=8&lang=ja
-- https://www.city.toshima.lg.jp/documents/1056/syuusyuyoubiitiran.pdf
+- https://www.city.toshima.lg.jp/documents/27707/20260716110355.pdf
+- https://www.city.toshima.lg.jp/documents/1053/20260403165803.pdf
 verify_sources:
-- multilingual-pamphlet-pdf-weak
-- image-pdf-weekday-list
+- multilingual-leaflet-other-languages
+- booklet-image-pdf-visual
 license: proprietary-site
-difficulty: 4
-granularity: dates
-district_unit: さんあ～る areaId (町丁目/地域単位)
-district_count_approx: null
+difficulty: 2
+granularity: weekday
+district_unit: 町丁目 (丁目 + 番地範囲)
+district_count_approx: 58
 yearend: december-announce
-notes: '23区だが機械可読の一次ソースが弱い難物。最有力は第三者アプリ「さんあ～る」(delight-system) のWEB版カレンダー。 URL: manage.delight-system.com/threeR/web/calendar?jichitaiId=toshimaku&areaId=<地域ID>&year=YYYY&month=MM&lang=ja、CLI
-  200。 生HTMLにサーバサイドで実日付×品目が埋込 (8月分で燃やす19/資源38/プラ13/粗大3, class="day"31セル)。 【最大の罠】各日の品目は data:image/png;base64 のアイコン画像で表現され、テキストラベルは凡例側のみ。
-  日付↔品目をテキスト抽出できるか (アイコンの alt/title/ファイル名で識別可か) は未検証=突破口だが打ち切りのため unknown。取れれば difficulty 3 相当に低下。 公式PDF「回収・収集曜日一覧(50音順)」(documents/1056/syuusyuyoubiitiran.pdf,
-  別版 1053/20260403165803.pdf) は CLI 200 だが Microsoft Print To PDF製・埋込フォント0・抽出1文字=完全な画像PDF。テキスト層のある公式曜日表は存在しない。 granularity:
-  さんあ～るは実日付入り通年 (dates)。source_type: app-only (主) + image-pdf (公式曜日一覧補助)。difficulty 4。 地区割: さんあ～るの areaId (町丁目/地域単位,
-  例144919=高松地域)。地域option抽出に失敗し総数 unknown (null)。曜日一覧PDFは50音順町名索引。 検証源: 多言語併記版パンフレット (1053/20260612132419.pdf, テキスト層あり約17.4万字)
-  は分別ルール解説主体で町名別曜日表は含まず=照合力弱い。 年末年始: 公式に「年末年始の資源回収・ごみ収集について」別リンクあり=毎年12月別途告知の運用とみられる (december-announce)。カレンダー実日付明示有無は
-  unknown。 ライセンス: "Copyright © Toshima City. All rights reserved." (OD/CC明示なし)=proprietary-site。都カタログのOD配布も未確認。'
+notes: '【収録済 2026-08-31】収録した。一次ソースは**外国語版リーフレット「資源回収・ごみ収集のお知らせ」と「曜日一覧」の 2 ページ目** (documents/27707/20260716110355.pdf)。町丁名も曜日も日本語のまま印字され、その右に各言語の訳が並ぶ。通常地域
+  43 行 + 池袋駅周辺繁華街地域 15 行 = 58 行、4 列 (びん・かん・ペットボトル類 / 段ボール・紙布類+プラスチック / 燃やすごみ / 金属・陶器・ガラスごみ)。22 コース・102 area。抽出は tools/pdf-extractor/toshima/。
+
+  【2026-07-18 のサーベイは誤りだった】当初は source_type: app-only / difficulty 4 とし、多言語版パンフレットを「分別ルール解説主体で町名別曜日表は含まず=照合力弱い」と書いていたが、実際には
+  2 ページ目が曜日表そのものである。字数も「約17.4万字」としていたが実測 4.8 万字。第三者アプリ「さんあ〜る」に頼る必要は無かった。青梅・三鷹・国分寺と同じ「見た目や文字数で判断して中身を確かめていない」型の誤り。→
+  source_type: pdf-text / difficulty 2 / granularity weekday / district_count 58 へ訂正。
+
+  【照合】外国語版は 6 言語 (英中韓 / ベトナム / ミャンマー / ネパール / タイ / ヒンディー) あり、同じ表を別々に組版してある。これを版どうしの照合に使える (5 版 × 58 行)。加えて保存版冊子
+  p34-35 の曜日一覧 (documents/1053/20260403165803.pdf) は pdfplumber で chars 0 の完全な画像 PDF だが、A3 一枚に全 58 行が収まっており目視で全数転記できる (別の刊行物なので独立性が強い)。
+
+  【運用ルール】祝日も通常収集 (一次ソース欄外に「※雨の日や祝日(年末年始を除く)も資源やごみを収集します」と明記)。休止は年末年始のみで、実日付は毎年 12 月に区が別途告知する (december-announce)。池袋駅周辺繁華街地域は排出が朝7時30分まで
+  (他は朝8時まで)。粗大ごみは申込制のため対象外。
+
+  【収録期間】2026-04--2026-11。曜日規則しか無いソースなので期間の上限は年末年始の公表状況で決まる。2026-08-31 時点で年末年始ページは令和7年度版のままなので 12 月は裏付けが無く、11
+  月で切った。**12 月の告知が出たら期間を延ばすこと。**
+
+  【ライセンス】"Copyright © Toshima City. All rights reserved." (OD/CC明示なし)=proprietary-site。事実データの抽出として整理 (練馬先例)。'
 surveyed_at: '2026-07-18'

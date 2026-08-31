@@ -1,0 +1,66 @@
+metadata:
+  city: toshima
+  course: "1"
+  areas:
+    - name: 池袋1丁目
+      yomi: いけぶくろ1
+      machiaza_id: 131164-0015001
+    - name: 池袋2丁目14番5号・8号、15番2号～3号、16番、17番、19番（要町通り沿い以外）、20番～38番、39番～40番（トキワ通り沿い以外）、42番、44番～45番（トキワ通り沿い以外）、46番、47番～78番
+      yomi: いけぶくろ2-14
+      machiaza_id: 131164-0015002
+    - name: 池袋2丁目39番～41番、43番～45番（すべてトキワ通り沿い）
+      yomi: いけぶくろ2-39
+      machiaza_id: 131164-0015002
+      note: 池袋駅周辺繁華街地域
+    - name: 池袋4丁目
+      yomi: いけぶくろ4
+      machiaza_id: 131164-0015004
+    - name: 池袋本町1丁目
+      yomi: いけぶくろほんちょう1
+      machiaza_id: 131164-0003001
+    - name: 池袋本町2丁目
+      yomi: いけぶくろほんちょう2
+      machiaza_id: 131164-0003002
+    - name: 池袋本町3丁目
+      yomi: いけぶくろほんちょう3
+      machiaza_id: 131164-0003003
+    - name: 池袋本町4丁目
+      yomi: いけぶくろほんちょう4
+      machiaza_id: 131164-0003004
+  period: 2026-04--2026-11
+  source:
+    edition_ja: 「資源回収・ごみ収集のお知らせ」と「曜日一覧」(2026年7月16日掲載)
+    source_url: https://www.city.toshima.lg.jp/documents/27707/20260716110355.pdf
+    extracted_at: 2026-08-31
+    extracted_by: claude-opus-5
+    verified_by: Claude (豊島区「資源回収・ごみ収集のお知らせ」外国語版リーフレット p2 の曜日一覧を機械抽出。同じ表の別言語版 5 種 (ベトナム/ミャンマー/ネパール/タイ/ヒンディー) と全数照合し、保存版冊子の曜日一覧 (画像 PDF) の目視転記 58 行とも全数照合した。祝日は区が「年末年始を除き通常収集」と明記しているため休止日なし)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 1
+      - 3
+    days:
+      - FR
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - WE
+  - category: paper_cloth
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: &a2
+      - TU
+  - category: beverage_can
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2

@@ -1,0 +1,45 @@
+metadata:
+  city: toshima
+  course: "21"
+  areas:
+    - name: 東池袋1丁目34番～50番
+      yomi: ひがしいけぶくろ1-34
+      machiaza_id: 131164-0008001
+      note: 池袋駅周辺繁華街地域
+  period: 2026-04--2026-11
+  source:
+    edition_ja: 「資源回収・ごみ収集のお知らせ」と「曜日一覧」(2026年7月16日掲載)
+    source_url: https://www.city.toshima.lg.jp/documents/27707/20260716110355.pdf
+    extracted_at: 2026-08-31
+    extracted_by: claude-opus-5
+    verified_by: Claude (豊島区「資源回収・ごみ収集のお知らせ」外国語版リーフレット p2 の曜日一覧を機械抽出。同じ表の別言語版 5 種 (ベトナム/ミャンマー/ネパール/タイ/ヒンディー) と全数照合し、保存版冊子の曜日一覧 (画像 PDF) の目視転記 58 行とも全数照合した。祝日は区が「年末年始を除き通常収集」と明記しているため休止日なし)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    occurrences:
+      - 2
+      - 4
+    days:
+      - WE
+  - category: plastic
+    pattern: weekly
+    days: &a1
+      - MO
+  - category: paper_cloth
+    pattern: weekly
+    days: *a1
+  - category: glass_bottle
+    pattern: weekly
+    days: &a2
+      - TH
+  - category: beverage_can
+    pattern: weekly
+    days: *a2
+  - category: pet_bottle
+    pattern: weekly
+    days: *a2

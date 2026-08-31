@@ -1,0 +1,27 @@
+# 豊島区。公式4区分: びん・かん・ペットボトル類 / 段ボール・紙布類 + プラスチック /
+# 燃やすごみ / 金属・陶器・ガラスごみ。
+# びん・かん・ペットは同日別 category。段ボール紙布類とプラスチックも同日別 category。
+# 「金属・陶器・ガラスごみ」は中野区「陶器・ガラス・金属ごみ」と同じく non_burnable に対応させる。
+# 粗大ごみは申込制のため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper_cloth
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 金属・陶器・ガラスごみ, short: 金陶ガラ }
+  paper_cloth: { label: 段ボール・紙布類, short: 段紙布 }
+  beverage_can: { label: かん, short: かん }
+
+# 参考情報: 区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: びん・かん・ペットボトル類
+    short: びん缶ペット
+    members: [glass_bottle, beverage_can, pet_bottle]
+  - label: 段ボール・紙布類/プラスチック
+    short: 段紙布プラ
+    members: [paper_cloth, plastic]
