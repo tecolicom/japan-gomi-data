@@ -1,0 +1,22 @@
+# 板橋区。公式3区分: 資源 (週1回) / 可燃ごみ (週3回) / 不燃ごみ (毎月2回)。
+# 「資源」はプラスチック・古紙・びん・缶・ペットボトルの同日一括収集なので 5 category へ分解。
+# 古着・古布は区の資源に含まれず集団回収のため対象外。粗大ごみは申込制のため対象外。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  burnable: { label: 可燃ごみ }
+  non_burnable: { label: 不燃ごみ }
+  beverage_can: { label: 缶, short: 缶 }
+  paper: { label: 古紙 }
+
+# 参考情報: 区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源
+    short: 資源
+    members: [plastic, paper, glass_bottle, beverage_can, pet_bottle]

@@ -1,0 +1,72 @@
+metadata:
+  city: itabashi
+  course: w1
+  course_name_ja: 西1
+  areas:
+    - name: 赤塚1丁目
+      yomi: あかつか1
+      machiaza_id: 131199-0044001
+    - name: 赤塚2丁目
+      yomi: あかつか2
+      machiaza_id: 131199-0044002
+    - name: 赤塚6丁目
+      yomi: あかつか6
+      machiaza_id: 131199-0044006
+    - name: 赤塚7丁目
+      yomi: あかつか7
+      machiaza_id: 131199-0044007
+    - name: 赤塚新町1丁目
+      yomi: あかつかしんまち1
+      machiaza_id: 131199-0045001
+    - name: 赤塚新町2丁目
+      yomi: あかつかしんまち2
+      machiaza_id: 131199-0045002
+    - name: 赤塚新町3丁目
+      yomi: あかつかしんまち3
+      machiaza_id: 131199-0045003
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 地域別 資源回収・ごみ収集曜日カレンダー(令和8年度版)
+    source_url: https://www.city.itabashi.tokyo.jp/_res/projects/default_project/_page_/001/038/152/r8/w01.pdf
+    extracted_at: 2026-09-01
+    extracted_by: claude-opus-5
+    verified_by: Claude (板橋区「地域別 資源回収・ごみ収集曜日カレンダー(令和8年度版)」の地域別 PDF 24 本から、カレンダー本体の塗りセルで実収集日を抽出し規則化した。同 PDF がテキスト層に持つ曜日規則と、索引ページの HTML 表 (町丁目 70 行 × 3 品目) の両方に照合して不一致 0。年末年始は区が確定を留保しているため unknown_periods とした)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - WE
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - TH
+    occurrences:
+      - 1
+      - 3
+  - category: plastic
+    pattern: weekly
+    days:
+      - SA
+  - category: paper
+    pattern: weekly
+    days:
+      - SA
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - SA
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - SA
+  - category: pet_bottle
+    pattern: weekly
+    days:
+      - SA
+unknown_periods:
+  - from: 2026-12-31
+    to: 2027-01-03
+    reason: 区のカレンダー PDF は 12/31〜1/2 のセルを空にしたうえで「年末年始の収集日は、改めて板橋区ホームページ、区報、集積所看板への張り紙でお知らせいたします。」と確定を留保している。1/3 は日曜で通常収集が無いが振替の告知がありうるため窓に含めた。
+    source_url: https://www.city.itabashi.tokyo.jp/tetsuduki/gomi/kaishu/1038152.html
