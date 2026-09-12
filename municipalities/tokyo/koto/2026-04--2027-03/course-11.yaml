@@ -1,0 +1,114 @@
+metadata:
+  city: koto
+  course: "11"
+  course_name_ja: 11地区
+  areas:
+    - name: 石島
+      yomi: いしじま
+      machiaza_id: 131083-0028000
+    - name: 海辺
+      yomi: うみべ
+      machiaza_id: 131083-0025000
+    - name: 扇橋1丁目
+      yomi: おうぎばし1
+      machiaza_id: 131083-0030001
+    - name: 扇橋2丁目
+      yomi: おうぎばし2
+      machiaza_id: 131083-0030002
+    - name: 扇橋3丁目
+      yomi: おうぎばし3
+      machiaza_id: 131083-0030003
+    - name: 猿江1丁目
+      yomi: さるえ1
+      machiaza_id: 131083-0042001
+    - name: 猿江2丁目
+      yomi: さるえ2
+      machiaza_id: 131083-0042002
+    - name: 白河4丁目
+      yomi: しらかわ4
+      machiaza_id: 131083-0043004
+    - name: 千石1丁目
+      yomi: せんごく1
+      machiaza_id: 131083-0026001
+    - name: 千石2丁目
+      yomi: せんごく2
+      machiaza_id: 131083-0026002
+    - name: 千石3丁目
+      yomi: せんごく3
+      machiaza_id: 131083-0026003
+    - name: 千田
+      yomi: せんだ
+      machiaza_id: 131083-0027000
+    - name: 平野4丁目
+      yomi: ひらの4
+      machiaza_id: 131083-0021004
+    - name: 三好4丁目
+      yomi: みよし4
+      machiaza_id: 131083-0029004
+    - name: 森下5丁目
+      yomi: もりした5
+      machiaza_id: 131083-0041005
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度版 地区別 資源回収・ごみ収集日一覧
+    source_url: https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
+    extracted_at: 2026-09-12
+    extracted_by: claude-opus-5
+    verified_by: Claude (区配布シート「令和8年度版 地区別 資源回収・ごみ収集日一覧」の多言語版 PDF から、12 地区の曜日規則と燃やさないごみの隔週実日付を機械抽出した。日本語版は画像 PDF で読めない。都カタログ CSV (CC BY 4.0) と 12 地区 × 4 品目で照合し、中国語版と韓国語版の突合、日本語版画像の目視でも確認した。ただし**豊洲・塩浜の地区割は CSV と食い違い、現行版であるシートを採った** (meta.yaml に記録)。年末年始は区が確定を留保しているため unknown_periods とした)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: monthly_specific
+    dates:
+      - 2026-04-03
+      - 2026-04-17
+      - 2026-05-01
+      - 2026-05-15
+      - 2026-05-29
+      - 2026-06-12
+      - 2026-06-26
+      - 2026-07-10
+      - 2026-07-24
+      - 2026-08-07
+      - 2026-08-21
+      - 2026-09-04
+      - 2026-09-18
+      - 2026-10-02
+      - 2026-10-16
+      - 2026-10-30
+      - 2026-11-13
+      - 2026-11-27
+      - 2026-12-11
+      - 2026-12-25
+      - 2027-01-08
+      - 2027-01-22
+      - 2027-02-05
+      - 2027-02-19
+      - 2027-03-05
+      - 2027-03-19
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+unknown_periods:
+  - from: 2026-12-29
+    to: 2027-01-03
+    reason: 区のシートは隔週の収集日のうち 2026-12-29〜2027-01-02 に当たる日を印字せず、「※年末年始の収集日については、別途お知らせします。」と確定を留保している。1/3 は日曜で通常収集が無いが振替の告知がありうるため窓に含めた。なお実日付を持つのは燃やさないごみだけで、週次3品目にこの窓を適用する根拠は上記の注記である。
+    source_url: https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html

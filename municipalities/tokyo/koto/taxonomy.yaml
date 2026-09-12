@@ -1,0 +1,25 @@
+# 江東区。公式4区分: 資源 (週1) / プラスチック (週1・資源とは別の日) / 燃やすごみ (週2) /
+# 燃やさないごみ (隔週)。
+# 「資源」は 古紙・びん・かん・ペットボトル・発泡トレイ/発泡スチロール の同日収集。
+# 発泡トレイに対応する正典語彙は無く、**ペットボトルを代表項目として表現している**
+# (語彙追加なし。ラベルには列挙しない — 品目辞書はこのリポジトリの収録範囲外)。
+# プラスチックは資源とは別の日なので、発泡トレイを plastic に寄せると誤った日を教えることになる。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 燃やさないごみ, short: 燃やさない }
+  beverage_can: { label: かん, short: かん }
+  paper: { label: 古紙 }
+
+# 参考情報: 区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源
+    short: 資源
+    members: [paper, glass_bottle, beverage_can, pet_bottle]

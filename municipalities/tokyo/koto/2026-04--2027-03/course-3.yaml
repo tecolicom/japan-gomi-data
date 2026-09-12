@@ -1,0 +1,137 @@
+metadata:
+  city: koto
+  course: "3"
+  course_name_ja: 3地区
+  areas:
+    - name: 永代1丁目
+      yomi: えいたい1
+      machiaza_id: 131083-0022001
+    - name: 永代2丁目
+      yomi: えいたい2
+      machiaza_id: 131083-0022002
+    - name: 越中島1丁目
+      yomi: えっちゅうじま1
+      machiaza_id: 131083-0011001
+    - name: 越中島2丁目
+      yomi: えっちゅうじま2
+      machiaza_id: 131083-0011002
+    - name: 越中島3丁目
+      yomi: えっちゅうじま3
+      machiaza_id: 131083-0011003
+    - name: 清澄1丁目
+      yomi: きよすみ1
+      machiaza_id: 131083-0036001
+    - name: 清澄2丁目
+      yomi: きよすみ2
+      machiaza_id: 131083-0036002
+    - name: 清澄3丁目
+      yomi: きよすみ3
+      machiaza_id: 131083-0036003
+    - name: 佐賀1丁目
+      yomi: さが1
+      machiaza_id: 131083-0037001
+    - name: 佐賀2丁目
+      yomi: さが2
+      machiaza_id: 131083-0037002
+    - name: 富岡1丁目
+      yomi: とみおか1
+      machiaza_id: 131083-0006001
+    - name: 富岡2丁目
+      yomi: とみおか2
+      machiaza_id: 131083-0006002
+    - name: 深川1丁目
+      yomi: ふかがわ1
+      machiaza_id: 131083-0023001
+    - name: 福住1丁目
+      yomi: ふくずみ1
+      machiaza_id: 131083-0034001
+    - name: 福住2丁目
+      yomi: ふくずみ2
+      machiaza_id: 131083-0034002
+    - name: 古石場1丁目
+      yomi: ふるいしば1
+      machiaza_id: 131083-0012001
+    - name: 古石場2丁目
+      yomi: ふるいしば2
+      machiaza_id: 131083-0012002
+    - name: 古石場3丁目
+      yomi: ふるいしば3
+      machiaza_id: 131083-0012003
+    - name: 牡丹1丁目
+      yomi: ぼたん1
+      machiaza_id: 131083-0007001
+    - name: 牡丹2丁目
+      yomi: ぼたん2
+      machiaza_id: 131083-0007002
+    - name: 牡丹3丁目
+      yomi: ぼたん3
+      machiaza_id: 131083-0007003
+    - name: 門前仲町1丁目
+      yomi: もんぜんなかちょう1
+      machiaza_id: 131083-0033001
+    - name: 門前仲町2丁目
+      yomi: もんぜんなかちょう2
+      machiaza_id: 131083-0033002
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8年度版 地区別 資源回収・ごみ収集日一覧
+    source_url: https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
+    extracted_at: 2026-09-12
+    extracted_by: claude-opus-5
+    verified_by: Claude (区配布シート「令和8年度版 地区別 資源回収・ごみ収集日一覧」の多言語版 PDF から、12 地区の曜日規則と燃やさないごみの隔週実日付を機械抽出した。日本語版は画像 PDF で読めない。都カタログ CSV (CC BY 4.0) と 12 地区 × 4 品目で照合し、中国語版と韓国語版の突合、日本語版画像の目視でも確認した。ただし**豊洲・塩浜の地区割は CSV と食い違い、現行版であるシートを採った** (meta.yaml に記録)。年末年始は区が確定を留保しているため unknown_periods とした)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_specific
+    dates:
+      - 2026-04-08
+      - 2026-04-22
+      - 2026-05-06
+      - 2026-05-20
+      - 2026-06-03
+      - 2026-06-17
+      - 2026-07-01
+      - 2026-07-15
+      - 2026-07-29
+      - 2026-08-12
+      - 2026-08-26
+      - 2026-09-09
+      - 2026-09-23
+      - 2026-10-07
+      - 2026-10-21
+      - 2026-11-04
+      - 2026-11-18
+      - 2026-12-02
+      - 2026-12-16
+      - 2027-01-13
+      - 2027-01-27
+      - 2027-02-10
+      - 2027-02-24
+      - 2027-03-10
+      - 2027-03-24
+  - category: plastic
+    pattern: weekly
+    days:
+      - SA
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+unknown_periods:
+  - from: 2026-12-29
+    to: 2027-01-03
+    reason: 区のシートは隔週の収集日のうち 2026-12-29〜2027-01-02 に当たる日を印字せず、「※年末年始の収集日については、別途お知らせします。」と確定を留保している。1/3 は日曜で通常収集が無いが振替の告知がありうるため窓に含めた。なお実日付を持つのは燃やさないごみだけで、週次3品目にこの窓を適用する根拠は上記の注記である。
+    source_url: https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
