@@ -220,20 +220,32 @@
   handle: koto
   name_ja: 江東区
   population: 544445
-  source_type: csv
-  schedule_url: https://www.opendata.metro.tokyo.lg.jp/koto/131083_201_kotocity_waste_recycle_collectionday.csv
+  source_type: pdf-text
+  schedule_url: https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
   calendar_urls:
-    - https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
+    - https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/documents/8ch.pdf
+    - https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/documents/8omote.pdf
+    - https://www.opendata.metro.tokyo.lg.jp/koto/131083_201_kotocity_waste_recycle_collectionday.csv
   verify_sources:
-    - html
+    - multilingual-sheet-ko
+    - ja-sheet-image-visual
+    - opendata-csv
   license: CC-BY-4.0
   difficulty: 2
-  granularity: weekday-rules
-  district_unit: 町名
-  district_count_approx: 58
-  yearend: unknown
-  notes: 都カタログ「資源回収・ごみ収集日一覧」CSV (CC BY 4.0)。CKAN API 経由でデータセット特定、実体 www.opendata.metro.tokyo.lg.jp を curl 200
-    で実取得 (cp932、58町+ヘッダ、住所よみ/地区番号/資源/プラ/燃やす/燃やさない)。【罠】燃やさないごみが「（隔週）土」表記 = 週パリティ依存で起点日が CSV に無い →
+  granularity: dates
+  district_unit: 収集地区 (1〜12)
+  district_count_approx: 12
+  yearend: december-announce
+  notes: 【収録済 2026-09-12】収録した。12 コース (1〜12地区)・158 area。抽出は tools/pdf-extractor/koto/。 【一次ソースは CSV ではなく配布シートの多言語版
+    PDF】サーベイは都カタログ CSV を一次ソースとしていたが、CSV は現行版と地区割が食い違う。豊洲は CSV が全域→地区6、シートは 2・4〜6丁目→地区6 / 1・3丁目→地区12。塩浜は CSV が
+    1丁目→地区6 / 2丁目→地区12、シートは全域→地区12。逆方向の食い違いが 2 件。CKAN の last_modified は 2024-11-30、シートは令和8年度版 (ページ更新
+    2026-04-10) なのでシートを採った。中野区の OD が 2021 年止まりだったのと同型。 【隔週の位相はシートが実日付で持つ】サーベイが「起点日が CSV に無い」と警告していた点は、配布シートが
+    12 か月ぶんの実日付を印字していることで解決した。日本語版 (8omote.pdf) は chars 0 の画像 PDF、裏面は CID フォント化けだが、多言語版 (中国語版・韓国語版) にはテキスト層がある
+    (豊島区と同じ構図)。日本語の町名だけは多言語版に無いので CSV から取る。 【語彙】資源(週1)=古紙+びん+かん+ペットボトル+発泡トレイ / プラスチック(週1・資源とは別の日) / 燃やすごみ(週2)
+    / 燃やさないごみ(隔週)。発泡トレイは正典語彙が無くペットボトルを代表項目として表現 (語彙追加なし)。プラスチックが別の日なので plastic には寄せられない。 【年末年始】窓
+    2026-12-29〜2027-01-03 を unknown_periods に。隔週の日付がこの窓に当たる地区だけその日が印字されていないことからデータで確定した。シートは「別途お知らせします」と留保。
+    都カタログ「資源回収・ごみ収集日一覧」CSV (CC BY 4.0)。CKAN API 経由でデータセット特定、実体 www.opendata.metro.tokyo.lg.jp を curl 200 で実取得
+    (cp932、58町+ヘッダ、住所よみ/地区番号/資源/プラ/燃やす/燃やさない)。【罠】燃やさないごみが「（隔週）土」表記 = 週パリティ依存で起点日が CSV に無い →
     実装時は区の地区別カレンダー等で隔週の位相を要確認。区サイトの一覧 PDF (8omote.pdf) はテキスト層なし画像。粗大は申込制。統括が直接調査 (2026-07-18、G1 未納品分の補完)。
   surveyed_at: 2026-07-18
 - code: "13109"
