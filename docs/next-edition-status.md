@@ -17,7 +17,7 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
 ## 未検出
 
-次の版はまだ見当たらない。 (34 自治体)
+次の版はまだ見当たらない。 (35 自治体)
 
 - **arakawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
@@ -37,6 +37,8 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.vill.higashichichibu.saitama.jp/soshiki/05/gominodashikata.html
 - **iruma** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.iruma.saitama.jp/gomi_search/chikubetsu/index.html
+- **itabashi** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 地域別 資源回収・ごみ収集曜日カレンダー(令和8年度版)
+  - 探した年: 2027 / 令和9 — https://www.city.itabashi.tokyo.jp/tetsuduki/gomi/kaishu/1038152.html
 - **kamifurano-town** (hokkaido) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.kamifurano.hokkaido.jp/index.php?id=333
 - **kawaguchi** (saitama) — 収録 `2026-01--2026-12` (2026-12 末)
