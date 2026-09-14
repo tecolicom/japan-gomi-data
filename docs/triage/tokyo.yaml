@@ -4,7 +4,7 @@
   handle: chiyoda
   name_ja: 千代田区
   population: 69736
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.chiyoda.lg.jp/koho/kurashi/gomi/wakekata/index.html
   calendar_urls:
     - https://www.city.chiyoda.lg.jp/documents/1952/r8calender-1.pdf
@@ -30,18 +30,19 @@
   district_unit: カレンダーNo (町丁目割)
   district_count_approx: 12
   yearend: calendar-explicit
-  notes: "一次ソースは優先順⑤該当のテキスト層ありPDF。R8年度(2026)版カレンダーは r8calender-1〜12.pdf の12種 (wakekata/index.html の #calender
-    セクションから全12リンクを grep で確認)。curl で r8calender-1.pdf は HTTP200 application/pdf 3.05MB、pdftotext で
-    「資源とごみの収集カレンダー①」「収集地域(飯田橋二・三丁目, 神田神保町三丁目の偶数番地…)」 「令和8年4月〜」の日付マス目に 可燃/不燃/プラ/資源/蛍光管等 が抽出でき、テキスト層あり=機械抽出可を確認。
-    granularity=dates (日付入り通年)。年末年始は pdftotext 上に「年末休み」「年始休み」の文字が 日付マスに直接記載=calendar-explicit (冊子 r701pamphlet
-    でも閉庁日=12/31〜1/3 明記)。 地区割は町丁目単位で12カレンダーに割当 (HTMLに50音順の住所→No対応表あり。番地・偶奇で分割される町あり)。
-    収集曜日はHTML本文にはテキスト化されておらず(「集積所により異なる」記載のみ)、実データはPDF/アプリ側。 CSV/JSONの直接配布は wakekata ページに無し (grep で .csv/.json
-    参照ゼロ)。 東京都ODカタログはCLIがCloudFront 403のため未確認 (unknown)。 【JSON候補・未確認】区公式アプリ「分けちよ！」は gomisuke系 (Google Play
-    id=jp.gomisuke.app.Gomisuke0018, 提供G-Place)。さいたま(app0017)と同一ベンダで、0017は
-    admin.gomisuke.jp/app/0017/api/jsonp.php?file=area が Referer付与で HTTP200 取得可を対照確認済。しかし 0018
-    の同一パス(admin.gomisuke.jp/app/0018/api/jsonp.php) は area/type/calendar とも HTTP404 (app/0018/
-    ディレクトリ自体は200/空)。エンドポイント構造が 0017と異なる可能性があり、時間切れのため未特定。もし0018のJSONP実体が判明すれば source_type=json・ difficulty=2
-    に格上げ可能 (要追加調査)。現時点の確実な機械可読ソースはPDFのため difficulty=3 とした。 【統括実測 2026-07-18】さいたま型 JSONP
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。地区別カレンダー PDF 23 本。テキスト層あり (1 本目 chars 1,890 / 罫線 1,148 /
+    資源 57 / 可燃 111)。difficulty 3 のまま。 一次ソースは優先順⑤該当のテキスト層ありPDF。R8年度(2026)版カレンダーは r8calender-1〜12.pdf の12種
+    (wakekata/index.html の #calender セクションから全12リンクを grep で確認)。curl で r8calender-1.pdf は HTTP200
+    application/pdf 3.05MB、pdftotext で 「資源とごみの収集カレンダー①」「収集地域(飯田橋二・三丁目, 神田神保町三丁目の偶数番地…)」 「令和8年4月〜」の日付マス目に
+    可燃/不燃/プラ/資源/蛍光管等 が抽出でき、テキスト層あり=機械抽出可を確認。 granularity=dates (日付入り通年)。年末年始は pdftotext 上に「年末休み」「年始休み」の文字が
+    日付マスに直接記載=calendar-explicit (冊子 r701pamphlet でも閉庁日=12/31〜1/3 明記)。 地区割は町丁目単位で12カレンダーに割当
+    (HTMLに50音順の住所→No対応表あり。番地・偶奇で分割される町あり)。 収集曜日はHTML本文にはテキスト化されておらず(「集積所により異なる」記載のみ)、実データはPDF/アプリ側。
+    CSV/JSONの直接配布は wakekata ページに無し (grep で .csv/.json 参照ゼロ)。 東京都ODカタログはCLIがCloudFront 403のため未確認 (unknown)。
+    【JSON候補・未確認】区公式アプリ「分けちよ！」は gomisuke系 (Google Play id=jp.gomisuke.app.Gomisuke0018,
+    提供G-Place)。さいたま(app0017)と同一ベンダで、0017は admin.gomisuke.jp/app/0017/api/jsonp.php?file=area が Referer付与で
+    HTTP200 取得可を対照確認済。しかし 0018 の同一パス(admin.gomisuke.jp/app/0018/api/jsonp.php) は area/type/calendar とも HTTP404
+    (app/0018/ ディレクトリ自体は200/空)。エンドポイント構造が 0017と異なる可能性があり、時間切れのため未特定。もし0018のJSONP実体が判明すれば source_type=json・
+    difficulty=2 に格上げ可能 (要追加調査)。現時点の確実な機械可読ソースはPDFのため difficulty=3 とした。 【統括実測 2026-07-18】さいたま型 JSONP
     (admin.gomisuke.jp/app/0018/api/jsonp.php) は area/type/calendar とも 404。区サイトに gomisuke の Web
     埋め込みも無く、「分けちよ！」はアプリのみの導入形態とみられる → json 格上げの目は無し、一次はテキスト層あり PDF のままが正。"
   surveyed_at: 2026-07-18
@@ -62,10 +63,13 @@
   district_unit: "地域→町丁 (3地域: 京橋/日本橋/月島)"
   district_count_approx: 3
   yearend: unknown
-  notes: "一次ソース確定: 公式「あなたの町のごみ・資源収集曜日」HTML表 (syuusyuuyoubi.html)。 町丁別に燃やすごみ等の曜日を掲載 (例: 明石町=水土, 新富=月木, 新川=火金,
-    京橋=月〜土)。 3地域 (京橋/日本橋/月島) に町丁を割当。練馬方式でHTML機械変換可=difficulty 2, granularity weekday-rules。 ★OD要ブラウザ確認:
-    opendata-sources.md 総論に「中央『ごみと資源の収集曜日』」データセットの記録ありだが、 今回のWebSearch/ckan横断では中央区(組織t131024)の収集曜日ODを特定できず
-    (ヒットしたt131113系は全て大田区)。 東京都カタログ本体はCLI 403。ただしリソース実体が opendata.metro.tokyo.lg.jp 配下なら curl 200 で取得可能 (大田xlsx
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。HTML 表 59 行
+    (音/町名/丁目/燃やすごみ/燃やさないごみ/プラマーク/資源)。実測で確認、difficulty 2 のまま。**罠: 京橋の燃やすごみが「月曜日～土曜日」** —
+    繁華街の毎日収集地域。範囲表記を読めないパーサは落ちる。 一次ソース確定: 公式「あなたの町のごみ・資源収集曜日」HTML表 (syuusyuuyoubi.html)。 町丁別に燃やすごみ等の曜日を掲載 (例:
+    明石町=水土, 新富=月木, 新川=火金, 京橋=月〜土)。 3地域 (京橋/日本橋/月島) に町丁を割当。練馬方式でHTML機械変換可=difficulty 2, granularity
+    weekday-rules。 ★OD要ブラウザ確認: opendata-sources.md 総論に「中央『ごみと資源の収集曜日』」データセットの記録ありだが、
+    今回のWebSearch/ckan横断では中央区(組織t131024)の収集曜日ODを特定できず (ヒットしたt131113系は全て大田区)。 東京都カタログ本体はCLI 403。ただしリソース実体が
+    opendata.metro.tokyo.lg.jp 配下なら curl 200 で取得可能 (大田xlsx
     https://www.opendata.metro.tokyo.lg.jp/ootaku/131113_shigengomiyoubi.xlsx が実測200・CC BY 4.0 で確認済)。 →
     中央区OD版が存在すれば source_type csv/xls・license CC-BY-4.0 に昇格可能。現状HTML表は事実データ抽出整理=proprietary-site。
     年末年始はHTMLページに記載なし (要別ページ/12月告知)。清掃事務所は中央清掃事務所単一 (03-3562-1521)。"
@@ -74,7 +78,7 @@
   handle: minato
   name_ja: 港区
   population: 270458
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.minato.tokyo.jp/unei/2025gomikarenda.html
   calendar_urls:
     - https://www.city.minato.tokyo.jp/documents/157490/20260123175103.pdf
@@ -87,9 +91,10 @@
   district_unit: 地区（町丁目単位）
   district_count_approx: 40
   yearend: december-announce
-  notes: 一次ソースは「ごみ・資源収集日カレンダー(令和8年4月1日からの収集曜日)」ページ (unei/2025gomikarenda.html)配下の地域別カレンダーPDF。PDF は
-    /documents/157490/<数字>.pdf 形式で計64本、テキスト層あり(pdftotext 成功、curl 200/403なし)。各PDFは日付入り通年カレンダー
-    (2026年度版、日Sun月Mon…のグリッドに「プラ/資源/可燃/不燃」を配置)で granularity=dates。
+  notes: 【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。地区別カレンダー PDF 79 本。テキスト層あり (1 本目 chars 1,996 / 資源 54 / 可燃
+    103)。difficulty 3 のまま — 23 区で最多の本数。 一次ソースは「ごみ・資源収集日カレンダー(令和8年4月1日からの収集曜日)」ページ
+    (unei/2025gomikarenda.html)配下の地域別カレンダーPDF。PDF は /documents/157490/<数字>.pdf 形式で計64本、テキスト層あり(pdftotext
+    成功、curl 200/403なし)。各PDFは日付入り通年カレンダー (2026年度版、日Sun月Mon…のグリッドに「プラ/資源/可燃/不燃」を配置)で granularity=dates。
     1PDFに同一曜日パターンの複数地域(例=赤坂1/麻布台1/六本木1…8地域)を束ねる構成。地区は町丁目単位で 約40地域。分別4区分(資源プラスチック/古紙・ペットボトル・びん・かん/可燃/不燃)、日英併記。
     収集曜日OD(CSV/JSON)・テキスト版カレンダー・サイト内CSVは未発見(HTMLに.csv/.json参照なし)。
     年末年始は本文に「毎年12月にホームページでお知らせ」=december-announce。分別アプリ 「Tokyo Minato Waste
@@ -117,7 +122,9 @@
   district_unit: 町丁目 (各町丁目を約27の収集エリア=カレンダーPDFに割当)
   district_count_approx: 27
   yearend: calendar-explicit
-  notes: "WebSearchで公式収集日ページを特定。schedule_url は令和8年度「資源回収・ごみ収集日」HTMLで curl 200 text/html 119KB。町丁目ごとに
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。HTML 表 186 行
+    (町名の頭文字/集積所の住所/資源/燃やすごみ/金属・陶器・ガラスごみ/管轄/カレンダーPDF)。実測で確認、difficulty 2 のまま。町ごとにカレンダー PDF へのリンクを持つ。
+    WebSearchで公式収集日ページを特定。schedule_url は令和8年度「資源回収・ごみ収集日」HTMLで curl 200 text/html 119KB。町丁目ごとに
     資源(週1回=曜日)/燃やすごみ(週2回=2曜日)/金属・陶器・ガラスごみ(月2回=第N曜日)/管轄(東・新等)/地域別カレンダーPDFリンク を持つ整形済みHTML表(丁目149・町66言及)。HTMLソースを
     grep したが .csv/.json 参照は無し(収集日を駆動するデータファイルは非公開)。 同内容の一覧PDF 000259262 は curl 200 application/pdf 2.9MB,
     pdftotext で58,503字=テキスト層あり、町丁目×曜日規則を抽出可 (例: 中落合1・2丁目→資源:火/燃やす:月・木/金属:第1・3金/新)。地域別カレンダーPDF 000169714 は 200
@@ -130,7 +137,7 @@
   handle: bunkyo
   name_ja: 文京区
   population: 237413
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.bunkyo.lg.jp/b039/p000926/index.html
   calendar_urls:
     - https://www.city.bunkyo.lg.jp/documents/953/youbiitiran.pdf
@@ -140,17 +147,19 @@
     - booklet
     - html
   license: proprietary-site
-  difficulty: 3
+  difficulty: 2
   granularity: weekday-rules
   district_unit: 町丁目
   district_count_approx: 33
   yearend: unknown
-  notes: "一次ソースは区公式の「ごみ・資源収集曜日一覧」PDF (youbiitiran.pdf, HTTP200/446KB)。 pdftotext でテキスト層あり(3231字, -layout
-    で表構造も抽出可)。全町丁目(後楽〜本駒込, 約33グループ)× 種別(可燃/不燃/資源[新聞雑誌雑がみ段ボール びん缶ペット/プラ]/粗大)の収集曜日を1枚に掲載。
-    granularity=weekday-rules(曜日規則: 可燃「火・金」、不燃「第1・第3木」等、第5曜日は収集なしの注記あり)。 別途、収集日ページ p000927
-    から町丁目別の年間カレンダー(実日付入り)PDFへリンクあり (例 documents/954/... 令和7年度版、月別実日付掲載=dates級)。ただし当該カレンダーPDFはファイル名が年度で変わり、
-    今回試した旧URL(kouraku2suidou.pdf)は404。年間カレンダーPDFは実日付を持つため year-end も明示される見込みだが、 現行版で年末年始(12-1月)の休止日を実確認できず
-    yearend=unknown とした(推測回避)。 東京都ODカタログ(組織t131059, CloudFront403でCLI不可)には文京区の「ごみと資源の分別品目」(t131059d0110060002)
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。**difficulty 3 → 2 に訂正。** youbiitiran.pdf は町×曜日表でテキスト層あり
+    (chars 1,114 / 罫線 520 / 丁目 34 件 / 曜日 103 件)。 一次ソースは区公式の「ごみ・資源収集曜日一覧」PDF (youbiitiran.pdf, HTTP200/446KB)。
+    pdftotext でテキスト層あり(3231字, -layout で表構造も抽出可)。全町丁目(後楽〜本駒込, 約33グループ)× 種別(可燃/不燃/資源[新聞雑誌雑がみ段ボール
+    びん缶ペット/プラ]/粗大)の収集曜日を1枚に掲載。 granularity=weekday-rules(曜日規則: 可燃「火・金」、不燃「第1・第3木」等、第5曜日は収集なしの注記あり)。 別途、収集日ページ
+    p000927 から町丁目別の年間カレンダー(実日付入り)PDFへリンクあり (例 documents/954/...
+    令和7年度版、月別実日付掲載=dates級)。ただし当該カレンダーPDFはファイル名が年度で変わり、 今回試した旧URL(kouraku2suidou.pdf)は404。年間カレンダーPDFは実日付を持つため
+    year-end も明示される見込みだが、 現行版で年末年始(12-1月)の休止日を実確認できず yearend=unknown とした(推測回避)。 東京都ODカタログ(組織t131059,
+    CloudFront403でCLI不可)には文京区の「ごみと資源の分別品目」(t131059d0110060002)
     や「ごみ収集量」等のCC-BY-4.0データセットは存在するが、収集曜日そのものの機械可読CSV/XLSXは今回確認できず
     (先行メモの「XLSX+CSV収集曜日」は分別品目データセットの誤認の可能性)。よって曜日データの一次源は区公式PDFのみ→ license=proprietary-site。検証源: 民間サイト
     ゴミの日.com(gominohi.com/Tokyo/Bunkyo, 全33地区), GOMICALE 等で 突合可能。地区割=町名+丁目グループ(丁目内で番地分割あり: 小石川1丁目1〜16/17〜28
@@ -191,7 +200,7 @@
   handle: sumida
   name_ja: 墨田区
   population: 289527
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.sumida.lg.jp/kurashi/gomi_recycle/kateikei/gomi-calendar.html
   calendar_urls:
     - https://www.city.sumida.lg.jp/kurashi/gomi_recycle/kateikei/gomi-calendar.files/0804_01.pdf
@@ -206,9 +215,10 @@
   district_unit: 収集地区 (町丁目グループ)
   district_count_approx: 12
   yearend: unknown
-  notes: '一次ソースは地域別ごみカレンダーPDF (12地区, 0804_01〜0804_12.pdf)。CLI 全て 200 取得可、 pdftotext -layout でテキスト層あり — 各日付に品目
-    (可燃/資源/プラ/不燃) 明記、ヘッダに地区名+曜日規則 (例: 両国等=資源火/プラ水/燃やすごみ月・木/不燃 第1・3土) も併記され機械抽出可。 【重大な罠】地域別PDFは
-    2026年4月〜9月の半期分のみ掲載。後期 (10月〜翌3月) PDF は未公開 (例年秋頃)。 全体版2種 (横様式 01syusyucalender_0804.pdf / 縦様式
+  notes: '【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。地区別カレンダー PDF 26 本。テキスト層あり (1 本目 chars 1,356 / 曜日 41 / 資源
+    38 / 可燃 74)。difficulty 3 のまま。 一次ソースは地域別ごみカレンダーPDF (12地区, 0804_01〜0804_12.pdf)。CLI 全て 200 取得可、 pdftotext
+    -layout でテキスト層あり — 各日付に品目 (可燃/資源/プラ/不燃) 明記、ヘッダに地区名+曜日規則 (例: 両国等=資源火/プラ水/燃やすごみ月・木/不燃 第1・3土) も併記され機械抽出可。
+    【重大な罠】地域別PDFは 2026年4月〜9月の半期分のみ掲載。後期 (10月〜翌3月) PDF は未公開 (例年秋頃)。 全体版2種 (横様式 01syusyucalender_0804.pdf / 縦様式
     02syusyucalender_0804.pdf) は年間だが テキスト層ゼロ=画像PDF で機械照合不可。→ 現状 granularity=partial (通年の機械可読データが揃わない)。 ライセンス:
     カレンダーページは "Copyright Sumida City. All rights reserved." (OD明示なし=proprietary-site)。
     区ODポータルのごみ関連は「ゴミの分別方法一覧」(CC BY 2.1 JP) のみで収集曜日データは非掲載。 【総論の墨田区2015年CSVリンク切れ】現状も収集曜日CSVは公式・都カタログとも確認できず
@@ -278,7 +288,7 @@
   handle: meguro
   name_ja: 目黒区
   population: 283795
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.meguro.tokyo.jp/seisou/kurashi/gomi/youbiichiran.html
   calendar_urls:
     - https://www.city.meguro.tokyo.jp/documents/4335/aobadai123.pdf
@@ -292,8 +302,10 @@
   district_unit: 地域（町丁目グループ）
   district_count_approx: 50
   yearend: unknown
-  notes: "一次ソースは地域別「資源・ごみ収集日カレンダー<2026年度版>」PDF(例 aobadai123.pdf, /documents/4335/ 配下)。テキスト層あり(pdftotext
-    成功、10140字/2p)、日付入り通年カレンダー (2026/4-2027/3、日〜土グリッドに資源/可燃/不燃・水銀を配置)で granularity=dates。約50地域分。 補助/検証:
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。地区別カレンダー PDF 45 本。テキスト層あり (1 本目 chars 1,167 / 曜日 72 / 資源
+    55 / 可燃 106)。difficulty 3 のまま — 本数が多く、町→PDF の対応を掲載ページから取る必要がある。 一次ソースは地域別「資源・ごみ収集日カレンダー<2026年度版>」PDF(例
+    aobadai123.pdf, /documents/4335/ 配下)。テキスト層あり(pdftotext 成功、10140字/2p)、日付入り通年カレンダー
+    (2026/4-2027/3、日〜土グリッドに資源/可燃/不燃・水銀を配置)で granularity=dates。約50地域分。 補助/検証:
     「収集曜日一覧表」PDF(h28syuusyuuyoubi.pdf、テキスト層あり)=五十音/地域/資源(週1曜日)/ 燃やすごみ(週2曜日)/燃やさないごみ(月2・第n曜日、○付き週表記)の
     weekday-rules 表。ファイル名 h28 だが現行ページから配信中(曜日は経年安定の想定、要日付照合)。 もう一つの検証源: 東京都オープンデータカタログ 目黒区「不燃ごみ収集曜日グループ別収集日一覧」
     (dataset t131113d0000000025, CC-BY-4.0)=不燃のみの部分データ(全品目ではない)。
@@ -316,13 +328,16 @@
     - 大田区公式PDF shuushuuyoubi.pdf (テキスト層あり・同内容)
     - 東京都ODカタログ t131113d0000000025 (不燃ごみグループ別収集日 XLS)
   license: CC-BY-4.0
-  difficulty: 4
+  difficulty: 2
   granularity: weekday-rules
   district_unit: 町丁目 (一部は丁目内を番地で分割)
   district_count_approx: 54町名 / 約87丁目グループ
   yearend: unknown
-  notes: "一次ソースは東京都ODカタログの「資源・ごみ収集曜日、清掃事業所管轄一覧」(dataset t131113d0000000024, num_resources=1, XLSX)。
-    カタログHTMLはCloudFrontでCLI/WebFetch共に403だが、CKAN API
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。**difficulty 4 → 2 に訂正。** 一次ソースの実体は `.xlsx` (Excel 2007+ =
+    XML の zip) で素直に読める。共有文字列 482 件のうち 43 件が丁目・35 件が曜日を含み、町名+カナ+曜日+全域/丁目
+    の表になっている。「xls」という字面から難物に見えていたが、開いてみれば町×曜日表。都カタログ由来で CC BY 4.0。なお不燃ごみは別ファイル (131113_funensyuusyuubi.xls、旧
+    .xls 形式) なので収録時に要確認。 一次ソースは東京都ODカタログの「資源・ごみ収集曜日、清掃事業所管轄一覧」(dataset t131113d0000000024, num_resources=1,
+    XLSX)。 カタログHTMLはCloudFrontでCLI/WebFetch共に403だが、CKAN API
     https://catalog.data.metro.tokyo.lg.jp/api/3/action/package_show?id=t131113d0000000024 はCLIで200取得可能。
     リソース実体は別ホスト https://www.opendata.metro.tokyo.lg.jp/ootaku/131113_shigengomiyoubi.xlsx で curl 200
     application/vnd.openxmlformats..sheet 18196bytes。openpyxlで検証: シート1枚「R07全域」88行×8列。
@@ -366,7 +381,7 @@
   handle: shibuya
   name_ja: 渋谷区
   population: 231424
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.shibuya.tokyo.jp/kurashi/gomi/kateigomi/gomid.html
   calendar_urls:
     - https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/59863ae2476944aaa09fa7d90393ce9e/syuusyuubiitirannR8.3~10.pdf
@@ -376,21 +391,23 @@
     - ごみカレンダー.com
     - ゴミの日.com
   license: proprietary-site
-  difficulty: 3
+  difficulty: 2
   granularity: weekday-rules
   district_unit: 町丁目 (町名+丁目、繁華街地域と通常地域の区別あり)
   district_count_approx: 65
   yearend: december-announce
-  notes: "公式ポータル gomid.html から2種のPDFを配布。(1)「資源とごみの収集日一覧表」 syuusyuubiitirannR8.3~10.pdf (141KB, 2頁) と
-    (2)「地域別収集日(曜日)一覧表」 chiikibetushuushuuyoubiitiran2025.pdf (104KB, 1頁)。両者とも curl 取得成功、 pdffonts で CID
-    TrueType (MS-Gothic/HGSoeiKakugothic) 埋め込み、pdftotext で テキスト層あり (機械可読PDF)。可燃ごみ=週2回の曜日規則(例「水・土」)、資源=週1回の
-    曜日(例「火」)、不燃=月1回の第N曜日規則(例「第2月曜日」)。granularity は weekday-rules と判定。ただし(1)の PDF は不燃ごみのみ 9月～翌4月の実日付(8日/13日等)を
-    別表で明示しており、この不燃分は日付入り(partial的)。可燃・資源は日付明示なし。 地区割は町丁目単位で chiikibetu PDF の可燃曜日行が約61行、繁華街地域の別扱いあり。
-    district_count_approx=65 は概数。年末年始は gomid.html に「収集を休んだり変更あり、 日程が決まり次第しぶや区ニュース等でお知らせ」「毎月29・30・31日の不燃収集なし
-    (年末年始は変更あり)」とあり、カレンダーに実日付明示せず→december-announce。 ライセンス: 一次ソースPDFは公式サイト(city.shibuya.tokyo.jp)配布で
-    proprietary-site。 SHIBUYA OPEN DATA (ArcGIS Hub, city-shibuya-data.opendata.arcgis.com) には
-    「ごみの分別方法一覧」データセットは在るが、収集日程(収集曜日/地域別)の CSV/JSON オープンデータは確認できず(存在せず=unknown、深追い打ち切り)。検証用に 5374.jp 渋谷区版(Code
-    for Japan 解析、area_days.csv系)、ごみカレンダー.com、ゴミの日.com 等の 二次ソースが複数あり相互検証可能だが公式一次ではない。difficulty 3: テキスト層ある
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。**difficulty 3 → 2 に訂正。** 収集日一覧 PDF は 2 ページの町×曜日表でテキスト層あり
+    (chars 1,051 / 丁目 59 件 / 曜日 108 件)。 公式ポータル gomid.html から2種のPDFを配布。(1)「資源とごみの収集日一覧表」
+    syuusyuubiitirannR8.3~10.pdf (141KB, 2頁) と (2)「地域別収集日(曜日)一覧表」 chiikibetushuushuuyoubiitiran2025.pdf
+    (104KB, 1頁)。両者とも curl 取得成功、 pdffonts で CID TrueType (MS-Gothic/HGSoeiKakugothic) 埋め込み、pdftotext で テキスト層あり
+    (機械可読PDF)。可燃ごみ=週2回の曜日規則(例「水・土」)、資源=週1回の 曜日(例「火」)、不燃=月1回の第N曜日規則(例「第2月曜日」)。granularity は weekday-rules
+    と判定。ただし(1)の PDF は不燃ごみのみ 9月～翌4月の実日付(8日/13日等)を 別表で明示しており、この不燃分は日付入り(partial的)。可燃・資源は日付明示なし。 地区割は町丁目単位で
+    chiikibetu PDF の可燃曜日行が約61行、繁華街地域の別扱いあり。 district_count_approx=65 は概数。年末年始は gomid.html に「収集を休んだり変更あり、
+    日程が決まり次第しぶや区ニュース等でお知らせ」「毎月29・30・31日の不燃収集なし (年末年始は変更あり)」とあり、カレンダーに実日付明示せず→december-announce。 ライセンス:
+    一次ソースPDFは公式サイト(city.shibuya.tokyo.jp)配布で proprietary-site。 SHIBUYA OPEN DATA (ArcGIS Hub,
+    city-shibuya-data.opendata.arcgis.com) には 「ごみの分別方法一覧」データセットは在るが、収集日程(収集曜日/地域別)の CSV/JSON
+    オープンデータは確認できず(存在せず=unknown、深追い打ち切り)。検証用に 5374.jp 渋谷区版(Code for Japan
+    解析、area_days.csv系)、ごみカレンダー.com、ゴミの日.com 等の 二次ソースが複数あり相互検証可能だが公式一次ではない。difficulty 3: テキスト層ある
     機械可読PDFだが、町丁目×種別の表でセル結合・丁目レンジ表記(例「3丁目～4丁目(8除く)」)が 多くパースは非自明。"
   surveyed_at: 2026-07-18
 - code: "13114"
@@ -479,7 +496,7 @@
   handle: kita
   name_ja: 北区
   population: 369802
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/002/019/wakedashi_book_r08.pdf
   calendar_urls:
     - https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/002/019/wakedashi_book_r08.pdf
@@ -494,13 +511,14 @@
   district_unit: 丁目 (町丁目単位。地区は赤羽/王子/滝野川など、その下の丁目ごとに曜日設定)
   district_count_approx: 72
   yearend: december-announce
-  notes: "ドメインは city.kita.lg.jp (city.kita.tokyo.jp ではない)。公式に地域別収集曜日を載せる 一次ソースは
-    PDF「北区の収集曜日一覧」(wakedashi_book_r08.pdf, 令和8年度=2026, 約12MB)。 curl 200 で取得可・pdftotext
-    でテキスト層あり。ただし多段組(地区→町/丁目→可燃/不燃/古紙/ プラ/びん缶ペット/粗大 の曜日)のテーブルがテキスト抽出で列順に崩れ、丁目名と曜日値の対応付けが 素直に取れない →
-    実装時はレイアウト保持(pdftotext -layout や座標)や手作業マッピングが必要。 難易度3の主因はこの表構造。
-    公式HTMLページ(1002014.html)は案内のみで地域別の曜日表・リンクは無し、CSV/JSON参照も grep でヒットせず。 東京都オープンデータカタログ/ckan横断検索で「北区 収集
-    ごみ」を検索したが、北区の収集曜日データセット (CSV/JSON)は見つからず(集積所一覧など別データは存在)→オープンデータ経路は現時点で無し。 地域数は民間サイト(ゴミの日.com
-    等)が「全72地域」と記載、PDFの丁目列挙とも整合。district_count_approx=72。 granularity
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。wakedashi_book_r08.pdf は 36 ページの分け方冊子でテキスト層あり (丁目 93 件 /
+    曜日 413 件 / 資源・可燃・不燃・プラの全品目語あり)。difficulty 3 のまま — 冊子から曜日表のページを切り出す手間がある。 ドメインは city.kita.lg.jp
+    (city.kita.tokyo.jp ではない)。公式に地域別収集曜日を載せる 一次ソースは PDF「北区の収集曜日一覧」(wakedashi_book_r08.pdf, 令和8年度=2026, 約12MB)。
+    curl 200 で取得可・pdftotext でテキスト層あり。ただし多段組(地区→町/丁目→可燃/不燃/古紙/ プラ/びん缶ペット/粗大
+    の曜日)のテーブルがテキスト抽出で列順に崩れ、丁目名と曜日値の対応付けが 素直に取れない → 実装時はレイアウト保持(pdftotext -layout や座標)や手作業マッピングが必要。
+    難易度3の主因はこの表構造。 公式HTMLページ(1002014.html)は案内のみで地域別の曜日表・リンクは無し、CSV/JSON参照も grep でヒットせず。
+    東京都オープンデータカタログ/ckan横断検索で「北区 収集 ごみ」を検索したが、北区の収集曜日データセット (CSV/JSON)は見つからず(集積所一覧など別データは存在)→オープンデータ経路は現時点で無し。
+    地域数は民間サイト(ゴミの日.com 等)が「全72地域」と記載、PDFの丁目列挙とも整合。district_count_approx=72。 granularity
     は日付ではなく曜日ルール(不燃は「第○週の○曜」等の週指定あり、PDF3ページに週の数え方説明)。 年末年始: 日付つきカレンダーは無く、PDFに「年末年始を除く」「1月は年始の休業により月1回収集となる
     場合あり」等の注記のみ。具体日程は例年12月に別途告知される想定 → december-announce と判断 (calendar-explicit ではない)。ライセンスは明示表記が確認できず
     unknown。"
@@ -599,7 +617,7 @@
   handle: adachi
   name_ja: 足立区
   population: 708138
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.adachi.tokyo.jp/seso/2026calender.html
   calendar_urls:
     - https://www.city.adachi.tokyo.jp/seso/2026calender.html
@@ -610,14 +628,17 @@
     - ゴミの日.com (https://gominohi.com/Tokyo/Adachi/, 第三者集約)
     - zenkoku.mond.jp/gomi-calendar/tokyo-adachi.html (第三者集約)
   license: unknown
-  difficulty: 3
+  difficulty: 2
   granularity: weekday-rules
   district_unit: 町丁 (12収集地区にグループ化)
   district_count_approx: 12
   yearend: december-announce
-  notes: "一次ソースは令和8年度「資源とごみの収集カレンダー」ランディングHTML(2026calender.html, HTTP200)。
-    五十音(あ〜ら行)の町名リンクが12本の地区別PDF(/documents/75227/001〜012.pdf)に集約。 001.pdf(HTTP200, application/pdf, 130KB)は
-    pdftotext -layout でテキスト層良好、地区の対象町丁(例:栗原1,2丁目/島根1〜4丁目/千住旭町/…)と 収集ルール「プラスチック 週1回【水】/資源 週1回【金】/燃やすごみ
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。**difficulty 3 → 2 に訂正。** 12 地区の PDF
+    (documents/75227/001〜012.pdf) で、**テキスト層に曜日規則が明記**されている (例「プラスチック 週1回【水】/ 資源 週1回【金】/ 燃やすごみ 週2回【月・木】/
+    燃やさないごみ 月2回【第1・第3 火】」) + 通年カレンダーグリッド。板橋区と同型。**注意: 内容語の出現回数で判定すると取りこぼす** — 1,141 字あるのに「資源」2 件・「可燃」1
+    件しかないのは、曜日規則が見出しに 1 回ずつしか現れない形式だから。回数ではなく構造を見る。 一次ソースは令和8年度「資源とごみの収集カレンダー」ランディングHTML(2026calender.html,
+    HTTP200)。 五十音(あ〜ら行)の町名リンクが12本の地区別PDF(/documents/75227/001〜012.pdf)に集約。 001.pdf(HTTP200, application/pdf,
+    130KB)は pdftotext -layout でテキスト層良好、地区の対象町丁(例:栗原1,2丁目/島根1〜4丁目/千住旭町/…)と 収集ルール「プラスチック 週1回【水】/資源 週1回【金】/燃やすごみ
     週2回【月・木】/燃やさないごみ 月2回【第1・第3 火】」を明記、加えて月別カレンダーグリッド(4月〜翌3月)を掲載。
     ゆえに曜日ルール+第N週ルールが機械抽出可能→weekday-rules。ただし町丁→地区(001〜012)の対応表はHTMLアンカー側にあり別途パース要。
     集約版の「町丁別収集曜日一覧表」002.pdf(HTTP200, 556KB)は pdftotext 出力1文字=テキスト層なしの画像PDFで不可、個別地区PDF(001等)を使うべき。
@@ -649,7 +670,11 @@
   district_unit: 丁目単位でグルーピングした収集地区
   district_count_approx: 16
   yearend: calendar-explicit
-  notes: "公式は「2026年度版 資源とごみの収集カレンダー」を収集地区16区分でPDF配布(2026年4月〜2027年3月の通年,日付単位)。 HTMLソースから .pdf 参照を grep: フルカレンダー
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。**23 区で唯一の本物の画像 PDF。** 地区別カレンダー (08-1〜08-16.pdf) も全地区共通ページ
+    (08-al.pdf、13 ページ) も chars ほぼ 0 (13 ページで 13 字)。豊島・江東のような多言語版は無く、「簡易版」も同じ画像 PDF。difficulty 4
+    のまま。**ただし町→収集地区の対応は HTML から取れる** — 掲載ページのリンク文言が「青戸1・2丁目のカレンダー（収集地区4）」の形で、44 件・地区 1〜16
+    が抽出できた。収録できるかは**カレンダー本体に色ベース抽出が効くか**次第 (罫線 10 / rects 131 / curves 2,609 なので青梅型を試す価値あり)。 公式は「2026年度版
+    資源とごみの収集カレンダー」を収集地区16区分でPDF配布(2026年4月〜2027年3月の通年,日付単位)。 HTMLソースから .pdf 参照を grep: フルカレンダー
     08-1〜08-16.pdf(各約2.5MB)/全地区共通 08-al.pdf(4.7MB)/簡易版 2025k-1〜2025k-16.pdf。 curl 200 取得成功。フルカレンダー(08-1.pdf
     等)と共通ページ(08-al.pdf)は pdftotext で7〜13字=テキスト層なしの画像PDF。
     簡易版(2025k-1.pdf)のみテキスト層あり(約2000字)だが,抽出できるのは表題+地区の対象町丁名(例:①地区=お花茶屋1〜3丁目,小菅1〜4丁目,東堀切1〜3丁目,堀切6〜8丁目)+
@@ -665,7 +690,7 @@
   handle: edogawa
   name_ja: 江戸川区
   population: 701652
-  source_type: pdf
+  source_type: pdf-text
   schedule_url: https://www.city.edogawa.tokyo.jp/e025/kurashi/gomi_recycle/kategomi/yobihyo.html
   calendar_urls:
     - https://www.city.edogawa.tokyo.jp/e025/kurashi/gomi_recycle/kategomi/yobihyo.html
@@ -675,18 +700,20 @@
     - スマゴミ/GOMICALE等の民間収集日サイト
     - 区公式の年末年始収集お知らせページ
   license: proprietary-site
-  difficulty: 3
+  difficulty: 2
   granularity: weekday-rules
   district_unit: 町丁目 (町名ごと、丁目・番地範囲で細分。管轄清掃事務所は小松川/葛西/小岩の3系統)
   district_count_approx: 120
   yearend: december-announce
-  notes: "公式「資源回収・ごみ収集地域別曜日表」ページ (yobihyo.html) にHTML表6段と PDF (youbi021102.pdf, 令和2年11月2日現在, 4頁, 131KB)
-    の両方あり。curlで取得成功。 pdffontsでCIDフォント埋め込み・pdftotextでテキスト層あり(整形されたテキスト抽出可、 「一之江 1丁目〜5丁目 月 水・土 第1・3金
-    小松川」等の町丁目×種別×曜日行を確認)。 granularityは曜日ルール型: 燃やすごみ週2(例:水・土)、資源週1、燃やさないごみ月2
-    (第1・3金など第N曜日規則)。実日付カレンダーではないためweekday-rules。 年末年始はPDF冒頭に「年末年始の作業日は別途お知らせ」と明記→december-announce (別途
-    nenmatukaisyu.html で年末年始告知)。 ライセンス: 区公式サイト掲載物でオープンデータ明示・CC BY表示は確認できず proprietary-site
-    とした。東京都オープンデータカタログに江戸川区組織(t131237)は存在するが 収集曜日データセットの有無はCLIがCloudFront 403で未確認(unknown)。 difficulty 3:
-    機械可読PDF (テキスト層あり)。HTML表からの抽出も可能だが構造が細かく 町丁目・番地範囲の但し書きが多い点が罠。district_count_approxは丁目行約112+全域8から
+  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。**difficulty 3 → 2 に訂正。** youbi021102.pdf は 4
+    ページの町×曜日表でテキスト層あり (chars 888 / 丁目 120 件 / 曜日 140 件)。 公式「資源回収・ごみ収集地域別曜日表」ページ (yobihyo.html) にHTML表6段と PDF
+    (youbi021102.pdf, 令和2年11月2日現在, 4頁, 131KB) の両方あり。curlで取得成功。
+    pdffontsでCIDフォント埋め込み・pdftotextでテキスト層あり(整形されたテキスト抽出可、 「一之江 1丁目〜5丁目 月 水・土 第1・3金 小松川」等の町丁目×種別×曜日行を確認)。
+    granularityは曜日ルール型: 燃やすごみ週2(例:水・土)、資源週1、燃やさないごみ月2 (第1・3金など第N曜日規則)。実日付カレンダーではないためweekday-rules。
+    年末年始はPDF冒頭に「年末年始の作業日は別途お知らせ」と明記→december-announce (別途 nenmatukaisyu.html で年末年始告知)。 ライセンス:
+    区公式サイト掲載物でオープンデータ明示・CC BY表示は確認できず proprietary-site とした。東京都オープンデータカタログに江戸川区組織(t131237)は存在するが
+    収集曜日データセットの有無はCLIがCloudFront 403で未確認(unknown)。 difficulty 3: 機械可読PDF (テキスト層あり)。HTML表からの抽出も可能だが構造が細かく
+    町丁目・番地範囲の但し書きが多い点が罠。district_count_approxは丁目行約112+全域8から
     約120と概算(不確実)。populationは約68.5万の一般的推計値(住民基本台帳の厳密値は未確認)。"
   surveyed_at: 2026-07-18
 - code: "13201"

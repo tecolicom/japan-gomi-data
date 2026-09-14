@@ -17,10 +17,11 @@ granularity: weekday-rules
 district_unit: '地域→町丁 (3地域: 京橋/日本橋/月島)'
 district_count_approx: 3
 yearend: unknown
-notes: '一次ソース確定: 公式「あなたの町のごみ・資源収集曜日」HTML表 (syuusyuuyoubi.html)。 町丁別に燃やすごみ等の曜日を掲載 (例: 明石町=水土, 新富=月木, 新川=火金, 京橋=月〜土)。
-  3地域 (京橋/日本橋/月島) に町丁を割当。練馬方式でHTML機械変換可=difficulty 2, granularity weekday-rules。 ★OD要ブラウザ確認: opendata-sources.md
-  総論に「中央『ごみと資源の収集曜日』」データセットの記録ありだが、 今回のWebSearch/ckan横断では中央区(組織t131024)の収集曜日ODを特定できず (ヒットしたt131113系は全て大田区)。 東京都カタログ本体はCLI
-  403。ただしリソース実体が opendata.metro.tokyo.lg.jp 配下なら curl 200 で取得可能 (大田xlsx https://www.opendata.metro.tokyo.lg.jp/ootaku/131113_shigengomiyoubi.xlsx
+notes: '【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。HTML 表 59 行 (音/町名/丁目/燃やすごみ/燃やさないごみ/プラマーク/資源)。実測で確認、difficulty
+  2 のまま。**罠: 京橋の燃やすごみが「月曜日～土曜日」** — 繁華街の毎日収集地域。範囲表記を読めないパーサは落ちる。 一次ソース確定: 公式「あなたの町のごみ・資源収集曜日」HTML表 (syuusyuuyoubi.html)。
+  町丁別に燃やすごみ等の曜日を掲載 (例: 明石町=水土, 新富=月木, 新川=火金, 京橋=月〜土)。 3地域 (京橋/日本橋/月島) に町丁を割当。練馬方式でHTML機械変換可=difficulty 2, granularity
+  weekday-rules。 ★OD要ブラウザ確認: opendata-sources.md 総論に「中央『ごみと資源の収集曜日』」データセットの記録ありだが、 今回のWebSearch/ckan横断では中央区(組織t131024)の収集曜日ODを特定できず
+  (ヒットしたt131113系は全て大田区)。 東京都カタログ本体はCLI 403。ただしリソース実体が opendata.metro.tokyo.lg.jp 配下なら curl 200 で取得可能 (大田xlsx https://www.opendata.metro.tokyo.lg.jp/ootaku/131113_shigengomiyoubi.xlsx
   が実測200・CC BY 4.0 で確認済)。 → 中央区OD版が存在すれば source_type csv/xls・license CC-BY-4.0 に昇格可能。現状HTML表は事実データ抽出整理=proprietary-site。
   年末年始はHTMLページに記載なし (要別ページ/12月告知)。清掃事務所は中央清掃事務所単一 (03-3562-1521)。'
 surveyed_at: '2026-07-18'
