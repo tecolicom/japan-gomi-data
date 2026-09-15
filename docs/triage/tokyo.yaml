@@ -53,17 +53,28 @@
   source_type: html
   schedule_url: https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
   calendar_urls:
-    - https://www.city.chuo.lg.jp/kurashi/gomi/calendar/index.html
+    - https://www.city.chuo.lg.jp/documents/5392/english2024.pdf
+    - https://www.city.chuo.lg.jp/documents/5392/chinese2024.pdf
   verify_sources:
-    - official-html-table
-    - catalog-od-unconfirmed
+    - pamphlet-en
+    - pamphlet-zh
+    - ja-html-table
   license: proprietary-site
   difficulty: 2
   granularity: weekday-rules
-  district_unit: "地域→町丁 (3地域: 京橋/日本橋/月島)"
-  district_count_approx: 3
+  district_unit: "町丁目 (3地域: 京橋/日本橋/月島)"
+  district_count_approx: 56
   yearend: unknown
-  notes: "【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。HTML 表 59 行
+  notes: "【収録済 2026-09-15】収録した。13 コース・104 area。抽出は tools/html-extractor/chuo/。 一次ソースは公式 HTML 表
+    (3地域56行)。**照合はパンフレット「ごみと資源の分け方・出し方」の外国語版** — 日本語版は画像PDF (27+25ページで54字) だが英語版・中国語版には同じ曜日表がテキスト層つきで入っている
+    (豊島・江東と同じ構図)。韓国語版も同じ表を持つが、町名のハングルに曜日と同じ字が混じり (신토미の「토」=土) 曜日グループが6個になるうえ 週5日の値が行またぎで分断されるため照合から外した。 【罠】(1)
+    <br> の意味が列で違う — 曜日列では区切り、丁目列では折り返し。(2) パンフの本文の並びが 京橋→月島→日本橋 で HTML と違い、位置で突き合わせると 320/560 セル食い違う。(3)
+    rowspan が音と町名で独立。(4) 区が日本橋地域の町名から「日本橋」を省いている (19町33行)。(5)
+    京橋・銀座・日本橋1〜3丁目・八重洲が週6日「月曜日～土曜日」、日本橋人形町2丁目1〜14番だけ週5日。 【語彙】資源 =
+    古紙+ペットボトル+びん+缶+**金属製のなべ・やかん類(metal)**。プラマーク=plastic (資源とは別の日)。粗大ごみは申込制で収録しないが、照合には使う (無料の5列目)。
+    【収録期間】2026-01--2026-11。始端はパンフの発行月 (令和8年1月)。**年末年始の記述が公表資料のどこにも無い** (公表されている運用ルールは「日曜日は収集しない」だけ) ため 11
+    月で切った。 【鮮度】HTML の表示上の更新日 2023-01-18 は古いメタデータで、HTTP Last-Modified は 2026-07-30。パンフ (令和8年1月発行)
+    より新しいので、食い違ったら HTML を正とすると事前に決めた。実際は不一致 0。 【下調べ 2026-09-14】23 区整備のため一次ソースを実測した (収録はまだ)。HTML 表 59 行
     (音/町名/丁目/燃やすごみ/燃やさないごみ/プラマーク/資源)。実測で確認、difficulty 2 のまま。**罠: 京橋の燃やすごみが「月曜日～土曜日」** —
     繁華街の毎日収集地域。範囲表記を読めないパーサは落ちる。 一次ソース確定: 公式「あなたの町のごみ・資源収集曜日」HTML表 (syuusyuuyoubi.html)。 町丁別に燃やすごみ等の曜日を掲載 (例:
     明石町=水土, 新富=月木, 新川=火金, 京橋=月〜土)。 3地域 (京橋/日本橋/月島) に町丁を割当。練馬方式でHTML機械変換可=difficulty 2, granularity
