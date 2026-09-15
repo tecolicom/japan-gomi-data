@@ -1,0 +1,27 @@
+# 中央区。公式4区分 + 粗大: 燃やすごみ / 燃やさないごみ / プラマーク / 資源 / 粗大ごみ。
+# 「プラマーク」はプラスチック製容器包装 (平成21年4月から「プラマークの日」を設けて回収)。
+# 「資源」は 古紙(新聞・雑誌・雑紙・段ボール) + ペットボトル + びん + 缶 +
+# **金属製のなべ・やかん・フライパン** の同日収集なので 5 category へ分解する。
+# 粗大ごみは申込制 (粗大ごみ受付センター) のため収録しない。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - paper
+  - glass_bottle
+  - beverage_can
+  - pet_bottle
+  - metal
+overrides:
+  burnable: { label: 燃やすごみ }
+  non_burnable: { label: 燃やさないごみ, short: 燃やさない }
+  plastic: { label: プラマーク, short: プラ }
+  beverage_can: { label: 缶, short: 缶 }
+  paper: { label: 古紙 }
+  metal: { label: 金属製のなべ・やかん類, short: 金属 }
+
+# 参考情報: 区の括り名 (同日一括回収の呼称)。データ本体は構成カテゴリへ分解済み。
+groups:
+  - label: 資源
+    short: 資源
+    members: [paper, glass_bottle, beverage_can, pet_bottle, metal]

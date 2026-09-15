@@ -1,0 +1,86 @@
+metadata:
+  city: chuo
+  course: "9"
+  areas:
+    - name: 佃1丁目
+      yomi: つくだ1
+      machiaza_id: 131024-0001001
+    - name: 佃2丁目
+      yomi: つくだ2
+      machiaza_id: 131024-0001002
+    - name: 佃3丁目
+      yomi: つくだ3
+      machiaza_id: 131024-0001003
+    - name: 日本橋蛎殻町1丁目
+      yomi: にほんばしかきがらちょう1
+      machiaza_id: 131024-0022001
+    - name: 日本橋小網町
+      yomi: にほんばしこあみちょう
+      machiaza_id: 131024-0031000
+    - name: 日本橋中洲
+      yomi: にほんばしなかす
+      machiaza_id: 131024-0025000
+    - name: 日本橋人形町1丁目
+      yomi: にほんばしにんぎょうちょう1
+      machiaza_id: 131024-0016001
+    - name: 日本橋人形町2丁目15～37番
+      yomi: にほんばしにんぎょうちょう2-15
+      machiaza_id: 131024-0016002
+    - name: 日本橋浜町3丁目
+      yomi: にほんばしはまちょう3
+      machiaza_id: 131024-0021003
+    - name: 日本橋本町1丁目10番
+      yomi: にほんばしほんちょう1-10
+      machiaza_id: 131024-0030001
+    - name: 晴海1丁目
+      yomi: はるみ1
+      machiaza_id: 131024-0008001
+    - name: 晴海2丁目
+      yomi: はるみ2
+      machiaza_id: 131024-0008002
+    - name: 晴海3丁目
+      yomi: はるみ3
+      machiaza_id: 131024-0008003
+    - name: 晴海4丁目
+      yomi: はるみ4
+      machiaza_id: 131024-0008004
+    - name: 晴海5丁目
+      yomi: はるみ5
+      machiaza_id: 131024-0008005
+  period: 2026-01--2026-11
+  source:
+    edition_ja: 「ごみと資源の分け方・出し方」(令和8年1月発行) / 区公式「あなたの町のごみ・資源収集曜日」
+    source_url: https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
+    extracted_at: 2026-09-15
+    extracted_by: claude-opus-5
+    verified_by: Claude (区公式「あなたの町のごみ・資源収集曜日」HTML 表 56 行の機械変換。「ごみと資源の分け方・出し方」パンフレットの外国語版 3 種 (英・中・韓) に同じ曜日表が入っており、56 行 × 5 品目 (収録しない粗大ごみを含む) で全数照合した。粗大ごみは申込制のため収録しない。年末年始の記述が公表資料に無いため 11 月で期間を切っている)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - WE
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - MO
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: metal
+    pattern: weekly
+    days: *a1

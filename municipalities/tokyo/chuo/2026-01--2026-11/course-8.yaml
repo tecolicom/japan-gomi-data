@@ -1,0 +1,98 @@
+metadata:
+  city: chuo
+  course: "8"
+  areas:
+    - name: 新富1丁目
+      yomi: しんとみ1
+      machiaza_id: 131024-0012001
+    - name: 新富2丁目
+      yomi: しんとみ2
+      machiaza_id: 131024-0012002
+    - name: 築地1丁目
+      yomi: つきじ1
+      machiaza_id: 131024-0002001
+    - name: 築地2丁目
+      yomi: つきじ2
+      machiaza_id: 131024-0002002
+    - name: 築地3丁目
+      yomi: つきじ3
+      machiaza_id: 131024-0002003
+    - name: 築地4丁目
+      yomi: つきじ4
+      machiaza_id: 131024-0002004
+    - name: 築地5丁目
+      yomi: つきじ5
+      machiaza_id: 131024-0002005
+    - name: 築地6丁目
+      yomi: つきじ6
+      machiaza_id: 131024-0002006
+    - name: 築地7丁目
+      yomi: つきじ7
+      machiaza_id: 131024-0002007
+    - name: 日本橋大伝馬町
+      yomi: にほんばしおおでんまちょう
+      machiaza_id: 131024-0036000
+    - name: 日本橋小伝馬町1～2番、7～21番
+      yomi: にほんばしこでんまちょう-1
+      machiaza_id: 131024-0035000
+    - name: 日本橋小舟町
+      yomi: にほんばしこぶなちょう
+      machiaza_id: 131024-0029000
+    - name: 日本橋富沢町
+      yomi: にほんばしとみざわちょう
+      machiaza_id: 131024-0033000
+    - name: 日本橋人形町3丁目
+      yomi: にほんばしにんぎょうちょう3
+      machiaza_id: 131024-0016003
+    - name: 日本橋堀留町1丁目
+      yomi: にほんばしほりどめちょう1
+      machiaza_id: 131024-0027001
+    - name: 日本橋堀留町2丁目
+      yomi: にほんばしほりどめちょう2
+      machiaza_id: 131024-0027002
+    - name: 日本橋本町1丁目6～9番
+      yomi: にほんばしほんちょう1-6
+      machiaza_id: 131024-0030001
+    - name: 日本橋本町2丁目6～8番
+      yomi: にほんばしほんちょう2-6
+      machiaza_id: 131024-0030002
+    - name: 日本橋本町3丁目6～11番
+      yomi: にほんばしほんちょう3-6
+      machiaza_id: 131024-0030003
+  period: 2026-01--2026-11
+  source:
+    edition_ja: 「ごみと資源の分け方・出し方」(令和8年1月発行) / 区公式「あなたの町のごみ・資源収集曜日」
+    source_url: https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
+    extracted_at: 2026-09-15
+    extracted_by: claude-opus-5
+    verified_by: Claude (区公式「あなたの町のごみ・資源収集曜日」HTML 表 56 行の機械変換。「ごみと資源の分け方・出し方」パンフレットの外国語版 3 種 (英・中・韓) に同じ曜日表が入っており、56 行 × 5 品目 (収録しない粗大ごみを含む) で全数照合した。粗大ごみは申込制のため収録しない。年末年始の記述が公表資料に無いため 11 月で期間を切っている)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - FR
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: metal
+    pattern: weekly
+    days: *a1

@@ -1,0 +1,101 @@
+metadata:
+  city: chuo
+  course: "10"
+  areas:
+    - name: 勝どき1丁目
+      yomi: かちどき1
+      machiaza_id: 131024-0009001
+    - name: 勝どき2丁目
+      yomi: かちどき2
+      machiaza_id: 131024-0009002
+    - name: 勝どき3丁目
+      yomi: かちどき3
+      machiaza_id: 131024-0009003
+    - name: 勝どき4丁目
+      yomi: かちどき4
+      machiaza_id: 131024-0009004
+    - name: 勝どき5丁目
+      yomi: かちどき5
+      machiaza_id: 131024-0009005
+    - name: 勝どき6丁目
+      yomi: かちどき6
+      machiaza_id: 131024-0009006
+    - name: 豊海町
+      yomi: とよみちょう
+      machiaza_id: 131024-0010000
+    - name: 日本橋小伝馬町3～6番
+      yomi: にほんばしこでんまちょう-3
+      machiaza_id: 131024-0035000
+    - name: 日本橋本石町1丁目
+      yomi: にほんばしほんごくちょう1
+      machiaza_id: 131024-0032001
+    - name: 日本橋本石町2丁目
+      yomi: にほんばしほんごくちょう2
+      machiaza_id: 131024-0032002
+    - name: 日本橋本石町3丁目
+      yomi: にほんばしほんごくちょう3
+      machiaza_id: 131024-0032003
+    - name: 日本橋本石町4丁目
+      yomi: にほんばしほんごくちょう4
+      machiaza_id: 131024-0032004
+    - name: 日本橋本町1丁目1～5番
+      yomi: にほんばしほんちょう1-1
+      machiaza_id: 131024-0030001
+    - name: 日本橋本町2丁目1～5番
+      yomi: にほんばしほんちょう2-1
+      machiaza_id: 131024-0030002
+    - name: 日本橋本町3丁目1～5番
+      yomi: にほんばしほんちょう3-1
+      machiaza_id: 131024-0030003
+    - name: 日本橋本町4丁目
+      yomi: にほんばしほんちょう4
+      machiaza_id: 131024-0030004
+    - name: 日本橋室町1丁目
+      yomi: にほんばしむろまち1
+      machiaza_id: 131024-0018001
+    - name: 日本橋室町2丁目
+      yomi: にほんばしむろまち2
+      machiaza_id: 131024-0018002
+    - name: 日本橋室町3丁目
+      yomi: にほんばしむろまち3
+      machiaza_id: 131024-0018003
+    - name: 日本橋室町4丁目
+      yomi: にほんばしむろまち4
+      machiaza_id: 131024-0018004
+  period: 2026-01--2026-11
+  source:
+    edition_ja: 「ごみと資源の分け方・出し方」(令和8年1月発行) / 区公式「あなたの町のごみ・資源収集曜日」
+    source_url: https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
+    extracted_at: 2026-09-15
+    extracted_by: claude-opus-5
+    verified_by: Claude (区公式「あなたの町のごみ・資源収集曜日」HTML 表 56 行の機械変換。「ごみと資源の分け方・出し方」パンフレットの外国語版 3 種 (英・中・韓) に同じ曜日表が入っており、56 行 × 5 品目 (収録しない粗大ごみを含む) で全数照合した。粗大ごみは申込制のため収録しない。年末年始の記述が公表資料に無いため 11 月で期間を切っている)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - TU
+  - category: plastic
+    pattern: weekly
+    days:
+      - SA
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: metal
+    pattern: weekly
+    days: *a1

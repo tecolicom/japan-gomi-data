@@ -1,0 +1,47 @@
+metadata:
+  city: chuo
+  course: "12"
+  areas:
+    - name: 日本橋人形町2丁目1～14番
+      yomi: にほんばしにんぎょうちょう2-1
+      machiaza_id: 131024-0016002
+  period: 2026-01--2026-11
+  source:
+    edition_ja: 「ごみと資源の分け方・出し方」(令和8年1月発行) / 区公式「あなたの町のごみ・資源収集曜日」
+    source_url: https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
+    extracted_at: 2026-09-15
+    extracted_by: claude-opus-5
+    verified_by: Claude (区公式「あなたの町のごみ・資源収集曜日」HTML 表 56 行の機械変換。「ごみと資源の分け方・出し方」パンフレットの外国語版 3 種 (英・中・韓) に同じ曜日表が入っており、56 行 × 5 品目 (収録しない粗大ごみを含む) で全数照合した。粗大ごみは申込制のため収録しない。年末年始の記述が公表資料に無いため 11 月で期間を切っている)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TU
+      - WE
+      - FR
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - MO
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - TH
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: metal
+    pattern: weekly
+    days: *a1
