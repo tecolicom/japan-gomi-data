@@ -8,6 +8,13 @@
 生成: `node scripts/check-new-editions.mjs`。いつ状態が変わったかは、このファイルの
 git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
+## 公開を検出 — 収録の候補
+
+次の版らしいリンクが一次ソースに出ている。 (1 自治体)
+
+- **nishitokyo** (tokyo) — 収録 `2025-10--2026-09` (2026-09 末) / 現行 令和7年10月〜令和8年9月版
+  - ごみ・資源物収集カレンダー（令和8年10月～令和9年9月）PDFファイル版 → https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/202610-pdf.html
+
 ## 監視先がページでない — 要設定
 
 監視先が CSV / PDF / テキスト等でリンクを持たないため、次の版が出ても検出できない。survey.yaml の `schedule_url` を、そのファイルが置かれている**案内ページ**に直すこと。 (1 自治体)
@@ -17,7 +24,7 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
 ## 未検出
 
-次の版はまだ見当たらない。 (35 自治体)
+次の版はまだ見当たらない。 (36 自治体)
 
 - **arakawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
@@ -27,6 +34,8 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.chichibu.lg.jp/9098.html
 - **chofu** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.chofu.lg.jp/kurashi/gomirecycle/index.html
+- **chuo** (tokyo) — 収録 `2026-01--2026-11` (2026-11 末) / 現行 「ごみと資源の分け方・出し方」(令和8年1月発行) / 区公式「あなたの町のごみ・資源収集曜日」
+  - 探した年: 2026 / 令和9 — https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
 - **hanno** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.hanno.lg.jp/soshikikarasagasu/kankyokeizaibu/cleancenter/4/893.html
 - **hatoyama-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
@@ -45,6 +54,8 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.kawaguchi.lg.jp/soshiki/01100/040/4/2/3488.html
 - **kawasaki** (kanagawa) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.kawasaki.jp/kurashi/category/261-0-0-0-0-0-0-0-0-0.html
+- **koto** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度版 地区別 資源回収・ごみ収集日一覧
+  - 探した年: 2027 / 令和9 — https://www.city.koto.lg.jp/388010/kurashi/gomi/kate/43735.html
 - **kurashiki** (okayama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1013690/1003647/1003660.html
 - **minano-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
@@ -59,8 +70,6 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.town.nagatoro.saitama.jp/life/%E3%81%94%E3%81%BF%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/
 - **nerima** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.nerima.tokyo.jp/kurashi/gomi/wakekata/ichiran/index.html
-- **nishitokyo** (tokyo) — 収録 `2025-10--2026-09` (2026-09 末) / 現行 令和7年10月〜令和8年9月版
-  - 探した年: 2026 / 令和9 — https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
 - **ogano-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.town.ogano.lg.jp/kurashi-tetsuzuki/kankyou-gomi-suidou/gomicalendar/
 - **ogose-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
