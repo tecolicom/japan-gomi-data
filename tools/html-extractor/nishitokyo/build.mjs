@@ -13,7 +13,7 @@ import { expandRange, cancelledOverrides } from '../../_lib/schedule.mjs';
 import { courseDoc, writeCourses } from '../../_lib/emit.mjs';
 import { classifyRules } from '../../_lib/classify.mjs';
 import { normJa } from '../../_lib/jp.mjs';
-import { parseCalendar, periodDates, AREAS, EDITIONS, INDEX_URL, discoverAreaUrls } from './parse.mjs';
+import { parseCalendar, periodDates, AREAS, EDITIONS, discoverAreaUrls } from './parse.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..', '..');
