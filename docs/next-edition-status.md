@@ -15,6 +15,13 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 - **nishitokyo** (tokyo) — 収録 `2025-10--2026-09` (2026-09 末) / 現行 令和7年10月〜令和8年9月版
   - ごみ・資源物収集カレンダー（令和8年10月～令和9年9月）PDFファイル版 → https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/202610-pdf.html
 
+## 確認できず — 要点検
+
+ページが取れない。移転・削除の可能性があるので**未公開と混同しない**。 (1 自治体)
+
+- **yokoze-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
+  - HTTP 403 — https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/1042
+
 ## 監視先がページでない — 要設定
 
 監視先が CSV / PDF / テキスト等でリンクを持たないため、次の版が出ても検出できない。survey.yaml の `schedule_url` を、そのファイルが置かれている**案内ページ**に直すこと。 (1 自治体)
@@ -24,7 +31,7 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
 ## 未検出
 
-次の版はまだ見当たらない。 (36 自治体)
+次の版はまだ見当たらない。 (35 自治体)
 
 - **arakawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
@@ -96,6 +103,4 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2026 / 令和8 — https://www.city.toshima.lg.jp/150/kurashi/gomi/shigen/2303021832.html
 - **yokohama** (kanagawa) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/gomi-recycle/gomi/
-- **yokoze-town** (saitama) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
-  - 探した年: 2027 / 令和9 — https://www.town.yokoze.saitama.jp/kurashi/gomi-recycle/1042
 
