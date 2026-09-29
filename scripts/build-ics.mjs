@@ -5,7 +5,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync, existsSy
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as yamlParse } from 'yaml';
-import { expandRange, PERIOD_RE, iso, pad2 as pad } from '../tools/_lib/schedule.mjs';
+import { expandRange, PERIOD_RE, parsePeriod, iso, pad2 as pad } from '../tools/_lib/schedule.mjs';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const loadYaml = (p) => yamlParse(readFileSync(p, 'utf8'), {
@@ -43,25 +43,47 @@ for (const { handle, dir, pref } of handles) {
   const taxOv = (loadYaml(join(dir, 'taxonomy.yaml')).overrides) || {};
   // slug -> { courseLabel, dtstamp, events: [{day,next,title}] }
   const bySlug = new Map();
-  for (const entry of readdirSync(dir)) {
-    if (!PERIOD_RE.test(entry)) continue;
+
+  // **期間ディレクトリは昇順に並べてから回す。** 1 自治体が複数の収録期間を持つことがある
+  // (現行版が切れる前に次版が出る自治体。西東京が最初の例)。readdirSync の順序は
+  // 保証されないので、明示的に並べて「最新の期間が最後」にする。
+  const periods = readdirSync(dir).filter((e) => PERIOD_RE.test(e)).sort();
+
+  // **期間が重なっていないことを確かめる。** イベントは全期間ぶんを単純に積むので、
+  // 重なっていると同じ日が 2 度入り、しかも中身が違えば矛盾したまま配信される。
+  // 重なりは収録の誤りなので配信前に落とす。
+  for (let i = 1; i < periods.length; i++) {
+    const a = parsePeriod(periods[i - 1]), b = parsePeriod(periods[i]);
+    if (a.to >= b.from) {
+      throw new Error(`${handle}: 収録期間が重なっている ${periods[i - 1]} と ${periods[i]}`);
+    }
+  }
+
+  for (const entry of periods) {
     for (const f of readdirSync(join(dir, entry))) {
       if (!/^course-.*\.yaml$/.test(f)) continue;
       const { metadata: m, rules, overrides = [], unknown_periods: unknown = [] } = loadYaml(join(dir, entry, f));
       const slug = courseSlug(m.course);
       // 展開範囲は収録期間そのもの。ディレクトリ名と metadata.period の食い違いは配信前に落とす。
       if (m.period !== entry) throw new Error(`${handle}/${entry}/${f}: metadata.period "${m.period}" がディレクトリ名と不一致`);
-      const rec = bySlug.get(slug) || {
+      // **イベントは全期間ぶんを積み、それ以外のメタ情報は最新の期間で上書きする。**
+      // 期間を昇順に回しているので後の代入が勝つ。以前は最初に読んだ期間が勝っていて、
+      // 2 期間を持つ自治体では**失効した版の period / yaml_path / source_url を配っていた**
+      // (西東京で 10/1 以降に「出典」を辿ると令和7年度版のページに飛んだ)。
+      // areas も最新を採る — 「今どの町がこのコースか」を表す値なので、
+      // 版をまたいで足し合わせると、コースから外れた町を含んだままになる。
+      const rec = bySlug.get(slug) || { events: [] };
+      Object.assign(rec, {
         courseLabel: `${m.course} ${m.course_name_ja ?? ''}`.trim(),
         dtstamp: `${iso(m.source.extracted_at).replace(/-/g, '')}T000000Z`,
         course: m.course, courseNameJa: m.course_name_ja ?? '',
         // 収録期間と出典 YAML のパス。期間は自治体ごとに違うので画面に出す
         // (course 値は course-<値>.yaml のファイル名とそのまま一致する)
         period: m.period, yamlPath: `municipalities/${pref}/${handle}/${entry}/${f}`,
-        areas: (m.areas || []).map((a) => a.name), events: [],
+        areas: (m.areas || []).map((a) => a.name),
         // 照合用の一次ソース URL (コース別 PDF を優先。無ければ自治体の掲載ページ)
         sourceUrl: m.source?.pdf_url || m.source?.source_url || meta.source?.schedule_url || '',
-      };
+      });
       for (const [key, cats] of expandRange(m.period, rules, overrides, unknown)) {
         const d = new Date(key + 'T00:00:00');
         rec.events.push({
