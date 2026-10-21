@@ -1,7 +1,9 @@
 // 西東京市「ごみ・資源物収集カレンダー(テキスト版)」= 地域別 HTML ページを cache/ に取得する。
 // index: https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
 //
-// **index に新旧の版が併記される**ので、EDITIONS に並べた版をすべて取る。
+// **次版が出てから現行版が切れるまで、index に新旧の版が併記される**ので、
+// EDITIONS に並べた版をすべて取る。失効した版は市がリンクもページも落とすので、
+// EDITIONS に残っていると下の discover が throw する (parse.mjs の EDITIONS 参照)。
 // 地域ページの URL は版ごとに命名が変わり不規則なので、index のリンク文言から発見する。
 //
 // 照合用に冊子版 PDF も取る。**テキスト層がある版だけ** (bookletText: true)。

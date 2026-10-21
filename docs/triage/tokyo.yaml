@@ -1506,7 +1506,6 @@
   calendar_urls:
     - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/gomicalender_exel/index.html
     - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/202610-pdf.html
-    - https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/999.html
   verify_sources:
     - pdf-calendar
   license: proprietary-site
@@ -1535,6 +1534,8 @@
       ⚠URLは規則で組み立てられない。地域ページは 111.html〜888.html → 1-2026-2027.html〜8-2026-2027.html だが**地域5だけ 20275.html**。冊子PDFは入口が 999.html → 202610-pdf.html、本体が -N-070911.pdf → N-0810.pdf で**地域1だけ先頭のダッシュが無く**、しかもリンクがページ相対。いずれも index のリンク文言から発見する実装にした。
       ⚠令和8年度版は**地域3のページだけ月見出しの年が1年古い**(2025年10月〜2026年9月)。title と日付グリッドは正しい。グリッドの曜日一致を全日検査したうえで年を繰り上げて読み、冊子版PDFとの照合でも裏づけた。令和7年度版の地域8(titleだけ誤記)と鏡像の関係。
       ★**この版から冊子版PDFにテキスト層がある**(令和7年度版は完全な画像)。verify_sources の pdf-calendar が目視サンプリングから全数機械照合に変わり、8地域×365日=2,920日枠で相違ゼロ。同じ市の資料でも版で機械可読性が変わるので、前の版の判定を持ち越さない。
+      【旧版を外した 2026-10-10】令和7年度版 (2025-10--2026-09) は 9/30 に失効。**市は 2026-10-09 までに旧版を落としていた** — index から旧版のリンクが消え、地域ページ (111.html〜888.html) も冊子の入口 (999.html) も 404。EDITIONS に残すと fetch も build も throw するので外し、期間ディレクトリを消した。収録期間は 2026-10--2027-09 の 1 つに戻った。上の【収録済 2026-08-10】の記述は令和7年度版のもので、URL (111.html〜・999.html) はもう辿れない。
+      令和8年度版の8地域のページと冊子版PDF 8本を取り直し、日程が 1 日も変わっていないことを確認した。**地域3の月見出しの年は市が 2026-10-06 に直していた** — 直った版は補正なしで読め、日程は補正して読んだ結果と 365 日すべて同じ。
   surveyed_at: 2026-07-18
 - code: "13303"
   handle: tokyo-mizuho-town

@@ -5,13 +5,14 @@
 //
 // (2) 独立ソース照合: 冊子版カレンダー PDF との突き合わせ。**版で手段が違う。**
 //
-//     令和7年10月版 (2025-10--2026-09) — 冊子は Illustrator でアウトライン化されており
-//       テキスト層が無い (pdffonts が空)。機械抽出できないので playbook §3 に従い
-//       層化サンプリングで人が読み取った月を下の PDF_SAMPLES に転記してある。
-//
-//     令和8年10月版 (2026-10--2027-09) — **この版から冊子にテキスト層がある。**
+//     冊子にテキスト層がある版 (bookletText: true。令和8年10月版 2026-10--2027-09) —
 //       extract-booklet.py で全 12 ヶ月を機械抽出し、全日枠を突き合わせる。
 //       冊子はテキスト版 HTML とは別に組版されているので独立ソースとして働く。
+//
+//     冊子が画像の版 (bookletText: false) — 機械抽出できないので playbook §3 に従い
+//       層化サンプリングで人が読み取った月を下の PDF_SAMPLES に転記して照合する。
+//       収録を終えた令和7年10月版 (2025-10--2026-09) がこれだった (Illustrator で
+//       アウトライン化されており pdffonts が空)。**次の版がどちらになるかは分からない。**
 import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -27,8 +28,10 @@ const ROOT = join(HERE, '..', '..', '..');
 const OUT = join(ROOT, 'municipalities', 'tokyo', 'nishitokyo');
 
 // --- (2a) 冊子版 PDF (画像) の目視転記 ---
-// **令和7年10月版だけのもの。** セル 1 つ = 1 グループを、カレンダー上の見た目
-// そのままの記号で転記する:
+// **冊子にテキスト層が無い版だけのもの。** いま収録している版はテキスト層を持つので空。
+// 令和7年10月版の 4 ヶ月 91 日枠の転記は、その版を収録から外した 2026-10-10 に落とした。
+// 書式は { period, area, month: 'YYYY-MM', url, page, days: '1M 2P 3B …' }。
+// セル 1 つ = 1 グループを、カレンダー上の見た目そのままの記号で転記する:
 //   B=可燃(+せん定枝) N=不燃+有害 P=ペットボトル+プラ容器包装
 //   G=びん・スプレー缶・ライター+古紙・古布類  C=缶  M=金属類(+小型家電・廃食用油)
 //   X=「この地域での収集はありません」/「収集はありません」
@@ -37,16 +40,7 @@ const CODE = {
   B: ['burnable'], N: ['non_burnable', 'hazardous'], P: ['pet_bottle', 'plastic'],
   G: ['glass_bottle', 'spray_can', 'paper_cloth'], C: ['beverage_can'], M: ['metal'], X: [],
 };
-const PDF_SAMPLES = [
-  { period: '2025-10--2026-09', area: 1, month: '2025-10', url: 'https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/999.files/-1-070911.pdf', page: 2,
-    days: '1M 2P 3B 6G 7B 8N 9P 10B 13C 14B 15X 16P 17B 20G 21B 22N 23P 24B 27C 28B 29M 30P 31B' },
-  { period: '2025-10--2026-09', area: 1, month: '2025-12', url: 'https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/999.files/-1-070911.pdf', page: 4,
-    days: '1G 2B 3N 4P 5B 8C 9B 10X 11P 12B 15G 16B 17N 18P 19B 22C 23B 24M 25P 26B 29X 30B 31X' },
-  { period: '2025-10--2026-09', area: 3, month: '2026-01', url: 'https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/999.files/-3-070911.pdf', page: 5,
-    days: '1X 2X 5B 6C 7N 8B 9P 12B 13G 14M 15B 16P 19B 20C 21N 22B 23P 26B 27G 28X 29B 30P' },
-  { period: '2025-10--2026-09', area: 8, month: '2025-10', url: 'https://www.city.nishitokyo.lg.jp/kurasi/gomi_recycle/gomi-calebder/999.files/-8-070911.pdf', page: 2,
-    days: '1N 2B 3G 6B 7P 8M 9B 10C 13B 14P 15N 16B 17G 20B 21P 22X 23B 24C 27B 28P 29N 30B 31G' },
-];
+const PDF_SAMPLES = [];
 
 let ng = 0;
 const summary = [];
