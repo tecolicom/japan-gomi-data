@@ -90,7 +90,7 @@ ken_all は日本郵便が無償配布する正式データ。`machiaza_id` は 
 ken_all で補完されるのは読みのみ。cache は `.gitignore` 対象なので zip はリポジトリに含めない。
 - `docs/opendata-sources.md` — ごみ収集オープンデータの調査記録(新自治体収録時の探索ガイド・自治体別メモ)
 - `docs/triage/` — **調査台帳データセット** (すべて生成物)。自治体ごとの収集日データ公開状況 (出典 URL・形式・粒度・
-  ライセンス・「使いやすさスコア」) を集約した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 埼玉63+東京62+岡山2=127 自治体。
+  ライセンス・「使いやすさスコア」) を集約した、それ自体が再利用可能なデータ (CC BY 4.0)。現在 群馬1+埼玉63+東京62+岡山2=128 自治体。
   **正典は各自治体の `municipalities/<都道府県>/<handle>/survey.yaml`** で、`<都道府県>.yaml`・`triage.csv`・`scores.csv` は
   そこから再生成する (`node scripts/triage-csv.mjs` / `node scripts/triage-score.mjs --csv docs/triage/scores.csv`)。
   スコア定義は [`docs/opendata-quality-index.md`](docs/opendata-quality-index.md)。
@@ -102,6 +102,9 @@ ken_all で補完されるのは読みのみ。cache は `.gitignore` 対象な�
 
 ### 北海道 (hokkaido)
 - 上富良野町 — `kamifurano-town` (5コース)
+
+### 群馬県 (gunma)
+- みなかみ町 — `minakami-town` (16コース、41地区) ※町公式の地区別カレンダーPDF (令和8年度後期、半期ごとの版) 由来。表の文の規則と同じPDFの日付表の印を全日照合、相違ゼロ。新治地区は資源物の日時がカレンダーに無いため未収録
 
 ### 埼玉県 (saitama)
 - 川口市 — `kawaguchi` (18コース、133町丁目) ※市公式の地区別カレンダーPDF (テキスト層あり・ヘッダに規則明示) 由来。同一PDF内のヘッダ規則×本体実日付グリッドを2026暦年で全日照合、相違ゼロ。暦年 (1〜12月) カレンダーで年度ではない

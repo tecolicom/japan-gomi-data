@@ -1,0 +1,36 @@
+# みなかみ町。カレンダー PDF の分別区分を正典語彙へ割り当てる (語彙追加なし)。
+#  ● 生ごみ=kitchen / 燃やせるごみ=burnable (同じ行・同じ日)
+#    プラスチック=plastic / 燃やせないごみ=non_burnable (同じ行・同じ日。須田貝・青木沢のプラスチックだけ別曜日)
+#  ■ かん=beverage_can / びん=glass_bottle / ペットボトル=pet_bottle (同じ日)
+#  ▲ 電池類・蛍光管類=hazardous / 古紙類=paper (同じ日)
+#  衣 衣類=cloth
+categories:
+  - burnable
+  - kitchen
+  - non_burnable
+  - plastic
+  - pet_bottle
+  - beverage_can
+  - glass_bottle
+  - cloth
+  - paper
+  - hazardous
+overrides:
+  burnable:
+    label: 燃やせるごみ
+    short: 燃やせる
+  non_burnable:
+    label: 燃やせないごみ
+    short: 燃やせない
+  beverage_can:
+    label: かん
+    short: かん
+  hazardous:
+    label: 電池類・蛍光管類
+    short: 電池・蛍光管
+  paper:
+    label: 古紙類
+    short: 古紙
+  cloth:
+    label: 衣類
+    short: 衣類

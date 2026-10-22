@@ -1,0 +1,38 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes に書く。
+code: '10449'
+handle: minakami-town
+name_ja: みなかみ町
+status: collected
+source_type: pdf
+schedule_url: https://www.town.minakami.gunma.jp/life/09sumai/gomi/2017-0117-1345-71.html
+calendar_urls:
+- https://www.town.minakami.gunma.jp/life/09sumai/gomi/files/20261001__gomi_calendar_minakami_1.pdf
+- https://www.town.minakami.gunma.jp/life/09sumai/gomi/files/20261001__gomi_calendar_tsukiyono_1.pdf
+- https://www.town.minakami.gunma.jp/life/09sumai/gomi/files/20261001__gomi_calendar_niiharu_1.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 2
+granularity: dates
+district_unit: 行政区 (水上・月夜野・新治の 3 地区の下に、カレンダー 1 枚ごとの行政区の組)
+district_count_approx: 18
+yearend: calendar-explicit
+notes: '一次ソースは町公式「令和8年度後期(令和8年10月～令和9年3月)予定表」の地区別カレンダー PDF 18 枚
+  (水上 6・月夜野 9・新治 3。files/20261001__gomi_calendar_{minakami_1..6,tsukiyono_1..9,niiharu_1..3}.pdf)。
+  半期ごとの版で、4月起点の前期と10月起点の後期が別に出る。各 PDF は A3 横 1 ページでテキスト層あり (1,500〜2,000 字、
+  罫線は rect のみ)。上半分が「収集曜日・記号・分別区分」の表で規則を文で書き (「毎週火・金曜 1月1日を除く」
+  「毎月第1・3木曜」「1月は第2・4金曜」「10月と1月の第3木曜」)、下半分が 6 か月の日付表で ■ (かん・びん・
+  ペットボトル) ▲ (電池類・蛍光管類・古紙類) 衣 (衣類) の印だけを打つ。毎週の品目には印が無い。
+  地区名は行政区で、ABR の大字と一致するのは水上 15/15・月夜野 7/24 (後閑（上河原地区）を除く)。
+  収集曜日のオープンデータ・CSV は無い。ライセンス明示なし。全国系アプリ「さんあ～る」の案内があるが第三者商用のため使わない。
+  【収録済 2026-10-22】水上・月夜野の 15 枚を 16 コースで収録 (tools/pdf-extractor/minakami-town)。
+  16 コース目は minakami_1 の注記「※須田貝・青木沢地区のプラスチックは毎週火曜日に収集します。」による別コース。
+  規則は表の文から作り、同じ PDF の日付表の印と全 182 日を突き合わせて 15 枚とも一致 (2,730 日枠)。
+  外部の独立ソースは無い。
+  【新治地区は収録しない】niiharu_1〜3 は資源物 (かん・びん・ペットボトル、電池類・蛍光管類・古紙類) の欄が
+  「行政区によって決められています。その日時にしたがって出してください」と「－」だけで、日付表にも印が無い。
+  毎週の品目と衣類 (第4水曜) だけで収録すると、資源物を
+  収集しないように読めてしまうため、収録を見送った (2026-10-22、ユーザー判断)。行政区ごとの資源物の日時が
+  手に入れば収録できる。'
+surveyed_at: '2026-10-22'

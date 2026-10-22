@@ -1,0 +1,83 @@
+metadata:
+  city: minakami-town
+  course: tsukiyono-3
+  course_name_ja: 真政・師
+  areas:
+    - name: 師
+      yomi: もろ
+      machiaza_id:
+        - 104493-0038000
+    - name: 真政
+  period: 2026-10--2027-03
+  source:
+    edition_ja: 令和8年度後期
+    source_url: https://www.town.minakami.gunma.jp/life/09sumai/gomi/files/20261001__gomi_calendar_tsukiyono_3.pdf
+    extracted_at: 2026-10-22
+    extracted_by: claude-opus-5-5
+    verified_by: Claude(みなかみ町「ごみ収集カレンダー」令和8年度後期の地区別PDF。テキスト層から表の文 (収集曜日) を読んで規則にし、同じPDFの日付表の印 (■かん・びん・ペットボトル / ▲電池類・蛍光管類・古紙類 / 衣 衣類) と全182日を突き合わせて一致。毎週の品目 (燃やせるごみ・生ごみ・プラスチック・燃やせないごみ) は日付表に印が無く、表の文による自己照合のみ。独立した第2ソースは無い)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: kitchen
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - WE
+  - category: plastic
+    pattern: weekly
+    days:
+      - WE
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: glass_bottle
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 2
+      - 4
+  - category: cloth
+    pattern: monthly_specific
+    dates:
+      - 2026-10-21
+      - 2027-01-20
+  - category: paper
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 1
+      - 3
+  - category: hazardous
+    pattern: monthly_nth
+    days:
+      - TU
+    occurrences:
+      - 1
+      - 3
+overrides:
+  - date: 2026-12-30
+    cancelled: true
+    note: "12月30日は収集なし (カレンダーの表記: プラスチック・燃やせないごみは「12月30日は除く」)"
+  - date: 2027-01-01
+    cancelled: true
+    note: "1月1日は収集なし (カレンダーの表記: 生ごみ・燃やせるごみは「1月1日を除く」)"
