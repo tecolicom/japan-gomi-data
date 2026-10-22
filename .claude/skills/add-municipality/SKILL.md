@@ -115,6 +115,7 @@ make new HANDLE=<handle> PREF=<都道府県romaji> KIND=<html|pdf|csv|txt|api>
 | 罫線のある PDF | `tools/pdf-extractor/musashino/` |
 | 文字が図版の PDF (色ベース・四隅座標を埋め込み) | `tools/pdf-extractor/ome/`、`tools/pdf-extractor/chichibu-koiki/` |
 | 文字が図版の PDF (色ベース・罫線からグリッド復元) | `tools/pdf-extractor/hanno/` |
+| 曜日規則の HTML + 文字が図版の日付入り PDF で照合 (品目名の文字色で読む) | `tools/html-extractor/kadoma/` |
 | OD CSV | `tools/csv-extractor/iruma/` |
 
 守ること。
