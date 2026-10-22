@@ -1,0 +1,56 @@
+metadata:
+  city: chuo
+  course: "6"
+  areas:
+    - name: 銀座7丁目
+      yomi: ぎんざ7
+      machiaza_id: 131024-0004007
+    - name: 銀座8丁目
+      yomi: ぎんざ8
+      machiaza_id: 131024-0004008
+  period: 2026-01--2027-03
+  source:
+    edition_ja: 「ごみと資源の分け方・出し方」(令和8年1月発行) / 区公式「あなたの町のごみ・資源収集曜日」
+    source_url: https://www.city.chuo.lg.jp/a0039/kurashi/gomi/calendar/syuusyuuyoubi.html
+    extracted_at: 2026-10-23
+    extracted_by: claude-opus-5
+    verified_by: Claude (区公式「あなたの町のごみ・資源収集曜日」HTML 表 56 行の機械変換。「ごみと資源の分け方・出し方」パンフレットの外国語版 3 種 (英・中・韓) に同じ曜日表が入っており、56 行 × 5 品目 (収録しない粗大ごみを含む) で全数照合した。粗大ごみは申込制のため収録しない。年末年始は区が未公表のため unknown_periods)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TU
+      - WE
+      - TH
+      - FR
+      - SA
+  - category: non_burnable
+    pattern: weekly
+    days:
+      - TH
+  - category: plastic
+    pattern: weekly
+    days:
+      - MO
+  - category: paper
+    pattern: weekly
+    days: &a1
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days: *a1
+  - category: beverage_can
+    pattern: weekly
+    days: *a1
+  - category: pet_bottle
+    pattern: weekly
+    days: *a1
+  - category: metal
+    pattern: weekly
+    days: *a1
+unknown_periods:
+  - from: 2026-12-29
+    to: 2027-01-04
+    reason: 区は年末年始の収集を「決まり次第、チラシや集積所の看板への張り紙等でお知らせします」としており、2026-10-23 時点で未公表。公表資料の運用ルールは「日曜日は収集しない」だけで、年末年始は曜日規則どおりと言えない。
+    source_url: https://www.city.chuo.lg.jp/a0039/faq/kurashi/gomi/shuushuu/0005.html

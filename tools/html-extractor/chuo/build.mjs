@@ -7,10 +7,10 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
-import { expandRange, periodDates } from '../../_lib/schedule.mjs';
+import { expandRange, periodDates, isUnknown } from '../../_lib/schedule.mjs';
 import { parsePage, parseDays, splitChome, areaName } from './parse.mjs';
 import {
-  PERIOD, EDITION_JA, INDEX_URL, LG_CODE, CAT_ORDER, AREAS_JA,
+  PERIOD, YEAREND_UNKNOWN, EDITION_JA, INDEX_URL, LG_CODE, CAT_ORDER, AREAS_JA,
   COLUMNS, EMITTED, GROUP_CATEGORIES,
 } from './sources.mjs';
 
@@ -141,9 +141,10 @@ const docs = folded.map(({ rules, areas }, i) => {
         'Claude (区公式「あなたの町のごみ・資源収集曜日」HTML 表 56 行の機械変換。'
         + '「ごみと資源の分け方・出し方」パンフレットの外国語版 3 種 (英・中・韓) に同じ曜日表が入っており、'
         + '56 行 × 5 品目 (収録しない粗大ごみを含む) で全数照合した。'
-        + '粗大ごみは申込制のため収録しない。年末年始の記述が公表資料に無いため 11 月で期間を切っている)',
+        + '粗大ごみは申込制のため収録しない。年末年始は区が未公表のため unknown_periods)',
     },
     rules,
+    unknownPeriods: [YEAREND_UNKNOWN],
   });
 });
 
@@ -153,8 +154,9 @@ const docs = folded.map(({ rules, areas }, i) => {
   let checked = 0;
   for (const [i, f] of folded.entries()) {
     const sample = built.find((b) => f.areas.includes(b.area));
-    const got = expandRange(PERIOD, docs[i].rules, [], []);
+    const got = expandRange(PERIOD, docs[i].rules, [], [YEAREND_UNKNOWN]);
     for (const iso of dates) {
+      if (isUnknown(iso, [YEAREND_UNKNOWN])) continue; // 不明区間は展開されない
       const dow = DOW[(new Date(`${iso}T00:00:00`).getDay() + 6) % 7];
       const want = new Set();
       EMITTED.forEach((group, ci) => {

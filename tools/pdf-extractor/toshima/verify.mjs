@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { parse as yamlParse } from 'yaml';
 import { findPython } from '../../_lib/python.mjs';
-import { expandRange, periodDates } from '../../_lib/schedule.mjs';
+import { expandRange, periodDates, isUnknown } from '../../_lib/schedule.mjs';
 import { splitAreas, cellsToRules } from './parse.mjs';
 import { PRIMARY, CROSS_LANG, PERIOD } from './sources.mjs';
 
@@ -189,7 +189,7 @@ function loadCourses() {
     for (const a of doc.metadata.areas) {
       const key = normName(a.name);
       if (byArea.has(key)) throw new Error(`area 名が重複: "${a.name}"`);
-      byArea.set(key, { course: doc.metadata.course, rules: doc.rules, overrides: doc.overrides ?? [] });
+      byArea.set(key, { course: doc.metadata.course, rules: doc.rules, overrides: doc.overrides ?? [], unknown: doc.unknown_periods ?? [] });
     }
   }
   return byArea;
@@ -220,8 +220,9 @@ function checkBooklet(rows) {
       }
       seen.add(key);
       checkedAreas++;
-      const have = expandRange(PERIOD, got.rules, got.overrides, []);
+      const have = expandRange(PERIOD, got.rules, got.overrides, got.unknown);
       for (const iso of dates) {
+        if (isUnknown(iso, got.unknown)) continue; // 年末年始の不明区間は保存版の曜日表と比べられない
         const w = [...(want.get(iso) ?? [])].sort().join(',');
         const h = [...(have.get(iso) ?? [])].sort().join(',');
         if (w !== h) {
@@ -235,7 +236,9 @@ function checkBooklet(rows) {
   for (const key of byArea.keys()) {
     if (!seen.has(key)) { console.log(`  ✗ 保存版に無い area: "${key}"`); diffs++; }
   }
-  console.log(`C. 保存版との全数照合: ${checkedAreas} area × ${dates.length} 日 = ${checkedDays} 日枠 / 不一致 ${diffs}`);
+  const skipped = checkedAreas ? dates.length - checkedDays / checkedAreas : 0;
+  console.log(`C. 保存版との全数照合: ${checkedAreas} area × ${dates.length - skipped} 日 = ${checkedDays} 日枠 / 不一致 ${diffs}` +
+    (skipped ? ` (年末年始の不明区間 ${skipped} 日を除く)` : ''));
   return diffs;
 }
 

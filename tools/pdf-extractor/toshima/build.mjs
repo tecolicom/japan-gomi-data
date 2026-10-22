@@ -9,10 +9,10 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { findPython } from '../../_lib/python.mjs';
 import { foldCourses, courseDoc, writeCourses } from '../../_lib/emit.mjs';
-import { expandRange, periodDates, nthOfMonth } from '../../_lib/schedule.mjs';
+import { expandRange, periodDates, nthOfMonth, isUnknown } from '../../_lib/schedule.mjs';
 import { DAY_TO_INDEX } from '../../_lib/jp.mjs';
 import { splitAreas, areaYomi, cellsToRules, overlapCount, banchiItems, bareOverlaps } from './parse.mjs';
-import { PRIMARY, PERIOD, EDITION_JA, LG_CODE, CAT_ORDER, COLUMNS } from './sources.mjs';
+import { PRIMARY, PERIOD, YEAREND_UNKNOWN, EDITION_JA, LG_CODE, CAT_ORDER, COLUMNS } from './sources.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CACHE = join(HERE, 'cache');
@@ -136,9 +136,10 @@ const docs = folded.map(({ rules, areas }, i) => {
         'Claude (豊島区「資源回収・ごみ収集のお知らせ」外国語版リーフレット p2 の曜日一覧を機械抽出。' +
         '同じ表の別言語版 5 種 (ベトナム/ミャンマー/ネパール/タイ/ヒンディー) と全数照合し、' +
         '保存版冊子の曜日一覧 (画像 PDF) の目視転記 58 行とも全数照合した。' +
-        '祝日は区が「年末年始を除き通常収集」と明記しているため休止日なし)',
+        '祝日は区が「年末年始を除き通常収集」と明記しているため休止日なし。年末年始は区が未公表のため unknown_periods)',
     },
     rules,
+    unknownPeriods: [YEAREND_UNKNOWN],
   });
 });
 
@@ -152,8 +153,9 @@ const docs = folded.map(({ rules, areas }, i) => {
   let checked = 0;
   for (const [i, { rules }] of folded.entries()) {
     const cells = folded[i].areas.length ? rows.find((r) => r.rules === rules).cells : null;
-    const got = expandRange(PERIOD, rules, [], []);
+    const got = expandRange(PERIOD, rules, [], [YEAREND_UNKNOWN]);
     for (const iso of dates) {
+      if (isUnknown(iso, [YEAREND_UNKNOWN])) continue; // 不明区間は展開されない
       const d = new Date(`${iso}T00:00:00`);
       const want = new Set();
       cells.forEach((cell, ci) => {

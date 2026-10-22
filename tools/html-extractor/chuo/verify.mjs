@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { parse as yamlParse } from 'yaml';
 import { findPython } from '../../_lib/python.mjs';
-import { expandRange, periodDates } from '../../_lib/schedule.mjs';
+import { expandRange, periodDates, isUnknown } from '../../_lib/schedule.mjs';
 import { parsePage, parseDays, splitChome, areaName } from './parse.mjs';
 import { PERIOD, AREAS_JA, PAMPHLETS, COLUMNS, EMITTED, GROUP_CATEGORIES } from './sources.mjs';
 
@@ -142,7 +142,7 @@ function checkExpand(srcRows, courseDocs) {
   for (const doc of courseDocs) {
     for (const a of doc.metadata.areas) {
       if (byArea.has(a.name)) throw new Error(`area 名が重複: ${a.name}`);
-      byArea.set(a.name, doc.rules);
+      byArea.set(a.name, { rules: doc.rules, unknown: doc.unknown_periods ?? [] });
     }
   }
   const want = expectedAreas(srcRows);
@@ -160,10 +160,11 @@ function checkExpand(srcRows, courseDocs) {
   const dates = periodDates(PERIOD);
   let checked = 0;
   for (const [n, days] of want) {
-    const rules = byArea.get(n);
-    if (!rules) continue;
-    const got = expandRange(PERIOD, rules, [], []);
+    const entry = byArea.get(n);
+    if (!entry) continue;
+    const got = expandRange(PERIOD, entry.rules, [], entry.unknown);
     for (const iso of dates) {
+      if (isUnknown(iso, entry.unknown)) continue; // 年末年始の不明区間は曜日表と比べられない
       const dow = DOW[(new Date(`${iso}T00:00:00`).getDay() + 6) % 7];
       const exp = new Set();
       EMITTED.forEach((group, ci) => {
