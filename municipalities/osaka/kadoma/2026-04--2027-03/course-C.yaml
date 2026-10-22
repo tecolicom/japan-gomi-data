@@ -1,0 +1,180 @@
+metadata:
+  city: kadoma
+  course: C
+  course_name_ja: C地区
+  areas:
+    - name: 打越
+      yomi: うちこし
+      machiaza_id:
+        - 272230-0003000
+    - name: 江端町
+      yomi: えばたちょう
+      machiaza_id:
+        - 272230-0060000
+    - name: 岸和田1丁目
+      yomi: きしわだ
+      machiaza_id:
+        - 272230-0008001
+    - name: 岸和田2丁目
+      yomi: きしわだ
+      machiaza_id:
+        - 272230-0008002
+    - name: 岸和田3丁目
+      yomi: きしわだ
+      machiaza_id:
+        - 272230-0008003
+    - name: 岸和田4丁目
+      yomi: きしわだ
+      machiaza_id:
+        - 272230-0008004
+    - name: 北岸和田1丁目
+      yomi: きたきしわだ
+      machiaza_id:
+        - 272230-0018001
+    - name: 北岸和田2丁目
+      yomi: きたきしわだ
+      machiaza_id:
+        - 272230-0018002
+    - name: 北岸和田3丁目
+      yomi: きたきしわだ
+      machiaza_id:
+        - 272230-0018003
+    - name: 北島
+      yomi: きたじま
+      machiaza_id:
+        - 272230-0066000
+    - name: 北島東町
+      yomi: きたじまひがしまち
+      machiaza_id:
+        - 272230-0069000
+    - name: 北巣本町（35番～38番）
+      yomi: きたすもとちょう
+      machiaza_id:
+        - 272230-0047000
+    - name: 四宮1丁目
+      yomi: しのみや
+      machiaza_id:
+        - 272230-0007001
+    - name: 四宮2丁目
+      yomi: しのみや
+      machiaza_id:
+        - 272230-0007002
+    - name: 四宮3丁目
+      yomi: しのみや
+      machiaza_id:
+        - 272230-0007003
+    - name: 四宮4丁目
+      yomi: しのみや
+      machiaza_id:
+        - 272230-0007004
+    - name: 四宮5丁目
+      yomi: しのみや
+      machiaza_id:
+        - 272230-0007005
+    - name: 四宮6丁目
+      yomi: しのみや
+      machiaza_id:
+        - 272230-0007006
+    - name: 島頭1丁目
+      yomi: しまがしら
+      machiaza_id:
+        - 272230-0006001
+    - name: 島頭2丁目
+      yomi: しまがしら
+      machiaza_id:
+        - 272230-0006002
+    - name: 島頭3丁目
+      yomi: しまがしら
+      machiaza_id:
+        - 272230-0006003
+    - name: 島頭4丁目
+      yomi: しまがしら
+      machiaza_id:
+        - 272230-0006004
+    - name: 下馬伏町
+      yomi: しもまぶしちょう
+      machiaza_id:
+        - 272230-0039000
+    - name: 巣本町
+      yomi: すもとちょう
+      machiaza_id:
+        - 272230-0002000
+    - name: 千石西町
+      yomi: せんごくにしまち
+      machiaza_id:
+        - 272230-0057000
+    - name: 千石東町
+      yomi: せんごくひがしまち
+      machiaza_id:
+        - 272230-0061000
+    - name: 野口
+      yomi: のぐち
+      machiaza_id:
+        - 272230-0004000
+    - name: 東江端町
+      yomi: ひがしえばたちょう
+      machiaza_id:
+        - 272230-0029000
+    - name: 南野口町
+      yomi: みなみのぐちちょう
+      machiaza_id:
+        - 272230-0026000
+    - name: 横地
+      yomi: よこち
+      machiaza_id:
+        - 272230-0005000
+    - name: 脇田町
+      yomi: わきたちょう
+      machiaza_id:
+        - 272230-0046000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8(2026)年度版
+    source_url: https://www.city.kadoma.osaka.jp/kurashi/gomi/9/35805.html
+    extracted_at: 2026-10-22
+    extracted_by: claude-opus-5-5
+    verified_by: Claude(門真市「地区別ごみカレンダー」ページの表の文 (収集曜日) を規則にし、同じ地区の令和8年度カレンダーPDF (日付入り。品目名の色で読む) と全365日を突き合わせて一致。食い違いは年末年始にPDFが空欄の日だけで、その日を休止とした。PDFはHTMLとは別に組版された資料で、粗大ごみの曜日も含めて照合した)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+  - category: plastic
+    pattern: weekly
+    days:
+      - TU
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - FR
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - FR
+  - category: paper_cloth
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 3
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 12月31日は収集なし (カレンダーで空欄。年末年始)
+  - date: 2027-01-01
+    cancelled: true
+    note: 1月1日は収集なし (カレンダーで空欄。年末年始)

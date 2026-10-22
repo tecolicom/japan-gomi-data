@@ -1,0 +1,54 @@
+metadata:
+  city: kadoma
+  course: F
+  course_name_ja: F地区
+  areas:
+    - name: 市営門真三ツ島住宅
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8(2026)年度版
+    source_url: https://www.city.kadoma.osaka.jp/kurashi/gomi/9/35805.html
+    extracted_at: 2026-10-22
+    extracted_by: claude-opus-5-5
+    verified_by: Claude(門真市「地区別ごみカレンダー」ページの表の文 (収集曜日) を規則にし、同じ地区の令和8年度カレンダーPDF (日付入り。品目名の色で読む) と全365日を突き合わせて一致。食い違いは年末年始にPDFが空欄の日だけで、その日を休止とした。PDFはHTMLとは別に組版された資料で、粗大ごみの曜日も含めて照合した)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - TU
+  - category: paper_cloth
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+overrides:
+  - date: 2027-01-01
+    cancelled: true
+    note: 1月1日は収集なし (カレンダーで空欄。年末年始)

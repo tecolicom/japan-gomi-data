@@ -1,0 +1,36 @@
+# 門真市。地区別ごみカレンダーの品目を正典語彙へ割り当てる (語彙追加なし)。
+#   普通ごみ=burnable / プラスチック製容器包装=plastic / びん・缶類=glass_bottle+beverage_can (同じ日) /
+#   古紙古布=paper_cloth / 小型ごみ=non_burnable / ペットボトル=pet_bottle
+# 粗大ごみ (要予約・有料) は収録しない。
+# 区分名にある品目だけを割り当てた。分け方のページでは「びん・缶類」の日にスプレー缶・簡易ガスボンベ、
+# 「小型ごみ」の日に蛍光管・電池・ライターも出せるとあるが、spray_can・hazardous は付けていない (meta.yaml 参照)。
+categories:
+  - burnable
+  - non_burnable
+  - plastic
+  - pet_bottle
+  - beverage_can
+  - glass_bottle
+  - paper_cloth
+overrides:
+  burnable:
+    label: 普通ごみ
+    short: 普通
+  non_burnable:
+    label: 小型ごみ
+    short: 小型
+  plastic:
+    label: プラスチック製容器包装
+    short: プラ容器
+  beverage_can:
+    label: 缶
+    short: 缶
+  paper_cloth:
+    label: 古紙古布
+    short: 古紙古布
+groups:
+  - label: びん・缶類
+    short: びん缶
+    members:
+      - glass_bottle
+      - beverage_can

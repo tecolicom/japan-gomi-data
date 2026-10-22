@@ -1,0 +1,112 @@
+metadata:
+  city: kadoma
+  course: B
+  course_name_ja: B地区
+  areas:
+    - name: 朝日町
+      yomi: あさひちょう
+      machiaza_id:
+        - 272230-0010000
+    - name: 大池町
+      yomi: おおいけちょう
+      machiaza_id:
+        - 272230-0045000
+    - name: 大橋町
+      yomi: おおはしちょう
+      machiaza_id:
+        - 272230-0048000
+    - name: 上島町
+      yomi: かみしまちょう
+      machiaza_id:
+        - 272230-0052000
+    - name: 上野口町
+      yomi: かみのぐちちょう
+      machiaza_id:
+        - 272230-0067000
+    - name: 北巣本町（1番～34番）
+      yomi: きたすもとちょう
+      machiaza_id:
+        - 272230-0047000
+    - name: 寿町
+      yomi: ことぶきちょう
+      machiaza_id:
+        - 272230-0013000
+    - name: 下島町
+      yomi: しもしまちょう
+      machiaza_id:
+        - 272230-0030000
+    - name: 城垣町
+      yomi: しろがきちょう
+      machiaza_id:
+        - 272230-0012000
+    - name: 常称寺町
+      yomi: じょうしょうじちょう
+      machiaza_id:
+        - 272230-0035000
+    - name: 常盤町
+      yomi: ときわちょう
+      machiaza_id:
+        - 272230-0020000
+    - name: 野里町
+      yomi: のざとちょう
+      machiaza_id:
+        - 272230-0051000
+    - name: 宮野町
+      yomi: みやのちょう
+      machiaza_id:
+        - 272230-0014000
+    - name: 宮前町
+      yomi: みやまえちょう
+      machiaza_id:
+        - 272230-0017000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8(2026)年度版
+    source_url: https://www.city.kadoma.osaka.jp/kurashi/gomi/9/35805.html
+    extracted_at: 2026-10-22
+    extracted_by: claude-opus-5-5
+    verified_by: Claude(門真市「地区別ごみカレンダー」ページの表の文 (収集曜日) を規則にし、同じ地区の令和8年度カレンダーPDF (日付入り。品目名の色で読む) と全365日を突き合わせて一致。食い違いは年末年始にPDFが空欄の日だけで、その日を休止とした。PDFはHTMLとは別に組版された資料で、粗大ごみの曜日も含めて照合した)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - TU
+      - FR
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 3
+  - category: plastic
+    pattern: weekly
+    days:
+      - TH
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+      - 4
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - MO
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - MO
+  - category: paper_cloth
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 12月31日は収集なし (カレンダーで空欄。年末年始)
+  - date: 2027-01-01
+    cancelled: true
+    note: 1月1日は収集なし (カレンダーで空欄。年末年始)

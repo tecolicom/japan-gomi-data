@@ -1,0 +1,156 @@
+metadata:
+  city: kadoma
+  course: D
+  course_name_ja: D地区
+  areas:
+    - name: 一番町
+      yomi: いちばんちょう
+      machiaza_id:
+        - 272230-0058000
+    - name: 打越町
+      yomi: うちこしちょう
+      machiaza_id:
+        - 272230-0034000
+    - name: 沖町
+      yomi: おきまち
+      machiaza_id:
+        - 272230-0043000
+    - name: 北島町
+      yomi: きたじまちょう
+      machiaza_id:
+        - 272230-0050000
+    - name: 桑才新町
+      yomi: くわざいしんまち
+      machiaza_id:
+        - 272230-0065000
+    - name: 桑才町
+      yomi: くわざいちょう
+      machiaza_id:
+        - 272230-0070000
+    - name: 栄町
+      yomi: さかえまち
+      machiaza_id:
+        - 272230-0016000
+    - name: 五月田町
+      yomi: さつきだちょう
+      machiaza_id:
+        - 272230-0037000
+    - name: 小路町
+      yomi: しょうじちょう
+      machiaza_id:
+        - 272230-0024000
+    - name: 殿島町
+      yomi: とのしまちょう
+      machiaza_id:
+        - 272230-0019000
+    - name: 堂山町
+      yomi: どうやまちょう
+      machiaza_id:
+        - 272230-0025000
+    - name: ひえ島町
+      yomi: ひえじまちょう
+      machiaza_id:
+        - 272230-0071000
+    - name: 東田町
+      yomi: ひがしだちょう
+      machiaza_id:
+        - 272230-0062000
+    - name: 深田町
+      yomi: ふかだちょう
+      machiaza_id:
+        - 272230-0056000
+    - name: 舟田町
+      yomi: ふなだちょう
+      machiaza_id:
+        - 272230-0059000
+    - name: 本町
+      yomi: ほんまち
+      machiaza_id:
+        - 272230-0040000
+    - name: 松生町
+      yomi: まつおちょう
+      machiaza_id:
+        - 272230-0064000
+    - name: 三ツ島1丁目
+      yomi: みつしま
+      machiaza_id:
+        - 272230-0038001
+    - name: 三ツ島2丁目
+      yomi: みつしま
+      machiaza_id:
+        - 272230-0038002
+    - name: 三ツ島3丁目
+      yomi: みつしま
+      machiaza_id:
+        - 272230-0038003
+    - name: 三ツ島4丁目
+      yomi: みつしま
+      machiaza_id:
+        - 272230-0038004
+    - name: 三ツ島5丁目
+      yomi: みつしま
+      machiaza_id:
+        - 272230-0038005
+    - name: 三ツ島6丁目
+      yomi: みつしま
+      machiaza_id:
+        - 272230-0038006
+    - name: 元町
+      yomi: もとまち
+      machiaza_id:
+        - 272230-0033000
+    - name: 柳田町
+      yomi: やなぎだちょう
+      machiaza_id:
+        - 272230-0063000
+  period: 2026-04--2027-03
+  source:
+    edition_ja: 令和8(2026)年度版
+    source_url: https://www.city.kadoma.osaka.jp/kurashi/gomi/9/35805.html
+    extracted_at: 2026-10-22
+    extracted_by: claude-opus-5-5
+    verified_by: Claude(門真市「地区別ごみカレンダー」ページの表の文 (収集曜日) を規則にし、同じ地区の令和8年度カレンダーPDF (日付入り。品目名の色で読む) と全365日を突き合わせて一致。食い違いは年末年始にPDFが空欄の日だけで、その日を休止とした。PDFはHTMLとは別に組版された資料で、粗大ごみの曜日も含めて照合した)
+rules:
+  - category: burnable
+    pattern: weekly
+    days:
+      - MO
+      - TH
+  - category: non_burnable
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 4
+  - category: plastic
+    pattern: weekly
+    days:
+      - FR
+  - category: pet_bottle
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 1
+      - 3
+  - category: beverage_can
+    pattern: weekly
+    days:
+      - TU
+  - category: glass_bottle
+    pattern: weekly
+    days:
+      - TU
+  - category: paper_cloth
+    pattern: monthly_nth
+    days:
+      - WE
+    occurrences:
+      - 2
+overrides:
+  - date: 2026-12-31
+    cancelled: true
+    note: 12月31日は収集なし (カレンダーで空欄。年末年始)
+  - date: 2027-01-01
+    cancelled: true
+    note: 1月1日は収集なし (カレンダーで空欄。年末年始)

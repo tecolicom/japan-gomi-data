@@ -1,0 +1,32 @@
+# 収集日データの公開状況サーベイ (正典)。docs/triage/ はここから生成される。
+# 収録作業の起点: 一次ソース・形式・粒度・罠は notes に書く。
+code: '27223'
+handle: kadoma
+name_ja: 門真市
+status: collected
+source_type: html
+schedule_url: https://www.city.kadoma.osaka.jp/kurashi/gomi/9/35805.html
+calendar_urls:
+- https://www.city.kadoma.osaka.jp/material/files/group/20/A.pdf
+- https://www.city.kadoma.osaka.jp/material/files/group/20/F.pdf
+verify_sources:
+- course-pdf
+license: proprietary-site
+difficulty: 2
+granularity: weekday-rules
+district_unit: 地区 (A〜F。A〜D は町名・丁目、E・F は市営住宅などの建物)
+district_count_approx: 6
+yearend: calendar-explicit
+notes: '一次ソースは市公式「地区別ごみカレンダー」ページ (kurashi/gomi/9/35805.html、更新日 2026-03-30。
+  同じ内容が gomi_search/chikubetsu/36006.html にもある)。A〜F の 6 地区ごとに町名の列挙と
+  「普通ごみ 毎週火曜日・金曜日」「ペットボトル 毎月第1・3水曜日」の表が HTML のテキストである。
+  地区別 PDF (material/files/group/20/{A..F}.pdf) は A3 縦 2 ページの日付入りカレンダー
+  (令和8年4月1日～令和9年3月31日) で、文字はすべてアウトライン化 (chars 0)。アイコンは画像だが
+  同じ品目でも画像が月・地区で作り直されていてハッシュでは分類できない。各マスのアイコンの下の品目名
+  (曲線) の色で品目を読める。年末年始は 6 地区とも 12/30・12/31・1/1 が空欄。祝日は収集する。
+  市の「地域別収集日検索」(smart-lgov の外部 API、2020 年更新) は接続を切られたので使っていない。
+  サイトポリシーは「著作権は門真市に帰属。出典明示で転載・複製可、改変不可」。
+  【収録済 2026-10-22】6 地区を 6 コースで収録 (tools/html-extractor/kadoma)。規則は HTML の表から作り、
+  PDF カレンダーと全 365 日を突き合わせて 6 地区とも一致 (2,190 日枠。年末年始の空欄だけを休止とした)。
+  粗大ごみ (要予約・有料) は収録しない。'
+surveyed_at: '2026-10-22'
