@@ -8,6 +8,13 @@
 生成: `node scripts/check-new-editions.mjs`。いつ状態が変わったかは、このファイルの
 git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
+## 公開を検出 — 収録の候補
+
+次の版らしいリンクが一次ソースに出ている。 (1 自治体)
+
+- **setagaya** (tokyo) — 収録 `2025-12--2026-12` (2026-12 末) / 現行 令和8年版
+  - 令和9年(2027年)版資源とごみの収集カレンダー（PDF） → https://www.city.setagaya.lg.jp/02241/27859.html
+
 ## 確認できず — 要点検
 
 ページが取れない。移転・削除の可能性があるので**未公開と混同しない**。 (2 自治体)
@@ -26,7 +33,7 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
 
 ## 未検出
 
-次の版はまだ見当たらない。 (37 自治体)
+次の版はまだ見当たらない。 (36 自治体)
 
 - **arakawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.arakawa.tokyo.jp/portal/gomi/index.html
@@ -86,8 +93,6 @@ git 履歴が記録になる (公開時期の実測値がここに貯まる)。
   - 探した年: 2027 / 令和9 — https://www.city.ome.tokyo.jp/soshiki/23/1182.html
 - **sabae** (fukui) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.sabae.fukui.jp/kurashi_tetsuduki/gomi_risaikuru/kateigomi/index.html
-- **setagaya** (tokyo) — 収録 `2025-12--2026-12` (2026-12 末) / 現行 令和8年版
-  - 探した年: 2027 / 令和9 — https://www.city.setagaya.lg.jp/02241/416.html
 - **shinagawa** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
   - 探した年: 2027 / 令和9 — https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-gomi/gomi-kateigomi/wastedayslist/index.html
 - **suginami** (tokyo) — 収録 `2026-04--2027-03` (2027-03 末) / 現行 令和8年度
